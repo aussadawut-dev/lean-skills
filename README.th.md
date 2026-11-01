@@ -2,7 +2,7 @@
 
 [English](README.md) | **ภาษาไทย**
 
-13 skills ที่ช่วยให้ coding agent วางแผน ลงมือทำ ทดสอบ และตรวจงานได้เป็นขั้นตอน
+14 skills ที่ช่วยให้ coding agent วางแผน ลงมือทำ ทดสอบ และตรวจงานได้เป็นขั้นตอน
 เลือกติดตั้งทั้งชุดหรือแค่ตัวเดียวก็ได้ **ไม่ต้องติดตั้ง Lean runtime หรือมีโฟลเดอร์ `.lean`**
 
 ใช้กับ **Codex, Claude Code และ Antigravity** ผ่าน
@@ -45,7 +45,7 @@ npx skills add aussadawut-dev/lean-skills --skill lean-review -a codex -y
 ### ปรับคำสั่งให้ตรงกับการใช้งาน
 
 - หลัง `-a` ใส่เฉพาะ agent ที่คุณใช้
-- `--skill '*'` หมายถึงเลือกครบทั้ง 13 ตัว โดยต้องใส่เครื่องหมายคำพูดรอบ `'*'`
+- `--skill '*'` หมายถึงเลือกครบทั้ง 14 ตัว โดยต้องใส่เครื่องหมายคำพูดรอบ `'*'`
 - `-y` คือข้ามคำถามยืนยัน หากต้องการเลือก agent ผ่านเมนู ให้ตัดทั้ง `-a` พร้อมรายชื่อ agent และ `-y` ออก
 - หากต้องการดูรายการ skills โดยยังไม่ติดตั้ง ใช้คำสั่ง:
 
@@ -137,7 +137,7 @@ Claude Code ใช้คำอธิบายงานของ Agent หรื�
 | กำหนดความละเอียดในการทำตามขั้นตอน | [lean-effort](skills/lean-effort/SKILL.md) |
 | ประเมินตัวเลือกโมเดลและเสนอปรับ configuration | [lean-model-update](skills/lean-model-update/SKILL.md) |
 | เลือกหรือ clone repository ของแอปอีกตัว | [lean-target](skills/lean-target/SKILL.md) |
-| อัปเดต standalone skills โดยรักษาส่วนที่แก้เองไว้ | [lean-update](skills/lean-update/SKILL.md) |
+| อัปเดต Lean skills และเพิ่มสกิลที่ขาดโดยรักษาส่วนที่แก้เองไว้ | [lean-update](skills/lean-update/SKILL.md) |
 
 ## สิ่งที่ควรรู้
 
@@ -176,7 +176,7 @@ python3 tests/install_smoke.py
 ```
 
 คำสั่งแรกใช้ standard library ของ Python ส่วน smoke test ใช้ `skills@1.7.4` ผ่าน `npx`
-จึงต้องเข้าถึง registry ได้หรือมีแพ็กเกจใน cache การทดสอบครอบคลุมติดตั้งครบชุดและติดตั้งเดี่ยวทั้ง 13 ตัว
+จึงต้องเข้าถึง registry ได้หรือมีแพ็กเกจใน cache การทดสอบครอบคลุมติดตั้งครบชุดและติดตั้งเดี่ยวทั้ง 14 ตัว
 ทั้งแบบ global และเฉพาะโปรเจกต์ รวม **28 กรณี** ในโฟลเดอร์ผู้ใช้และโปรเจกต์จำลอง
 ตรวจทั้งเนื้อหาและการแยกขอบเขตการติดตั้ง โดยไม่แก้ global skills จริงและไม่เรียก LLM
 CI รันการตรวจทั้งสองคำสั่งนี้
