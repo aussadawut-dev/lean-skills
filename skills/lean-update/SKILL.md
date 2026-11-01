@@ -1,6 +1,6 @@
 ---
 name: lean-update
-description: Update installed standalone Lean skills from their source while preserving local customizations and installation scope.
+description: Update Lean skills and install missing skills from the collection while preserving local changes and installation scope.
 license: MIT
 ---
 
@@ -12,10 +12,10 @@ Use the user's requested procedure depth; otherwise use standard depth. High add
 
 This updates skills, not a project runtime. Source: https://github.com/aussadawut-dev/lean-skills. It works when only this skill is installed.
 
-1. Inspect which standalone skills are actually installed, their source/version metadata and installation scope. Resolve symlinks to canonical locations. Do not assume every core skill is installed or confuse project-local workflow skills with this standalone collection.
-2. Read the installed skills CLI help and current upstream documentation before choosing commands. Fetch candidate content into a temporary directory without replacing the installed copy. Pin the candidate revision and compare only the requested installed skills; note local customizations and missing source/version evidence.
-3. Show the concrete update plan, conflicts, source revision and preserved files. Keep modified skills unchanged until the user chooses how to handle the conflict. A preview-only request stops here; an explicit update request authorizes a matching conflict-free update, not installing extra skills or changing project configuration.
-4. Back up each affected canonical directory and its installation metadata before replacement, recording a usable restore path. Use the existing installer when it supports the intended scope and pinned revision. Do not use a bulk update that also changes unrelated skills. If pinning or backup cannot be verified, stop before mutation and explain the missing capability.
-5. Validate installed frontmatter, file completeness, references and discovery links. Restore from the backup on a failed update only while affected files have not changed since this operation; otherwise preserve state and report the conflict. Report updated skills, revision, checks, preserved changes and rollback location.
+1. Inspect which standalone skills are installed, their source/version metadata, installation scope and agent discovery links. Resolve symlinks to canonical locations. Do not confuse project-local workflow skills or similarly named skills from another source with this collection.
+2. Read the installed skills CLI help and current upstream documentation. Fetch the source into a temporary directory and pin its revision. For a request to update the Lean collection, compare the full upstream skill inventory with the installed collection in the same scope: update installed skills and identify missing upstream skills to install, including skills added since the last installation. Missing does not prove newly added; report it as missing when history is unavailable. A request naming specific skills limits changes to those names; install a named missing upstream skill if requested. Do not infer authorization to fill the collection from a request to update only named skills.
+3. Show the concrete update plan, including additions, updates, conflicts, source revision, destination, agent links and preserved files. A preview-only request stops here. An explicit collection update authorizes conflict-free additions and updates in the existing scope; do not install into another scope or modify unrelated skills. If the same collection exists in multiple scopes and the intended scope is unclear, ask which to update. Keep locally modified skills and colliding destinations unchanged until the user chooses how to resolve them; continue independent conflict-free work.
+4. Back up affected existing canonical directories and relevant installation metadata before replacement, recording a usable restore path and which paths are new. Use the installer only when it supports the intended scope, agents and pinned revision without changing unrelated skills or overwriting conflicts. If pinning, backup or the destination cannot be verified, stop before the affected mutation and explain the missing capability. Do not replace an existing unrelated skill or change global configuration as a side effect.
+5. Validate all affected skills' frontmatter, file completeness, references, metadata and discovery links, including newly installed skills. On failure restore backups or remove newly created paths only if they have not changed since this operation; otherwise preserve state and report the conflict. Report added and updated skills, revision, scope, checks, conflicts and rollback location.
 
-Never install the full workflow as part of a skill update. Do not commit, push or alter model/provider permissions as an incidental update step.
+Do not install a project workflow, commit, push or alter model/provider permissions as an incidental update step.

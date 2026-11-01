@@ -2,7 +2,7 @@
 
 **English** | [ภาษาไทย](README.th.md)
 
-13 independent skills that help coding agents plan, build, test and review work.
+14 independent skills that help coding agents plan, build, test and review work.
 Install all of them or pick just one. **No Lean runtime or `.lean` directory is required.**
 
 Works with **Codex, Claude Code and Antigravity** through the
@@ -45,7 +45,7 @@ Add `-g` to make this global. Every skill works independently.
 ### Adjust the command
 
 - Keep only the agents you use after `-a`.
-- `--skill '*'` selects all 13 skills; keep the quotes around `'*'`.
+- `--skill '*'` selects all 14 skills; keep the quotes around `'*'`.
 - `-y` skips confirmation prompts. Omit both `-a` and `-y` to choose agents interactively.
 - To list available skills without installing, run:
 
@@ -141,7 +141,7 @@ fallback or model configuration update is included.
 | Set how thoroughly to follow a procedure | [lean-effort](skills/lean-effort/SKILL.md) |
 | Evaluate model choices and propose a configuration update | [lean-model-update](skills/lean-model-update/SKILL.md) |
 | Select or clone another application repository | [lean-target](skills/lean-target/SKILL.md) |
-| Update installed standalone skills while preserving local edits | [lean-update](skills/lean-update/SKILL.md) |
+| Update Lean skills and add missing collection skills while preserving local edits | [lean-update](skills/lean-update/SKILL.md) |
 
 ## What to expect
 
@@ -180,7 +180,7 @@ python3 tests/install_smoke.py
 ```
 
 The first check uses Python's standard library. The smoke test uses `skills@1.7.4`
-through `npx` and needs registry access or a cached package. It checks all 13 skills
+through `npx` and needs registry access or a cached package. It checks all 14 skills
 together and individually in both installation scopes: **28 scenarios** in temporary
 homes and projects. It verifies content and scope isolation without modifying your
 real global skills or calling an LLM. CI runs both checks.
