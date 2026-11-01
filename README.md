@@ -130,6 +130,7 @@ fallback or model configuration update is included.
 | --- | --- |
 | Own a request from initial decisions through verified delivery | [lean-run](skills/lean-run/SKILL.md) |
 | Understand a project's commands and working conventions | [lean-init](skills/lean-init/SKILL.md) |
+| Create or update repository-root AGENTS.md and CLAUDE.md instructions | [lean-instructions](skills/lean-instructions/SKILL.md) |
 | Take a task from scope to tested, reviewed completion | [lean-task](skills/lean-task/SKILL.md) |
 | Define what is included and how to verify it | [lean-scope](skills/lean-scope/SKILL.md) |
 | Compare approaches with sources and trade-offs | [lean-research](skills/lean-research/SKILL.md) |

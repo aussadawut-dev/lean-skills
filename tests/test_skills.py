@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 NAMES = {
     'lean-init', 'lean-task', 'lean-scope', 'lean-research', 'lean-grill',
     'lean-agents', 'lean-review', 'lean-gate', 'lean-effort', 'lean-update',
-    'lean-model-update', 'lean-target', 'lean-run',
+    'lean-model-update', 'lean-target', 'lean-run', 'lean-instructions',
 }
 
 
