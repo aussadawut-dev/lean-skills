@@ -6,9 +6,9 @@ license: MIT
 
 # lean-gate
 
-This is a standalone skill. Use the current request or explicit invocation arguments as input. Read existing project instructions and only the context needed for this task. No Lean installation, CLI, configuration, or other skill is required. Do not install a workflow or create workflow files as a prerequisite. Existing project rules still apply.
+Standalone skill: use the current request or explicit arguments. Read applicable project instructions and only task-relevant context. No Lean installation, CLI, configuration or companion skill is required; do not install a workflow or create workflow files as prerequisites. Existing project rules apply.
 
-Use the user's requested procedure depth; otherwise use standard depth. High adds boundary cases and stronger evidence; ultra adds cross-part consistency and contradictory evidence where relevant. Depth does not change model reasoning settings. Keep decisions in the conversation unless the project already has a suitable record or the user requests persistence.
+Use requested procedure depth, or standard by default. High adds relevant boundary cases and stronger evidence; ultra adds cross-part consistency and contradictory evidence where relevant. Depth does not change model reasoning settings. Keep decisions in conversation unless a suitable project record exists or the user requests persistence.
 
 1. Reuse the existing acceptance and delivery agreement; do not reopen settled scope without new evidence. Identify acceptance and the final shipping state, including new files. Find required checks in project instructions, manifests and CI. Inspect commands before execution. Missing checks are a gap, not an automatic pass; for prose-only work explain the applicable content/link validation.
 2. Run relevant deterministic checks, or reuse verified results only when their inputs have not changed and project rules allow reuse. Preserve failures. Do not weaken tests, change acceptance or waive mandatory checks merely to pass.

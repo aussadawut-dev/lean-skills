@@ -6,9 +6,9 @@ license: MIT
 
 # lean-scope
 
-This is a standalone skill. Use the current request or explicit invocation arguments as input. Read existing project instructions and only the context needed for this task. No Lean installation, CLI, configuration, or other skill is required. Do not install a workflow or create workflow files as a prerequisite. Existing project rules still apply.
+Standalone skill: use the current request or explicit arguments. Read applicable project instructions and only task-relevant context. No Lean installation, CLI, configuration or companion skill is required; do not install a workflow or create workflow files as prerequisites. Existing project rules apply.
 
-Use the user's requested procedure depth; otherwise use standard depth. High adds boundary cases and stronger evidence; ultra adds cross-part consistency and contradictory evidence where relevant. Depth does not change model reasoning settings. Keep decisions in the conversation unless the project already has a suitable record or the user requests persistence.
+Use requested procedure depth, or standard by default. High adds relevant boundary cases and stronger evidence; ultra adds cross-part consistency and contradictory evidence where relevant. Depth does not change model reasoning settings. Keep decisions in conversation unless a suitable project record exists or the user requests persistence.
 
 1. Read the request, closest source files and existing decisions. Reuse settled choices. Skip a formal specification for trivial mechanical work unless requested.
 2. Reuse an existing delivery agreement rather than generating a second specification. Include the verification method and delivery destination (workspace by default, or the requested PR/deployment). State the goal, included behavior, exclusions, acceptance criteria, constraints, assumptions and likely affected components. For multi-part work, list bounded tasks and dependencies; do not silently expand into adjacent improvements.

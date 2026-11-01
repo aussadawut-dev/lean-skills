@@ -6,9 +6,9 @@ license: MIT
 
 # lean-research
 
-This is a standalone skill. Use the current request or explicit invocation arguments as input. Read existing project instructions and only the context needed for this task. No Lean installation, CLI, configuration, or other skill is required. Do not install a workflow or create workflow files as a prerequisite. Existing project rules still apply.
+Standalone skill: use the current request or explicit arguments. Read applicable project instructions and only task-relevant context. No Lean installation, CLI, configuration or companion skill is required; do not install a workflow or create workflow files as prerequisites. Existing project rules apply.
 
-Use the user's requested procedure depth; otherwise use standard depth. High adds boundary cases and stronger evidence; ultra adds cross-part consistency and contradictory evidence where relevant. Depth does not change model reasoning settings. Keep decisions in the conversation unless the project already has a suitable record or the user requests persistence.
+Use requested procedure depth, or standard by default. High adds relevant boundary cases and stronger evidence; ultra adds cross-part consistency and contradictory evidence where relevant. Depth does not change model reasoning settings. Keep decisions in conversation unless a suitable project record exists or the user requests persistence.
 
 1. State the decision question, constraints and stopping condition: what evidence would be sufficient to choose or expose a concrete blocker. Read relevant local code and documentation before widening the search. Include the current approach or no change when it is a real option.
 2. Build a bounded shortlist of meaningfully different approaches, usually two to five. Compare each against the same decision-relevant criteria rather than arbitrary numerical scores.
