@@ -1,0 +1,136 @@
+{
+  "provider": "claude",
+  "label": "naming_probe - haiku|low",
+  "original_directory": "/tmp/lean-naming-live-20261101/claude-display",
+  "completion": {
+    "exit": 0,
+    "timeout": false,
+    "elapsed_seconds": 7.37
+  },
+  "dispatch": {
+    "argv": [
+      "claude",
+      "-p",
+      "Use the Agent tool once to run the custom subagent type whose exact identifier is \"naming_probe - haiku|low\". Set the Agent tool description field to that exact same full string \"naming_probe - haiku|low\", preserving all spaces, hyphens and the vertical bar. This is the desired visible task label; do not use the name parameter or enable agent teams. Give it the task: Return exactly NAMING_CHILD_OK. Wait for the child result. Do not enable teams, create files, execute commands, or use other tools. Finally report the exact subagent type you actually invoked and the child result. This is an authorized literal-name compatibility test.",
+      "--model",
+      "haiku",
+      "--effort",
+      "low",
+      "--name",
+      "naming_probe - haiku|low",
+      "--agents",
+      "/tmp/lean-naming-live-20261101/claude-display/agents.json",
+      "--restricted",
+      "--tools",
+      "Agent",
+      "--allowedTools",
+      "Agent",
+      "--permission-mode",
+      "dontAsk",
+      "--strict-mcp-config",
+      "--mcp-config",
+      "/tmp/lean-naming-live-20261101/claude-display/empty-mcp.json",
+      "--output-format",
+      "stream-json",
+      "--verbose"
+    ],
+    "cwd": "/tmp/lean-naming-live-20261101/claude-display",
+    "metered_credentials_removed": true
+  },
+  "native_events": [
+    {
+      "type": "system",
+      "subtype": "session_title_changed",
+      "title": "naming_probe - haiku|low",
+      "uuid": "e973d9ea-1154-417a-abb6-b4c09eeef127",
+      "session_id": "54af1e3a-e7eb-45cd-93ce-fafbccaa525a"
+    },
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "claude-haiku-5-5",
+      "agents": [
+        "claude",
+        "Explore",
+        "general-purpose",
+        "naming_probe - haiku|low",
+        "Plan",
+        "statusline-setup"
+      ],
+      "session_id": "54af1e3a-e7eb-45cd-93ce-fafbccaa525a"
+    },
+    {
+      "type": "tool_use",
+      "content": {
+        "type": "tool_use",
+        "id": "toolu_013UkXfgHxWfH2s2Ebd52KqP",
+        "name": "Agent",
+        "input": {
+          "description": "naming_probe - haiku|low",
+          "subagent_type": "naming_probe - haiku|low",
+          "prompt": "Return exactly NAMING_CHILD_OK. Do not use any tools.",
+          "run_in_background": false
+        },
+        "caller": {
+          "type": "direct"
+        }
+      }
+    },
+    {
+      "type": "system",
+      "subtype": "task_started",
+      "task_id": "abdfb5535960fa0da",
+      "run_id": "0mvxpyfee-b2c3f595",
+      "tool_use_id": "toolu_013UkXfgHxWfH2s2Ebd52KqP",
+      "description": "naming_probe - haiku|low",
+      "subagent_type": "naming_probe - haiku|low",
+      "is_backgrounded": false,
+      "spawn_depth": 1,
+      "task_type": "local_agent",
+      "prompt": "Return exactly NAMING_CHILD_OK. Do not use any tools.",
+      "uuid": "fec632f4-5a22-4105-9fcf-879638b5959b",
+      "session_id": "54af1e3a-e7eb-45cd-93ce-fafbccaa525a"
+    },
+    {
+      "type": "system",
+      "subtype": "task_notification",
+      "task_id": "abdfb5535960fa0da",
+      "run_id": "0mvxpyfee-b2c3f595",
+      "tool_use_id": "toolu_013UkXfgHxWfH2s2Ebd52KqP",
+      "status": "completed",
+      "output_file": "/private/tmp/claude-501/-private-tmp-lean-naming-live-20261101-claude-display/54af1e3a-e7eb-45cd-93ce-fafbccaa525a/tasks/abdfb5535960fa0da.output",
+      "summary": "NAMING_CHILD_OK",
+      "usage": {
+        "total_tokens": 982,
+        "tool_uses": 0,
+        "duration_ms": 1693
+      },
+      "uuid": "2b0286c6-7c5f-4f3b-9819-3ececfc462a4",
+      "session_id": "54af1e3a-e7eb-45cd-93ce-fafbccaa525a"
+    },
+    {
+      "type": "result",
+      "subtype": "success",
+      "is_error": false,
+      "result": "Exact subagent type invoked: `naming_probe - haiku|low`\n\nChild result: `NAMING_CHILD_OK`\n\nI set the Agent description to the same string and did not use the `name` parameter, teams, files, commands, or other tools."
+    }
+  ],
+  "child_final_responses": [],
+  "verification": {
+    "actual_child_completed": true,
+    "child_id": "abdfb5535960fa0da",
+    "exact_display_field": true,
+    "full_type_identifier": true,
+    "characters_preserved": true,
+    "desktop_screenshot_checked": false
+  },
+  "agent_definition": {
+    "naming_probe - haiku|low": {
+      "description": "Literal-name test worker. Return NAMING_CHILD_OK and do nothing else.",
+      "prompt": "Return exactly NAMING_CHILD_OK. Do not use tools or delegate.",
+      "model": "haiku",
+      "effort": "low",
+      "tools": []
+    }
+  }
+}

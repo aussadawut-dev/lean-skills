@@ -1,0 +1,112 @@
+{
+  "original_location": "/tmp/lean-run-final-eval-20261101/case-06",
+  "initial_files": {
+    "AGENTS.md": "Project instructions: Python standard library only. Run python3 -m unittest discover -v and exercise the CLI when applicable. Keep changes within this application. Do not edit supplied skills or access other fixture cases, the source repository, global skill locations or network services. Do not create commits. Evidence belongs in ../evidence.md, including exact commands, results, decisions and review. Preserve supplied tests; add coverage as needed.\n",
+    "app.py": "import argparse\n\ndef total(value):\n    return sum(int(part) for part in value.split(','))\n\ndef main():\n    parser = argparse.ArgumentParser(description='Sum comma-separated integers.', epilog='Example: python app.py 1,2,3')\n    parser.add_argument('numbers')\n    args = parser.parse_args()\n    print(total(args.numbers))\n\nif __name__ == '__main__':\n    main()\n",
+    "test_app.py": "import unittest\nfrom app import total\nclass Tests(unittest.TestCase):\n    def test_total(self):\n        self.assertEqual(total('1,2,3'), 6)\nif __name__ == '__main__': unittest.main()\n",
+    "unrelated.py": "UNCHANGED   =    \"format me later\"\n"
+  },
+  "final_files": {
+    "AGENTS.md": "Project instructions: Python standard library only. Run python3 -m unittest discover -v and exercise the CLI when applicable. Keep changes within this application. Do not edit supplied skills or access other fixture cases, the source repository, global skill locations or network services. Do not create commits. Evidence belongs in ../evidence.md, including exact commands, results, decisions and review. Preserve supplied tests; add coverage as needed.\n",
+    "app.py": "import argparse\n\ndef total(value):\n    return sum(int(part) for part in value.split(','))\n\ndef main():\n    parser = argparse.ArgumentParser(description='Sum comma-separated integers.', epilog='Example: python app.py 1,2,3')\n    parser.add_argument('numbers')\n    args = parser.parse_args()\n    try:\n        result = total(args.numbers)\n    except ValueError:\n        parser.error('numbers must be comma-separated integers')\n    print(result)\n\nif __name__ == '__main__':\n    main()\n",
+    "test_app.py": "import subprocess\nimport sys\nimport unittest\nfrom app import total\nclass Tests(unittest.TestCase):\n    def test_total(self):\n        self.assertEqual(total('1,2,3'), 6)\n    def test_cli_valid(self):\n        result = subprocess.run([sys.executable, 'app.py', '1,-2,3'], capture_output=True, text=True)\n        self.assertEqual(result.returncode, 0)\n        self.assertEqual(result.stdout, '2\\n')\n        self.assertEqual(result.stderr, '')\n\n    def test_cli_invalid(self):\n        for value in ('1,,2', '1,x,2'):\n            with self.subTest(value=value):\n                result = subprocess.run([sys.executable, 'app.py', value], capture_output=True, text=True)\n                self.assertEqual(result.returncode, 2)\n                self.assertEqual(result.stdout, '')\n                self.assertIn('numbers must be comma-separated integers', result.stderr)\n                self.assertNotIn('Traceback', result.stderr)\n\nif __name__ == '__main__': unittest.main()\n",
+    "unrelated.py": "UNCHANGED   =    \"format me later\"\n"
+  },
+  "skill_sha256": {
+    "lean-run/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    "lean-run/SKILL.md": "aa344449378b75ac77dfe21eef6fcf38f7a071ce43efe29941d1dd393e1bdc6d"
+  },
+  "evidence": "# Evidence\n\n- Scope: fix CLI crash for malformed comma-separated integers; preserve valid summation and argparse behavior. Delivery: current workspace. Risk LOW; quality STANDARD. Python standard library only. Companion inventory contained only lean-run, so core procedures were performed directly. No delegation was authorized.\n- Working directory for commands: `/tmp/lean-run-final-eval-20261101/case-06/app` (resolved by `pwd` to `/private/tmp/lean-run-final-eval-20261101/case-06/app`). Read `AGENTS.md`, `app.py`, `test_app.py`, `unrelated.py`, and supplied `skills/lean-run/SKILL.md`; `rg --files -g '!__pycache__/**' -g '!*.pyc'`, `ls -la ../skills`, and `git status --short` showed the application files untracked in this fixture.\n- Before change: `python3 app.py '1,,2'` produced a ValueError traceback for `int('')`. `python3 -m unittest discover -v` passed the one supplied test.\n- Decision: catch `ValueError` at the CLI boundary and call `parser.error('numbers must be comma-separated integers')`. The `total` function remains unchanged. Added subprocess coverage for valid signed numbers, empty elements, and non-integers, checking output and exit status.\n- After change: `python3 -m unittest discover -v` passed all 3 tests. `python3 app.py '1,2,3'` printed `6` with success. `python3 app.py '1,,2'; printf 'exit=%s\\n' \"$?\"` and `python3 app.py '1,x,2'; printf 'exit=%s\\n' \"$?\"` each printed argparse usage and the descriptive error, no traceback, and `exit=2`. `python3 app.py; printf 'exit=%s\\n' \"$?\"` printed the required-argument error and `exit=2`. These are local live CLI executions, with no simulated boundaries.\n- Review: inspected complete current contents using `git diff --no-index /dev/null app.py` and `git diff --no-index /dev/null test_app.py` because files are untracked. Acceptance self-check: valid result preserved; malformed input returns conventional argparse error without traceback; supplied test preserved; no unrelated edits. No findings or rework. The `git diff --no-index` commands return 1 when differences exist, as expected.\n",
+  "independent_checks": [
+    {
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "cwd": "/private/tmp/lean-run-final-eval-20261101/case-06/app",
+      "exit": 0,
+      "stdout": "",
+      "stderr": "test_cli_invalid (test_app.Tests.test_cli_invalid) ... ok\ntest_cli_valid (test_app.Tests.test_cli_valid) ... ok\ntest_total (test_app.Tests.test_total) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.102s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "app.py",
+        "1,2,3"
+      ],
+      "cwd": "/private/tmp/lean-run-final-eval-20261101/case-06/app",
+      "exit": 0,
+      "stdout": "6\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "app.py",
+        "0,+2,-3"
+      ],
+      "cwd": "/private/tmp/lean-run-final-eval-20261101/case-06/app",
+      "exit": 0,
+      "stdout": "-1\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "app.py",
+        "1,,2"
+      ],
+      "cwd": "/private/tmp/lean-run-final-eval-20261101/case-06/app",
+      "exit": 2,
+      "stdout": "",
+      "stderr": "usage: app.py [-h] numbers\napp.py: error: numbers must be comma-separated integers\n"
+    },
+    {
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "app.py",
+        ""
+      ],
+      "cwd": "/private/tmp/lean-run-final-eval-20261101/case-06/app",
+      "exit": 2,
+      "stdout": "",
+      "stderr": "usage: app.py [-h] numbers\napp.py: error: numbers must be comma-separated integers\n"
+    },
+    {
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "app.py",
+        "1,no,2"
+      ],
+      "cwd": "/private/tmp/lean-run-final-eval-20261101/case-06/app",
+      "exit": 2,
+      "stdout": "",
+      "stderr": "usage: app.py [-h] numbers\napp.py: error: numbers must be comma-separated integers\n"
+    },
+    {
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "app.py",
+        ",1"
+      ],
+      "cwd": "/private/tmp/lean-run-final-eval-20261101/case-06/app",
+      "exit": 2,
+      "stdout": "",
+      "stderr": "usage: app.py [-h] numbers\napp.py: error: numbers must be comma-separated integers\n"
+    },
+    {
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "app.py",
+        "1,"
+      ],
+      "cwd": "/private/tmp/lean-run-final-eval-20261101/case-06/app",
+      "exit": 2,
+      "stdout": "",
+      "stderr": "usage: app.py [-h] numbers\napp.py: error: numbers must be comma-separated integers\n"
+    }
+  ]
+}
