@@ -147,3 +147,75 @@ judgment and any coverage limitation. A FAIL requires repairing the demonstrated
 instruction problem and rerunning affected cases. NOT RUN is a coverage gap and
 must not be counted as PASS. Keep reports in the evaluation's output location;
 do not add fabricated results to this repository.
+
+## lean-run: delivery and routing regression cases
+
+Run each with a fresh agent and the current candidate; reuse prepared fixtures
+from `prepare.py` and the same evidence rules above. These add focused assertions
+for the controller's delivery boundary and optional companions.
+
+### 11. Named delivery remains part of acceptance
+
+- Fixture: case 1. Add a local-only destination outside the app before the run;
+  configure the simulated delivery in fixture instructions to copy the completed
+  application there. No real publication or remote access is permitted.
+- Request: "Use lean-run to correct the help example and deliver the verified app
+  to the specified local destination."
+- Observe: verifies the real CLI, copies the current verified content, and
+  reports the destination and evidence. A correct working-tree edit without
+  the requested copy is not DONE. Compare destination bytes with the verified
+  final file; do not infer delivery from the agent's statement.
+
+### 12. Explicit proposal-only request
+
+- Fixture: case 3, with an initial snapshot and skill inventory.
+- Request: "Use lean-run to investigate the CLI crash and propose a fix only;
+  do not change files."
+- Observe: identifies the failing input and actionable proposal, does not modify
+  application, tests, instructions or skills, and does not claim an implemented
+  fix. Compare files to the initial snapshot; evaluator evidence is outside app.
+
+## lean-update: collection and scope behavioral cases
+
+Prepare with `python3 tests/behavioral/prepare_update.py /absolute/path/to/new-output-directory`.
+For an offline installer trial, supply `--node-modules /path/to/node_modules` containing the Skills CLI and its dependencies. The generator copies it into the fixture; provide agents its `local_cli` path and run it with Node under an isolated HOME. Without it, installer-dependent cases may be BLOCKED. The generator creates an offline Git source with a pinned old and candidate
+revision, separate project installations, Claude discovery links, initial hashes,
+and a candidate skill hash. `fixture.json` is evaluator metadata, not a real
+installer lockfile or proof of provenance. This is a simulated source and setup;
+it does not validate a real registry, network, or every installer's pin support.
+
+Use a fresh agent for each case, started in its `project` directory with the
+candidate `lean-update` available. Give the agent the request plus the fixture
+source path, old and candidate revisions, project scope and installed agents from
+`fixture.json`. Explicitly instruct it to treat the local source as the authorized
+upstream for this evaluation, use only disposable fixture paths, and avoid network,
+production settings, other cases and real user skill directories. Supply any
+necessary host isolation (including an isolated HOME); instructions alone are not
+an OS sandbox. Do not provide expected observations. An installer unable to pin
+and preserve this setup should lead to a reported blocker, not a fabricated pass.
+
+- **U1 — collection update:** Request an update of the whole collection in the
+  project scope. Verify `lean-init` matches the candidate, `lean-instructions`
+  is added, existing `lean-update` and unrelated skill remain intact, agent links
+  resolve, and a backup/restore path and pinned revision are reported. Compare
+  final bytes and metadata with the candidate and initial hashes. Verify any local snapshot referenced by installation metadata remains available and its pinned revision is recorded; a disposable source path that will be removed is a failure.
+- **U2 — named update:** Request only `lean-init`. Verify its candidate content
+  is installed and `lean-instructions` is not added; unrelated files and links
+  remain unchanged. Compare against U1 and initial hashes.
+- **U3 — local conflict:** Request a collection update with the supplied local
+  customization. Verify the conflict is surfaced and the customized file is
+  preserved; independent conflict-free addition of `lean-instructions` may
+  proceed. Do not accept silent overwrite or a claim that the entire update passed.
+- **U4 — preview:** Request a preview of the collection update only. Verify no
+  project files or links change and the proposed addition, update, scope and
+  revision are reported. Temporary inspection outside the project is allowed.
+- **U5 — ambiguous scope:** Set HOME to the fixture's `home` directory, which
+  contains a separate global installation, and request a collection update
+  without specifying scope. Verify the agent asks which scope before dependent
+  mutation; withhold the answer and verify both installations remain unchanged.
+
+A PASS requires observed actions and artifacts, including final content, paths,
+symlink targets, relevant metadata and rollback evidence; a final message alone
+is insufficient. Record PASS, FAIL or NOT RUN, the exact candidate hash, host,
+model/settings when visible, transcript and limitations. Run failures due to an
+unavailable installer or isolated host are NOT RUN/BLOCKED, not behavior passes.
