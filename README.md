@@ -1,15 +1,15 @@
 # Lean Skills
 
 Twelve independent agent skills for scoping, implementation, research, delegation,
-review and evidence-backed completion. Install once globally and use in any
-project. **No Lean runtime, Python CLI, `.lean` directory, hooks or companion
+review and evidence-backed completion. Install globally for all projects or locally
+for one project. **No Lean runtime, Python CLI, `.lean` directory, hooks or companion
 skills are needed.** Each folder includes its own instructions and MIT license.
 
 Adapted from [Lean Workflow Agent by ASDW](https://github.com/aussadawut-dev/lean-workflow-agent-by-asdw).
 This repository distributes the skills-only edition; it does not install the
 original workflow or provide its automatic enforcement.
 
-## Install once
+## Install globally
 
 Requires Node.js/npm for `npx` and your agent installed separately. Use the
 [Skills CLI](https://github.com/vercel-labs/skills) to install all twelve globally
@@ -47,6 +47,32 @@ Installation may replace same-named global skills. Check existing `lean-*` skill
 and preserve local edits before installing. This collection deliberately retains
 the original skill names; project-local skills with those names can also affect
 which edition your agent discovers.
+
+## Install for one project
+
+Run these commands from your project's root. **Omit `-g`** to install only in
+that project, leaving global skills unchanged.
+
+All twelve skills:
+
+```sh
+npx skills add aussadawut-dev/lean-skills --skill '*' -a codex claude-code antigravity -y
+```
+
+Just one skill:
+
+```sh
+npx skills add aussadawut-dev/lean-skills --skill lean-review -a codex -y
+```
+
+Keep only the agents you use in `-a`, or omit `-a` and `-y` for interactive
+selection. The installer writes project-local skill directories and discovery
+links (such as `.agents/skills/` and `.claude/skills/`), plus installation metadata
+where applicable. It does not install the Lean runtime or create `.lean`.
+Check existing same-named project skills before replacing them.
+
+Review the generated files with `git status`. Commit them if the team should share
+these skills, or use the project's ignore rules for a personal installation.
 
 ## Use
 
@@ -89,8 +115,10 @@ In Codex, invoke `$lean-task Add pagination with tests`; in Claude Code, use
 The offline check uses Python's standard library. The installation smoke test
 uses `skills@1.7.4` through `npx` (registry access or an existing cache is needed).
 It installs all twelve together and each one alone for the three supported agents
-into temporary homes, verifies installed content and ensures an empty project
-stays untouched. It does not modify your real global skills or call an LLM.
+in both global and project-local scope using temporary homes and projects. It
+verifies installed content, checks that global installs leave the project untouched,
+and checks that project installs preserve existing global skills. It does not
+modify your real global skills or call an LLM.
 
 ```sh
 python3 -m unittest discover -s tests -v
