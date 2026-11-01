@@ -26,6 +26,7 @@ Discover which companion skills are actually available and read a selected skill
 | --- | --- |
 | Select a different requested repository | `lean-target` |
 | Discover unknown project commands and conventions | `lean-init` |
+| Create or update repository-root agent instructions when requested | `lean-instructions` |
 | Bound acceptance or resolve material ambiguity | `lean-scope`, `lean-grill` |
 | Answer a technical question that affects implementation | `lean-research` |
 | Implement and verify the agreed behavior | `lean-task` |

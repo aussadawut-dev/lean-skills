@@ -126,6 +126,7 @@ Claude Code ใช้คำอธิบายงานของ Agent หรื�
 | --- | --- |
 | รับผิดชอบงานตั้งแต่การตัดสินใจช่วงแรกจนส่งมอบพร้อมหลักฐาน | [lean-run](skills/lean-run/SKILL.md) |
 | ทำความเข้าใจคำสั่งและแนวทางทำงานของโปรเจกต์ | [lean-init](skills/lean-init/SKILL.md) |
+| สร้างหรืออัปเดต AGENTS.md และ CLAUDE.md ที่ราก repository | [lean-instructions](skills/lean-instructions/SKILL.md) |
 | ทำงานตั้งแต่กำหนดขอบเขตจนทดสอบและตรวจงานเสร็จ | [lean-task](skills/lean-task/SKILL.md) |
 | ระบุว่างานครอบคลุมอะไรและจะตรวจรับอย่างไร | [lean-scope](skills/lean-scope/SKILL.md) |
 | เปรียบเทียบแนวทาง พร้อมแหล่งอ้างอิงและข้อแลกเปลี่ยน | [lean-research](skills/lean-research/SKILL.md) |
