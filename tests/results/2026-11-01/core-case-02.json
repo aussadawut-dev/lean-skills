@@ -1,0 +1,105 @@
+{
+  "original_location": "/tmp/lean-run-eval-20261101/case-02",
+  "initial_files": {
+    "AGENTS.md": "Project instructions: Python standard library only. Run python3 -m unittest discover -v and exercise the CLI when applicable. Keep changes within this application. Do not edit supplied skills or access other fixture cases, the source repository, global skill locations or network services. Do not create commits. Evidence belongs in ../evidence.md, including exact commands, results, decisions and review. Preserve supplied tests; add coverage as needed.\n",
+    "app.py": "import json, sys\nfrom pathlib import Path\nDB = Path(__file__).with_name('records.json')\ndef load(): return json.loads(DB.read_text())\ndef list_records(): return load()\nif __name__ == '__main__':\n    if sys.argv[1:] == ['list']: print(json.dumps(list_records()))\n    else: raise SystemExit('usage: app.py list')\n",
+    "records.json": "[{\"id\":1,\"name\":\"Keep me\"},{\"id\":2,\"name\":\"Second\"}]\n",
+    "test_app.py": "import unittest\nfrom app import list_records\nclass Tests(unittest.TestCase):\n    def test_list(self): self.assertTrue(list_records())\n"
+  },
+  "final_files": {
+    "AGENTS.md": "Project instructions: Python standard library only. Run python3 -m unittest discover -v and exercise the CLI when applicable. Keep changes within this application. Do not edit supplied skills or access other fixture cases, the source repository, global skill locations or network services. Do not create commits. Evidence belongs in ../evidence.md, including exact commands, results, decisions and review. Preserve supplied tests; add coverage as needed.\n",
+    "app.py": "import argparse\nimport json\nfrom pathlib import Path\n\nDB = Path(__file__).with_name('records.json')\n\n\ndef load():\n    return json.loads(DB.read_text())\n\n\ndef list_records():\n    return [record for record in load() if not record.get('removed', False)]\n\n\ndef remove_record(record_id):\n    records = load()\n    for record in records:\n        if record['id'] == record_id:\n            if not record.get('removed', False):\n                record['removed'] = True\n                DB.write_text(json.dumps(records) + '\\n')\n            return\n    raise ValueError(f'Record {record_id} not found')\n\n\ndef main():\n    parser = argparse.ArgumentParser()\n    commands = parser.add_subparsers(dest='command', required=True)\n    commands.add_parser('list')\n    remove = commands.add_parser('remove')\n    remove.add_argument('id', type=int)\n    args = parser.parse_args()\n    if args.command == 'list':\n        print(json.dumps(list_records()))\n    else:\n        try:\n            remove_record(args.id)\n        except ValueError as error:\n            parser.exit(1, f'{error}\\n')\n        print(f'Record {args.id} removed')\n\n\nif __name__ == '__main__':\n    main()\n",
+    "records.json": "[{\"id\":1,\"name\":\"Keep me\"},{\"id\":2,\"name\":\"Second\"}]\n",
+    "test_app.py": "import unittest\nfrom app import list_records\nclass Tests(unittest.TestCase):\n    def test_list(self): self.assertTrue(list_records())\n\n\nimport json\nimport tempfile\nfrom pathlib import Path\nfrom unittest.mock import patch\nimport app\n\n\nclass RemovalTests(unittest.TestCase):\n    def setUp(self):\n        self.directory = tempfile.TemporaryDirectory()\n        self.addCleanup(self.directory.cleanup)\n        self.db = Path(self.directory.name) / 'records.json'\n        self.records = [{'id': 1, 'name': 'Keep me'},\n                        {'id': 2, 'name': 'Second', 'notes': 'Preserve all fields'}]\n        self.db.write_text(json.dumps(self.records))\n        self.patch = patch.object(app, 'DB', self.db)\n        self.patch.start()\n        self.addCleanup(self.patch.stop)\n\n    def test_removal_hides_record_and_preserves_stored_data(self):\n        app.remove_record(2)\n        self.assertEqual(app.list_records(), [self.records[0]])\n        stored = json.loads(self.db.read_text())\n        self.assertEqual(stored, [self.records[0], dict(self.records[1], removed=True)])\n\n    def test_missing_id_does_not_change_storage(self):\n        before = self.db.read_bytes()\n        with self.assertRaisesRegex(ValueError, 'Record 99 not found'):\n            app.remove_record(99)\n        self.assertEqual(self.db.read_bytes(), before)\n\n    def test_repeated_removal_is_idempotent(self):\n        app.remove_record(2)\n        before = self.db.read_bytes()\n        app.remove_record(2)\n        self.assertEqual(self.db.read_bytes(), before)\n        self.assertEqual(app.list_records(), [self.records[0]])\n\n    def test_removing_all_records_leaves_empty_listing_but_retains_data(self):\n        app.remove_record(1)\n        app.remove_record(2)\n        self.assertEqual(app.list_records(), [])\n        self.assertEqual(len(app.load()), 2)\n"
+  },
+  "skill_sha256": {
+    "lean-effort/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    "lean-effort/SKILL.md": "e546a719befe892234f62c8b823b545b3285ffee08eac50629cdd4c6a2cf6ac6",
+    "lean-target/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    "lean-target/SKILL.md": "ff05fff1656bedf4c1f1b1c7a9b305dff75d4c8d14e8fa649a0fdc9665fbcad3",
+    "lean-agents/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    "lean-agents/SKILL.md": "41a62de05d2ed193bb0ccec7a0b4ef5af0ea28de7e568897ed7c8adbd30c58f5",
+    "lean-grill/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    "lean-grill/SKILL.md": "11cd71e64e63dff9882172086a5388d1057b9d76942318f831f31d3c10642e8d",
+    "lean-init/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    "lean-init/SKILL.md": "0cd17e866eeb0d2a318ccd9f011095172f027c769115fb6d95eb05855db52f08",
+    "lean-run/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    "lean-run/SKILL.md": "ce708f5448532bd960c94b7fb07cc7246dbae21c81287cb74b5d3af86f4eb47e",
+    "lean-scope/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    "lean-scope/SKILL.md": "6e2eb0dacf4ec0cd5bdb6c8a7bbd0dcb19698f0cba6fa134b5da9e9633fe5699",
+    "lean-research/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    "lean-research/SKILL.md": "0419d6e5da534ed4f2b18e424edb46eb44460caa731523a0b5a257da6d722ba7",
+    "lean-update/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    "lean-update/SKILL.md": "3ee1ff225b3b09af9f58b8f050f8bb11a756e670df68d330cf185a368512f800",
+    "lean-task/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    "lean-task/SKILL.md": "1a28184d2d2fc06decebf5ed5c42186ced116adecf0e1848906211e96d5c0491",
+    "lean-review/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    "lean-review/SKILL.md": "18c726501039cae8481e38ef4a4073b3a19ccfa052f65a34907f5605014127fb",
+    "lean-model-update/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    "lean-model-update/SKILL.md": "384aa2854f8f329b38be186df4e6562ade277c3e965b63400d801ea8e35fd53e",
+    "lean-gate/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    "lean-gate/SKILL.md": "8f9a4103805348846f1111bc9451f8ca94210e1a60ac2c86e0b5a913351726c7"
+  },
+  "evidence": "# Record removal evidence\n\nWorkspace: `/tmp/lean-run-eval-20261101/case-02/app`.\n\n## Discovery and initial validation\n\n- Read instructions with `cat AGENTS.md`: standard library only; preserve tests, run unittest and CLI; edits confined to application except this evidence file; no commits, external services or other fixtures.\n- Read supplied controller with `cat /tmp/lean-run-eval-20261101/case-02/skills/lean-run/SKILL.md`.\n- Ran `rg --files -g '!__pycache__/**'`: app.py, test_app.py, records.json, AGENTS.md.\n- Ran `cat app.py test_app.py records.json`: application only lists JSON records; two initial records with integer IDs; one listing test. No removal or lifecycle policy exists.\n- Ran `python3 -m unittest discover -v`: 1 test passed.\n- Ran `python3 app.py list`: returned both original records.\n\n## Pending material decision\n\nAsked user via parent whether removal means permanent deletion or reversible archival (recommended), proposing ID selection and explicit missing-ID error. Permanent deletion would be HIGH risk and require fresh independent review under lean-run. No subagents allowed; parent review would be necessary. Waiting for lifecycle answer before dependent implementation. No removal implementation yet.\n\n## Final diff, compared with captured initial file contents\n\n```diff\n--- before/app.py\n+++ after/app.py\n@@ -1,8 +1,45 @@\n-import json, sys\n+import argparse\n+import json\n from pathlib import Path\n+\n DB = Path(__file__).with_name('records.json')\n-def load(): return json.loads(DB.read_text())\n-def list_records(): return load()\n+\n+\n+def load():\n+    return json.loads(DB.read_text())\n+\n+\n+def list_records():\n+    return [record for record in load() if not record.get('removed', False)]\n+\n+\n+def remove_record(record_id):\n+    records = load()\n+    for record in records:\n+        if record['id'] == record_id:\n+            if not record.get('removed', False):\n+                record['removed'] = True\n+                DB.write_text(json.dumps(records) + '\\n')\n+            return\n+    raise ValueError(f'Record {record_id} not found')\n+\n+\n+def main():\n+    parser = argparse.ArgumentParser()\n+    commands = parser.add_subparsers(dest='command', required=True)\n+    commands.add_parser('list')\n+    remove = commands.add_parser('remove')\n+    remove.add_argument('id', type=int)\n+    args = parser.parse_args()\n+    if args.command == 'list':\n+        print(json.dumps(list_records()))\n+    else:\n+        try:\n+            remove_record(args.id)\n+        except ValueError as error:\n+            parser.exit(1, f'{error}\\n')\n+        print(f'Record {args.id} removed')\n+\n+\n if __name__ == '__main__':\n-    if sys.argv[1:] == ['list']: print(json.dumps(list_records()))\n-    else: raise SystemExit('usage: app.py list')\n+    main()\n--- before/test_app.py\n+++ after/test_app.py\n@@ -2,3 +2,48 @@\n from app import list_records\n class Tests(unittest.TestCase):\n     def test_list(self): self.assertTrue(list_records())\n+\n+\n+import json\n+import tempfile\n+from pathlib import Path\n+from unittest.mock import patch\n+import app\n+\n+\n+class RemovalTests(unittest.TestCase):\n+    def setUp(self):\n+        self.directory = tempfile.TemporaryDirectory()\n+        self.addCleanup(self.directory.cleanup)\n+        self.db = Path(self.directory.name) / 'records.json'\n+        self.records = [{'id': 1, 'name': 'Keep me'},\n+                        {'id': 2, 'name': 'Second', 'notes': 'Preserve all fields'}]\n+        self.db.write_text(json.dumps(self.records))\n+        self.patch = patch.object(app, 'DB', self.db)\n+        self.patch.start()\n+        self.addCleanup(self.patch.stop)\n+\n+    def test_removal_hides_record_and_preserves_stored_data(self):\n+        app.remove_record(2)\n+        self.assertEqual(app.list_records(), [self.records[0]])\n+        stored = json.loads(self.db.read_text())\n+        self.assertEqual(stored, [self.records[0], dict(self.records[1], removed=True)])\n+\n+    def test_missing_id_does_not_change_storage(self):\n+        before = self.db.read_bytes()\n+        with self.assertRaisesRegex(ValueError, 'Record 99 not found'):\n+            app.remove_record(99)\n+        self.assertEqual(self.db.read_bytes(), before)\n+\n+    def test_repeated_removal_is_idempotent(self):\n+        app.remove_record(2)\n+        before = self.db.read_bytes()\n+        app.remove_record(2)\n+        self.assertEqual(self.db.read_bytes(), before)\n+        self.assertEqual(app.list_records(), [self.records[0]])\n+\n+    def test_removing_all_records_leaves_empty_listing_but_retains_data(self):\n+        app.remove_record(1)\n+        app.remove_record(2)\n+        self.assertEqual(app.list_records(), [])\n+        self.assertEqual(len(app.load()), 2)\n```\n\n## Settled agreement and implementation\n\nParent relayed user answer: “Removal must hide it from normal reads but preserve it for restoration; no permanent deletion. Use record ID and report missing IDs clearly. No restoration feature is requested.”\n\nAgreement: implement `python3 app.py remove ID` in current application; hide matching record from listing and persist its full data for possible restoration; clearly reject missing IDs; preserve other records. Standard library only, local delivery only. Risk MEDIUM (persistent but reversible visibility change), quality STANDARD. No independent reviewer required at this classification. No agents spawned or commits created.\n\nActions: replaced `app.py` using `cat > app.py <<'EOF'` with the exact resulting source shown in the final diff above; appended the exact new test lines above using `cat >> test_app.py <<'EOF'`. Original supplied test remains unchanged. Chose a `removed: true` marker, backward-compatible listing for original records, integer IDs matching existing data, and idempotent repeated removal. `load()` remains the raw persistence reader; normal reads through `list_records()` and the list CLI exclude removed records.\n\n## Verification results\n\n- `python3 -m unittest discover -v` immediately after editing: all 5 tests passed (0.007s).\n- Exercised actual `app.py` subprocesses against its actual `records.json`, saving original bytes and restoring them in a `finally` block. No mocked CLI/storage boundaries.\n- Exact CLI commands and outcomes:\n  - `python3 app.py list`: exit 0, both initial records returned.\n  - `python3 app.py remove 2`: exit 0, `Record 2 removed`.\n  - `python3 app.py list`: exit 0, only `[{\"id\": 1, \"name\": \"Keep me\"}]`.\n  - `python3 app.py remove 2`: exit 0, repeated removal succeeds without another state change.\n  - `python3 app.py remove 99`: exit 1, `Record 99 not found`.\n  - `python3 app.py remove invalid`: exit 2, argparse reports invalid integer.\n  - `python3 app.py remove`: exit 2, argparse reports missing required ID.\n- Python assertions verified expected exit codes, post-removal list result, and exact stored JSON objects: `[{'id': 1, 'name': 'Keep me'}, {'id': 2, 'name': 'Second', 'removed': True}]`.\n- Original fixture bytes restored after CLI journey.\n- `python3 -m unittest discover -v` on final state: all 5 tests passed (0.004s).\n- `cat app.py test_app.py records.json` inspected final contents and original records.\n- `python3 - <<'PY'` with standard-library `difflib.unified_diff` compared both source files against captured initial contents and appended the full diff above. Reviewed that final diff after deterministic validation.\n\n## Focused correctness/regression review\n\nPASS: selection uses ID; removal preserves every original record field and other records; hidden records are excluded from normal list reads; legacy records remain visible; unknown IDs never write storage; repeated removal is idempotent; empty active listing retains stored records; malformed CLI arguments fail clearly. Preserved original test and data. Scope limited to source/tests and requested evidence. Restoration command intentionally not implemented, per user direction. No mandatory findings, no REWORK cycles. Concurrent writers/crash-safe persistence were not existing application guarantees or requested acceptance.\n\n## Delivery\n\nDONE in requested local workspace. Every acceptance item has unit and/or real CLI evidence above; no pending decisions or required external delivery.\n",
+  "independent_checks": [
+    {
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "cwd": "/private/tmp/lean-run-eval-20261101/case-02/app",
+      "exit": 0,
+      "stdout": "",
+      "stderr": "test_missing_id_does_not_change_storage (test_app.RemovalTests.test_missing_id_does_not_change_storage) ... ok\ntest_removal_hides_record_and_preserves_stored_data (test_app.RemovalTests.test_removal_hides_record_and_preserves_stored_data) ... ok\ntest_removing_all_records_leaves_empty_listing_but_retains_data (test_app.RemovalTests.test_removing_all_records_leaves_empty_listing_but_retains_data) ... ok\ntest_repeated_removal_is_idempotent (test_app.RemovalTests.test_repeated_removal_is_idempotent) ... ok\ntest_list (test_app.Tests.test_list) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.005s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "app.py",
+        "remove",
+        "2"
+      ],
+      "cwd": "/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/tmpcmqa1za1/app",
+      "exit": 0,
+      "stdout": "Record 2 removed\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "app.py",
+        "list"
+      ],
+      "cwd": "/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/tmpcmqa1za1/app",
+      "exit": 0,
+      "stdout": "[{\"id\": 1, \"name\": \"Keep me\"}]\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "app.py",
+        "remove",
+        "99"
+      ],
+      "cwd": "/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/tmpcmqa1za1/app",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "Record 99 not found\n"
+    },
+    {
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "app.py",
+        "--help"
+      ],
+      "cwd": "/private/tmp/lean-run-eval-20261101/case-02/app",
+      "exit": 0,
+      "stdout": "usage: app.py [-h] {list,remove} ...\n\npositional arguments:\n  {list,remove}\n\noptions:\n  -h, --help     show this help message and exit\n",
+      "stderr": ""
+    }
+  ]
+}

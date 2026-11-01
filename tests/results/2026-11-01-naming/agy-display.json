@@ -1,0 +1,177 @@
+{
+  "provider": "agy",
+  "label": "naming_probe - gemini-3.8-flash-low|low",
+  "original_directory": "/tmp/lean-naming-live-20261101/agy-display",
+  "completion": {
+    "exit": 0,
+    "timeout": false,
+    "elapsed_seconds": 19.43
+  },
+  "dispatch": {
+    "argv": [
+      "agy",
+      "--model",
+      "gemini-3.8-flash-low",
+      "--effort",
+      "low",
+      "--print",
+      "This is an authorized harmless subagent literal-name compatibility test. Spawn a real child agent with the exact name \"naming_probe - gemini-3.8-flash-low|low\", preserving spaces, hyphens and the vertical bar. Set invoke_subagent Role to the exact full label \"naming_probe - gemini-3.8-flash-low|low\" as well as using that TypeName; do not shorten Role. Request the current model through the actual supported selector and report that selector separately from the literal test label. Use invoke_subagent and, if needed, define_subagent to define that exact name with instructions to return exactly NAMING_CHILD_OK and use no tools. Use the current model and low effort if supported; do not invent tool parameters. Wait for the real child result using available tools. Do not run shell commands, change files, read credentials or access other services. Finally report actual tool name/arguments, returned child ID/name and child result. If the exact name is rejected, report the actual error; do not silently substitute or only simulate the spawn.",
+      "--output-format",
+      "stream-json",
+      "--print-timeout",
+      "100s",
+      "--log-file",
+      "/tmp/lean-naming-live-20261101/agy-display/runtime.log"
+    ],
+    "cwd": "/tmp/lean-naming-live-20261101/agy-display",
+    "metered_credentials_removed": true
+  },
+  "native_events": [
+    {
+      "event": "init",
+      "conversation_id": "50669b31-7f4d-4b60-ac8c-a6048ea52d1c",
+      "init": {
+        "model": "gemini-3.8-flash-low",
+        "cwd": "/private/tmp/lean-naming-live-20261101/agy-display",
+        "tools": [
+          "ask_custom_permission",
+          "ask_permission",
+          "ask_question",
+          "browser_click_element",
+          "browser_drag_pixel_to_pixel",
+          "browser_get_dom",
+          "browser_get_network_request",
+          "browser_input",
+          "browser_list_network_requests",
+          "browser_mouse_down",
+          "browser_mouse_up",
+          "browser_move_mouse",
+          "browser_press_key",
+          "browser_refresh_page",
+          "browser_resize_window",
+          "browser_scroll",
+          "browser_scroll_dom",
+          "browser_select_option",
+          "browser_subagent",
+          "call_mcp_tool",
+          "capture_browser_console_logs",
+          "capture_browser_screenshot",
+          "click_browser_pixel",
+          "command_status",
+          "define_subagent",
+          "delete_knowledge",
+          "execute_browser_javascript",
+          "find_by_name",
+          "finish",
+          "generate_image",
+          "grep_search",
+          "invoke_subagent",
+          "list_browser_pages",
+          "list_dir",
+          "list_permissions",
+          "list_plugin_accounts",
+          "list_resources",
+          "manage_inbox",
+          "manage_subagents",
+          "manage_task",
+          "multi_replace_file_content",
+          "notebook_edit",
+          "notebook_execution",
+          "open_browser_url",
+          "read_browser_page",
+          "read_resource",
+          "read_url_content",
+          "replace_file_content",
+          "run_command",
+          "run_workflow",
+          "schedule",
+          "search_marketplace",
+          "search_web",
+          "sed_file",
+          "send_command_input",
+          "send_message",
+          "view_file",
+          "wait",
+          "wait_5_seconds",
+          "write_to_file"
+        ],
+        "permission_mode": "request-review"
+      }
+    },
+    {
+      "event": "step_update",
+      "step_update": {
+        "conversation_id": "50669b31-7f4d-4b60-ac8c-a6048ea52d1c",
+        "step_index": 2,
+        "state": "ACTIVE",
+        "step_type": "tool",
+        "tool_name": "invoke_subagent",
+        "tool_info": {
+          "name": "invoke_subagent",
+          "parameters": {
+            "Role": "naming_probe - gemini-3.8-flash-low|low",
+            "TypeName": "naming_probe - gemini-3.8-flash-low|low"
+          }
+        }
+      }
+    },
+    {
+      "event": "step_update",
+      "step_update": {
+        "conversation_id": "50669b31-7f4d-4b60-ac8c-a6048ea52d1c",
+        "step_index": 2,
+        "state": "DONE",
+        "step_type": "subagent",
+        "tool_name": "invoke_subagent",
+        "duration_seconds": 0.14148,
+        "subagent_info": {
+          "subagents": [
+            {
+              "type_name": "naming_probe - gemini-3.8-flash-low|low",
+              "role": "naming_probe - gemini-3.8-flash-low|low",
+              "initial_prompt": "Please reply with exactly NAMING_CHILD_OK and use no tools.",
+              "conversation_id": "fc1b8f88-c0e5-4b4d-b314-ede1a5cf28b2",
+              "log_uri": "file:///Users/x10/.gemini/antigravity-cli/brain/fc1b8f88-c0e5-4b4d-b314-ede1a5cf28b2/.system_generated/logs/transcript.jsonl",
+              "workspace_uris": [
+                "file:///private/tmp/lean-naming-live-20261101/agy-display"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "event": "result",
+      "result": {
+        "conversation_id": "50669b31-7f4d-4b60-ac8c-a6048ea52d1c",
+        "status": "SUCCESS",
+        "response": "### Subagent Literal-Name Compatibility Test Report\n\n- **Tool Name**: `invoke_subagent`\n- **Arguments Used**:\n  - `TypeName`: `\"naming_probe - gemini-3.8-flash-low|low\"`\n  - `Role`: `\"naming_probe - gemini-3.8-flash-low|low\"`\n  - `Model`: `\"inherit\"` (Supported selector used to inherit the active session model, distinct from the literal test label)\n  - `Prompt`: `\"Please reply with exactly NAMING_CHILD_OK and use no tools.\"`\n- **Returned Child ID**: `fc1b8f88-c0e5-4b4d-b314-ede1a5cf28b2`\n- **Child Name**: `naming_probe - gemini-3.8-flash-low|low`\n- **Spawn Status**: Succeeded without requiring fallback definition or renaming. Awaiting child message delivery via reactive wakeup.\n### Subagent Literal-Name Compatibility Test Results\n\n- **Tool Name**: `invoke_subagent`\n- **Arguments Used**:\n  - `TypeName`: `\"naming_probe - gemini-3.8-flash-low|low\"`\n  - `Role`: `\"naming_probe - gemini-3.8-flash-low|low\"`\n  - `Model`: `\"inherit\"` (actual supported selector used to request the current model/effort setting, reported separately from the literal label)\n  - `Prompt`: `\"Please reply with exactly NAMING_CHILD_OK and use no tools.\"`\n- **Returned Child ID**: `fc1b8f88-c0e5-4b4d-b314-ede1a5cf28b2`\n- **Target Child Name**: `naming_probe - gemini-3.8-flash-low|low`\n- **Child Result**: `NAMING_CHILD_OK`\n",
+        "duration_seconds": 13.102455,
+        "num_turns": 1,
+        "usage": {
+          "input_tokens": 22099,
+          "output_tokens": 501,
+          "thinking_tokens": 0,
+          "cache_read_tokens": 0,
+          "total_tokens": 22600
+        }
+      }
+    }
+  ],
+  "child_final_responses": [
+    {
+      "type": "PLANNER_RESPONSE",
+      "status": "DONE",
+      "content": "NAMING_CHILD_OK"
+    }
+  ],
+  "verification": {
+    "actual_child_completed": true,
+    "child_id": "fc1b8f88-c0e5-4b4d-b314-ede1a5cf28b2",
+    "exact_display_field": true,
+    "full_type_identifier": true,
+    "characters_preserved": true,
+    "desktop_screenshot_checked": false
+  },
+  "agent_definition": "---\nname: \"naming_probe - gemini-3.8-flash-low|low\"\ndescription: \"Literal-name test worker; return NAMING_CHILD_OK.\"\nmodel: inherit\nmainAgent: true\nsubagent: true\ntools: []\n---\nReturn exactly NAMING_CHILD_OK. Do not use tools or delegate.\n"
+}
