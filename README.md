@@ -8,6 +8,8 @@ Install all of them or pick just one. **No Lean runtime or `.lean` directory is 
 Works with **Codex, Claude Code and Antigravity** through the
 [Skills CLI](https://github.com/vercel-labs/skills).
 
+[Thai usage guide and flow mapping](docs/guide.th.md)
+
 ## Quick start
 
 You need Node.js/npm (`npx`) and your coding agent installed.

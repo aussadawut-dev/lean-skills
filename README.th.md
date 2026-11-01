@@ -8,6 +8,8 @@
 ใช้กับ **Codex, Claude Code และ Antigravity** ผ่าน
 [Skills CLI](https://github.com/vercel-labs/skills)
 
+[คู่มือการใช้งานและ mapping flow](docs/guide.th.md)
+
 ## เริ่มต้นใช้งาน
 
 เตรียม Node.js/npm เพื่อใช้คำสั่ง `npx` และติดตั้ง coding agent ที่ต้องการใช้งานก่อน
