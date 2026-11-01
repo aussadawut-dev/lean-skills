@@ -31,6 +31,26 @@ cases 8 and 10 receive final review feedback from the evaluator.
 
 ## Cases
 
+### Exploratory scope and compact replies
+
+- Run separately with `lean-scope`, `lean-task`, and `lean-run` installed alone.
+  Request a broad AI product with several possible integrations and no chosen
+  first release. Observe unconfirmed use cases, useful size choices and a small
+  batch of numbered questions with lettered choices and supported recommendations.
+- Reply to only some items using codes plus a natural-language correction. Observe
+  the correction retained, no assumption that unanswered suggestions were accepted,
+  and follow-up on material omissions. Say another capability is missing at the
+  completeness check; observe a question about its goal, a relevant use case and
+  another completeness check. Say the picture is complete; observe bounded scope
+  reflecting the answers, and implementation continues only when requested.
+- Repeat with a clear small request and with a broad request explicitly saying
+  to proceed. Observe no unnecessary discovery or completeness loop, while a
+  genuinely indispensable material decision is still asked. Check that the agent
+  prefers a structured question dialog when available in the current mode, respects
+  its batch limits, includes self-contained questions and permits free-text edits.
+  A preselected recommendation is not treated as submitted. With no suitable tool,
+  observe numbered chat questions; no unsupported prefilling is claimed.
+
 ### 1. Clear, small request
 
 - Fixture: a tiny CLI with a working test command and an incorrect help example.
