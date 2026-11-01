@@ -78,6 +78,19 @@ Ask for the skill by name, or use your agent's invocation syntax:
 The agent can also select a skill from its description. You do not need to run
 `lean-init` first or install any companion skill.
 
+For a broad or unclear request, `lean-run`, `lean-task` and `lean-scope` can
+automatically explore the goal with example use cases, work-size choices and
+small batches of questions before settling scope. Questions use numbered items
+and lettered choices, with a suggested reply such as `1a 2b` where appropriate;
+you can also answer in your own words. Suggestions are not accepted merely by
+leaving an item unanswered. Before completing exploratory scope, the agent asks
+what is missing and explores additions. Small or clear requests, and instructions
+to proceed, skip unnecessary rounds; indispensable decisions can still need an
+answer. Structured question dialogs are preferred when the current host and mode support
+them; each question includes enough context and allows free-text corrections.
+Preselected recommendations still require submission. Otherwise the agent uses
+numbered chat questions with copyable replies; chat prefilling depends on the host.
+
 ### One request through delivery
 
 Use `lean-run` as the entry point when you want the agent to own the whole task:
