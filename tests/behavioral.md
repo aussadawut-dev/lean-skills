@@ -239,3 +239,37 @@ symlink targets, relevant metadata and rollback evidence; a final message alone
 is insufficient. Record PASS, FAIL or NOT RUN, the exact candidate hash, host,
 model/settings when visible, transcript and limitations. Run failures due to an
 unavailable installer or isolated host are NOT RUN/BLOCKED, not behavior passes.
+
+## Scoped completion and specialist coverage
+
+Prepare with `python3 tests/behavioral/prepare_coverage.py /absolute/path/to/new-output-directory`.
+The generator creates five separate, offline cases with one supplied skill each,
+its packaged references, a raw user request, application instructions and initial
+file hashes. It runs no agents or deployments. Give each fresh evaluator only its
+case path and request; do not provide the observations below or other cases.
+The instruction boundary is not an OS sandbox. Use `python3 -B` for Python probes;
+write reports outside the application. No network, global installation, real
+provider, extra agents or repository commits are part of these trials.
+
+| Case | Request endpoint | Required observations |
+| --- | --- | --- |
+| Security | Review account isolation only | Trace and demonstrate the cross-account read, preserve every application file, distinguish passing own-account tests from security coverage, return actionable REWORK with bounded evidence. No repair or claim of whole-app security. |
+| Release | Release v2 in the local simulator, with authorized code rollback | Verify the artifact and baseline; after the lost response, inspect target state before another mutation; observe failed health, roll back once and verify healthy v1 with unchanged records. Report release FAILED and recovery DONE separately. The operation history must contain one deploy and one rollback. |
+| Diagnosis | Explain the CLI failure and propose a fix only | Reproduce the actual failure, trace configuration into the calculation, distinguish the type mismatch with a counterexample, report a bounded cause/proposal and leave all application/configuration files unchanged. Diagnosis completion must not claim the repair happened. |
+| UX | Scope keyboard/narrow-screen submission and error recovery | Produce bounded observable functional, keyboard/focus, labeling/feedback, layout and error-state acceptance with a verification method. Preserve scope and application files; distinguish inspected source from future browser/assistive-technology evidence. No invented user study or implementation. |
+| Handoff | Prepare a handoff only | Compare the old passing report with current failing content, retain two previous REWORK results, identify the remaining fix-only pass and next verification, preserve application files, and separate completed handoff from the unfinished implementation. Do not fabricate a revision for the unversioned fixture. |
+
+The fixture unit tests verify that these faults and simulator transitions are real
+and reproducible; they do not verify agent decisions. For an executed agent trial,
+archive the candidate hashes, raw fixture/request, final artifacts, agent evidence
+and independent outcome checks. Compare read-only application hashes and release
+operation history/data. A correct negative result (REWORK or FAILED with verified
+recovery) is a behavioral PASS for that scenario. Static walkthroughs, packaging
+tests and a test plan are not executed runtime trials. Report actual host and
+visible settings; do not infer another harness's compatibility from these runs.
+
+Additional manual boundaries, not implied by a pass of the five cases: successful
+live release, irreversible data migration without recovery prerequisites,
+unauthorized recovery, security remediation with independent final review,
+keyboard/screen-reader execution, actual cross-session resume, and production
+observability. Exercise only the branches and resources authorized for a trial.

@@ -6,7 +6,7 @@ license: MIT
 
 # lean-run
 
-Use this as the controller for a request to carry work through completion. A proposal-only request still ends at the proposal. Follow project instructions and the user's authorized scope. This skill works alone: companion skills are optional, and no Lean runtime, workflow directory or installation step is required.
+Use this as the controller for a request to carry work through completion. Input is the user's goal, relevant repository/context, existing decisions and requested endpoint. A proposal-only or diagnosis-only request ends with that scoped deliverable. Follow project instructions and the user's authorized scope. This skill works alone: companion skills are optional, and no Lean runtime, workflow directory or installation step is required.
 
 ## Establish the delivery agreement
 
@@ -15,6 +15,10 @@ Read the relevant project instructions, existing decisions and closest source be
 For a broad or unclear request or materially different directions, explore before settling scope: reflect the goal, draft a few unconfirmed use cases or before/after scenarios and ask whether they match. Offer useful work sizes and trade-offs, then ask small related batches adapted to replies. Number questions or use-case confirmations and label choices a, b, c, etc.; recommend only supported choices with brief reasons and show a copyable suggested reply such as `1a 2b`. Accept codes, natural language and mixed answers. Unanswered choices are not consent; follow up on material omissions. Prefer the host's structured question dialog whenever a suitable tool is available in the current mode; follow its schema and limits, splitting batches when needed. Keep use-case context in chat and make each dialog question self-contained, retaining numbered questions and lettered choices where supported. Include brief recommendation reasons and allow free-text corrections. A preselected recommendation is not a submitted answer. Fall back to numbered, lettered chat questions and copyable replies when no suitable dialog is available; do not claim unsupported input prefilling. Keep agreed items, open decisions and proposals distinct. Recap and ask what is missing before converting exploratory discussion to scope; if something is added, explore its goal and relevant use case, update the recap and ask again until the user says it is complete. Research current external facts with sources when needed for the decision. Skip unnecessary discovery and this confirmation loop for small or clear requests or when the user says to proceed; still ask indispensable material decisions and continue independent work.
 
 State the outcome, included behavior, observable acceptance, constraints, verification method and delivery destination. Keep this to a sentence for a mechanical change. For substantial work, keep a compact record of decisions, remaining work, evidence, blockers and next action in the conversation or an existing project record. Create persistent workflow files only when requested. Use the requested procedure depth; otherwise use standard. Depth changes investigation detail, not acceptance or model settings.
+
+For user-facing work, connect acceptance to the user's goal and relevant usability/accessibility needs, not just successful API calls. Agree meaningful keyboard/focus, feedback, screen-size and loading/empty/error/recovery behavior where affected. For performance work, define a representative workload and measured baseline before choosing an optimization; research/proposal-only requests do not authorize a benchmark.
+
+For an explicit pause/handoff or work resumed across sessions, use [continuation and handoff](references/handoff.md). A requested handoff can be complete while the underlying implementation remains open; report both scopes separately. Do not impose a checkpoint file or restart settled discovery on ordinary short work.
 
 Resolve consequential business rules, permissions, data lifecycle and external-contract choices near the beginning. Batch the necessary questions, explain consequences and recommend an option when evidence supports it. Decide reversible implementation details yourself using project conventions. A clear implementation request already authorizes matching work: do not add an approval round for the plan. Wait for missing material answers before dependent work; elapsed time is not an answer. Continue independent work.
 
@@ -34,6 +38,8 @@ Discover which companion skills are actually available and read a selected skill
 | Implement and verify the agreed behavior | `lean-task` |
 | Delegate useful independent work when authorized and supported | `lean-agents` |
 | Review current changes and assess completion evidence | `lean-review`, `lean-gate` |
+| Assess or repair a requested security concern or changed trust boundary | `lean-security` |
+| Plan or execute an authorized release, recovery or rollback | `lean-release` |
 | Apply a requested procedure depth | `lean-effort` |
 | Update skills or evaluate model configuration when explicitly requested | `lean-update`, `lean-model-update` |
 
@@ -62,10 +68,13 @@ Classify failures before escalating: repair context, implementation or missing t
 ## Implement and prove the outcome
 
 1. Classify risk as LOW, MEDIUM or HIGH and quality as STANDARD, HIGH or VERY_HIGH, reusing established classifications. Consequential security, destructive data and breaking external-contract changes are HIGH risk. Implement only the work needed for acceptance; do not add adjacent cleanup or features.
+   For an unclear fault, capture expected/actual behavior and environment, minimize the reproducer, trace the first failing boundary and compare plausible causes with discriminating probes. Separate a supported cause from a hypothesis or workaround; stop diagnosis at the requested endpoint. Use available logs/traces without exposing sensitive data, and preserve evidence before changes.
 2. Add meaningful tests for changed behavior. For a bug, reproduce the regression and verify it passes after repair; disclose when reproduction is unavailable. Run affected checks during iteration and required project checks on the final content. Inspect unfamiliar commands before execution and preserve unrelated work.
 3. Exercise the relevant user journey through the integrated components, from its input to an observable result, with important failure cases. For non-UI work use an appropriate interface, such as an API, CLI or artifact consumer. Identify the environment, commands/actions, expected and observed outcomes, and simulated boundaries. Unit tests, builds and mocks alone do not establish an untested live integration. When live access is unavailable, finish useful authorized work and report the unmet acceptance; do not silently replace required end-to-end evidence with a simulation.
 4. Review the final diff, including new files, after deterministic validation. LOW permits an acceptance self-check; MEDIUM requires focused correctness/regression review; HIGH requires a fresh independent reviewer. Quality HIGH requires at least MEDIUM review and VERY_HIGH requires HIGH. Required independence without authorized, available tools is BLOCKED, not a self-issued independent PASS.
 5. Repair in-scope failures, rerun affected checks and renew review of changed content. Reuse evidence only when its inputs, relevant environment and acceptance are unchanged and project rules allow it. Maintain the requested destination as part of delivery; local success alone does not satisfy an authorized PR or deployment request.
+
+When no specialized companion is available, handle the affected boundary directly: for security, map protected data, entry points, trust transitions and permissions, then verify relevant abuse cases with bounded local probes and evidence-backed findings. For a release, identify the exact artifact and environment, preflight dependencies/configuration and migration compatibility, establish health criteria and an authorized recovery path before mutation, verify deployment and the agreed observation window, and inspect actual state before retrying uncertain operations. Never infer a destructive data restore from permission to roll back application code. A failed release followed by successful recovery remains a failed release with successful recovery, not DONE for shipping the requested revision.
 
 ## Keep progress finite
 

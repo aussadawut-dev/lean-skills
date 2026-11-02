@@ -2,7 +2,7 @@
 
 **English** | [ภาษาไทย](README.th.md)
 
-14 independent skills that help coding agents plan, build, test and review work.
+16 independent skills that help coding agents plan, build, test and review work.
 Install all of them or pick just one. **No Lean runtime or `.lean` directory is required.**
 
 Works with **Codex, Claude Code and Antigravity** through the
@@ -47,7 +47,7 @@ Add `-g` to make this global. Every skill works independently.
 ### Adjust the command
 
 - Keep only the agents you use after `-a`.
-- `--skill '*'` selects all 14 skills; keep the quotes around `'*'`.
+- `--skill '*'` selects all 16 skills; keep the quotes around `'*'`.
 - `-y` skips confirmation prompts. Omit both `-a` and `-y` to choose agents interactively.
 - To list available skills without installing, run:
 
@@ -116,6 +116,34 @@ DONE requires current evidence for all mandatory conditions; BLOCKED identifies
 missing prerequisites; FAILED identifies unresolved demonstrated failures. Simulated
 integrations and untested boundaries must be disclosed.
 
+### Complete within the requested scope
+
+Each skill defines its input, endpoint, evidence and incomplete-result handling.
+A completed discovery, diagnosis, scope, review or handoff is a useful deliverable
+in its own right. It does not claim that an unrequested implementation or release
+has happened. Results name the assessed content/environment, observations, limits
+and next action. Missing prerequisites are `BLOCKED`; demonstrated unresolved
+action failures are `FAILED`. Planning uses `READY` (or explicit reversible
+assumptions), review uses `PASS`/`REWORK`, and completed authorized actions use
+`DONE`. These labels describe the stated scope, not a guarantee about the entire
+project. A release that fails but is successfully rolled back reports both outcomes.
+
+The existing procedures now cover structured diagnosis in `lean-task`, product
+and accessibility acceptance in `lean-scope`, focused UI checks in implementation
+and review, and cross-session continuation in `lean-run`/`lean-agents`. Read the
+packaged references only for those modes; each ships with its own skill and has
+no dependency on a sibling installation. A handoff records decisions, exact work
+state, evidence freshness, pending operations and repair counts. Persistent
+checkpoints remain opt-in or follow an existing project record.
+
+Use `lean-security` for a bounded security assessment or authorized remediation,
+and `lean-release` for release/recovery planning or authorized execution. These
+are optional specialists, not mandatory audits or deployment steps for every
+task. Security findings need traced evidence; releases need the exact artifact,
+target health and relevant migration/recovery checks. Performance decisions can
+use `lean-research` with a defined workload and measured baseline when a probe is
+authorized; the collection does not start benchmarks automatically.
+
 ### Models for delegated work
 
 When delegation is authorized and useful, the controller chooses model and
@@ -146,13 +174,15 @@ fallback or model configuration update is included.
 | Own a request from initial decisions through verified delivery | [lean-run](skills/lean-run/SKILL.md) |
 | Understand a project's commands and working conventions | [lean-init](skills/lean-init/SKILL.md) |
 | Create or update repository-root AGENTS.md and CLAUDE.md instructions | [lean-instructions](skills/lean-instructions/SKILL.md) |
-| Take a task from scope to tested, reviewed completion | [lean-task](skills/lean-task/SKILL.md) |
+| Diagnose a fault or implement a task through tested, reviewed completion | [lean-task](skills/lean-task/SKILL.md) |
 | Define what is included and how to verify it | [lean-scope](skills/lean-scope/SKILL.md) |
 | Compare approaches with sources and trade-offs | [lean-research](skills/lean-research/SKILL.md) |
 | Find gaps in a requirement or plan before coding | [lean-grill](skills/lean-grill/SKILL.md) |
 | Delegate work to available agents | [lean-agents](skills/lean-agents/SKILL.md) |
 | Review changes for problems and regressions | [lean-review](skills/lean-review/SKILL.md) |
 | Check the evidence before calling a task done | [lean-gate](skills/lean-gate/SKILL.md) |
+| Assess a security boundary and verify authorized repairs | [lean-security](skills/lean-security/SKILL.md) |
+| Plan or execute a release or recovery with verified outcomes | [lean-release](skills/lean-release/SKILL.md) |
 | Set how thoroughly to follow a procedure | [lean-effort](skills/lean-effort/SKILL.md) |
 | Evaluate model choices and propose a configuration update | [lean-model-update](skills/lean-model-update/SKILL.md) |
 | Select or clone another application repository | [lean-target](skills/lean-target/SKILL.md) |
@@ -179,6 +209,12 @@ trials. Claude Code and Antigravity additionally have
 spaces, hyphens and `|`; their full end-to-end workflow suite is not yet verified. The report distinguishes requested model
 settings from backend information the runtime actually exposed.
 
+The [2026-11-02 scoped-completion trials](tests/results/2026-11-02-scope-completion/README.md)
+record five fresh Codex runs for security review, simulated release/recovery,
+diagnosis, UX scope and handoff, plus packaging checks for the 16-skill candidate.
+They do not establish live deployment, UI accessibility execution or full runtime
+coverage on the other hosts.
+
 ## For contributors
 
 Clone this repository and install from its root to try local changes:
@@ -195,10 +231,14 @@ python3 tests/install_smoke.py
 ```
 
 The first check uses Python's standard library. The smoke test uses `skills@1.7.4`
-through `npx` and needs registry access or a cached package. It checks all 14 skills
-together and individually in both installation scopes: **28 scenarios** in temporary
+through `npx` and needs registry access or a cached package. It checks all 16 skills
+together and individually in both installation scopes: **34 scenarios** in temporary
 homes and projects. It verifies content and scope isolation without modifying your
 real global skills or calling an LLM. CI runs both checks.
+
+An existing CLI can also run the smoke test offline:
+`python3 tests/install_smoke.py --cli /path/to/skills/bin/cli.mjs`.
+The checks include all packaged references, not only `SKILL.md` and `LICENSE`.
 
 These tests verify packaging and installation, not agent behavior. Use the
 [behavioral evaluation cases](tests/behavioral.md) for isolated agent trials and

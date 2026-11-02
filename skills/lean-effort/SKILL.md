@@ -12,6 +12,8 @@ Use requested procedure depth, or standard by default. High adds relevant bounda
 
 Accept no arguments to inspect; otherwise accept standard, high, ultra or reset, optionally scoped to a named procedure. Interpret input as text, never shell code.
 
+Conclude DONE with the requested operation, resulting conversation-wide level, named overrides and effective level for the relevant procedure. The evidence is the explicit preference and precedence calculation, not a model/backend claim. If a level or scope cannot be interpreted, return BLOCKED with the missing choice and preserve the previous setting. A requested persistent write is complete only after verifying its agreed destination; an unrequested settings file is outside scope.
+
 1. Read preferences already established in the conversation and applicable project instructions. No saved preference means standard. If no arguments were given, report effective global and procedure-specific levels without writing anything.
 2. An explicit procedure level overrides the conversation-wide level. Reset with a procedure removes its override; reset without one removes the conversation-wide preference, leaving named overrides intact. Unsupported levels need clarification rather than silent coercion.
 3. Standard uses the smallest sufficient procedure and evidence. High adds relevant boundary/failure cases and stronger corroboration. Ultra adds cross-part consistency, contradictory evidence and deeper investigation where it could change the result. None lowers acceptance, validation or review requirements.
