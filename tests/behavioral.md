@@ -534,5 +534,8 @@ of [boundary cases](../skills/lean-run/references/boundary-cases.md), so the
 class of defect becomes evidence rather than a reminder; and reading goes through
 `scripts/view.py` (numbered, bounded regions) while tests, scripts and any
 command with more than a few lines of output go through `scripts/check.py` by
-default. Both change the skill for every level; the measures to watch are
-`first_review_issues` and `tool_output_characters` per phase.
+default. A renewed review starts from the prior findings and the delta, and
+write-integrity work builds a differential oracle first when the contract
+defines outcomes by reference to a trusted mechanism. All change the skill for
+every level; the measures to watch are `first_review_issues`,
+`tool_output_characters` per phase and the new `cost_weighted_tokens`.

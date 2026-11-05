@@ -8,10 +8,11 @@ from pathlib import Path
 import statistics
 
 from repeated_benchmark import archive_path
+from summarize_repeated_benchmark import cost_weighted
 
 
 METRICS = ('measured_seconds', 'total_tokens', 'input_tokens', 'cached_input_tokens',
-           'uncached_input_tokens', 'output_tokens', 'uncached_input_plus_output')
+           'uncached_input_tokens', 'output_tokens', 'uncached_input_plus_output', 'cost_weighted_tokens')
 PHASE_GROUPS = {
     'implementation': ('implementation',),
     'repair-1': ('repair-1',),
@@ -91,7 +92,8 @@ def verify_phase(path, manifest):
         assert 0 <= cached <= input_tokens and output >= 0, path
         row.update(input_tokens=input_tokens, cached_input_tokens=cached, output_tokens=output,
                    total_tokens=input_tokens + output, uncached_input_tokens=input_tokens - cached,
-                   uncached_input_plus_output=input_tokens - cached + output)
+                   uncached_input_plus_output=input_tokens - cached + output,
+                   cost_weighted_tokens=cost_weighted(input_tokens, cached, output))
         assert row['total_tokens'] == metrics['total_tokens'], path
         assert row['uncached_input_tokens'] == metrics['uncached_input_tokens'], path
     return row

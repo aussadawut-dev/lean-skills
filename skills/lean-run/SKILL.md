@@ -24,7 +24,7 @@ Read source and logs through `python3 /resolved/skill/path/scripts/view.py PATH 
 
 Run affected and required checks on final content and exercise the public journey with important failures. Reuse unchanged passing evidence; inspection, cleanup of comparison copies or writing a completion summary alone does not justify another suite. A check proves only its mapped acceptance; mocks/builds do not prove untested live integration. Record actions, environment, expected/observed results and simulated boundaries. Disclose unavailable access and remaining acceptance.
 
-For assessment-only work, inspect the contract, complete source delta and added tests, then run required checks once and independently probe uncovered risks. For a small source shown fully in a diff, that diff supplies the source read. Inspect test helpers and case tables together; avoid reproducing their complete data matrices in another suite. Do not implement or repair during assessment. Reproduce old failures only to establish a finding or when requested.
+For assessment-only work, inspect the contract, complete source delta and added tests, then run required checks once and independently probe uncovered risks. For a small source shown fully in a diff, that diff supplies the source read. Inspect test helpers and case tables together; avoid reproducing their complete data matrices in another suite. Do not implement or repair during assessment. A renewed review starts from the prior findings and the delta since that review, verifies each resolution, reruns the required checks and reads beyond the delta only for a new concrete risk. Reproduce old failures only to establish a finding or when requested.
 
 ## Budget bounded work
 

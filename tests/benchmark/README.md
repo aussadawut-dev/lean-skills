@@ -36,6 +36,23 @@ selects the contract gate policy:
   that only under the contract policy and only when every finding is covered.
   Rejected findings remain in the raw review and are reported separately.
 
+## Iteration protocol and cost metric
+
+A cohort of one High and one Critical trial costs about 4,000 s and several
+million total tokens. To iterate on the skill cheaply, run High alone first
+(`prepare --levels high` with one repetition): the gate is `first_review_issues`
+of 0, since one repair cycle made every High trial 2.3 to 2.8 times more
+expensive. Run Critical only after High passes its first review. Any candidate
+workspace can be checked offline, without a model call, against the contract
+oracle: `PYTHONPATH=<workspace> python3 tests/probes/critical_contract_probe.py <workspace>`.
+
+`summary.json` now also reports `cost_weighted_tokens` per phase, trial and
+level: uncached input, plus cached input at 0.1 and output at 4.0
+(`COST_WEIGHTS` in `tests/summarize_repeated_benchmark.py`). The weights are
+approximate price ratios, not a bill; the metric exists so that a change that
+trims uncached input by adding turns or context cannot look like a win. The
+primary metrics are unchanged.
+
 ## Critical contract probe
 
 [`tests/probes/critical_contract_probe.py`](../probes/critical_contract_probe.py)

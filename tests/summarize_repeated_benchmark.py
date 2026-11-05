@@ -9,7 +9,16 @@ import statistics
 from repeated_benchmark import archive_path
 
 METRICS=('measured_seconds','total_tokens','input_tokens','cached_input_tokens',
-         'uncached_input_tokens','output_tokens','uncached_input_plus_output')
+         'uncached_input_tokens','output_tokens','uncached_input_plus_output','cost_weighted_tokens')
+# Approximate price ratios, not a bill: cached input and output are not free, and
+# a change that trims uncached input while adding turns must not look like a win.
+COST_WEIGHTS={'uncached_input':1.0,'cached_input':0.1,'output':4.0}
+
+
+def cost_weighted(input_tokens,cached_input_tokens,output_tokens):
+    if None in (input_tokens,cached_input_tokens,output_tokens):return None
+    return ((input_tokens-cached_input_tokens)*COST_WEIGHTS['uncached_input']+cached_input_tokens*COST_WEIGHTS['cached_input']
+            +output_tokens*COST_WEIGHTS['output'])
 
 
 def read(path):return json.loads(path.read_text())
@@ -54,6 +63,7 @@ def usage_for_phase(path):
             **{k:usage[k] if usage is not None else None for k in ('input_tokens','cached_input_tokens','output_tokens')},
             'uncached_input_tokens':usage['input_tokens']-usage['cached_input_tokens'] if usage is not None else None,
             'uncached_input_plus_output':usage['input_tokens']-usage['cached_input_tokens']+usage['output_tokens'] if usage is not None else None,
+            'cost_weighted_tokens':cost_weighted(usage['input_tokens'],usage['cached_input_tokens'],usage['output_tokens']) if usage is not None else None,
             'total_tokens':metrics.get('total_tokens'),'command_count':len(commands),
             'tool_output_characters':sum(len(c.get('aggregated_output','')) for c in commands),
             'captured_log_count':sum('archived' in v for v in logs),
@@ -74,11 +84,15 @@ def baseline_trial(archive,level,number=1):
 
 def baseline_metrics(row):
     if 'statistics' in row:
-        return {key:row['statistics'][key]['mean'] for key in METRICS}
+        means={key:row['statistics'][key]['mean'] for key in METRICS if key in row['statistics']}
+        # Older summaries predate the composite; it is linear, so the mean follows from the component means.
+        means.setdefault('cost_weighted_tokens',cost_weighted(means.get('input_tokens'),means.get('cached_input_tokens'),means.get('output_tokens')))
+        return means
     return {'measured_seconds':row['measured_agent_seconds'],'total_tokens':row['total_tokens'],
             'input_tokens':row['usage']['input_tokens'],'cached_input_tokens':row['usage']['cached_input_tokens'],
             'uncached_input_tokens':row['usage']['input_tokens']-row['usage']['cached_input_tokens'],
-            'output_tokens':row['usage']['output_tokens'],'uncached_input_plus_output':row['uncached_input_plus_output']}
+            'output_tokens':row['usage']['output_tokens'],'uncached_input_plus_output':row['uncached_input_plus_output'],
+            'cost_weighted_tokens':cost_weighted(row['usage']['input_tokens'],row['usage']['cached_input_tokens'],row['usage']['output_tokens'])}
 
 
 def phase_means(trials):

@@ -139,6 +139,9 @@ class SummaryTests(unittest.TestCase):
             self.assertEqual(summary['quality']['passed_trials'],7)
             self.assertEqual(len(summary['quality']['failed_trials']),2)
             self.assertEqual(summary['totals']['actual_nine_trial_consumption']['total_tokens'],7145208)
+            trial=summary['trials'][0]
+            self.assertEqual(trial['cost_weighted_tokens'],report.cost_weighted(trial['input_tokens'],trial['cached_input_tokens'],trial['output_tokens']))
+            self.assertAlmostEqual(trial['cost_weighted_tokens'],trial['uncached_input_tokens']+0.1*trial['cached_input_tokens']+4*trial['output_tokens'])
 
     def test_timeout_usage_stays_unknown_and_elapsed_cost_is_retained(self):
         baseline=Path(__file__).resolve().parent/'results/2026-11-03-lean-run-repeated'
