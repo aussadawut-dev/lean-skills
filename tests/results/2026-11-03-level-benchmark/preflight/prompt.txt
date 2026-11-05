@@ -1,1 +1,0 @@
-Respond only with BENCHMARK_READY. Do not use tools, inspect files, or modify anything. This checks transport and token usage reporting.

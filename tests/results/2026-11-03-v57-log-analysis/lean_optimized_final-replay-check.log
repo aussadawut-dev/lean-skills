@@ -1,7 +1,0 @@
-test_cached_receipt_still_requires_existing_source_in_tenant (test_regressions.VaultRegressionTests.test_cached_receipt_still_requires_existing_source_in_tenant) ... ok
-test_cached_receipt_still_requires_existing_target_in_tenant (test_regressions.VaultRegressionTests.test_cached_receipt_still_requires_existing_target_in_tenant) ... ok
-
-----------------------------------------------------------------------
-Ran 2 tests in 0.005s
-
-OK

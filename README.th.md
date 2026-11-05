@@ -236,6 +236,10 @@ CI รันการตรวจทั้งสองคำสั่งนี�
 ไม่เท่ากับการทดลอง agent จริงหรือหลักฐานว่าใช้งานได้เท่ากันทุก agent
 เมื่อแก้คู่มือ ให้ปรับภาษาอังกฤษและภาษาไทยให้ตรงกัน โดยไฟล์ skill ยังคงเป็นภาษาอังกฤษ
 
+ผลการ benchmark ของ `lean-run` ที่บันทึกไว้อยู่บน branch
+[`benchmark-archives`](https://github.com/aussadawut-dev/lean-skills/tree/benchmark-archives)
+เพื่อให้การติดตั้งมีขนาดเล็ก ดูดัชนีและวิธีกู้คืนได้ที่ [tests/results/README.md](tests/results/README.md)
+
 ## สัญญาอนุญาตและที่มา
 
 ดัดแปลงจาก [Lean Workflow Agent by ASDW](https://github.com/aussadawut-dev/lean-workflow-agent-by-asdw)

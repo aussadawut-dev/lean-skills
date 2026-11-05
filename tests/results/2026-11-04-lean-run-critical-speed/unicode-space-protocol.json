@@ -1,5 +1,0 @@
-{
-  "status": "posthoc",
-  "source": "round-2/critical/review-2/final.txt",
-  "scope": "Same unquoted NBSP trigger name and quoted control, API/CLI and DELETE/WAL on all three old/new final candidates. This is a bounded follow-up to a reproduced valid-trigger compatibility failure."
-}

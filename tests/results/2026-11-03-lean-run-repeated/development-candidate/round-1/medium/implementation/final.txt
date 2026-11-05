@@ -1,8 +1,0 @@
-Implemented strict ASCII integer parsing, exact CLI arity, clean stderr errors with exit code 2, and arbitrary-size integer parsing/output.
-
-- Reproduced 50 failing subcases and 2 errors before repair.
-- Added regression coverage; `python3 -B -m unittest discover -v` now passes all **11 tests**.
-- Verified real CLI success, error, and recovery paths, including leading negatives and 5,000-digit integers.
-- Focused author review found no remaining contract gaps.
-
-**Pending:** the coordinator’s fresh independent review. It has not occurred.

@@ -1,7 +1,0 @@
-Implemented all four demonstrated repairs and added five regression groups.
-
-- `python3 -B -m unittest discover -v`: **43 tests passed**.
-- Exercised API/CLI, reopened state, exact schema preservation, rollback, replay, and existing trigger controls.
-- Task-wide REWORK remains **2**.
-
-Final acceptance is **blocked pending the coordinator’s renewed independent review**; that review has not occurred.

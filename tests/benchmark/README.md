@@ -86,7 +86,7 @@ This is a posthoc re-evaluation; that trial's official status is unchanged
 
 ## First cohort under this policy (2026-11-05)
 
-[2026-11-05-lean-run-contract-gates](../results/2026-11-05-lean-run-contract-gates/README.md):
+[2026-11-05-lean-run-contract-gates](https://github.com/aussadawut-dev/lean-skills/blob/benchmark-archives/tests/results/2026-11-05-lean-run-contract-gates/README.md):
 one High and one Critical trial, `gpt-6-astra` / `max`, 900 s per phase, no timeouts.
 
 - **High: DONE** after one repair (1,111.8 s, 79,286 uncached input; +130.8% and
@@ -117,7 +117,7 @@ cohort is not comparable with this one.
 
 ## Second cohort under this policy (2026-11-05)
 
-[2026-11-05-lean-run-schema-skill](../results/2026-11-05-lean-run-schema-skill/coordinator-notes.md):
+[2026-11-05-lean-run-schema-skill](https://github.com/aussadawut-dev/lean-skills/blob/benchmark-archives/tests/results/2026-11-05-lean-run-schema-skill/coordinator-notes.md):
 High DONE after one repair (1,619.3 s, 97,672 uncached input; the first
 implementation fixed the container defect but kept scalar subclasses). Critical
 FAILED after two repairs (2,704.6 s, 176,611 uncached input; new baseline): the

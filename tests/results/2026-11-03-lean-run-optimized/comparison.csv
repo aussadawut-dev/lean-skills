@@ -1,4 +1,0 @@
-level,before_seconds,after_seconds,time_reduction_percent,before_total_tokens,after_total_tokens,token_reduction_percent,before_cached_input,after_cached_input,before_uncached_input_plus_output,after_uncached_input_plus_output,uncached_reduction_percent,before_first_pass_seconds,after_first_pass_seconds,before_first_pass_tokens,after_first_pass_tokens,before_first_review_issues,after_first_review_issues,before_final_review_issues,after_final_review_issues,before_repair_rounds,after_repair_rounds
-medium,365.935,379.154,-3.61,287370,314570,-9.47,229504,257920,57866,56650,2.1,365.935,379.154,287370,314570,0,0,0,0,0,0
-high,493.621,442.574,10.34,323414,290617,10.14,267136,218624,56278,71993,-27.92,493.621,442.574,323414,290617,0,0,0,0,0,0
-critical,1139.841,1117.341,1.97,1142053,986158,13.65,993024,806272,149029,179886,-20.71,799.062,742.982,654045,537802,1,1,0,0,1,1

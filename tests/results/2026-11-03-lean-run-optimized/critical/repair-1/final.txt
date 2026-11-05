@@ -1,7 +1,0 @@
-F1 is repaired in [vault.py](/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-optimized-20261103-j74ntmc9/cases/critical/workspace/vault.py:20). Each required write must affect exactly one row; otherwise a storage exception rolls back the transaction. Triggers remain intact.
-
-- Reproduced suppressed debit, credit, receipt and audit writes, including replay double-debit.
-- Added four regressions covering API/CLI failures, retries, reopened state, trigger preservation and valid replay. All failed before repair and pass afterward.
-- Six affected checks passed. `python3 -B -m unittest discover -v` passed all **28 tests**, including concurrency.
-
-Final acceptance is **BLOCKED pending coordinator review**. [lean-run]( /private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-optimized-20261103-j74ntmc9/cases/critical/workspace/.agents/skills/lean-run/SKILL.md) requires “HIGH needs a fresh independent reviewer.” Renewed review has not occurred; task-wide REWORK count remains **1**.

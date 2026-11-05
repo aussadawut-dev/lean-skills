@@ -1,7 +1,0 @@
-{
-  "status": "PASS",
-  "reviewer": "sql_review - gpt-6.1-sol|high",
-  "scope": "Scope/authorization/quality/rework preserved; SQL guidance native controls and budget fake-clock checks independently verified.",
-  "limit": "Budget helper cooperative; actual worker environment observation pending.",
-  "native_evidence": "sqlite_source_resolution_controls.json"
-}

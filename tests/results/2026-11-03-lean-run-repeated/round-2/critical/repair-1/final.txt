@@ -1,8 +1,0 @@
-Implemented the bounded repair in vault.py and added eight regression tests.
-
-- Audit validation preserves complete contents and duplicate counts while allowing rowid relocation.
-- Unexpected receipt and account changes roll back, retaining existing schema and triggers.
-- Reproduced the reported failures; API/CLI checks verify preservation and replay after reopening.
-- Required `python3 -B -m unittest discover -v`: **31 tests passed**.
-
-Task-wide REWORK remains **1**. Overall completion is **BLOCKED pending renewed independent review by the coordinator**.

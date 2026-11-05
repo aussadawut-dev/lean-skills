@@ -246,6 +246,11 @@ record the actual host/model, artifacts and results. A static walkthrough is not
 an executed agent trial or evidence of cross-agent reliability. Keep the English
 and Thai guides aligned; skill files remain in English.
 
+Recorded `lean-run` benchmark cohorts live on the
+[`benchmark-archives`](https://github.com/aussadawut-dev/lean-skills/tree/benchmark-archives)
+branch so that installs stay small; [tests/results/README.md](tests/results/README.md)
+indexes them and shows how to restore one.
+
 ## License and origin
 
 Adapted from [Lean Workflow Agent by ASDW](https://github.com/aussadawut-dev/lean-workflow-agent-by-asdw).

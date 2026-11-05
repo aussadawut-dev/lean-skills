@@ -1,8 +1,0 @@
-{"round": 1, "level": "critical", "phase": "repair-1", "state": "RUNNING", "unix": 1793777117.299604}
-{"level": "critical", "phase": "repair-1", "started_unix": 1793777117.301026, "elapsed_seconds": 900.024, "exit_code": -15, "timed_out": true, "usage": null, "requested_model": "gpt-6-astra", "requested_effort": "max", "model_identity_evidence": "requested CLI controls; backend identity not independently attested", "completed_turns": 0, "command_count": 13}
-{"acknowledged_timeout": "round-1/critical/repair-1", "usage": "UNKNOWN", "implementation_relaunched": false}
-{"level": "critical", "label": "post-repair-1", "issues": 0, "checks": 9, "protected_files_changed": []}
-/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/reviewspace
-{"round": 1, "level": "critical", "phase": "review-2", "state": "RUNNING", "unix": 1793778017.654176}
-{"level": "critical", "phase": "review-2", "started_unix": 1793778017.6548648, "elapsed_seconds": 317.658, "exit_code": 0, "timed_out": false, "usage": {"cache_write_input_tokens": 0, "output_tokens": 9164, "reasoning_output_tokens": 3872, "cached_input_tokens": 224384, "input_tokens": 256062}, "requested_model": "gpt-6-astra", "requested_effort": "max", "model_identity_evidence": "requested CLI controls; backend identity not independently attested", "completed_turns": 1, "command_count": 11, "total_tokens": 265226, "uncached_input_tokens": 31678}
-{"round": 1, "level": "critical", "phase": "assessment", "state": "NEEDS_COORDINATOR", "unix": 1793778351.029449}

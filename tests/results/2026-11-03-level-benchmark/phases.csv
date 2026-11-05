@@ -1,9 +1,0 @@
-level,phase,seconds,input_tokens,cached_input_tokens,cache_write_input_tokens,output_tokens,reasoning_output_tokens,total_tokens
-medium,implementation,233.859,185295,162048,0,7440,3661,192735
-medium,review,132.076,90451,67456,0,4184,1548,94635
-high,implementation,320.005,172591,149120,0,11824,4787,184415
-high,review,173.616,133260,118016,0,5739,2327,138999
-critical,implementation,557.5,413291,382336,0,18962,8597,432253
-critical,review,241.562,213863,183296,0,7929,2790,221792
-critical,repair-1,199.946,288556,262528,0,6491,3364,295047
-critical,review-2,140.833,188459,164864,0,4502,2269,192961

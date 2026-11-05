@@ -1,8 +1,0 @@
-Implemented locally in `vault.py` and `app.py`; added `test_regression.py`.
-
-- Reproduced tenant leaks, receipt leaks, and partial commits.
-- Added tenant isolation, atomic transfers, durable replay, concurrency protection, and generic CLI errors.
-- Verified trigger behavior, rollback, hidden-row noninterference, and the integrated CLI journey.
-- `python3 -B -m unittest discover -v`: **13 tests passed** on Python 3.14.3 / SQLite 3.50.4.
-
-**Final acceptance remains BLOCKED pending the coordinator’s required fresh independent review.** That review has not occurred. No known implementation findings remain.

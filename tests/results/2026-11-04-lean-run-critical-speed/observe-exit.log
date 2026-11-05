@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-speed-pig_dqx3/cohort/observe-repair-exit.py", line 12, in <module>
-    with select.kqueue() as queue:
-         ~~~~~~~~~~~~~^^
-TypeError: 'select.kqueue' object does not support the context manager protocol (missed __exit__ method)
-{"pid": 3883, "raw_wait_status": 0, "exit_code": 0, "observed_exit_unix": 1793773581.6362891}

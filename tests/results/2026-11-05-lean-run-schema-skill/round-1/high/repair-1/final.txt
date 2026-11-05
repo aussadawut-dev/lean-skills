@@ -1,8 +1,0 @@
-Repaired R1/R2 in [ledger.py](/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-schema-skill-kfeIef/cohort/round-1/high/workspace/ledger.py): scalar subclasses now normalize safely, and malformed batch fields raise `ValueError` without state changes.
-
-- Added 10 regression tests.
-- `python3 -B -m unittest discover -v`: **32 passed**.
-- Public transfer, replay, rollback, and retry flow passed.
-- Task-wide REWORK: **2**, continued from 1.
-
-**Renewed independent review remains pending with the coordinator; acceptance is BLOCKED.** [lean-run](/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-schema-skill-kfeIef/cohort/round-1/high/workspace/.agents/skills/lean-run/SKILL.md) requires: “HIGH needs a fresh independent reviewer.”

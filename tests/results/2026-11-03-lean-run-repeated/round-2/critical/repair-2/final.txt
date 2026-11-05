@@ -1,7 +1,0 @@
-Repaired `REPAIR-NOOP-TRIGGER`: insertion guards now run after conflict handling, allowing harmless ignored inserts while retaining rollback protection.
-
-- Added API/CLI regressions for ignored inserts and unauthorized writes.
-- Exact reproducer succeeds with balances **90/10**, one receipt, one audit row, and preserved triggers.
-- Affected checks passed; `python3 -B -m unittest discover -v`: **33 tests passed**.
-
-REWORK remains **2**. Final acceptance is **BLOCKED pending the coordinator’s renewed independent review**.

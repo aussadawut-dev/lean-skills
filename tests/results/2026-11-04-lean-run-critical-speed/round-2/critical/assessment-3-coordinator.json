@@ -1,8 +1,0 @@
-{
-  "status": "PASS",
-  "probes": "All predeclared plus dollar, counter, Unicode-space, separator and scoped read controls pass.",
-  "evidence": [
-    "assessment-3-adjudication.json",
-    "review-3/final.txt"
-  ]
-}

@@ -1,5 +1,0 @@
-Implemented tenant isolation, atomic transfers, scoped replay, trigger validation, and generic CLI errors in `vault.py` and `app.py`. Added `test_regressions.py`.
-
-Reproduced the original isolation and partial-commit defects. Final check: `python3 -B -m unittest discover -v` — **22 tests passed**, covering concurrency, rollback, trigger behavior, persistence, and the integrated CLI journey.
-
-**Remaining requirement:** coordinator-supplied fresh independent review. It has not occurred; final acceptance remains blocked pending that review.
