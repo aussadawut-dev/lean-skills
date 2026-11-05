@@ -1,0 +1,23 @@
+test_batch_failure_rolls_back_at_every_position (test_ledger.LedgerTests.test_batch_failure_rolls_back_at_every_position) ... ok
+test_batch_matches_ordered_transfers_with_replays (test_ledger.LedgerTests.test_batch_matches_ordered_transfers_with_replays) ... ok
+test_batch_receipts_are_isolated_from_history_and_each_other (test_ledger.LedgerTests.test_batch_receipts_are_isolated_from_history_and_each_other) ... ok
+test_batch_rejects_conflicting_new_and_existing_keys_atomically (test_ledger.LedgerTests.test_batch_rejects_conflicting_new_and_existing_keys_atomically) ... ok
+test_batch_rejects_malformed_operations_atomically (test_ledger.LedgerTests.test_batch_rejects_malformed_operations_atomically) ... ok
+test_batch_rejects_non_list_input (test_ledger.LedgerTests.test_batch_rejects_non_list_input) ... ok
+test_changed_replay_payload_is_rejected (test_ledger.LedgerTests.test_changed_replay_payload_is_rejected) ... ok
+test_constructor_copies_input (test_ledger.LedgerTests.test_constructor_copies_input) ... ok
+test_constructor_rejects_invalid_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_balances) ... ok
+test_empty_ledger_and_empty_batch (test_ledger.LedgerTests.test_empty_ledger_and_empty_batch) ... ok
+test_insufficient_funds_do_not_change_state (test_ledger.LedgerTests.test_insufficient_funds_do_not_change_state) ... ok
+test_integrated_multi_transfer_flow (test_ledger.LedgerTests.test_integrated_multi_transfer_flow) ... ok
+test_invalid_transfers_do_not_change_state (test_ledger.LedgerTests.test_invalid_transfers_do_not_change_state) ... ok
+test_replay_validates_types_before_comparing_payload (test_ledger.LedgerTests.test_replay_validates_types_before_comparing_payload) ... ok
+test_returned_transfer_receipts_are_isolated (test_ledger.LedgerTests.test_returned_transfer_receipts_are_isolated) ... ok
+test_transfer_returns_receipt_and_preserves_public_dictionaries (test_ledger.LedgerTests.test_transfer_returns_receipt_and_preserves_public_dictionaries) ... ok
+test_valid_boundaries_and_replay_with_empty_source (test_ledger.LedgerTests.test_valid_boundaries_and_replay_with_empty_source) ... ok
+test_transfer (test_public.PublicTests.test_transfer) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.001s
+
+OK

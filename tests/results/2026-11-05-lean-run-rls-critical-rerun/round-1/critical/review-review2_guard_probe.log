@@ -1,0 +1,1181 @@
+{
+  "workspace": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-rls-critical-LIVdI3/cohort/round-1/critical/workspace",
+  "sqlite_version": "3.50.4",
+  "source_sha256": "90abe1dbbf09fa7ab887031776713d493dd5c030769b2d3b20077b842e197272",
+  "application_sha256": {
+    "app.py": "41761d1f26153005bd93e40380ffd0eea174b276013a660b65b7aab6d06b90e9",
+    "vault.py": "90abe1dbbf09fa7ab887031776713d493dd5c030769b2d3b20077b842e197272"
+  },
+  "failed_cases": 0,
+  "failed_case_names": [],
+  "cases": {
+    "rowid_false": {
+      "failures": [],
+      "native": {
+        "status": "success",
+        "receipt": {
+          "tenant": "alpha",
+          "key": "k",
+          "source": "cash",
+          "target": "savings",
+          "amount": 10
+        },
+        "schema_preserved": true,
+        "reopened": {
+          "accounts": [
+            [
+              "alpha",
+              "cash",
+              90
+            ],
+            [
+              "alpha",
+              "savings",
+              10
+            ]
+          ],
+          "transfers": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ],
+          "audit": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ],
+            [
+              "alpha",
+              "old",
+              "cash",
+              "savings",
+              1
+            ]
+          ]
+        }
+      },
+      "api": {
+        "status": "success",
+        "receipt": {
+          "tenant": "alpha",
+          "key": "k",
+          "source": "cash",
+          "target": "savings",
+          "amount": 10
+        },
+        "schema_preserved": true,
+        "reopened": {
+          "accounts": [
+            [
+              "alpha",
+              "cash",
+              90
+            ],
+            [
+              "alpha",
+              "savings",
+              10
+            ]
+          ],
+          "transfers": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ],
+          "audit": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ],
+            [
+              "alpha",
+              "old",
+              "cash",
+              "savings",
+              1
+            ]
+          ]
+        },
+        "replay": {
+          "status": "success",
+          "receipt": {
+            "tenant": "alpha",
+            "key": "k",
+            "source": "cash",
+            "target": "savings",
+            "amount": 10
+          }
+        }
+      },
+      "cli": {
+        "status": "success",
+        "receipt": {
+          "tenant": "alpha",
+          "key": "k",
+          "source": "cash",
+          "target": "savings",
+          "amount": 10
+        },
+        "schema_preserved": true,
+        "reopened": {
+          "accounts": [
+            [
+              "alpha",
+              "cash",
+              90
+            ],
+            [
+              "alpha",
+              "savings",
+              10
+            ]
+          ],
+          "transfers": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ],
+          "audit": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ],
+            [
+              "alpha",
+              "old",
+              "cash",
+              "savings",
+              1
+            ]
+          ]
+        },
+        "replay": {
+          "status": "success",
+          "receipt": {
+            "tenant": "alpha",
+            "key": "k",
+            "source": "cash",
+            "target": "savings",
+            "amount": 10
+          }
+        }
+      }
+    },
+    "rowid_true": {
+      "failures": [],
+      "native": {
+        "status": "rejected",
+        "error": "audit rule",
+        "schema_preserved": true,
+        "reopened": {
+          "accounts": [
+            [
+              "alpha",
+              "cash",
+              100
+            ],
+            [
+              "alpha",
+              "savings",
+              0
+            ]
+          ],
+          "transfers": [],
+          "audit": [
+            [
+              "alpha",
+              "old",
+              "cash",
+              "savings",
+              1
+            ]
+          ]
+        }
+      },
+      "api": {
+        "status": "rejected",
+        "error": "audit rule",
+        "type": "IntegrityError",
+        "schema_preserved": true,
+        "reopened": {
+          "accounts": [
+            [
+              "alpha",
+              "cash",
+              100
+            ],
+            [
+              "alpha",
+              "savings",
+              0
+            ]
+          ],
+          "transfers": [],
+          "audit": [
+            [
+              "alpha",
+              "old",
+              "cash",
+              "savings",
+              1
+            ]
+          ]
+        }
+      },
+      "cli": {
+        "status": "rejected",
+        "error": "invalid request",
+        "schema_preserved": true,
+        "reopened": {
+          "accounts": [
+            [
+              "alpha",
+              "cash",
+              100
+            ],
+            [
+              "alpha",
+              "savings",
+              0
+            ]
+          ],
+          "transfers": [],
+          "audit": [
+            [
+              "alpha",
+              "old",
+              "cash",
+              "savings",
+              1
+            ]
+          ]
+        }
+      }
+    },
+    "rowid_qualified": {
+      "failures": [],
+      "native": {
+        "status": "success",
+        "receipt": {
+          "tenant": "alpha",
+          "key": "k",
+          "source": "cash",
+          "target": "savings",
+          "amount": 10
+        },
+        "schema_preserved": true,
+        "reopened": {
+          "accounts": [
+            [
+              "alpha",
+              "cash",
+              90
+            ],
+            [
+              "alpha",
+              "savings",
+              10
+            ]
+          ],
+          "transfers": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ],
+          "audit": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ],
+            [
+              "alpha",
+              "old",
+              "cash",
+              "savings",
+              1
+            ]
+          ]
+        }
+      },
+      "api": {
+        "status": "success",
+        "receipt": {
+          "tenant": "alpha",
+          "key": "k",
+          "source": "cash",
+          "target": "savings",
+          "amount": 10
+        },
+        "schema_preserved": true,
+        "reopened": {
+          "accounts": [
+            [
+              "alpha",
+              "cash",
+              90
+            ],
+            [
+              "alpha",
+              "savings",
+              10
+            ]
+          ],
+          "transfers": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ],
+          "audit": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ],
+            [
+              "alpha",
+              "old",
+              "cash",
+              "savings",
+              1
+            ]
+          ]
+        },
+        "replay": {
+          "status": "success",
+          "receipt": {
+            "tenant": "alpha",
+            "key": "k",
+            "source": "cash",
+            "target": "savings",
+            "amount": 10
+          }
+        }
+      },
+      "cli": {
+        "status": "success",
+        "receipt": {
+          "tenant": "alpha",
+          "key": "k",
+          "source": "cash",
+          "target": "savings",
+          "amount": 10
+        },
+        "schema_preserved": true,
+        "reopened": {
+          "accounts": [
+            [
+              "alpha",
+              "cash",
+              90
+            ],
+            [
+              "alpha",
+              "savings",
+              10
+            ]
+          ],
+          "transfers": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ],
+          "audit": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ],
+            [
+              "alpha",
+              "old",
+              "cash",
+              "savings",
+              1
+            ]
+          ]
+        },
+        "replay": {
+          "status": "success",
+          "receipt": {
+            "tenant": "alpha",
+            "key": "k",
+            "source": "cash",
+            "target": "savings",
+            "amount": 10
+          }
+        }
+      }
+    },
+    "table_default_replace": {
+      "failures": [],
+      "native": {
+        "status": "success",
+        "receipt": {
+          "tenant": "alpha",
+          "key": "k",
+          "source": "cash",
+          "target": "savings",
+          "amount": 10
+        },
+        "schema_preserved": true,
+        "reopened": {
+          "accounts": [
+            [
+              "alpha",
+              "cash",
+              90
+            ],
+            [
+              "alpha",
+              "savings",
+              10
+            ]
+          ],
+          "transfers": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ],
+          "audit": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ],
+          "work": [
+            [
+              1
+            ]
+          ]
+        }
+      },
+      "api": {
+        "status": "success",
+        "receipt": {
+          "tenant": "alpha",
+          "key": "k",
+          "source": "cash",
+          "target": "savings",
+          "amount": 10
+        },
+        "schema_preserved": true,
+        "reopened": {
+          "accounts": [
+            [
+              "alpha",
+              "cash",
+              90
+            ],
+            [
+              "alpha",
+              "savings",
+              10
+            ]
+          ],
+          "transfers": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ],
+          "audit": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ],
+          "work": [
+            [
+              1
+            ]
+          ]
+        },
+        "replay": {
+          "status": "success",
+          "receipt": {
+            "tenant": "alpha",
+            "key": "k",
+            "source": "cash",
+            "target": "savings",
+            "amount": 10
+          }
+        }
+      },
+      "cli": {
+        "status": "success",
+        "receipt": {
+          "tenant": "alpha",
+          "key": "k",
+          "source": "cash",
+          "target": "savings",
+          "amount": 10
+        },
+        "schema_preserved": true,
+        "reopened": {
+          "accounts": [
+            [
+              "alpha",
+              "cash",
+              90
+            ],
+            [
+              "alpha",
+              "savings",
+              10
+            ]
+          ],
+          "transfers": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ],
+          "audit": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ],
+          "work": [
+            [
+              1
+            ]
+          ]
+        },
+        "replay": {
+          "status": "success",
+          "receipt": {
+            "tenant": "alpha",
+            "key": "k",
+            "source": "cash",
+            "target": "savings",
+            "amount": 10
+          }
+        }
+      }
+    },
+    "explicit_replace_control": {
+      "failures": [],
+      "native": {
+        "status": "success",
+        "receipt": {
+          "tenant": "alpha",
+          "key": "k",
+          "source": "cash",
+          "target": "savings",
+          "amount": 10
+        },
+        "schema_preserved": true,
+        "reopened": {
+          "accounts": [
+            [
+              "alpha",
+              "cash",
+              90
+            ],
+            [
+              "alpha",
+              "savings",
+              10
+            ]
+          ],
+          "transfers": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ],
+          "audit": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ],
+          "work": [
+            [
+              1
+            ]
+          ]
+        }
+      },
+      "api": {
+        "status": "success",
+        "receipt": {
+          "tenant": "alpha",
+          "key": "k",
+          "source": "cash",
+          "target": "savings",
+          "amount": 10
+        },
+        "schema_preserved": true,
+        "reopened": {
+          "accounts": [
+            [
+              "alpha",
+              "cash",
+              90
+            ],
+            [
+              "alpha",
+              "savings",
+              10
+            ]
+          ],
+          "transfers": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ],
+          "audit": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ],
+          "work": [
+            [
+              1
+            ]
+          ]
+        },
+        "replay": {
+          "status": "success",
+          "receipt": {
+            "tenant": "alpha",
+            "key": "k",
+            "source": "cash",
+            "target": "savings",
+            "amount": 10
+          }
+        }
+      },
+      "cli": {
+        "status": "success",
+        "receipt": {
+          "tenant": "alpha",
+          "key": "k",
+          "source": "cash",
+          "target": "savings",
+          "amount": 10
+        },
+        "schema_preserved": true,
+        "reopened": {
+          "accounts": [
+            [
+              "alpha",
+              "cash",
+              90
+            ],
+            [
+              "alpha",
+              "savings",
+              10
+            ]
+          ],
+          "transfers": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ],
+          "audit": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ],
+          "work": [
+            [
+              1
+            ]
+          ]
+        },
+        "replay": {
+          "status": "success",
+          "receipt": {
+            "tenant": "alpha",
+            "key": "k",
+            "source": "cash",
+            "target": "savings",
+            "amount": 10
+          }
+        }
+      }
+    },
+    "explicit_delete_control": {
+      "failures": [],
+      "native": {
+        "status": "rejected",
+        "error": "native delete should not run",
+        "schema_preserved": true,
+        "reopened": {
+          "accounts": [
+            [
+              "alpha",
+              "cash",
+              100
+            ],
+            [
+              "alpha",
+              "savings",
+              0
+            ]
+          ],
+          "transfers": [],
+          "audit": [],
+          "work": [
+            [
+              1
+            ]
+          ]
+        }
+      },
+      "api": {
+        "status": "rejected",
+        "error": "native delete should not run",
+        "type": "IntegrityError",
+        "schema_preserved": true,
+        "reopened": {
+          "accounts": [
+            [
+              "alpha",
+              "cash",
+              100
+            ],
+            [
+              "alpha",
+              "savings",
+              0
+            ]
+          ],
+          "transfers": [],
+          "audit": [],
+          "work": [
+            [
+              1
+            ]
+          ]
+        }
+      },
+      "cli": {
+        "status": "rejected",
+        "error": "invalid request",
+        "schema_preserved": true,
+        "reopened": {
+          "accounts": [
+            [
+              "alpha",
+              "cash",
+              100
+            ],
+            [
+              "alpha",
+              "savings",
+              0
+            ]
+          ],
+          "transfers": [],
+          "audit": [],
+          "work": [
+            [
+              1
+            ]
+          ]
+        }
+      }
+    },
+    "dml_scope_match": {
+      "failures": [],
+      "native": {
+        "status": "rejected",
+        "error": "audit rule",
+        "schema_preserved": true,
+        "reopened": {
+          "accounts": [
+            [
+              "alpha",
+              "cash",
+              100
+            ],
+            [
+              "alpha",
+              "savings",
+              0
+            ],
+            [
+              "beta",
+              "private",
+              777
+            ]
+          ],
+          "transfers": [],
+          "audit": []
+        }
+      },
+      "api": {
+        "status": "success",
+        "receipt": {
+          "tenant": "alpha",
+          "key": "k",
+          "source": "cash",
+          "target": "savings",
+          "amount": 10
+        },
+        "schema_preserved": true,
+        "reopened": {
+          "accounts": [
+            [
+              "alpha",
+              "cash",
+              90
+            ],
+            [
+              "alpha",
+              "savings",
+              10
+            ],
+            [
+              "beta",
+              "private",
+              777
+            ]
+          ],
+          "transfers": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ],
+          "audit": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ]
+        },
+        "replay": {
+          "status": "success",
+          "receipt": {
+            "tenant": "alpha",
+            "key": "k",
+            "source": "cash",
+            "target": "savings",
+            "amount": 10
+          }
+        }
+      },
+      "cli": {
+        "status": "success",
+        "receipt": {
+          "tenant": "alpha",
+          "key": "k",
+          "source": "cash",
+          "target": "savings",
+          "amount": 10
+        },
+        "schema_preserved": true,
+        "reopened": {
+          "accounts": [
+            [
+              "alpha",
+              "cash",
+              90
+            ],
+            [
+              "alpha",
+              "savings",
+              10
+            ],
+            [
+              "beta",
+              "private",
+              777
+            ]
+          ],
+          "transfers": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ],
+          "audit": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ]
+        },
+        "replay": {
+          "status": "success",
+          "receipt": {
+            "tenant": "alpha",
+            "key": "k",
+            "source": "cash",
+            "target": "savings",
+            "amount": 10
+          }
+        }
+      }
+    },
+    "dml_scope_miss": {
+      "failures": [],
+      "native": {
+        "status": "success",
+        "receipt": {
+          "tenant": "alpha",
+          "key": "k",
+          "source": "cash",
+          "target": "savings",
+          "amount": 10
+        },
+        "schema_preserved": true,
+        "reopened": {
+          "accounts": [
+            [
+              "alpha",
+              "cash",
+              90
+            ],
+            [
+              "alpha",
+              "savings",
+              10
+            ],
+            [
+              "beta",
+              "private",
+              778
+            ]
+          ],
+          "transfers": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ],
+          "audit": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ]
+        }
+      },
+      "api": {
+        "status": "success",
+        "receipt": {
+          "tenant": "alpha",
+          "key": "k",
+          "source": "cash",
+          "target": "savings",
+          "amount": 10
+        },
+        "schema_preserved": true,
+        "reopened": {
+          "accounts": [
+            [
+              "alpha",
+              "cash",
+              90
+            ],
+            [
+              "alpha",
+              "savings",
+              10
+            ],
+            [
+              "beta",
+              "private",
+              778
+            ]
+          ],
+          "transfers": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ],
+          "audit": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ]
+        },
+        "replay": {
+          "status": "success",
+          "receipt": {
+            "tenant": "alpha",
+            "key": "k",
+            "source": "cash",
+            "target": "savings",
+            "amount": 10
+          }
+        }
+      },
+      "cli": {
+        "status": "success",
+        "receipt": {
+          "tenant": "alpha",
+          "key": "k",
+          "source": "cash",
+          "target": "savings",
+          "amount": 10
+        },
+        "schema_preserved": true,
+        "reopened": {
+          "accounts": [
+            [
+              "alpha",
+              "cash",
+              90
+            ],
+            [
+              "alpha",
+              "savings",
+              10
+            ],
+            [
+              "beta",
+              "private",
+              778
+            ]
+          ],
+          "transfers": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ],
+          "audit": [
+            [
+              "alpha",
+              "k",
+              "cash",
+              "savings",
+              10
+            ]
+          ]
+        },
+        "replay": {
+          "status": "success",
+          "receipt": {
+            "tenant": "alpha",
+            "key": "k",
+            "source": "cash",
+            "target": "savings",
+            "amount": 10
+          }
+        }
+      }
+    },
+    "dml_scope_pair": {
+      "failures": []
+    }
+  }
+}

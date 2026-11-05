@@ -1,0 +1,5 @@
+{
+  "status": "REWORK",
+  "previous_assessment": "assessment-2-before-counter.json",
+  "reason": "New actual counter and Unicode-space compatibility failures; original closure retained."
+}

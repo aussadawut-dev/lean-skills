@@ -1,0 +1,544 @@
+{
+  "workspace": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high/round-2/critical/reviewspace",
+  "sqlite_version": "3.50.4",
+  "source_sha256": "c3947b0727a73750a546c8f6deafb9ee5ed01e6890c60a92b5caacf8f237063c",
+  "issue_count": 4,
+  "failed_cases": 4,
+  "failed_case_names": [
+    "f1_foreign_corruption",
+    "f1_nested_restore",
+    "f2_single_quoted_view",
+    "f2_unquoted_view_control"
+  ],
+  "cases": [
+    {
+      "case": "f1_foreign_corruption",
+      "finding": "F1",
+      "native_pass": true,
+      "native": {
+        "status": "success",
+        "recursive_triggers": 0
+      },
+      "expected": "storage_error",
+      "failures": [
+        "api:accounts",
+        "api:transfers",
+        "api:audit",
+        "api:status",
+        "cli:accounts",
+        "cli:transfers",
+        "cli:audit",
+        "cli:status"
+      ],
+      "api": {
+        "status": "success",
+        "receipt": {
+          "tenant": "red",
+          "key": "new",
+          "source": "a",
+          "target": "b",
+          "amount": 10
+        },
+        "replay": {
+          "status": "success",
+          "receipt": {
+            "tenant": "red",
+            "key": "new",
+            "source": "a",
+            "target": "b",
+            "amount": 10
+          }
+        },
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            78
+          ],
+          [
+            "red",
+            "a",
+            90
+          ],
+          [
+            "red",
+            "b",
+            30
+          ]
+        ],
+        "reopened_transfers": [
+          [
+            "red",
+            "new",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "reopened_audit": [
+          [
+            "red",
+            "new",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "schema_preserved": true
+      },
+      "cli": {
+        "status": "success",
+        "receipt": {
+          "tenant": "red",
+          "key": "new",
+          "source": "a",
+          "target": "b",
+          "amount": 10
+        },
+        "replay": {
+          "status": "success",
+          "receipt": {
+            "tenant": "red",
+            "key": "new",
+            "source": "a",
+            "target": "b",
+            "amount": 10
+          }
+        },
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            78
+          ],
+          [
+            "red",
+            "a",
+            90
+          ],
+          [
+            "red",
+            "b",
+            30
+          ]
+        ],
+        "reopened_transfers": [
+          [
+            "red",
+            "new",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "reopened_audit": [
+          [
+            "red",
+            "new",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "schema_preserved": true
+      }
+    },
+    {
+      "case": "f1_nested_restore",
+      "finding": "F1",
+      "native_pass": true,
+      "native": {
+        "status": "success",
+        "recursive_triggers": 0
+      },
+      "expected": "success",
+      "failures": [
+        "api:accounts",
+        "api:transfers",
+        "api:audit",
+        "api:status",
+        "api:receipt",
+        "cli:accounts",
+        "cli:transfers",
+        "cli:audit",
+        "cli:status",
+        "cli:receipt"
+      ],
+      "api": {
+        "status": "storage_error",
+        "type": "IntegrityError",
+        "error": "unexpected storage effects",
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            100
+          ],
+          [
+            "red",
+            "b",
+            20
+          ]
+        ],
+        "reopened_transfers": [],
+        "reopened_audit": [],
+        "schema_preserved": true
+      },
+      "cli": {
+        "status": "storage_error",
+        "returncode": 2,
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            100
+          ],
+          [
+            "red",
+            "b",
+            20
+          ]
+        ],
+        "reopened_transfers": [],
+        "reopened_audit": [],
+        "schema_preserved": true
+      }
+    },
+    {
+      "case": "f1_plain_restore_control",
+      "finding": "F1",
+      "native_pass": true,
+      "native": {
+        "status": "success",
+        "recursive_triggers": 0
+      },
+      "expected": "success",
+      "failures": [],
+      "api": {
+        "status": "success",
+        "receipt": {
+          "tenant": "red",
+          "key": "new",
+          "source": "a",
+          "target": "b",
+          "amount": 10
+        },
+        "replay": {
+          "status": "success",
+          "receipt": {
+            "tenant": "red",
+            "key": "new",
+            "source": "a",
+            "target": "b",
+            "amount": 10
+          }
+        },
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            90
+          ],
+          [
+            "red",
+            "b",
+            30
+          ]
+        ],
+        "reopened_transfers": [
+          [
+            "red",
+            "new",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "reopened_audit": [
+          [
+            "red",
+            "new",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "schema_preserved": true
+      },
+      "cli": {
+        "status": "success",
+        "receipt": {
+          "tenant": "red",
+          "key": "new",
+          "source": "a",
+          "target": "b",
+          "amount": 10
+        },
+        "replay": {
+          "status": "success",
+          "receipt": {
+            "tenant": "red",
+            "key": "new",
+            "source": "a",
+            "target": "b",
+            "amount": 10
+          }
+        },
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            90
+          ],
+          [
+            "red",
+            "b",
+            30
+          ]
+        ],
+        "reopened_transfers": [
+          [
+            "red",
+            "new",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "reopened_audit": [
+          [
+            "red",
+            "new",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "schema_preserved": true
+      }
+    },
+    {
+      "case": "f2_single_quoted_view",
+      "finding": "F2",
+      "native_pass": true,
+      "native": {
+        "status": "success",
+        "recursive_triggers": 0
+      },
+      "expected": "success",
+      "failures": [
+        "api:accounts",
+        "api:transfers",
+        "api:audit",
+        "api:status",
+        "api:receipt",
+        "cli:accounts",
+        "cli:transfers",
+        "cli:audit",
+        "cli:status",
+        "cli:receipt"
+      ],
+      "api": {
+        "status": "storage_error",
+        "type": "OperationalError",
+        "error": "abort due to ROLLBACK",
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            100
+          ],
+          [
+            "red",
+            "b",
+            20
+          ]
+        ],
+        "reopened_transfers": [],
+        "reopened_audit": [],
+        "schema_preserved": true
+      },
+      "cli": {
+        "status": "storage_error",
+        "returncode": 2,
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            100
+          ],
+          [
+            "red",
+            "b",
+            20
+          ]
+        ],
+        "reopened_transfers": [],
+        "reopened_audit": [],
+        "schema_preserved": true
+      }
+    },
+    {
+      "case": "f2_unquoted_view_control",
+      "finding": "F2",
+      "native_pass": true,
+      "native": {
+        "status": "success",
+        "recursive_triggers": 0
+      },
+      "expected": "success",
+      "failures": [
+        "api:accounts",
+        "api:transfers",
+        "api:audit",
+        "api:status",
+        "api:receipt",
+        "cli:accounts",
+        "cli:transfers",
+        "cli:audit",
+        "cli:status",
+        "cli:receipt"
+      ],
+      "api": {
+        "status": "storage_error",
+        "type": "OperationalError",
+        "error": "abort due to ROLLBACK",
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            100
+          ],
+          [
+            "red",
+            "b",
+            20
+          ]
+        ],
+        "reopened_transfers": [],
+        "reopened_audit": [],
+        "schema_preserved": true
+      },
+      "cli": {
+        "status": "storage_error",
+        "returncode": 2,
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            100
+          ],
+          [
+            "red",
+            "b",
+            20
+          ]
+        ],
+        "reopened_transfers": [],
+        "reopened_audit": [],
+        "schema_preserved": true
+      }
+    },
+    {
+      "case": "f2_guard_still_blocks_control",
+      "finding": "F2",
+      "native_pass": true,
+      "native": {
+        "status": "storage_error",
+        "error": "native guard",
+        "recursive_triggers": 0
+      },
+      "expected": "storage_error",
+      "failures": [],
+      "api": {
+        "status": "storage_error",
+        "type": "IntegrityError",
+        "error": "native guard",
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            100
+          ],
+          [
+            "red",
+            "b",
+            20
+          ]
+        ],
+        "reopened_transfers": [],
+        "reopened_audit": [],
+        "schema_preserved": true
+      },
+      "cli": {
+        "status": "storage_error",
+        "returncode": 2,
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            100
+          ],
+          [
+            "red",
+            "b",
+            20
+          ]
+        ],
+        "reopened_transfers": [],
+        "reopened_audit": [],
+        "schema_preserved": true
+      }
+    }
+  ]
+}

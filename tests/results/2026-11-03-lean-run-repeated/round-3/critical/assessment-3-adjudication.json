@@ -1,0 +1,12 @@
+{
+  "noncontract_blockers": [
+    "historical_regressions"
+  ],
+  "reason": "The only historical-suite failure is the previously classified overflow exception-class difference. The original contract prescribes no specific overflow class; final-source probe confirms rejection without mutations. The independent ignored-update finding remains mandatory and this trial remains FAILED.",
+  "evidence": {
+    "probe": "overflow-final-probe.json",
+    "log": "review-3-historical_tests_on_candidate.log",
+    "previous_classification": "assessment-1-adjudication.json",
+    "independent_finding_not_waived": "review-3/final.txt"
+  }
+}

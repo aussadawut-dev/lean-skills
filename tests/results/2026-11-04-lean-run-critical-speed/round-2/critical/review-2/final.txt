@@ -1,0 +1,27 @@
+{
+  "status": "REWORK",
+  "findings": [
+    {
+      "id": "R2-F1",
+      "severity": "MEDIUM",
+      "location": "vault.py:49-51, vault.py:106-120, vault.py:223-224",
+      "requirement": "Preserve valid transfers and existing trigger semantics while validating transaction effects.",
+      "evidence": "The tokenizer discards U+00A0 as whitespace, although SQLite accepts it as an unquoted identifier. Reproduction: initialize accounts ('one','a',100) and ('one','b',0); execute Python SQL expression \"CREATE TRIGGER \" + chr(160) + \" DELETE ON transfers BEGIN SELECT RAISE(FAIL,'delete gate'); END\" and SQL \"CREATE TRIGGER mirror AFTER INSERT ON audit BEGIN INSERT OR REPLACE INTO transfers SELECT * FROM transfers; END\"; call vault.transfer(path,'one','a','b',10,'k'). Both .baseline and .pre-repair succeed with balances 90/10 and one receipt/audit row. The candidate raises IntegrityError('delete gate'); its CLI exits 2. Replacing only the Unicode trigger name with 'gate' makes the candidate succeed. Losing the name causes event extraction to read ON instead of DELETE, so the guard incorrectly fires this trigger for an implicit REPLACE deletion. Failed calls roll back completely.",
+      "suggested_fix": "Match SQLite's whitespace and identifier tokenization, preserve non-ASCII identifier characters, and verify event extraction. Add a regression using the demonstrated identifier and logically unchanged REPLACE operation."
+    }
+  ],
+  "checks": [
+    "Read CONTRACT.md, AGENTS.md, lean-run and its write-integrity procedure; compared current application source against .baseline and .pre-repair and inspected added tests.",
+    "python3 -B -m unittest discover -v: all 24 tests passed.",
+    "Independently verified receipt-erasure rollback twice, successful control transfer, and replay without additional effects.",
+    "Independently verified duplicate JSON-key rejection, including escaped equivalent keys, without writes.",
+    "Independently verified durable replay after endpoint removal, payload-conflict rejection, and missing-endpoint rejection for new transfers.",
+    "Compared focused trigger controls against .pre-repair, including conditional/nested RAISE(IGNORE), Unicode and keyword names, view-trigger failures, and implicit REPLACE deletion behavior.",
+    "Confirmed R2-F1 against both saved versions, an ASCII-name control, and the public CLI using temporary databases.",
+    "No application, tests, instructions or saved baseline files were modified."
+  ],
+  "coverage_limits": [
+    "Executed on Python 3.14.3 and SQLite 3.50.4; other runtime versions were not exercised.",
+    "Review focused on the repair delta and relevant contract regressions; arbitrary SQLite trigger combinations were not exhaustively tested."
+  ]
+}

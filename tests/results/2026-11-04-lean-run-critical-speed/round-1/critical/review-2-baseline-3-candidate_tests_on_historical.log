@@ -1,0 +1,557 @@
+test_valid_transfer (test_public.PublicTests.test_valid_transfer) ... ok
+test_balance_is_scoped_and_missing_accounts_are_indistinguishable (test_regressions.VaultRegressionTests.test_balance_is_scoped_and_missing_accounts_are_indistinguishable) ... ok
+test_both_transfer_accounts_must_exist_in_tenant (test_regressions.VaultRegressionTests.test_both_transfer_accounts_must_exist_in_tenant) ... ok
+test_cli_integrated_transfer_replay_failure_and_recovery (test_regressions.VaultRegressionTests.test_cli_integrated_transfer_replay_failure_and_recovery) ... FAIL
+test_cli_rejects_duplicate_json_fields_before_dispatch (test_regressions.VaultRegressionTests.test_cli_rejects_duplicate_json_fields_before_dispatch) ... 
+  test_cli_rejects_duplicate_json_fields_before_dispatch (test_regressions.VaultRegressionTests.test_cli_rejects_duplicate_json_fields_before_dispatch) (raw='{"op":"balance","tenant":"one","account":"a","account":"b"}') ... FAIL
+  test_cli_rejects_duplicate_json_fields_before_dispatch (test_regressions.VaultRegressionTests.test_cli_rejects_duplicate_json_fields_before_dispatch) (raw='{"op":"balance","tenant":"one","account":"a","account":"a"}') ... FAIL
+  test_cli_rejects_duplicate_json_fields_before_dispatch (test_regressions.VaultRegressionTests.test_cli_rejects_duplicate_json_fields_before_dispatch) (raw='{"op":"balance","tenant":"one","account":"a","acc\\u006funt":"b"}') ... FAIL
+  test_cli_rejects_duplicate_json_fields_before_dispatch (test_regressions.VaultRegressionTests.test_cli_rejects_duplicate_json_fields_before_dispatch) (raw='{"op":"balance","tenant":"two","tenant":"one","account":"a"}') ... FAIL
+  test_cli_rejects_duplicate_json_fields_before_dispatch (test_regressions.VaultRegressionTests.test_cli_rejects_duplicate_json_fields_before_dispatch) (raw='{"op":"unknown","op":"balance","tenant":"one","account":"a"}') ... FAIL
+  test_cli_rejects_duplicate_json_fields_before_dispatch (test_regressions.VaultRegressionTests.test_cli_rejects_duplicate_json_fields_before_dispatch) (raw='{"op":"transfer","tenant":"one","source":"a","target":"b","amount":11,"amount":10,"key":"new"}') ... FAIL
+  test_cli_rejects_duplicate_json_fields_before_dispatch (test_regressions.VaultRegressionTests.test_cli_rejects_duplicate_json_fields_before_dispatch) (raw='{"op":"transfer","tenant":"one","source":"a","target":"b","amount":10,"key":"old","key":"new"}') ... FAIL
+test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) ... 
+  test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request=None) ... FAIL
+  test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request=[]) ... FAIL
+  test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request=True) ... FAIL
+  test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request=4) ... FAIL
+  test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request='balance') ... FAIL
+  test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request={}) ... FAIL
+  test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request={'op': []}) ... FAIL
+  test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request={'op': {}}) ... FAIL
+  test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request={'op': 'init_db'}) ... FAIL
+  test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request={'op': '__dict__'}) ... FAIL
+  test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request={'op': 'transfer'}) ... FAIL
+  test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request={'op': 'balance', 'tenant': 'one'}) ... FAIL
+  test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request={'op': 'balance', 'tenant': 'one', 'account': 'a', 'extra': 1}) ... FAIL
+  test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request={'op': 'balance', 'tenant': 'one', 'account': ['a']}) ... FAIL
+  test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request={'op': 'transfer', 'tenant': 'one', 'source': 'a', 'target': 'b', 'amount': True, 'key': 'new'}) ... FAIL
+  test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request={'op': 'transfer', 'tenant': None, 'source': 'a', 'target': 'b', 'amount': 10, 'key': 'new'}) ... FAIL
+  test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (raw='{') ... FAIL
+  test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (raw='') ... FAIL
+  test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (raw='{"op":') ... FAIL
+  test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (argv=[]) ... FAIL
+  test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (argv=['/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/.vault-test-7r6cts_w/vault.sqlite']) ... FAIL
+  test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (argv=['/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/.vault-test-7r6cts_w/vault.sqlite', '{}', 'extra']) ... FAIL
+test_cli_storage_errors_do_not_disclose_sql_or_tracebacks (test_regressions.VaultRegressionTests.test_cli_storage_errors_do_not_disclose_sql_or_tracebacks) ... FAIL
+test_conditional_unicode_and_keyword_triggers_keep_their_behavior (test_regressions.VaultRegressionTests.test_conditional_unicode_and_keyword_triggers_keep_their_behavior) ... ok
+test_delete_context_survives_nested_replacement_and_ignore (test_regressions.VaultRegressionTests.test_delete_context_survives_nested_replacement_and_ignore) ... ok
+test_dollar_in_trigger_name_allows_api_and_cli_transfers (test_regressions.VaultRegressionTests.test_dollar_in_trigger_name_allows_api_and_cli_transfers) ... ok
+test_existing_unique_constraint_failure_is_atomic (test_regressions.VaultRegressionTests.test_existing_unique_constraint_failure_is_atomic) ... ok
+test_explicit_delete_trigger_failure_still_propagates (test_regressions.VaultRegressionTests.test_explicit_delete_trigger_failure_still_propagates) ... ok
+test_ignored_writes_and_extra_audit_rows_cannot_partially_commit (test_regressions.VaultRegressionTests.test_ignored_writes_and_extra_audit_rows_cannot_partially_commit) ... ok
+test_implicit_replace_destruction_is_still_observed_and_rolled_back (test_regressions.VaultRegressionTests.test_implicit_replace_destruction_is_still_observed_and_rolled_back) ... 
+  test_implicit_replace_destruction_is_still_observed_and_rolled_back (test_regressions.VaultRegressionTests.test_implicit_replace_destruction_is_still_observed_and_rolled_back) (statements="INSERT OR REPLACE INTO accounts VALUES ('one','replacement',900); DELETE FROM accounts WHERE tenant='one' AND name='replacement';") ... FAIL
+  test_implicit_replace_destruction_is_still_observed_and_rolled_back (test_regressions.VaultRegressionTests.test_implicit_replace_destruction_is_still_observed_and_rolled_back) (statements="UPDATE OR REPLACE accounts SET balance=900 WHERE tenant='one' AND name='c'; UPDATE accounts SET balance=50 WHERE tenant='one' AND name='c';") ... ERROR
+test_init_preserves_schema_history_and_triggers (test_regressions.VaultRegressionTests.test_init_preserves_schema_history_and_triggers) ... ok
+test_integer_boundaries_are_exact_and_overflow_is_rejected (test_regressions.VaultRegressionTests.test_integer_boundaries_are_exact_and_overflow_is_rejected) ... ok
+test_invalid_names_and_amounts_make_no_changes (test_regressions.VaultRegressionTests.test_invalid_names_and_amounts_make_no_changes) ... ok
+test_keys_and_cached_receipts_are_tenant_scoped (test_regressions.VaultRegressionTests.test_keys_and_cached_receipts_are_tenant_scoped) ... ok
+test_replay_after_reopening_and_exhausting_source_is_read_only (test_regressions.VaultRegressionTests.test_replay_after_reopening_and_exhausting_source_is_read_only) ... ok
+test_replays_compare_all_payload_fields_and_validate_input (test_regressions.VaultRegressionTests.test_replays_compare_all_payload_fields_and_validate_input) ... ok
+test_simultaneous_conflicting_payloads_choose_one_receipt (test_regressions.VaultRegressionTests.test_simultaneous_conflicting_payloads_choose_one_receipt) ... ok
+test_simultaneous_distinct_keys_cannot_overspend (test_regressions.VaultRegressionTests.test_simultaneous_distinct_keys_cannot_overspend) ... ok
+test_simultaneous_duplicate_connections_execute_once (test_regressions.VaultRegressionTests.test_simultaneous_duplicate_connections_execute_once) ... ok
+test_simultaneous_sources_do_not_lose_credits (test_regressions.VaultRegressionTests.test_simultaneous_sources_do_not_lose_credits) ... ok
+test_simultaneous_tenants_can_share_a_key (test_regressions.VaultRegressionTests.test_simultaneous_tenants_can_share_a_key) ... ok
+test_storage_failures_at_each_stage_roll_back_and_preserve_triggers (test_regressions.VaultRegressionTests.test_storage_failures_at_each_stage_roll_back_and_preserve_triggers) ... ok
+test_transfer_changes_only_its_tenant_and_preserves_history (test_regressions.VaultRegressionTests.test_transfer_changes_only_its_tenant_and_preserves_history) ... ok
+test_unchanged_replacements_preserve_delete_trigger_suppression (test_regressions.VaultRegressionTests.test_unchanged_replacements_preserve_delete_trigger_suppression) ... ok
+test_unicode_and_sql_shaped_strings_are_literal_names (test_regressions.VaultRegressionTests.test_unicode_and_sql_shaped_strings_are_literal_names) ... ok
+
+======================================================================
+ERROR: test_implicit_replace_destruction_is_still_observed_and_rolled_back (test_regressions.VaultRegressionTests.test_implicit_replace_destruction_is_still_observed_and_rolled_back) (statements="UPDATE OR REPLACE accounts SET balance=900 WHERE tenant='one' AND name='c'; UPDATE accounts SET balance=50 WHERE tenant='one' AND name='c';")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 337, in test_implicit_replace_destruction_is_still_observed_and_rolled_back
+    self.execute("CREATE UNIQUE INDEX replacement_conflict ON accounts(balance) "
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 "WHERE name IN ('private','" + name + "')")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 41, in execute
+    return con.execute(sql, parameters).fetchall()
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: index replacement_conflict already exists
+
+======================================================================
+FAIL: test_cli_integrated_transfer_replay_failure_and_recovery (test_regressions.VaultRegressionTests.test_cli_integrated_transfer_replay_failure_and_recovery)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 504, in test_cli_integrated_transfer_replay_failure_and_recovery
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_duplicate_json_fields_before_dispatch (test_regressions.VaultRegressionTests.test_cli_rejects_duplicate_json_fields_before_dispatch) (raw='{"op":"balance","tenant":"one","account":"a","account":"b"}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 475, in test_cli_rejects_duplicate_json_fields_before_dispatch
+    self.assert_cli_error(self.cli(raw=raw))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_duplicate_json_fields_before_dispatch (test_regressions.VaultRegressionTests.test_cli_rejects_duplicate_json_fields_before_dispatch) (raw='{"op":"balance","tenant":"one","account":"a","account":"a"}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 475, in test_cli_rejects_duplicate_json_fields_before_dispatch
+    self.assert_cli_error(self.cli(raw=raw))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_duplicate_json_fields_before_dispatch (test_regressions.VaultRegressionTests.test_cli_rejects_duplicate_json_fields_before_dispatch) (raw='{"op":"balance","tenant":"one","account":"a","acc\\u006funt":"b"}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 475, in test_cli_rejects_duplicate_json_fields_before_dispatch
+    self.assert_cli_error(self.cli(raw=raw))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_duplicate_json_fields_before_dispatch (test_regressions.VaultRegressionTests.test_cli_rejects_duplicate_json_fields_before_dispatch) (raw='{"op":"balance","tenant":"two","tenant":"one","account":"a"}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 475, in test_cli_rejects_duplicate_json_fields_before_dispatch
+    self.assert_cli_error(self.cli(raw=raw))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_duplicate_json_fields_before_dispatch (test_regressions.VaultRegressionTests.test_cli_rejects_duplicate_json_fields_before_dispatch) (raw='{"op":"unknown","op":"balance","tenant":"one","account":"a"}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 475, in test_cli_rejects_duplicate_json_fields_before_dispatch
+    self.assert_cli_error(self.cli(raw=raw))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_duplicate_json_fields_before_dispatch (test_regressions.VaultRegressionTests.test_cli_rejects_duplicate_json_fields_before_dispatch) (raw='{"op":"transfer","tenant":"one","source":"a","target":"b","amount":11,"amount":10,"key":"new"}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 475, in test_cli_rejects_duplicate_json_fields_before_dispatch
+    self.assert_cli_error(self.cli(raw=raw))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_duplicate_json_fields_before_dispatch (test_regressions.VaultRegressionTests.test_cli_rejects_duplicate_json_fields_before_dispatch) (raw='{"op":"transfer","tenant":"one","source":"a","target":"b","amount":10,"key":"old","key":"new"}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 475, in test_cli_rejects_duplicate_json_fields_before_dispatch
+    self.assert_cli_error(self.cli(raw=raw))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 451, in test_cli_rejects_malformed_requests_and_unexposed_operations
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 451, in test_cli_rejects_malformed_requests_and_unexposed_operations
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 451, in test_cli_rejects_malformed_requests_and_unexposed_operations
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 451, in test_cli_rejects_malformed_requests_and_unexposed_operations
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request='balance')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 451, in test_cli_rejects_malformed_requests_and_unexposed_operations
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 451, in test_cli_rejects_malformed_requests_and_unexposed_operations
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request={'op': []})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 451, in test_cli_rejects_malformed_requests_and_unexposed_operations
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request={'op': {}})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 451, in test_cli_rejects_malformed_requests_and_unexposed_operations
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request={'op': 'init_db'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 451, in test_cli_rejects_malformed_requests_and_unexposed_operations
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request={'op': '__dict__'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 451, in test_cli_rejects_malformed_requests_and_unexposed_operations
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request={'op': 'transfer'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 451, in test_cli_rejects_malformed_requests_and_unexposed_operations
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request={'op': 'balance', 'tenant': 'one'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 451, in test_cli_rejects_malformed_requests_and_unexposed_operations
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request={'op': 'balance', 'tenant': 'one', 'account': 'a', 'extra': 1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 451, in test_cli_rejects_malformed_requests_and_unexposed_operations
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request={'op': 'balance', 'tenant': 'one', 'account': ['a']})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 451, in test_cli_rejects_malformed_requests_and_unexposed_operations
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request={'op': 'transfer', 'tenant': 'one', 'source': 'a', 'target': 'b', 'amount': True, 'key': 'new'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 451, in test_cli_rejects_malformed_requests_and_unexposed_operations
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (request={'op': 'transfer', 'tenant': None, 'source': 'a', 'target': 'b', 'amount': 10, 'key': 'new'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 451, in test_cli_rejects_malformed_requests_and_unexposed_operations
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (raw='{')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 454, in test_cli_rejects_malformed_requests_and_unexposed_operations
+    self.assert_cli_error(self.cli(raw=raw))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (raw='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 454, in test_cli_rejects_malformed_requests_and_unexposed_operations
+    self.assert_cli_error(self.cli(raw=raw))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (raw='{"op":')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 454, in test_cli_rejects_malformed_requests_and_unexposed_operations
+    self.assert_cli_error(self.cli(raw=raw))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (argv=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 457, in test_cli_rejects_malformed_requests_and_unexposed_operations
+    self.assert_cli_error(self.cli(argv=argv))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (argv=['/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/.vault-test-7r6cts_w/vault.sqlite'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 457, in test_cli_rejects_malformed_requests_and_unexposed_operations
+    self.assert_cli_error(self.cli(argv=argv))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_rejects_malformed_requests_and_unexposed_operations (test_regressions.VaultRegressionTests.test_cli_rejects_malformed_requests_and_unexposed_operations) (argv=['/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/.vault-test-7r6cts_w/vault.sqlite', '{}', 'extra'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 457, in test_cli_rejects_malformed_requests_and_unexposed_operations
+    self.assert_cli_error(self.cli(argv=argv))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_cli_storage_errors_do_not_disclose_sql_or_tracebacks (test_regressions.VaultRegressionTests.test_cli_storage_errors_do_not_disclose_sql_or_tracebacks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 522, in test_cli_storage_errors_do_not_disclose_sql_or_tracebacks
+    self.assert_cli_error(self.cli(argv=[str(missing_parent), request]))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 438, in assert_cli_error
+    self.assertEqual(result.stderr, '{"error": "invalid request"}\n')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"error": "request failed"}\n' != '{"error": "invalid request"}\n'
+- {"error": "request failed"}
++ {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_implicit_replace_destruction_is_still_observed_and_rolled_back (test_regressions.VaultRegressionTests.test_implicit_replace_destruction_is_still_observed_and_rolled_back) (statements="INSERT OR REPLACE INTO accounts VALUES ('one','replacement',900); DELETE FROM accounts WHERE tenant='one' AND name='replacement';")
+----------------------------------------------------------------------
+sqlite3.IntegrityError: transfer integrity failure
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-jexzef19/test_regressions.py", line 345, in test_implicit_replace_destruction_is_still_observed_and_rolled_back
+    with self.assertRaisesRegex(sqlite3.IntegrityError, '^unexpected transfer effects$'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "^unexpected transfer effects$" does not match "transfer integrity failure"
+
+----------------------------------------------------------------------
+Ran 29 tests in 1.709s
+
+FAILED (failures=32, errors=1)

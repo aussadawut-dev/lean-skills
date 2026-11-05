@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "findings": [],
+  "checks": [
+    "Read lean-run, AGENTS.md and CONTRACT.md; compared baseline and current source; inspected added tests. Supplied test_public.py is unchanged.",
+    "python3 -B -m unittest discover -v: all 18 tests passed.",
+    "Verified coverage of signed values, zeros, whitespace, field preservation, invalid syntax, CLI arity and clean error output.",
+    "Independent parser probes passed for patterned 5,409-digit signed integers with Python's conversion limit set to 640, including rejection and recovery.",
+    "Independent CLI probes from a temporary directory passed: three valid and four invalid/arity cases, checking exact stdout, stderr and exit status.",
+    "Confirmed standard-library-only implementation. No application, test, instruction or baseline files were modified."
+  ],
+  "coverage_limits": [
+    "Execution was limited to the local Python 3.14.3 environment.",
+    "Large-integer probes reached 5,409 decimal digits; resource exhaustion and OS argument-length limits were not tested."
+  ]
+}

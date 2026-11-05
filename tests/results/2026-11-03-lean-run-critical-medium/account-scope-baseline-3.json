@@ -1,0 +1,34 @@
+{
+  "source_sha256": "7e81367b3537b251825eb72ee94f7e389dc524dd1bb2d15489080ce853f4953c",
+  "demonstrated_patterns": true,
+  "observations": [
+    {
+      "case": "ordinary",
+      "error": null,
+      "account_lookup_sql": [
+        "SELECT balance FROM accounts WHERE tenant='one' AND name='a'",
+        "SELECT balance FROM accounts WHERE tenant='one' AND name='b'",
+        "CREATE TEMP TRIGGER _vault_accounts_rowid BEFORE UPDATE ON main.accounts WHEN OLD.rowid IS NOT NEW.rowid BEGIN SELECT CASE WHEN EXISTS (SELECT 1 FROM accounts WHERE rowid=NEW.rowid) THEN RAISE(ABORT, 'unexpected stored transfer effects') END; END"
+      ],
+      "demonstrated_unscoped_count_sql": [],
+      "installed_unscoped_rowid_lookup_guards": [
+        "CREATE TEMP TRIGGER _vault_accounts_rowid BEFORE UPDATE ON main.accounts WHEN OLD.rowid IS NOT NEW.rowid BEGIN SELECT CASE WHEN EXISTS (SELECT 1 FROM accounts WHERE rowid=NEW.rowid) THEN RAISE(ABORT, 'unexpected stored transfer effects') END; END"
+      ]
+    },
+    {
+      "case": "foreign_rowid_collision",
+      "error": "IntegrityError: unexpected stored transfer effects",
+      "account_lookup_sql": [
+        "SELECT balance FROM accounts WHERE tenant='one' AND name='a'",
+        "SELECT balance FROM accounts WHERE tenant='one' AND name='b'",
+        "CREATE TEMP TRIGGER _vault_accounts_rowid BEFORE UPDATE ON main.accounts WHEN OLD.rowid IS NOT NEW.rowid BEGIN SELECT CASE WHEN EXISTS (SELECT 1 FROM accounts WHERE rowid=NEW.rowid) THEN RAISE(ABORT, 'unexpected stored transfer effects') END; END"
+      ],
+      "demonstrated_unscoped_count_sql": [],
+      "installed_unscoped_rowid_lookup_guards": [
+        "CREATE TEMP TRIGGER _vault_accounts_rowid BEFORE UPDATE ON main.accounts WHEN OLD.rowid IS NOT NEW.rowid BEGIN SELECT CASE WHEN EXISTS (SELECT 1 FROM accounts WHERE rowid=NEW.rowid) THEN RAISE(ABORT, 'unexpected stored transfer effects') END; END"
+      ]
+    }
+  ],
+  "interpretation": "Reuses independent original-contract triage: global cardinality and foreign stored-account lookups have no aggregate/sentinel exception. Installed trigger SQL is labeled separately from direct queries. OLD/NEW effective-write observation alone is not a preservation lookup.",
+  "limit": "Bounded trace/static confirmation of these two demonstrated patterns, not an exhaustive SQL analyzer or a new independent review. Existing stored outcomes and baseline archive are unchanged."
+}

@@ -1,0 +1,21 @@
+{
+  "findings": [
+    {
+      "id": "COORD-TRIGGER-COUNTER",
+      "severity": "MEDIUM",
+      "location": "_integrity.py effect observer bookkeeping",
+      "requirement": "Existing benign triggers retain observable SQLite behavior; valid public transfers succeed.",
+      "evidence": "A BEFORE credit trigger raises only if total_changes()!=1. Direct SQLite on the same schema accepts the two updates; new round-1 final API and CLI reject in both DELETE and WAL. Observer bookkeeping writes inflate the connection counter. See ../../round-1-final-before-counter-trigger-counter.json. Same diagnostic also fails all three prior finals.",
+      "suggested_fix": "Keep effect observation free of extra SQL row writes visible to existing triggers. Retain storage types, malformed-foreign-text isolation, no foreign SELECTs, hidden UNIQUE/rowid deletion tracking, ignored and unchanged replacements, and exact rollback/replay. Do not rewrite the user counter expression. Add a small public regression against the native control."
+    },
+    {
+      "id": "COORD-UNICODE-SPACE-TRIGGER",
+      "severity": "MEDIUM",
+      "location": "_integrity.py trigger tokenizer",
+      "requirement": "Preserve valid stored SQLite triggers with all accepted unquoted identifiers.",
+      "evidence": "SQLite accepts a trigger whose name is U+00A0. When a valid identical replacement would suppress that existing DELETE trigger under native nonrecursive behavior, this candidate fires it and rejects the transfer. API/CLI reproduce in both DELETE/WAL; the quoted control succeeds. Same root cause independently found in round 2. See ../../round-1-final-before-unicode-space-unicode-space.json.",
+      "suggested_fix": "Use SQLite whitespace rules, not Python Unicode whitespace; preserve valid non-ASCII identifiers. Confirm the unquoted and quoted controls and still reject destructive replacements."
+    }
+  ],
+  "notes": "Final fix only. Revisit due to a demonstrated new bounded counter probe; preserve original cap and existing successful effect, trigger and scope checks."
+}

@@ -1,0 +1,26 @@
+{
+  "findings": [
+    {
+      "id": "R1",
+      "severity": "HIGH",
+      "location": "ledger.py:9-10,20-23,26-38",
+      "requirement": "Validate integer values, reject invalid transfers with ValueError without changing state, and preserve transfer and replay integrity.",
+      "evidence": "Scalar subclasses pass isinstance checks and retain overridden behavior. Reproducer:\nfrom ledger import Ledger\nclass NegativeAmount(int):\n    def __le__(self, other): return False\nledger = Ledger({'a': 10, 'b': 0})\nledger.transfer('a', 'b', NegativeAmount(-1), 'x')\nObserved: success, balances {'a': 11, 'b': -1}, and history records amount -1. Separate probes of this same scalar-handling flaw demonstrated creation of funds through overridden arithmetic, acceptance of changed replay amounts through overridden equality, and a str subclass causing ValueError after balances changed but before history was recorded.",
+      "suggested_fix": "Normalize accepted scalar subclasses to trusted built-in values before validation, arithmetic, hashing, comparison and storage. Add focused tests covering these boundaries and failure atomicity."
+    },
+    {
+      "id": "R2",
+      "severity": "LOW",
+      "location": "ledger.py:49,56",
+      "requirement": "Malformed batch operations must be rejected with ValueError without changing state.",
+      "evidence": "Reproducer:\nfrom collections import UserString\nfrom ledger import Ledger\nledger = Ledger({'a': 10, 'b': 0})\nledger.batch([{UserString('source'): 'a', 'target': 'b', 'amount': 1, 'key': 'x'}])\nObserved: TypeError('keywords must be strings'), rather than ValueError. UserString('source') passes the field-set equality check despite not being a str. State remained unchanged, including when a valid operation preceded this malformed operation.",
+      "suggested_fix": "Validate field-name types alongside the exact required names before expanding operation dictionaries into keyword arguments."
+    }
+  ],
+  "evidence": [
+    "assessment-1.json",
+    "review/final.txt"
+  ],
+  "coordinator_verification": "Admission rule: R1 traces to \"amount a positive int excluding bool\" and \"Reject invalid values ... with ValueError and absolutely no state change\"; reproduced on a copy of the candidate (NegativeAmount(-1) succeeds, balances a=11,b=-1, history amount -1). R2 traces to \"Reject invalid values ... with ValueError\"; reproduced (UserString field name raises TypeError, state unchanged). Both also reproduce on the initial fixture, so they are unrepaired contract defects, not regressions.",
+  "scope": "Same High task, first bounded repair. Two independent findings, copied verbatim."
+}

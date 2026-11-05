@@ -1,0 +1,354 @@
+test_valid_transfer (test_public.PublicTests.test_valid_transfer) ... ok
+test_audit_storage_failure_rolls_back_everything (test_regression.VaultTests.test_audit_storage_failure_rolls_back_everything) ... ok
+test_balance_isolation_and_generic_missing_accounts (test_regression.VaultTests.test_balance_isolation_and_generic_missing_accounts) ... ok
+test_cli_integrated_journey_and_generic_failures (test_regression.VaultTests.test_cli_integrated_journey_and_generic_failures) ... ok
+test_final_effects_reject_additions_losses_types_and_multiplicity (test_regression.VaultTests.test_final_effects_reject_additions_losses_types_and_multiplicity) ... ok
+test_legitimate_noops_ignored_conflicts_and_row_moves (test_regression.VaultTests.test_legitimate_noops_ignored_conflicts_and_row_moves) ... ok
+test_local_view_failure_remains_native (test_regression.VaultTests.test_local_view_failure_remains_native) ... ok
+test_native_trigger_noninterference_including_counters_and_views (test_regression.VaultTests.test_native_trigger_noninterference_including_counters_and_views) ... FAIL
+test_replay_conflict_and_independent_tenant_keys_after_reopen (test_regression.VaultTests.test_replay_conflict_and_independent_tenant_keys_after_reopen) ... FAIL
+test_scalar_subclasses_are_normalized_before_validation (test_regression.VaultTests.test_scalar_subclasses_are_normalized_before_validation) ... FAIL
+test_simultaneous_distinct_requests_never_overspend (test_regression.VaultTests.test_simultaneous_distinct_requests_never_overspend) ... ok
+test_simultaneous_duplicate_requests_execute_once (test_regression.VaultTests.test_simultaneous_duplicate_requests_execute_once) ... ok
+test_simultaneous_sources_do_not_lose_credits (test_regression.VaultTests.test_simultaneous_sources_do_not_lose_credits) ... ok
+test_tenant_identity_is_exact_even_with_declared_collations (test_regression.VaultTests.test_tenant_identity_is_exact_even_with_declared_collations) ... ok
+test_validation_and_no_writes (test_regression.VaultTests.test_validation_and_no_writes) ... ok
+test_wal_and_schema_preservation (test_regression.VaultTests.test_wal_and_schema_preservation) ... ok
+test_audit_references_resolve_after_foreign_rowid_collision (test_repair.RepairTests.test_audit_references_resolve_after_foreign_rowid_collision) ... 
+  test_audit_references_resolve_after_foreign_rowid_collision (test_repair.RepairTests.test_audit_references_resolve_after_foreign_rowid_collision) (interface='api', foreign=True) ... FAIL
+  test_audit_references_resolve_after_foreign_rowid_collision (test_repair.RepairTests.test_audit_references_resolve_after_foreign_rowid_collision) (interface='cli', foreign=True) ... FAIL
+test_case_renamed_core_tables_preserve_foreign_rows (test_repair.RepairTests.test_case_renamed_core_tables_preserve_foreign_rows) ... 
+  test_case_renamed_core_tables_preserve_foreign_rows (test_repair.RepairTests.test_case_renamed_core_tables_preserve_foreign_rows) (table='accounts', interface='api', foreign=777) ... FAIL
+  test_case_renamed_core_tables_preserve_foreign_rows (test_repair.RepairTests.test_case_renamed_core_tables_preserve_foreign_rows) (table='accounts', interface='api', foreign=778) ... FAIL
+  test_case_renamed_core_tables_preserve_foreign_rows (test_repair.RepairTests.test_case_renamed_core_tables_preserve_foreign_rows) (table='accounts', interface='cli', foreign=777) ... FAIL
+  test_case_renamed_core_tables_preserve_foreign_rows (test_repair.RepairTests.test_case_renamed_core_tables_preserve_foreign_rows) (table='accounts', interface='cli', foreign=778) ... FAIL
+  test_case_renamed_core_tables_preserve_foreign_rows (test_repair.RepairTests.test_case_renamed_core_tables_preserve_foreign_rows) (table='transfers', interface='api', foreign=777) ... FAIL
+  test_case_renamed_core_tables_preserve_foreign_rows (test_repair.RepairTests.test_case_renamed_core_tables_preserve_foreign_rows) (table='transfers', interface='api', foreign=778) ... FAIL
+  test_case_renamed_core_tables_preserve_foreign_rows (test_repair.RepairTests.test_case_renamed_core_tables_preserve_foreign_rows) (table='transfers', interface='cli', foreign=777) ... FAIL
+  test_case_renamed_core_tables_preserve_foreign_rows (test_repair.RepairTests.test_case_renamed_core_tables_preserve_foreign_rows) (table='transfers', interface='cli', foreign=778) ... FAIL
+  test_case_renamed_core_tables_preserve_foreign_rows (test_repair.RepairTests.test_case_renamed_core_tables_preserve_foreign_rows) (table='audit', interface='api', foreign=777) ... FAIL
+  test_case_renamed_core_tables_preserve_foreign_rows (test_repair.RepairTests.test_case_renamed_core_tables_preserve_foreign_rows) (table='audit', interface='api', foreign=778) ... FAIL
+  test_case_renamed_core_tables_preserve_foreign_rows (test_repair.RepairTests.test_case_renamed_core_tables_preserve_foreign_rows) (table='audit', interface='cli', foreign=777) ... FAIL
+  test_case_renamed_core_tables_preserve_foreign_rows (test_repair.RepairTests.test_case_renamed_core_tables_preserve_foreign_rows) (table='audit', interface='cli', foreign=778) ... FAIL
+test_fts_backing_state_matches_native_and_survives_reopen (test_repair.RepairTests.test_fts_backing_state_matches_native_and_survives_reopen) ... ok
+test_fts_commit_effects_are_verified_before_import (test_repair.RepairTests.test_fts_commit_effects_are_verified_before_import) ... 
+  test_fts_commit_effects_are_verified_before_import (test_repair.RepairTests.test_fts_commit_effects_are_verified_before_import) (body="UPDATE accounts SET balance=balance+1 WHERE tenant='one' AND name='b';") ... FAIL
+test_fts_writes_roll_back_with_audit_failure (test_repair.RepairTests.test_fts_writes_roll_back_with_audit_failure) ... ok
+test_sparse_account_rowids_keep_native_references (test_repair.RepairTests.test_sparse_account_rowids_keep_native_references) ... ok
+test_sparse_receipt_rowids_keep_native_references (test_repair.RepairTests.test_sparse_receipt_rowids_keep_native_references) ... ok
+
+======================================================================
+FAIL: test_native_trigger_noninterference_including_counters_and_views (test_regression.VaultTests.test_native_trigger_noninterference_including_counters_and_views)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-szi2zqqm/test_regression.py", line 264, in test_native_trigger_noninterference_including_counters_and_views
+    self.assertEqual(schema, self.schema(path))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: ([('table', 'accounts', 'accounts', 2, 'CREATE TABLE a[2184 chars](0,)) != ([('table', '_vault_rowids_085dfce757664582910b64f8928[2639 chars](0,))
+
+First differing element 0:
+[('table', 'accounts', 'accounts', 2, 'CREATE TABLE a[2171 chars]ts')]
+[('table', '_vault_rowids_085dfce757664582910b64f8928[2626 chars]ts')]
+
+Diff is 3214 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_replay_conflict_and_independent_tenant_keys_after_reopen (test_regression.VaultTests.test_replay_conflict_and_independent_tenant_keys_after_reopen)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-szi2zqqm/test_regression.py", line 112, in test_replay_conflict_and_independent_tenant_keys_after_reopen
+    self.assertEqual(self.schema(), schema)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: ([('table', '_vault_rowids_55d8e99bcf5943a1824d451bee8[1003 chars](0,)) != ([('table', 'accounts', 'accounts', 2, 'CREATE TABLE a[549 chars](0,))
+
+First differing element 0:
+[('table', '_vault_rowids_55d8e99bcf5943a1824d451bee8[990 chars]))')]
+[('table', 'accounts', 'accounts', 2, 'CREATE TABLE a[536 chars]))')]
+
+Diff is 1290 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_scalar_subclasses_are_normalized_before_validation (test_regression.VaultTests.test_scalar_subclasses_are_normalized_before_validation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-szi2zqqm/test_regression.py", line 124, in test_scalar_subclasses_are_normalized_before_validation
+    self.assertRejected(**{field: PretendNonempty('')})
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-szi2zqqm/test_regression.py", line 55, in assertRejected
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_audit_references_resolve_after_foreign_rowid_collision (test_repair.RepairTests.test_audit_references_resolve_after_foreign_rowid_collision) (interface='api', foreign=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-szi2zqqm/test_repair.py", line 232, in test_audit_references_resolve_after_foreign_rowid_collision
+    self.assertEqual(self.query(path, query), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != [('k',)]
+
+Second list contains 1 additional elements.
+First extra element 0:
+('k',)
+
+- []
++ [('k',)]
+
+======================================================================
+FAIL: test_audit_references_resolve_after_foreign_rowid_collision (test_repair.RepairTests.test_audit_references_resolve_after_foreign_rowid_collision) (interface='cli', foreign=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-szi2zqqm/test_repair.py", line 232, in test_audit_references_resolve_after_foreign_rowid_collision
+    self.assertEqual(self.query(path, query), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != [('k',)]
+
+Second list contains 1 additional elements.
+First extra element 0:
+('k',)
+
+- []
++ [('k',)]
+
+======================================================================
+FAIL: test_case_renamed_core_tables_preserve_foreign_rows (test_repair.RepairTests.test_case_renamed_core_tables_preserve_foreign_rows) (table='accounts', interface='api', foreign=777)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-szi2zqqm/test_repair.py", line 114, in test_case_renamed_core_tables_preserve_foreign_rows
+    self.assertEqual(self.schema(path), schema)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [('ta[158 chars]e', '_vault_rowids_593db1374d2f4aee8129ec0ebd6[1362 chars]))')] != [('ta[158 chars]e', 'audit', 'audit', 6, 'CREATE TABLE audit ([908 chars]))')]
+
+First differing element 1:
+('table', '_vault_rowids_593db1374d2f4aee8129ec0ebd6[256 chars]l))')
+('table', 'audit', 'audit', 6, 'CREATE TABLE audit ([73 chars]ER)')
+
+First list contains 2 additional elements.
+First extra element 7:
+('index', 'sqlite_autoindex_transfers_1', 'transfers', 5, None)
+
+Diff is 1797 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_case_renamed_core_tables_preserve_foreign_rows (test_repair.RepairTests.test_case_renamed_core_tables_preserve_foreign_rows) (table='accounts', interface='api', foreign=778)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-szi2zqqm/test_repair.py", line 114, in test_case_renamed_core_tables_preserve_foreign_rows
+    self.assertEqual(self.schema(path), schema)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [('ta[158 chars]e', '_vault_rowids_d899f3945ac74b9db1910f53f92[1362 chars]))')] != [('ta[158 chars]e', 'audit', 'audit', 6, 'CREATE TABLE audit ([908 chars]))')]
+
+First differing element 1:
+('table', '_vault_rowids_d899f3945ac74b9db1910f53f92[256 chars]l))')
+('table', 'audit', 'audit', 6, 'CREATE TABLE audit ([73 chars]ER)')
+
+First list contains 2 additional elements.
+First extra element 7:
+('index', 'sqlite_autoindex_transfers_1', 'transfers', 5, None)
+
+Diff is 1797 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_case_renamed_core_tables_preserve_foreign_rows (test_repair.RepairTests.test_case_renamed_core_tables_preserve_foreign_rows) (table='accounts', interface='cli', foreign=777)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-szi2zqqm/test_repair.py", line 114, in test_case_renamed_core_tables_preserve_foreign_rows
+    self.assertEqual(self.schema(path), schema)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [('ta[158 chars]e', '_vault_rowids_7602973cf3b84ec585694a15b5b[1362 chars]))')] != [('ta[158 chars]e', 'audit', 'audit', 6, 'CREATE TABLE audit ([908 chars]))')]
+
+First differing element 1:
+('table', '_vault_rowids_7602973cf3b84ec585694a15b5b[256 chars]l))')
+('table', 'audit', 'audit', 6, 'CREATE TABLE audit ([73 chars]ER)')
+
+First list contains 2 additional elements.
+First extra element 7:
+('index', 'sqlite_autoindex_transfers_1', 'transfers', 5, None)
+
+Diff is 1797 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_case_renamed_core_tables_preserve_foreign_rows (test_repair.RepairTests.test_case_renamed_core_tables_preserve_foreign_rows) (table='accounts', interface='cli', foreign=778)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-szi2zqqm/test_repair.py", line 114, in test_case_renamed_core_tables_preserve_foreign_rows
+    self.assertEqual(self.schema(path), schema)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [('ta[158 chars]e', '_vault_rowids_d7eac379143846c594b720b4ce4[1362 chars]))')] != [('ta[158 chars]e', 'audit', 'audit', 6, 'CREATE TABLE audit ([908 chars]))')]
+
+First differing element 1:
+('table', '_vault_rowids_d7eac379143846c594b720b4ce4[256 chars]l))')
+('table', 'audit', 'audit', 6, 'CREATE TABLE audit ([73 chars]ER)')
+
+First list contains 2 additional elements.
+First extra element 7:
+('index', 'sqlite_autoindex_transfers_1', 'transfers', 5, None)
+
+Diff is 1797 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_case_renamed_core_tables_preserve_foreign_rows (test_repair.RepairTests.test_case_renamed_core_tables_preserve_foreign_rows) (table='transfers', interface='api', foreign=777)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-szi2zqqm/test_repair.py", line 114, in test_case_renamed_core_tables_preserve_foreign_rows
+    self.assertEqual(self.schema(path), schema)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [('ta[184 chars]e', '_vault_rowids_2cd1702e7f024879a8d74f4eee6[1336 chars]one)] != [('ta[184 chars]e', 'accounts', 'accounts', 2, 'CREATE TABLE a[882 chars]one)]
+
+First differing element 1:
+('table', '_vault_rowids_2cd1702e7f024879a8d74f4eee6[256 chars]l))')
+('table', 'accounts', 'accounts', 2, 'CREATE TABLE a[95 chars]e))')
+
+First list contains 2 additional elements.
+First extra element 7:
+('index', 'sqlite_autoindex__vault_rowids_2cd1702e7f024879a8d74f4eee615a06_1', '_vault_rowids_2cd1702e7f024879a8d74f4eee615a06', 9, None)
+
+Diff is 1797 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_case_renamed_core_tables_preserve_foreign_rows (test_repair.RepairTests.test_case_renamed_core_tables_preserve_foreign_rows) (table='transfers', interface='api', foreign=778)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-szi2zqqm/test_repair.py", line 114, in test_case_renamed_core_tables_preserve_foreign_rows
+    self.assertEqual(self.schema(path), schema)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [('ta[184 chars]e', '_vault_rowids_7c6de9710bed4c2f85703e552a9[1336 chars]one)] != [('ta[184 chars]e', 'accounts', 'accounts', 2, 'CREATE TABLE a[882 chars]one)]
+
+First differing element 1:
+('table', '_vault_rowids_7c6de9710bed4c2f85703e552a9[256 chars]l))')
+('table', 'accounts', 'accounts', 2, 'CREATE TABLE a[95 chars]e))')
+
+First list contains 2 additional elements.
+First extra element 7:
+('index', 'sqlite_autoindex__vault_rowids_7c6de9710bed4c2f85703e552a984194_1', '_vault_rowids_7c6de9710bed4c2f85703e552a984194', 9, None)
+
+Diff is 1797 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_case_renamed_core_tables_preserve_foreign_rows (test_repair.RepairTests.test_case_renamed_core_tables_preserve_foreign_rows) (table='transfers', interface='cli', foreign=777)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-szi2zqqm/test_repair.py", line 114, in test_case_renamed_core_tables_preserve_foreign_rows
+    self.assertEqual(self.schema(path), schema)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [('ta[184 chars]e', '_vault_rowids_3d5533b1ba3d4baa83644ce11cb[1336 chars]one)] != [('ta[184 chars]e', 'accounts', 'accounts', 2, 'CREATE TABLE a[882 chars]one)]
+
+First differing element 1:
+('table', '_vault_rowids_3d5533b1ba3d4baa83644ce11cb[256 chars]l))')
+('table', 'accounts', 'accounts', 2, 'CREATE TABLE a[95 chars]e))')
+
+First list contains 2 additional elements.
+First extra element 7:
+('index', 'sqlite_autoindex__vault_rowids_3d5533b1ba3d4baa83644ce11cbdee05_1', '_vault_rowids_3d5533b1ba3d4baa83644ce11cbdee05', 9, None)
+
+Diff is 1797 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_case_renamed_core_tables_preserve_foreign_rows (test_repair.RepairTests.test_case_renamed_core_tables_preserve_foreign_rows) (table='transfers', interface='cli', foreign=778)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-szi2zqqm/test_repair.py", line 114, in test_case_renamed_core_tables_preserve_foreign_rows
+    self.assertEqual(self.schema(path), schema)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [('ta[184 chars]e', '_vault_rowids_16db90709ace42c595619256097[1336 chars]one)] != [('ta[184 chars]e', 'accounts', 'accounts', 2, 'CREATE TABLE a[882 chars]one)]
+
+First differing element 1:
+('table', '_vault_rowids_16db90709ace42c595619256097[256 chars]l))')
+('table', 'accounts', 'accounts', 2, 'CREATE TABLE a[95 chars]e))')
+
+First list contains 2 additional elements.
+First extra element 7:
+('index', 'sqlite_autoindex__vault_rowids_16db90709ace42c595619256097ec75d_1', '_vault_rowids_16db90709ace42c595619256097ec75d', 9, None)
+
+Diff is 1797 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_case_renamed_core_tables_preserve_foreign_rows (test_repair.RepairTests.test_case_renamed_core_tables_preserve_foreign_rows) (table='audit', interface='api', foreign=777)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-szi2zqqm/test_repair.py", line 114, in test_case_renamed_core_tables_preserve_foreign_rows
+    self.assertEqual(self.schema(path), schema)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [('ta[136 chars]e', '_vault_rowids_3ca218f932164bba9c4178007af[1384 chars]))')] != [('ta[136 chars]e', 'accounts', 'accounts', 2, 'CREATE TABLE a[930 chars]))')]
+
+First differing element 1:
+('table', '_vault_rowids_3ca218f932164bba9c4178007af[256 chars]l))')
+('table', 'accounts', 'accounts', 2, 'CREATE TABLE a[95 chars]e))')
+
+First list contains 2 additional elements.
+First extra element 7:
+('index', 'sqlite_autoindex_transfers_1', 'transfers', 5, None)
+
+Diff is 1797 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_case_renamed_core_tables_preserve_foreign_rows (test_repair.RepairTests.test_case_renamed_core_tables_preserve_foreign_rows) (table='audit', interface='api', foreign=778)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-szi2zqqm/test_repair.py", line 114, in test_case_renamed_core_tables_preserve_foreign_rows
+    self.assertEqual(self.schema(path), schema)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [('ta[136 chars]e', '_vault_rowids_4fbcd66605c946269d4a9091a2b[1384 chars]))')] != [('ta[136 chars]e', 'accounts', 'accounts', 2, 'CREATE TABLE a[930 chars]))')]
+
+First differing element 1:
+('table', '_vault_rowids_4fbcd66605c946269d4a9091a2b[256 chars]l))')
+('table', 'accounts', 'accounts', 2, 'CREATE TABLE a[95 chars]e))')
+
+First list contains 2 additional elements.
+First extra element 7:
+('index', 'sqlite_autoindex_transfers_1', 'transfers', 5, None)
+
+Diff is 1797 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_case_renamed_core_tables_preserve_foreign_rows (test_repair.RepairTests.test_case_renamed_core_tables_preserve_foreign_rows) (table='audit', interface='cli', foreign=777)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-szi2zqqm/test_repair.py", line 114, in test_case_renamed_core_tables_preserve_foreign_rows
+    self.assertEqual(self.schema(path), schema)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [('ta[136 chars]e', '_vault_rowids_ac3d1f3ddf5d481b81266af455a[1384 chars]))')] != [('ta[136 chars]e', 'accounts', 'accounts', 2, 'CREATE TABLE a[930 chars]))')]
+
+First differing element 1:
+('table', '_vault_rowids_ac3d1f3ddf5d481b81266af455a[256 chars]l))')
+('table', 'accounts', 'accounts', 2, 'CREATE TABLE a[95 chars]e))')
+
+First list contains 2 additional elements.
+First extra element 7:
+('index', 'sqlite_autoindex_transfers_1', 'transfers', 5, None)
+
+Diff is 1797 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_case_renamed_core_tables_preserve_foreign_rows (test_repair.RepairTests.test_case_renamed_core_tables_preserve_foreign_rows) (table='audit', interface='cli', foreign=778)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-szi2zqqm/test_repair.py", line 114, in test_case_renamed_core_tables_preserve_foreign_rows
+    self.assertEqual(self.schema(path), schema)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [('ta[136 chars]e', '_vault_rowids_01a8040d8e0e428f9ab42cf0ce5[1384 chars]))')] != [('ta[136 chars]e', 'accounts', 'accounts', 2, 'CREATE TABLE a[930 chars]))')]
+
+First differing element 1:
+('table', '_vault_rowids_01a8040d8e0e428f9ab42cf0ce5[256 chars]l))')
+('table', 'accounts', 'accounts', 2, 'CREATE TABLE a[95 chars]e))')
+
+First list contains 2 additional elements.
+First extra element 7:
+('index', 'sqlite_autoindex_transfers_1', 'transfers', 5, None)
+
+Diff is 1797 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_fts_commit_effects_are_verified_before_import (test_repair.RepairTests.test_fts_commit_effects_are_verified_before_import) (body="UPDATE accounts SET balance=balance+1 WHERE tenant='one' AND name='b';")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-szi2zqqm/test_repair.py", line 184, in test_fts_commit_effects_are_verified_before_import
+    with self.assertRaises(error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 23 tests in 1.742s
+
+FAILED (failures=18)

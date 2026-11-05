@@ -1,0 +1,25 @@
+test_batch_conflicting_key_rolls_back_for_existing_and_new_keys (test_ledger.LedgerTests.test_batch_conflicting_key_rolls_back_for_existing_and_new_keys) ... ok
+test_batch_replays_existing_and_new_keys_and_isolates_receipts (test_ledger.LedgerTests.test_batch_replays_existing_and_new_keys_and_isolates_receipts) ... ok
+test_batch_requires_a_list (test_ledger.LedgerTests.test_batch_requires_a_list) ... ok
+test_changed_replay_payload_is_rejected (test_ledger.LedgerTests.test_changed_replay_payload_is_rejected) ... ok
+test_constructor_owns_its_balances (test_ledger.LedgerTests.test_constructor_owns_its_balances) ... ok
+test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) ... ok
+test_empty_batch_preserves_populated_state (test_ledger.LedgerTests.test_empty_batch_preserves_populated_state) ... ok
+test_empty_ledger_and_valid_value_boundaries (test_ledger.LedgerTests.test_empty_ledger_and_valid_value_boundaries) ... ok
+test_first_and_replayed_receipts_do_not_expose_history (test_ledger.LedgerTests.test_first_and_replayed_receipts_do_not_expose_history) ... ok
+test_identical_payloads_with_different_keys_both_apply (test_ledger.LedgerTests.test_identical_payloads_with_different_keys_both_apply) ... ok
+test_insufficient_funds_does_not_consume_key (test_ledger.LedgerTests.test_insufficient_funds_does_not_consume_key) ... ok
+test_integrated_transfers_replays_failure_and_recovery (test_ledger.LedgerTests.test_integrated_transfers_replays_failure_and_recovery) ... ok
+test_invalid_batch_values_roll_back_earlier_work (test_ledger.LedgerTests.test_invalid_batch_values_roll_back_earlier_work) ... ok
+test_invalid_transfer_values_leave_existing_state_untouched (test_ledger.LedgerTests.test_invalid_transfer_values_leave_existing_state_untouched) ... ok
+test_malformed_batch_operation_rolls_back_earlier_work (test_ledger.LedgerTests.test_malformed_batch_operation_rolls_back_earlier_work) ... ok
+test_replay_cannot_bypass_value_validation (test_ledger.LedgerTests.test_replay_cannot_bypass_value_validation) ... ok
+test_replay_succeeds_after_source_is_empty (test_ledger.LedgerTests.test_replay_succeeds_after_source_is_empty) ... ok
+test_successful_batch_uses_staged_funds_and_preserves_order (test_ledger.LedgerTests.test_successful_batch_uses_staged_funds_and_preserves_order) ... ok
+test_transfer_receipt_balances_history_and_dictionary_identity (test_ledger.LedgerTests.test_transfer_receipt_balances_history_and_dictionary_identity) ... ok
+test_transfer (test_public.PublicTests.test_transfer) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.001s
+
+OK

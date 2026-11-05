@@ -1,0 +1,14 @@
+[
+  {
+    "direction": "historical_tests_on_candidate",
+    "exit_code": 0,
+    "seconds": 1.786,
+    "log": "review-3-historical_tests_on_candidate.log"
+  },
+  {
+    "direction": "candidate_tests_on_historical",
+    "exit_code": 1,
+    "seconds": 1.532,
+    "log": "review-3-candidate_tests_on_historical.log"
+  }
+]

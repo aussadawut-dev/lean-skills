@@ -1,0 +1,7 @@
+Repaired POSTHOC-1 in [vault.py](/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-1/critical/workspace/vault.py). Final debit, credit, receipt, and audit checks now raise a storage error and roll back mismatched effects before commit.
+
+- Reproduced all four reported failures before repair.
+- Added 13 trigger scenarios exercised through the API and CLI.
+- Required `python3 -B -m unittest discover -v`: **25 tests passed**, covering rollback, preservation, retry, replay, isolation, and concurrency.
+
+REWORK remains **1**. Final acceptance is **BLOCKED pending the coordinator’s renewed independent review**; that review has not occurred.

@@ -1,0 +1,137 @@
+{
+  "provider": "claude",
+  "label": "naming_probe - haiku|low",
+  "original_directory": "/tmp/lean-naming-live-20261101/claude-skills",
+  "completion": {
+    "exit": 0,
+    "timeout": false,
+    "elapsed_seconds": 10.61
+  },
+  "dispatch": {
+    "argv": [
+      "claude",
+      "-p",
+      "You are executing a real authorized subagent test in this disposable directory. Apply the supplied lean-agents instructions. Delegate exactly one harmless task with taskname naming_probe: the child must return exactly NAMING_CHILD_OK and use no tools. Use the existing custom agent definition naming_probe. Wait for real completion and report the observed label and returned instance ID. Do not enable teams, change configuration, execute commands, edit files, access credentials or contact other services. This is a real tool test, not a request to describe hypothetical calls.\nThe worker model is haiku and its reasoning effort is low; those settings are configured in its definition.\n\nSkill instructions:\n---\nname: lean-agents\ndescription: Delegate bounded independent tasks to available agents, with explicit ownership, concurrency limits and integration checks.\nlicense: MIT\n---\n\n# lean-agents\n\nThis is a standalone skill. Use the current request or explicit invocation arguments as input. Read existing project instructions and only the context needed for this task. No Lean installation, CLI, configuration, or other skill is required. Do not install a workflow or create workflow files as a prerequisite. Existing project rules still apply.\n\nUse the user's requested procedure depth; otherwise use standard depth. High adds boundary cases and stronger evidence; ultra adds cross-part consistency and contradictory evidence where relevant. Depth does not change model reasoning settings. Keep decisions in the conversation unless the project already has a suitable record or the user requests persistence.\n\nInvocation requests delegation for the supplied task. An explicit model and xN mean up to N simultaneous workers using that model where supported; N is a ceiling, not a quota. Without a count, use only useful independent parallel tasks and obey runtime and project limits.\n\n1. Split work into bounded tasks with acceptance checks, dependencies and exclusive file ownership. Keep planning, integration and final validation with the controller. If tasks overlap, serialize them or isolate worktrees. Show the assignment plan before dispatch.\n2. Classify each task, including reviewers, by the work described below. Resolve its model and reasoning effort from the user's explicit choice, then an existing project mapping, otherwise verified runtime capabilities. Without a mapping, choose the smallest supported model/effort suited to the task using runtime descriptions and available evidence; record this as a task-local choice, not a benchmark result. Do not require a new model configuration or launch evaluations as a prerequisite. Never invent availability or silently substitute an explicitly requested model or a mapped setting that is unavailable.\n3. Pass each worker the task, relevant instructions, owned files, acceptance and minimum necessary context. Give independent reviewers a fresh context containing requirements and the shipping diff, not the author's conclusions. Do not bypass permissions or silently start metered API work.\n4. Before dispatch record task, work classification, selection reason, requested model/effort and context mode. Pass both model and effort explicitly when the tool supports them; for a tool requiring fresh context for overrides, use that mode with a self-contained brief (Codex spawn_agent uses fork_turns=\"none\"). If controls are absent, disclose the limitation and known default, or mark it unknown; do not claim workload-based routing occurred. Honor explicit settings rather than silently falling back. Record actual backend settings only when returned by runtime metadata, not from a worker's self-identification or a UI banner. Monitor blockers, resolve ownership conflicts and integrate only reviewed worker changes. Never reset or overwrite another worker's uncommitted work.\n5. Validate the integrated final state with project checks and review against acceptance. Worker claims alone are not evidence. Report assignments, results, checks and remaining blockers.\n\nIf no delegation tools exist, report the limitation. Continue directly only when delegation is optional; a request requiring independent or parallel execution remains BLOCKED until that requirement can be met or changed by the user.\n\n## Worker names\n\nName each worker for the user as `<taskname> - <model name>|<effort>`, for example `api_builder - gpt-6.1-sol|medium`. Use the child's requested model/effort, including an explicit `inherit` selector when used; the label does not confirm backend identity. Use `default` for a deliberately omitted setting and `unknown` when it is not known. Do not copy the parent's model or effort into a child label without evidence of inheritance.\n\nUse the current runtime schema to distinguish the display label, reusable agent type and returned instance ID:\n\n- Claude Code: put the full label in `Agent.description` for the task label; keep `subagent_type` pointing to the intended existing agent definition. For a separately launched CLI session, `--name` sets its session title. Do not set `Agent.name` or enable agent teams solely for naming: that can change execution/isolation semantics.\n- Antigravity: put the full label in `invoke_subagent.Role`; keep `TypeName` pointing to the intended existing definition. A custom type name alone does not set the role shown for the instance. Do not redefine a reusable agent solely to rename one invocation.\n- Codex: when `task_name` allows only lowercase letters, digits and underscores, use a compliant unique ID such as `api_builder_gpt_6_1_sol_medium`. Show the full label in dispatch updates and reports and retain its ID mapping.\n\nUse these fields only when present in the actual tool schema; otherwise use the supported display-name field or the report-label fallback. Pass names as literal structured values or quoted CLI arguments, never as unquoted shell text: `|` must not become a pipeline. Preserve the label-to-ID mapping and address later messages by the returned runtime ID. Verify accepted labels from task/role metadata when exposed; do not infer a native UI rename from the agent repeating the text. For replacement workers update the label and record the new ID without losing task history.\n\n## Provider-aware selection and escalation\n\nUse the provider's own model families, supported effort controls and existing project conventions. Do not require a universal size ladder or assume that similarly named tiers across providers are equivalent.\n\n| Work | Selection guidance |\n| --- | --- |\n| Lookup or mechanical edit | Lightweight supported option; low effort when available |\n| Small, well-specified implementation | Coding-capable option with modest effort |\n| Ordinary implementation or focused review | General coding/reasoning option with enough effort for the dependencies |\n| Conflicting evidence, entangled behavior, complex security/data boundaries | Stronger reasoning when justified by the actual uncertainty |\n\nUse runtime descriptions and relevant observed results; label unbenchmarked selections as task-local judgments. File count and duration alone do not determine difficulty. Quality and risk set review requirements, not an automatic demand for the largest model. Keep procedure depth separate from reasoning effort. Prefer doing small work directly when a cold worker plus integration would cost more; do not split work merely to fill concurrency slots.\n\nClassify a failure before escalating: fix missing context, implementation, tools or permissions at their source. For demonstrated reasoning limits, raise one supported effort step, then choose a more capable available model if justified, changing one variable at a time. Keep the same provider and authorized billing path; do not switch providers, use paid API credentials or alter host settings implicitly. Respect the controller's existing repair budget across replacements. If no available setting can meet the requirement, report the concrete blocker. Never claim to change the active parent session's model.\n",
+      "--model",
+      "haiku",
+      "--effort",
+      "low",
+      "--name",
+      "naming_controller - haiku|low",
+      "--agents",
+      "/tmp/lean-naming-live-20261101/claude-skills/agents.json",
+      "--restricted",
+      "--tools",
+      "Agent",
+      "--allowedTools",
+      "Agent",
+      "--permission-mode",
+      "dontAsk",
+      "--strict-mcp-config",
+      "--mcp-config",
+      "/tmp/lean-naming-live-20261101/claude-skills/empty-mcp.json",
+      "--output-format",
+      "stream-json",
+      "--verbose"
+    ],
+    "cwd": "/tmp/lean-naming-live-20261101/claude-skills",
+    "metered_credentials_removed": true
+  },
+  "native_events": [
+    {
+      "type": "system",
+      "subtype": "session_title_changed",
+      "title": "naming_controller - haiku|low",
+      "uuid": "e04e0c07-6d59-4c3d-9339-5c2e2abe13f3",
+      "session_id": "698f90fd-f66d-4603-8f99-441acda2e2f0"
+    },
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "claude-haiku-5-5",
+      "agents": [
+        "claude",
+        "Explore",
+        "general-purpose",
+        "naming_probe",
+        "Plan",
+        "statusline-setup"
+      ],
+      "session_id": "698f90fd-f66d-4603-8f99-441acda2e2f0"
+    },
+    {
+      "type": "tool_use",
+      "content": {
+        "type": "tool_use",
+        "id": "toolu_01EtHbU8SCTZdDYniJ3wbvjH",
+        "name": "Agent",
+        "input": {
+          "description": "naming_probe - haiku|low",
+          "subagent_type": "naming_probe",
+          "prompt": "Do not use any tools. Reply with exactly this text and nothing else: NAMING_CHILD_OK",
+          "run_in_background": false
+        },
+        "caller": {
+          "type": "direct"
+        }
+      }
+    },
+    {
+      "type": "system",
+      "subtype": "task_started",
+      "task_id": "a1d3afdfccaa20198",
+      "run_id": "0mvxq0wsc-41c9897a",
+      "tool_use_id": "toolu_01EtHbU8SCTZdDYniJ3wbvjH",
+      "description": "naming_probe - haiku|low",
+      "subagent_type": "naming_probe",
+      "is_backgrounded": false,
+      "spawn_depth": 1,
+      "task_type": "local_agent",
+      "prompt": "Do not use any tools. Reply with exactly this text and nothing else: NAMING_CHILD_OK",
+      "uuid": "3bdc4a50-bd97-458e-8d46-dc624a09bf08",
+      "session_id": "698f90fd-f66d-4603-8f99-441acda2e2f0"
+    },
+    {
+      "type": "system",
+      "subtype": "task_notification",
+      "task_id": "a1d3afdfccaa20198",
+      "run_id": "0mvxq0wsc-41c9897a",
+      "tool_use_id": "toolu_01EtHbU8SCTZdDYniJ3wbvjH",
+      "status": "completed",
+      "output_file": "/private/tmp/claude-501/-private-tmp-lean-naming-live-20261101-claude-skills/698f90fd-f66d-4603-8f99-441acda2e2f0/tasks/a1d3afdfccaa20198.output",
+      "summary": "NAMING_CHILD_OK",
+      "usage": {
+        "total_tokens": 992,
+        "tool_uses": 0,
+        "duration_ms": 2173
+      },
+      "uuid": "69e77c80-befe-4729-98f9-c14a296a3063",
+      "session_id": "698f90fd-f66d-4603-8f99-441acda2e2f0"
+    },
+    {
+      "type": "result",
+      "subtype": "success",
+      "is_error": false,
+      "result": "The probe worker finished and returned the expected output.\n\n- **Label:** `naming_probe - haiku|low`, passed in `Agent.description`.\n- **Agent type:** `naming_probe`, the existing custom definition.\n- **Returned instance ID:** `a1d3afdfccaa20198`.\n- **Result:** the child returned exactly `NAMING_CHILD_OK`, with 0 tool uses and 992 subagent tokens.\n\nThe runtime hand-back doesn't include the accepted label or the backend model and effort, so I can't confirm those from metadata. The `haiku` and `low` settings come from the agent definition, as you said. The `Agent` tool has no model or effort parameters, so I didn't pass them. I didn't enable teams, change configuration, run commands, edit files, or contact other services."
+    }
+  ],
+  "child_final_responses": [],
+  "verification": {
+    "actual_child_completed": true,
+    "child_id": "a1d3afdfccaa20198",
+    "exact_display_field": true,
+    "full_type_identifier": false,
+    "characters_preserved": true,
+    "desktop_screenshot_checked": false
+  },
+  "agent_definition": {
+    "naming_probe": {
+      "description": "Literal-name test worker",
+      "prompt": "Return exactly NAMING_CHILD_OK. Do not use tools or delegate.",
+      "model": "haiku",
+      "effort": "low",
+      "tools": []
+    }
+  },
+  "skill_sha256": "ae28001786bba5c60f1785bb9823ee73f653aaa613e9dbb06a79cd53d6ed3894"
+}

@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "findings": [],
+  "checks": [
+    "Read CONTRACT.md and lean-run instructions; compared current source with .baseline and inspected all added tests. Supplied test_public.py matches baseline.",
+    "python3 -B -m unittest discover -v: all 9 tests passed, covering validation, signed values, whitespace, CLI arity, clean errors and 5000-digit arithmetic.",
+    "Independent parser probe preserved 6001-digit signed integers with Decimal precision=1 and all traps enabled, without changing context flags or integer conversion limits.",
+    "Independent CLI probes from a temporary directory passed exact large-number addition, leading-negative cancellation and invalid-field rejection with int_max_str_digits=640.",
+    "File hashes confirmed application, tests, instructions and baseline remained unchanged."
+  ],
+  "coverage_limits": [
+    "Execution verified on Python 3.14.3 only.",
+    "Large-integer probes reached 6001 digits; resource-exhaustion behavior was not tested."
+  ]
+}

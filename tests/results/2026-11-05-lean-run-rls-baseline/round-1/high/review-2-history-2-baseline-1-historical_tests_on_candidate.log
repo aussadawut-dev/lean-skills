@@ -1,0 +1,21 @@
+test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) ... ok
+test_batch_orders_receipts_and_replays_existing_and_new_keys (test_ledger.LedgerTests.test_batch_orders_receipts_and_replays_existing_and_new_keys) ... ok
+test_batch_receipts_are_independent_of_history_inputs_and_each_other (test_ledger.LedgerTests.test_batch_receipts_are_independent_of_history_inputs_and_each_other) ... ok
+test_batch_rejects_non_list_containers_without_state_changes (test_ledger.LedgerTests.test_batch_rejects_non_list_containers_without_state_changes) ... ok
+test_batch_uses_prior_credits_but_cannot_spend_future_credits (test_ledger.LedgerTests.test_batch_uses_prior_credits_but_cannot_spend_future_credits) ... ok
+test_constructor_copies_input (test_ledger.LedgerTests.test_constructor_copies_input) ... ok
+test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) ... ok
+test_empty_batch_preserves_existing_state_and_dictionary_identity (test_ledger.LedgerTests.test_empty_batch_preserves_existing_state_and_dictionary_identity) ... ok
+test_integrated_payments_rollback_retry_and_replay (test_ledger.LedgerTests.test_integrated_payments_rollback_retry_and_replay) ... ok
+test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) ... ok
+test_replay_needs_no_remaining_funds_and_returns_a_fresh_receipt (test_ledger.LedgerTests.test_replay_needs_no_remaining_funds_and_returns_a_fresh_receipt) ... ok
+test_replay_rejects_changed_payload_and_bool_integer_alias (test_ledger.LedgerTests.test_replay_rejects_changed_payload_and_bool_integer_alias) ... ok
+test_transfer_and_replay_receipts_do_not_expose_history (test_ledger.LedgerTests.test_transfer_and_replay_receipts_do_not_expose_history) ... ok
+test_transfer_returns_receipt_and_preserves_public_dictionaries (test_ledger.LedgerTests.test_transfer_returns_receipt_and_preserves_public_dictionaries) ... ok
+test_valid_empty_accounts_zero_balances_and_large_integers (test_ledger.LedgerTests.test_valid_empty_accounts_zero_balances_and_large_integers) ... ok
+test_transfer (test_public.PublicTests.test_transfer) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.001s
+
+OK

@@ -1,0 +1,62 @@
+{
+  "level": "critical",
+  "cases": [
+    {
+      "id": "test_C1_read_isolation",
+      "status": "PASS"
+    },
+    {
+      "id": "test_C2_transfer_isolation",
+      "status": "PASS"
+    },
+    {
+      "id": "test_C3_tenant_scoped_receipts",
+      "status": "PASS"
+    },
+    {
+      "id": "test_C4_invalid_request_preserves_state",
+      "status": "PASS"
+    },
+    {
+      "id": "test_C5_storage_failure_rolls_back",
+      "status": "PASS"
+    },
+    {
+      "id": "test_C6_concurrent_duplicate",
+      "status": "PASS"
+    },
+    {
+      "id": "test_C7_concurrent_no_overspend",
+      "status": "PASS"
+    },
+    {
+      "id": "test_C8_durable_exact_replay",
+      "status": "PASS"
+    },
+    {
+      "id": "test_C9_cli_errors_are_generic",
+      "status": "PASS"
+    }
+  ],
+  "checks": 9,
+  "issues": 0,
+  "elapsed_seconds": 0.29,
+  "workspace_sha256": {
+    ".agents/skills/lean-run/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    ".agents/skills/lean-run/SKILL.md": "6794ffee20a245412ad714b43d96de6372ac66c2a86d0c9572d1727705d21138",
+    ".agents/skills/lean-run/references/delegation.md": "63899dde986ec7014a5cffd39216685640a2e98013dae26e037eaf985fecadb1",
+    ".agents/skills/lean-run/references/exploration.md": "baa9a38160095244c31c5e4a8aab5bdd15dfc0cc83df01a7086607a459faf403",
+    ".agents/skills/lean-run/references/handoff.md": "2d6744d15c27d002c85b9b4cbccf2b0845cb7b5c8b3589aa8b9b06a885357e94",
+    ".agents/skills/lean-run/references/write-integrity.md": "ac1ff4d2f36d698382cab77d811ca885c07fa8358dc0de23ec3a06bfcaceeace",
+    ".agents/skills/lean-run/scripts/check.py": "7946993e44c3ebb3d0235c94af4426e2fbef749c31f4b18eac0de001ba3050b4",
+    ".source-baseline-z29asjh2/app.py": "366bb54fc6319521ddd02f44c206e679f529b6930b59674370d718987398acf4",
+    ".source-baseline-z29asjh2/vault.py": "5d0b97f8127dc5387d85cf315ebd5715173c0ccb67af359d7e440c5acb9dde68",
+    "AGENTS.md": "0ef83ddcf2d1065527f05cd03d5a1b275feecc77e45bdb5916217f204c1cb486",
+    "CONTRACT.md": "6e6d6ee1f769db8160e528e218d46a0018a90655e775742a073d61df2aebee2b",
+    "app.py": "62695e0b3fe1a1288050119e322e4bfd24e1c4de866b096c95e4000777abe8ec",
+    "test_public.py": "5f239e0ce234d0b84f0d12e7cd23eb6dc23e63b88ffa07e50d20d2c061d66b95",
+    "test_regressions.py": "15aede09bf9494d3b8f1e3265d3403147ba9e65197e75fe6f4e621ea1f983db8",
+    "vault.py": "7e5e23d38b52ec10430f9a1a67cdf03c7b2f57685b14eb0a4643f118fd9853c7"
+  },
+  "protected_files_changed": []
+}

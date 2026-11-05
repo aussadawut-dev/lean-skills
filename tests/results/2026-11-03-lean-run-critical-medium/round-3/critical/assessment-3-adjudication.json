@@ -1,0 +1,16 @@
+{
+  "noncontract_blockers": [
+    "historical_regressions"
+  ],
+  "reason": "All final forward-cross failures are stored-overflow exception-class assertions and exact generic CLI error wording. Their raw errors are ValueError: balance out of range and request failed vs invalid request; the contract specifies neither this storage-error class nor literal generic text. Final API/CLI boundary probes verify atomic rejection, exit 2, no stdout and generic JSON. Required independent review PASS, original grade, known probes and all posthoc checks pass; the real scoped-read defect was fixed and independently verified. No model phase is rerun. Timed-out execution/usage remains incomplete.",
+  "evidence": {
+    "probe": "error-boundary-probe.json",
+    "final_review": "review-3/final.txt",
+    "raw_result": "result-before-adjudication.json",
+    "source_sha256": "ee73eb9e8c2439e6926b4b9150b1966d2e439da438192ff0d92d14d0577f5f9a",
+    "forward_logs": [
+      "review-3-baseline-1-historical_tests_on_candidate.log",
+      "review-3-baseline-2-historical_tests_on_candidate.log"
+    ]
+  }
+}

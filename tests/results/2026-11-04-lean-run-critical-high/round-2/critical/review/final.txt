@@ -1,0 +1,24 @@
+{
+  "status": "REWORK",
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "HIGH",
+      "location": "vault.py:65-86, transfer() writes and commits without checking their actual effects",
+      "requirement": "A transfer must atomically debit and credit the authorized accounts, persist its receipt and exactly one audit row, and preserve unrelated existing rows.",
+      "evidence": "Initialize a temporary database with accounts ('red','a',100) and ('red','b',0). Execute: CREATE TRIGGER skip_audit BEFORE INSERT ON audit WHEN NEW.key='skip' BEGIN SELECT RAISE(IGNORE); END. Calling vault.transfer(path,'red','a','b',10,'skip') returns success. After reopening, balances are 90 and 10 and the receipt exists, but audit is empty. Exact replay also succeeds without an audit row. The equivalent CLI request exits 0 with a receipt and empty stderr. A control using key 'control' creates all required effects. The same unchecked-effect defect permits unrelated writes: an AFTER INSERT ON audit trigger executing INSERT OR REPLACE INTO accounts VALUES ('blue','private',0) changed an existing blue/private balance from 777 to 0 during a successful red transfer.",
+      "suggested_fix": "Verify the actual transaction effects before committing: exactly the authorized balance changes, one matching receipt and one audit row, with unrelated rows preserved. Use storage-local observation that accounts for skipped writes and trigger/REPLACE effects without fetching other tenants' data. Roll back and raise on discrepancies while retaining existing triggers."
+    }
+  ],
+  "checks": [
+    "Read CONTRACT.md, applicable instructions, lean-run and its write-integrity procedure; compared current application files and supplied tests against .baseline and inspected test_vault.py.",
+    "Ran TMPDIR=\"$PWD\" python3 -B -m unittest discover -v: all 31 tests passed on Python 3.14.3 / SQLite 3.50.4.",
+    "Independently probed conditional audit suppression and cross-tenant trigger effects through vault.transfer, with successful controls and observations after reopening.",
+    "Reproduced silent audit suppression through the real CLI and verified the trigger remained installed.",
+    "Confirmed application, tests, instructions and baseline files remained unchanged; temporary probe databases were cleaned up."
+  ],
+  "coverage_limits": [
+    "Trigger probes covered conditional RAISE(IGNORE) and cross-tenant INSERT OR REPLACE, not every trigger or constraint combination.",
+    "Concurrency was exercised by the passing separate-connection tests; forced process crashes, power loss and physical disk failures were not simulated."
+  ]
+}

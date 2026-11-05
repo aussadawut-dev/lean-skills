@@ -1,0 +1,5 @@
+{
+  "status": "posthoc",
+  "source": "round-2/critical/repair-1/events.jsonl",
+  "scope": "Same native control plus API/CLI in DELETE/WAL across all three baseline and new final workspaces. All previous final workspaces and the already-closed new round-1 final artifact failed the new case. Preserve original closure; revisit round 1 within its remaining final fix and include every added model phase. This can change the order of posthoc repair phases, never original implementation order."
+}

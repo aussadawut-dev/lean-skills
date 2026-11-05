@@ -1,0 +1,78 @@
+[
+  {
+    "version": "historical",
+    "exception": "OverflowError",
+    "unchanged": true,
+    "before": {
+      "accounts": [
+        [
+          "a",
+          "source",
+          20
+        ],
+        [
+          "a",
+          "target",
+          9223372036854775807
+        ]
+      ],
+      "transfers": [],
+      "audit": []
+    },
+    "after": {
+      "accounts": [
+        [
+          "a",
+          "source",
+          20
+        ],
+        [
+          "a",
+          "target",
+          9223372036854775807
+        ]
+      ],
+      "transfers": [],
+      "audit": []
+    },
+    "source_sha256": "82c6bec9391f4bf76b1be8366ac8a2de59cb73f9ab08f8336b6fa5ab294bfb2d"
+  },
+  {
+    "version": "candidate",
+    "exception": "ValueError",
+    "unchanged": true,
+    "before": {
+      "accounts": [
+        [
+          "a",
+          "source",
+          20
+        ],
+        [
+          "a",
+          "target",
+          9223372036854775807
+        ]
+      ],
+      "transfers": [],
+      "audit": []
+    },
+    "after": {
+      "accounts": [
+        [
+          "a",
+          "source",
+          20
+        ],
+        [
+          "a",
+          "target",
+          9223372036854775807
+        ]
+      ],
+      "transfers": [],
+      "audit": []
+    },
+    "source_sha256": "cf4b5ff5fd9dc2eb893e5fdd2816d8bab3cb66938917d413ddbe272564a9c0a8"
+  }
+]

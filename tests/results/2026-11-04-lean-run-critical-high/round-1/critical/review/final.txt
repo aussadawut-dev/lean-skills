@@ -1,0 +1,26 @@
+{
+  "status": "REWORK",
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "HIGH",
+      "location": "vault.py:21-25; vault.py:76-85",
+      "requirement": "Commit exactly the debit, credit, receipt and one audit row together; preserve existing rows and tenant isolation.",
+      "evidence": "Rowcount checks miss trigger side effects. Reproduction: initialize a temporary database, insert accounts ('one','a',100) and ('one','b',0), then execute CREATE TRIGGER erase_audit AFTER INSERT ON audit BEGIN DELETE FROM audit WHERE rowid=NEW.rowid; END. Calling vault.transfer(path,'one','a','b',10,'k') returns success. After reopening, balances are 90/10 and the receipt exists, but audit is empty. Replay also succeeds without restoring the audit. Separate probes demonstrated the same unchecked-effects defect committing a foreign account balance change from 777 to 0 and replacing historical audit data through a UNIQUE-index conflict.",
+      "suggested_fix": "Verify actual transaction effects and preservation of unrelated rows before committing, including trigger changes and implicit REPLACE deletions. Roll back on any mismatch while preserving existing triggers and allowing harmless ignored writes."
+    }
+  ],
+  "checks": [
+    "Read CONTRACT.md, applicable instructions, lean-run and its write-integrity procedure.",
+    "Compared current application files against .baseline and inspected added tests; supplied test_public.py is unchanged.",
+    "Ran python3 -B -m unittest discover -v: all 28 tests passed.",
+    "Independent trigger probes reproduced missing audit, foreign balance modification and historical-row replacement; a harmless INSERT OR IGNORE control succeeded correctly.",
+    "Six simultaneous CLI processes against a WAL database produced three identical successful receipts and three generic payload conflicts, with exactly one transfer and audit row; reopened replay changed nothing.",
+    "CLI surrogate-identifier probes returned generic errors without writes; embedded-NUL identifier and replay probes passed.",
+    "No application, test, instruction or baseline files modified; probe databases used temporary workspace paths."
+  ],
+  "coverage_limits": [
+    "Trigger probes covered representative effects, not exhaustive trigger programs.",
+    "Physical disk failures and abrupt process termination were not injected."
+  ]
+}

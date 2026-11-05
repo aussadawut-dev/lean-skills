@@ -1,0 +1,47 @@
+test_valid_transfer (test_public.PublicTests.test_valid_transfer) ... ok
+test_balance_is_tenant_scoped (test_regressions.VaultTests.test_balance_is_tenant_scoped) ... ok
+test_balance_validates_strings (test_regressions.VaultTests.test_balance_validates_strings) ... ok
+test_cached_receipt_does_not_bypass_amount_validation (test_regressions.VaultTests.test_cached_receipt_does_not_bypass_amount_validation) ... ok
+test_cached_receipt_does_not_grant_other_tenant_access (test_regressions.VaultTests.test_cached_receipt_does_not_grant_other_tenant_access) ... ok
+test_cli_integrated_journey_across_processes (test_regressions.VaultTests.test_cli_integrated_journey_across_processes) ... ok
+test_cli_rejects_malformed_requests_with_one_generic_error (test_regressions.VaultTests.test_cli_rejects_malformed_requests_with_one_generic_error) ... ok
+test_cli_storage_failure_is_generic_and_atomic (test_regressions.VaultTests.test_cli_storage_failure_is_generic_and_atomic) ... ok
+test_concurrent_credits_from_distinct_sources_are_not_lost (test_regressions.VaultTests.test_concurrent_credits_from_distinct_sources_are_not_lost) ... ok
+test_concurrent_distinct_keys_never_overspend (test_regressions.VaultTests.test_concurrent_distinct_keys_never_overspend) ... ok
+test_concurrent_duplicate_key_executes_once (test_regressions.VaultTests.test_concurrent_duplicate_key_executes_once) ... ok
+test_conflicting_key_payloads_do_not_write (test_regressions.VaultTests.test_conflicting_key_payloads_do_not_write) ... ok
+test_exact_replay_is_durable_even_when_remaining_funds_are_lower (test_regressions.VaultTests.test_exact_replay_is_durable_even_when_remaining_funds_are_lower) ... ok
+test_existing_rows_schema_and_triggers_survive_initialization (test_regressions.VaultTests.test_existing_rows_schema_and_triggers_survive_initialization) ... ok
+test_ignored_audit_rolls_back (test_regressions.VaultTests.test_ignored_audit_rolls_back) ... ok
+test_ignored_credit_rolls_back (test_regressions.VaultTests.test_ignored_credit_rolls_back) ... ok
+test_ignored_debit_rolls_back (test_regressions.VaultTests.test_ignored_debit_rolls_back) ... ok
+test_ignored_receipt_rolls_back (test_regressions.VaultTests.test_ignored_receipt_rolls_back) ... ok
+test_integer_limits_remain_exact_and_overflow_rolls_back (test_regressions.VaultTests.test_integer_limits_remain_exact_and_overflow_rolls_back) ... ERROR
+test_missing_and_inaccessible_balance_share_error (test_regressions.VaultTests.test_missing_and_inaccessible_balance_share_error) ... ok
+test_missing_and_inaccessible_transfer_accounts_share_error (test_regressions.VaultTests.test_missing_and_inaccessible_transfer_accounts_share_error) ... ok
+test_nonempty_names_are_preserved_as_literal_strings (test_regressions.VaultTests.test_nonempty_names_are_preserved_as_literal_strings) ... ok
+test_same_key_is_independent_between_tenants (test_regressions.VaultTests.test_same_key_is_independent_between_tenants) ... ok
+test_self_transfer_and_insufficient_funds_do_not_write (test_regressions.VaultTests.test_self_transfer_and_insufficient_funds_do_not_write) ... ok
+test_storage_failures_roll_back_all_four_changes (test_regressions.VaultTests.test_storage_failures_roll_back_all_four_changes) ... ok
+test_transfer_updates_only_authenticated_tenant (test_regressions.VaultTests.test_transfer_updates_only_authenticated_tenant) ... ok
+test_transfer_validates_amount_without_writes (test_regressions.VaultTests.test_transfer_validates_amount_without_writes) ... ok
+test_transfer_validates_strings_without_writes (test_regressions.VaultTests.test_transfer_validates_strings_without_writes) ... ok
+
+======================================================================
+ERROR: test_integer_limits_remain_exact_and_overflow_rolls_back (test_regressions.VaultTests.test_integer_limits_remain_exact_and_overflow_rolls_back)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-vtn2apu2/test_regressions.py", line 208, in test_integer_limits_remain_exact_and_overflow_rolls_back
+    self.transfer(amount=1, key="overflow")
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-vtn2apu2/test_regressions.py", line 56, in transfer
+    return vault.transfer(self.path, **request)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-vtn2apu2/vault.py", line 144, in transfer
+    raise ValueError("balance out of range")
+ValueError: balance out of range
+
+----------------------------------------------------------------------
+Ran 28 tests in 1.560s
+
+FAILED (errors=1)

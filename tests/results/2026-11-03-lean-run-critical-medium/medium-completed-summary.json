@@ -1,0 +1,46 @@
+{
+  "n": 3,
+  "level": "medium",
+  "observed_mean": {
+    "measured_seconds": 353.02633333333335,
+    "uncached_input_tokens": 26312.333333333332,
+    "uncached_input_plus_output": 37385.666666666664,
+    "implementation_seconds": 233.94366666666667
+  },
+  "previous_mean": {
+    "measured_seconds": 395.1406666666667,
+    "uncached_input_tokens": 34418,
+    "uncached_input_plus_output": 47109.333333333336,
+    "implementation_seconds": 282.15433333333334
+  },
+  "change_percent": {
+    "measured_seconds": -10.658061011184195,
+    "uncached_input_tokens": -23.55066147558449,
+    "uncached_input_plus_output": -20.64063738254275,
+    "implementation_seconds": -17.086629894041437
+  },
+  "quality": "3/3 PASS, no repairs",
+  "trials": [
+    {
+      "round": 1,
+      "measured_seconds": 318.224,
+      "uncached_input_tokens": 30196,
+      "uncached_input_plus_output": 40307,
+      "implementation_seconds": 232.536
+    },
+    {
+      "round": 2,
+      "measured_seconds": 373.96299999999997,
+      "uncached_input_tokens": 16636,
+      "uncached_input_plus_output": 27638,
+      "implementation_seconds": 236.352
+    },
+    {
+      "round": 3,
+      "measured_seconds": 366.89200000000005,
+      "uncached_input_tokens": 32105,
+      "uncached_input_plus_output": 44212,
+      "implementation_seconds": 232.943
+    }
+  ]
+}

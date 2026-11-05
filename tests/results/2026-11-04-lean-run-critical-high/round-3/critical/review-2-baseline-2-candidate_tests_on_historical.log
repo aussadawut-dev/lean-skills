@@ -1,0 +1,182 @@
+test_valid_transfer (test_public.PublicTests.test_valid_transfer) ... ok
+test_after_audit_fail_trigger_rolls_back_trigger_writes_too (test_regressions.VaultRegressionTests.test_after_audit_fail_trigger_rolls_back_trigger_writes_too) ... ok
+test_audit_failure_rolls_back_every_effect (test_regressions.VaultRegressionTests.test_audit_failure_rolls_back_every_effect) ... ok
+test_audit_rollback_trigger_propagates_without_partial_state (test_regressions.VaultRegressionTests.test_audit_rollback_trigger_propagates_without_partial_state) ... ok
+test_balance_is_scoped_to_tenant (test_regressions.VaultRegressionTests.test_balance_is_scoped_to_tenant) ... ok
+test_cli_integrated_journey_across_process_restarts (test_regressions.VaultRegressionTests.test_cli_integrated_journey_across_process_restarts) ... ok
+test_cli_malformed_requests_have_one_generic_error_and_no_changes (test_regressions.VaultRegressionTests.test_cli_malformed_requests_have_one_generic_error_and_no_changes) ... ok
+test_cli_storage_open_error_is_generic (test_regressions.VaultRegressionTests.test_cli_storage_open_error_is_generic) ... ok
+test_concurrent_conflicting_payloads_choose_one_complete_transfer (test_regressions.VaultRegressionTests.test_concurrent_conflicting_payloads_choose_one_complete_transfer) ... ok
+test_concurrent_distinct_keys_cannot_overspend (test_regressions.VaultRegressionTests.test_concurrent_distinct_keys_cannot_overspend) ... ok
+test_concurrent_duplicates_execute_once_and_remain_replayable (test_regressions.VaultRegressionTests.test_concurrent_duplicates_execute_once_and_remain_replayable) ... ok
+test_concurrent_sources_do_not_lose_shared_target_credits (test_regressions.VaultRegressionTests.test_concurrent_sources_do_not_lose_shared_target_credits) ... ok
+test_existing_key_with_changed_payload_conflicts (test_regressions.VaultRegressionTests.test_existing_key_with_changed_payload_conflicts) ... ok
+test_failed_key_can_succeed_after_storage_recovers (test_regressions.VaultRegressionTests.test_failed_key_can_succeed_after_storage_recovers) ... ok
+test_foreign_transfer_endpoints_are_rejected_without_changes (test_regressions.VaultRegressionTests.test_foreign_transfer_endpoints_are_rejected_without_changes) ... ok
+test_ignored_audit_insert_is_not_a_successful_transfer (test_regressions.VaultRegressionTests.test_ignored_audit_insert_is_not_a_successful_transfer) ... ok
+test_ignored_credit_rolls_back_debit (test_regressions.VaultRegressionTests.test_ignored_credit_rolls_back_debit) ... ok
+test_initialization_preserves_schema_rows_and_audit_multiplicity (test_regressions.VaultRegressionTests.test_initialization_preserves_schema_rows_and_audit_multiplicity) ... ok
+test_maximum_sqlite_integer_transfers_exactly (test_regressions.VaultRegressionTests.test_maximum_sqlite_integer_transfers_exactly) ... ok
+test_missing_and_foreign_accounts_have_identical_errors (test_regressions.VaultRegressionTests.test_missing_and_foreign_accounts_have_identical_errors) ... ok
+test_negative_amount_is_rejected_without_changes (test_regressions.VaultRegressionTests.test_negative_amount_is_rejected_without_changes) ... ok
+test_nonempty_text_is_required_for_every_identity (test_regressions.VaultRegressionTests.test_nonempty_text_is_required_for_every_identity) ... ok
+test_only_positive_nonboolean_integer_amounts_are_accepted (test_regressions.VaultRegressionTests.test_only_positive_nonboolean_integer_amounts_are_accepted) ... ok
+test_receipt_lookup_is_tenant_scoped (test_regressions.VaultRegressionTests.test_receipt_lookup_is_tenant_scoped) ... ok
+test_replay_is_durable_even_when_source_is_now_empty (test_regressions.VaultRegressionTests.test_replay_is_durable_even_when_source_is_now_empty) ... ok
+test_self_transfer_and_insufficient_funds_do_not_write (test_regressions.VaultRegressionTests.test_self_transfer_and_insufficient_funds_do_not_write) ... ok
+test_tenants_can_independently_create_the_same_key (test_regressions.VaultRegressionTests.test_tenants_can_independently_create_the_same_key) ... ok
+test_text_identifiers_are_literal_and_not_normalized (test_regressions.VaultRegressionTests.test_text_identifiers_are_literal_and_not_normalized) ... ok
+test_transfer_changes_only_authorized_rows (test_regressions.VaultRegressionTests.test_transfer_changes_only_authorized_rows) ... ok
+test_unique_constraint_failure_preserves_existing_history (test_regressions.VaultRegressionTests.test_unique_constraint_failure_preserves_existing_history) ... ok
+test_unknown_tenant_cannot_read_or_transfer_existing_accounts (test_regressions.VaultRegressionTests.test_unknown_tenant_cannot_read_or_transfer_existing_accounts) ... ok
+test_unrepresentable_credit_rolls_back_without_float_conversion (test_regressions.VaultRegressionTests.test_unrepresentable_credit_rolls_back_without_float_conversion) ... ok
+test_cancel_credit_rolls_back_all_rows_and_preserves_trigger (test_trigger_effects.TriggerEffectTests.test_cancel_credit_rolls_back_all_rows_and_preserves_trigger) ... ok
+test_changes_total_changes_and_last_insert_rowid_match_native (test_trigger_effects.TriggerEffectTests.test_changes_total_changes_and_last_insert_rowid_match_native) ... ok
+test_cli_effect_failure_recovery_and_replay (test_trigger_effects.TriggerEffectTests.test_cli_effect_failure_recovery_and_replay) ... ok
+test_duplicate_audit_and_removed_history_are_rejected (test_trigger_effects.TriggerEffectTests.test_duplicate_audit_and_removed_history_are_rejected) ... ok
+test_ignore_across_rows_and_recursive_noops_match_native (test_trigger_effects.TriggerEffectTests.test_ignore_across_rows_and_recursive_noops_match_native) ... ok
+test_ignored_conflict_is_a_valid_transfer (test_trigger_effects.TriggerEffectTests.test_ignored_conflict_is_a_valid_transfer) ... ok
+test_native_keyword_unicode_and_compound_statement_semantics (test_trigger_effects.TriggerEffectTests.test_native_keyword_unicode_and_compound_statement_semantics) ... ok
+test_noops_row_moves_and_restored_duplicate_history_are_allowed (test_trigger_effects.TriggerEffectTests.test_noops_row_moves_and_restored_duplicate_history_are_allowed) ... ok
+test_original_enabled_recursion_is_preserved (test_trigger_effects.TriggerEffectTests.test_original_enabled_recursion_is_preserved) ... ok
+test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) ... 
+  test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='pragma_recursive_triggers', rejects=True) ... FAIL
+  test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='pragma_recursive_triggers', rejects=False) ... ERROR
+  test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='pragma_recursive_triggers()', rejects=True) ... ERROR
+  test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='pragma_recursive_triggers()', rejects=False) ... ERROR
+  test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='main."pragma_recursive_triggers"()', rejects=True) ... ERROR
+  test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='main."pragma_recursive_triggers"()', rejects=False) ... ERROR
+  test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='[pragma_recursive_triggers]', rejects=True) ... ERROR
+  test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='[pragma_recursive_triggers]', rejects=False) ... ERROR
+test_replace_victim_is_observed_even_when_insert_is_undone (test_trigger_effects.TriggerEffectTests.test_replace_victim_is_observed_even_when_insert_is_undone) ... ok
+test_replace_victims_for_rowid_and_expression_unique_indexes (test_trigger_effects.TriggerEffectTests.test_replace_victims_for_rowid_and_expression_unique_indexes) ... ok
+test_storage_types_encodings_and_unreadable_foreign_text_are_preserved (test_trigger_effects.TriggerEffectTests.test_storage_types_encodings_and_unreadable_foreign_text_are_preserved) ... ok
+test_type_only_history_changes_are_rejected (test_trigger_effects.TriggerEffectTests.test_type_only_history_changes_are_rejected) ... ok
+test_update_replace_victim_cannot_hide_behind_restored_update (test_trigger_effects.TriggerEffectTests.test_update_replace_victim_cannot_hide_behind_restored_update) ... ok
+test_vt_and_boundary_bom_explicit_deletes_keep_native_guards (test_trigger_effects.TriggerEffectTests.test_vt_and_boundary_bom_explicit_deletes_keep_native_guards) ... ok
+
+======================================================================
+ERROR: test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='pragma_recursive_triggers', rejects=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-fef7z24o/test_trigger_effects.py", line 238, in test_original_recursive_pragma_aborting_guard_and_harmless_control
+    self.install(f'''CREATE TRIGGER pragma_guard BEFORE INSERT ON audit
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        WHEN (SELECT recursive_triggers FROM {table})={0 if rejects else 1}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        BEGIN SELECT RAISE(ABORT,'original pragma guard'); END;''')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-fef7z24o/test_trigger_effects.py", line 33, in install
+    con.executescript(sql)
+    ~~~~~~~~~~~~~~~~~^^^^^
+sqlite3.OperationalError: trigger pragma_guard already exists
+
+======================================================================
+ERROR: test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='pragma_recursive_triggers()', rejects=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-fef7z24o/test_trigger_effects.py", line 238, in test_original_recursive_pragma_aborting_guard_and_harmless_control
+    self.install(f'''CREATE TRIGGER pragma_guard BEFORE INSERT ON audit
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        WHEN (SELECT recursive_triggers FROM {table})={0 if rejects else 1}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        BEGIN SELECT RAISE(ABORT,'original pragma guard'); END;''')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-fef7z24o/test_trigger_effects.py", line 33, in install
+    con.executescript(sql)
+    ~~~~~~~~~~~~~~~~~^^^^^
+sqlite3.OperationalError: trigger pragma_guard already exists
+
+======================================================================
+ERROR: test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='pragma_recursive_triggers()', rejects=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-fef7z24o/test_trigger_effects.py", line 238, in test_original_recursive_pragma_aborting_guard_and_harmless_control
+    self.install(f'''CREATE TRIGGER pragma_guard BEFORE INSERT ON audit
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        WHEN (SELECT recursive_triggers FROM {table})={0 if rejects else 1}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        BEGIN SELECT RAISE(ABORT,'original pragma guard'); END;''')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-fef7z24o/test_trigger_effects.py", line 33, in install
+    con.executescript(sql)
+    ~~~~~~~~~~~~~~~~~^^^^^
+sqlite3.OperationalError: trigger pragma_guard already exists
+
+======================================================================
+ERROR: test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='main."pragma_recursive_triggers"()', rejects=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-fef7z24o/test_trigger_effects.py", line 238, in test_original_recursive_pragma_aborting_guard_and_harmless_control
+    self.install(f'''CREATE TRIGGER pragma_guard BEFORE INSERT ON audit
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        WHEN (SELECT recursive_triggers FROM {table})={0 if rejects else 1}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        BEGIN SELECT RAISE(ABORT,'original pragma guard'); END;''')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-fef7z24o/test_trigger_effects.py", line 33, in install
+    con.executescript(sql)
+    ~~~~~~~~~~~~~~~~~^^^^^
+sqlite3.OperationalError: trigger pragma_guard already exists
+
+======================================================================
+ERROR: test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='main."pragma_recursive_triggers"()', rejects=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-fef7z24o/test_trigger_effects.py", line 238, in test_original_recursive_pragma_aborting_guard_and_harmless_control
+    self.install(f'''CREATE TRIGGER pragma_guard BEFORE INSERT ON audit
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        WHEN (SELECT recursive_triggers FROM {table})={0 if rejects else 1}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        BEGIN SELECT RAISE(ABORT,'original pragma guard'); END;''')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-fef7z24o/test_trigger_effects.py", line 33, in install
+    con.executescript(sql)
+    ~~~~~~~~~~~~~~~~~^^^^^
+sqlite3.OperationalError: trigger pragma_guard already exists
+
+======================================================================
+ERROR: test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='[pragma_recursive_triggers]', rejects=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-fef7z24o/test_trigger_effects.py", line 238, in test_original_recursive_pragma_aborting_guard_and_harmless_control
+    self.install(f'''CREATE TRIGGER pragma_guard BEFORE INSERT ON audit
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        WHEN (SELECT recursive_triggers FROM {table})={0 if rejects else 1}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        BEGIN SELECT RAISE(ABORT,'original pragma guard'); END;''')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-fef7z24o/test_trigger_effects.py", line 33, in install
+    con.executescript(sql)
+    ~~~~~~~~~~~~~~~~~^^^^^
+sqlite3.OperationalError: trigger pragma_guard already exists
+
+======================================================================
+ERROR: test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='[pragma_recursive_triggers]', rejects=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-fef7z24o/test_trigger_effects.py", line 238, in test_original_recursive_pragma_aborting_guard_and_harmless_control
+    self.install(f'''CREATE TRIGGER pragma_guard BEFORE INSERT ON audit
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        WHEN (SELECT recursive_triggers FROM {table})={0 if rejects else 1}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        BEGIN SELECT RAISE(ABORT,'original pragma guard'); END;''')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-fef7z24o/test_trigger_effects.py", line 33, in install
+    con.executescript(sql)
+    ~~~~~~~~~~~~~~~~~^^^^^
+sqlite3.OperationalError: trigger pragma_guard already exists
+
+======================================================================
+FAIL: test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='pragma_recursive_triggers', rejects=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-fef7z24o/test_trigger_effects.py", line 243, in test_original_recursive_pragma_aborting_guard_and_harmless_control
+    with self.assertRaisesRegex(sqlite3.IntegrityError, 'original pragma guard'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IntegrityError not raised
+
+----------------------------------------------------------------------
+Ran 48 tests in 1.470s
+
+FAILED (failures=1, errors=7)

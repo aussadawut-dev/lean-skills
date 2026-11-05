@@ -1,0 +1,662 @@
+{
+  "workspace": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-schema-skill-kfeIef/cohort/round-1/critical/workspace",
+  "source_sha256": "e8fbe0d92e94af8a5130f3f6ffd0f88ec7a51dfb0b42b32dbc1225b04bfb3f0c",
+  "finding_groups": {
+    "identical_replacement": true,
+    "replacement_rowid_swap": true,
+    "unique_victim_preservation": true
+  },
+  "issue_count": 3,
+  "failed_cases": 6,
+  "cases": [
+    {
+      "case": "identical_account_replacement",
+      "valid_success_expected": true,
+      "pass": false,
+      "exception": "ValueError: invalid transfer effects",
+      "receipt": null,
+      "before": {
+        "accounts": [
+          [
+            "one",
+            "a",
+            100
+          ],
+          [
+            "one",
+            "b",
+            0
+          ],
+          [
+            "two",
+            "private",
+            456
+          ],
+          [
+            "two",
+            "spare",
+            789
+          ]
+        ],
+        "transfers": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ]
+        ],
+        "audit": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ]
+        ]
+      },
+      "after": {
+        "accounts": [
+          [
+            "one",
+            "a",
+            100
+          ],
+          [
+            "one",
+            "b",
+            0
+          ],
+          [
+            "two",
+            "private",
+            456
+          ],
+          [
+            "two",
+            "spare",
+            789
+          ]
+        ],
+        "transfers": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ]
+        ],
+        "audit": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ]
+        ]
+      },
+      "schema_and_triggers_preserved": true
+    },
+    {
+      "case": "identical_receipt_replacement",
+      "valid_success_expected": true,
+      "pass": false,
+      "exception": "ValueError: invalid transfer effects",
+      "receipt": null,
+      "before": {
+        "accounts": [
+          [
+            "one",
+            "a",
+            100
+          ],
+          [
+            "one",
+            "b",
+            0
+          ],
+          [
+            "two",
+            "private",
+            456
+          ],
+          [
+            "two",
+            "spare",
+            789
+          ]
+        ],
+        "transfers": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ]
+        ],
+        "audit": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ]
+        ]
+      },
+      "after": {
+        "accounts": [
+          [
+            "one",
+            "a",
+            100
+          ],
+          [
+            "one",
+            "b",
+            0
+          ],
+          [
+            "two",
+            "private",
+            456
+          ],
+          [
+            "two",
+            "spare",
+            789
+          ]
+        ],
+        "transfers": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ]
+        ],
+        "audit": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ]
+        ]
+      },
+      "schema_and_triggers_preserved": true
+    },
+    {
+      "case": "identical_audit_replacement",
+      "valid_success_expected": true,
+      "pass": false,
+      "exception": "ValueError: invalid transfer effects",
+      "receipt": null,
+      "before": {
+        "accounts": [
+          [
+            "one",
+            "a",
+            100
+          ],
+          [
+            "one",
+            "b",
+            0
+          ],
+          [
+            "two",
+            "private",
+            456
+          ],
+          [
+            "two",
+            "spare",
+            789
+          ]
+        ],
+        "transfers": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ]
+        ],
+        "audit": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ]
+        ]
+      },
+      "after": {
+        "accounts": [
+          [
+            "one",
+            "a",
+            100
+          ],
+          [
+            "one",
+            "b",
+            0
+          ],
+          [
+            "two",
+            "private",
+            456
+          ],
+          [
+            "two",
+            "spare",
+            789
+          ]
+        ],
+        "transfers": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ]
+        ],
+        "audit": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ]
+        ]
+      },
+      "schema_and_triggers_preserved": true
+    },
+    {
+      "case": "replacement_rowid_swap",
+      "valid_success_expected": true,
+      "pass": false,
+      "exception": "ValueError: invalid transfer effects",
+      "receipt": null,
+      "before": {
+        "accounts": [
+          [
+            "one",
+            "a",
+            100
+          ],
+          [
+            "one",
+            "b",
+            0
+          ],
+          [
+            "two",
+            "private",
+            456
+          ],
+          [
+            "two",
+            "spare",
+            789
+          ]
+        ],
+        "transfers": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ]
+        ],
+        "audit": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ]
+        ]
+      },
+      "after": {
+        "accounts": [
+          [
+            "one",
+            "a",
+            100
+          ],
+          [
+            "one",
+            "b",
+            0
+          ],
+          [
+            "two",
+            "private",
+            456
+          ],
+          [
+            "two",
+            "spare",
+            789
+          ]
+        ],
+        "transfers": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ]
+        ],
+        "audit": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ]
+        ]
+      },
+      "schema_and_triggers_preserved": true
+    },
+    {
+      "case": "unique_account_victim",
+      "valid_success_expected": false,
+      "pass": false,
+      "exception": null,
+      "receipt": {
+        "tenant": "one",
+        "key": "k",
+        "source": "a",
+        "target": "b",
+        "amount": 10
+      },
+      "before": {
+        "accounts": [
+          [
+            "one",
+            "a",
+            100
+          ],
+          [
+            "one",
+            "b",
+            0
+          ],
+          [
+            "two",
+            "private",
+            456
+          ],
+          [
+            "two",
+            "spare",
+            789
+          ]
+        ],
+        "transfers": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ]
+        ],
+        "audit": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ]
+        ]
+      },
+      "after": {
+        "accounts": [
+          [
+            "one",
+            "a",
+            90
+          ],
+          [
+            "one",
+            "b",
+            10
+          ],
+          [
+            "two",
+            "private",
+            456
+          ],
+          [
+            "two",
+            "spare",
+            789
+          ]
+        ],
+        "transfers": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ],
+          [
+            "one",
+            "k",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "audit": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ],
+          [
+            "one",
+            "k",
+            "a",
+            "b",
+            10
+          ]
+        ]
+      },
+      "schema_and_triggers_preserved": true
+    },
+    {
+      "case": "unique_receipt_victim",
+      "valid_success_expected": false,
+      "pass": false,
+      "exception": null,
+      "receipt": {
+        "tenant": "one",
+        "key": "k",
+        "source": "a",
+        "target": "b",
+        "amount": 10
+      },
+      "before": {
+        "accounts": [
+          [
+            "one",
+            "a",
+            100
+          ],
+          [
+            "one",
+            "b",
+            0
+          ],
+          [
+            "two",
+            "private",
+            456
+          ],
+          [
+            "two",
+            "spare",
+            789
+          ]
+        ],
+        "transfers": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ]
+        ],
+        "audit": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ]
+        ]
+      },
+      "after": {
+        "accounts": [
+          [
+            "one",
+            "a",
+            90
+          ],
+          [
+            "one",
+            "b",
+            10
+          ],
+          [
+            "two",
+            "private",
+            456
+          ],
+          [
+            "two",
+            "spare",
+            789
+          ]
+        ],
+        "transfers": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ],
+          [
+            "one",
+            "k",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "audit": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ],
+          [
+            "one",
+            "k",
+            "a",
+            "b",
+            10
+          ]
+        ]
+      },
+      "schema_and_triggers_preserved": true,
+      "historical_replay_changed_data": false,
+      "after_historical_replay": {
+        "accounts": [
+          [
+            "one",
+            "a",
+            90
+          ],
+          [
+            "one",
+            "b",
+            10
+          ],
+          [
+            "two",
+            "private",
+            456
+          ],
+          [
+            "two",
+            "spare",
+            789
+          ]
+        ],
+        "transfers": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ],
+          [
+            "one",
+            "k",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "audit": [
+          [
+            "two",
+            "old",
+            "private",
+            "spare",
+            7
+          ],
+          [
+            "one",
+            "k",
+            "a",
+            "b",
+            10
+          ]
+        ]
+      }
+    }
+  ]
+}

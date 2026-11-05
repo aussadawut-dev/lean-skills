@@ -1,0 +1,15 @@
+{
+  "noncontract_blockers": [
+    "historical_regressions"
+  ],
+  "reason": "The only final forward-cross failures are a prescribed exception class for stored SQLite integer overflow and literal generic CLI error wording. Neither is fixed by the original contract. Independent contract triage agrees; API/CLI overflow and audit-failure probes confirm atomic rejection and generic JSON exit 2. Raw failures remain retained. The actual independent finding is mandatory and trial remains FAILED.",
+  "evidence": {
+    "source_sha256": "6982263ba7dc91e8c992dd05bfdf29601745e8107d985e0f0739447956fad39b",
+    "logs": [
+      "review-3-baseline-3-historical_tests_on_candidate.log"
+    ],
+    "probe": "error-boundary-probe.json",
+    "probe_script": "../../error_boundary_probe.py",
+    "triage": "../../contract-triage.json"
+  }
+}

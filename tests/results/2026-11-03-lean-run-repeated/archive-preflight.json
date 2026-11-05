@@ -1,0 +1,29 @@
+{
+  "skill_package_matches_frozen_manifest": true,
+  "baseline_archives": [
+    {
+      "archive": "2026-11-03-lean-run-optimized",
+      "verified_files": 246,
+      "unchanged": true
+    },
+    {
+      "archive": "2026-11-03-level-benchmark",
+      "verified_files": 195,
+      "unchanged": true
+    }
+  ],
+  "development_phases_raw_usage_verified": 5,
+  "final_validation_phases_raw_usage_verified": 30,
+  "outcome": {
+    "status": "FAILED",
+    "passed_trials": 7,
+    "failed_trials": [
+      "round-1/critical",
+      "round-3/critical"
+    ],
+    "final_contract_issues": 0,
+    "final_independent_findings": 2,
+    "final_original_supplemental_issues": 0,
+    "final_added_probe_failed_cases": 3
+  }
+}

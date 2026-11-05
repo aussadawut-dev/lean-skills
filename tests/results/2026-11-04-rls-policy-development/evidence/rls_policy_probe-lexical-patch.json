@@ -1,0 +1,1103 @@
+{
+ "workspace": "/private/tmp/claude-501/-Users-x10-Workspace-Product-casetodian-workspace/fd27bd79-822f-41d6-b36f-6a88542c22eb/scratchpad/ws3",
+ "sqlite_version": "3.50.4",
+ "source_sha256": "7769ba98c4095231b7b5988757dff87cdc29e279ee9e8cd3009467f99bc2e29f",
+ "failed_cases": 81,
+ "failures": [
+  "replace_upsert:api_777:status",
+  "replace_upsert:cli_777:status",
+  "replace_upsert:api_778:status",
+  "replace_upsert:cli_778:status",
+  "replace_upsert:api:foreign_data_observable",
+  "replace_upsert:cli:foreign_data_observable",
+  "insert_or_replace_upsert:api_777:status",
+  "insert_or_replace_upsert:cli_777:status",
+  "insert_or_replace_upsert:api_778:status",
+  "insert_or_replace_upsert:cli_778:status",
+  "insert_or_replace_upsert:api:foreign_data_observable",
+  "insert_or_replace_upsert:cli:foreign_data_observable",
+  "f1_net_change:api_777:status",
+  "f1_net_change:api_777:native_error",
+  "f1_net_change:cli_777:status",
+  "f1_net_change:api:foreign_data_observable",
+  "f1_net_change:cli:foreign_data_observable",
+  "f1_nested_restore:api_778:status",
+  "f1_nested_restore:api_778:native_error",
+  "f1_nested_restore:cli_778:status",
+  "f1_nested_restore:api:foreign_data_observable",
+  "f1_nested_restore:cli:foreign_data_observable",
+  "f1_plain_restore:api_778:status",
+  "f1_plain_restore:api_778:native_error",
+  "f1_plain_restore:cli_778:status",
+  "f1_plain_restore:api:foreign_data_observable",
+  "f1_plain_restore:cli:foreign_data_observable",
+  "foreign_balance_write:api_777:status",
+  "foreign_balance_write:api_777:native_error",
+  "foreign_balance_write:cli_777:status",
+  "foreign_balance_write:api_778:status",
+  "foreign_balance_write:api_778:native_error",
+  "foreign_balance_write:cli_778:status",
+  "foreign_balance_write:api:foreign_data_observable",
+  "foreign_balance_write:cli:foreign_data_observable",
+  "foreign_receipt_write:api_777:status",
+  "foreign_receipt_write:api_777:native_error",
+  "foreign_receipt_write:cli_777:status",
+  "foreign_receipt_write:api_778:status",
+  "foreign_receipt_write:api_778:native_error",
+  "foreign_receipt_write:cli_778:status",
+  "foreign_receipt_write:api:foreign_data_observable",
+  "foreign_receipt_write:cli:foreign_data_observable",
+  "foreign_delete:api_777:status",
+  "foreign_delete:api_777:native_error",
+  "foreign_delete:cli_777:status",
+  "foreign_delete:api_778:status",
+  "foreign_delete:api_778:native_error",
+  "foreign_delete:cli_778:status",
+  "foreign_delete:api:foreign_data_observable",
+  "foreign_delete:cli:foreign_data_observable",
+  "foreign_rowid_move:api_777:foreign_rows_changed",
+  "foreign_rowid_move:cli_777:foreign_rows_changed",
+  "foreign_rowid_move:api_778:foreign_rows_changed",
+  "foreign_rowid_move:cli_778:foreign_rows_changed",
+  "foreign_insert_or_ignore:api_777:status",
+  "foreign_insert_or_ignore:cli_777:status",
+  "foreign_insert_or_ignore:api_778:status",
+  "foreign_insert_or_ignore:cli_778:status",
+  "foreign_insert_or_ignore:api:foreign_data_observable",
+  "foreign_insert_or_ignore:cli:foreign_data_observable",
+  "foreign_delete_reinsert:api_777:status",
+  "foreign_delete_reinsert:cli_777:status",
+  "foreign_delete_reinsert:api:foreign_data_observable",
+  "foreign_delete_reinsert:cli:foreign_data_observable",
+  "counters_after_foreign_noop:api_777:native_error",
+  "counters_after_foreign_noop:api_778:native_error",
+  "counters_after_foreign_noop:api:foreign_data_observable",
+  "cross_tenant_unique_replace:api_777:status",
+  "cross_tenant_unique_replace:api_777:native_error",
+  "cross_tenant_unique_replace:cli_777:status",
+  "cross_tenant_unique_replace:api:foreign_data_observable",
+  "cross_tenant_unique_replace:cli:foreign_data_observable",
+  "own_row_into_hidden_slot:api_777:status",
+  "own_row_into_hidden_slot:api_777:native_error",
+  "own_row_into_hidden_slot:cli_777:status",
+  "own_row_into_hidden_slot:api_778:status",
+  "own_row_into_hidden_slot:api_778:native_error",
+  "own_row_into_hidden_slot:cli_778:status",
+  "own_row_into_hidden_slot:api:foreign_data_observable",
+  "own_row_into_hidden_slot:cli:foreign_data_observable"
+ ],
+ "cases": {
+  "replace_upsert": {
+   "api_777": [
+    "success",
+    "receipt",
+    "rejected",
+    [
+     "status"
+    ]
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "rejected",
+    [
+     "status"
+    ]
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "rejected",
+    [
+     "status"
+    ]
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "rejected",
+    [
+     "status"
+    ]
+   ],
+   "api_absent": [
+    "rejected",
+    "audit rule",
+    "rejected",
+    []
+   ],
+   "cli_absent": [
+    "rejected",
+    null,
+    "rejected",
+    []
+   ]
+  },
+  "insert_or_replace_upsert": {
+   "api_777": [
+    "success",
+    "receipt",
+    "rejected",
+    [
+     "status"
+    ]
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "rejected",
+    [
+     "status"
+    ]
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "rejected",
+    [
+     "status"
+    ]
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "rejected",
+    [
+     "status"
+    ]
+   ],
+   "api_absent": [
+    "rejected",
+    "audit rule",
+    "rejected",
+    []
+   ],
+   "cli_absent": [
+    "rejected",
+    null,
+    "rejected",
+    []
+   ]
+  },
+  "qualified_update_trigger": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ]
+  },
+  "unqualified_update_trigger": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ]
+  },
+  "f1_net_change": {
+   "api_777": [
+    "rejected",
+    "transaction effects rejected",
+    "success",
+    [
+     "status",
+     "native_error"
+    ]
+   ],
+   "cli_777": [
+    "rejected",
+    null,
+    "success",
+    [
+     "status"
+    ]
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ]
+  },
+  "f1_nested_restore": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "api_778": [
+    "rejected",
+    "transaction effects rejected",
+    "success",
+    [
+     "status",
+     "native_error"
+    ]
+   ],
+   "cli_778": [
+    "rejected",
+    null,
+    "success",
+    [
+     "status"
+    ]
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ]
+  },
+  "f1_plain_restore": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "api_778": [
+    "rejected",
+    "transaction effects rejected",
+    "success",
+    [
+     "status",
+     "native_error"
+    ]
+   ],
+   "cli_778": [
+    "rejected",
+    null,
+    "success",
+    [
+     "status"
+    ]
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ]
+  },
+  "foreign_balance_write": {
+   "api_777": [
+    "rejected",
+    "transaction effects rejected",
+    "success",
+    [
+     "status",
+     "native_error"
+    ]
+   ],
+   "cli_777": [
+    "rejected",
+    null,
+    "success",
+    [
+     "status"
+    ]
+   ],
+   "api_778": [
+    "rejected",
+    "transaction effects rejected",
+    "success",
+    [
+     "status",
+     "native_error"
+    ]
+   ],
+   "cli_778": [
+    "rejected",
+    null,
+    "success",
+    [
+     "status"
+    ]
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ]
+  },
+  "foreign_storage_class": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ]
+  },
+  "foreign_receipt_write": {
+   "api_777": [
+    "rejected",
+    "transaction effects rejected",
+    "success",
+    [
+     "status",
+     "native_error"
+    ]
+   ],
+   "cli_777": [
+    "rejected",
+    null,
+    "success",
+    [
+     "status"
+    ]
+   ],
+   "api_778": [
+    "rejected",
+    "transaction effects rejected",
+    "success",
+    [
+     "status",
+     "native_error"
+    ]
+   ],
+   "cli_778": [
+    "rejected",
+    null,
+    "success",
+    [
+     "status"
+    ]
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ]
+  },
+  "foreign_delete": {
+   "api_777": [
+    "rejected",
+    "transaction effects rejected",
+    "success",
+    [
+     "status",
+     "native_error"
+    ]
+   ],
+   "cli_777": [
+    "rejected",
+    null,
+    "success",
+    [
+     "status"
+    ]
+   ],
+   "api_778": [
+    "rejected",
+    "transaction effects rejected",
+    "success",
+    [
+     "status",
+     "native_error"
+    ]
+   ],
+   "cli_778": [
+    "rejected",
+    null,
+    "success",
+    [
+     "status"
+    ]
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ]
+  },
+  "foreign_rowid_move": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    [
+     "foreign_rows_changed"
+    ]
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    [
+     "foreign_rows_changed"
+    ]
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    [
+     "foreign_rows_changed"
+    ]
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    [
+     "foreign_rows_changed"
+    ]
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ]
+  },
+  "foreign_insert_or_ignore": {
+   "api_777": [
+    "success",
+    "receipt",
+    "rejected",
+    [
+     "status"
+    ]
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "rejected",
+    [
+     "status"
+    ]
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "rejected",
+    [
+     "status"
+    ]
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "rejected",
+    [
+     "status"
+    ]
+   ],
+   "api_absent": [
+    "rejected",
+    "transaction effects rejected",
+    "rejected",
+    []
+   ],
+   "cli_absent": [
+    "rejected",
+    null,
+    "rejected",
+    []
+   ]
+  },
+  "foreign_delete_reinsert": {
+   "api_777": [
+    "success",
+    "receipt",
+    "rejected",
+    [
+     "status"
+    ]
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "rejected",
+    [
+     "status"
+    ]
+   ],
+   "api_778": [
+    "rejected",
+    "transaction effects rejected",
+    "rejected",
+    []
+   ],
+   "cli_778": [
+    "rejected",
+    null,
+    "rejected",
+    []
+   ],
+   "api_absent": [
+    "rejected",
+    "transaction effects rejected",
+    "rejected",
+    []
+   ],
+   "cli_absent": [
+    "rejected",
+    null,
+    "rejected",
+    []
+   ]
+  },
+  "foreign_count_read": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ]
+  },
+  "counters_after_foreign_noop": {
+   "api_777": [
+    "rejected",
+    "c=1,t=4,l=2",
+    "rejected",
+    [
+     "native_error"
+    ]
+   ],
+   "cli_777": [
+    "rejected",
+    null,
+    "rejected",
+    []
+   ],
+   "api_778": [
+    "rejected",
+    "c=1,t=4,l=2",
+    "rejected",
+    [
+     "native_error"
+    ]
+   ],
+   "cli_778": [
+    "rejected",
+    null,
+    "rejected",
+    []
+   ],
+   "api_absent": [
+    "rejected",
+    "c=0,t=3,l=1",
+    "rejected",
+    []
+   ],
+   "cli_absent": [
+    "rejected",
+    null,
+    "rejected",
+    []
+   ]
+  },
+  "counters_first_update": {
+   "api_777": [
+    "rejected",
+    "c=0,t=0,l=0",
+    "rejected",
+    []
+   ],
+   "cli_777": [
+    "rejected",
+    null,
+    "rejected",
+    []
+   ],
+   "api_778": [
+    "rejected",
+    "c=0,t=0,l=0",
+    "rejected",
+    []
+   ],
+   "cli_778": [
+    "rejected",
+    null,
+    "rejected",
+    []
+   ],
+   "api_absent": [
+    "rejected",
+    "c=0,t=0,l=0",
+    "rejected",
+    []
+   ],
+   "cli_absent": [
+    "rejected",
+    null,
+    "rejected",
+    []
+   ]
+  },
+  "cross_tenant_unique_replace": {
+   "api_777": [
+    "rejected",
+    "transaction effects rejected",
+    "success",
+    [
+     "status",
+     "native_error"
+    ]
+   ],
+   "cli_777": [
+    "rejected",
+    null,
+    "success",
+    [
+     "status"
+    ]
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ]
+  },
+  "own_row_into_hidden_slot": {
+   "api_777": [
+    "rejected",
+    "UNIQUE constraint failed: accounts.rowid",
+    "success",
+    [
+     "status",
+     "native_error"
+    ]
+   ],
+   "cli_777": [
+    "rejected",
+    null,
+    "success",
+    [
+     "status"
+    ]
+   ],
+   "api_778": [
+    "rejected",
+    "UNIQUE constraint failed: accounts.rowid",
+    "success",
+    [
+     "status",
+     "native_error"
+    ]
+   ],
+   "cli_778": [
+    "rejected",
+    null,
+    "success",
+    [
+     "status"
+    ]
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ]
+  },
+  "own_extra_row": {
+   "api_777": [
+    "rejected",
+    "transaction effects rejected",
+    "rejected",
+    []
+   ],
+   "cli_777": [
+    "rejected",
+    null,
+    "rejected",
+    []
+   ],
+   "api_778": [
+    "rejected",
+    "transaction effects rejected",
+    "rejected",
+    []
+   ],
+   "cli_778": [
+    "rejected",
+    null,
+    "rejected",
+    []
+   ],
+   "api_absent": [
+    "rejected",
+    "transaction effects rejected",
+    "rejected",
+    []
+   ],
+   "cli_absent": [
+    "rejected",
+    null,
+    "rejected",
+    []
+   ]
+  },
+  "local_natural_harmless": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ]
+  },
+  "local_natural_abort": {
+   "api_777": [
+    "rejected",
+    "local guard",
+    "rejected",
+    []
+   ],
+   "cli_777": [
+    "rejected",
+    null,
+    "rejected",
+    []
+   ],
+   "api_778": [
+    "rejected",
+    "local guard",
+    "rejected",
+    []
+   ],
+   "cli_778": [
+    "rejected",
+    null,
+    "rejected",
+    []
+   ],
+   "api_absent": [
+    "rejected",
+    "local guard",
+    "rejected",
+    []
+   ],
+   "cli_absent": [
+    "rejected",
+    null,
+    "rejected",
+    []
+   ]
+  },
+  "local_restore_noop": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ]
+  },
+  "no_triggers": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    []
+   ]
+  }
+ }
+}

@@ -1,0 +1,1842 @@
+test_valid_transfer (test_public.PublicTests.test_valid_transfer) ... ok
+test_audit_fail_and_rollback_actions_are_atomic_and_retryable (test_regressions.VaultRegressionTests.test_audit_fail_and_rollback_actions_are_atomic_and_retryable) ... 
+  test_audit_fail_and_rollback_actions_are_atomic_and_retryable (test_regressions.VaultRegressionTests.test_audit_fail_and_rollback_actions_are_atomic_and_retryable) (action='FAIL') ... FAIL
+  test_audit_fail_and_rollback_actions_are_atomic_and_retryable (test_regressions.VaultRegressionTests.test_audit_fail_and_rollback_actions_are_atomic_and_retryable) (action='ROLLBACK') ... ERROR
+test_balance_is_scoped_to_tenant (test_regressions.VaultRegressionTests.test_balance_is_scoped_to_tenant) ... FAIL
+test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) ... 
+  test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) (tenant='', account='alice') ... FAIL
+  test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) (tenant='one', account='') ... ERROR
+  test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) (tenant=None, account='alice') ... FAIL
+  test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) (tenant='one', account=None) ... ERROR
+  test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) (tenant=1, account='alice') ... FAIL
+  test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) (tenant='one', account=1) ... ERROR
+  test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) (tenant=True, account='alice') ... FAIL
+  test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) (tenant='one', account=True) ... ERROR
+  test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) (tenant=[], account='alice') ... FAIL
+  test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) (tenant='one', account=[]) ... ERROR
+  test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) (tenant={}, account='alice') ... FAIL
+  test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) (tenant='one', account={}) ... ERROR
+test_both_transfer_endpoints_must_exist_in_the_tenant (test_regressions.VaultRegressionTests.test_both_transfer_endpoints_must_exist_in_the_tenant) ... 
+  test_both_transfer_endpoints_must_exist_in_the_tenant (test_regressions.VaultRegressionTests.test_both_transfer_endpoints_must_exist_in_the_tenant) (endpoint='source', account='missing') ... ERROR
+  test_both_transfer_endpoints_must_exist_in_the_tenant (test_regressions.VaultRegressionTests.test_both_transfer_endpoints_must_exist_in_the_tenant) (endpoint='source', account='hidden') ... FAIL
+  test_both_transfer_endpoints_must_exist_in_the_tenant (test_regressions.VaultRegressionTests.test_both_transfer_endpoints_must_exist_in_the_tenant) (endpoint='target', account='missing') ... FAIL
+  test_both_transfer_endpoints_must_exist_in_the_tenant (test_regressions.VaultRegressionTests.test_both_transfer_endpoints_must_exist_in_the_tenant) (endpoint='target', account='hidden') ... FAIL
+test_both_transfer_endpoints_must_exist_in_the_tenant (test_regressions.VaultRegressionTests.test_both_transfer_endpoints_must_exist_in_the_tenant) ... FAIL
+test_cli_integrated_transfer_replay_conflict_and_balance (test_regressions.VaultRegressionTests.test_cli_integrated_transfer_replay_conflict_and_balance) ... FAIL
+test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) ... 
+  test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request=None) ... FAIL
+  test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request=[]) ... FAIL
+  test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request=1) ... FAIL
+  test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request=True) ... FAIL
+  test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request='request') ... FAIL
+  test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request={}) ... FAIL
+  test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request={'op': 'init_db'}) ... FAIL
+  test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request={'op': '__dict__'}) ... FAIL
+  test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request={'op': 'unknown'}) ... FAIL
+  test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request={'op': []}) ... FAIL
+  test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request={'op': 'balance'}) ... FAIL
+  test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request={'op': 'balance', 'tenant': 'one', 'account': 'hidden'}) ... FAIL
+  test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request={'op': 'balance', 'tenant': 'one', 'account': 'alice', 'extra': 1}) ... FAIL
+  test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request={'op': 'transfer', 'tenant': 'one', 'key': 'payment', 'source': 'alice', 'target': 'bob', 'amount': True}) ... FAIL
+  test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (arguments=[]) ... FAIL
+  test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (arguments=['/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/.vault-tests-ocea7gte/vault.sqlite']) ... FAIL
+  test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (arguments=['/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/.vault-tests-ocea7gte/vault.sqlite', '{bad json']) ... FAIL
+  test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (arguments=['/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/.vault-tests-ocea7gte/vault.sqlite', '{}', 'extra']) ... FAIL
+test_cli_storage_failure_is_generic_and_atomic_then_recovers (test_regressions.VaultRegressionTests.test_cli_storage_failure_is_generic_and_atomic_then_recovers) ... FAIL
+test_complete_balance_can_be_transferred (test_regressions.VaultRegressionTests.test_complete_balance_can_be_transferred) ... ok
+test_existing_unique_constraint_failure_does_not_lose_money_or_history (test_regressions.VaultRegressionTests.test_existing_unique_constraint_failure_does_not_lose_money_or_history) ... FAIL
+test_foreign_cached_receipt_and_malformed_rows_are_not_read (test_regressions.VaultRegressionTests.test_foreign_cached_receipt_and_malformed_rows_are_not_read) ... ERROR
+test_init_preserves_existing_schema_rows_and_triggers (test_regressions.VaultRegressionTests.test_init_preserves_existing_schema_rows_and_triggers) ... ok
+test_key_can_be_reused_independently_by_another_tenant (test_regressions.VaultRegressionTests.test_key_can_be_reused_independently_by_another_tenant) ... FAIL
+test_missing_and_inaccessible_accounts_have_same_generic_error (test_regressions.VaultRegressionTests.test_missing_and_inaccessible_accounts_have_same_generic_error) ... ERROR
+test_receipt_return_values_do_not_share_mutable_state (test_regressions.VaultRegressionTests.test_receipt_return_values_do_not_share_mutable_state) ... ok
+test_replay_conflicts_and_invalid_replays_have_no_writes (test_regressions.VaultRegressionTests.test_replay_conflicts_and_invalid_replays_have_no_writes) ... 
+  test_replay_conflicts_and_invalid_replays_have_no_writes (test_regressions.VaultRegressionTests.test_replay_conflicts_and_invalid_replays_have_no_writes) (change={'amount': 21}) ... FAIL
+  test_replay_conflicts_and_invalid_replays_have_no_writes (test_regressions.VaultRegressionTests.test_replay_conflicts_and_invalid_replays_have_no_writes) (change={'source': 'bob', 'target': 'alice'}) ... FAIL
+  test_replay_conflicts_and_invalid_replays_have_no_writes (test_regressions.VaultRegressionTests.test_replay_conflicts_and_invalid_replays_have_no_writes) (change={'source': 'carol'}) ... FAIL
+  test_replay_conflicts_and_invalid_replays_have_no_writes (test_regressions.VaultRegressionTests.test_replay_conflicts_and_invalid_replays_have_no_writes) (change={'target': 'carol'}) ... FAIL
+  test_replay_conflicts_and_invalid_replays_have_no_writes (test_regressions.VaultRegressionTests.test_replay_conflicts_and_invalid_replays_have_no_writes) (change={'amount': True}) ... FAIL
+  test_replay_conflicts_and_invalid_replays_have_no_writes (test_regressions.VaultRegressionTests.test_replay_conflicts_and_invalid_replays_have_no_writes) (change={'amount': 20.0}) ... FAIL
+  test_replay_conflicts_and_invalid_replays_have_no_writes (test_regressions.VaultRegressionTests.test_replay_conflicts_and_invalid_replays_have_no_writes) (change={'source': ''}) ... FAIL
+test_replay_is_durable_and_does_not_recheck_funds_or_write (test_regressions.VaultRegressionTests.test_replay_is_durable_and_does_not_recheck_funds_or_write) ... ok
+test_simultaneous_distinct_keys_cannot_overspend (test_regressions.VaultRegressionTests.test_simultaneous_distinct_keys_cannot_overspend) ... FAIL
+test_simultaneous_duplicate_keys_execute_once (test_regressions.VaultRegressionTests.test_simultaneous_duplicate_keys_execute_once) ... ERROR
+test_simultaneous_opposing_transfers_preserve_all_credits (test_regressions.VaultRegressionTests.test_simultaneous_opposing_transfers_preserve_all_credits) ... ok
+test_simultaneous_tenants_can_share_a_key (test_regressions.VaultRegressionTests.test_simultaneous_tenants_can_share_a_key) ... ERROR
+test_sql_parameters_accept_unicode_and_literal_sql_characters (test_regressions.VaultRegressionTests.test_sql_parameters_accept_unicode_and_literal_sql_characters) ... ok
+test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything (test_regressions.VaultRegressionTests.test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything) ... 
+  test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything (test_regressions.VaultRegressionTests.test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything) (trigger="AFTER UPDATE ON accounts WHEN NEW.tenant = 'one' AND NEW.name = 'bob'") ... FAIL
+  test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything (test_regressions.VaultRegressionTests.test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything) (trigger='BEFORE INSERT ON transfers') ... FAIL
+  test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything (test_regressions.VaultRegressionTests.test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything) (trigger='BEFORE INSERT ON audit') ... FAIL
+  test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything (test_regressions.VaultRegressionTests.test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything) (trigger='AFTER INSERT ON audit') ... FAIL
+test_transfer_changes_only_the_two_tenant_accounts (test_regressions.VaultRegressionTests.test_transfer_changes_only_the_two_tenant_accounts) ... FAIL
+test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) ... 
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'tenant': ''}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'tenant': None}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'tenant': 1}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'tenant': True}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'tenant': []}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'tenant': {}}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'source': ''}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'source': None}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'source': 1}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'source': True}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'source': []}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'source': {}}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'target': ''}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'target': None}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'target': 1}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'target': True}) ... FAIL
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1065ebb50>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1065ebc40>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1065ebd30>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1065ebe20>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f8040>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f8130>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f8220>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f8310>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f8400>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f84f0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f85e0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f86d0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f88b0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f89a0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1065ebf10>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f8a90>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f8b80>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f8c70>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f8d60>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f8e50>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f8f40>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f9030>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f9120>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f9210>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f9300>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f93f0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f94e0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f97b0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f9b70>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f9c60>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f9a80>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f9d50>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f9e40>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f9f30>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fa110>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fa200>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fa2f0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fa4d0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fa020>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fa5c0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fa3e0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fa6b0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fa7a0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fa890>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fa980>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066faa70>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fae30>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fab60>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fac50>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fad40>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066faf20>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fb010>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fb100>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fb1f0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fb2e0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fb3d0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fb4c0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fb5b0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fb6a0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fb790>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fb880>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fbb50>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fbc40>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fbd30>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fbe20>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fbf10>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672c130>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672c220>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672c310>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672c400>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672c4f0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672c5e0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672c6d0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066fba60>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1066f87c0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672c040>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672c7c0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672c8b0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672c9a0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672ca90>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672cb80>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672cc70>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672cd60>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672ce50>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672cf40>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672d030>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672d120>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672d210>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672d300>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672d3f0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672d4e0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672d5d0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672d7b0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672d8a0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672d6c0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672d990>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672da80>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672db70>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672dc60>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672dd50>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672de40>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672df30>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672e020>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672e110>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672e200>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672fd30>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672fe20>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672ff10>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10675c040>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10675c130>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10675c220>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10675c310>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10675c400>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672e2f0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10672ed40>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10675ce50>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10675cf40>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10675d030>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10675d120>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10675d210>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10675d300>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10675d3f0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10675d4e0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10675ef20>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10675f100>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10675f1f0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x106784400>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1067844f0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1067845e0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1067846d0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1067847c0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1067848b0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1067849a0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x106784a90>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10675f2e0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10675fb50>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10675ff10>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10675f5b0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x106784f40>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x106785030>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x106785120>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x106785210>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x106785300>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1067853f0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1067854e0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1067855d0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x106786e30>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x106787010>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x106787100>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1067871f0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1067872e0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1067873d0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1067874c0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1067875b0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1067876a0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x106787790>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x106787880>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x106787970>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x106787a60>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x106787b50>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x106787c40>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x106787d30>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x106787e20>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x106787f10>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679c040>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679c130>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679c220>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679c310>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679c400>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679c4f0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679c5e0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679c6d0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679c7c0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679c8b0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679c9a0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679ca90>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679cb80>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679cc70>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679cd60>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679ce50>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679cf40>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679d030>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679d120>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679d210>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679d300>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679d3f0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679d4e0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679d5d0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679d6c0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679d7b0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679d8a0>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679d990>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679da80>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679db70>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679dc60>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679dd50>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679de40>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679df30>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679e020>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py:890: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10679e110>
+  def setup_positions(expr, force_valid=True):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'target': []}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'target': {}}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'key': ''}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'key': None}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'key': 1}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'key': True}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'key': []}) ... ERROR
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'key': {}}) ... ERROR
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': 0}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': -1}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': True}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': False}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': 1.5}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': '20'}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': None}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': []}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': {}}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': inf}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': nan}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'target': 'alice'}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': 101}) ... FAIL
+  test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000}) ... FAIL
+
+======================================================================
+ERROR: test_audit_fail_and_rollback_actions_are_atomic_and_retryable (test_regressions.VaultRegressionTests.test_audit_fail_and_rollback_actions_are_atomic_and_retryable) (action='ROLLBACK')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 256, in test_audit_fail_and_rollback_actions_are_atomic_and_retryable
+    con.execute('CREATE TRIGGER fail_audit BEFORE INSERT ON audit '
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                "BEGIN SELECT RAISE(" + action + ", 'storage failure'); END")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: trigger fail_audit already exists
+
+======================================================================
+ERROR: test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) (tenant='one', account='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 111, in test_balance_rejects_invalid_identifiers
+    vault.balance(self.path, tenant, account)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 17, in balance
+    return con.execute('SELECT balance FROM accounts WHERE name=?', (account,)).fetchone()[0]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+
+======================================================================
+ERROR: test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) (tenant='one', account=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 111, in test_balance_rejects_invalid_identifiers
+    vault.balance(self.path, tenant, account)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 17, in balance
+    return con.execute('SELECT balance FROM accounts WHERE name=?', (account,)).fetchone()[0]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+
+======================================================================
+ERROR: test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) (tenant='one', account=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 111, in test_balance_rejects_invalid_identifiers
+    vault.balance(self.path, tenant, account)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 17, in balance
+    return con.execute('SELECT balance FROM accounts WHERE name=?', (account,)).fetchone()[0]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+
+======================================================================
+ERROR: test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) (tenant='one', account=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 111, in test_balance_rejects_invalid_identifiers
+    vault.balance(self.path, tenant, account)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 17, in balance
+    return con.execute('SELECT balance FROM accounts WHERE name=?', (account,)).fetchone()[0]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+
+======================================================================
+ERROR: test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) (tenant='one', account=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 111, in test_balance_rejects_invalid_identifiers
+    vault.balance(self.path, tenant, account)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 17, in balance
+    return con.execute('SELECT balance FROM accounts WHERE name=?', (account,)).fetchone()[0]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Error binding parameter 1: type 'list' is not supported
+
+======================================================================
+ERROR: test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) (tenant='one', account={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 111, in test_balance_rejects_invalid_identifiers
+    vault.balance(self.path, tenant, account)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 17, in balance
+    return con.execute('SELECT balance FROM accounts WHERE name=?', (account,)).fetchone()[0]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Error binding parameter 1: type 'dict' is not supported
+
+======================================================================
+ERROR: test_both_transfer_endpoints_must_exist_in_the_tenant (test_regressions.VaultRegressionTests.test_both_transfer_endpoints_must_exist_in_the_tenant) (endpoint='source', account='missing')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 150, in test_both_transfer_endpoints_must_exist_in_the_tenant
+    self.pay(**{endpoint: account})
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 49, in pay
+    return vault.transfer(self.path, **request)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 24, in transfer
+    funds=con.execute('SELECT balance FROM accounts WHERE name=?',(source,)).fetchone()[0]
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+
+======================================================================
+ERROR: test_foreign_cached_receipt_and_malformed_rows_are_not_read (test_regressions.VaultRegressionTests.test_foreign_cached_receipt_and_malformed_rows_are_not_read)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 198, in test_foreign_cached_receipt_and_malformed_rows_are_not_read
+    self.assertEqual(self.pay(), self.receipt())
+                     ~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 49, in pay
+    return vault.transfer(self.path, **request)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 21, in transfer
+    old=con.execute('SELECT * FROM transfers WHERE key=?',(key,)).fetchone()
+sqlite3.OperationalError: Could not decode to UTF-8 column 'source' with text '�'
+
+======================================================================
+ERROR: test_missing_and_inaccessible_accounts_have_same_generic_error (test_regressions.VaultRegressionTests.test_missing_and_inaccessible_accounts_have_same_generic_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 99, in test_missing_and_inaccessible_accounts_have_same_generic_error
+    vault.balance(self.path, 'one', account)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 17, in balance
+    return con.execute('SELECT balance FROM accounts WHERE name=?', (account,)).fetchone()[0]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+
+======================================================================
+ERROR: test_simultaneous_duplicate_keys_execute_once (test_regressions.VaultRegressionTests.test_simultaneous_duplicate_keys_execute_once)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 275, in test_simultaneous_duplicate_keys_execute_once
+    results = self.concurrent([{} for _ in range(8)])
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 76, in concurrent
+    return [future.result(timeout=30) for future in futures]
+            ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/_base.py", line 450, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/_base.py", line 395, in __get_result
+    raise self._exception
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 70, in run
+    return self.pay(**request)
+           ~~~~~~~~^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 49, in pay
+    return vault.transfer(self.path, **request)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 32, in transfer
+    con.execute('INSERT INTO transfers VALUES (?,?,?,?,?)',(tenant,key,source,target,amount))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: UNIQUE constraint failed: transfers.tenant, transfers.key
+
+======================================================================
+ERROR: test_simultaneous_tenants_can_share_a_key (test_regressions.VaultRegressionTests.test_simultaneous_tenants_can_share_a_key)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 310, in test_simultaneous_tenants_can_share_a_key
+    self.assertEqual(self.concurrent(requests),
+                     ~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 76, in concurrent
+    return [future.result(timeout=30) for future in futures]
+            ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/_base.py", line 450, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/_base.py", line 395, in __get_result
+    raise self._exception
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 70, in run
+    return self.pay(**request)
+           ~~~~~~~~^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 49, in pay
+    return vault.transfer(self.path, **request)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 32, in transfer
+    con.execute('INSERT INTO transfers VALUES (?,?,?,?,?)',(tenant,key,source,target,amount))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: UNIQUE constraint failed: transfers.tenant, transfers.key
+
+======================================================================
+ERROR: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'key': []})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 140, in test_transfer_rejects_malformed_requests_without_writes
+    self.pay(**request)
+    ~~~~~~~~^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 49, in pay
+    return vault.transfer(self.path, **request)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 21, in transfer
+    old=con.execute('SELECT * FROM transfers WHERE key=?',(key,)).fetchone()
+        ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Error binding parameter 1: type 'list' is not supported
+
+======================================================================
+ERROR: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'key': {}})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 140, in test_transfer_rejects_malformed_requests_without_writes
+    self.pay(**request)
+    ~~~~~~~~^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 49, in pay
+    return vault.transfer(self.path, **request)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 21, in transfer
+    old=con.execute('SELECT * FROM transfers WHERE key=?',(key,)).fetchone()
+        ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Error binding parameter 1: type 'dict' is not supported
+
+======================================================================
+FAIL: test_audit_fail_and_rollback_actions_are_atomic_and_retryable (test_regressions.VaultRegressionTests.test_audit_fail_and_rollback_actions_are_atomic_and_retryable) (action='FAIL')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 260, in test_audit_fail_and_rollback_actions_are_atomic_and_retryable
+    self.assertEqual(self.snapshot(), before)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'acc[31 chars]ce', 80): 1, (b'one', b'bob', 30): 1, (b'one',[231 chars] 2})} != {'acc[31 chars]ce', 100): 1, (b'one', b'bob', 10): 1, (b'one'[232 chars] 2})}
+Diff is 1012 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_balance_is_scoped_to_tenant (test_regressions.VaultRegressionTests.test_balance_is_scoped_to_tenant)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 91, in test_balance_is_scoped_to_tenant
+    self.assertEqual(vault.balance(self.path, 'two', 'alice'), 300)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 100 != 300
+
+======================================================================
+FAIL: test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) (tenant='', account='alice')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 110, in test_balance_rejects_invalid_identifiers
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) (tenant=None, account='alice')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 110, in test_balance_rejects_invalid_identifiers
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) (tenant=1, account='alice')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 110, in test_balance_rejects_invalid_identifiers
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) (tenant=True, account='alice')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 110, in test_balance_rejects_invalid_identifiers
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) (tenant=[], account='alice')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 110, in test_balance_rejects_invalid_identifiers
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) (tenant={}, account='alice')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 110, in test_balance_rejects_invalid_identifiers
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_both_transfer_endpoints_must_exist_in_the_tenant (test_regressions.VaultRegressionTests.test_both_transfer_endpoints_must_exist_in_the_tenant) (endpoint='source', account='hidden')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 149, in test_both_transfer_endpoints_must_exist_in_the_tenant
+    with self.assertRaises(ValueError) as caught:
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_both_transfer_endpoints_must_exist_in_the_tenant (test_regressions.VaultRegressionTests.test_both_transfer_endpoints_must_exist_in_the_tenant) (endpoint='target', account='missing')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 149, in test_both_transfer_endpoints_must_exist_in_the_tenant
+    with self.assertRaises(ValueError) as caught:
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_both_transfer_endpoints_must_exist_in_the_tenant (test_regressions.VaultRegressionTests.test_both_transfer_endpoints_must_exist_in_the_tenant) (endpoint='target', account='hidden')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 149, in test_both_transfer_endpoints_must_exist_in_the_tenant
+    with self.assertRaises(ValueError) as caught:
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_both_transfer_endpoints_must_exist_in_the_tenant (test_regressions.VaultRegressionTests.test_both_transfer_endpoints_must_exist_in_the_tenant)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 153, in test_both_transfer_endpoints_must_exist_in_the_tenant
+    self.assertEqual(len(set(errors)), 1)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_cli_integrated_transfer_replay_conflict_and_balance (test_regressions.VaultRegressionTests.test_cli_integrated_transfer_replay_conflict_and_balance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 327, in test_cli_integrated_transfer_replay_conflict_and_balance
+    self.assert_cli_error(self.cli(dict(request, amount=21)))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 59, in assert_cli_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : 
+
+======================================================================
+FAIL: test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 345, in test_cli_rejects_invalid_json_shape_operation_and_fields
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 59, in assert_cli_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/app.py", line 6, in <module>
+    operation=request.pop('op')
+              ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'pop'
+
+
+======================================================================
+FAIL: test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 345, in test_cli_rejects_invalid_json_shape_operation_and_fields
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 59, in assert_cli_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/app.py", line 6, in <module>
+    operation=request.pop('op')
+TypeError: 'str' object cannot be interpreted as an integer
+
+
+======================================================================
+FAIL: test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 345, in test_cli_rejects_invalid_json_shape_operation_and_fields
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 59, in assert_cli_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/app.py", line 6, in <module>
+    operation=request.pop('op')
+              ^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'pop'
+
+
+======================================================================
+FAIL: test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 345, in test_cli_rejects_invalid_json_shape_operation_and_fields
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 59, in assert_cli_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/app.py", line 6, in <module>
+    operation=request.pop('op')
+              ^^^^^^^^^^^
+AttributeError: 'bool' object has no attribute 'pop'
+
+
+======================================================================
+FAIL: test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request='request')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 345, in test_cli_rejects_invalid_json_shape_operation_and_fields
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 59, in assert_cli_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/app.py", line 6, in <module>
+    operation=request.pop('op')
+              ^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'pop'
+
+
+======================================================================
+FAIL: test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 345, in test_cli_rejects_invalid_json_shape_operation_and_fields
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 59, in assert_cli_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/app.py", line 6, in <module>
+    operation=request.pop('op')
+KeyError: 'op'
+
+
+======================================================================
+FAIL: test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request={'op': 'init_db'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 345, in test_cli_rejects_invalid_json_shape_operation_and_fields
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 59, in assert_cli_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : 
+
+======================================================================
+FAIL: test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request={'op': '__dict__'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 345, in test_cli_rejects_invalid_json_shape_operation_and_fields
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 59, in assert_cli_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/app.py", line 7, in <module>
+    result=getattr(vault,operation)(sys.argv[1],**request)
+TypeError: 'dict' object is not callable
+
+
+======================================================================
+FAIL: test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request={'op': 'unknown'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 345, in test_cli_rejects_invalid_json_shape_operation_and_fields
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 59, in assert_cli_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/app.py", line 7, in <module>
+    result=getattr(vault,operation)(sys.argv[1],**request)
+           ~~~~~~~^^^^^^^^^^^^^^^^^
+AttributeError: module 'vault' has no attribute 'unknown'
+
+
+======================================================================
+FAIL: test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request={'op': []})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 345, in test_cli_rejects_invalid_json_shape_operation_and_fields
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 59, in assert_cli_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/app.py", line 7, in <module>
+    result=getattr(vault,operation)(sys.argv[1],**request)
+           ~~~~~~~^^^^^^^^^^^^^^^^^
+TypeError: attribute name must be string, not 'list'
+
+
+======================================================================
+FAIL: test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request={'op': 'balance'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 345, in test_cli_rejects_invalid_json_shape_operation_and_fields
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 59, in assert_cli_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/app.py", line 7, in <module>
+    result=getattr(vault,operation)(sys.argv[1],**request)
+TypeError: balance() missing 2 required positional arguments: 'tenant' and 'account'
+
+
+======================================================================
+FAIL: test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request={'op': 'balance', 'tenant': 'one', 'account': 'hidden'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 345, in test_cli_rejects_invalid_json_shape_operation_and_fields
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 59, in assert_cli_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : 
+
+======================================================================
+FAIL: test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request={'op': 'balance', 'tenant': 'one', 'account': 'alice', 'extra': 1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 345, in test_cli_rejects_invalid_json_shape_operation_and_fields
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 59, in assert_cli_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/app.py", line 7, in <module>
+    result=getattr(vault,operation)(sys.argv[1],**request)
+TypeError: balance() got an unexpected keyword argument 'extra'
+
+
+======================================================================
+FAIL: test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (request={'op': 'transfer', 'tenant': 'one', 'key': 'payment', 'source': 'alice', 'target': 'bob', 'amount': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 345, in test_cli_rejects_invalid_json_shape_operation_and_fields
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 59, in assert_cli_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : 
+
+======================================================================
+FAIL: test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (arguments=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 352, in test_cli_rejects_invalid_json_shape_operation_and_fields
+    self.assert_cli_error(result)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 59, in assert_cli_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/app.py", line 5, in <module>
+    request=json.loads(sys.argv[2])
+                       ~~~~~~~~^^^
+IndexError: list index out of range
+
+
+======================================================================
+FAIL: test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (arguments=['/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/.vault-tests-ocea7gte/vault.sqlite'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 352, in test_cli_rejects_invalid_json_shape_operation_and_fields
+    self.assert_cli_error(result)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 59, in assert_cli_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/app.py", line 5, in <module>
+    request=json.loads(sys.argv[2])
+                       ~~~~~~~~^^^
+IndexError: list index out of range
+
+
+======================================================================
+FAIL: test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (arguments=['/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/.vault-tests-ocea7gte/vault.sqlite', '{bad json'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 352, in test_cli_rejects_invalid_json_shape_operation_and_fields
+    self.assert_cli_error(result)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 59, in assert_cli_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/app.py", line 5, in <module>
+    request=json.loads(sys.argv[2])
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/json/decoder.py", line 361, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ~~~~~~~~~~~~~~^^^^^^^^
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+
+
+======================================================================
+FAIL: test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) (arguments=['/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/.vault-tests-ocea7gte/vault.sqlite', '{}', 'extra'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 352, in test_cli_rejects_invalid_json_shape_operation_and_fields
+    self.assert_cli_error(result)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 59, in assert_cli_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/app.py", line 6, in <module>
+    operation=request.pop('op')
+KeyError: 'op'
+
+
+======================================================================
+FAIL: test_cli_storage_failure_is_generic_and_atomic_then_recovers (test_regressions.VaultRegressionTests.test_cli_storage_failure_is_generic_and_atomic_then_recovers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 360, in test_cli_storage_failure_is_generic_and_atomic_then_recovers
+    self.assert_cli_error(self.cli(request))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 59, in assert_cli_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/app.py", line 7, in <module>
+    result=getattr(vault,operation)(sys.argv[1],**request)
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 33, in transfer
+    con.execute('INSERT INTO audit VALUES (?,?,?,?,?)',(tenant,key,source,target,amount))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: secret other-tenant SQL details
+
+
+======================================================================
+FAIL: test_existing_unique_constraint_failure_does_not_lose_money_or_history (test_regressions.VaultRegressionTests.test_existing_unique_constraint_failure_does_not_lose_money_or_history)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 272, in test_existing_unique_constraint_failure_does_not_lose_money_or_history
+    self.assertEqual(self.snapshot(), before)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'acc[31 chars]ce', 60): 1, (b'one', b'bob', 50): 1, (b'one',[325 chars] 1})} != {'acc[31 chars]ce', 80): 1, (b'one', b'bob', 30): 1, (b'one',[325 chars] 1})}
+Diff is 1150 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_key_can_be_reused_independently_by_another_tenant (test_regressions.VaultRegressionTests.test_key_can_be_reused_independently_by_another_tenant)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 187, in test_key_can_be_reused_independently_by_another_tenant
+    self.assertEqual(self.pay(tenant='two', amount=40), self.receipt(tenant='two', amount=40))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'tenant': 'one', 'key': 'payment', 'source': 'alice'[27 chars]: 20} != {'tenant': 'two', 'key': 'payment', 'source': 'alice'[27 chars]: 40}
+- {'amount': 20,
+?            ^
+
++ {'amount': 40,
+?            ^
+
+   'key': 'payment',
+   'source': 'alice',
+   'target': 'bob',
+-  'tenant': 'one'}
+?              --
+
++  'tenant': 'two'}
+?             ++
+
+
+======================================================================
+FAIL: test_replay_conflicts_and_invalid_replays_have_no_writes (test_regressions.VaultRegressionTests.test_replay_conflicts_and_invalid_replays_have_no_writes) (change={'amount': 21})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 181, in test_replay_conflicts_and_invalid_replays_have_no_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_replay_conflicts_and_invalid_replays_have_no_writes (test_regressions.VaultRegressionTests.test_replay_conflicts_and_invalid_replays_have_no_writes) (change={'source': 'bob', 'target': 'alice'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 181, in test_replay_conflicts_and_invalid_replays_have_no_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_replay_conflicts_and_invalid_replays_have_no_writes (test_regressions.VaultRegressionTests.test_replay_conflicts_and_invalid_replays_have_no_writes) (change={'source': 'carol'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 181, in test_replay_conflicts_and_invalid_replays_have_no_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_replay_conflicts_and_invalid_replays_have_no_writes (test_regressions.VaultRegressionTests.test_replay_conflicts_and_invalid_replays_have_no_writes) (change={'target': 'carol'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 181, in test_replay_conflicts_and_invalid_replays_have_no_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_replay_conflicts_and_invalid_replays_have_no_writes (test_regressions.VaultRegressionTests.test_replay_conflicts_and_invalid_replays_have_no_writes) (change={'amount': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 181, in test_replay_conflicts_and_invalid_replays_have_no_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_replay_conflicts_and_invalid_replays_have_no_writes (test_regressions.VaultRegressionTests.test_replay_conflicts_and_invalid_replays_have_no_writes) (change={'amount': 20.0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 181, in test_replay_conflicts_and_invalid_replays_have_no_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_replay_conflicts_and_invalid_replays_have_no_writes (test_regressions.VaultRegressionTests.test_replay_conflicts_and_invalid_replays_have_no_writes) (change={'source': ''})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 181, in test_replay_conflicts_and_invalid_replays_have_no_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_simultaneous_distinct_keys_cannot_overspend (test_regressions.VaultRegressionTests.test_simultaneous_distinct_keys_cannot_overspend)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 288, in test_simultaneous_distinct_keys_cannot_overspend
+    self.assertEqual(len(successes), 5)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: 8 != 5
+
+======================================================================
+FAIL: test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything (test_regressions.VaultRegressionTests.test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything) (trigger="AFTER UPDATE ON accounts WHEN NEW.tenant = 'one' AND NEW.name = 'bob'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 242, in test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything
+    self.assertEqual(self.snapshot(), before)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'acc[31 chars]ce', 80): 1, (b'one', b'bob', 10): 1, (b'one',[231 chars] 2})} != {'acc[31 chars]ce', 100): 1, (b'one', b'bob', 10): 1, (b'one'[232 chars] 2})}
+Diff is 738 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything (test_regressions.VaultRegressionTests.test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything) (trigger='BEFORE INSERT ON transfers')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 242, in test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything
+    self.assertEqual(self.snapshot(), before)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'acc[31 chars]ce', 60): 1, (b'one', b'bob', 30): 1, (b'one',[231 chars] 2})} != {'acc[31 chars]ce', 80): 1, (b'one', b'bob', 10): 1, (b'one',[231 chars] 2})}
+Diff is 1010 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything (test_regressions.VaultRegressionTests.test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything) (trigger='BEFORE INSERT ON audit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 242, in test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything
+    self.assertEqual(self.snapshot(), before)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'acc[31 chars]ce', 40): 1, (b'one', b'bob', 50): 1, (b'one',[231 chars] 2})} != {'acc[31 chars]ce', 60): 1, (b'one', b'bob', 30): 1, (b'one',[231 chars] 2})}
+Diff is 1010 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything (test_regressions.VaultRegressionTests.test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything) (trigger='AFTER INSERT ON audit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 242, in test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything
+    self.assertEqual(self.snapshot(), before)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'acc[31 chars]ce', 20): 1, (b'one', b'bob', 70): 1, (b'one',[231 chars] 2})} != {'acc[31 chars]ce', 40): 1, (b'one', b'bob', 50): 1, (b'one',[231 chars] 2})}
+Diff is 1010 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_transfer_changes_only_the_two_tenant_accounts (test_regressions.VaultRegressionTests.test_transfer_changes_only_the_two_tenant_accounts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 125, in test_transfer_changes_only_the_two_tenant_accounts
+    self.assertEqual(self.snapshot(), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'acc[23 chars]', b'alice', 80): 1, (b'one', b'bob', 30): 1, [333 chars] 1})} != {'acc[23 chars]', b'carol', 0): 1, (b'two', b'alice', 300): 1[386 chars] 1})}
+Diff is 1235 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'tenant': ''})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'tenant': None})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'tenant': 1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'tenant': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'tenant': []})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'tenant': {}})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'source': ''})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'source': None})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'source': 1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'source': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'source': []})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'source': {}})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'target': ''})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'target': None})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'target': 1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'target': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'target': []})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'target': {}})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'key': ''})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'key': None})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'key': 1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'key': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': 0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': -1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': False})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': 1.5})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': '20'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': None})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': []})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': {}})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': inf})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': nan})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'target': 'alice'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': 101})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) (request={'amount': 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 139, in test_transfer_rejects_malformed_requests_without_writes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 25 tests in 1.672s
+
+FAILED (failures=83, errors=14)

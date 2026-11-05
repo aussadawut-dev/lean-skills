@@ -1,0 +1,86 @@
+{
+  "phase": "review",
+  "review": {
+    "status": "PASS",
+    "findings": [],
+    "checks": [
+      "Read lean-run, AGENTS.md and CONTRACT.md; inspected current source and all added tests.",
+      "Compared ledger.py with .baseline/ledger.py; confirmed test_public.py matches its baseline.",
+      "Ran python3 -B -m unittest discover -v: all 24 tests passed.",
+      "Independent temporary probes verified batch rollback, reuse of rolled-back keys, depleted-account replay, receipt isolation and public dictionary identity.",
+      "Independent integrated flows verified fund conservation, untouched accounts, Unicode names, nonempty NUL keys and large integer amounts.",
+      "No application, test, instruction or baseline files were modified; temporary probes were removed."
+    ],
+    "coverage_limits": [
+      "Assessment covers the synchronous in-memory public API. Persistence, concurrency and external services are explicitly outside the contract."
+    ]
+  },
+  "grade": "post-implementation-grade.json",
+  "cross": [
+    {
+      "direction": "historical_tests_on_candidate",
+      "baseline_round": 1,
+      "exit_code": 0,
+      "seconds": 0.071,
+      "log": "review-baseline-1-historical_tests_on_candidate.log"
+    },
+    {
+      "direction": "candidate_tests_on_historical",
+      "baseline_round": 1,
+      "exit_code": 0,
+      "seconds": 0.041,
+      "log": "review-baseline-1-candidate_tests_on_historical.log"
+    },
+    {
+      "direction": "historical_tests_on_candidate",
+      "baseline_round": 2,
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "review-baseline-2-historical_tests_on_candidate.log"
+    },
+    {
+      "direction": "candidate_tests_on_historical",
+      "baseline_round": 2,
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "review-baseline-2-candidate_tests_on_historical.log"
+    },
+    {
+      "direction": "historical_tests_on_candidate",
+      "baseline_round": 3,
+      "exit_code": 0,
+      "seconds": 0.041,
+      "log": "review-baseline-3-historical_tests_on_candidate.log"
+    },
+    {
+      "direction": "candidate_tests_on_historical",
+      "baseline_round": 3,
+      "exit_code": 0,
+      "seconds": 0.041,
+      "log": "review-baseline-3-candidate_tests_on_historical.log"
+    }
+  ],
+  "supplemental_issue_count": null,
+  "blockers": [],
+  "review_integrity": {
+    "changed_or_removed": [],
+    "added_logs": [],
+    "unexpected_additions": []
+  },
+  "critical_probes": {},
+  "candidate_sha256": {
+    ".agents/skills/lean-run/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    ".agents/skills/lean-run/SKILL.md": "2e31a58825685a232655ef571966bda7cc5c751fe19ccd32e441da8b0b404f19",
+    ".agents/skills/lean-run/references/delegation.md": "63899dde986ec7014a5cffd39216685640a2e98013dae26e037eaf985fecadb1",
+    ".agents/skills/lean-run/references/exploration.md": "baa9a38160095244c31c5e4a8aab5bdd15dfc0cc83df01a7086607a459faf403",
+    ".agents/skills/lean-run/references/handoff.md": "2d6744d15c27d002c85b9b4cbccf2b0845cb7b5c8b3589aa8b9b06a885357e94",
+    ".agents/skills/lean-run/references/write-integrity.md": "0d82d2a4c96cd5a23c9c5c5314b50325986beaed03b18e963b20417063a9a821",
+    ".agents/skills/lean-run/scripts/check.py": "7946993e44c3ebb3d0235c94af4426e2fbef749c31f4b18eac0de001ba3050b4",
+    ".ledger-baseline.log": "6fff72de9246bcfd8ba0d7a550ea41f310e1fcd6f3fefba19d48f5742b3b8bbc",
+    "AGENTS.md": "0ef83ddcf2d1065527f05cd03d5a1b275feecc77e45bdb5916217f204c1cb486",
+    "CONTRACT.md": "c9ed2ad9c1ae6cd4b794330ed7d250994e721d0af2c7282d9a004d1a6705299c",
+    "ledger.py": "bb5023e0a80a1cb71929b3b53cb7267e9b59fba361ee4d72ec8638f9036c1bdf",
+    "test_ledger.py": "b34462fc11f8561f689c08c62e011bab74c65e2896f2654845125818e2665878",
+    "test_public.py": "1594f7eaaa2d90b6c9fc34c0cee982174d8415e3b1dec9e25f57b3d3924d88a0"
+  }
+}

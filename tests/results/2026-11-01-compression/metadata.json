@@ -1,0 +1,23 @@
+{
+  "base": "efce62e522905bcc24c8f96ae391d7c7ac51b115",
+  "candidate_skills": {
+    "skills/lean-agents/SKILL.md": "7ab246f85491f9c315329c1b04fea2f82158835f3e9a116d89e07faf5f73735c",
+    "skills/lean-effort/SKILL.md": "052d0c5350943a21bf346bad87f64ac870180c94648f0a7dd63eaf1d6af4d9e7",
+    "skills/lean-gate/SKILL.md": "e80849c1a5a34bb3e8fbb4ce40c24f319716a1a67dcf9997e0e2c1fb3d8afd1d",
+    "skills/lean-grill/SKILL.md": "3f72c0298b6d0287ff25dc8502a7a36d9c4c477cc05b59d5035fa8f65cd385dc",
+    "skills/lean-init/SKILL.md": "63df1da0712cedfaf206811c578eda058bec4e680907d101a46234e1c1b5e308",
+    "skills/lean-instructions/SKILL.md": "d79a5d31f3d3721f3d3b2496bf12b5d4b66cfbfcb54b5ad9b1fa712271345f70",
+    "skills/lean-model-update/SKILL.md": "81b95efcd5f9f2ac8a1e98d25f1099bc4ef52eb8bee2b4e8a4f40822ad3b3248",
+    "skills/lean-research/SKILL.md": "9c5a7b1c02464d81a2d1fd02337b0e11a90bc427da4d3466b9abab0b1f95b7a3",
+    "skills/lean-review/SKILL.md": "e18f47a6831d6c5c0057ebc9ed4e42a780da424d5b5d2178c2818e2d076aafb7",
+    "skills/lean-run/SKILL.md": "58a6cca5932b289a0599d719a7a194eaba8a814be54a18de59f6657094d529fe",
+    "skills/lean-scope/SKILL.md": "4276a94d12465b6dce64f1f3bd891482b49dc992b0d0fab5d9084d27e490895a",
+    "skills/lean-target/SKILL.md": "aba87f3c0edf517ec17c98082c800fe6692ba80ca442f0a64507f40576ca6c34",
+    "skills/lean-task/SKILL.md": "48956774143051fd3a96292a26779b5ec6f490656a27ff2d854039222c8551c5",
+    "skills/lean-update/SKILL.md": "2470174480a09a351380b11d820f487e7c762b45b17b0a40160cb941d8f31c40"
+  },
+  "fixture_source_revision": "f1e4fdbc78b5f48e463543f68840829f0ad3986c",
+  "host": "Codex collaboration agents",
+  "context": "Existing agents reused via follow-up; not fresh-context independent trials",
+  "model_effort": "inherited; backend metadata not exposed"
+}

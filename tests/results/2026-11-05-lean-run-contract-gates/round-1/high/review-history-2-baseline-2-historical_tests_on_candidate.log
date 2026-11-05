@@ -1,0 +1,33 @@
+test_batch_cannot_spend_future_funds (test_ledger.LedgerTests.test_batch_cannot_spend_future_funds) ... ok
+test_batch_conflicts_with_new_or_existing_key_abort_all_changes (test_ledger.LedgerTests.test_batch_conflicts_with_new_or_existing_key_abort_all_changes) ... ok
+test_batch_receipts_are_detached_from_inputs_and_each_other (test_ledger.LedgerTests.test_batch_receipts_are_detached_from_inputs_and_each_other) ... ok
+test_batch_rejects_invalid_containers (test_ledger.LedgerTests.test_batch_rejects_invalid_containers) ... ok
+test_batch_rejects_invalid_payloads_atomically (test_ledger.LedgerTests.test_batch_rejects_invalid_payloads_atomically) ... ok
+test_batch_rejects_malformed_operation_atomically (test_ledger.LedgerTests.test_batch_rejects_malformed_operation_atomically) ... ok
+test_batch_replays_within_and_across_batches (test_ledger.LedgerTests.test_batch_replays_within_and_across_batches) ... ok
+test_batch_rolls_back_late_failure (test_ledger.LedgerTests.test_batch_rolls_back_late_failure) ... ok
+test_batch_success_obeys_order_and_preserves_input (test_ledger.LedgerTests.test_batch_success_obeys_order_and_preserves_input) ... ok
+test_constructor_copies_input (test_ledger.LedgerTests.test_constructor_copies_input) ... ok
+test_constructor_rejects_boolean_balance (test_ledger.LedgerTests.test_constructor_rejects_boolean_balance) ... ok
+test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) ... ok
+test_empty_batch_is_noop (test_ledger.LedgerTests.test_empty_batch_is_noop) ... ok
+test_empty_ledger_and_valid_balance_boundaries (test_ledger.LedgerTests.test_empty_ledger_and_valid_balance_boundaries) ... ok
+test_failed_transfer_does_not_reserve_key (test_ledger.LedgerTests.test_failed_transfer_does_not_reserve_key) ... ok
+test_integrated_payments_rollback_retry_and_replay (test_ledger.LedgerTests.test_integrated_payments_rollback_retry_and_replay) ... ok
+test_replay_after_source_is_empty (test_ledger.LedgerTests.test_replay_after_source_is_empty) ... ok
+test_replay_does_not_bypass_amount_type_validation (test_ledger.LedgerTests.test_replay_does_not_bypass_amount_type_validation) ... ok
+test_replay_rejects_changed_payload (test_ledger.LedgerTests.test_replay_rejects_changed_payload) ... ok
+test_same_payload_with_new_key_transfers_again (test_ledger.LedgerTests.test_same_payload_with_new_key_transfers_again) ... ok
+test_transfer_preserves_public_dictionaries_and_unrelated_accounts (test_ledger.LedgerTests.test_transfer_preserves_public_dictionaries_and_unrelated_accounts) ... ok
+test_transfer_receipt_cannot_change_history (test_ledger.LedgerTests.test_transfer_receipt_cannot_change_history) ... ok
+test_transfer_rejects_boolean_amount (test_ledger.LedgerTests.test_transfer_rejects_boolean_amount) ... ok
+test_transfer_rejects_insufficient_funds_atomically (test_ledger.LedgerTests.test_transfer_rejects_insufficient_funds_atomically) ... ok
+test_transfer_rejects_invalid_amounts (test_ledger.LedgerTests.test_transfer_rejects_invalid_amounts) ... ok
+test_transfer_rejects_invalid_keys (test_ledger.LedgerTests.test_transfer_rejects_invalid_keys) ... ok
+test_transfer_rejects_invalid_or_unavailable_accounts (test_ledger.LedgerTests.test_transfer_rejects_invalid_or_unavailable_accounts) ... ok
+test_transfer (test_public.PublicTests.test_transfer) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.001s
+
+OK

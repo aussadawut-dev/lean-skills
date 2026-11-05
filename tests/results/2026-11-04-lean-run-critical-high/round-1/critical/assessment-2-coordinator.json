@@ -1,0 +1,12 @@
+{
+  "status": "REWORK",
+  "evidence": [
+    "review-2/final.txt",
+    "review-2-known-probes.json",
+    "review-2-baseline-2-historical_tests_on_candidate.log",
+    "assessment-2-storage_encoding_probe.json",
+    "assessment-2-trigger_ignore_scope_probe.json",
+    "assessment-2-account_scope_trace.json",
+    "assessment-2-error_boundary_probe.json"
+  ]
+}

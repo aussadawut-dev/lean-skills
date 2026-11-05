@@ -1,0 +1,205 @@
+{
+  "workspace": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-critical-medium-20261103-j_yjguke/cohort/round-3/critical/workspace",
+  "source_sha256": "f38bc3d95c18084c2c5f9f3c48364a001797a71cb685021662f7bc038419ff84",
+  "root_cause": "Missing final-effect validation after successful SQL statements",
+  "issue_count": 0,
+  "failed_cases": 0,
+  "cases": [
+    {
+      "case": "credit_undone",
+      "pass": true,
+      "exception": "IntegrityError",
+      "receipt": null,
+      "before": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            100
+          ],
+          [
+            "a",
+            "target",
+            0
+          ],
+          [
+            "b",
+            "source",
+            77
+          ]
+        ],
+        "transfers": [],
+        "audit": []
+      },
+      "after": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            100
+          ],
+          [
+            "a",
+            "target",
+            0
+          ],
+          [
+            "b",
+            "source",
+            77
+          ]
+        ],
+        "transfers": [],
+        "audit": []
+      },
+      "trigger_preserved": true
+    },
+    {
+      "case": "receipt_removed",
+      "pass": true,
+      "exception": "IntegrityError",
+      "receipt": null,
+      "before": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            100
+          ],
+          [
+            "a",
+            "target",
+            0
+          ],
+          [
+            "b",
+            "source",
+            77
+          ]
+        ],
+        "transfers": [],
+        "audit": []
+      },
+      "after": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            100
+          ],
+          [
+            "a",
+            "target",
+            0
+          ],
+          [
+            "b",
+            "source",
+            77
+          ]
+        ],
+        "transfers": [],
+        "audit": []
+      },
+      "trigger_preserved": true
+    },
+    {
+      "case": "audit_removed",
+      "pass": true,
+      "exception": "IntegrityError",
+      "receipt": null,
+      "before": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            100
+          ],
+          [
+            "a",
+            "target",
+            0
+          ],
+          [
+            "b",
+            "source",
+            77
+          ]
+        ],
+        "transfers": [],
+        "audit": []
+      },
+      "after": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            100
+          ],
+          [
+            "a",
+            "target",
+            0
+          ],
+          [
+            "b",
+            "source",
+            77
+          ]
+        ],
+        "transfers": [],
+        "audit": []
+      },
+      "trigger_preserved": true
+    },
+    {
+      "case": "audit_duplicated",
+      "pass": true,
+      "exception": "IntegrityError",
+      "receipt": null,
+      "before": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            100
+          ],
+          [
+            "a",
+            "target",
+            0
+          ],
+          [
+            "b",
+            "source",
+            77
+          ]
+        ],
+        "transfers": [],
+        "audit": []
+      },
+      "after": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            100
+          ],
+          [
+            "a",
+            "target",
+            0
+          ],
+          [
+            "b",
+            "source",
+            77
+          ]
+        ],
+        "transfers": [],
+        "audit": []
+      },
+      "trigger_preserved": true
+    }
+  ]
+}

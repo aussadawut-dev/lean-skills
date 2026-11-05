@@ -1,0 +1,14 @@
+{
+  "phase": "round-3/critical/repair-1",
+  "cause": "The coordinator was absent after the chat turn was interrupted. The same CLI process remained live under launchd.",
+  "original_pid": 3883,
+  "orphan_observed_live": true,
+  "poll_interval_seconds": 0.1,
+  "original_deadline_unix": 1793774057.257536,
+  "terminal_observed_unix": 1793773581.7293282,
+  "raw_exit_code_recoverable": true,
+  "completed_turn_and_final_artifact": true,
+  "elapsed_source": "Original launch timestamp through Darwin process-exit event observation",
+  "relaunched": false,
+  "recovered_exit_status": "recovered-exit-status.json"
+}

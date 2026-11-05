@@ -1,0 +1,8 @@
+{"round": 2, "level": "medium", "phase": "assessment", "state": "DONE", "unix": 1793784283.203776}
+{"round": 3, "level": "critical", "phase": "implementation", "state": "RUNNING", "unix": 1793784283.2088041}
+{"level": "critical", "phase": "implementation", "started_unix": 1793784283.210005, "elapsed_seconds": 730.063, "exit_code": 0, "timed_out": false, "usage": {"input_tokens": 374056, "reasoning_output_tokens": 11221, "cached_input_tokens": 339584, "output_tokens": 22423, "cache_write_input_tokens": 0}, "requested_model": "gpt-6-astra", "requested_effort": "max", "model_identity_evidence": "requested CLI controls; backend identity not independently attested", "completed_turns": 1, "command_count": 14, "total_tokens": 396479, "uncached_input_tokens": 34472}
+{"level": "critical", "label": "post-implementation", "issues": 0, "checks": 9, "protected_files_changed": []}
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/critical/reviewspace
+{"round": 3, "level": "critical", "phase": "review", "state": "RUNNING", "unix": 1793785013.597213}
+{"level": "critical", "phase": "review", "started_unix": 1793785013.597909, "elapsed_seconds": 253.988, "exit_code": 0, "timed_out": false, "usage": {"input_tokens": 207074, "reasoning_output_tokens": 3616, "cached_input_tokens": 178176, "output_tokens": 5890, "cache_write_input_tokens": 0}, "requested_model": "gpt-6-astra", "requested_effort": "max", "model_identity_evidence": "requested CLI controls; backend identity not independently attested", "completed_turns": 1, "command_count": 18, "total_tokens": 212964, "uncached_input_tokens": 28898}
+{"round": 3, "level": "critical", "phase": "assessment", "state": "NEEDS_COORDINATOR", "unix": 1793785278.778292}

@@ -1,0 +1,30 @@
+Use lean-run at .agents/skills/lean-run/SKILL.md for a fresh independent ASSESSMENT ONLY of this completed candidate. You did not author it. Read CONTRACT.md, compare .baseline/ original files with current source, inspect added tests and run meaningful checks/probes. Do not implement or repair, and do not modify application, tests, instructions or .baseline. Do not read another agent report or sibling directories. Use Python -B and temporary paths for probes. No network, installs or additional agents. Identify distinct demonstrated requirement violations, regressions and security/data integrity defects; do not count multiple examples of one root cause as separate issues. Give severity, precise location and a reproducible observation for each. Do not invent a finding to fill a quota. Return ONLY a JSON object with keys status (PASS, REWORK, or BLOCKED), findings (array of objects with id, severity, location, requirement, evidence, suggested_fix), checks (array of strings), and coverage_limits (array of strings). Missing mandatory evidence is not a PASS.
+
+Renewed independent review after REWORK 1. Focus on the bounded repair delta against .pre-repair/ and original-contract regressions. Run required checks and independently verify each finding. Do not repeat unrelated broad exploration without new evidence. Prior independent findings, not author conclusions:
+[
+  {
+    "id": "F1",
+    "severity": "HIGH",
+    "location": "vault.py:114-133 (_project); vault.py:149-163 (_merge_auxiliary)",
+    "requirement": "Existing triggers and views must retain native SQLite behavior over tenant-local rows, and auxiliary trigger effects must commit faithfully.",
+    "evidence": "Table reconstruction changes observable row identities. Reproducer: initialize accounts with explicit rowids 10 and 20 for ('one','a',100) and ('one','b',0). Create frozen_accounts(account_row INTEGER PRIMARY KEY), insert 10, and define a view joining accounts.rowid to frozen_accounts.account_row. Add a BEFORE INSERT audit trigger that raises ABORT when this view contains new.tenant/new.source. Native SQLite executing the debit, credit, receipt and audit raises IntegrityError and preserves balances 100/0. vault.transfer(path,'one','a','b',10,'k') instead succeeds, commits balances 90/10 and creates an audit row because projection renumbers accounts to 1/2. Removing the freeze entry makes both controls succeed. Related auxiliary reconstruction also loses hidden rowids: with side(rowid,_rowid_,oid), insert two rows and delete the first; an audit trigger inserting into side and recording last_insert_rowid() produces 3,4,5 across three native transfers but 3,3,4 through the candidate.",
+    "suggested_fix": "Preserve consistent row identities and references through projection and merge while maintaining tenant isolation. Avoid silently renumbering ledger rows or rebuilding auxiliary tables without preserving hidden rowids. Add native-control tests for policy enforcement and observable counter behavior."
+  },
+  {
+    "id": "F2",
+    "severity": "MEDIUM",
+    "location": "vault.py:61-86 (_rows and _typed), especially line 83",
+    "requirement": "Valid transfers must succeed on existing SQLite databases; the contract imposes no UTF-8-only restriction.",
+    "evidence": "Create a database with PRAGMA encoding='UTF-16le' before creating any table, call init_db, and insert ('one','a',100),('one','b',0). balance returns 100, but transfer(path,'one','a','b',10,'k') raises ValueError('invalid request') without changes. UTF-16be behaves identically; UTF-8 succeeds. Equivalent native SQLite transactions succeed in both UTF-16 databases. The actual CLI balance exits 0, while the valid CLI transfer exits 2. _rows obtains database-encoded bytes through CAST(TEXT AS BLOB), whereas _typed always constructs UTF-8 bytes, making expected and actual rows unequal.",
+    "suggested_fix": "Construct expected text representations using the database encoding, or compare values through an encoding-independent representation that still preserves malformed text and SQLite storage types."
+  },
+  {
+    "id": "C1",
+    "severity": "HIGH",
+    "source": "coordinator (mandatory critical_contract_probe.py)",
+    "location": "table-name handling (KeyError: 'accounts')",
+    "requirement": "Valid transfers work on the existing schema; SQLite resolves table names case-insensitively.",
+    "evidence": "Mandatory probe scenario renamed_table_case: after ALTER TABLE accounts RENAME TO staging; ALTER TABLE staging RENAME TO ACCOUNTS; the API raises KeyError('accounts') and the CLI exits 2, while native SQLite on the same data succeeds. Same failure with the other tenant's balance at 777, 778 and absent.",
+    "suggested_fix": "Resolve ledger table identities with SQLite's ASCII case-insensitive identifier rules and use the actual names in SQL."
+  }
+]

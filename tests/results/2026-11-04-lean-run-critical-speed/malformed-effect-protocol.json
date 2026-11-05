@@ -1,0 +1,5 @@
+{
+  "status": "posthoc",
+  "source": "round-3/critical/review/final.txt",
+  "scope": "Same native-control/API/CLI malformed foreign TEXT no-op in DELETE/WAL for all previous and new final workspaces. Only effects are checked; no quality gate requires observing another tenant raw values in application code."
+}

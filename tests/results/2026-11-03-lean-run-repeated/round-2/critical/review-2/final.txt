@@ -1,0 +1,26 @@
+{
+  "status": "REWORK",
+  "findings": [
+    {
+      "id": "REPAIR-NOOP-TRIGGER",
+      "severity": "P2",
+      "location": "vault.py:90,109-110 (_guard_preserved_rows)",
+      "requirement": "Valid transfers must succeed while preserving existing rows and triggers.",
+      "evidence": "Initialize accounts ('t','a',100), ('t','b',0). Install: CREATE TRIGGER harmless_ensure AFTER INSERT ON audit BEGIN INSERT OR IGNORE INTO accounts(tenant,name,balance) VALUES (NEW.tenant,NEW.target,0); END; Then call transfer(path,'t','a','b',10,'k'). The existing target makes this trigger's insertion a no-op. Both .baseline and .pre-repair succeed with balances 90/10, one receipt and one audit row. Current code raises IntegrityError('incomplete transfer') because its unconditional BEFORE INSERT guard runs before conflict handling. The CLI likewise rejects this valid transfer with exit 2. Rollback and trigger preservation were verified.",
+      "suggested_fix": "Enforce preservation without rejecting conflict-ignored statements that change no rows. Retain protection against actual unauthorized changes and add API/CLI coverage for this valid trigger."
+    }
+  ],
+  "checks": [
+    "Read the local lean-run skill, AGENTS.md and CONTRACT.md; inspected source, added tests and diffs against .baseline and .pre-repair.",
+    "python3 -B -m unittest discover -v: all 31 tests passed.",
+    "Independent comparative probes confirmed repaired rejection and full rollback for audit history rewrites, duplicate multiplicity changes, historical receipt deletion, receipt replacement collisions and unrelated tenant balance changes.",
+    "Verified preserved schema/triggers, historical replay after reopening, and generic CLI failures without persisted changes.",
+    "Verified audit rowid relocation now succeeds with exact contracted effects and unchanged API/CLI replay.",
+    "Independently reproduced the new no-op trigger regression against current, .pre-repair and .baseline through public interfaces.",
+    "All probes used temporary databases and Python -B; no application, test, instruction or baseline files were modified."
+  ],
+  "coverage_limits": [
+    "Focused renewed assessment of the repair delta; unchanged behavior covered by the required suite.",
+    "Executed locally with Python 3.14.3 and SQLite 3.50.4; alternate runtimes and exhaustive trigger combinations were not tested."
+  ]
+}

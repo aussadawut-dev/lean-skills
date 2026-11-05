@@ -1,0 +1,8 @@
+test_baseline_defects_and_protected_resources (test_level_benchmark.LevelBenchmarkTests.test_baseline_defects_and_protected_resources) ... ok
+test_deadline_is_transported_to_real_child_without_changing_prompt_or_cap (test_level_benchmark.LevelBenchmarkTests.test_deadline_is_transported_to_real_child_without_changing_prompt_or_cap) ... ok
+test_prepare_preserves_existing_destinations_and_reviewer_input (test_level_benchmark.LevelBenchmarkTests.test_prepare_preserves_existing_destinations_and_reviewer_input) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.134s
+
+OK

@@ -1,0 +1,30 @@
+{
+  "source_sha256": "d0188c10a25bfe9462a7e337bb381b9b14f08753983ce29a9307c0a52ada1d02",
+  "cases": [
+    {
+      "interface": "API",
+      "should_fail": true,
+      "error": "must fail on y",
+      "passed": true
+    },
+    {
+      "interface": "CLI",
+      "should_fail": true,
+      "error": "{\"error\": \"invalid request\"}",
+      "passed": true
+    },
+    {
+      "interface": "API",
+      "should_fail": false,
+      "error": null,
+      "passed": true
+    },
+    {
+      "interface": "CLI",
+      "should_fail": false,
+      "error": null,
+      "passed": true
+    }
+  ],
+  "failed_cases": 0
+}

@@ -1,0 +1,49 @@
+{
+  "repository_checks": "PASS",
+  "unit_tests": {
+    "count": 21,
+    "exit_code": 0,
+    "log": "validation-logs/unit.log"
+  },
+  "installation_cases": {
+    "count": 34,
+    "exit_code": 0,
+    "log": "validation-logs/install.log",
+    "cli": "cached skills@1.7.4",
+    "actual_cli_version": "1.7.4"
+  },
+  "skill_schema": {
+    "exit_code": 0,
+    "log": "validation-logs/skill.log"
+  },
+  "git_diff_check": {
+    "exit_code": 0,
+    "log": "validation-logs/diff.log"
+  },
+  "raw_validation_phases_verified": 30,
+  "raw_development_phases_verified": 5,
+  "csv_statistics_recomputed": true,
+  "all_frozen_skill_packages_identical": true,
+  "requested_model_effort_controls_unchanged": true,
+  "benchmark_quality": {
+    "status": "FAILED",
+    "passed_trials": 7,
+    "failed_trials": [
+      "round-1/critical",
+      "round-3/critical"
+    ],
+    "final_contract_issues": 0,
+    "final_independent_findings": 2,
+    "final_original_supplemental_issues": 0,
+    "final_added_probe_failed_cases": 3
+  },
+  "optimization_target_met": false,
+  "limits": [
+    "Repository checks passing do not override two failed benchmark trials.",
+    "Coordinator and static-review tokens are unavailable and excluded."
+  ],
+  "baseline_raw_phases_verified": 8,
+  "development_totals_recomputed": true,
+  "local_markdown_links_checked": 31,
+  "historical_archives_unchanged_after_checks": true
+}

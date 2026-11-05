@@ -1,0 +1,7 @@
+Implemented strict ASCII integer parsing, exact CLI arity, clean exit-2 errors, and arbitrary-size integer support in `app.py`. Added `test_regressions.py`.
+
+Reproduced the original empty-field, permissive-syntax, arity, traceback, and 5,000-digit failures.
+
+`python3 -B -m unittest discover -v`: **10 tests passed**, including real CLI success/error journeys and 5,000+ digit arithmetic. Complete diff reviewed.
+
+No known implementation gaps remain. **The coordinator’s fresh independent review is pending.**

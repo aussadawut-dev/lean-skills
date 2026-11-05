@@ -1,0 +1,26 @@
+{
+  "contract": "Ledger(balances: dict[str,int]) rejects invalid values with ValueError.",
+  "observations": [
+    {
+      "accepted_non_string_account": "1",
+      "receipt": {
+        "source": 1,
+        "target": "a",
+        "amount": 1,
+        "key": "k"
+      },
+      "input_unchanged": true
+    },
+    {
+      "accepted_non_string_account": "None",
+      "receipt": {
+        "source": null,
+        "target": "a",
+        "amount": 1,
+        "key": "k"
+      },
+      "input_unchanged": true
+    }
+  ],
+  "source_sha256": "942a2cfaf8720dfe7bb3cca8a26140112fccdb247594184cb872ee54860a78ba"
+}

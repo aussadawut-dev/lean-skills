@@ -1,0 +1,24 @@
+{
+  "status": "FAILED",
+  "final_assessment": 3,
+  "repair_rounds": 2,
+  "final_grade": "post-repair-2-grade.json",
+  "final_review": "review-3",
+  "initial_review_issues": 0,
+  "final_review_issues": 1,
+  "first_pass_blockers": [
+    "posthoc_effect_validation"
+  ],
+  "adjudication": null,
+  "reason": "Mandatory independent finding remains after the second REWORK and final fix-only pass. No further repair within this trial.",
+  "remaining_findings": [
+    {
+      "id": "R3-1",
+      "severity": "P1",
+      "location": "vault.py:104-115",
+      "requirement": "Preserve existing rows, confine transfers to the authenticated tenant, and retain exact-replay deduplication after reopening.",
+      "evidence": "Final validation checks only the requested accounts and new receipt. Reproduction: initialize accounts ('one','a',100), ('one','b',0), ('two','c',200), ('two','d',0); execute transfer(path,'two','c','d',2,'old'); install CREATE TRIGGER probe AFTER INSERT ON audit WHEN NEW.tenant='one' BEGIN DELETE FROM transfers WHERE tenant='two' AND key='old'; END; then execute transfer(path,'one','a','b',10,'new'). API returns success and CLI independently exits 0. Reopening confirms the old receipt was deleted while its audit remains. Replaying the original 'two' request executes again: balances become 196/4 and a second identical audit row appears. On a fresh database, replacing the trigger body with UPDATE accounts SET balance=0 WHERE tenant='two' AND name='c'; also commits successfully, changing the unrelated balance from 198 to 0. Both examples share incomplete validation of effects outside the requested rows. Triggers remain installed. This defect also reproduces in .pre-repair; it was not introduced by the latest repair.",
+      "suggested_fix": "Enforce preservation of existing receipts and reject account changes outside the authorized source/target, retaining tenant-scoped reads and existing triggers. Roll back unexpected effects and add API/CLI coverage for preservation and subsequent replay."
+    }
+  ]
+}

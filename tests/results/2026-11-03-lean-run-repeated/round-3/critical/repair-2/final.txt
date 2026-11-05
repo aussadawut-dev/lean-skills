@@ -1,0 +1,7 @@
+Replaced global snapshots in `vault.py` with transaction-local write guards and added six regression tests.
+
+- Required check: `python3 -B -m unittest discover -v` — **30 passed**.
+- Exact reproducer now succeeds through the API and CLI; balances are 90/10, foreign data is unchanged, and replay creates no duplicate records.
+- Rollback, no-op triggers, and safe rowid relocation checks pass.
+
+**REWORK remains 2. Final acceptance is BLOCKED pending the coordinator’s renewed independent review; that review has not occurred.**

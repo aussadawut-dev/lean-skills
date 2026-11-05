@@ -1,0 +1,72 @@
+[
+  {
+    "round": 1,
+    "level": "high",
+    "phase": "repair-1",
+    "raw_events_sha256": "a8a30bb9bcfd7250687395e2a925f8a101c859ef8e8818838b3ba6561278f278",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 1,
+    "level": "high",
+    "phase": "review-2",
+    "raw_events_sha256": "a56f2a5edab22e36d029a3b48c827714a91b9a7a5f94205c03f11cf3dccc130b",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 1,
+    "level": "high",
+    "phase": "review",
+    "raw_events_sha256": "a2671c843f16c5d11b418ca6ea46faee54b5475f6d601511af1befd5c96c6702",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 1,
+    "level": "high",
+    "phase": "implementation",
+    "raw_events_sha256": "4bccf60246cf89f1b8a8a55891e62a75dda29e5ad862529e6f77caf32a4577b5",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 1,
+    "level": "critical",
+    "phase": "repair-1",
+    "raw_events_sha256": "f5cf7c4219dab2304517c628869a74150872f0087bbb363742388ccda2aac3a4",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 1,
+    "level": "critical",
+    "phase": "review-2",
+    "raw_events_sha256": "aa747fd65e45d2241a7fee662a33efa3649ec89537b2c9c6061214a71c522905",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 1,
+    "level": "critical",
+    "phase": "review-3",
+    "raw_events_sha256": "dc118e564838781e175bdfb07e7916f5159d25358648f22620baa68875ca4edd",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 1,
+    "level": "critical",
+    "phase": "repair-2",
+    "raw_events_sha256": "0e9607c14003a80aaf0b9dc16d3694d133fd41935414642899a595ecfd8afe5a",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 1,
+    "level": "critical",
+    "phase": "review",
+    "raw_events_sha256": "6f063292f8ce46830a85511789ab34067759557b1f73b28e842cf75ad9820786",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 1,
+    "level": "critical",
+    "phase": "implementation",
+    "raw_events_sha256": "904e5747b1b50e3768ffa75df931b3eb44111f8e645e27c4597abebbac4331c9",
+    "raw_usage_verified": true
+  }
+]

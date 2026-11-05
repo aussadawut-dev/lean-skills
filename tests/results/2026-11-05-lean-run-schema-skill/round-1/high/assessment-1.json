@@ -1,0 +1,169 @@
+{
+  "advisory": {
+    "probes": [],
+    "historical_suites_failing": []
+  },
+  "policy_superseded": {
+    "historical": [],
+    "probes": {}
+  },
+  "phase": "review",
+  "review": {
+    "status": "REWORK",
+    "findings": [
+      {
+        "id": "R1",
+        "severity": "HIGH",
+        "location": "ledger.py:9-10,20-23,26-38",
+        "requirement": "Validate integer values, reject invalid transfers with ValueError without changing state, and preserve transfer and replay integrity.",
+        "evidence": "Scalar subclasses pass isinstance checks and retain overridden behavior. Reproducer:\nfrom ledger import Ledger\nclass NegativeAmount(int):\n    def __le__(self, other): return False\nledger = Ledger({'a': 10, 'b': 0})\nledger.transfer('a', 'b', NegativeAmount(-1), 'x')\nObserved: success, balances {'a': 11, 'b': -1}, and history records amount -1. Separate probes of this same scalar-handling flaw demonstrated creation of funds through overridden arithmetic, acceptance of changed replay amounts through overridden equality, and a str subclass causing ValueError after balances changed but before history was recorded.",
+        "suggested_fix": "Normalize accepted scalar subclasses to trusted built-in values before validation, arithmetic, hashing, comparison and storage. Add focused tests covering these boundaries and failure atomicity."
+      },
+      {
+        "id": "R2",
+        "severity": "LOW",
+        "location": "ledger.py:49,56",
+        "requirement": "Malformed batch operations must be rejected with ValueError without changing state.",
+        "evidence": "Reproducer:\nfrom collections import UserString\nfrom ledger import Ledger\nledger = Ledger({'a': 10, 'b': 0})\nledger.batch([{UserString('source'): 'a', 'target': 'b', 'amount': 1, 'key': 'x'}])\nObserved: TypeError('keywords must be strings'), rather than ValueError. UserString('source') passes the field-set equality check despite not being a str. State remained unchanged, including when a valid operation preceded this malformed operation.",
+        "suggested_fix": "Validate field-name types alongside the exact required names before expanding operation dictionaries into keyword arguments."
+      }
+    ],
+    "checks": [
+      "Read lean-run, CONTRACT.md and AGENTS.md; reviewed the complete baseline-to-candidate source diff and all added tests.",
+      "Confirmed supplied test_public.py matches its baseline.",
+      "python3 -B -m unittest discover -v: all 22 tests passed on Python 3.14.3.",
+      "Independent temporary-script integrated flow passed: ordinary subclasses, dependent transfers, replay, receipt isolation, dictionary identity and failed-batch rollback.",
+      "Independent probes reproduced both findings and the related scalar-integrity failures described above.",
+      "Verified application, tests, instructions and baseline hashes remained unchanged; temporary probe files were removed."
+    ],
+    "coverage_limits": [
+      "Scalar-integrity failures require custom Python subclasses; no remote-input path exists in this fixture.",
+      "Assessment covered the single-process, in-memory contract on the available Python runtime; arbitrary subclass behaviors and resource-exhaustion failures were not exhaustively tested."
+    ]
+  },
+  "grade": "post-implementation-grade.json",
+  "cross": [
+    {
+      "direction": "historical_tests_on_candidate",
+      "baseline_round": 1,
+      "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-05-lean-run-contract-gates",
+      "exit_code": 0,
+      "seconds": 0.096,
+      "log": "review-baseline-1-historical_tests_on_candidate.log"
+    },
+    {
+      "direction": "candidate_tests_on_historical",
+      "baseline_round": 1,
+      "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-05-lean-run-contract-gates",
+      "exit_code": 1,
+      "seconds": 0.109,
+      "log": "review-baseline-1-candidate_tests_on_historical.log"
+    },
+    {
+      "direction": "historical_tests_on_candidate",
+      "baseline_round": 1,
+      "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-in-source-budget",
+      "exit_code": 0,
+      "seconds": 0.048,
+      "log": "review-history-1-baseline-1-historical_tests_on_candidate.log"
+    },
+    {
+      "direction": "candidate_tests_on_historical",
+      "baseline_round": 1,
+      "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-in-source-budget",
+      "exit_code": 1,
+      "seconds": 0.048,
+      "log": "review-history-1-baseline-1-candidate_tests_on_historical.log"
+    },
+    {
+      "direction": "historical_tests_on_candidate",
+      "baseline_round": 1,
+      "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high-pilot",
+      "exit_code": 0,
+      "seconds": 0.043,
+      "log": "review-history-2-baseline-1-historical_tests_on_candidate.log"
+    },
+    {
+      "direction": "candidate_tests_on_historical",
+      "baseline_round": 1,
+      "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high-pilot",
+      "exit_code": 1,
+      "seconds": 0.044,
+      "log": "review-history-2-baseline-1-candidate_tests_on_historical.log"
+    },
+    {
+      "direction": "historical_tests_on_candidate",
+      "baseline_round": 1,
+      "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high",
+      "exit_code": 0,
+      "seconds": 0.042,
+      "log": "review-history-3-baseline-1-historical_tests_on_candidate.log"
+    },
+    {
+      "direction": "candidate_tests_on_historical",
+      "baseline_round": 1,
+      "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high",
+      "exit_code": 1,
+      "seconds": 0.045,
+      "log": "review-history-3-baseline-1-candidate_tests_on_historical.log"
+    },
+    {
+      "direction": "historical_tests_on_candidate",
+      "baseline_round": 2,
+      "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high",
+      "exit_code": 0,
+      "seconds": 0.044,
+      "log": "review-history-3-baseline-2-historical_tests_on_candidate.log"
+    },
+    {
+      "direction": "candidate_tests_on_historical",
+      "baseline_round": 2,
+      "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high",
+      "exit_code": 1,
+      "seconds": 0.077,
+      "log": "review-history-3-baseline-2-candidate_tests_on_historical.log"
+    },
+    {
+      "direction": "historical_tests_on_candidate",
+      "baseline_round": 3,
+      "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high",
+      "exit_code": 0,
+      "seconds": 0.087,
+      "log": "review-history-3-baseline-3-historical_tests_on_candidate.log"
+    },
+    {
+      "direction": "candidate_tests_on_historical",
+      "baseline_round": 3,
+      "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high",
+      "exit_code": 1,
+      "seconds": 0.044,
+      "log": "review-history-3-baseline-3-candidate_tests_on_historical.log"
+    }
+  ],
+  "supplemental_issue_count": null,
+  "blockers": [
+    "independent_review"
+  ],
+  "review_integrity": {
+    "changed_or_removed": [],
+    "added_logs": [],
+    "unexpected_additions": []
+  },
+  "critical_probes": {},
+  "candidate_sha256": {
+    ".agents/skills/lean-run/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    ".agents/skills/lean-run/SKILL.md": "b271f464cd2c5158546d6cf77e2d546cb4b6c6fb8aa929371ab2d83847ca994f",
+    ".agents/skills/lean-run/references/delegation.md": "63899dde986ec7014a5cffd39216685640a2e98013dae26e037eaf985fecadb1",
+    ".agents/skills/lean-run/references/delivery.md": "84a7a68e8e0417b6fa5be85040dd10a872217b5a54ef7f6e77b7be2fc2c2129f",
+    ".agents/skills/lean-run/references/exploration.md": "baa9a38160095244c31c5e4a8aab5bdd15dfc0cc83df01a7086607a459faf403",
+    ".agents/skills/lean-run/references/handoff.md": "2d6744d15c27d002c85b9b4cbccf2b0845cb7b5c8b3589aa8b9b06a885357e94",
+    ".agents/skills/lean-run/references/write-integrity.md": "b179d4d57ca24cd58233f86f0b990ec850b68fc6ba4aaced121a3e4bc9f862e1",
+    ".agents/skills/lean-run/scripts/budget.py": "edfa3ea55624439a1edee7b27393b3455c2e4ea71092694839806612a6bf5ad2",
+    ".agents/skills/lean-run/scripts/check.py": "7946993e44c3ebb3d0235c94af4426e2fbef749c31f4b18eac0de001ba3050b4",
+    "AGENTS.md": "0ef83ddcf2d1065527f05cd03d5a1b275feecc77e45bdb5916217f204c1cb486",
+    "CONTRACT.md": "c9ed2ad9c1ae6cd4b794330ed7d250994e721d0af2c7282d9a004d1a6705299c",
+    "ledger.py": "70b35a2468a55aac4e1e71c2a78cadf4e717d5f51449bf2e59958b72e5bbc110",
+    "test_ledger.py": "527d49c55037ce08ad8a1233fb78f39d9790f33fa3ac081868db4d65de62a832",
+    "test_public.py": "1594f7eaaa2d90b6c9fc34c0cee982174d8415e3b1dec9e25f57b3d3924d88a0"
+  }
+}

@@ -1,0 +1,5 @@
+Reproduced both cases and added a constructor guard rejecting non-string account keys with `ValueError`. Added regressions for input preservation and opaque Unicode identifiers through transfer, batch, replay and rollback.
+
+Verification: **5 focused checks passed; all 22 tests passed** with `python3 -B -m unittest discover -v`. Complete diff reviewed.
+
+Task-wide REWORK count: **1**. Final acceptance is **BLOCKED pending renewed coordinator review**; [lean-run](/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-speed-pig_dqx3/cohort/round-3/high/workspace/.agents/skills/lean-run/SKILL.md) requires “HIGH needs a fresh independent reviewer.”

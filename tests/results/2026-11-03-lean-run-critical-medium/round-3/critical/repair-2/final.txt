@@ -1,0 +1,8 @@
+Reproduced and fixed `TRIGGER-GRAMMAR-REGRESSION`. `vault.py` now recognizes `VALUES` and `WITH` after trigger `BEGIN`; added regressions in `test_regression.py`.
+
+- Five affected checks passed.
+- `python3 -B -m unittest discover -v`: **28 tests passed**.
+- Exact API/CLI reproductions now produce balances **90/10**, preserve trigger definitions, and replay without changes.
+- Regression checks cover conditional behavior, rollback, and history preservation.
+
+Final fix-only pass completed. Task-wide REWORK remains **2**. **Final acceptance is BLOCKED pending the coordinator’s renewed independent review.**

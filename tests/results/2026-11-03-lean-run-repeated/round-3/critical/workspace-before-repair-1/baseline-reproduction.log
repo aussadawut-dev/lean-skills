@@ -1,0 +1,167 @@
+test_balance_is_tenant_scoped (test_regressions.DatabaseTests.test_balance_is_tenant_scoped) ... FAIL
+test_transfer_and_receipts_are_tenant_scoped (test_regressions.DatabaseTests.test_transfer_and_receipts_are_tenant_scoped) ... FAIL
+test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) ... 
+  test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='debit', failure='RAISE(IGNORE)') ... FAIL
+  test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='credit', failure="RAISE(ABORT, 'private storage detail')") ... FAIL
+  test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='credit', failure='RAISE(IGNORE)') ... FAIL
+  test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='receipt', failure="RAISE(ABORT, 'private storage detail')") ... FAIL
+  test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='receipt', failure='RAISE(IGNORE)') ... FAIL
+  test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='audit', failure="RAISE(ABORT, 'private storage detail')") ... FAIL
+  test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='audit', failure='RAISE(IGNORE)') ... FAIL
+test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) ... FAIL
+test_simultaneous_duplicate_requests_execute_once (test_regressions.DatabaseTests.test_simultaneous_duplicate_requests_execute_once) ... ERROR
+test_cli_storage_failure_is_generic_atomic_and_retryable (test_regressions.CommandLineTests.test_cli_storage_failure_is_generic_atomic_and_retryable) ... FAIL
+
+======================================================================
+ERROR: test_simultaneous_duplicate_requests_execute_once (test_regressions.DatabaseTests.test_simultaneous_duplicate_requests_execute_once)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_regressions.py", line 200, in test_simultaneous_duplicate_requests_execute_once
+    results = self.run_concurrently([request] * 12)
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_regressions.py", line 65, in run_concurrently
+    return [future.result(timeout=35) for future in futures]
+            ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/_base.py", line 450, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/_base.py", line 395, in __get_result
+    raise self._exception
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_regressions.py", line 59, in call
+    return vault.transfer(self.path, **request)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/vault.py", line 32, in transfer
+    con.execute('INSERT INTO transfers VALUES (?,?,?,?,?)',(tenant,key,source,target,amount))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: UNIQUE constraint failed: transfers.tenant, transfers.key
+
+======================================================================
+FAIL: test_balance_is_tenant_scoped (test_regressions.DatabaseTests.test_balance_is_tenant_scoped)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_regressions.py", line 69, in test_balance_is_tenant_scoped
+    self.assertEqual(vault.balance(self.path, "beta", "shared"), 1000)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 100 != 1000
+
+======================================================================
+FAIL: test_transfer_and_receipts_are_tenant_scoped (test_regressions.DatabaseTests.test_transfer_and_receipts_are_tenant_scoped)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_regressions.py", line 87, in test_transfer_and_receipts_are_tenant_scoped
+    self.assertEqual(vault.transfer(self.path, **alpha), alpha)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'tenant': 'beta', 'key': 'key', 'source': 'shared', [28 chars]': 7} != {'tenant': 'alpha', 'source': 'shared', 'target': 'sa[30 chars]key'}
+- {'amount': 7,
+?            ^
+
++ {'amount': 11,
+?            ^^
+
+   'key': 'key',
+   'source': 'shared',
+   'target': 'savings',
+-  'tenant': 'beta'}
+?             ^^^
+
++  'tenant': 'alpha'}
+?             ^^^^
+
+
+======================================================================
+FAIL: test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='debit', failure='RAISE(IGNORE)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_regressions.py", line 184, in test_storage_failures_and_silent_skips_roll_back_every_effect
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='credit', failure="RAISE(ABORT, 'private storage detail')")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_regressions.py", line 184, in test_storage_failures_and_silent_skips_roll_back_every_effect
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='credit', failure='RAISE(IGNORE)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_regressions.py", line 184, in test_storage_failures_and_silent_skips_roll_back_every_effect
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='receipt', failure="RAISE(ABORT, 'private storage detail')")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_regressions.py", line 184, in test_storage_failures_and_silent_skips_roll_back_every_effect
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='receipt', failure='RAISE(IGNORE)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_regressions.py", line 184, in test_storage_failures_and_silent_skips_roll_back_every_effect
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='audit', failure="RAISE(ABORT, 'private storage detail')")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_regressions.py", line 184, in test_storage_failures_and_silent_skips_roll_back_every_effect
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='audit', failure='RAISE(IGNORE)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_regressions.py", line 184, in test_storage_failures_and_silent_skips_roll_back_every_effect
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_regressions.py", line 194, in test_storage_failures_and_silent_skips_roll_back_every_effect
+    self.assertEqual(vault.balance(self.path, "alpha", "shared"), 90)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 100 != 90
+
+======================================================================
+FAIL: test_cli_storage_failure_is_generic_atomic_and_retryable (test_regressions.CommandLineTests.test_cli_storage_failure_is_generic_atomic_and_retryable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_regressions.py", line 341, in test_cli_storage_failure_is_generic_atomic_and_retryable
+    failed = self.failure(self.cli(dict(op="transfer", **self.request())))
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_regressions.py", line 280, in failure
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/app.py", line 7, in <module>
+    result=getattr(vault,operation)(sys.argv[1],**request)
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/vault.py", line 33, in transfer
+    con.execute('INSERT INTO audit VALUES (?,?,?,?,?)',(tenant,key,source,target,amount))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: beta secret SQL INSERT audit
+
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.263s
+
+FAILED (failures=11, errors=1)

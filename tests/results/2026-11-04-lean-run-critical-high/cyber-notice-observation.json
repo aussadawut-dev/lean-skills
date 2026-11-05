@@ -1,0 +1,17 @@
+{
+  "observed_notice": "User supplied a Codex chat banner saying it could not display content and linking to Daybreak.",
+  "affected_surface": "Codex chat content display",
+  "specific_content_or_command_attribution": "Unavailable in the screenshot and inspected records.",
+  "evidence_checked": [
+    "Critical round 3 implementation structured CLI events and stderr",
+    "Indexed WARN/ERROR and policy-like targets for this chat and measured phases"
+  ],
+  "observed_runner_state": "Critical round 3 implementation remained active after the notice.",
+  "observed_prior_timeouts": [
+    "round-1/critical/repair-1",
+    "round-2/critical/repair-1",
+    "round-2/critical/repair-2"
+  ],
+  "timeout_evidence": "Each phase was terminated by the existing benchmark 900-second deadline and reported missing usage.",
+  "official_reference": "https://learn.chatgpt.com/docs/cyber-safety#false-positives"
+}

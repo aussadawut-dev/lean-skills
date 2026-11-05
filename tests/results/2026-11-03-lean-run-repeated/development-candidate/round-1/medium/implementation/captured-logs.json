@@ -1,0 +1,16 @@
+[
+  {
+    "original_path": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-cohort-20261103-c1ze4zc_/cohort/round-1/medium/workspace/baseline-check.log",
+    "reported_bytes": 59397,
+    "archived": "captured-logs/001.log",
+    "sha256": "c3d3ff0aff4d1e05daf47e62a6bba256aef9edbee0779f5466deaa71b58b6d8d",
+    "bytes": 59397
+  },
+  {
+    "original_path": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-cohort-20261103-c1ze4zc_/cohort/round-1/medium/workspace/verification-check.log",
+    "reported_bytes": 1368,
+    "archived": "captured-logs/002.log",
+    "sha256": "6d839988e13eb034ff6d9a5fb9dc0393d8f08639d6c91180bcc3edce354ad5db",
+    "bytes": 1368
+  }
+]

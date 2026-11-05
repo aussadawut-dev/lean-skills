@@ -1,0 +1,12 @@
+Use lean-run at .agents/skills/lean-run/SKILL.md to continue the SAME critical task with a bounded repair. CONTRACT.md and scope are unchanged. Task-wide REWORK count is 2; do not reset it. Reproduce and repair the demonstrated findings below, add meaningful regression checks, run affected and required final checks, and exercise the public interface. Preserve existing behavior, data, triggers and unrelated work. No unrelated refactor, installs, network or extra agents. The coordinator supplies renewed independent review afterward; report it pending. This is the final fix-only pass. 
+
+[
+  {
+    "id": "F2",
+    "severity": "MEDIUM",
+    "location": "vault.py:80-84",
+    "requirement": "Valid transfers must succeed with existing benign triggers; valid CLI calls must exit 0.",
+    "evidence": "Initialize a database and insert accounts ('one','a',100), ('one','b',0). Execute: CREATE TRIGGER begin AFTER INSERT ON audit BEGIN SELECT 1; END; Then call transfer(path,'one','a','b',10,'new'). SQLite accepts this harmless trigger, but the repaired implementation raises StopIteration at line 83 because line 81 mistakes its name for the trigger body delimiter. Independently reproduced through the API and CLI in DELETE and WAL modes: CLI exits 2 with empty stdout and a generic error; all data remains unchanged. The .pre-repair implementation succeeds with the identical trigger. Quoting the trigger name as \"begin\" also makes the current implementation succeed.",
+    "suggested_fix": "Identify trigger events and body boundaries according to CREATE TRIGGER syntax, including SQLite's accepted keyword identifiers. Add API and CLI regression coverage for this valid unquoted trigger name."
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "unit_tests": {
+    "command": "python3 -B -m unittest discover -s tests -v",
+    "tests": 11,
+    "seconds": 2.206,
+    "exit_code": 0,
+    "coverage": "packaging and fixture/harness behavior; no agent calls"
+  },
+  "diff_check": {
+    "command": "git diff --check",
+    "exit_code": 0
+  },
+  "model_preflight": {
+    "command": "codex debug models --bundled",
+    "requested_model": "gpt-6-astra",
+    "requested_effort": "max",
+    "catalog_supported": true,
+    "note": "Bundled catalog is not independent backend identity evidence."
+  },
+  "installation": {
+    "command": "python3 tests/install_smoke.py --cli <cached skills@1.7.4>/bin/cli.mjs",
+    "scenarios": 34,
+    "exit_code": 0,
+    "scope": "temporary global/project homes; collection and each skill; rerun after adding archived skill copies"
+  },
+  "report": {
+    "local_links": "PASS",
+    "frozen_generator_and_grader_hashes": "PASS",
+    "current_lean_run_matches_candidate": "PASS",
+    "metric_records_recomputed_from_raw_events": 8,
+    "final_artifacts_match_graded_content": "PASS"
+  }
+}

@@ -1,0 +1,105 @@
+test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) ... 
+  test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='debit', failure='RAISE(IGNORE)') ... FAIL
+  test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='credit', failure="RAISE(ABORT, 'private storage detail')") ... FAIL
+  test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='credit', failure='RAISE(IGNORE)') ... FAIL
+  test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='receipt', failure="RAISE(ABORT, 'private storage detail')") ... FAIL
+  test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='receipt', failure='RAISE(IGNORE)') ... FAIL
+  test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='audit', failure="RAISE(ABORT, 'private storage detail')") ... FAIL
+  test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='audit', failure='RAISE(IGNORE)') ... FAIL
+test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) ... FAIL
+
+======================================================================
+FAIL: test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='debit', failure='RAISE(IGNORE)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_regressions.py", line 184, in test_storage_failures_and_silent_skips_roll_back_every_effect
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='credit', failure="RAISE(ABORT, 'private storage detail')")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_regressions.py", line 186, in test_storage_failures_and_silent_skips_roll_back_every_effect
+    self.assertEqual(self.snapshot(), before)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'acc[50 chars]ed', 90), ('beta', 'private', 500), ('beta', '[179 chars]10)]} != {'acc[50 chars]ed', 100), ('beta', 'private', 500), ('beta', [180 chars]10)]}
+  {'accounts': [('alpha', 'savings', 20),
+-               ('alpha', 'shared', 90),
+?                                   ^
+
++               ('alpha', 'shared', 100),
+?                                   ^^
+
+                ('beta', 'private', 500),
+                ('beta', 'savings', 30),
+-               ('beta', 'shared', 980)],
+?                                   ^
+
++               ('beta', 'shared', 990)],
+?                                   ^
+
+   'audit': [('alpha', 'debit-RAISE(IGNORE)', 'shared', 'savings', 10)],
+   'transfers': [('alpha', 'debit-RAISE(IGNORE)', 'shared', 'savings', 10)]}
+
+======================================================================
+FAIL: test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='credit', failure='RAISE(IGNORE)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_regressions.py", line 184, in test_storage_failures_and_silent_skips_roll_back_every_effect
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='receipt', failure="RAISE(ABORT, 'private storage detail')")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_regressions.py", line 186, in test_storage_failures_and_silent_skips_roll_back_every_effect
+    self.assertEqual(self.snapshot(), before)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'acc[25 chars]gs', 30), ('alpha', 'shared', 70), ('beta', 'p[324 chars]10)]} != {'acc[25 chars]gs', 20), ('alpha', 'shared', 80), ('beta', 'p[324 chars]10)]}
+Diff is 988 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='receipt', failure='RAISE(IGNORE)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_regressions.py", line 184, in test_storage_failures_and_silent_skips_roll_back_every_effect
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='audit', failure="RAISE(ABORT, 'private storage detail')")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_regressions.py", line 186, in test_storage_failures_and_silent_skips_roll_back_every_effect
+    self.assertEqual(self.snapshot(), before)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'acc[25 chars]gs', 50), ('alpha', 'shared', 50), ('beta', 'p[385 chars]10)]} != {'acc[25 chars]gs', 40), ('alpha', 'shared', 60), ('beta', 'p[385 chars]10)]}
+Diff is 1062 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect) (stage='audit', failure='RAISE(IGNORE)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_regressions.py", line 184, in test_storage_failures_and_silent_skips_roll_back_every_effect
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_storage_failures_and_silent_skips_roll_back_every_effect (test_regressions.DatabaseTests.test_storage_failures_and_silent_skips_roll_back_every_effect)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_regressions.py", line 194, in test_storage_failures_and_silent_skips_roll_back_every_effect
+    self.assertEqual(vault.balance(self.path, "alpha", "shared"), 90)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 30 != 90
+
+----------------------------------------------------------------------
+Ran 1 test in 0.252s
+
+FAILED (failures=8)

@@ -1,0 +1,58 @@
+[
+  {
+    "round": 1,
+    "level": "high",
+    "phase": "review",
+    "raw_events_sha256": "e511c5c9576e73c4426b34de29a58a7f2816fe10788b5a0d52b3545313428026",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 1,
+    "level": "high",
+    "phase": "implementation",
+    "raw_events_sha256": "cf895d87f51e701415695b16f4fc86cebb629c36a376472325a68ce3ec3b3250",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 1,
+    "level": "critical",
+    "phase": "repair-1",
+    "raw_events_sha256": "e76b0f887fc5063ccefae87e635c1e9f2d3a4984bffdc3c17ea0cc487892bc05",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 1,
+    "level": "critical",
+    "phase": "review-2",
+    "raw_events_sha256": "504b3f35922f6f1337866b162ac32768a9c1dcb4332429a1e33b4a7c90fcf9bd",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 1,
+    "level": "critical",
+    "phase": "review-3",
+    "raw_events_sha256": "9270718e0157446e0485f1c4ea469dc60e4e5255eefb60bfa3d8790536c4fafe",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 1,
+    "level": "critical",
+    "phase": "repair-2",
+    "raw_events_sha256": "1a33d6b3003b838eb538191973987f673f7b543c48c6ad5eed58e27b6cbea443",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 1,
+    "level": "critical",
+    "phase": "review",
+    "raw_events_sha256": "4f30a2c752c8481c532839f4042ca527ed394b8abb219d0f056e54fdfac629aa",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 1,
+    "level": "critical",
+    "phase": "implementation",
+    "raw_events_sha256": "737211d6a6413ffbf0483f460524e2bd829712605c1d6b8a5dade9ed8628eed4",
+    "raw_usage_verified": true
+  }
+]

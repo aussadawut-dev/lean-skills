@@ -1,0 +1,55 @@
+test_valid (test_public.PublicTests.test_valid) ... ok
+test_arbitrary_size_sums_and_decimal_rendering (test_regressions.CLIRegressionTests.test_arbitrary_size_sums_and_decimal_rendering) ... ok
+test_exactly_one_argument_is_required (test_regressions.CLIRegressionTests.test_exactly_one_argument_is_required) ... 
+  test_exactly_one_argument_is_required (test_regressions.CLIRegressionTests.test_exactly_one_argument_is_required) (arguments=()) ... FAIL
+  test_exactly_one_argument_is_required (test_regressions.CLIRegressionTests.test_exactly_one_argument_is_required) (arguments=('1', '2')) ... FAIL
+  test_exactly_one_argument_is_required (test_regressions.CLIRegressionTests.test_exactly_one_argument_is_required) (arguments=('1', '2', '3')) ... FAIL
+  test_exactly_one_argument_is_required (test_regressions.CLIRegressionTests.test_exactly_one_argument_is_required) (arguments=('1,2', '--help')) ... FAIL
+test_invalid_input_has_clean_error_and_no_stdout (test_regressions.CLIRegressionTests.test_invalid_input_has_clean_error_and_no_stdout) ... ok
+test_valid_lists_including_leading_negative_argument (test_regressions.CLIRegressionTests.test_valid_lists_including_leading_negative_argument) ... ok
+test_integer_conversion_boundaries_and_arbitrary_size (test_regressions.ParserRegressionTests.test_integer_conversion_boundaries_and_arbitrary_size) ... ok
+test_large_values_with_zero_padding_and_cancellation (test_regressions.ParserRegressionTests.test_large_values_with_zero_padding_and_cancellation) ... ok
+test_preserves_signed_values_zeros_and_all_fields (test_regressions.ParserRegressionTests.test_preserves_signed_values_zeros_and_all_fields) ... ok
+test_rejects_empty_fields_instead_of_dropping_them (test_regressions.ParserRegressionTests.test_rejects_empty_fields_instead_of_dropping_them) ... ok
+test_rejects_non_ascii_integer_syntax_in_any_field (test_regressions.ParserRegressionTests.test_rejects_non_ascii_integer_syntax_in_any_field) ... ok
+
+======================================================================
+FAIL: test_exactly_one_argument_is_required (test_regressions.CLIRegressionTests.test_exactly_one_argument_is_required) (arguments=())
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-reszb2dw/test_regressions.py", line 100, in test_exactly_one_argument_is_required
+    self.assertIn("argument", result.stderr.lower())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'argument' not found in "error: expected exactly one comma-separated integer list\nusage: python3 -b app.py 'integer[,integer...]'\n"
+
+======================================================================
+FAIL: test_exactly_one_argument_is_required (test_regressions.CLIRegressionTests.test_exactly_one_argument_is_required) (arguments=('1', '2'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-reszb2dw/test_regressions.py", line 100, in test_exactly_one_argument_is_required
+    self.assertIn("argument", result.stderr.lower())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'argument' not found in "error: expected exactly one comma-separated integer list\nusage: python3 -b app.py 'integer[,integer...]'\n"
+
+======================================================================
+FAIL: test_exactly_one_argument_is_required (test_regressions.CLIRegressionTests.test_exactly_one_argument_is_required) (arguments=('1', '2', '3'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-reszb2dw/test_regressions.py", line 100, in test_exactly_one_argument_is_required
+    self.assertIn("argument", result.stderr.lower())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'argument' not found in "error: expected exactly one comma-separated integer list\nusage: python3 -b app.py 'integer[,integer...]'\n"
+
+======================================================================
+FAIL: test_exactly_one_argument_is_required (test_regressions.CLIRegressionTests.test_exactly_one_argument_is_required) (arguments=('1,2', '--help'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-reszb2dw/test_regressions.py", line 100, in test_exactly_one_argument_is_required
+    self.assertIn("argument", result.stderr.lower())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'argument' not found in "error: expected exactly one comma-separated integer list\nusage: python3 -b app.py 'integer[,integer...]'\n"
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.193s
+
+FAILED (failures=4)

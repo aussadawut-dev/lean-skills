@@ -1,0 +1,328 @@
+test_conditional_ignore_preserves_recursive_guards_and_change_counters (test_final_repair.FinalRepairTests.test_conditional_ignore_preserves_recursive_guards_and_change_counters) ... 
+  test_conditional_ignore_preserves_recursive_guards_and_change_counters (test_final_repair.FinalRepairTests.test_conditional_ignore_preserves_recursive_guards_and_change_counters) (interface='api', timing='BEFORE', ignore=True) ... ERROR
+  test_conditional_ignore_preserves_recursive_guards_and_change_counters (test_final_repair.FinalRepairTests.test_conditional_ignore_preserves_recursive_guards_and_change_counters) (interface='cli', timing='BEFORE', ignore=True) ... FAIL
+  test_conditional_ignore_preserves_recursive_guards_and_change_counters (test_final_repair.FinalRepairTests.test_conditional_ignore_preserves_recursive_guards_and_change_counters) (interface='api', timing='AFTER', ignore=True) ... ERROR
+  test_conditional_ignore_preserves_recursive_guards_and_change_counters (test_final_repair.FinalRepairTests.test_conditional_ignore_preserves_recursive_guards_and_change_counters) (interface='cli', timing='AFTER', ignore=True) ... FAIL
+test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) ... 
+  test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='api', encoding='UTF-16le') ... ERROR
+  test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='cli', encoding='UTF-16le') ... FAIL
+  test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='api', encoding='UTF-16be') ... ERROR
+  test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='cli', encoding='UTF-16be') ... FAIL
+test_delete_event_separators_and_identifiers_preserve_delete_semantics (test_final_repair.FinalRepairTests.test_delete_event_separators_and_identifiers_preserve_delete_semantics) ... 
+  test_delete_event_separators_and_identifiers_preserve_delete_semantics (test_final_repair.FinalRepairTests.test_delete_event_separators_and_identifiers_preserve_delete_semantics) (interface='api', name='gate', separator=' \x0b', explicit=False) ... ERROR
+  test_delete_event_separators_and_identifiers_preserve_delete_semantics (test_final_repair.FinalRepairTests.test_delete_event_separators_and_identifiers_preserve_delete_semantics) (interface='cli', name='gate', separator=' \x0b', explicit=False) ... FAIL
+test_multirow_ignore_and_null_controls_preserve_abort_and_rollback (test_final_repair.FinalRepairTests.test_multirow_ignore_and_null_controls_preserve_abort_and_rollback) ... 
+  test_multirow_ignore_and_null_controls_preserve_abort_and_rollback (test_final_repair.FinalRepairTests.test_multirow_ignore_and_null_controls_preserve_abort_and_rollback) (interface='api', timing='BEFORE', expression='RAISE(IGNORE)') ... FAIL
+  test_multirow_ignore_and_null_controls_preserve_abort_and_rollback (test_final_repair.FinalRepairTests.test_multirow_ignore_and_null_controls_preserve_abort_and_rollback) (interface='cli', timing='BEFORE', expression='RAISE(IGNORE)') ... FAIL
+  test_multirow_ignore_and_null_controls_preserve_abort_and_rollback (test_final_repair.FinalRepairTests.test_multirow_ignore_and_null_controls_preserve_abort_and_rollback) (interface='api', timing='AFTER', expression='RAISE(IGNORE)') ... FAIL
+  test_multirow_ignore_and_null_controls_preserve_abort_and_rollback (test_final_repair.FinalRepairTests.test_multirow_ignore_and_null_controls_preserve_abort_and_rollback) (interface='cli', timing='AFTER', expression='RAISE(IGNORE)') ... FAIL
+test_values_and_with_select_keep_native_trigger_behavior (test_final_repair.FinalRepairTests.test_values_and_with_select_keep_native_trigger_behavior) ... 
+  test_values_and_with_select_keep_native_trigger_behavior (test_final_repair.FinalRepairTests.test_values_and_with_select_keep_native_trigger_behavior) (interface='api', statement='VALUES(1);') ... ERROR
+  test_values_and_with_select_keep_native_trigger_behavior (test_final_repair.FinalRepairTests.test_values_and_with_select_keep_native_trigger_behavior) (interface='cli', statement='VALUES(1);') ... FAIL
+  test_values_and_with_select_keep_native_trigger_behavior (test_final_repair.FinalRepairTests.test_values_and_with_select_keep_native_trigger_behavior) (interface='api', statement='WITH c AS (SELECT 1) SELECT * FROM c;') ... ERROR
+  test_values_and_with_select_keep_native_trigger_behavior (test_final_repair.FinalRepairTests.test_values_and_with_select_keep_native_trigger_behavior) (interface='cli', statement='WITH c AS (SELECT 1) SELECT * FROM c;') ... FAIL
+  test_values_and_with_select_keep_native_trigger_behavior (test_final_repair.FinalRepairTests.test_values_and_with_select_keep_native_trigger_behavior) (interface='api', statement="VALUES('RAISE(IGNORE);'), ('quoted text');") ... ERROR
+  test_values_and_with_select_keep_native_trigger_behavior (test_final_repair.FinalRepairTests.test_values_and_with_select_keep_native_trigger_behavior) (interface='cli', statement="VALUES('RAISE(IGNORE);'), ('quoted text');") ... FAIL
+  test_values_and_with_select_keep_native_trigger_behavior (test_final_repair.FinalRepairTests.test_values_and_with_select_keep_native_trigger_behavior) (interface='api', statement='WITH RECURSIVE c(n) AS (VALUES(1) UNION ALL SELECT n+1 FROM c WHERE n<3) SELECT n FROM c;') ... ERROR
+  test_values_and_with_select_keep_native_trigger_behavior (test_final_repair.FinalRepairTests.test_values_and_with_select_keep_native_trigger_behavior) (interface='cli', statement='WITH RECURSIVE c(n) AS (VALUES(1) UNION ALL SELECT n+1 FROM c WHERE n<3) SELECT n FROM c;') ... FAIL
+
+======================================================================
+ERROR: test_conditional_ignore_preserves_recursive_guards_and_change_counters (test_final_repair.FinalRepairTests.test_conditional_ignore_preserves_recursive_guards_and_change_counters) (interface='api', timing='BEFORE', ignore=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 107, in assert_native_behavior
+    self.assertEqual(vault.transfer(path, **request), request)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 292, in transfer
+    effects.execute('INSERT INTO audit (tenant, key, source, target, amount) '
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    'VALUES (?, ?, ?, ?, ?)', values)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 211, in execute
+    self.con.execute(sql, values)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+sqlite3.IntegrityError: changed counter
+
+======================================================================
+ERROR: test_conditional_ignore_preserves_recursive_guards_and_change_counters (test_final_repair.FinalRepairTests.test_conditional_ignore_preserves_recursive_guards_and_change_counters) (interface='api', timing='AFTER', ignore=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 107, in assert_native_behavior
+    self.assertEqual(vault.transfer(path, **request), request)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 292, in transfer
+    effects.execute('INSERT INTO audit (tenant, key, source, target, amount) '
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    'VALUES (?, ?, ?, ?, ?)', values)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 211, in execute
+    self.con.execute(sql, values)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+sqlite3.IntegrityError: changed counter
+
+======================================================================
+ERROR: test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='api', encoding='UTF-16le')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 107, in assert_native_behavior
+    self.assertEqual(vault.transfer(path, **request), request)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 294, in transfer
+    effects.verify(tenant, source, target, funds, destination, amount, key)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 231, in verify
+    raise sqlite3.IntegrityError('unexpected storage effects')
+sqlite3.IntegrityError: unexpected storage effects
+
+======================================================================
+ERROR: test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='api', encoding='UTF-16be')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 107, in assert_native_behavior
+    self.assertEqual(vault.transfer(path, **request), request)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 294, in transfer
+    effects.verify(tenant, source, target, funds, destination, amount, key)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 231, in verify
+    raise sqlite3.IntegrityError('unexpected storage effects')
+sqlite3.IntegrityError: unexpected storage effects
+
+======================================================================
+ERROR: test_delete_event_separators_and_identifiers_preserve_delete_semantics (test_final_repair.FinalRepairTests.test_delete_event_separators_and_identifiers_preserve_delete_semantics) (interface='api', name='gate', separator=' \x0b', explicit=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 107, in assert_native_behavior
+    self.assertEqual(vault.transfer(path, **request), request)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 292, in transfer
+    effects.execute('INSERT INTO audit (tenant, key, source, target, amount) '
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    'VALUES (?, ?, ?, ?, ?)', values)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 211, in execute
+    self.con.execute(sql, values)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+sqlite3.IntegrityError: explicit deletion
+
+======================================================================
+ERROR: test_values_and_with_select_keep_native_trigger_behavior (test_final_repair.FinalRepairTests.test_values_and_with_select_keep_native_trigger_behavior) (interface='api', statement='VALUES(1);')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 107, in assert_native_behavior
+    self.assertEqual(vault.transfer(path, **request), request)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 282, in transfer
+    effects = _TransferEffects(con)
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 160, in __init__
+    replacements = [_instrument_trigger(con, sql, index, self.context, prefix + '_probe')
+                    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 130, in _instrument_trigger
+    raise sqlite3.IntegrityError('cannot observe storage effects')
+sqlite3.IntegrityError: cannot observe storage effects
+
+======================================================================
+ERROR: test_values_and_with_select_keep_native_trigger_behavior (test_final_repair.FinalRepairTests.test_values_and_with_select_keep_native_trigger_behavior) (interface='api', statement='WITH c AS (SELECT 1) SELECT * FROM c;')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 107, in assert_native_behavior
+    self.assertEqual(vault.transfer(path, **request), request)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 282, in transfer
+    effects = _TransferEffects(con)
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 160, in __init__
+    replacements = [_instrument_trigger(con, sql, index, self.context, prefix + '_probe')
+                    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 130, in _instrument_trigger
+    raise sqlite3.IntegrityError('cannot observe storage effects')
+sqlite3.IntegrityError: cannot observe storage effects
+
+======================================================================
+ERROR: test_values_and_with_select_keep_native_trigger_behavior (test_final_repair.FinalRepairTests.test_values_and_with_select_keep_native_trigger_behavior) (interface='api', statement="VALUES('RAISE(IGNORE);'), ('quoted text');")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 107, in assert_native_behavior
+    self.assertEqual(vault.transfer(path, **request), request)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 282, in transfer
+    effects = _TransferEffects(con)
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 160, in __init__
+    replacements = [_instrument_trigger(con, sql, index, self.context, prefix + '_probe')
+                    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 130, in _instrument_trigger
+    raise sqlite3.IntegrityError('cannot observe storage effects')
+sqlite3.IntegrityError: cannot observe storage effects
+
+======================================================================
+ERROR: test_values_and_with_select_keep_native_trigger_behavior (test_final_repair.FinalRepairTests.test_values_and_with_select_keep_native_trigger_behavior) (interface='api', statement='WITH RECURSIVE c(n) AS (VALUES(1) UNION ALL SELECT n+1 FROM c WHERE n<3) SELECT n FROM c;')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 107, in assert_native_behavior
+    self.assertEqual(vault.transfer(path, **request), request)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 282, in transfer
+    effects = _TransferEffects(con)
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 160, in __init__
+    replacements = [_instrument_trigger(con, sql, index, self.context, prefix + '_probe')
+                    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/vault.py", line 130, in _instrument_trigger
+    raise sqlite3.IntegrityError('cannot observe storage effects')
+sqlite3.IntegrityError: cannot observe storage effects
+
+======================================================================
+FAIL: test_conditional_ignore_preserves_recursive_guards_and_change_counters (test_final_repair.FinalRepairTests.test_conditional_ignore_preserves_recursive_guards_and_change_counters) (interface='cli', timing='BEFORE', ignore=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 115, in assert_native_behavior
+    self.assert_cli_success(result, request)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 75, in assert_cli_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_conditional_ignore_preserves_recursive_guards_and_change_counters (test_final_repair.FinalRepairTests.test_conditional_ignore_preserves_recursive_guards_and_change_counters) (interface='cli', timing='AFTER', ignore=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 115, in assert_native_behavior
+    self.assert_cli_success(result, request)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 75, in assert_cli_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='cli', encoding='UTF-16le')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 115, in assert_native_behavior
+    self.assert_cli_success(result, request)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 75, in assert_cli_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='cli', encoding='UTF-16be')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 115, in assert_native_behavior
+    self.assert_cli_success(result, request)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 75, in assert_cli_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_delete_event_separators_and_identifiers_preserve_delete_semantics (test_final_repair.FinalRepairTests.test_delete_event_separators_and_identifiers_preserve_delete_semantics) (interface='cli', name='gate', separator=' \x0b', explicit=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 115, in assert_native_behavior
+    self.assert_cli_success(result, request)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 75, in assert_cli_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_multirow_ignore_and_null_controls_preserve_abort_and_rollback (test_final_repair.FinalRepairTests.test_multirow_ignore_and_null_controls_preserve_abort_and_rollback) (interface='api', timing='BEFORE', expression='RAISE(IGNORE)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 104, in assert_native_behavior
+    with self.assertRaisesRegex(sqlite3.IntegrityError, failure):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IntegrityError not raised
+
+======================================================================
+FAIL: test_multirow_ignore_and_null_controls_preserve_abort_and_rollback (test_final_repair.FinalRepairTests.test_multirow_ignore_and_null_controls_preserve_abort_and_rollback) (interface='cli', timing='BEFORE', expression='RAISE(IGNORE)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 111, in assert_native_behavior
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : 
+
+======================================================================
+FAIL: test_multirow_ignore_and_null_controls_preserve_abort_and_rollback (test_final_repair.FinalRepairTests.test_multirow_ignore_and_null_controls_preserve_abort_and_rollback) (interface='api', timing='AFTER', expression='RAISE(IGNORE)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 104, in assert_native_behavior
+    with self.assertRaisesRegex(sqlite3.IntegrityError, failure):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IntegrityError not raised
+
+======================================================================
+FAIL: test_multirow_ignore_and_null_controls_preserve_abort_and_rollback (test_final_repair.FinalRepairTests.test_multirow_ignore_and_null_controls_preserve_abort_and_rollback) (interface='cli', timing='AFTER', expression='RAISE(IGNORE)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 111, in assert_native_behavior
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : 
+
+======================================================================
+FAIL: test_values_and_with_select_keep_native_trigger_behavior (test_final_repair.FinalRepairTests.test_values_and_with_select_keep_native_trigger_behavior) (interface='cli', statement='VALUES(1);')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 115, in assert_native_behavior
+    self.assert_cli_success(result, request)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 75, in assert_cli_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_values_and_with_select_keep_native_trigger_behavior (test_final_repair.FinalRepairTests.test_values_and_with_select_keep_native_trigger_behavior) (interface='cli', statement='WITH c AS (SELECT 1) SELECT * FROM c;')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 115, in assert_native_behavior
+    self.assert_cli_success(result, request)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 75, in assert_cli_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_values_and_with_select_keep_native_trigger_behavior (test_final_repair.FinalRepairTests.test_values_and_with_select_keep_native_trigger_behavior) (interface='cli', statement="VALUES('RAISE(IGNORE);'), ('quoted text');")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 115, in assert_native_behavior
+    self.assert_cli_success(result, request)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 75, in assert_cli_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_values_and_with_select_keep_native_trigger_behavior (test_final_repair.FinalRepairTests.test_values_and_with_select_keep_native_trigger_behavior) (interface='cli', statement='WITH RECURSIVE c(n) AS (VALUES(1) UNION ALL SELECT n+1 FROM c WHERE n<3) SELECT n FROM c;')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 115, in assert_native_behavior
+    self.assert_cli_success(result, request)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_final_repair.py", line 75, in assert_cli_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : {"error": "invalid request"}
+
+
+----------------------------------------------------------------------
+Ran 5 tests in 1.677s
+
+FAILED (failures=13, errors=9)

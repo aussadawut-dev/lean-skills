@@ -1,0 +1,14 @@
+{
+  "findings": [
+    {
+      "id": "REPAIR-NOOP-TRIGGER",
+      "severity": "P2",
+      "location": "vault.py:90,109-110 (_guard_preserved_rows)",
+      "requirement": "Valid transfers must succeed while preserving existing rows and triggers.",
+      "evidence": "Initialize accounts ('t','a',100), ('t','b',0). Install: CREATE TRIGGER harmless_ensure AFTER INSERT ON audit BEGIN INSERT OR IGNORE INTO accounts(tenant,name,balance) VALUES (NEW.tenant,NEW.target,0); END; Then call transfer(path,'t','a','b',10,'k'). The existing target makes this trigger's insertion a no-op. Both .baseline and .pre-repair succeed with balances 90/10, one receipt and one audit row. Current code raises IntegrityError('incomplete transfer') because its unconditional BEFORE INSERT guard runs before conflict handling. The CLI likewise rejects this valid transfer with exit 2. Rollback and trigger preservation were verified.",
+      "suggested_fix": "Enforce preservation without rejecting conflict-ignored statements that change no rows. Retain protection against actual unauthorized changes and add API/CLI coverage for this valid trigger."
+    }
+  ],
+  "source": "review-2/final.txt",
+  "repair_limit": "Second REWORK; final fix-only pass and renewed review."
+}

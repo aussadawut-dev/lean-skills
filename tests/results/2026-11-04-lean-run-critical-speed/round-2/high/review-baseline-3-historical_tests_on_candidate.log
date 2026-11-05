@@ -1,0 +1,17 @@
+test_batch_failure_rolls_back_every_effect_and_preserves_old_replays (test_ledger.LedgerTests.test_batch_failure_rolls_back_every_effect_and_preserves_old_replays) ... ok
+test_batch_is_ordered_and_receipts_and_inputs_are_isolated (test_ledger.LedgerTests.test_batch_is_ordered_and_receipts_and_inputs_are_isolated) ... ok
+test_batch_requires_list_and_empty_batch_preserves_state (test_ledger.LedgerTests.test_batch_requires_list_and_empty_batch_preserves_state) ... ok
+test_constructor_copies_input_and_accepts_valid_boundaries (test_ledger.LedgerTests.test_constructor_copies_input_and_accepts_valid_boundaries) ... ok
+test_constructor_rejects_invalid_balances_without_changing_input (test_ledger.LedgerTests.test_constructor_rejects_invalid_balances_without_changing_input) ... ok
+test_failed_transfer_does_not_reserve_key (test_ledger.LedgerTests.test_failed_transfer_does_not_reserve_key) ... ok
+test_integrated_transfers_batch_failure_retry_and_replay (test_ledger.LedgerTests.test_integrated_transfers_batch_failure_retry_and_replay) ... ok
+test_invalid_transfers_leave_balances_and_history_unchanged (test_ledger.LedgerTests.test_invalid_transfers_leave_balances_and_history_unchanged) ... ok
+test_replay_rejects_each_changed_payload_and_invalid_equal_values (test_ledger.LedgerTests.test_replay_rejects_each_changed_payload_and_invalid_equal_values) ... ok
+test_replay_succeeds_without_funds_and_returns_independent_receipts (test_ledger.LedgerTests.test_replay_succeeds_without_funds_and_returns_independent_receipts) ... ok
+test_transfer_records_exact_receipt_and_preserves_other_state (test_ledger.LedgerTests.test_transfer_records_exact_receipt_and_preserves_other_state) ... ok
+test_transfer (test_public.PublicTests.test_transfer) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.002s
+
+OK

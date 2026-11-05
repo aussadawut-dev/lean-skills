@@ -1,0 +1,21 @@
+test_batch_receipts_and_duplicate_receipts_are_independent (test_ledger.LedgerTests.test_batch_receipts_and_duplicate_receipts_are_independent) ... ok
+test_batch_rejects_invalid_containers (test_ledger.LedgerTests.test_batch_rejects_invalid_containers) ... ok
+test_batch_rejects_malformed_or_invalid_operations_atomically (test_ledger.LedgerTests.test_batch_rejects_malformed_or_invalid_operations_atomically) ... ok
+test_batch_rolls_back_existing_and_new_key_conflicts (test_ledger.LedgerTests.test_batch_rolls_back_existing_and_new_key_conflicts) ... ok
+test_batch_rolls_back_failure_at_every_position (test_ledger.LedgerTests.test_batch_rolls_back_failure_at_every_position) ... ok
+test_constructor_copies_input_in_both_directions (test_ledger.LedgerTests.test_constructor_copies_input_in_both_directions) ... ok
+test_constructor_rejects_invalid_containers_accounts_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_accounts_and_balances) ... ok
+test_empty_ledger_and_empty_batch (test_ledger.LedgerTests.test_empty_ledger_and_empty_batch) ... ok
+test_exact_balance_transfer_and_replay_keep_dictionary_identity (test_ledger.LedgerTests.test_exact_balance_transfer_and_replay_keep_dictionary_identity) ... ok
+test_integrated_multi_transfer_replay_rollback_and_retry (test_ledger.LedgerTests.test_integrated_multi_transfer_replay_rollback_and_retry) ... ok
+test_rejected_transfer_does_not_reserve_key (test_ledger.LedgerTests.test_rejected_transfer_does_not_reserve_key) ... ok
+test_replay_rejects_changed_or_invalid_payload (test_ledger.LedgerTests.test_replay_rejects_changed_or_invalid_payload) ... ok
+test_returned_transfer_and_replay_receipts_are_independent (test_ledger.LedgerTests.test_returned_transfer_and_replay_receipts_are_independent) ... ok
+test_string_and_integer_boundaries (test_ledger.LedgerTests.test_string_and_integer_boundaries) ... ok
+test_transfer_rejects_invalid_values_without_any_writes (test_ledger.LedgerTests.test_transfer_rejects_invalid_values_without_any_writes) ... ok
+test_transfer (test_public.PublicTests.test_transfer) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.001s
+
+OK

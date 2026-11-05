@@ -1,0 +1,40 @@
+{
+  "status": "REWORK",
+  "gate_policy": "contract",
+  "admission": {
+    "R1": {
+      "admitted": false,
+      "contract": "No read, count or outcome may depend on other tenants' rows (ledger rows, during a transfer); trigger reads and writes of other tables keep native behavior.",
+      "native_reproduction": "Candidate: absent foreign accounts succeed, three foreign accounts abort ('population threshold reached'). Native tenant-only oracle also aborts: deleting foreign ledger rows leaves sqlite_stat1 at '5 3 1', computed by ANALYZE before the transfer.",
+      "reference_passes": false,
+      "note": "sqlite_stat1 is a non-ledger table whose contents predate the transfer; hiding it is not required by the contract and the reference does not do it."
+    },
+    "R2": {
+      "admitted": true,
+      "contract": "Existing triggers and views keep native SQLite behavior over this tenant's rows; trigger writes to other tables keep native behavior.",
+      "native_reproduction": "Sparse rowids 10/20 with account_refs keyed by NEW.rowid: candidate leaves refs 100/0, reference and native update them to 90/10.",
+      "reference_passes": true
+    },
+    "R3": {
+      "admitted": true,
+      "contract": "Trigger writes to other tables keep native behavior and commit with the transfer.",
+      "native_reproduction": "External-content FTS5 insert: candidate MATCH returns [], reference and native return [(1,)].",
+      "reference_passes": true
+    },
+    "C1": {
+      "admitted": true,
+      "source": "mandatory probe renamed_table_case (4 foreign_rows_changed cases)",
+      "reference_passes": true
+    }
+  },
+  "rejected_findings": [
+    {
+      "id": "R1",
+      "reason": "Not contract-traceable: sqlite_stat1 is a non-ledger table computed before the transfer; the native tenant-only oracle gives the same abort and the reference fails it too.",
+      "evidence": "Coordinator reproducer: candidate and reference both success/abort with 0/3 foreign accounts; native tenant-only copy after ANALYZE keeps stat 5 3 1 and aborts."
+    }
+  ],
+  "advisory_not_requested": "Seven advisory probes and historical suites are reported only.",
+  "new_request": "repair-1-request.json",
+  "findings": 3
+}

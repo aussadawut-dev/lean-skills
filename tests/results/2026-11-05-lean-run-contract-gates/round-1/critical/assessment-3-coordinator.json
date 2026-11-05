@@ -1,0 +1,11 @@
+{
+  "status": "FAILED",
+  "gate_policy": "contract",
+  "remaining": {
+    "C2": "persistent _vault_rowids_* table still created (independently re-reported in review-3); mandatory probe schema/side-table failures unchanged at 180",
+    "F3": "not reported by review-3"
+  },
+  "note": "Final fix-only pass consumed. C2 rests on the disclosed, user-approved interpretation; no cross-tenant leak was demonstrated. The FAILED status is recorded without relabeling.",
+  "rejected_findings": [],
+  "new_request": null
+}

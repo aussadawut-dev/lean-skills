@@ -1,0 +1,7 @@
+Reproduced and repaired all four findings in `vault.py`. Added native SQLite comparisons covering API/CLI behavior, rollback, trigger counters, separators, and UTF-16 data preservation.
+
+- Affected checks: **14 passed**.
+- `python3 -B -m unittest discover -v`: **42 passed**, with SQLite ResourceWarnings from existing tests.
+- Protected files and existing tests remain unchanged.
+
+Task-wide REWORK remains **2**. Final acceptance is blocked pending the coordinator’s renewed independent review.

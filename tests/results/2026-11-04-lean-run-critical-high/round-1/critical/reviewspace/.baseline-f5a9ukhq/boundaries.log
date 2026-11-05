@@ -1,0 +1,57 @@
+test_cached_receipt_does_not_make_inaccessible_endpoints_valid (test_regressions.VaultRegressionTests.test_cached_receipt_does_not_make_inaccessible_endpoints_valid) ... FAIL
+test_ignored_required_write_rolls_back_everything (test_regressions.VaultRegressionTests.test_ignored_required_write_rolls_back_everything) ... 
+  test_ignored_required_write_rolls_back_everything (test_regressions.VaultRegressionTests.test_ignored_required_write_rolls_back_everything) (trigger="BEFORE UPDATE ON accounts WHEN OLD.tenant='one' AND OLD.name='alice'") ... FAIL
+  test_ignored_required_write_rolls_back_everything (test_regressions.VaultRegressionTests.test_ignored_required_write_rolls_back_everything) (trigger="BEFORE UPDATE ON accounts WHEN OLD.tenant='one' AND OLD.name='bob'") ... FAIL
+  test_ignored_required_write_rolls_back_everything (test_regressions.VaultRegressionTests.test_ignored_required_write_rolls_back_everything) (trigger='BEFORE INSERT ON transfers') ... FAIL
+  test_ignored_required_write_rolls_back_everything (test_regressions.VaultRegressionTests.test_ignored_required_write_rolls_back_everything) (trigger='BEFORE INSERT ON audit') ... FAIL
+test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) ... ok
+
+======================================================================
+FAIL: test_cached_receipt_does_not_make_inaccessible_endpoints_valid (test_regressions.VaultRegressionTests.test_cached_receipt_does_not_make_inaccessible_endpoints_valid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 197, in test_cached_receipt_does_not_make_inaccessible_endpoints_valid
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_ignored_required_write_rolls_back_everything (test_regressions.VaultRegressionTests.test_ignored_required_write_rolls_back_everything) (trigger="BEFORE UPDATE ON accounts WHEN OLD.tenant='one' AND OLD.name='alice'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 296, in test_ignored_required_write_rolls_back_everything
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_ignored_required_write_rolls_back_everything (test_regressions.VaultRegressionTests.test_ignored_required_write_rolls_back_everything) (trigger="BEFORE UPDATE ON accounts WHEN OLD.tenant='one' AND OLD.name='bob'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 296, in test_ignored_required_write_rolls_back_everything
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_ignored_required_write_rolls_back_everything (test_regressions.VaultRegressionTests.test_ignored_required_write_rolls_back_everything) (trigger='BEFORE INSERT ON transfers')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 296, in test_ignored_required_write_rolls_back_everything
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_ignored_required_write_rolls_back_everything (test_regressions.VaultRegressionTests.test_ignored_required_write_rolls_back_everything) (trigger='BEFORE INSERT ON audit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/critical/workspace/test_regressions.py", line 296, in test_ignored_required_write_rolls_back_everything
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.458s
+
+FAILED (failures=5)

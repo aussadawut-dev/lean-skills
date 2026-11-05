@@ -1,0 +1,25 @@
+{
+  "source_sha256": "402137df18a415e1f371ca6a3774c2add5398fda2c9b6fa3ce0a70546a0b5c60",
+  "cases": [
+    {
+      "case": "stored_integer_overflow",
+      "passed": true,
+      "api_exception": "OverflowError: Python int too large to convert to SQLite INTEGER",
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"invalid request\"}\n",
+      "data_unchanged": true
+    },
+    {
+      "case": "audit_storage_failure",
+      "passed": true,
+      "api_exception": "IntegrityError: SQL private details",
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"invalid request\"}\n",
+      "data_unchanged": true
+    }
+  ],
+  "failed_cases": 0,
+  "contract": "Storage overflow exception class and literal generic CLI message are unspecified. Reject atomically; CLI exit 2, no stdout, generic JSON without SQL/foreign details."
+}

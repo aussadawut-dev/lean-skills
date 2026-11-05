@@ -1,0 +1,40 @@
+{
+  "level": "medium",
+  "cases": [
+    {
+      "id": "test_M1_valid_inputs",
+      "status": "PASS"
+    },
+    {
+      "id": "test_M2_empty_fields",
+      "status": "FAIL",
+      "detail": "Traceback (most recent call last):\n  File \"/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-cohort-20261103-c1ze4zc_/cohort/round-2/grader.py\", line 29, in test_M2_empty_fields\n    with self.assertRaises(ValueError,msg=repr(text)): self.parse(text)\n         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ValueError not raised : ''\n"
+    },
+    {
+      "id": "test_M3_ascii_integer_grammar",
+      "status": "FAIL",
+      "detail": "Traceback (most recent call last):\n  File \"/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-cohort-20261103-c1ze4zc_/cohort/round-2/grader.py\", line 32, in test_M3_ascii_integer_grammar\n    with self.assertRaises(ValueError,msg=repr(text)): self.parse(text)\n         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ValueError not raised : '1_000'\n"
+    },
+    {
+      "id": "test_M4_cli_error_contract",
+      "status": "FAIL",
+      "detail": "Traceback (most recent call last):\n  File \"/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-cohort-20261103-c1ze4zc_/cohort/round-2/grader.py\", line 36, in test_M4_cli_error_contract\n    self.assertEqual(p.returncode,2,args); self.assertEqual(p.stdout,'')\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 1 != 2 : ()\n"
+    }
+  ],
+  "checks": 4,
+  "issues": 3,
+  "elapsed_seconds": 0.114,
+  "workspace_sha256": {
+    ".agents/skills/lean-run/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    ".agents/skills/lean-run/SKILL.md": "1d600e0b251242b464c6ea4125d810eeae37bc148d9bad35cab49f50a5fcd5ea",
+    ".agents/skills/lean-run/references/delegation.md": "63899dde986ec7014a5cffd39216685640a2e98013dae26e037eaf985fecadb1",
+    ".agents/skills/lean-run/references/exploration.md": "baa9a38160095244c31c5e4a8aab5bdd15dfc0cc83df01a7086607a459faf403",
+    ".agents/skills/lean-run/references/handoff.md": "2d6744d15c27d002c85b9b4cbccf2b0845cb7b5c8b3589aa8b9b06a885357e94",
+    ".agents/skills/lean-run/scripts/check.py": "bb3469a0709d188ed9e72dd8d9f6d7fa8f1adb5ea2fba705c28c345d823ce68b",
+    "AGENTS.md": "0ef83ddcf2d1065527f05cd03d5a1b275feecc77e45bdb5916217f204c1cb486",
+    "CONTRACT.md": "70c0534f21c9f9705b307c81d93b7b7725567f8709bcb1744c76ce48d94c4bd3",
+    "app.py": "8d11b23c223cb40cb7e7ec649b1e0b31c7ddb49e2d495eaaa1e56013586b68aa",
+    "test_public.py": "2cbe00c08d2c2ad6ee61176c69e4b2ad17eac17ddb0468cda92e1452886ae103"
+  },
+  "protected_files_changed": []
+}

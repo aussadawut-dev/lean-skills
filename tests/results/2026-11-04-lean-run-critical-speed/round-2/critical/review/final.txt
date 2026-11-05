@@ -1,0 +1,26 @@
+{
+  "status": "REWORK",
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "HIGH",
+      "location": "vault.py:36-39 and vault.py:80-89",
+      "requirement": "Preserve existing rows and tenant boundaries; commit the debit, credit, receipt and exactly one audit row together; exact replay must make no changes.",
+      "evidence": "The rowcount checks ignore trigger side effects. Reproduction: initialize accounts ('one','a',100) and ('one','b',0), then install: CREATE TRIGGER erase_receipt AFTER INSERT ON audit WHEN NEW.key='probe' BEGIN DELETE FROM transfers WHERE tenant=NEW.tenant AND key=NEW.key; END; Call vault.transfer(path,'one','a','b',10,'probe') twice. Both calls return successful receipts, but balances become 80 and 20, the receipt is absent, and two matching audit rows persist. Separate probes confirmed that triggers can also cancel the credit, overwrite another tenant's balance, duplicate audit rows, and replace historical records through primary-key, additional UNIQUE-index or rowid conflicts. These are manifestations of the same missing transaction-effect validation.",
+      "suggested_fix": "Before committing, verify that actual logical changes, including trigger effects and implicit REPLACE deletions, match exactly the authorized balance changes and receipt/audit insertions. Roll back unexpected or missing effects while preserving existing rows, tenant read isolation, and trigger semantics."
+    }
+  ],
+  "checks": [
+    "Read CONTRACT.md, AGENTS.md, lean-run and its write-integrity guidance; compared current application files against .baseline and inspected all added tests. Supplied test_public.py matches its baseline.",
+    "Ran python3 -B -m unittest discover -v with temporary storage inside the workspace: all 15 tests passed.",
+    "Independent Python -B probes on SQLite 3.50.4 reproduced the integrity failures through vault.transfer and verified persisted state using reopened connections.",
+    "A benign no-op trigger control succeeded and preserved unrelated data; trigger definitions remained unchanged.",
+    "Independent probes passed for malformed foreign account/receipt isolation, tenant-scoped replay, generic missing-account errors, and malformed Unicode CLI error handling.",
+    "No application, test, instruction or baseline files were modified; temporary probe databases were cleaned up."
+  ],
+  "coverage_limits": [
+    "Trigger and constraint probes were targeted, not exhaustive across every SQLite schema or trigger combination.",
+    "Actual disk exhaustion, process termination and power-loss recovery were not exercised.",
+    "Any repaired candidate requires renewed verification and independent review."
+  ]
+}

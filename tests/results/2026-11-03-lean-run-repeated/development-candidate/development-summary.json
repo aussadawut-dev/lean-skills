@@ -1,0 +1,65 @@
+{
+  "status": "STOPPED_DEVELOPMENT_CANDIDATE",
+  "reason": "Confirmed false truncation metadata and redundant passing-log reads; revised before final nine-trial validation",
+  "completed_trials": 2,
+  "implementation_only_trials": 1,
+  "remaining_planned_trials_not_started": 6,
+  "phases": [
+    {
+      "trial": "round-1/critical",
+      "phase": "implementation",
+      "seconds": 670.004,
+      "total_tokens": 524928,
+      "uncached_input": 34020,
+      "output_tokens": 19868,
+      "uncached_input_plus_output": 53888
+    },
+    {
+      "trial": "round-1/high",
+      "phase": "implementation",
+      "seconds": 369.614,
+      "total_tokens": 218324,
+      "uncached_input": 27119,
+      "output_tokens": 13925,
+      "uncached_input_plus_output": 41044
+    },
+    {
+      "trial": "round-1/high",
+      "phase": "review",
+      "seconds": 222.634,
+      "total_tokens": 154617,
+      "uncached_input": 14173,
+      "output_tokens": 6684,
+      "uncached_input_plus_output": 20857
+    },
+    {
+      "trial": "round-1/medium",
+      "phase": "implementation",
+      "seconds": 289.103,
+      "total_tokens": 193578,
+      "uncached_input": 33580,
+      "output_tokens": 9470,
+      "uncached_input_plus_output": 43050
+    },
+    {
+      "trial": "round-1/medium",
+      "phase": "review",
+      "seconds": 239.685,
+      "total_tokens": 138682,
+      "uncached_input": 43038,
+      "output_tokens": 6428,
+      "uncached_input_plus_output": 49466
+    }
+  ],
+  "actual_measured_cost": {
+    "seconds": 1791.04,
+    "total_tokens": 1230129,
+    "uncached_input": 151930,
+    "output_tokens": 56375,
+    "uncached_input_plus_output": 208305
+  },
+  "included_in_final_n3_means": false,
+  "all_launched_model_phases_completed": true,
+  "critical_independent_review": "not run; no completion claim",
+  "coordinator_after_model_phase": "Intentionally interrupted after metrics were saved; read-only grader completed separately"
+}

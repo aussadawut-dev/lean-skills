@@ -1,0 +1,21 @@
+{
+  "medium": {
+    "non_skill_initial_files_identical": true,
+    "implementation_prompt_identical": true,
+    "review_prompt_identical": true,
+    "runtime_argument_controls_identical": true
+  },
+  "high": {
+    "non_skill_initial_files_identical": true,
+    "implementation_prompt_identical": true,
+    "review_prompt_identical": true,
+    "runtime_argument_controls_identical": true
+  },
+  "critical": {
+    "non_skill_initial_files_identical": true,
+    "implementation_prompt_identical": true,
+    "review_prompt_identical": true,
+    "runtime_argument_controls_identical": true
+  },
+  "frozen_grader_identical": true
+}

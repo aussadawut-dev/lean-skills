@@ -1,0 +1,30 @@
+[
+  {
+    "original_path": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-cohort-20261103-c1ze4zc_/cohort/round-1/high/workspace/.ledger-baseline.log",
+    "reported_bytes": 158,
+    "archived": "captured-logs/001.log",
+    "sha256": "4263278685874fe02c90be58b0a5b31551487834d5d7999432322de63a622a7e",
+    "bytes": 158
+  },
+  {
+    "original_path": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-cohort-20261103-c1ze4zc_/cohort/round-1/high/workspace/.ledger-regression-before.log",
+    "reported_bytes": 106836,
+    "archived": "captured-logs/002.log",
+    "sha256": "6713f9ce13b996c894fc0884ed8606de767c27868a85ab042db515a91a9d2c2e",
+    "bytes": 106836
+  },
+  {
+    "original_path": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-cohort-20261103-c1ze4zc_/cohort/round-1/high/workspace/.ledger-regression-reproduced.log",
+    "reported_bytes": 105911,
+    "archived": "captured-logs/003.log",
+    "sha256": "b40bea8cea08099228c9ca5dc5c35423b213d6ed672e532f8f89cecf94394bc8",
+    "bytes": 105911
+  },
+  {
+    "original_path": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-cohort-20261103-c1ze4zc_/cohort/round-1/high/workspace/.ledger-validation.log",
+    "reported_bytes": 2438,
+    "archived": "captured-logs/004.log",
+    "sha256": "2614a3ebbd502e5422493b37f34ff7c755c766826a1cd1bbad9c79a5ddc4b122",
+    "bytes": 2438
+  }
+]

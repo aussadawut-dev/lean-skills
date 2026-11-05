@@ -1,0 +1,44 @@
+[
+  {
+    "direction": "historical_tests_on_candidate",
+    "baseline_round": 1,
+    "exit_code": 1,
+    "seconds": 2.808,
+    "log": "review-3-baseline-1-historical_tests_on_candidate.log"
+  },
+  {
+    "direction": "candidate_tests_on_historical",
+    "baseline_round": 1,
+    "exit_code": 1,
+    "seconds": 2.062,
+    "log": "review-3-baseline-1-candidate_tests_on_historical.log"
+  },
+  {
+    "direction": "historical_tests_on_candidate",
+    "baseline_round": 2,
+    "exit_code": 1,
+    "seconds": 1.813,
+    "log": "review-3-baseline-2-historical_tests_on_candidate.log"
+  },
+  {
+    "direction": "candidate_tests_on_historical",
+    "baseline_round": 2,
+    "exit_code": 1,
+    "seconds": 1.945,
+    "log": "review-3-baseline-2-candidate_tests_on_historical.log"
+  },
+  {
+    "direction": "historical_tests_on_candidate",
+    "baseline_round": 3,
+    "exit_code": 0,
+    "seconds": 1.824,
+    "log": "review-3-baseline-3-historical_tests_on_candidate.log"
+  },
+  {
+    "direction": "candidate_tests_on_historical",
+    "baseline_round": 3,
+    "exit_code": 1,
+    "seconds": 1.849,
+    "log": "review-3-baseline-3-candidate_tests_on_historical.log"
+  }
+]

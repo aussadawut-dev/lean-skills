@@ -1,0 +1,13 @@
+Use lean-run at .agents/skills/lean-run/SKILL.md for a fresh independent ASSESSMENT ONLY of this completed candidate. You did not author it. Read CONTRACT.md, compare .baseline/ original files with current source, inspect added tests and run meaningful checks/probes. Do not implement or repair, and do not modify application, tests, instructions or .baseline. Do not read another agent report or sibling directories. Use Python -B and temporary paths for probes. No network, installs or additional agents. Identify distinct demonstrated requirement violations, regressions and security/data integrity defects; do not count multiple examples of one root cause as separate issues. Give severity, precise location and a reproducible observation for each. Do not invent a finding to fill a quota. Return ONLY a JSON object with keys status (PASS, REWORK, or BLOCKED), findings (array of objects with id, severity, location, requirement, evidence, suggested_fix), checks (array of strings), and coverage_limits (array of strings). Missing mandatory evidence is not a PASS.
+
+Renewed independent review after REWORK 1. Focus on the bounded repair delta against .pre-repair/ and original-contract regressions. Run required checks and independently verify each finding. Do not repeat unrelated broad exploration without new evidence. Prior independent findings, not author conclusions:
+[
+  {
+    "id": "R1",
+    "severity": "HIGH",
+    "location": "ledger.py:62; constructor at ledger.py:11",
+    "requirement": "Preserve valid dict[str,int] behavior and ensure successful batch replays cause no second mutation.",
+    "evidence": "Counter is a standard-library dict subclass accepted by the constructor. Reproduce with Python -B:\nfrom collections import Counter\nfrom ledger import Ledger\nledger = Ledger(Counter(a=10, b=0))\nop = dict(source='a', target='b', amount=3, key='payment')\nledger.transfer(**op)\nledger.batch([op])\nprint(dict(ledger.balances))\nExpected {'a': 7, 'b': 3}; observed {'a': 14, 'b': 6}, with unchanged history. The baseline preserves the expected balances. The constructor retains Counter semantics, so batch commit calls Counter.update(), which adds balances instead of replacing them. Empty and fresh-transfer batches exhibit the same root cause.",
+    "suggested_fix": "Normalize constructor input to a plain dictionary using dict(balances), preserving that dictionary's identity thereafter. Add Counter regression tests for empty, successful and replay batches."
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "level": "high",
+  "cases": [
+    {
+      "id": "test_H1_input_and_receipt_ownership",
+      "status": "PASS"
+    },
+    {
+      "id": "test_H2_value_validation",
+      "status": "PASS"
+    },
+    {
+      "id": "test_H3_failed_transfer_atomicity",
+      "status": "PASS"
+    },
+    {
+      "id": "test_H4_replay_and_conflict",
+      "status": "PASS"
+    },
+    {
+      "id": "test_H5_batch_atomicity",
+      "status": "PASS"
+    },
+    {
+      "id": "test_H6_integrated_success",
+      "status": "PASS"
+    }
+  ],
+  "checks": 6,
+  "issues": 0,
+  "elapsed_seconds": 0.081,
+  "workspace_sha256": {
+    ".agents/skills/lean-run/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    ".agents/skills/lean-run/SKILL.md": "082b2024d93ad50582c0305484fd5a8bcb57c0157f5b4b6ae847c66c02553757",
+    ".agents/skills/lean-run/references/delegation.md": "63899dde986ec7014a5cffd39216685640a2e98013dae26e037eaf985fecadb1",
+    ".agents/skills/lean-run/references/exploration.md": "baa9a38160095244c31c5e4a8aab5bdd15dfc0cc83df01a7086607a459faf403",
+    ".agents/skills/lean-run/references/handoff.md": "2d6744d15c27d002c85b9b4cbccf2b0845cb7b5c8b3589aa8b9b06a885357e94",
+    ".agents/skills/lean-run/scripts/check.py": "7946993e44c3ebb3d0235c94af4426e2fbef749c31f4b18eac0de001ba3050b4",
+    "AGENTS.md": "0ef83ddcf2d1065527f05cd03d5a1b275feecc77e45bdb5916217f204c1cb486",
+    "CONTRACT.md": "c9ed2ad9c1ae6cd4b794330ed7d250994e721d0af2c7282d9a004d1a6705299c",
+    "ledger.py": "5f0f7361e889613c18817ccc9eff0c7d484ccf4612dd6f0dabe56fa67779d78c",
+    "test_ledger.py": "a1eaefead9fc56f71982a3a6237fcf6ef0e67a6efc31ee8a63096060782b2010",
+    "test_public.py": "1594f7eaaa2d90b6c9fc34c0cee982174d8415e3b1dec9e25f57b3d3924d88a0"
+  },
+  "protected_files_changed": []
+}

@@ -1,0 +1,6 @@
+{
+  "request": "{\"op\":\"balance\",\"tenant\":\"one\",\"account\":\"a\",\"account\":\"b\"}",
+  "exit": 0,
+  "stdout": "0\n",
+  "stderr": ""
+}

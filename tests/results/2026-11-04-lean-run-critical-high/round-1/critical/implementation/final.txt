@@ -1,0 +1,7 @@
+Implemented tenant isolation, atomic transfers, durable replay, validation, and generic CLI errors in `vault.py` and `app.py`. Added 27 regression tests.
+
+- Reproduced cross-tenant reads, partial commits, replay conflicts, and concurrent overspending.
+- `python3 -B -m unittest discover -v`: **28 tests passed**.
+- Verified real CLI journeys, rollback, reopening, concurrency, and preservation of existing rows.
+
+Final acceptance is **blocked pending the coordinator’s required fresh independent review**. That review has not occurred.

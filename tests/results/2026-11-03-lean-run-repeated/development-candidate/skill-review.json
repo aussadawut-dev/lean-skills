@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "task_wide_rework_count": 1,
+  "requested_model": "gpt-6.1-sol",
+  "requested_effort": "medium",
+  "initial_finding": "SIGTERM to log wrapper could leave its isolated child running",
+  "resolution": "Signal-aware wait loop, process-group cleanup and interruption metadata",
+  "verification": [
+    "7 runner tests passed",
+    "Independent SIGTERM/SIGINT/SIGHUP cleanup probes passed",
+    "Skill scope, authority, acceptance and independence gates preserved"
+  ],
+  "limits": [
+    "Windows not executed",
+    "Static/code review cost excluded from measured trials"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "status": "REWORK",
+  "findings": [
+    {
+      "id": "F3",
+      "severity": "MEDIUM",
+      "location": "vault.py:81 (_trigger_header), using tokenizer at vault.py:54",
+      "requirement": "Valid transfers must succeed with existing benign triggers; valid CLI calls must exit 0.",
+      "evidence": "Initialize accounts ('one','a',100), ('one','b',0), then execute CREATE TRIGGER audit☃ AFTER INSERT ON audit BEGIN SELECT 1; END; SQLite accepts this trigger. Calling transfer(path,'one','a','b',10,'new') now raises OperationalError: near \"WHEN\": syntax error. Independently reproduced through API and CLI in DELETE and WAL modes; CLI exits 2 with empty stdout. Data and schema remain unchanged. The identical trigger succeeds in .pre-repair, and quoting its name succeeds in current code. The tokenizer splits this valid identifier, invalidating the new parser's single-token assumption. A decomposed accented identifier reproduces the same root cause.",
+      "suggested_fix": "Recognize SQLite's accepted unquoted identifier characters before advancing through header fields. Add API and CLI regression coverage for these identifiers, including quoted controls."
+    }
+  ],
+  "checks": [
+    "Read CONTRACT.md, applicable instructions and lean-run write-integrity guidance; compared current source with .baseline and .pre-repair and inspected added tests.",
+    "python3 -B -m unittest discover -v: all 26 tests passed.",
+    "Prior F2 reproducer now succeeds through API and CLI in DELETE and WAL modes; verified exact effects, durable replay and schema preservation.",
+    "Independent trigger probes verified benign ignored writes, destructive REPLACE rejection, audit-failure rollback, unrelated-row preservation and historical replay through API and CLI in both journal modes.",
+    "Unicode controls confirmed the new regression. An auxiliary probe's filename-normalization collision was corrected using distinct ASCII temporary filenames.",
+    "SHA-256 comparisons confirmed 15 application, test, instruction and reference files remained unchanged."
+  ],
+  "coverage_limits": [
+    "Executed locally with Python 3.14.3 and SQLite 3.50.4.",
+    "Additional probes focused on the bounded repair delta; SQLite syntax coverage was not exhaustive.",
+    "Assessment only; no repairs were made."
+  ]
+}

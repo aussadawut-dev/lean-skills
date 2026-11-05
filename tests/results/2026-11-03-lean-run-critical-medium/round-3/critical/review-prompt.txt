@@ -1,0 +1,13 @@
+Use lean-run at .agents/skills/lean-run/SKILL.md for a fresh independent ASSESSMENT ONLY of this completed candidate. You did not author it. Read CONTRACT.md, compare .baseline/ original files with current source, inspect added tests and run meaningful checks/probes. Do not implement or repair, and do not modify application, tests, instructions or .baseline. Do not read another agent report or sibling directories. Use Python -B and temporary paths for probes. No network, installs or additional agents. Identify distinct demonstrated requirement violations, regressions and security/data integrity defects; do not count multiple examples of one root cause as separate issues. Give severity, precise location and a reproducible observation for each. Do not invent a finding to fill a quota. Return ONLY a JSON object with keys status (PASS, REWORK, or BLOCKED), findings (array of objects with id, severity, location, requirement, evidence, suggested_fix), checks (array of strings), and coverage_limits (array of strings). Missing mandatory evidence is not a PASS.
+
+Renewed independent review after REWORK 2. Focus on the bounded repair delta against .pre-repair/ and original-contract regressions. Run required checks and independently verify each finding. Do not repeat unrelated broad exploration without new evidence. Prior independent findings, not author conclusions:
+[
+  {
+    "id": "TRIGGER-GRAMMAR-REGRESSION",
+    "severity": "MEDIUM",
+    "location": "vault.py:70-73, _instrument_trigger",
+    "requirement": "Valid transfers must succeed while preserving existing benign trigger behavior.",
+    "evidence": "Initialize accounts ('one','a',100) and ('one','b',0), then execute CREATE TRIGGER benign AFTER INSERT ON audit WHEN 1 BEGIN VALUES(1); END. Calling transfer(path,'one','a','b',10,'k') raises IndexError at vault.py:70. The parser never recognizes BEGIN because VALUES is excluded from its statement-prefix list. A WITH-prefixed SELECT reproduces the same defect. The CLI exits 2 for this valid request. Data and schema remain unchanged; the .pre-repair implementation succeeds on the same database, producing balances 90 and 10.",
+    "suggested_fix": "Support SQLite's legal trigger-body forms when locating BEGIN, including VALUES and WITH, or avoid rewriting trigger SQL. Add distinguishing regressions for these forms with WHEN clauses."
+  }
+]

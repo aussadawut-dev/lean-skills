@@ -1,0 +1,17 @@
+{
+  "workspace": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-contract-gates-R3IeCf/cohort/round-1/critical/workspace",
+  "source_sha256": "ba081f7353068816258b220396e0123feb48c00c21c86794935ce9b8a4ac8a8e",
+  "issue_count": 0,
+  "failed_cases": 0,
+  "case": "foreign_malformed_text_isolated",
+  "pass": true,
+  "exception": null,
+  "receipt": {
+    "tenant": "alpha",
+    "key": "k",
+    "source": "a",
+    "target": "b",
+    "amount": 10
+  },
+  "other_tenant_unchanged": true
+}

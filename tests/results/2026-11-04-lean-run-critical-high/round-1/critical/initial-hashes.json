@@ -1,0 +1,14 @@
+{
+  ".agents/skills/lean-run/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+  ".agents/skills/lean-run/SKILL.md": "2e31a58825685a232655ef571966bda7cc5c751fe19ccd32e441da8b0b404f19",
+  ".agents/skills/lean-run/references/delegation.md": "63899dde986ec7014a5cffd39216685640a2e98013dae26e037eaf985fecadb1",
+  ".agents/skills/lean-run/references/exploration.md": "baa9a38160095244c31c5e4a8aab5bdd15dfc0cc83df01a7086607a459faf403",
+  ".agents/skills/lean-run/references/handoff.md": "2d6744d15c27d002c85b9b4cbccf2b0845cb7b5c8b3589aa8b9b06a885357e94",
+  ".agents/skills/lean-run/references/write-integrity.md": "0d82d2a4c96cd5a23c9c5c5314b50325986beaed03b18e963b20417063a9a821",
+  ".agents/skills/lean-run/scripts/check.py": "7946993e44c3ebb3d0235c94af4426e2fbef749c31f4b18eac0de001ba3050b4",
+  "AGENTS.md": "0ef83ddcf2d1065527f05cd03d5a1b275feecc77e45bdb5916217f204c1cb486",
+  "CONTRACT.md": "6e6d6ee1f769db8160e528e218d46a0018a90655e775742a073d61df2aebee2b",
+  "app.py": "366bb54fc6319521ddd02f44c206e679f529b6930b59674370d718987398acf4",
+  "test_public.py": "5f239e0ce234d0b84f0d12e7cd23eb6dc23e63b88ffa07e50d20d2c061d66b95",
+  "vault.py": "5d0b97f8127dc5387d85cf315ebd5715173c0ccb67af359d7e440c5acb9dde68"
+}

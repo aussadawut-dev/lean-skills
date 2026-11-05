@@ -1,0 +1,11 @@
+{
+  "workspace": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace-before-repair-2",
+  "source_sha256": "bf7c75a92e9f8c73ebf984b5091eea4e7d1b497111eba843d5ad7f3908fb8218",
+  "issue_count": 1,
+  "failed_cases": 1,
+  "case": "foreign_malformed_text_isolated",
+  "pass": false,
+  "exception": "OperationalError: Could not decode to UTF-8 column 'name' with text 'beta-private-secret\ufffd'",
+  "receipt": null,
+  "other_tenant_unchanged": true
+}

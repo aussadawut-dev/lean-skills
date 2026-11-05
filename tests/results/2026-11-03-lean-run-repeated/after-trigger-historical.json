@@ -1,0 +1,283 @@
+{
+  "workspace": "tests/results/2026-11-03-lean-run-optimized/critical/workspace",
+  "root_cause": "Missing final-effect validation after successful SQL statements",
+  "issue_count": 1,
+  "failed_cases": 4,
+  "cases": [
+    {
+      "case": "credit_undone",
+      "pass": false,
+      "exception": null,
+      "receipt": {
+        "tenant": "a",
+        "key": "key",
+        "source": "source",
+        "target": "target",
+        "amount": 10
+      },
+      "before": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            100
+          ],
+          [
+            "a",
+            "target",
+            0
+          ],
+          [
+            "b",
+            "source",
+            77
+          ]
+        ],
+        "transfers": [],
+        "audit": []
+      },
+      "after": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            90
+          ],
+          [
+            "a",
+            "target",
+            0
+          ],
+          [
+            "b",
+            "source",
+            77
+          ]
+        ],
+        "transfers": [
+          [
+            "a",
+            "key",
+            "source",
+            "target",
+            10
+          ]
+        ],
+        "audit": [
+          [
+            "a",
+            "key",
+            "source",
+            "target",
+            10
+          ]
+        ]
+      },
+      "trigger_preserved": true
+    },
+    {
+      "case": "receipt_removed",
+      "pass": false,
+      "exception": null,
+      "receipt": {
+        "tenant": "a",
+        "key": "key",
+        "source": "source",
+        "target": "target",
+        "amount": 10
+      },
+      "before": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            100
+          ],
+          [
+            "a",
+            "target",
+            0
+          ],
+          [
+            "b",
+            "source",
+            77
+          ]
+        ],
+        "transfers": [],
+        "audit": []
+      },
+      "after": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            90
+          ],
+          [
+            "a",
+            "target",
+            10
+          ],
+          [
+            "b",
+            "source",
+            77
+          ]
+        ],
+        "transfers": [],
+        "audit": [
+          [
+            "a",
+            "key",
+            "source",
+            "target",
+            10
+          ]
+        ]
+      },
+      "trigger_preserved": true
+    },
+    {
+      "case": "audit_removed",
+      "pass": false,
+      "exception": null,
+      "receipt": {
+        "tenant": "a",
+        "key": "key",
+        "source": "source",
+        "target": "target",
+        "amount": 10
+      },
+      "before": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            100
+          ],
+          [
+            "a",
+            "target",
+            0
+          ],
+          [
+            "b",
+            "source",
+            77
+          ]
+        ],
+        "transfers": [],
+        "audit": []
+      },
+      "after": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            90
+          ],
+          [
+            "a",
+            "target",
+            10
+          ],
+          [
+            "b",
+            "source",
+            77
+          ]
+        ],
+        "transfers": [
+          [
+            "a",
+            "key",
+            "source",
+            "target",
+            10
+          ]
+        ],
+        "audit": []
+      },
+      "trigger_preserved": true
+    },
+    {
+      "case": "audit_duplicated",
+      "pass": false,
+      "exception": null,
+      "receipt": {
+        "tenant": "a",
+        "key": "key",
+        "source": "source",
+        "target": "target",
+        "amount": 10
+      },
+      "before": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            100
+          ],
+          [
+            "a",
+            "target",
+            0
+          ],
+          [
+            "b",
+            "source",
+            77
+          ]
+        ],
+        "transfers": [],
+        "audit": []
+      },
+      "after": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            90
+          ],
+          [
+            "a",
+            "target",
+            10
+          ],
+          [
+            "b",
+            "source",
+            77
+          ]
+        ],
+        "transfers": [
+          [
+            "a",
+            "key",
+            "source",
+            "target",
+            10
+          ]
+        ],
+        "audit": [
+          [
+            "a",
+            "key",
+            "source",
+            "target",
+            10
+          ],
+          [
+            "a",
+            "key",
+            "source",
+            "target",
+            10
+          ]
+        ]
+      },
+      "trigger_preserved": true
+    }
+  ]
+}

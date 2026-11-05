@@ -1,0 +1,11 @@
+{
+  "benchmark_execution": "COMPLETE",
+  "optimization_target": "FAILED",
+  "passed_trials": 7,
+  "failed_trials": [
+    "round-1/critical",
+    "round-3/critical"
+  ],
+  "model_phases_completed": 30,
+  "timed_out_phases": 0
+}

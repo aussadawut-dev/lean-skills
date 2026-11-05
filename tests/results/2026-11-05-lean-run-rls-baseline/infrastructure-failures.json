@@ -1,0 +1,18 @@
+[
+  {
+    "round": 1,
+    "level": "high",
+    "phase": "implementation",
+    "attempt": 1,
+    "retained_at": "infrastructure-failures/round-1-high-implementation-attempt-1",
+    "elapsed_seconds": 4.217,
+    "exit_code": 1,
+    "usage": null,
+    "completed_turns": 0,
+    "cause": "CLI error event before any model turn completed: \"Selected model is at capacity. Please try a different model.\"",
+    "workspace_unchanged_from_initial": true,
+    "requested_model_unchanged": "gpt-6-astra/max",
+    "action": "Retained outside measured phase paths; the same phase relaunched unchanged. Not a measured attempt; usage was not reported.",
+    "recorded_unix": 1793812040.161736
+  }
+]

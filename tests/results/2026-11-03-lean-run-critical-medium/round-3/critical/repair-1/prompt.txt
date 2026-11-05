@@ -1,0 +1,12 @@
+Use lean-run at .agents/skills/lean-run/SKILL.md to continue the SAME critical task with a bounded repair. CONTRACT.md and scope are unchanged. Task-wide REWORK count is 1; do not reset it. Reproduce and repair the demonstrated findings below, add meaningful regression checks, run affected and required final checks, and exercise the public interface. Preserve existing behavior, data, triggers and unrelated work. No unrelated refactor, installs, network or extra agents. The coordinator supplies renewed independent review afterward; report it pending. 
+
+[
+  {
+    "id": "COORD-ACCOUNT-READ-SCOPE",
+    "severity": "HIGH",
+    "location": "vault.py:_WriteGuard.__init__, _remember and verify",
+    "requirement": "Every account read MUST remain within the authenticated tenant. Keeping results in SQLite or returning only a sentinel does not grant a foreign-account lookup exception.",
+    "evidence": "Public transfer of tenant one with an existing foreign account executes CREATE TEMP TABLE _vault_count_accounts AS SELECT count(*)+0 AS expected FROM main.accounts. Preservation queries also read stored accounts using OLD/NEW or seen identities instead of authenticated context, including foreign identities under trigger effects. account-scope-assessment-1.json contains actual traced SQL and source hash. The same original-contract interpretation is established by independent contract-triage.json and contract-triage-round-2.json. All content/UNIQUE/trigger posthoc probes currently pass; nondisclosure does not replace the explicit read restriction.",
+    "suggested_fix": "Keep account lookups constrained to authenticated context; enforce preservation using storage-level actual effects without fetching foreign stored accounts. Retain current valid no-op/IGNORE/rowid/identical replacement successes, destructive extra-UNIQUE rollback and historical replay. If changing recursive-trigger semantics, preserve benign keyword/Unicode trigger names and the existing stored trigger behavior. Use compact distinguishing regression checks, final required checks and fresh review."
+  }
+]

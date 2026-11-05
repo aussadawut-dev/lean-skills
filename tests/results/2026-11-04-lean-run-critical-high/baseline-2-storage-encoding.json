@@ -1,0 +1,48 @@
+{
+  "source_sha256": "d0188c10a25bfe9462a7e337bb381b9b14f08753983ce29a9307c0a52ada1d02",
+  "cases": [
+    {
+      "encoding": "UTF-8",
+      "actual": "UTF-8",
+      "interface": "API",
+      "error": null,
+      "passed": true
+    },
+    {
+      "encoding": "UTF-8",
+      "actual": "UTF-8",
+      "interface": "CLI",
+      "error": null,
+      "passed": true
+    },
+    {
+      "encoding": "UTF-16le",
+      "actual": "UTF-16le",
+      "interface": "API",
+      "error": null,
+      "passed": true
+    },
+    {
+      "encoding": "UTF-16le",
+      "actual": "UTF-16le",
+      "interface": "CLI",
+      "error": null,
+      "passed": true
+    },
+    {
+      "encoding": "UTF-16be",
+      "actual": "UTF-16be",
+      "interface": "API",
+      "error": null,
+      "passed": true
+    },
+    {
+      "encoding": "UTF-16be",
+      "actual": "UTF-16be",
+      "interface": "CLI",
+      "error": null,
+      "passed": true
+    }
+  ],
+  "failed_cases": 0
+}

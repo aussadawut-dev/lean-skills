@@ -1,0 +1,8 @@
+Repaired both findings in [vault.py](/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-1/critical/workspace/vault.py): audit verification now preserves complete contents and duplicate counts across tenants, without depending on rowid.
+
+- Reproduced both failures through API and CLI before repair.
+- Added regressions for cross-tenant corruption, duplicate multiplicity, and rowid relocation.
+- All 5 affected checks passed.
+- `python3 -B -m unittest discover -v`: **26 tests passed**, including rollback, persistence, replay, and trigger preservation.
+
+Task-wide REWORK remains **2**; the final fix-only pass is complete. Overall completion is **BLOCKED pending renewed coordinator review**. The [lean-run skill](/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-1/critical/workspace/.agents/skills/lean-run/SKILL.md) requires “HIGH needs a fresh independent reviewer”; that review has not occurred.

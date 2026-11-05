@@ -1,0 +1,29 @@
+Use lean-run at .agents/skills/lean-run/SKILL.md to continue the SAME critical task with a bounded repair. CONTRACT.md and scope are unchanged. Task-wide REWORK count is 1; do not reset it. Reproduce and repair the demonstrated findings below, add meaningful regression checks, run affected and required final checks, and exercise the public interface. Preserve existing behavior, data, triggers and unrelated work. No unrelated refactor, installs, network or extra agents. The coordinator supplies renewed independent review afterward; report it pending. 
+
+[
+  {
+    "id": "R2",
+    "severity": "HIGH",
+    "location": "vault.py:102-114 (_isolate rowid normalization)",
+    "requirement": "Existing triggers must retain native behavior over tenant-local rows, and their auxiliary writes must commit correctly.",
+    "evidence": "In a tenant-only database, insert accounts a and b with explicit rowids 10 and 20 and balances 100 and 0. Create account_refs(account_row INTEGER PRIMARY KEY,last_balance), containing (10,100),(20,0), and an AFTER UPDATE ON accounts trigger executing UPDATE account_refs SET last_balance=NEW.balance WHERE account_row=NEW.rowid. transfer(path,'one','a','b',10,'k') succeeds and commits balances 90/10, but references remain 100/0. Identical native SQLite statements update references to 90/10. The candidate exposes temporary rowids 1/2 to triggers while retaining persistent rowids 10/20.",
+    "suggested_fix": "Preserve tenant-local row references through isolated execution and commit. Replace unconditional renumbering with a mechanism that also satisfies noninterference, and test sparse existing rowids against native SQLite."
+  },
+  {
+    "id": "R3",
+    "severity": "MEDIUM",
+    "location": "vault.py:125-143 and vault.py:152-165 (_auxiliary_rows/_apply_auxiliary)",
+    "requirement": "Trigger writes to other tables must retain native SQLite behavior and commit with the transfer.",
+    "evidence": "Create documents(id INTEGER PRIMARY KEY,body TEXT), insert (1,'ledger entry'), and create search USING fts5(body,content='documents',content_rowid='id'). Install an AFTER INSERT ON audit trigger executing INSERT INTO search(rowid,body) VALUES(1,'ledger entry'). The candidate commits the transfer, but SELECT rowid FROM search WHERE search MATCH 'ledger' returns no rows; native SQLite returns [(1,)]. Shadow tables are omitted and the virtual table's ordinary SELECT results are unchanged, so the index write is silently discarded. Related probes also lost an FTS5 automerge configuration write and incorrectly attempted DELETE against a read-only fts5vocab table.",
+    "suggested_fix": "Preserve complete auxiliary SQLite effects, including virtual-table backing state. Avoid treating ordinary SELECT snapshots as complete writable state, and add native controls for external-content FTS5 and read-only virtual tables."
+  },
+  {
+    "id": "C1",
+    "severity": "HIGH",
+    "source": "mandatory probe critical_contract_probe.py",
+    "location": "table-name handling in the isolation layer",
+    "requirement": "Other tenants' rows stay byte-identical; writes aimed at them affect nothing.",
+    "evidence": "Mandatory contract probe scenario renamed_table_case: setup `ALTER TABLE accounts RENAME TO staging; ALTER TABLE staging RENAME TO ACCOUNTS;` plus a trigger that writes to another tenant's account. With the other tenant's balance 777 or 778 the candidate commits the transfer and the other tenant's row changes (failures renamed_table_case:{api,cli}_{777,778}:foreign_rows_changed); with the row absent it passes. The native tenant-only oracle leaves the other tenant's row unchanged. SQLite table names are case-insensitive.",
+    "suggested_fix": "Resolve protected tables case-insensitively from the schema, as SQLite does, and add API and CLI tests with renamed table case and present foreign rows."
+  }
+]

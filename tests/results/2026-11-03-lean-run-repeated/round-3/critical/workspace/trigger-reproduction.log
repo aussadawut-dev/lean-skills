@@ -1,0 +1,289 @@
+test_after_triggers_cannot_erase_or_duplicate_required_effects (test_trigger_effects.TriggerEffectsTests.test_after_triggers_cannot_erase_or_duplicate_required_effects) ... 
+  test_after_triggers_cannot_erase_or_duplicate_required_effects (test_trigger_effects.TriggerEffectsTests.test_after_triggers_cannot_erase_or_duplicate_required_effects) (case='missing debit') ... FAIL
+  test_after_triggers_cannot_erase_or_duplicate_required_effects (test_trigger_effects.TriggerEffectsTests.test_after_triggers_cannot_erase_or_duplicate_required_effects) (case='missing credit') ... FAIL
+  test_after_triggers_cannot_erase_or_duplicate_required_effects (test_trigger_effects.TriggerEffectsTests.test_after_triggers_cannot_erase_or_duplicate_required_effects) (case='missing receipt') ... FAIL
+  test_after_triggers_cannot_erase_or_duplicate_required_effects (test_trigger_effects.TriggerEffectsTests.test_after_triggers_cannot_erase_or_duplicate_required_effects) (case='missing audit') ... FAIL
+  test_after_triggers_cannot_erase_or_duplicate_required_effects (test_trigger_effects.TriggerEffectsTests.test_after_triggers_cannot_erase_or_duplicate_required_effects) (case='duplicate audit') ... FAIL
+  test_after_triggers_cannot_erase_or_duplicate_required_effects (test_trigger_effects.TriggerEffectsTests.test_after_triggers_cannot_erase_or_duplicate_required_effects) (case='late missing credit') ... FAIL
+  test_after_triggers_cannot_erase_or_duplicate_required_effects (test_trigger_effects.TriggerEffectsTests.test_after_triggers_cannot_erase_or_duplicate_required_effects) (case='late missing receipt') ... FAIL
+test_cli_preservation_failures_are_atomic_and_history_still_replays (test_trigger_effects.TriggerEffectsTests.test_cli_preservation_failures_are_atomic_and_history_still_replays) ... 
+  test_cli_preservation_failures_are_atomic_and_history_still_replays (test_trigger_effects.TriggerEffectsTests.test_cli_preservation_failures_are_atomic_and_history_still_replays) (case='historical receipt') ... FAIL
+  test_cli_preservation_failures_are_atomic_and_history_still_replays (test_trigger_effects.TriggerEffectsTests.test_cli_preservation_failures_are_atomic_and_history_still_replays) (case='other tenant account') ... FAIL
+  test_cli_preservation_failures_are_atomic_and_history_still_replays (test_trigger_effects.TriggerEffectsTests.test_cli_preservation_failures_are_atomic_and_history_still_replays) (case='audit history') ... FAIL
+test_cli_preservation_failures_are_atomic_and_history_still_replays (test_trigger_effects.TriggerEffectsTests.test_cli_preservation_failures_are_atomic_and_history_still_replays) ... FAIL
+test_existing_audit_contents_and_multiplicity_are_preserved (test_trigger_effects.TriggerEffectsTests.test_existing_audit_contents_and_multiplicity_are_preserved) ... 
+  test_existing_audit_contents_and_multiplicity_are_preserved (test_trigger_effects.TriggerEffectsTests.test_existing_audit_contents_and_multiplicity_are_preserved) (case='other tenant rewrite') ... FAIL
+  test_existing_audit_contents_and_multiplicity_are_preserved (test_trigger_effects.TriggerEffectsTests.test_existing_audit_contents_and_multiplicity_are_preserved) (case='equal counts with different duplicate multiplicity') ... FAIL
+  test_existing_audit_contents_and_multiplicity_are_preserved (test_trigger_effects.TriggerEffectsTests.test_existing_audit_contents_and_multiplicity_are_preserved) (case='current row rewrite') ... FAIL
+test_existing_receipts_and_unrelated_accounts_are_preserved (test_trigger_effects.TriggerEffectsTests.test_existing_receipts_and_unrelated_accounts_are_preserved) ... 
+  test_existing_receipts_and_unrelated_accounts_are_preserved (test_trigger_effects.TriggerEffectsTests.test_existing_receipts_and_unrelated_accounts_are_preserved) (case='same tenant receipt deletion') ... FAIL
+  test_existing_receipts_and_unrelated_accounts_are_preserved (test_trigger_effects.TriggerEffectsTests.test_existing_receipts_and_unrelated_accounts_are_preserved) (case='other tenant receipt deletion') ... FAIL
+  test_existing_receipts_and_unrelated_accounts_are_preserved (test_trigger_effects.TriggerEffectsTests.test_existing_receipts_and_unrelated_accounts_are_preserved) (case='other tenant receipt rewrite') ... FAIL
+  test_existing_receipts_and_unrelated_accounts_are_preserved (test_trigger_effects.TriggerEffectsTests.test_existing_receipts_and_unrelated_accounts_are_preserved) (case='same tenant unrelated account') ... FAIL
+  test_existing_receipts_and_unrelated_accounts_are_preserved (test_trigger_effects.TriggerEffectsTests.test_existing_receipts_and_unrelated_accounts_are_preserved) (case='other tenant account') ... FAIL
+  test_existing_receipts_and_unrelated_accounts_are_preserved (test_trigger_effects.TriggerEffectsTests.test_existing_receipts_and_unrelated_accounts_are_preserved) (case='other tenant account deletion') ... FAIL
+  test_existing_receipts_and_unrelated_accounts_are_preserved (test_trigger_effects.TriggerEffectsTests.test_existing_receipts_and_unrelated_accounts_are_preserved) (case='other tenant account replacement') ... FAIL
+  test_existing_receipts_and_unrelated_accounts_are_preserved (test_trigger_effects.TriggerEffectsTests.test_existing_receipts_and_unrelated_accounts_are_preserved) (case='extra account') ... FAIL
+test_rowid_relocation_preserves_valid_transfer_and_replay (test_trigger_effects.TriggerEffectsTests.test_rowid_relocation_preserves_valid_transfer_and_replay) ... ok
+test_valid_noop_triggers_preserve_transfer_and_replay (test_trigger_effects.TriggerEffectsTests.test_valid_noop_triggers_preserve_transfer_and_replay) ... ok
+
+======================================================================
+FAIL: test_after_triggers_cannot_erase_or_duplicate_required_effects (test_trigger_effects.TriggerEffectsTests.test_after_triggers_cannot_erase_or_duplicate_required_effects) (case='missing debit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 130, in test_after_triggers_cannot_erase_or_duplicate_required_effects
+    self.assert_rejected_without_changes()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 70, in assert_rejected_without_changes
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_after_triggers_cannot_erase_or_duplicate_required_effects (test_trigger_effects.TriggerEffectsTests.test_after_triggers_cannot_erase_or_duplicate_required_effects) (case='missing credit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 130, in test_after_triggers_cannot_erase_or_duplicate_required_effects
+    self.assert_rejected_without_changes()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 70, in assert_rejected_without_changes
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_after_triggers_cannot_erase_or_duplicate_required_effects (test_trigger_effects.TriggerEffectsTests.test_after_triggers_cannot_erase_or_duplicate_required_effects) (case='missing receipt')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 130, in test_after_triggers_cannot_erase_or_duplicate_required_effects
+    self.assert_rejected_without_changes()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 70, in assert_rejected_without_changes
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_after_triggers_cannot_erase_or_duplicate_required_effects (test_trigger_effects.TriggerEffectsTests.test_after_triggers_cannot_erase_or_duplicate_required_effects) (case='missing audit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 130, in test_after_triggers_cannot_erase_or_duplicate_required_effects
+    self.assert_rejected_without_changes()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 70, in assert_rejected_without_changes
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_after_triggers_cannot_erase_or_duplicate_required_effects (test_trigger_effects.TriggerEffectsTests.test_after_triggers_cannot_erase_or_duplicate_required_effects) (case='duplicate audit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 130, in test_after_triggers_cannot_erase_or_duplicate_required_effects
+    self.assert_rejected_without_changes()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 70, in assert_rejected_without_changes
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_after_triggers_cannot_erase_or_duplicate_required_effects (test_trigger_effects.TriggerEffectsTests.test_after_triggers_cannot_erase_or_duplicate_required_effects) (case='late missing credit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 130, in test_after_triggers_cannot_erase_or_duplicate_required_effects
+    self.assert_rejected_without_changes()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 70, in assert_rejected_without_changes
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_after_triggers_cannot_erase_or_duplicate_required_effects (test_trigger_effects.TriggerEffectsTests.test_after_triggers_cannot_erase_or_duplicate_required_effects) (case='late missing receipt')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 130, in test_after_triggers_cannot_erase_or_duplicate_required_effects
+    self.assert_rejected_without_changes()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 70, in assert_rejected_without_changes
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_cli_preservation_failures_are_atomic_and_history_still_replays (test_trigger_effects.TriggerEffectsTests.test_cli_preservation_failures_are_atomic_and_history_still_replays) (case='historical receipt')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 204, in test_cli_preservation_failures_are_atomic_and_history_still_replays
+    self.assertEqual(failed.returncode, 2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2
+
+======================================================================
+FAIL: test_cli_preservation_failures_are_atomic_and_history_still_replays (test_trigger_effects.TriggerEffectsTests.test_cli_preservation_failures_are_atomic_and_history_still_replays) (case='other tenant account')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 204, in test_cli_preservation_failures_are_atomic_and_history_still_replays
+    self.assertEqual(failed.returncode, 2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2
+
+======================================================================
+FAIL: test_cli_preservation_failures_are_atomic_and_history_still_replays (test_trigger_effects.TriggerEffectsTests.test_cli_preservation_failures_are_atomic_and_history_still_replays) (case='audit history')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 204, in test_cli_preservation_failures_are_atomic_and_history_still_replays
+    self.assertEqual(failed.returncode, 2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2
+
+======================================================================
+FAIL: test_cli_preservation_failures_are_atomic_and_history_still_replays (test_trigger_effects.TriggerEffectsTests.test_cli_preservation_failures_are_atomic_and_history_still_replays)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 218, in test_cli_preservation_failures_are_atomic_and_history_still_replays
+    self.assert_valid_transfer_and_replay()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 91, in assert_valid_transfer_and_replay
+    self.assertEqual(self.contents(), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'acc[23 chars]a', 'source', 87): 1, ('alpha', 'target', 23):[417 chars] 1})} != {'acc[23 chars]a', 'unrelated', 40): 1, ('beta', 'source', 29[473 chars] 1})}
+Diff is 1801 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_existing_audit_contents_and_multiplicity_are_preserved (test_trigger_effects.TriggerEffectsTests.test_existing_audit_contents_and_multiplicity_are_preserved) (case='other tenant rewrite')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 147, in test_existing_audit_contents_and_multiplicity_are_preserved
+    self.assert_rejected_without_changes()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 70, in assert_rejected_without_changes
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_existing_audit_contents_and_multiplicity_are_preserved (test_trigger_effects.TriggerEffectsTests.test_existing_audit_contents_and_multiplicity_are_preserved) (case='equal counts with different duplicate multiplicity')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 147, in test_existing_audit_contents_and_multiplicity_are_preserved
+    self.assert_rejected_without_changes()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 70, in assert_rejected_without_changes
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_existing_audit_contents_and_multiplicity_are_preserved (test_trigger_effects.TriggerEffectsTests.test_existing_audit_contents_and_multiplicity_are_preserved) (case='current row rewrite')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 147, in test_existing_audit_contents_and_multiplicity_are_preserved
+    self.assert_rejected_without_changes()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 70, in assert_rejected_without_changes
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_existing_receipts_and_unrelated_accounts_are_preserved (test_trigger_effects.TriggerEffectsTests.test_existing_receipts_and_unrelated_accounts_are_preserved) (case='same tenant receipt deletion')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 167, in test_existing_receipts_and_unrelated_accounts_are_preserved
+    self.assert_rejected_without_changes()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 70, in assert_rejected_without_changes
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_existing_receipts_and_unrelated_accounts_are_preserved (test_trigger_effects.TriggerEffectsTests.test_existing_receipts_and_unrelated_accounts_are_preserved) (case='other tenant receipt deletion')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 167, in test_existing_receipts_and_unrelated_accounts_are_preserved
+    self.assert_rejected_without_changes()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 70, in assert_rejected_without_changes
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_existing_receipts_and_unrelated_accounts_are_preserved (test_trigger_effects.TriggerEffectsTests.test_existing_receipts_and_unrelated_accounts_are_preserved) (case='other tenant receipt rewrite')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 167, in test_existing_receipts_and_unrelated_accounts_are_preserved
+    self.assert_rejected_without_changes()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 70, in assert_rejected_without_changes
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_existing_receipts_and_unrelated_accounts_are_preserved (test_trigger_effects.TriggerEffectsTests.test_existing_receipts_and_unrelated_accounts_are_preserved) (case='same tenant unrelated account')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 167, in test_existing_receipts_and_unrelated_accounts_are_preserved
+    self.assert_rejected_without_changes()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 70, in assert_rejected_without_changes
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_existing_receipts_and_unrelated_accounts_are_preserved (test_trigger_effects.TriggerEffectsTests.test_existing_receipts_and_unrelated_accounts_are_preserved) (case='other tenant account')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 167, in test_existing_receipts_and_unrelated_accounts_are_preserved
+    self.assert_rejected_without_changes()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 70, in assert_rejected_without_changes
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_existing_receipts_and_unrelated_accounts_are_preserved (test_trigger_effects.TriggerEffectsTests.test_existing_receipts_and_unrelated_accounts_are_preserved) (case='other tenant account deletion')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 167, in test_existing_receipts_and_unrelated_accounts_are_preserved
+    self.assert_rejected_without_changes()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 70, in assert_rejected_without_changes
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_existing_receipts_and_unrelated_accounts_are_preserved (test_trigger_effects.TriggerEffectsTests.test_existing_receipts_and_unrelated_accounts_are_preserved) (case='other tenant account replacement')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 167, in test_existing_receipts_and_unrelated_accounts_are_preserved
+    self.assert_rejected_without_changes()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 70, in assert_rejected_without_changes
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_existing_receipts_and_unrelated_accounts_are_preserved (test_trigger_effects.TriggerEffectsTests.test_existing_receipts_and_unrelated_accounts_are_preserved) (case='extra account')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 167, in test_existing_receipts_and_unrelated_accounts_are_preserved
+    self.assert_rejected_without_changes()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/test_trigger_effects.py", line 70, in assert_rejected_without_changes
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.297s
+
+FAILED (failures=22)

@@ -1,0 +1,7 @@
+test_repeated_self_comparison_keeps_failed_costs_and_has_zero_delta (test_benchmark_summary.SummaryTests.test_repeated_self_comparison_keeps_failed_costs_and_has_zero_delta) ... ok
+test_timeout_usage_stays_unknown_and_elapsed_cost_is_retained (test_benchmark_summary.SummaryTests.test_timeout_usage_stays_unknown_and_elapsed_cost_is_retained) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.723s
+
+OK

@@ -1,0 +1,26 @@
+{
+  "status": "REWORK",
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "HIGH",
+      "location": "vault.py:42-45 and vault.py:73-82",
+      "requirement": "Successful transfers must preserve existing rows and produce the exact debit, credit, receipt and one audit row.",
+      "evidence": "The rowcount checks miss trigger effects. Reproduction: initialize a temporary database with accounts ('red','a',100), ('red','b',20). Install: CREATE TRIGGER undo_credit AFTER INSERT ON audit BEGIN UPDATE accounts SET balance=balance-NEW.amount WHERE tenant=NEW.tenant AND name=NEW.target; END; Call vault.transfer(path,'red','a','b',10,'new'). It returns success, but reopening shows balances 90 and 20, with the receipt and audit committed: the credit was lost. Additional probes demonstrated duplicate audit rows, deleted historical rows and an INSERT OR REPLACE trigger deleting another tenant's account through a UNIQUE-index collision. These share the same unchecked-trigger-effects root cause.",
+      "suggested_fix": "Verify the complete logical changes before committing, including trigger effects and implicit replacement deletions. Roll back unexpected changes while preserving existing triggers and allowing harmless ignored conflicts."
+    }
+  ],
+  "checks": [
+    "Read CONTRACT.md, applicable instructions, lean-run and its write-integrity procedure.",
+    "Compared app.py, vault.py and test_public.py against .baseline; inspected all added regression tests.",
+    "TMPDIR=\"$PWD\" python3 -B -m unittest discover -v: 32 tests passed.",
+    "Independent public-interface probes: ignored-conflict control preserved the required state; four trigger-effect cases committed incorrect state, confirmed after reopening.",
+    "Environment: Python 3.14.3, SQLite 3.50.4. All probe databases used temporary workspace paths.",
+    "Verified application, tests, instructions, .baseline and .agents remained unchanged."
+  ],
+  "coverage_limits": [
+    "Trigger probes covered selected concrete cases, not every possible trigger or schema configuration.",
+    "Persistence was checked through reopened connections and CLI processes; power-loss recovery was not tested.",
+    "Assessment only; no repairs were made."
+  ]
+}

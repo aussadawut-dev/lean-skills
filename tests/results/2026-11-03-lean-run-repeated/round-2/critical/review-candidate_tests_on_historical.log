@@ -1,0 +1,68 @@
+test_valid_transfer (test_public.PublicTests.test_valid_transfer) ... ok
+test_after_trigger_cannot_erase_required_effects (test_regressions.VaultRegressionTests.test_after_trigger_cannot_erase_required_effects) ... 
+  test_after_trigger_cannot_erase_required_effects (test_regressions.VaultRegressionTests.test_after_trigger_cannot_erase_required_effects) (event="UPDATE ON accounts WHEN NEW.tenant = 'alpha' AND NEW.name = 'target'") ... FAIL
+  test_after_trigger_cannot_erase_required_effects (test_regressions.VaultRegressionTests.test_after_trigger_cannot_erase_required_effects) (event='INSERT ON transfers') ... FAIL
+  test_after_trigger_cannot_erase_required_effects (test_regressions.VaultRegressionTests.test_after_trigger_cannot_erase_required_effects) (event='INSERT ON audit') ... FAIL
+  test_after_trigger_cannot_erase_required_effects (test_regressions.VaultRegressionTests.test_after_trigger_cannot_erase_required_effects) (event='INSERT ON audit') ... FAIL
+test_audit_exception_rolls_back_and_retry_survives_reopening (test_regressions.VaultRegressionTests.test_audit_exception_rolls_back_and_retry_survives_reopening) ... ok
+test_balance_is_scoped_to_tenant (test_regressions.VaultRegressionTests.test_balance_is_scoped_to_tenant) ... ok
+test_boolean_amount_is_rejected_without_writes (test_regressions.VaultRegressionTests.test_boolean_amount_is_rejected_without_writes) ... ok
+test_cli_deep_json_is_a_generic_error (test_regressions.VaultRegressionTests.test_cli_deep_json_is_a_generic_error) ... ok
+test_cli_errors_are_generic_and_leave_no_writes (test_regressions.VaultRegressionTests.test_cli_errors_are_generic_and_leave_no_writes) ... ok
+test_cli_integrated_transfer_replay_conflict_and_tenant_isolation (test_regressions.VaultRegressionTests.test_cli_integrated_transfer_replay_conflict_and_tenant_isolation) ... ok
+test_cli_storage_failure_is_generic_and_atomic (test_regressions.VaultRegressionTests.test_cli_storage_failure_is_generic_and_atomic) ... ok
+test_concurrent_conflicting_payloads_have_one_winner (test_regressions.VaultRegressionTests.test_concurrent_conflicting_payloads_have_one_winner) ... ok
+test_concurrent_distinct_keys_never_overspend_or_lose_credits (test_regressions.VaultRegressionTests.test_concurrent_distinct_keys_never_overspend_or_lose_credits) ... ok
+test_concurrent_duplicate_requests_execute_once (test_regressions.VaultRegressionTests.test_concurrent_duplicate_requests_execute_once) ... ok
+test_concurrent_senders_do_not_lose_shared_target_credits (test_regressions.VaultRegressionTests.test_concurrent_senders_do_not_lose_shared_target_credits) ... ok
+test_credit_overflow_rolls_back_instead_of_storing_a_float (test_regressions.VaultRegressionTests.test_credit_overflow_rolls_back_instead_of_storing_a_float) ... ok
+test_key_conflicts_reject_every_changed_payload_without_writes (test_regressions.VaultRegressionTests.test_key_conflicts_reject_every_changed_payload_without_writes) ... ok
+test_malformed_fields_are_rejected_without_writes (test_regressions.VaultRegressionTests.test_malformed_fields_are_rejected_without_writes) ... ok
+test_missing_and_inaccessible_accounts_have_same_error (test_regressions.VaultRegressionTests.test_missing_and_inaccessible_accounts_have_same_error) ... ok
+test_receipts_and_same_keys_are_isolated_by_tenant (test_regressions.VaultRegressionTests.test_receipts_and_same_keys_are_isolated_by_tenant) ... ok
+test_replay_survives_reopening_and_init_preserves_rows (test_regressions.VaultRegressionTests.test_replay_survives_reopening_and_init_preserves_rows) ... ok
+test_self_transfer_and_insufficient_funds_leave_no_effects (test_regressions.VaultRegressionTests.test_self_transfer_and_insufficient_funds_leave_no_effects) ... ok
+test_silently_ignored_writes_fail_atomically (test_regressions.VaultRegressionTests.test_silently_ignored_writes_fail_atomically) ... ok
+test_sql_metacharacters_and_unicode_are_literal_identifiers (test_regressions.VaultRegressionTests.test_sql_metacharacters_and_unicode_are_literal_identifiers) ... ok
+test_transfer_changes_only_its_tenant_and_records_all_effects (test_regressions.VaultRegressionTests.test_transfer_changes_only_its_tenant_and_records_all_effects) ... ok
+
+======================================================================
+FAIL: test_after_trigger_cannot_erase_required_effects (test_regressions.VaultRegressionTests.test_after_trigger_cannot_erase_required_effects) (event="UPDATE ON accounts WHEN NEW.tenant = 'alpha' AND NEW.name = 'target'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-n4pjrf1a/test_regressions.py", line 287, in test_after_trigger_cannot_erase_required_effects
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_after_trigger_cannot_erase_required_effects (test_regressions.VaultRegressionTests.test_after_trigger_cannot_erase_required_effects) (event='INSERT ON transfers')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-n4pjrf1a/test_regressions.py", line 287, in test_after_trigger_cannot_erase_required_effects
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_after_trigger_cannot_erase_required_effects (test_regressions.VaultRegressionTests.test_after_trigger_cannot_erase_required_effects) (event='INSERT ON audit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-n4pjrf1a/test_regressions.py", line 287, in test_after_trigger_cannot_erase_required_effects
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_after_trigger_cannot_erase_required_effects (test_regressions.VaultRegressionTests.test_after_trigger_cannot_erase_required_effects) (event='INSERT ON audit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-n4pjrf1a/test_regressions.py", line 287, in test_after_trigger_cannot_erase_required_effects
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+----------------------------------------------------------------------
+Ran 23 tests in 1.011s
+
+FAILED (failures=4)

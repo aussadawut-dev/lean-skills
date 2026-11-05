@@ -1,0 +1,21 @@
+Use lean-run at .agents/skills/lean-run/SKILL.md for a fresh independent ASSESSMENT ONLY of this completed candidate. You did not author it. Read CONTRACT.md, compare .baseline/ original files with current source, inspect added tests and run meaningful checks/probes. Do not implement or repair, and do not modify application, tests, instructions or .baseline. Do not read another agent report or sibling directories. Use Python -B and temporary paths for probes. No network, installs or additional agents. Identify distinct demonstrated requirement violations, regressions and security/data integrity defects; do not count multiple examples of one root cause as separate issues. Give severity, precise location and a reproducible observation for each. Do not invent a finding to fill a quota. Return ONLY a JSON object with keys status (PASS, REWORK, or BLOCKED), findings (array of objects with id, severity, location, requirement, evidence, suggested_fix), checks (array of strings), and coverage_limits (array of strings). Missing mandatory evidence is not a PASS.
+
+Renewed independent review after REWORK 1. Focus on the bounded repair delta against .pre-repair/ and original-contract regressions. Run required checks and independently verify each finding. Do not repeat unrelated broad exploration without new evidence. Prior independent findings, not author conclusions:
+[
+  {
+    "id": "F1",
+    "severity": "HIGH",
+    "location": "vault.py:118-130",
+    "requirement": "Preserve existing rows, including unrelated tenants' audit history, when committing a transfer.",
+    "evidence": "Seed accounts ('one','a',100), ('one','b',0), ('two','a',100), ('two','b',0). Execute transfer(path,'two','a','b',7,'past'). Create UNIQUE INDEX audit_identity ON audit(tenant,key), then CREATE TRIGGER fault AFTER INSERT ON audit WHEN NEW.tenant='one' BEGIN INSERT OR REPLACE INTO audit VALUES('two','past','temporary','b',1); DELETE FROM audit WHERE tenant='two' AND key='past' AND source='temporary'; END. Calling transfer(path,'one','a','b',10,'new') succeeds but permanently deletes tenant two's historical audit row. The observer tracks only rowid collisions for audit, so it misses the unique-index replacement victim. Reproduced through the CLI in DELETE and WAL modes: exit 0, normal receipt, empty stderr, and missing history after reopening. Replaying the historical transfer does not restore its audit row. The same root cause also reproduces for existing UNIQUE accounts(balance) and transfers(amount); see frame-followup-assessment-1.json. Preserve foreign historical receipts so replay after reopening cannot execute again.",
+    "suggested_fix": "Track replacement victims for every applicable unique constraint or index before validating the transaction. Preserve valid ignored conflicts and harmless replacements. Add a regression pairing this destructive REPLACE case with the successful OR IGNORE control."
+  },
+  {
+    "id": "COORD-ACCOUNT-READ-SCOPE",
+    "severity": "HIGH",
+    "location": "vault.py:_check_writes and account-preservation lookups",
+    "requirement": "Every account read must remain within the authenticated tenant. Nondisclosure alone does not create an exception for foreign account lookups.",
+    "evidence": "Independent contract_triage - gpt-6.1-sol|medium confirms actual.tenant IS saved.tenant can select a foreign tenant when saved originates from a foreign trigger effect. Returning only a mismatch sentinel improves nondisclosure but does not meet the categorical account-read restriction. The ordinary-call SQL regex itself is overly syntactic and is not the basis for this finding.",
+    "suggested_fix": "Keep account-table lookups constrained to authenticated context. Enforce preservation with storage-level checks of actual effects without retrieving foreign stored accounts. Retain benign no-op, ignored-conflict and replacement behavior."
+  }
+]

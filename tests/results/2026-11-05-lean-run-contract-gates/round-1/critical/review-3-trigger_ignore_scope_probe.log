@@ -1,0 +1,30 @@
+{
+  "source_sha256": "ba081f7353068816258b220396e0123feb48c00c21c86794935ce9b8a4ac8a8e",
+  "cases": [
+    {
+      "interface": "API",
+      "should_fail": true,
+      "error": null,
+      "passed": false
+    },
+    {
+      "interface": "CLI",
+      "should_fail": true,
+      "error": null,
+      "passed": false
+    },
+    {
+      "interface": "API",
+      "should_fail": false,
+      "error": null,
+      "passed": true
+    },
+    {
+      "interface": "CLI",
+      "should_fail": false,
+      "error": null,
+      "passed": true
+    }
+  ],
+  "failed_cases": 2
+}

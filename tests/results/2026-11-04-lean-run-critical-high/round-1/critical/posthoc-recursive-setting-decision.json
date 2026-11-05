@@ -1,0 +1,7 @@
+{
+  "status": "FAILED",
+  "reason": "New independent finding was reproduced on the final artifact after closure. Both authorized repairs were already used.",
+  "prior_closure": "result-before-recursive-setting-followup.json",
+  "probe": "assessment-3-recursive_setting_probe.json",
+  "discovered_in": "round-2/critical/review-2/final.txt"
+}

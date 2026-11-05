@@ -1,0 +1,15 @@
+{
+  "round-1/high": {
+    "non_skill_initial_files_identical": true,
+    "implementation_prompt_identical": true,
+    "grader_identical": true
+  },
+  "round-1/critical": {
+    "non_skill_initial_files_identical": false,
+    "implementation_prompt_identical": true,
+    "grader_identical": true,
+    "declared_contract_change_only": true,
+    "baseline_contract_sha256": "6e6d6ee1f769db8160e528e218d46a0018a90655e775742a073d61df2aebee2b",
+    "candidate_contract_sha256": "01b246351eccf8b3061a28f6867f95d9afd7b42954835c995e4f740d7db1591c"
+  }
+}

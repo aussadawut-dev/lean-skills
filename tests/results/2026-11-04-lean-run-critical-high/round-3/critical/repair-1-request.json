@@ -1,0 +1,12 @@
+{
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "HIGH",
+      "location": "vault.py:42-45 and vault.py:73-82",
+      "requirement": "Successful transfers must preserve existing rows and produce the exact debit, credit, receipt and one audit row.",
+      "evidence": "The rowcount checks miss trigger effects. Reproduction: initialize a temporary database with accounts ('red','a',100), ('red','b',20). Install: CREATE TRIGGER undo_credit AFTER INSERT ON audit BEGIN UPDATE accounts SET balance=balance-NEW.amount WHERE tenant=NEW.tenant AND name=NEW.target; END; Call vault.transfer(path,'red','a','b',10,'new'). It returns success, but reopening shows balances 90 and 20, with the receipt and audit committed: the credit was lost. Additional probes demonstrated duplicate audit rows, deleted historical rows and an INSERT OR REPLACE trigger deleting another tenant's account through a UNIQUE-index collision. These share the same unchecked-trigger-effects root cause.",
+      "suggested_fix": "Verify the complete logical changes before committing, including trigger effects and implicit replacement deletions. Roll back unexpected changes while preserving existing triggers and allowing harmless ignored conflicts. Implement one storage-local actual-effect mechanism and check it against the demonstrated cancel-credit/REPLACE cases and a valid ignored conflict before broad tests. Preserve tenant-scoped reads, durable receipt replay, no-ops, visible counters, SQLite storage types and database encodings. If instrumenting existing triggers, prove VT-before-DELETE and token-boundary BOM, compound VALUES/WITH bodies, and IGNORE across rows. Preserve the original recursive_triggers value when an existing audit guard reads it through pragma_recursive_triggers. Check an aborting guard and a harmless control. Do not toggle the pragma during statement evaluation. Keep existing triggers and tables and check implicit versus explicit DELETE. Reuse the passing regression coverage."
+    }
+  ]
+}

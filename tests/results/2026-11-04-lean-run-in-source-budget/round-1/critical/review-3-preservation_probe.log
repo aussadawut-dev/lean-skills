@@ -1,0 +1,190 @@
+{
+  "workspace": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-in-source-budget-51g2mqwy/cohort/round-1/critical/workspace",
+  "source_sha256": "7769ba98c4095231b7b5988757dff87cdc29e279ee9e8cd3009467f99bc2e29f",
+  "issue_count": 0,
+  "failed_cases": 0,
+  "cases": [
+    {
+      "case": "old_receipt_deleted",
+      "pass": true,
+      "exception": "IntegrityError",
+      "receipt": null,
+      "before": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            100
+          ],
+          [
+            "a",
+            "target",
+            0
+          ],
+          [
+            "b",
+            "source",
+            75
+          ],
+          [
+            "b",
+            "target",
+            2
+          ]
+        ],
+        "transfers": [
+          [
+            "b",
+            "old",
+            "source",
+            "target",
+            2
+          ]
+        ],
+        "audit": [
+          [
+            "b",
+            "old",
+            "source",
+            "target",
+            2
+          ]
+        ]
+      },
+      "after": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            100
+          ],
+          [
+            "a",
+            "target",
+            0
+          ],
+          [
+            "b",
+            "source",
+            75
+          ],
+          [
+            "b",
+            "target",
+            2
+          ]
+        ],
+        "transfers": [
+          [
+            "b",
+            "old",
+            "source",
+            "target",
+            2
+          ]
+        ],
+        "audit": [
+          [
+            "b",
+            "old",
+            "source",
+            "target",
+            2
+          ]
+        ]
+      },
+      "trigger_preserved": true
+    },
+    {
+      "case": "unrelated_balance_changed",
+      "pass": true,
+      "exception": "IntegrityError",
+      "receipt": null,
+      "before": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            100
+          ],
+          [
+            "a",
+            "target",
+            0
+          ],
+          [
+            "b",
+            "source",
+            75
+          ],
+          [
+            "b",
+            "target",
+            2
+          ]
+        ],
+        "transfers": [
+          [
+            "b",
+            "old",
+            "source",
+            "target",
+            2
+          ]
+        ],
+        "audit": [
+          [
+            "b",
+            "old",
+            "source",
+            "target",
+            2
+          ]
+        ]
+      },
+      "after": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            100
+          ],
+          [
+            "a",
+            "target",
+            0
+          ],
+          [
+            "b",
+            "source",
+            75
+          ],
+          [
+            "b",
+            "target",
+            2
+          ]
+        ],
+        "transfers": [
+          [
+            "b",
+            "old",
+            "source",
+            "target",
+            2
+          ]
+        ],
+        "audit": [
+          [
+            "b",
+            "old",
+            "source",
+            "target",
+            2
+          ]
+        ]
+      },
+      "trigger_preserved": true
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "policy": "critical row-level security, decided by the user on 2026-11-04; see README.md",
+  "level": "critical",
+  "meaning": "Each listed entry is an exact failing unittest header (test, class path and subtest parameters, without FAIL/ERROR) whose expectation depends on other tenants' rows under the old policy. A suite whose failures are all listed is reported as policy-superseded, separately and never as passed. Any unlisted failure, import error or unparsed failure still blocks.",
+  "historical_tests": {
+    "2026-11-04-lean-run-critical-high-pilot/round-1": [
+      "test_counters_and_last_insert_state_match_native_execution (test_integrity.WriteIntegrityRegressions.test_counters_and_last_insert_state_match_native_execution)",
+      "test_final_effects_history_multiplicity_and_storage_classes (test_integrity.WriteIntegrityRegressions.test_final_effects_history_multiplicity_and_storage_classes)",
+      "test_final_effects_history_multiplicity_and_storage_classes (test_integrity.WriteIntegrityRegressions.test_final_effects_history_multiplicity_and_storage_classes) (body=\"DELETE FROM audit WHERE tenant='blue';\")",
+      "test_final_effects_history_multiplicity_and_storage_classes (test_integrity.WriteIntegrityRegressions.test_final_effects_history_multiplicity_and_storage_classes) (body=\"DELETE FROM transfers WHERE tenant='blue';\")",
+      "test_final_effects_history_multiplicity_and_storage_classes (test_integrity.WriteIntegrityRegressions.test_final_effects_history_multiplicity_and_storage_classes) (body=\"UPDATE accounts SET balance=78 WHERE tenant='blue' AND name='private';\")",
+      "test_final_effects_history_multiplicity_and_storage_classes (test_integrity.WriteIntegrityRegressions.test_final_effects_history_multiplicity_and_storage_classes) (body=\"UPDATE accounts SET name=CAST(name AS BLOB) WHERE tenant='blue' AND name='private';\")",
+      "test_final_effects_history_multiplicity_and_storage_classes (test_integrity.WriteIntegrityRegressions.test_final_effects_history_multiplicity_and_storage_classes) (body=\"UPDATE audit SET amount=2 WHERE tenant='blue';\")",
+      "test_final_effects_history_multiplicity_and_storage_classes (test_integrity.WriteIntegrityRegressions.test_final_effects_history_multiplicity_and_storage_classes) (body=\"UPDATE audit SET source=CAST(source AS BLOB) WHERE tenant='blue';\")",
+      "test_final_effects_history_multiplicity_and_storage_classes (test_integrity.WriteIntegrityRegressions.test_final_effects_history_multiplicity_and_storage_classes) (body=\"UPDATE transfers SET target=CAST(target AS BLOB) WHERE tenant='blue';\")",
+      "test_ignored_conflicts_row_moves_and_identical_replacements (test_integrity.WriteIntegrityRegressions.test_ignored_conflicts_row_moves_and_identical_replacements)",
+      "test_ignored_conflicts_row_moves_and_identical_replacements (test_integrity.WriteIntegrityRegressions.test_ignored_conflicts_row_moves_and_identical_replacements) (body=\"DELETE FROM audit WHERE tenant='blue'; INSERT INTO audit VALUES ('blue','previous','private','other',1);\")",
+      "test_ignored_conflicts_row_moves_and_identical_replacements (test_integrity.WriteIntegrityRegressions.test_ignored_conflicts_row_moves_and_identical_replacements) (body=\"INSERT OR IGNORE INTO accounts VALUES ('blue','private',999);\")",
+      "test_ignored_conflicts_row_moves_and_identical_replacements (test_integrity.WriteIntegrityRegressions.test_ignored_conflicts_row_moves_and_identical_replacements) (body=\"INSERT OR REPLACE INTO accounts VALUES ('blue','private',77);\")",
+      "test_ignored_conflicts_row_moves_and_identical_replacements (test_integrity.WriteIntegrityRegressions.test_ignored_conflicts_row_moves_and_identical_replacements) (body=\"INSERT OR REPLACE INTO transfers VALUES ('blue','previous','private','other',1);\")",
+      "test_multirow_ignore_does_not_suppress_later_guard (test_integrity.WriteIntegrityRegressions.test_multirow_ignore_does_not_suppress_later_guard) (timing='AFTER', abort=False)",
+      "test_multirow_ignore_does_not_suppress_later_guard (test_integrity.WriteIntegrityRegressions.test_multirow_ignore_does_not_suppress_later_guard) (timing='AFTER', abort=True)",
+      "test_multirow_ignore_does_not_suppress_later_guard (test_integrity.WriteIntegrityRegressions.test_multirow_ignore_does_not_suppress_later_guard) (timing='BEFORE', abort=False)",
+      "test_multirow_ignore_does_not_suppress_later_guard (test_integrity.WriteIntegrityRegressions.test_multirow_ignore_does_not_suppress_later_guard) (timing='BEFORE', abort=True)",
+      "test_replace_victims_from_unique_expression_and_partial_indexes (test_integrity.WriteIntegrityRegressions.test_replace_victims_from_unique_expression_and_partial_indexes)",
+      "test_replace_victims_from_unique_expression_and_partial_indexes (test_integrity.WriteIntegrityRegressions.test_replace_victims_from_unique_expression_and_partial_indexes) (index=\"CREATE UNIQUE INDEX extra_unique ON accounts(balance) WHERE tenant='blue';\", mutation=\"INSERT OR REPLACE INTO accounts VALUES ('blue','intruder',77); DELETE FROM accounts WHERE name='intruder';\")",
+      "test_replace_victims_from_unique_expression_and_partial_indexes (test_integrity.WriteIntegrityRegressions.test_replace_victims_from_unique_expression_and_partial_indexes) (index=\"CREATE UNIQUE INDEX extra_unique ON accounts(balance) WHERE tenant='blue';\", mutation=\"UPDATE OR REPLACE accounts SET balance=77 WHERE tenant='blue' AND name='other'; UPDATE accounts SET balance=88 WHERE tenant='blue' AND name='other';\")",
+      "test_replace_victims_from_unique_expression_and_partial_indexes (test_integrity.WriteIntegrityRegressions.test_replace_victims_from_unique_expression_and_partial_indexes) (index='CREATE UNIQUE INDEX extra_unique ON accounts(abs(balance));', mutation=\"INSERT OR REPLACE INTO accounts VALUES ('blue','intruder',77); DELETE FROM accounts WHERE name='intruder';\")",
+      "test_replace_victims_from_unique_expression_and_partial_indexes (test_integrity.WriteIntegrityRegressions.test_replace_victims_from_unique_expression_and_partial_indexes) (index='CREATE UNIQUE INDEX extra_unique ON accounts(abs(balance));', mutation=\"UPDATE OR REPLACE accounts SET balance=77 WHERE tenant='blue' AND name='other'; UPDATE accounts SET balance=88 WHERE tenant='blue' AND name='other';\")",
+      "test_replace_victims_from_unique_expression_and_partial_indexes (test_integrity.WriteIntegrityRegressions.test_replace_victims_from_unique_expression_and_partial_indexes) (index='CREATE UNIQUE INDEX extra_unique ON accounts(balance);', mutation=\"INSERT OR REPLACE INTO accounts VALUES ('blue','intruder',77); DELETE FROM accounts WHERE name='intruder';\")",
+      "test_replace_victims_from_unique_expression_and_partial_indexes (test_integrity.WriteIntegrityRegressions.test_replace_victims_from_unique_expression_and_partial_indexes) (index='CREATE UNIQUE INDEX extra_unique ON accounts(balance);', mutation=\"UPDATE OR REPLACE accounts SET balance=77 WHERE tenant='blue' AND name='other'; UPDATE accounts SET balance=88 WHERE tenant='blue' AND name='other';\")",
+      "test_stale_old_images_reconcile_latest_slot_and_control (test_integrity.WriteIntegrityRegressions.test_stale_old_images_reconcile_latest_slot_and_control)",
+      "test_user_delete_triggers_do_not_start_firing_for_replace (test_integrity.WriteIntegrityRegressions.test_user_delete_triggers_do_not_start_firing_for_replace)"
+    ],
+    "2026-11-04-lean-run-critical-high/round-1": [
+      "test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='api', encoding='UTF-16be')",
+      "test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='api', encoding='UTF-16le')",
+      "test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='api', encoding='UTF-8')",
+      "test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='cli', encoding='UTF-16be')",
+      "test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='cli', encoding='UTF-16le')",
+      "test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='cli', encoding='UTF-8')",
+      "test_foreign_balance_change_is_rejected (test_repair.RepairTests.test_foreign_balance_change_is_rejected)",
+      "test_implicit_replace_delete_keeps_native_delete_trigger_behavior (test_repair.RepairTests.test_implicit_replace_delete_keeps_native_delete_trigger_behavior)",
+      "test_noops_ignored_conflicts_and_row_moves_preserve_raw_foreign_data (test_repair.RepairTests.test_noops_ignored_conflicts_and_row_moves_preserve_raw_foreign_data)",
+      "test_recursive_noop_and_after_ignore_keep_native_behavior (test_repair.RepairTests.test_recursive_noop_and_after_ignore_keep_native_behavior)",
+      "test_storage_class_only_change_is_rejected (test_repair.RepairTests.test_storage_class_only_change_is_rejected)"
+    ],
+    "2026-11-04-lean-run-critical-high/round-2": [
+      "test_extra_audit_wrong_receipt_and_erased_history_roll_back (test_effects.EffectsTests.test_extra_audit_wrong_receipt_and_erased_history_roll_back) (name='history')",
+      "test_pragma_reads_retain_replace_effect_detection (test_effects.EffectsTests.test_pragma_reads_retain_replace_effect_detection) (mode='api', value=777)",
+      "test_pragma_reads_retain_replace_effect_detection (test_effects.EffectsTests.test_pragma_reads_retain_replace_effect_detection) (mode='cli', value=777)",
+      "test_replace_is_rejected_but_ignored_conflict_and_noop_are_valid (test_effects.EffectsTests.test_replace_is_rejected_but_ignored_conflict_and_noop_are_valid) (operation=\"INSERT OR IGNORE INTO accounts VALUES ('blue','private',0)\")",
+      "test_rowid_moves_and_delete_reinsert_preserve_logical_rows (test_effects.EffectsTests.test_rowid_moves_and_delete_reinsert_preserve_logical_rows)",
+      "test_storage_classes_legacy_text_and_database_encoding (test_effects.EffectsTests.test_storage_classes_legacy_text_and_database_encoding) (encoding='UTF-16be', change=True)",
+      "test_storage_classes_legacy_text_and_database_encoding (test_effects.EffectsTests.test_storage_classes_legacy_text_and_database_encoding) (encoding='UTF-16le', change=True)",
+      "test_storage_classes_legacy_text_and_database_encoding (test_effects.EffectsTests.test_storage_classes_legacy_text_and_database_encoding) (encoding='UTF-8', change=True)",
+      "test_unique_index_replace_victims_are_observed_in_each_table (test_effects.EffectsTests.test_unique_index_replace_victims_are_observed_in_each_table) (table='accounts', conflict='REPLACE')",
+      "test_unique_index_replace_victims_are_observed_in_each_table (test_effects.EffectsTests.test_unique_index_replace_victims_are_observed_in_each_table) (table='audit', conflict='REPLACE')",
+      "test_unique_index_replace_victims_are_observed_in_each_table (test_effects.EffectsTests.test_unique_index_replace_victims_are_observed_in_each_table) (table='transfers', conflict='REPLACE')"
+    ],
+    "2026-11-04-lean-run-critical-high/round-3": [
+      "test_changes_total_changes_and_last_insert_rowid_match_native (test_trigger_effects.TriggerEffectTests.test_changes_total_changes_and_last_insert_rowid_match_native)",
+      "test_duplicate_audit_and_removed_history_are_rejected (test_trigger_effects.TriggerEffectTests.test_duplicate_audit_and_removed_history_are_rejected) (body=\"DELETE FROM accounts WHERE tenant='blue';\")",
+      "test_duplicate_audit_and_removed_history_are_rejected (test_trigger_effects.TriggerEffectTests.test_duplicate_audit_and_removed_history_are_rejected) (body=\"DELETE FROM audit WHERE tenant='blue';\")",
+      "test_duplicate_audit_and_removed_history_are_rejected (test_trigger_effects.TriggerEffectTests.test_duplicate_audit_and_removed_history_are_rejected) (body=\"DELETE FROM transfers WHERE tenant='blue';\")",
+      "test_ignored_conflict_is_a_valid_transfer (test_trigger_effects.TriggerEffectTests.test_ignored_conflict_is_a_valid_transfer)",
+      "test_noops_row_moves_and_restored_duplicate_history_are_allowed (test_trigger_effects.TriggerEffectTests.test_noops_row_moves_and_restored_duplicate_history_are_allowed)",
+      "test_original_enabled_recursion_is_preserved (test_trigger_effects.TriggerEffectTests.test_original_enabled_recursion_is_preserved)",
+      "test_replace_victim_is_observed_even_when_insert_is_undone (test_trigger_effects.TriggerEffectTests.test_replace_victim_is_observed_even_when_insert_is_undone)",
+      "test_replace_victims_for_rowid_and_expression_unique_indexes (test_trigger_effects.TriggerEffectTests.test_replace_victims_for_rowid_and_expression_unique_indexes) (index='')",
+      "test_replace_victims_for_rowid_and_expression_unique_indexes (test_trigger_effects.TriggerEffectTests.test_replace_victims_for_rowid_and_expression_unique_indexes) (index='CREATE UNIQUE INDEX expression_identity ON accounts(lower(name));')",
+      "test_replace_victims_for_rowid_and_expression_unique_indexes (test_trigger_effects.TriggerEffectTests.test_replace_victims_for_rowid_and_expression_unique_indexes) (index='CREATE UNIQUE INDEX partial_balance ON accounts(balance) WHERE balance>50;')",
+      "test_type_only_history_changes_are_rejected (test_trigger_effects.TriggerEffectTests.test_type_only_history_changes_are_rejected) (change='amount=CAST(amount AS REAL)')",
+      "test_type_only_history_changes_are_rejected (test_trigger_effects.TriggerEffectTests.test_type_only_history_changes_are_rejected) (change='key=CAST(key AS BLOB)')",
+      "test_update_replace_victim_cannot_hide_behind_restored_update (test_trigger_effects.TriggerEffectTests.test_update_replace_victim_cannot_hide_behind_restored_update)",
+      "test_vt_and_boundary_bom_explicit_deletes_keep_native_guards (test_trigger_effects.TriggerEffectTests.test_vt_and_boundary_bom_explicit_deletes_keep_native_guards) (separator=\"'\\\\ufeff'\", timing='')",
+      "test_vt_and_boundary_bom_explicit_deletes_keep_native_guards (test_trigger_effects.TriggerEffectTests.test_vt_and_boundary_bom_explicit_deletes_keep_native_guards) (separator=\"'\\\\ufeff'\", timing='AFTER')",
+      "test_vt_and_boundary_bom_explicit_deletes_keep_native_guards (test_trigger_effects.TriggerEffectTests.test_vt_and_boundary_bom_explicit_deletes_keep_native_guards) (separator=\"'\\\\ufeff'\", timing='BEFORE')",
+      "test_vt_and_boundary_bom_explicit_deletes_keep_native_guards (test_trigger_effects.TriggerEffectTests.test_vt_and_boundary_bom_explicit_deletes_keep_native_guards) (separator=\"'\\\\x0b'\", timing='')",
+      "test_vt_and_boundary_bom_explicit_deletes_keep_native_guards (test_trigger_effects.TriggerEffectTests.test_vt_and_boundary_bom_explicit_deletes_keep_native_guards) (separator=\"'\\\\x0b'\", timing='AFTER')",
+      "test_vt_and_boundary_bom_explicit_deletes_keep_native_guards (test_trigger_effects.TriggerEffectTests.test_vt_and_boundary_bom_explicit_deletes_keep_native_guards) (separator=\"'\\\\x0b'\", timing='BEFORE')"
+    ],
+    "2026-11-04-lean-run-in-source-budget/round-1": [
+      "test_foreign_write_predicates_do_not_disclose_balances (test_repair.RepairTests.test_foreign_write_predicates_do_not_disclose_balances) (statement=\"INSERT INTO accounts VALUES('blue','private',0) ON CONFLICT(tenant,name) DO UPDATE SET balance=accounts.balance WHERE accounts.balance=77;\", foreign=77)",
+      "test_foreign_write_predicates_do_not_disclose_balances (test_repair.RepairTests.test_foreign_write_predicates_do_not_disclose_balances) (statement=\"INSERT INTO accounts VALUES('blue','private',0) ON CONFLICT(tenant,name) DO UPDATE SET balance=accounts.balance WHERE accounts.balance=77;\", foreign=78)",
+      "test_implicit_replacements_and_valid_controls (test_repair.RepairTests.test_implicit_replacements_and_valid_controls) (body=\"UPDATE OR REPLACE accounts SET balance=77 WHERE tenant='red' AND name='b'; UPDATE accounts SET balance=30 WHERE tenant='red' AND name='b';\")",
+      "test_stale_old_image_and_restored_control (test_repair.RepairTests.test_stale_old_image_and_restored_control) (final_change=True, encoding='UTF-16')",
+      "test_stale_old_image_and_restored_control (test_repair.RepairTests.test_stale_old_image_and_restored_control) (final_change=True, encoding='UTF-8')",
+      "test_trigger_effects_and_history_are_atomic (test_repair.RepairTests.test_trigger_effects_and_history_are_atomic) (body=\"UPDATE accounts SET balance=78 WHERE tenant='blue';\")"
+    ]
+  },
+  "probe_cases": {
+    "audit_followup_probe.py": [
+      "case=history_rewritten"
+    ],
+    "preservation_probe.py": [
+      "case=old_receipt_deleted",
+      "case=unrelated_balance_changed"
+    ],
+    "frame_followup_probe.py": [
+      "case=identical_account_replacement",
+      "case=identical_audit_replacement",
+      "case=identical_receipt_replacement",
+      "case=replacement_rowid_swap",
+      "case=unique_account_victim",
+      "case=unique_receipt_victim"
+    ],
+    "trigger_compatibility_probe.py": [
+      "case=unique_audit_replace/journal=DELETE/interface=API",
+      "case=unique_audit_replace/journal=DELETE/interface=CLI",
+      "case=unique_audit_replace/journal=WAL/interface=API",
+      "case=unique_audit_replace/journal=WAL/interface=CLI"
+    ],
+    "trigger_ignore_scope_probe.py": [
+      "interface=API/should_fail=True",
+      "interface=CLI/should_fail=True"
+    ],
+    "critical_final_findings_probe.py": [
+      "f1_foreign_corruption"
+    ]
+  }
+}

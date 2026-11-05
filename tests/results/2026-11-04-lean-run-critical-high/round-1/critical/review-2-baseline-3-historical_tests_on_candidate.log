@@ -1,0 +1,105 @@
+test_valid_transfer (test_public.PublicTests.test_valid_transfer) ... ok
+test_cli_malformed_inputs_and_dispatch_are_generic (test_regressions.CliRegressionTests.test_cli_malformed_inputs_and_dispatch_are_generic) ... ok
+test_cli_persistent_transfer_replay_failure_and_recovery_journey (test_regressions.CliRegressionTests.test_cli_persistent_transfer_replay_failure_and_recovery_journey) ... ok
+test_cli_storage_failure_does_not_disclose_details (test_regressions.CliRegressionTests.test_cli_storage_failure_does_not_disclose_details) ... ok
+test_audit_failures_rollback_all_effects_and_preserve_trigger (test_regressions.VaultRegressionTests.test_audit_failures_rollback_all_effects_and_preserve_trigger) ... ok
+test_benign_noops_and_internal_moves_preserve_logical_rows (test_regressions.VaultRegressionTests.test_benign_noops_and_internal_moves_preserve_logical_rows) ... ok
+test_concurrent_conflicting_payloads_have_one_winner (test_regressions.VaultRegressionTests.test_concurrent_conflicting_payloads_have_one_winner) ... ok
+test_concurrent_distinct_keys_cannot_overspend (test_regressions.VaultRegressionTests.test_concurrent_distinct_keys_cannot_overspend) ... ok
+test_concurrent_sources_do_not_lose_credits (test_regressions.VaultRegressionTests.test_concurrent_sources_do_not_lose_credits) ... ok
+test_concurrent_tenants_can_share_a_key (test_regressions.VaultRegressionTests.test_concurrent_tenants_can_share_a_key) ... ok
+test_corrupt_foreign_rows_and_cached_receipts_are_never_used (test_regressions.VaultRegressionTests.test_corrupt_foreign_rows_and_cached_receipts_are_never_used) ... ok
+test_credit_failure_rolls_back_the_debit (test_regressions.VaultRegressionTests.test_credit_failure_rolls_back_the_debit) ... ok
+test_exact_replay_and_conflicts_survive_reopening (test_regressions.VaultRegressionTests.test_exact_replay_and_conflicts_survive_reopening) ... ok
+test_explicit_delete_trigger_behavior_is_preserved (test_regressions.VaultRegressionTests.test_explicit_delete_trigger_behavior_is_preserved) ... ok
+test_extra_or_modified_receipts_and_audit_rows_are_rolled_back (test_regressions.VaultRegressionTests.test_extra_or_modified_receipts_and_audit_rows_are_rolled_back) ... ok
+test_ignored_trigger_steps_unwind_before_the_next_step (test_regressions.VaultRegressionTests.test_ignored_trigger_steps_unwind_before_the_next_step) ... ok
+test_initialization_and_transfer_preserve_history_and_schema (test_regressions.VaultRegressionTests.test_initialization_and_transfer_preserve_history_and_schema) ... ok
+test_insufficient_funds_and_full_balance_boundary (test_regressions.VaultRegressionTests.test_insufficient_funds_and_full_balance_boundary) ... ok
+test_keys_are_independent_between_tenants (test_regressions.VaultRegressionTests.test_keys_are_independent_between_tenants) ... ok
+test_malformed_amounts_and_self_transfers_do_not_write (test_regressions.VaultRegressionTests.test_malformed_amounts_and_self_transfers_do_not_write) ... ok
+test_malformed_identifiers_do_not_write (test_regressions.VaultRegressionTests.test_malformed_identifiers_do_not_write) ... ok
+test_missing_and_inaccessible_accounts_have_identical_errors (test_regressions.VaultRegressionTests.test_missing_and_inaccessible_accounts_have_identical_errors) ... ok
+test_nonempty_unicode_whitespace_and_sql_characters_are_literal (test_regressions.VaultRegressionTests.test_nonempty_unicode_whitespace_and_sql_characters_are_literal) ... ok
+test_original_nonrecursive_triggers_still_run_once (test_regressions.VaultRegressionTests.test_original_nonrecursive_triggers_still_run_once) ... ok
+test_reads_and_transfers_are_scoped_to_tenant (test_regressions.VaultRegressionTests.test_reads_and_transfers_are_scoped_to_tenant) ... ok
+test_receipt_and_audit_storage_conflicts_rollback (test_regressions.VaultRegressionTests.test_receipt_and_audit_storage_conflicts_rollback) ... ok
+test_replace_noop_preserves_original_delete_trigger_behavior (test_regressions.VaultRegressionTests.test_replace_noop_preserves_original_delete_trigger_behavior) ... ok
+test_replace_victim_and_ignored_conflict_are_distinguished (test_regressions.VaultRegressionTests.test_replace_victim_and_ignored_conflict_are_distinguished) ... ok
+test_replacements_by_primary_key_and_rowid_cannot_erase_foreign_accounts (test_regressions.VaultRegressionTests.test_replacements_by_primary_key_and_rowid_cannot_erase_foreign_accounts) ... ok
+test_silently_ignored_required_writes_are_rolled_back (test_regressions.VaultRegressionTests.test_silently_ignored_required_writes_are_rolled_back) ... ok
+test_simultaneous_duplicates_execute_once (test_regressions.VaultRegressionTests.test_simultaneous_duplicates_execute_once) ... ok
+test_trigger_sql_names_conditions_bodies_and_order_are_preserved (test_regressions.VaultRegressionTests.test_trigger_sql_names_conditions_bodies_and_order_are_preserved) ... ok
+test_unrepresentable_credit_does_not_lose_money (test_regressions.VaultRegressionTests.test_unrepresentable_credit_does_not_lose_money) ... ok
+test_cli_repair_and_durable_replay_journey (test_repair.RepairRegressionTests.test_cli_repair_and_durable_replay_journey) ... ok
+test_durable_receipt_precedes_endpoint_reads_but_not_validation (test_repair.RepairRegressionTests.test_durable_receipt_precedes_endpoint_reads_but_not_validation) ... 
+  test_durable_receipt_precedes_endpoint_reads_but_not_validation (test_repair.RepairRegressionTests.test_durable_receipt_precedes_endpoint_reads_but_not_validation) (endpoint='b') ... FAIL
+  test_durable_receipt_precedes_endpoint_reads_but_not_validation (test_repair.RepairRegressionTests.test_durable_receipt_precedes_endpoint_reads_but_not_validation) (endpoint='a') ... FAIL
+test_foreign_raw_storage_changes_are_rolled_back (test_repair.RepairRegressionTests.test_foreign_raw_storage_changes_are_rolled_back) ... ok
+test_foreign_text_noop_preserves_data_and_triggers (test_repair.RepairRegressionTests.test_foreign_text_noop_preserves_data_and_triggers) ... ok
+test_malformed_foreign_history_noops_preserve_rows (test_repair.RepairRegressionTests.test_malformed_foreign_history_noops_preserve_rows) ... ok
+test_observation_preserves_trigger_visible_total_changes (test_repair.RepairRegressionTests.test_observation_preserves_trigger_visible_total_changes) ... ok
+test_observation_uses_the_existing_database_text_encoding (test_repair.RepairRegressionTests.test_observation_uses_the_existing_database_text_encoding) ... 
+  test_observation_uses_the_existing_database_text_encoding (test_repair.RepairRegressionTests.test_observation_uses_the_existing_database_text_encoding) (encoding='UTF-16le') ... ERROR
+  test_observation_uses_the_existing_database_text_encoding (test_repair.RepairRegressionTests.test_observation_uses_the_existing_database_text_encoding) (encoding='UTF-16be') ... ERROR
+test_sqlite_identifier_characters_remain_identifiers (test_repair.RepairRegressionTests.test_sqlite_identifier_characters_remain_identifiers) ... ok
+test_sqlite_token_boundary_separators_are_accepted (test_repair.RepairRegressionTests.test_sqlite_token_boundary_separators_are_accepted) ... ok
+
+======================================================================
+ERROR: test_observation_uses_the_existing_database_text_encoding (test_repair.RepairRegressionTests.test_observation_uses_the_existing_database_text_encoding) (encoding='UTF-16le')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-p4myiohx/test_repair.py", line 120, in test_observation_uses_the_existing_database_text_encoding
+    self.assertEqual(vault.transfer(path, **request), request)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-p4myiohx/vault.py", line 294, in transfer
+    effects.verify(tenant, source, target, funds, destination, amount, key)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-p4myiohx/vault.py", line 231, in verify
+    raise sqlite3.IntegrityError('unexpected storage effects')
+sqlite3.IntegrityError: unexpected storage effects
+
+======================================================================
+ERROR: test_observation_uses_the_existing_database_text_encoding (test_repair.RepairRegressionTests.test_observation_uses_the_existing_database_text_encoding) (encoding='UTF-16be')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-p4myiohx/test_repair.py", line 120, in test_observation_uses_the_existing_database_text_encoding
+    self.assertEqual(vault.transfer(path, **request), request)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-p4myiohx/vault.py", line 294, in transfer
+    effects.verify(tenant, source, target, funds, destination, amount, key)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-p4myiohx/vault.py", line 231, in verify
+    raise sqlite3.IntegrityError('unexpected storage effects')
+sqlite3.IntegrityError: unexpected storage effects
+
+======================================================================
+FAIL: test_durable_receipt_precedes_endpoint_reads_but_not_validation (test_repair.RepairRegressionTests.test_durable_receipt_precedes_endpoint_reads_but_not_validation) (endpoint='b')
+----------------------------------------------------------------------
+ValueError: invalid request
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-p4myiohx/test_repair.py", line 163, in test_durable_receipt_precedes_endpoint_reads_but_not_validation
+    with self.assertRaisesRegex(ValueError, 'key conflict'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "key conflict" does not match "invalid request"
+
+======================================================================
+FAIL: test_durable_receipt_precedes_endpoint_reads_but_not_validation (test_repair.RepairRegressionTests.test_durable_receipt_precedes_endpoint_reads_but_not_validation) (endpoint='a')
+----------------------------------------------------------------------
+ValueError: invalid request
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-p4myiohx/test_repair.py", line 163, in test_durable_receipt_precedes_endpoint_reads_but_not_validation
+    with self.assertRaisesRegex(ValueError, 'key conflict'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "key conflict" does not match "invalid request"
+
+----------------------------------------------------------------------
+Ran 42 tests in 1.850s
+
+FAILED (failures=2, errors=2)

@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "findings": [],
+  "checks": [
+    "Read CONTRACT.md and lean-run instructions; compared current source with .baseline and .pre-repair; inspected added tests. Repair is confined to tokenizer whitespace handling and regression coverage.",
+    "python3 -B -m unittest discover -v: all 25 tests passed.",
+    "Independently reproduced R2-F1 on .pre-repair. Current code matches baseline success: balances 90/10, one receipt and one audit row.",
+    "Independent differential probes passed for Unicode whitespace identifiers, dollar names, vertical-tab separators, BOM boundaries and a keyword identifier.",
+    "API and CLI probes verified durable replay, explicit DELETE rejection, complete rollback and restoration of trigger definitions.",
+    "A Unicode conditional trigger preserved logically unchanged REPLACE operations; destructive REPLACE effects were rejected without changing stored rows.",
+    "Public total_changes() controls passed through API and CLI on baseline, pre-repair and current versions."
+  ],
+  "coverage_limits": [
+    "Verified locally using Python 3.14.3 and SQLite 3.50.4 with recursive triggers initially disabled.",
+    "Assessment focused on the bounded repair and contract regressions; SQLite grammar and alternate runtime versions were not exhaustively tested."
+  ]
+}

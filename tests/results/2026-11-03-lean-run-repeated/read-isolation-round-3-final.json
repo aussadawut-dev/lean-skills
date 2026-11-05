@@ -1,0 +1,17 @@
+{
+  "workspace": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace",
+  "source_sha256": "7e81367b3537b251825eb72ee94f7e389dc524dd1bb2d15489080ce853f4953c",
+  "issue_count": 0,
+  "failed_cases": 0,
+  "case": "foreign_malformed_text_isolated",
+  "pass": true,
+  "exception": null,
+  "receipt": {
+    "tenant": "alpha",
+    "key": "k",
+    "source": "a",
+    "target": "b",
+    "amount": 10
+  },
+  "other_tenant_unchanged": true
+}

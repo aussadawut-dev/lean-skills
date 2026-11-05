@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "baseline_files_verified": 462,
+  "trials_verified": 2,
+  "phase_count": 10,
+  "sequential_phases_verified": true,
+  "raw_usage_unknown_phases": [],
+  "controls": "Frozen tasks, prompts, graders, skill, probes, protected files and final source/review integrity. Raw events and launch records checked against elapsed and usage metrics, means and CSVs.",
+  "limit": "A control audit PASS does not imply benchmark quality PASS or complete telemetry.",
+  "regression_archive_files_verified": {
+    "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-in-source-budget": 462,
+    "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high-pilot": 414,
+    "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high": 1382
+  }
+}

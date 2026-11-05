@@ -1,0 +1,13 @@
+{
+  "status": "REWORK",
+  "reviewed": [
+    "independent finding",
+    "all 18 known probe reports",
+    "all three historical cross-regression logs"
+  ],
+  "remaining": [
+    "actual-effect observation and preservation",
+    "duplicate decoded JSON keys"
+  ],
+  "no_waivers": true
+}

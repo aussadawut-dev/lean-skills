@@ -1,0 +1,25 @@
+{
+  "status": "REWORK",
+  "findings": [
+    {
+      "id": "REVIEW-1",
+      "severity": "P1",
+      "location": "vault.py:45-56 (_contents), called at lines 97 and 116",
+      "requirement": "Every account read must remain within the authenticated tenant; receipt reads must also preserve tenant isolation.",
+      "evidence": "A traced public transfer with ordinary two-tenant data executes SELECT tenant, name, balance FROM accounts and SELECT tenant, key, source, target, amount FROM transfers twice without tenant predicates. An uninstrumented reproduction confirms a consequence: initialize alpha accounts a=100 and b=0, then execute INSERT INTO accounts VALUES ('beta',CAST(X'626574612d707269766174652d736563726574ff' AS TEXT),999). Calling transfer(path,'alpha','a','b',10,'k') succeeds with .pre-repair but now raises OperationalError containing the other tenant's text: \"Could not decode to UTF-8 column 'name' with text 'beta-private-secret�'\". The CLI rejects the otherwise valid transfer with exit 2. Rows remain unchanged.",
+      "suggested_fix": "Keep application account and receipt reads tenant-scoped. Enforce preservation through transaction-local checks of actual row changes without materializing other tenants' records. Retain rollback protection while allowing no-op and rowid-only trigger effects."
+    }
+  ],
+  "checks": [
+    "Read CONTRACT.md and lean-run; compared current source against .baseline and .pre-repair and inspected added tests.",
+    "TMPDIR=\"$PWD\" python3 -B -m unittest discover -v: all 24 tests passed on Python 3.14.3 / SQLite 3.50.4, including concurrency, replay, tenant isolation, CLI and failure atomicity coverage.",
+    "Independent public-interface probes verified eight destructive trigger cases covering all three prior findings: current code raises IntegrityError and preserves complete table contents, schema, triggers and historical replay after reopening.",
+    "Independent benign-trigger probes confirmed successful transfers and unchanged replay with rowid relocation and INSERT OR IGNORE into an existing target account.",
+    "Confirmed the new unscoped reads through SQLite tracing; reproduced the cross-tenant error independently without instrumentation through both API and CLI.",
+    "No application, test, instruction or baseline files changed; probes used temporary workspace paths."
+  ],
+  "coverage_limits": [
+    "Assessment focused on the bounded repair delta; unchanged behavior was covered by source comparison and the required suite.",
+    "The exception-disclosure reproduction uses malformed SQLite TEXT bytes. The unscoped reads were separately demonstrated with well-formed records."
+  ]
+}

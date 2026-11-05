@@ -1,0 +1,13 @@
+{
+  "direction": "candidate_tests_on_historical",
+  "raw_exit_code": 1,
+  "failed_assertions": 4,
+  "classification": "Noncontract message-wording assertion; no behavioral regression demonstrated.",
+  "evidence": {
+    "candidate_expectation": "literal word argument in stderr for wrong argument counts",
+    "historical_actual": "error: expected exactly one comma-separated integer list",
+    "contract": "useful error on stderr; no literal message text required",
+    "preserved_behavior": "Wrong argument counts exit 2, empty stdout, useful stderr, no traceback; original frozen checks and historical tests pass on candidate."
+  },
+  "action": "Keep raw failures unchanged; do not count four wording assertions as four application issues."
+}

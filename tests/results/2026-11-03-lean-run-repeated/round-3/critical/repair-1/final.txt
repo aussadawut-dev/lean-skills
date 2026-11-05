@@ -1,0 +1,7 @@
+Repaired [vault.py](/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/vault.py): final contents must match the authorized transfer exactly, or all effects roll back.
+
+- Reproduced all reported failure classes and added regressions.
+- Preserved benign triggers, historical data, replay and concurrency behavior.
+- Affected checks passed; `python3 -B -m unittest discover -v` passed all **24 tests**, including real API/CLI journeys.
+
+Task-wide REWORK remains **1**. Overall completion is **blocked pending the coordinator’s renewed independent review**.

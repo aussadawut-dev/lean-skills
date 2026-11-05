@@ -1,0 +1,8 @@
+F1 repaired in [ledger.py](/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-rls-baseline-JFmM3M/cohort/round-1/high/workspace/ledger.py:11) by copying constructor input into a built-in dictionary while preserving public dictionary identity thereafter.
+
+- Counter regressions failed before the fix and now pass.
+- `python3 -B -m unittest discover -v`: **23 tests passed**.
+- Public-interface flow passed rollback, retry, replay, ownership, and receipt-isolation checks.
+- Protected files unchanged. Task-wide REWORK: **1 → 2**.
+
+Overall acceptance is **BLOCKED pending renewed coordinator independent review**. [lean-run](/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-rls-baseline-JFmM3M/cohort/round-1/high/workspace/.agents/skills/lean-run/SKILL.md) requires: “HIGH needs a fresh independent reviewer.” That review has not occurred.

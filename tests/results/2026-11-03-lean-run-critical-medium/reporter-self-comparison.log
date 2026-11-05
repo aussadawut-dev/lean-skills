@@ -1,0 +1,6 @@
+test_repeated_self_comparison_keeps_failed_costs_and_has_zero_delta (test_benchmark_summary.SummaryTests.test_repeated_self_comparison_keeps_failed_costs_and_has_zero_delta) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.425s
+
+OK
