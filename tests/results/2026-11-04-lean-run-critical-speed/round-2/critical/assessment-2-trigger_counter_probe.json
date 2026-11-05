@@ -1,0 +1,191 @@
+{
+  "source_sha256": "8a33c94d5d5098a2df738c0cdfa575a5ec2f352cfe5b28fd076cd128c636e5ab",
+  "native_control": "PASS",
+  "cases": [
+    {
+      "mode": "DELETE",
+      "interface": "API",
+      "pass_": true,
+      "error": null,
+      "receipt": {
+        "tenant": "one",
+        "key": "counter",
+        "source": "a",
+        "target": "b",
+        "amount": 10
+      },
+      "balances": [
+        [
+          "one",
+          "a",
+          90
+        ],
+        [
+          "one",
+          "b",
+          10
+        ]
+      ],
+      "history": [
+        [
+          [
+            "one",
+            "counter",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        [
+          [
+            "one",
+            "counter",
+            "a",
+            "b",
+            10
+          ]
+        ]
+      ],
+      "schema_preserved": true
+    },
+    {
+      "mode": "DELETE",
+      "interface": "CLI",
+      "pass_": true,
+      "error": null,
+      "receipt": {
+        "tenant": "one",
+        "key": "counter",
+        "source": "a",
+        "target": "b",
+        "amount": 10
+      },
+      "balances": [
+        [
+          "one",
+          "a",
+          90
+        ],
+        [
+          "one",
+          "b",
+          10
+        ]
+      ],
+      "history": [
+        [
+          [
+            "one",
+            "counter",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        [
+          [
+            "one",
+            "counter",
+            "a",
+            "b",
+            10
+          ]
+        ]
+      ],
+      "schema_preserved": true
+    },
+    {
+      "mode": "WAL",
+      "interface": "API",
+      "pass_": true,
+      "error": null,
+      "receipt": {
+        "tenant": "one",
+        "key": "counter",
+        "source": "a",
+        "target": "b",
+        "amount": 10
+      },
+      "balances": [
+        [
+          "one",
+          "a",
+          90
+        ],
+        [
+          "one",
+          "b",
+          10
+        ]
+      ],
+      "history": [
+        [
+          [
+            "one",
+            "counter",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        [
+          [
+            "one",
+            "counter",
+            "a",
+            "b",
+            10
+          ]
+        ]
+      ],
+      "schema_preserved": true
+    },
+    {
+      "mode": "WAL",
+      "interface": "CLI",
+      "pass_": true,
+      "error": null,
+      "receipt": {
+        "tenant": "one",
+        "key": "counter",
+        "source": "a",
+        "target": "b",
+        "amount": 10
+      },
+      "balances": [
+        [
+          "one",
+          "a",
+          90
+        ],
+        [
+          "one",
+          "b",
+          10
+        ]
+      ],
+      "history": [
+        [
+          [
+            "one",
+            "counter",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        [
+          [
+            "one",
+            "counter",
+            "a",
+            "b",
+            10
+          ]
+        ]
+      ],
+      "schema_preserved": true
+    }
+  ],
+  "failed_cases": 0
+}

@@ -1,0 +1,30 @@
+Use lean-run at .agents/skills/lean-run/SKILL.md to continue the SAME critical task with a bounded repair. CONTRACT.md and scope are unchanged. Task-wide REWORK count is 1; do not reset it. Reproduce and repair the demonstrated findings below, add meaningful regression checks, run affected and required final checks, and exercise the public interface. Preserve existing behavior, data, triggers and unrelated work. No unrelated refactor, installs, network or extra agents. The coordinator supplies renewed independent review afterward; report it pending. 
+
+[
+  {
+    "id": "F1",
+    "severity": "HIGH",
+    "location": "vault.py:10-12, vault.py:75-89",
+    "requirement": "Debit, credit, receipt and exactly one audit row must commit together while preserving existing rows and tenant isolation. The lean-run write-integrity procedure requires verification of actual effects before commit.",
+    "evidence": "On a fresh temporary database, seed accounts ('alpha','source',100) and ('alpha','target',0). Install: CREATE TRIGGER erase_audit AFTER INSERT ON audit BEGIN DELETE FROM audit WHERE tenant=NEW.tenant AND key=NEW.key; END. Calling vault.transfer(path,'alpha','source','target',10,'new') returns success. Reopening shows balances 90/10 and a transfer receipt, but no audit row; exact replay still returns success. Additional probes demonstrated reversed credit, deleted foreign history and changed foreign balances. All share one cause: rowcount reports the outer statement's affected row without establishing the transaction's final effects.",
+    "suggested_fix": "Verify the transaction's actual logical effects: the exact debit, credit, receipt and single audit row, plus preservation of unrelated rows. Roll back on violations. Preserve existing triggers and detect their effects without loading foreign account data into application code.",
+    "additional_demonstrated_effects": [
+      "All SQL can succeed while an AFTER trigger reverses the credit, deletes/replaces a previous transfer receipt or audit row, inserts a duplicate audit, or changes an unrelated account. Current checks accept these. Preserve exact logical rows, multiplicities and SQLite storage classes, not only counts or numeric equality.",
+      "Implicit REPLACE deletes via extra UNIQUE indexes also escape current checks. Include expression/partial indexes and UPDATE OR REPLACE with an update later restored. Existing tests also require valid ignored conflicts, valid rowid moves, and identical-value replacements to succeed.",
+      "Latest remaining preservation reproduction: seed ('red','a',100),('red','b',20),('blue','private',77). CREATE TRIGGER early_restore BEFORE UPDATE ON accounts WHEN OLD.tenant='blue' AND OLD.name='private' AND OLD.balance=78 AND NEW.balance=77 BEGIN UPDATE accounts SET balance=77 WHERE tenant=OLD.tenant AND name=OLD.name; END; CREATE TRIGGER touch_foreign AFTER INSERT ON audit BEGIN UPDATE accounts SET balance=78 WHERE tenant='blue' AND name='private'; UPDATE accounts SET balance=77 WHERE tenant='blue' AND name='private'; UPDATE accounts SET balance=78 WHERE tenant='blue' AND name='private'; END; transfer(red,a,b,10,new) currently commits blue/private=78. Must reject/rollback. Removing final UPDATE is a native-valid restored-row control and must succeed. Same applies to BEFORE changes of the debit/credit followed by audit restoration: verify final endpoint values."
+    ],
+    "passing_behavior_to_preserve": [
+      "Existing read isolation, malformed foreign TEXT, UTF-8/UTF-16 databases, all valid ignored/no-op cases, exact trigger SQL and schema definitions, counters changes()/total_changes()/last_insert_rowid(), and nested RAISE(IGNORE) statement scope.",
+      "Native recursive_triggers default must remain what user triggers observe. Both aborting and harmless guards must retain their outcomes. In particular CREATE VIEW saved_mode AS SELECT recursive_triggers FROM 'pragma_recursive_triggers'(); with a BEFORE INSERT audit guard WHEN (SELECT recursive_triggers FROM saved_mode)=1 BEGIN SELECT RAISE(ABORT,'native guard'); END is accepted and transfer succeeds at native default 0. The opposite guard must still abort. Preserve literal strings; handle table-reference name resolution and restore exact SQL. These cases currently pass and cannot regress.",
+      "Legal trigger identifiers/grammar: keyword and Unicode names, conditional VALUES/WITH bodies, dollar identifiers, VT and token-boundary BOM separators versus NBSP and embedded BOM identifier characters."
+    ]
+  },
+  {
+    "id": "COORD-JSON-DUPLICATES",
+    "severity": "MEDIUM",
+    "location": "app.py:13",
+    "requirement": "Malformed CLI requests must be rejected without writes; preserve existing regression behavior.",
+    "evidence": "json.loads currently accepts duplicate decoded property names. Historical tests from all three rounds independently demonstrate success for duplicate tenant/amount/op keys, including amount and its Unicode-escaped spelling, with last-value selection and possible writes. Example {\"op\":\"transfer\",\"tenant\":\"one\",\"source\":\"a\",\"target\":\"b\",\"key\":\"k\",\"amount\":1,\"amount\":10}. Reject decoded duplicate keys with exit 2, generic JSON stderr, no stdout/writes.",
+    "suggested_fix": "Reject duplicate decoded object keys during JSON parsing; keep valid JSON objects unchanged."
+  }
+]

@@ -1,0 +1,7 @@
+Reproduced and repaired F2 in [vault.py](/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-critical-medium-20261103-j_yjguke/cohort/round-2/critical/workspace/vault.py:72). Trigger parsing now distinguishes keyword identifiers from body delimiters.
+
+- API and CLI regressions pass in DELETE and WAL modes, including trigger preservation, replay, and rollback.
+- Required `python3 -B -m unittest discover -v`: **26 tests passed**.
+- Task-wide REWORK remains **2**; final fix-only pass used.
+
+**BLOCKED pending renewed coordinator review.** [lean-run](/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-critical-medium-20261103-j_yjguke/cohort/round-2/critical/workspace/.agents/skills/lean-run/SKILL.md) requires “HIGH needs a fresh independent reviewer.” That review has not occurred.

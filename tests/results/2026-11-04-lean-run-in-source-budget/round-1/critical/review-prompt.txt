@@ -1,0 +1,39 @@
+Use lean-run at .agents/skills/lean-run/SKILL.md for a fresh independent ASSESSMENT ONLY of this completed candidate. You did not author it. Read CONTRACT.md, compare .baseline/ original files with current source, inspect added tests and run meaningful checks/probes. Do not implement or repair, and do not modify application, tests, instructions or .baseline. Do not read another agent report or sibling directories. Use Python -B and temporary paths for probes. No network, installs or additional agents. Identify distinct demonstrated requirement violations, regressions and security/data integrity defects; do not count multiple examples of one root cause as separate issues. Give severity, precise location and a reproducible observation for each. Do not invent a finding to fill a quota. Return ONLY a JSON object with keys status (PASS, REWORK, or BLOCKED), findings (array of objects with id, severity, location, requirement, evidence, suggested_fix), checks (array of strings), and coverage_limits (array of strings). Missing mandatory evidence is not a PASS.
+
+Renewed independent review after REWORK 2. Focus on the bounded repair delta against .pre-repair/ and original-contract regressions. Run required checks and independently verify each finding. Do not repeat unrelated broad exploration without new evidence. Prior independent findings, not author conclusions:
+[
+  {
+    "id": "F2",
+    "severity": "HIGH",
+    "location": "vault_guard.py:116-160",
+    "requirement": "Every account read, including reads executed by preserved triggers, must remain within the authenticated tenant.",
+    "evidence": "Seed accounts ('alpha','cash',100), ('alpha','savings',0), ('beta','private',777). Install: CREATE TRIGGER guard BEFORE INSERT ON audit BEGIN UPDATE accounts SET balance=balance WHERE tenant='beta' AND name='private' AND balance=777; SELECT CASE WHEN changes()=1 THEN RAISE(ABORT,'audit rule') END; END. Submit an alpha cash-to-savings transfer of 10 with key 'k' through app.py. It exits 2 with unchanged data. In an otherwise identical database containing beta/private=778, it exits 0 and commits. The UPDATE predicate reads foreign data and exposes its result despite generic error text. The original SELECT-based reproducer is fixed, but this read path remains unprotected.",
+    "suggested_fix": "Enforce tenant read isolation for UPDATE/DELETE predicates and expressions as well as SELECT sources. Verify that request outcomes cannot depend on foreign protected values.",
+    "passing_behavior_to_preserve": "All 20 mandatory probe scripts passed after repair-1. Preserve valid ignored/no-op, restored-row, rowid-relocation and trigger-counter controls; a blanket rejection of those passing behaviors is not a valid fix."
+  },
+  {
+    "id": "R1",
+    "severity": "MEDIUM",
+    "location": "vault_guard.py:160",
+    "requirement": "Preserve valid tenant-local trigger behavior while enforcing read isolation.",
+    "evidence": "Seed alpha/cash=100 and alpha/savings=0, with cash at rowid 1. Install: CREATE TRIGGER row_guard BEFORE INSERT ON audit WHEN (SELECT rowid FROM accounts WHERE tenant=NEW.tenant AND name=NEW.source)=999 BEGIN SELECT RAISE(ABORT,'row guard'); END. Calling transfer(path,'alpha','cash','savings',10,'k') succeeds using .pre-repair/vault.py. Current code instead raises OperationalError: no such column: rowid and rolls back. Qualified a.rowid produces the same regression. Replacing accounts with a SELECT * derived table removes its hidden rowid columns.",
+    "suggested_fix": "Preserve rowid, _rowid_ and oid references and their qualifiers during scoped rewriting without changing SELECT * column shape."
+  },
+  {
+    "id": "R2",
+    "severity": "MEDIUM",
+    "location": "vault_guard.py:236-242,308-313",
+    "requirement": "Preserve native recursive_triggers behavior and valid identical-value replacements.",
+    "evidence": "Seed alpha/cash=100 and alpha/savings=0. Define audit with its existing columns plus UNIQUE(tenant,key) ON CONFLICT REPLACE, and insert ('alpha','old','cash','savings',1). Install: CREATE TRIGGER stop_delete BEFORE DELETE ON audit BEGIN SELECT RAISE(ABORT,'native guard'); END; CREATE TRIGGER keep_old AFTER INSERT ON audit WHEN NEW.key='k' BEGIN INSERT INTO audit VALUES('alpha','old','cash','savings',1); END. At native recursive_triggers=0, .pre-repair/vault.py successfully transfers 10 with key 'k', preserving the old row. Current code incorrectly invokes stop_delete and raises IntegrityError: native guard. Changing the trigger statement to INSERT OR REPLACE succeeds in both versions. Replacement detection recognizes statement keywords but misses schema-level conflict policies.",
+    "suggested_fix": "Account for schema-level replacement policies when distinguishing implicit replacement deletions from explicit deletes, while retaining native user-trigger behavior.",
+    "additional_reproduction": "Same native/default-policy mismatch also reproduces on a trigger dependency table work(x PRIMARY KEY ON CONFLICT REPLACE) seeded 1, with a BEFORE DELETE guard and audit AFTER INSERT doing INSERT INTO work VALUES(1). Explicit INSERT OR REPLACE and explicit DELETE controls must retain native behavior."
+  },
+  {
+    "id": "COORD-QUALIFIED-PAREN-ALIAS",
+    "severity": "MEDIUM",
+    "location": "vault_guard.py SQL source/qualifier rewriting",
+    "requirement": "Preserve native schema-qualified alias resolution and passing historical regressions.",
+    "evidence": "Latest pilot historical suite test_recursive_mode_parentheses_cte_scopes_and_qualified_columns fails four cases on candidate with OperationalError: no such column: main.p.recursive_triggers. Query: SELECT main.p.recursive_triggers FROM (main.pragma_recursive_triggers() AS p). At native recursion 0 it returns 0. Test directly in a BEFORE INSERT audit WHEN guard, and through CREATE VIEW saved_mode AS <query>. WHEN scalar=0 must raise the native guard and roll back; WHEN scalar<>0 must permit the transfer. Both native and historical pilot controls succeed with the required outcome. Existing candidate fails both outcomes before the guard. Other source forms in the same historical suite pass.",
+    "suggested_fix": "Preserve schema-qualified aliases through parenthesized sources; retain CTE/object/literal shadowing, IN shorthand, NOT INDEXED, and native valid/aborting semantics. Verify API/CLI, reopened state and exact schema."
+  }
+]

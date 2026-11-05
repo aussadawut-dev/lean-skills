@@ -1,0 +1,15 @@
+test_valid (test_public.PublicTests.test_valid) ... ok
+test_arbitrary_size_sum_output_and_cancellation (test_regression.CommandLineTests.test_arbitrary_size_sum_output_and_cancellation) ... ok
+test_exactly_one_argument_is_required (test_regression.CommandLineTests.test_exactly_one_argument_is_required) ... ok
+test_invalid_lists_report_clean_errors (test_regression.CommandLineTests.test_invalid_lists_report_clean_errors) ... ok
+test_valid_lists_including_leading_negative (test_regression.CommandLineTests.test_valid_lists_including_leading_negative) ... ok
+test_empty_input_or_fields_are_rejected (test_regression.ParseNumbersTests.test_empty_input_or_fields_are_rejected) ... ok
+test_integers_beyond_python_decimal_conversion_limit (test_regression.ParseNumbersTests.test_integers_beyond_python_decimal_conversion_limit) ... ok
+test_invalid_integer_syntax_is_rejected_in_every_field (test_regression.ParseNumbersTests.test_invalid_integer_syntax_is_rejected_in_every_field) ... ok
+test_signed_values_order_zeros_and_whitespace (test_regression.ParseNumbersTests.test_signed_values_order_zeros_and_whitespace) ... ok
+test_unicode_numerals_and_signs_are_rejected (test_regression.ParseNumbersTests.test_unicode_numerals_and_signs_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.399s
+
+OK

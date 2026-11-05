@@ -1,0 +1,212 @@
+[
+  {
+    "round": 1,
+    "level": "medium",
+    "phase": "review",
+    "raw_events_sha256": "da802847985d7e1c9ad8a40ad0324e5617173d5b45797fcb219a65679863a2ef",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 1,
+    "level": "medium",
+    "phase": "implementation",
+    "raw_events_sha256": "f1509b0a023010d451134a0675b81500d60a23952e95844fc1952167e18a87be",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 1,
+    "level": "high",
+    "phase": "review",
+    "raw_events_sha256": "f8ff8180d280f2952e7ac1ea2c7547eabe880863d5e60c8229e2263ef04cf4ae",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 1,
+    "level": "high",
+    "phase": "implementation",
+    "raw_events_sha256": "7f197496505ba0cfbb9655a4b629e744ace28991e0052a368a7720dce5e4f96a",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 1,
+    "level": "critical",
+    "phase": "repair-1",
+    "raw_events_sha256": "d6e29a2bc369edb8a2a78f9dff8ca5e9ce2ef903323a05ef62a0ea53534acb6a",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 1,
+    "level": "critical",
+    "phase": "review-2",
+    "raw_events_sha256": "747712576dda2913fd52459362c78b7e21a72ac90bcaecc8da91d07dc594ee73",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 1,
+    "level": "critical",
+    "phase": "review-3",
+    "raw_events_sha256": "7f9cc0d42457cec2687ca2061da3a4d5d83c0bbcf3c5d43947f7cc226b1040dd",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 1,
+    "level": "critical",
+    "phase": "repair-2",
+    "raw_events_sha256": "71603507502d679d4e612e911d1749a4a42ae6b4656cb5b5064f84443ce0b004",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 1,
+    "level": "critical",
+    "phase": "review",
+    "raw_events_sha256": "495a9b8d903222845c8dcd4c721066f86aa8314e8621422358a36438b121361a",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 1,
+    "level": "critical",
+    "phase": "implementation",
+    "raw_events_sha256": "57a63ff414b152920e38b3c70c3d80eedb9b34c62ac33bc940089986bada04a0",
+    "raw_usage_verified": false
+  },
+  {
+    "round": 2,
+    "level": "medium",
+    "phase": "review",
+    "raw_events_sha256": "3fa463c6fe78220e42e8569f0e5e6ec347aad9fdc35eb476ac7c4d29f98689d7",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 2,
+    "level": "medium",
+    "phase": "implementation",
+    "raw_events_sha256": "d70548a09d4e856d1c00096d90c6ab709f7bd3bb23cc3b8e217b0ed090e45b83",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 2,
+    "level": "high",
+    "phase": "review",
+    "raw_events_sha256": "9a0fb919c20e8246255a16e4611a71d8b5303a1eefaec9a93d5a8a7cae62be20",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 2,
+    "level": "high",
+    "phase": "implementation",
+    "raw_events_sha256": "cc22fa83a21722328f4b75b70c71e459671af7f9acb4b353edd7436e46f88b7c",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 2,
+    "level": "critical",
+    "phase": "repair-1",
+    "raw_events_sha256": "6ec2cd46082c55dd120edcc3582b693157de7ea9f479d0c4447060f811ae14f4",
+    "raw_usage_verified": false
+  },
+  {
+    "round": 2,
+    "level": "critical",
+    "phase": "review-2",
+    "raw_events_sha256": "2e79b2b88d580e0613c0ad2faa3ff9ef1f217f3c05d58b45fe64a7ce8b894c36",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 2,
+    "level": "critical",
+    "phase": "review-3",
+    "raw_events_sha256": "921dcc00463506b7d50546cee38f97774d154e0a89c45929c904a62b381a628a",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 2,
+    "level": "critical",
+    "phase": "repair-2",
+    "raw_events_sha256": "39957214d97b6639511f99b2a19deb00aa2b3a41a86d2dd04555cc6d3660740c",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 2,
+    "level": "critical",
+    "phase": "review",
+    "raw_events_sha256": "9346ee760ffcea6e0734b897fbb4b7eb2da0f86fd645e5d42cb82d4cae4f51c9",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 2,
+    "level": "critical",
+    "phase": "implementation",
+    "raw_events_sha256": "f528bcf8189b6c524cb853910a06941067a9a5884cbca202f8a147e53f46c012",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 3,
+    "level": "medium",
+    "phase": "review",
+    "raw_events_sha256": "a70743419e748e2a22ec790f47ec05d325ab7fd53a303d315eb2fb6923094c86",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 3,
+    "level": "medium",
+    "phase": "implementation",
+    "raw_events_sha256": "55977353348f832fbef3f451eab0ba7629e2e6639915570a74659d639e14325b",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 3,
+    "level": "high",
+    "phase": "review",
+    "raw_events_sha256": "0bdf5f73610b2088c77b5b451e146f5576affa8f553220cfd18233096c69fc6a",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 3,
+    "level": "high",
+    "phase": "implementation",
+    "raw_events_sha256": "ac7811b6fa6157b6259eaa7925f0ec850ea6276f96ac186aa6587dbb3e5a2bd9",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 3,
+    "level": "critical",
+    "phase": "repair-1",
+    "raw_events_sha256": "6b5f09ff18b01925e1d94071dea2a529f44b41647a9f92de8dcb51c0c0f7f1bd",
+    "raw_usage_verified": false
+  },
+  {
+    "round": 3,
+    "level": "critical",
+    "phase": "review-2",
+    "raw_events_sha256": "3fd508a6d593f37c311d65cc87188b3f36a81e0847fa2879c53f0552beb2983d",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 3,
+    "level": "critical",
+    "phase": "review-3",
+    "raw_events_sha256": "b82e6d9adf55df9103bc53fd508137bdef970be19c53348ec9fc1277e4872961",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 3,
+    "level": "critical",
+    "phase": "repair-2",
+    "raw_events_sha256": "fc924f55f94b4b36a7dae300ed251319cbe227442237762ebd904747291a7137",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 3,
+    "level": "critical",
+    "phase": "review",
+    "raw_events_sha256": "7121282399069aa3c438a1a866ffe0f362382d1b7aaca9874385a191a310ffe1",
+    "raw_usage_verified": true
+  },
+  {
+    "round": 3,
+    "level": "critical",
+    "phase": "implementation",
+    "raw_events_sha256": "5bce37cdbacd83c8293bc1aa18acfd44d8b76679ee2fd0d3471555f8cfe032e3",
+    "raw_usage_verified": false
+  }
+]

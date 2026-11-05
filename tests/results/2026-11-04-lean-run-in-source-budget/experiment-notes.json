@@ -1,0 +1,27 @@
+{
+  "scope": "One fresh High and one fresh Critical trial against the latest single-round pilot, including the existing bounded repair/review lifecycle; no Medium and no new three-round cohort.",
+  "changes": [
+    {
+      "area": "SQL guidance",
+      "change": "Explicitly preserve IN table shorthand, qualified pragma columns and NOT INDEXED; distinguish aliases, index clauses, source row shape and CTE/object shadowing; require native abort and valid controls."
+    },
+    {
+      "area": "Runtime budget",
+      "change": "Expose the existing 900-second phase deadline to the child CLI/tool shell. Cooperative budget helper reserves final verification time; cap and allowed repairs unchanged."
+    },
+    {
+      "area": "Uncached input",
+      "change": "Reduce duplicated source/diff reads, unnecessary handoff loads, repeated fixture setup and broad repeated assessment matrices; main instructions compressed; conditional delivery detail split into a reference."
+    }
+  ],
+  "quality_controls": "Original tasks, initial implementation/review prompts, public tests and graders unchanged. Independent review, original and inherited regression probes, two bounded repairs, original phase cap and failure statuses retained. Four historical final workspace suites run forward and reverse at each assessment; forward failures block acceptance.",
+  "targeted_replay": "IN/NOT INDEXED probe fails 6/6 on the latest historical final workspace; all six native oracles pass. The candidate must retain this probe and every older mandatory case.",
+  "limits": [
+    "One observed workflow per level and version; not a population mean or causal estimate. Cache, host load and model service behavior are not controlled.",
+    "Model and effort are requested CLI settings, not independently attested backend identity.",
+    "Historical Critical repair-1 reached the original cap without usage telemetry. Its total uncached input is unknown and cannot support a percentage comparison.",
+    "The budget helper is cooperative. A long reasoning span without another check can still reach the cap.",
+    "Fresh source generation and later repair paths are part of the measured workflow, so matching one target SQL reproduction does not by itself prove complete task quality.",
+    "A foreign-trigger SELECT finding was discovered during current independent review and also reproduced on the historical pilot. Its focused replay is identified separately from predeclared probes."
+  ]
+}

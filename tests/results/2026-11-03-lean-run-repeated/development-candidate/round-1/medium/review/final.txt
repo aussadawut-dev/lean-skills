@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "findings": [],
+  "checks": [
+    "Applied lean-run; reviewed CONTRACT.md, the complete app.py baseline diff, and added tests. Supplied test_public.py matches its baseline.",
+    "python3 -B -m unittest discover -v: all 11 tests passed; full log inspected.",
+    "Independent API probes passed: 146 valid and 184 invalid cases covering signed values, whitespace, empty fields, prohibited syntax, Unicode numerals, and field preservation.",
+    "Independent CLI probes passed: 116 valid cases, 49 invalid inputs, and 5 invalid arities; verified exit codes, stdout, stderr, and absence of tracebacks.",
+    "Verified mixed-digit chunk boundaries, carry, borrow, cancellation, and large decimal output against Decimal-based expectations, including CLI execution with Python's digit limit set to 640.",
+    "Confirmed supplied files remained unchanged and no bytecode caches were created. Suite log: .assessment-gw8dof2n/unittest.log."
+  ],
+  "coverage_limits": [
+    "Execution covered CPython 3.14.3 on macOS only.",
+    "Large-number checks reached 5003 significant input digits and 5004 output digits; larger resource limits were not stress-tested."
+  ]
+}

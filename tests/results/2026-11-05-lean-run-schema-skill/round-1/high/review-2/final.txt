@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "findings": [],
+  "checks": [
+    "Read lean-run and CONTRACT.md; compared ledger.py against .baseline and .pre-repair; inspected added tests and repair changes.",
+    "python3 -B -m unittest discover -v: all 32 tests passed on CPython 3.14.3.",
+    "Independently reproduced R1 failures in .pre-repair. Current code rejects negative scalar balances/amounts and changed replay amounts, prevents overridden arithmetic from creating funds, and bypasses hostile key hashing.",
+    "Independently reproduced R2: UserString field names previously raised TypeError; current code raises ValueError with unchanged state, including after a valid batch operation.",
+    "Focused probes passed for enum compatibility, overridden scalar conversions, normalized account/field collisions, and plain receipt values.",
+    "Independent integrated flow passed: transfers, exhausted-source replay, batch rollback, retry, receipt isolation, dictionary identity and conservation of the initial 50 units.",
+    "Protected file hashes remained unchanged; supplied test_public.py matches both snapshots. Temporary probe files were removed."
+  ],
+  "coverage_limits": [
+    "Review focused on the repair delta and original-contract regressions using local CPython 3.14.3; persistence, concurrency and external services are outside the contract."
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "receipt": {
+    "tenant": "one",
+    "key": "past",
+    "source": "a",
+    "target": "b",
+    "amount": 10
+  },
+  "replay": "ValueError: account not found"
+}

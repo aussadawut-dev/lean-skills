@@ -1,0 +1,25 @@
+{
+  "source_sha256": "6982263ba7dc91e8c992dd05bfdf29601745e8107d985e0f0739447956fad39b",
+  "cases": [
+    {
+      "case": "stored_integer_overflow",
+      "passed": true,
+      "api_exception": "IntegrityError: invalid account balance",
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"invalid request\"}\n",
+      "data_unchanged": true
+    },
+    {
+      "case": "audit_storage_failure",
+      "passed": true,
+      "api_exception": "IntegrityError: SQL private details",
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"invalid request\"}\n",
+      "data_unchanged": true
+    }
+  ],
+  "failed_cases": 0,
+  "contract": "Storage overflow exception class and literal generic CLI message are unspecified. Reject atomically; CLI exit 2, no stdout, generic JSON without SQL/foreign details."
+}

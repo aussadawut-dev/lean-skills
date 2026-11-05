@@ -1,0 +1,17 @@
+{
+  "policy_superseded": {
+    "historical": [],
+    "probes": {}
+  },
+  "status": "DONE",
+  "final_assessment": 2,
+  "repair_rounds": 1,
+  "final_grade": "post-repair-1-grade.json",
+  "final_review": "review-2",
+  "initial_review_issues": 1,
+  "final_review_issues": 0,
+  "first_pass_blockers": [
+    "independent_review"
+  ],
+  "adjudication": null
+}

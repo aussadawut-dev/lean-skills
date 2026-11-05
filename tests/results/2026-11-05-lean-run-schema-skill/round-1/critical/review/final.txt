@@ -1,0 +1,41 @@
+{
+  "status": "REWORK",
+  "findings": [
+    {
+      "id": "R1",
+      "severity": "HIGH",
+      "location": "vault.py:85-114 (_isolate)",
+      "requirement": "No trigger-visible read, count or outcome may depend on other tenants' rows.",
+      "evidence": "Initialize accounts ('one','a',100), ('one','b',0), with either zero or three additional tenant-'two' accounts. Run ANALYZE and install: CREATE TRIGGER hidden_population BEFORE INSERT ON audit BEGIN SELECT CASE WHEN (SELECT CAST(stat AS INTEGER) FROM sqlite_stat1 WHERE tbl='accounts') > 2 THEN RAISE(ABORT,'population threshold reached') END; END; The identical tenant-'one' transfer succeeds through the CLI with exit 0 when foreign accounts are absent, but exits 2 when they exist. The projection retains global sqlite_stat1 values: '2 2 1' versus '5 3 1'.",
+      "suggested_fix": "Ensure trigger-visible planner statistics are tenant-scoped before executing triggers. Add paired API and CLI tests using analyzed databases with different foreign populations."
+    },
+    {
+      "id": "R2",
+      "severity": "HIGH",
+      "location": "vault.py:102-114 (_isolate rowid normalization)",
+      "requirement": "Existing triggers must retain native behavior over tenant-local rows, and their auxiliary writes must commit correctly.",
+      "evidence": "In a tenant-only database, insert accounts a and b with explicit rowids 10 and 20 and balances 100 and 0. Create account_refs(account_row INTEGER PRIMARY KEY,last_balance), containing (10,100),(20,0), and an AFTER UPDATE ON accounts trigger executing UPDATE account_refs SET last_balance=NEW.balance WHERE account_row=NEW.rowid. transfer(path,'one','a','b',10,'k') succeeds and commits balances 90/10, but references remain 100/0. Identical native SQLite statements update references to 90/10. The candidate exposes temporary rowids 1/2 to triggers while retaining persistent rowids 10/20.",
+      "suggested_fix": "Preserve tenant-local row references through isolated execution and commit. Replace unconditional renumbering with a mechanism that also satisfies noninterference, and test sparse existing rowids against native SQLite."
+    },
+    {
+      "id": "R3",
+      "severity": "MEDIUM",
+      "location": "vault.py:125-143 and vault.py:152-165 (_auxiliary_rows/_apply_auxiliary)",
+      "requirement": "Trigger writes to other tables must retain native SQLite behavior and commit with the transfer.",
+      "evidence": "Create documents(id INTEGER PRIMARY KEY,body TEXT), insert (1,'ledger entry'), and create search USING fts5(body,content='documents',content_rowid='id'). Install an AFTER INSERT ON audit trigger executing INSERT INTO search(rowid,body) VALUES(1,'ledger entry'). The candidate commits the transfer, but SELECT rowid FROM search WHERE search MATCH 'ledger' returns no rows; native SQLite returns [(1,)]. Shadow tables are omitted and the virtual table's ordinary SELECT results are unchanged, so the index write is silently discarded. Related probes also lost an FTS5 automerge configuration write and incorrectly attempted DELETE against a read-only fts5vocab table.",
+      "suggested_fix": "Preserve complete auxiliary SQLite effects, including virtual-table backing state. Avoid treating ordinary SELECT snapshots as complete writable state, and add native controls for external-content FTS5 and read-only virtual tables."
+    }
+  ],
+  "checks": [
+    "Read CONTRACT.md, workspace instructions and lean-run guidance; compared baseline application files with current source and inspected added tests. Supplied test_public.py is unchanged.",
+    "python3 -B -m unittest discover -v: all 16 tests passed on Python 3.14.3 / SQLite 3.50.4.",
+    "Independently reproduced statistics-based noninterference failures through both API observations and CLI outcomes.",
+    "Compared tenant-local rowid-dependent trigger effects and FTS5 behavior against native SQLite controls.",
+    "Assessment only: no application, test, instruction or baseline files modified; probes used Python -B and temporary workspace directories."
+  ],
+  "coverage_limits": [
+    "Verification covers the available local Python/SQLite runtime.",
+    "Cross-tenant value uniqueness constraints, storage size and timing were excluded as specified by the contract.",
+    "Any repaired candidate requires renewed independent final review."
+  ]
+}

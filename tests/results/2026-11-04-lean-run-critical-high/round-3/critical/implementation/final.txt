@@ -1,0 +1,5 @@
+Implemented tenant-scoped reads and receipts, strict validation, atomic transfers, durable deduplication, and generic CLI errors in `vault.py` and `app.py`.
+
+Reproduced the original defects and added 31 regression tests. `python3 -B -m unittest discover -v` passes all **32 tests**, covering concurrency, rollback, persistence, isolation, and the integrated CLI journey.
+
+**Final acceptance is BLOCKED pending the coordinator’s independent review.** The [lean-run skill](/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/critical/workspace/.agents/skills/lean-run/SKILL.md) requires: “HIGH needs a fresh independent reviewer.” That review has not occurred.

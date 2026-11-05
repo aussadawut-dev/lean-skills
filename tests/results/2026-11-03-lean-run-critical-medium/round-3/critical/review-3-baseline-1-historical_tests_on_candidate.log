@@ -1,0 +1,330 @@
+test_valid_transfer (test_public.PublicTests.test_valid_transfer) ... ok
+test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) ... 
+  test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='missing credit') ... FAIL
+  test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='missing receipt') ... FAIL
+  test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='missing audit') ... FAIL
+  test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='duplicate audit') ... FAIL
+  test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='late missing debit') ... FAIL
+  test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='late missing credit') ... FAIL
+  test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='late missing receipt') ... FAIL
+  test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='altered receipt') ... FAIL
+  test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='altered audit') ... FAIL
+  test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='missing account') ... FAIL
+  test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='duplicate audit under another key') ... FAIL
+  test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='duplicate audit for another tenant') ... FAIL
+  test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='altered audit history') ... FAIL
+  test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='replaced audit history of another tenant') ... FAIL
+  test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='altered audit history of another tenant') ... FAIL
+  test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='changed audit history multiplicity') ... FAIL
+test_audit_failure_rolls_back_all_four_effects (test_regressions.VaultRegressionTests.test_audit_failure_rolls_back_all_four_effects) ... ok
+test_balance_is_scoped_to_tenant (test_regressions.VaultRegressionTests.test_balance_is_scoped_to_tenant) ... ok
+test_cli_invalid_calls_have_one_generic_json_error (test_regressions.VaultRegressionTests.test_cli_invalid_calls_have_one_generic_json_error) ... ok
+test_cli_journey_persistence_isolation_replay_and_recovery (test_regressions.VaultRegressionTests.test_cli_journey_persistence_isolation_replay_and_recovery) ... ok
+test_concurrent_conflicting_payloads_have_one_winner (test_regressions.VaultRegressionTests.test_concurrent_conflicting_payloads_have_one_winner) ... ok
+test_concurrent_distinct_keys_do_not_overspend (test_regressions.VaultRegressionTests.test_concurrent_distinct_keys_do_not_overspend) ... ok
+test_concurrent_same_key_executes_once_and_survives_reopen (test_regressions.VaultRegressionTests.test_concurrent_same_key_executes_once_and_survives_reopen) ... ok
+test_concurrent_sources_do_not_lose_credits (test_regressions.VaultRegressionTests.test_concurrent_sources_do_not_lose_credits) ... ok
+test_exact_replay_returns_original_after_balance_changes (test_regressions.VaultRegressionTests.test_exact_replay_returns_original_after_balance_changes) ... ok
+test_failed_or_ignored_writes_roll_back_and_allow_retry (test_regressions.VaultRegressionTests.test_failed_or_ignored_writes_roll_back_and_allow_retry) ... ok
+test_identifiers_are_exact_and_parameterized (test_regressions.VaultRegressionTests.test_identifiers_are_exact_and_parameterized) ... ok
+test_init_preserves_existing_schema_rows_and_receipts (test_regressions.VaultRegressionTests.test_init_preserves_existing_schema_rows_and_receipts) ... ok
+test_integer_limit_is_exact_and_overflow_rolls_back (test_regressions.VaultRegressionTests.test_integer_limit_is_exact_and_overflow_rolls_back) ... ERROR
+test_invalid_amounts_and_insufficient_funds_do_not_write (test_regressions.VaultRegressionTests.test_invalid_amounts_and_insufficient_funds_do_not_write) ... ok
+test_invalid_identifiers_are_rejected_without_writes (test_regressions.VaultRegressionTests.test_invalid_identifiers_are_rejected_without_writes) ... ok
+test_invalid_requests_do_not_create_database (test_regressions.VaultRegressionTests.test_invalid_requests_do_not_create_database) ... ok
+test_keys_and_cached_receipts_are_scoped_to_tenant (test_regressions.VaultRegressionTests.test_keys_and_cached_receipts_are_scoped_to_tenant) ... ok
+test_missing_and_inaccessible_accounts_share_generic_error (test_regressions.VaultRegressionTests.test_missing_and_inaccessible_accounts_share_generic_error) ... ok
+test_replay_still_validates_amount_type (test_regressions.VaultRegressionTests.test_replay_still_validates_amount_type) ... ok
+test_same_account_is_rejected_without_writes (test_regressions.VaultRegressionTests.test_same_account_is_rejected_without_writes) ... ok
+test_same_key_different_payload_conflicts (test_regressions.VaultRegressionTests.test_same_key_different_payload_conflicts) ... ok
+test_transfer_accepts_audit_rowid_relocation (test_regressions.VaultRegressionTests.test_transfer_accepts_audit_rowid_relocation) ... ok
+test_transfer_adds_one_audit_preserving_history_and_benign_trigger (test_regressions.VaultRegressionTests.test_transfer_adds_one_audit_preserving_history_and_benign_trigger) ... ok
+test_transfer_changes_only_current_tenant (test_regressions.VaultRegressionTests.test_transfer_changes_only_current_tenant) ... ok
+
+======================================================================
+ERROR: test_integer_limit_is_exact_and_overflow_rolls_back (test_regressions.VaultRegressionTests.test_integer_limit_is_exact_and_overflow_rolls_back)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-l39dd898/test_regressions.py", line 176, in test_integer_limit_is_exact_and_overflow_rolls_back
+    vault.transfer(self.path, **(request | dict(key="overflow")))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-l39dd898/vault.py", line 262, in transfer
+    raise ValueError("balance out of range")
+ValueError: balance out of range
+
+======================================================================
+FAIL: test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='missing credit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-l39dd898/test_regressions.py", line 386, in test_after_triggers_roll_back_changed_final_effects
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        self.assert_cli_error(self.cli(dict(op="transfer", **request))),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        {"error": "invalid request"},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: {'error': 'request failed'} != {'error': 'invalid request'}
+- {'error': 'request failed'}
++ {'error': 'invalid request'}
+
+======================================================================
+FAIL: test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='missing receipt')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-l39dd898/test_regressions.py", line 386, in test_after_triggers_roll_back_changed_final_effects
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        self.assert_cli_error(self.cli(dict(op="transfer", **request))),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        {"error": "invalid request"},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: {'error': 'request failed'} != {'error': 'invalid request'}
+- {'error': 'request failed'}
++ {'error': 'invalid request'}
+
+======================================================================
+FAIL: test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='missing audit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-l39dd898/test_regressions.py", line 386, in test_after_triggers_roll_back_changed_final_effects
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        self.assert_cli_error(self.cli(dict(op="transfer", **request))),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        {"error": "invalid request"},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: {'error': 'request failed'} != {'error': 'invalid request'}
+- {'error': 'request failed'}
++ {'error': 'invalid request'}
+
+======================================================================
+FAIL: test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='duplicate audit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-l39dd898/test_regressions.py", line 386, in test_after_triggers_roll_back_changed_final_effects
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        self.assert_cli_error(self.cli(dict(op="transfer", **request))),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        {"error": "invalid request"},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: {'error': 'request failed'} != {'error': 'invalid request'}
+- {'error': 'request failed'}
++ {'error': 'invalid request'}
+
+======================================================================
+FAIL: test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='late missing debit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-l39dd898/test_regressions.py", line 386, in test_after_triggers_roll_back_changed_final_effects
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        self.assert_cli_error(self.cli(dict(op="transfer", **request))),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        {"error": "invalid request"},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: {'error': 'request failed'} != {'error': 'invalid request'}
+- {'error': 'request failed'}
++ {'error': 'invalid request'}
+
+======================================================================
+FAIL: test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='late missing credit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-l39dd898/test_regressions.py", line 386, in test_after_triggers_roll_back_changed_final_effects
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        self.assert_cli_error(self.cli(dict(op="transfer", **request))),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        {"error": "invalid request"},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: {'error': 'request failed'} != {'error': 'invalid request'}
+- {'error': 'request failed'}
++ {'error': 'invalid request'}
+
+======================================================================
+FAIL: test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='late missing receipt')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-l39dd898/test_regressions.py", line 386, in test_after_triggers_roll_back_changed_final_effects
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        self.assert_cli_error(self.cli(dict(op="transfer", **request))),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        {"error": "invalid request"},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: {'error': 'request failed'} != {'error': 'invalid request'}
+- {'error': 'request failed'}
++ {'error': 'invalid request'}
+
+======================================================================
+FAIL: test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='altered receipt')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-l39dd898/test_regressions.py", line 386, in test_after_triggers_roll_back_changed_final_effects
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        self.assert_cli_error(self.cli(dict(op="transfer", **request))),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        {"error": "invalid request"},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: {'error': 'request failed'} != {'error': 'invalid request'}
+- {'error': 'request failed'}
++ {'error': 'invalid request'}
+
+======================================================================
+FAIL: test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='altered audit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-l39dd898/test_regressions.py", line 386, in test_after_triggers_roll_back_changed_final_effects
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        self.assert_cli_error(self.cli(dict(op="transfer", **request))),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        {"error": "invalid request"},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: {'error': 'request failed'} != {'error': 'invalid request'}
+- {'error': 'request failed'}
++ {'error': 'invalid request'}
+
+======================================================================
+FAIL: test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='missing account')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-l39dd898/test_regressions.py", line 386, in test_after_triggers_roll_back_changed_final_effects
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        self.assert_cli_error(self.cli(dict(op="transfer", **request))),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        {"error": "invalid request"},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: {'error': 'request failed'} != {'error': 'invalid request'}
+- {'error': 'request failed'}
++ {'error': 'invalid request'}
+
+======================================================================
+FAIL: test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='duplicate audit under another key')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-l39dd898/test_regressions.py", line 386, in test_after_triggers_roll_back_changed_final_effects
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        self.assert_cli_error(self.cli(dict(op="transfer", **request))),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        {"error": "invalid request"},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: {'error': 'request failed'} != {'error': 'invalid request'}
+- {'error': 'request failed'}
++ {'error': 'invalid request'}
+
+======================================================================
+FAIL: test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='duplicate audit for another tenant')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-l39dd898/test_regressions.py", line 386, in test_after_triggers_roll_back_changed_final_effects
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        self.assert_cli_error(self.cli(dict(op="transfer", **request))),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        {"error": "invalid request"},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: {'error': 'request failed'} != {'error': 'invalid request'}
+- {'error': 'request failed'}
++ {'error': 'invalid request'}
+
+======================================================================
+FAIL: test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='altered audit history')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-l39dd898/test_regressions.py", line 386, in test_after_triggers_roll_back_changed_final_effects
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        self.assert_cli_error(self.cli(dict(op="transfer", **request))),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        {"error": "invalid request"},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: {'error': 'request failed'} != {'error': 'invalid request'}
+- {'error': 'request failed'}
++ {'error': 'invalid request'}
+
+======================================================================
+FAIL: test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='replaced audit history of another tenant')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-l39dd898/test_regressions.py", line 386, in test_after_triggers_roll_back_changed_final_effects
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        self.assert_cli_error(self.cli(dict(op="transfer", **request))),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        {"error": "invalid request"},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: {'error': 'request failed'} != {'error': 'invalid request'}
+- {'error': 'request failed'}
++ {'error': 'invalid request'}
+
+======================================================================
+FAIL: test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='altered audit history of another tenant')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-l39dd898/test_regressions.py", line 386, in test_after_triggers_roll_back_changed_final_effects
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        self.assert_cli_error(self.cli(dict(op="transfer", **request))),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        {"error": "invalid request"},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: {'error': 'request failed'} != {'error': 'invalid request'}
+- {'error': 'request failed'}
++ {'error': 'invalid request'}
+
+======================================================================
+FAIL: test_after_triggers_roll_back_changed_final_effects (test_regressions.VaultRegressionTests.test_after_triggers_roll_back_changed_final_effects) (effect='changed audit history multiplicity')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-l39dd898/test_regressions.py", line 386, in test_after_triggers_roll_back_changed_final_effects
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        self.assert_cli_error(self.cli(dict(op="transfer", **request))),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        {"error": "invalid request"},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: {'error': 'request failed'} != {'error': 'invalid request'}
+- {'error': 'request failed'}
++ {'error': 'invalid request'}
+
+----------------------------------------------------------------------
+Ran 26 tests in 2.025s
+
+FAILED (failures=16, errors=1)

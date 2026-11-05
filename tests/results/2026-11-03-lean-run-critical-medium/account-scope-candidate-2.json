@@ -1,0 +1,28 @@
+{
+  "source_sha256": "6982263ba7dc91e8c992dd05bfdf29601745e8107d985e0f0739447956fad39b",
+  "demonstrated_patterns": false,
+  "observations": [
+    {
+      "case": "ordinary",
+      "error": null,
+      "account_lookup_sql": [
+        "SELECT balance FROM accounts WHERE tenant='one' AND name='a'",
+        "SELECT balance FROM accounts WHERE tenant='one' AND name='b'"
+      ],
+      "demonstrated_unscoped_count_sql": [],
+      "installed_unscoped_rowid_lookup_guards": []
+    },
+    {
+      "case": "foreign_rowid_collision",
+      "error": "IntegrityError: transfer integrity check failed",
+      "account_lookup_sql": [
+        "SELECT balance FROM accounts WHERE tenant='one' AND name='a'",
+        "SELECT balance FROM accounts WHERE tenant='one' AND name='b'"
+      ],
+      "demonstrated_unscoped_count_sql": [],
+      "installed_unscoped_rowid_lookup_guards": []
+    }
+  ],
+  "interpretation": "Reuses independent original-contract triage: global cardinality and foreign stored-account lookups have no aggregate/sentinel exception. Installed trigger SQL is labeled separately from direct queries. OLD/NEW effective-write observation alone is not a preservation lookup.",
+  "limit": "Bounded trace/static confirmation of these two demonstrated patterns, not an exhaustive SQL analyzer or a new independent review. Existing stored outcomes and baseline archive are unchanged."
+}

@@ -1,0 +1,19 @@
+{
+  "unit_tests": 27,
+  "unit_log": "validation-logs/unit-archive.log",
+  "exit_code": 0,
+  "code_sha256": {
+    "tests/install_smoke.py": "8baaba926d4e0e8ad8925cc3e21c8269938e27eb5cbc91cd77428393424a3ac3",
+    "tests/level_benchmark.py": "323adb22550b36a559c05b9c05609739d07996bba763109ec59908c0a17adb62",
+    "tests/render_repeated_comparison.py": "417660be47c599db0ba9edfd2738cca2692acf887e9220d58b74e589d5a13c15",
+    "tests/repeated_benchmark.py": "160f2f55f19aeb21ade94649d77666cd20f57756334d1ee3e99af8895990955f",
+    "tests/summarize_repeated_benchmark.py": "1a71ba44079262c4bbb20e239a731127ce90a465959c336501e2cacc559c7691",
+    "tests/test_behavioral_fixtures.py": "a6bdf4e37e68ae28b7d0f2c6e9113257555eba671f8d192c05b52f90eb42c4d3",
+    "tests/test_benchmark_summary.py": "abcf2cf95a7f6599405bc30a1ef86df159541d1744e53757d510b64915d8adc5",
+    "tests/test_check_runner.py": "705011193c53b5e17d94865f2a55b7c51a6e2da305b5fb1e86262fc5992d9bd2",
+    "tests/test_coverage_fixtures.py": "9c0428a95b8dc26f9e51b270d4eb4ba18d79cb7d69b1737a7fed7b977b490035",
+    "tests/test_level_benchmark.py": "6faed4789a939cba51651420f9932a6f97181e4a00fb039ca9486b822a27c824",
+    "tests/test_repeated_benchmark.py": "3563ac9fa5d4c580d93bd532705ade71cac0ed55ddc086fc33cb9fc39477082b",
+    "tests/test_skills.py": "1eafa50d565cd65adf43823052b97ef87677b7e6b261ab65e91be6e49e9c7f07"
+  }
+}

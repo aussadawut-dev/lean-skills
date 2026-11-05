@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "requested_model": "gpt-6.1-sol",
+  "requested_effort": "medium",
+  "task_wide_independent_rework_count": 1,
+  "verified": [
+    "8 check-runner tests",
+    "9 independent CLI probes of excerpt completeness, boundaries, Unicode and full log retention",
+    "SIGTERM/SIGINT/SIGHUP cleanup",
+    "Assessment-only guidance retains scope, acceptance, independent review and additional probes for gaps"
+  ],
+  "limits": [
+    "Windows not executed",
+    "Review and development costs excluded from validation means"
+  ]
+}

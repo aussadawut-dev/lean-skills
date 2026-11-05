@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "unit_tests": 34,
+  "install_smoke_cases": 34,
+  "skill_schema": "Skill is valid!",
+  "diff_check_exit": 0,
+  "source_sha256": {
+    "tests/repeated_benchmark.py": "76d4c392dfe38071d40e21ac7a881463c59f86ba37ac018faaa1525c7cc0cc1c",
+    "tests/level_benchmark.py": "50cbd9e9374607a27201f59fd36ff70b05452b059247f2afaabee7d2ac60e303",
+    "tests/summarize_repeated_benchmark.py": "7f20511f333f457518d055ebd3c9945b2edf6a2758d8542a3fad578f5e4aad3b",
+    "tests/render_repeated_comparison.py": "f8b85c628bc4e26a7278f3bbaef42a4d6e75c585557039f2b505bdfcebad13f3",
+    "tests/audit_repeated_benchmark.py": "ae7ec786ce5fdf48cbb0caa875c4a7f87237253709849db4d43701779c2416e4",
+    "tests/test_repeated_benchmark.py": "e80a9b39a190365c9621df1551e22307f269bd5af7ac37d1a79a18b33769dfce",
+    "tests/test_benchmark_summary.py": "30e8cd4c735beec9c1839afacc1e3cd72307a7d38655bead8f3ac83cc649c41e",
+    "tests/probes/critical_final_findings_probe.py": "bee34762d4f41a205dbb73d93a5934c71384a4c634797d7932cd59be524ef8ec",
+    "tests/behavioral.md": "b26a458f50a2f33e88ddcd09445a92adbe4eda098f82695ae7f65e968ee14a5b"
+  },
+  "scope": "Repository/skill checks; final benchmark quality and control audit separate.",
+  "summary_followup_tests": 5
+}

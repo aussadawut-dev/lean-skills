@@ -1,0 +1,28 @@
+Use lean-run at .agents/skills/lean-run/SKILL.md to continue the SAME critical task with a bounded repair. CONTRACT.md and scope are unchanged. Task-wide REWORK count is 1; do not reset it. Reproduce and repair the demonstrated findings below, add meaningful regression checks, run affected and required final checks, and exercise the public interface. Preserve existing behavior, data, triggers and unrelated work. No unrelated refactor, installs, network or extra agents. The coordinator supplies renewed independent review afterward; report it pending. 
+
+[
+  {
+    "id": "R1",
+    "severity": "MEDIUM",
+    "location": "vault.py:203-206 (_WriteGuard observer callbacks)",
+    "requirement": "Every account read must remain within the caller's tenant; foreign data must not prevent an otherwise valid transfer.",
+    "evidence": "Initialize accounts ('one','a',100), ('one','b',0), and ('other','secret',CAST(x'80ff' AS TEXT)). Add: CREATE TRIGGER benign AFTER INSERT ON audit BEGIN UPDATE accounts SET balance=balance WHERE tenant='other'; END. Calling transfer(path,'one','a','b',10,'k') succeeds with the baseline but raises OperationalError('user-defined function raised exception') in the candidate. The observer passes foreign TEXT into Python, where decoding fails. Replacing the malformed foreign text with ordinary text makes the candidate succeed. The failing call leaves all tables and trigger definitions unchanged.",
+    "suggested_fix": "Validate actual row deltas within SQLite without materializing foreign account values in Python, while retaining detection of unauthorized changes. Preserve trigger-visible total_changes(). Use lossless type-tagged observation of actual effects, with SQLite handling any text-to-bytes conversion before a Python callback. Preserve raw storage types and avoid foreign row lookup queries."
+  },
+  {
+    "id": "R2",
+    "severity": "MEDIUM",
+    "location": "vault.py:52-77 (_tokens), vault.py:95-117 (_guarded_trigger)",
+    "requirement": "Valid transfers must continue working with existing SQLite-valid triggers.",
+    "evidence": "Initialize accounts ('one','a',100) and ('one','b',0). Execute the Python string 'CREATE TRIGGER harmless ' + chr(0xFEFF) + ' AFTER INSERT ON audit BEGIN SELECT 1; END'. SQLite accepts this trigger. transfer(path,'one','a','b',10,'k') succeeds with the baseline, but the candidate raises IntegrityError('unsupported trigger header'). Its lexer treats SQLite's U+FEFF whitespace as an identifier. The equivalent trigger without U+FEFF succeeds. The same final source also fails with SQLite-accepted U+000B (vertical tab). Evidence: assessment-1-trigger_separator_probe.json.",
+    "suggested_fix": "Recognize SQLite's token-boundary whitespace correctly, including U+FEFF, and add a regression covering this accepted trigger syntax. Preserve both native separators (vertical tab and token-boundary U+FEFF), valid identifier characters (U+00A0 and dollar), and unchanged IGNORE/REPLACE semantics. Keep the repair focused on this boundary."
+  },
+  {
+    "id": "COORD-DURABLE-CACHED-REPLAY",
+    "severity": "MEDIUM",
+    "location": "vault.py transfer read order",
+    "requirement": "Preserve exact replay of an authenticated tenant receipt without effects. New transfers still require existing endpoints.",
+    "evidence": "Latest round-1 preservation tests need replay of old history. Reproduced a formerly valid transfer, closed and reopened the database, removed the historical target in fixture setup and replayed the same request. The candidate checks the missing endpoint before loading the durable receipt. See assessment-1-cached-replay.json.",
+    "suggested_fix": "Resolve the scoped cached receipt or key conflict after structural validation and before reading endpoints for a new transfer."
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "checked_utc": "2026-11-03T02:18:11.287839+00:00",
+  "results": {
+    "lean_original": {
+      "manifest": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-03-level-benchmark/archive-sha256.json",
+      "manifest_sha256": "9a9de757fe49f767bc85cca146db51d9b462b9d32bb08a67c425b6f396ccd1d6",
+      "files_checked": 195,
+      "changed": [],
+      "missing": [],
+      "pass": true
+    },
+    "lean_optimized": {
+      "manifest": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-03-lean-run-optimized/archive-sha256.json",
+      "manifest_sha256": "724aea7c0831c70ea9fc97b6261d68869a6d1c8799d2735663663fd5ec9efa99",
+      "files_checked": 246,
+      "changed": [],
+      "missing": [],
+      "pass": true
+    },
+    "v57": {
+      "manifest": "/Users/x10/Workspace/Me/Github/lean-workflow-agent-by-asdw/docs/benchmarks/2026-11-03-three-level-v5.7/archive-sha256.json",
+      "manifest_sha256": "6eaea6be6c1a32318efe9ad329e17e7696dffe2c9b4f59817f76e3f663d53705",
+      "files_checked": 414,
+      "changed": [],
+      "missing": [],
+      "pass": true
+    }
+  }
+}

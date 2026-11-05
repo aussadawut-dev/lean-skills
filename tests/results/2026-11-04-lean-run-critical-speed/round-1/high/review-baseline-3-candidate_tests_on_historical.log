@@ -1,0 +1,26 @@
+test_batch_receipts_are_ordered_and_isolated (test_ledger.LedgerRegressionTests.test_batch_receipts_are_ordered_and_isolated) ... ok
+test_batch_rejects_non_list_inputs (test_ledger.LedgerRegressionTests.test_batch_rejects_non_list_inputs) ... ok
+test_conflicting_keys_within_batch_roll_back_everything (test_ledger.LedgerRegressionTests.test_conflicting_keys_within_batch_roll_back_everything) ... ok
+test_conflicting_replay_leaves_state_unchanged (test_ledger.LedgerRegressionTests.test_conflicting_replay_leaves_state_unchanged) ... ok
+test_constructor_copies_balances (test_ledger.LedgerRegressionTests.test_constructor_copies_balances) ... ok
+test_constructor_rejects_invalid_balances (test_ledger.LedgerRegressionTests.test_constructor_rejects_invalid_balances) ... ok
+test_empty_batch_preserves_existing_state (test_ledger.LedgerRegressionTests.test_empty_batch_preserves_existing_state) ... ok
+test_empty_ledger_and_zero_balances_are_valid (test_ledger.LedgerRegressionTests.test_empty_ledger_and_zero_balances_are_valid) ... ok
+test_exact_balance_transfer_with_large_integer_and_string_names (test_ledger.LedgerRegressionTests.test_exact_balance_transfer_with_large_integer_and_string_names) ... ok
+test_failed_batch_rolls_back_balances_and_history (test_ledger.LedgerRegressionTests.test_failed_batch_rolls_back_balances_and_history) ... ok
+test_insufficient_funds_leave_state_unchanged (test_ledger.LedgerRegressionTests.test_insufficient_funds_leave_state_unchanged) ... ok
+test_integrated_transfer_batch_failure_and_recovery_journey (test_ledger.LedgerRegressionTests.test_integrated_transfer_batch_failure_and_recovery_journey) ... ok
+test_invalid_batch_values_roll_back_valid_prefix (test_ledger.LedgerRegressionTests.test_invalid_batch_values_roll_back_valid_prefix) ... ok
+test_malformed_batch_operations_roll_back_valid_prefix (test_ledger.LedgerRegressionTests.test_malformed_batch_operations_roll_back_valid_prefix) ... ok
+test_replay_still_rejects_boolean_and_float_amounts (test_ledger.LedgerRegressionTests.test_replay_still_rejects_boolean_and_float_amounts) ... ok
+test_replay_succeeds_after_source_is_exhausted (test_ledger.LedgerRegressionTests.test_replay_succeeds_after_source_is_exhausted) ... ok
+test_returned_receipts_do_not_mutate_history (test_ledger.LedgerRegressionTests.test_returned_receipts_do_not_mutate_history) ... ok
+test_same_payload_with_a_new_key_is_a_new_transfer (test_ledger.LedgerRegressionTests.test_same_payload_with_a_new_key_is_a_new_transfer) ... ok
+test_transfer_validation_leaves_existing_state_unchanged (test_ledger.LedgerRegressionTests.test_transfer_validation_leaves_existing_state_unchanged) ... ok
+test_unavailable_target_leaves_state_unchanged (test_ledger.LedgerRegressionTests.test_unavailable_target_leaves_state_unchanged) ... ok
+test_transfer (test_public.PublicTests.test_transfer) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.001s
+
+OK

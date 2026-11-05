@@ -1,0 +1,16 @@
+test_valid (test_public.PublicTests.test_valid) ... ok
+test_arbitrary_size_sum_and_decimal_output (test_regressions.CliTests.test_arbitrary_size_sum_and_decimal_output) ... ok
+test_exactly_one_positional_argument_is_required (test_regressions.CliTests.test_exactly_one_positional_argument_is_required) ... ok
+test_invalid_lists_through_cli (test_regressions.CliTests.test_invalid_lists_through_cli) ... ok
+test_valid_lists_through_cli (test_regressions.CliTests.test_valid_lists_through_cli) ... ok
+test_arbitrary_size_signed_integers (test_regressions.ParseNumbersTests.test_arbitrary_size_signed_integers) ... ok
+test_empty_input_and_empty_fields_raise_value_error (test_regressions.ParseNumbersTests.test_empty_input_and_empty_fields_raise_value_error) ... ok
+test_long_fields_with_leading_zeros (test_regressions.ParseNumbersTests.test_long_fields_with_leading_zeros) ... ok
+test_non_decimal_syntax_raises_value_error (test_regressions.ParseNumbersTests.test_non_decimal_syntax_raises_value_error) ... ok
+test_signed_values_zeros_and_field_whitespace (test_regressions.ParseNumbersTests.test_signed_values_zeros_and_field_whitespace) ... ok
+test_unicode_numerals_raise_value_error (test_regressions.ParseNumbersTests.test_unicode_numerals_raise_value_error) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 1.018s
+
+OK

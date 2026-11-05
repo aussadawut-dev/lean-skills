@@ -1,0 +1,10 @@
+{
+  "finding": "F2",
+  "discovery": "Initial independent review; post-start targeted reproduction, not a predeclared gate. F2 itself remains a mandatory independent finding.",
+  "baseline_report": "baseline-1-foreign_guard_probe.json",
+  "initial_candidate_report": "round-1/critical/review-foreign_guard_probe.json",
+  "probe": "foreign_guard_probe.py",
+  "probe_sha256": "a4f3973aa3eb864bb20d7592b53d48feaa1db23d5696cb9a9d5e594d042a6045",
+  "source_review": "Explicit stored SELECT is account reading under the contract. Equality of outputs alone does not prove reads are prevented; inspect the mechanism. Existing storage-local OLD/NEW effects and valid tenant-local SELECT/guards must remain valid.",
+  "result": "Both baseline and initial candidate expose the foreign predicate through API/CLI. This is preexisting, not demonstrated to be a new skill regression."
+}

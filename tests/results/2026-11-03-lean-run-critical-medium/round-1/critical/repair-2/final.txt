@@ -1,0 +1,7 @@
+Repaired both findings in `vault.py` and added regressions in `test_regression.py`.
+
+- Replacement-based rowid swaps succeed; changed-value replacements roll back.
+- Foreign preservation checks stay inside SQLite without returning foreign rows or aggregates to Python.
+- Required `python3 -B -m unittest discover -v`: **35 tests passed**, including API/CLI, replay, triggers, and concurrency. Complete diff reviewed.
+
+Task-wide **REWORK remains 2**. Renewed coordinator review is **pending**; final acceptance remains **BLOCKED** because lean-run requires “HIGH needs a fresh independent reviewer.”

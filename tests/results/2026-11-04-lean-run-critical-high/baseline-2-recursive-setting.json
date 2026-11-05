@@ -1,0 +1,38 @@
+{
+  "source_sha256": "d0188c10a25bfe9462a7e337bb381b9b14f08753983ce29a9307c0a52ada1d02",
+  "cases": [
+    {
+      "interface": "API",
+      "comparison": 0,
+      "default": 0,
+      "should_fail": true,
+      "error": null,
+      "passed": false
+    },
+    {
+      "interface": "CLI",
+      "comparison": 0,
+      "default": 0,
+      "should_fail": true,
+      "error": null,
+      "passed": false
+    },
+    {
+      "interface": "API",
+      "comparison": 1,
+      "default": 0,
+      "should_fail": false,
+      "error": "audit storage failure",
+      "passed": false
+    },
+    {
+      "interface": "CLI",
+      "comparison": 1,
+      "default": 0,
+      "should_fail": false,
+      "error": "{\"error\": \"invalid request\"}",
+      "passed": false
+    }
+  ],
+  "failed_cases": 4
+}

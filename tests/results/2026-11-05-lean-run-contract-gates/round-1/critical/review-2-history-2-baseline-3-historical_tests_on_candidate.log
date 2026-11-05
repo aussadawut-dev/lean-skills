@@ -1,0 +1,749 @@
+test_valid_transfer (test_public.PublicTests.test_valid_transfer) ... ok
+test_after_audit_fail_trigger_rolls_back_trigger_writes_too (test_regressions.VaultRegressionTests.test_after_audit_fail_trigger_rolls_back_trigger_writes_too) ... ok
+test_audit_failure_rolls_back_every_effect (test_regressions.VaultRegressionTests.test_audit_failure_rolls_back_every_effect) ... ok
+test_audit_rollback_trigger_propagates_without_partial_state (test_regressions.VaultRegressionTests.test_audit_rollback_trigger_propagates_without_partial_state) ... ok
+test_balance_is_scoped_to_tenant (test_regressions.VaultRegressionTests.test_balance_is_scoped_to_tenant) ... ok
+test_cli_integrated_journey_across_process_restarts (test_regressions.VaultRegressionTests.test_cli_integrated_journey_across_process_restarts) ... ok
+test_cli_malformed_requests_have_one_generic_error_and_no_changes (test_regressions.VaultRegressionTests.test_cli_malformed_requests_have_one_generic_error_and_no_changes) ... 
+  test_cli_malformed_requests_have_one_generic_error_and_no_changes (test_regressions.VaultRegressionTests.test_cli_malformed_requests_have_one_generic_error_and_no_changes) (payload='{"op": "balance", "tenant": "blue", "tenant": "red", "account": "a"}') ... FAIL
+test_cli_storage_open_error_is_generic (test_regressions.VaultRegressionTests.test_cli_storage_open_error_is_generic) ... ok
+test_concurrent_conflicting_payloads_choose_one_complete_transfer (test_regressions.VaultRegressionTests.test_concurrent_conflicting_payloads_choose_one_complete_transfer) ... ok
+test_concurrent_distinct_keys_cannot_overspend (test_regressions.VaultRegressionTests.test_concurrent_distinct_keys_cannot_overspend) ... ok
+test_concurrent_duplicates_execute_once_and_remain_replayable (test_regressions.VaultRegressionTests.test_concurrent_duplicates_execute_once_and_remain_replayable) ... ok
+test_concurrent_sources_do_not_lose_shared_target_credits (test_regressions.VaultRegressionTests.test_concurrent_sources_do_not_lose_shared_target_credits) ... ok
+test_existing_key_with_changed_payload_conflicts (test_regressions.VaultRegressionTests.test_existing_key_with_changed_payload_conflicts) ... ok
+test_failed_key_can_succeed_after_storage_recovers (test_regressions.VaultRegressionTests.test_failed_key_can_succeed_after_storage_recovers) ... ok
+test_foreign_transfer_endpoints_are_rejected_without_changes (test_regressions.VaultRegressionTests.test_foreign_transfer_endpoints_are_rejected_without_changes) ... ok
+test_ignored_audit_insert_is_not_a_successful_transfer (test_regressions.VaultRegressionTests.test_ignored_audit_insert_is_not_a_successful_transfer) ... ERROR
+test_ignored_credit_rolls_back_debit (test_regressions.VaultRegressionTests.test_ignored_credit_rolls_back_debit) ... ERROR
+test_initialization_preserves_schema_rows_and_audit_multiplicity (test_regressions.VaultRegressionTests.test_initialization_preserves_schema_rows_and_audit_multiplicity) ... ok
+test_maximum_sqlite_integer_transfers_exactly (test_regressions.VaultRegressionTests.test_maximum_sqlite_integer_transfers_exactly) ... ok
+test_missing_and_foreign_accounts_have_identical_errors (test_regressions.VaultRegressionTests.test_missing_and_foreign_accounts_have_identical_errors) ... ok
+test_negative_amount_is_rejected_without_changes (test_regressions.VaultRegressionTests.test_negative_amount_is_rejected_without_changes) ... ok
+test_nonempty_text_is_required_for_every_identity (test_regressions.VaultRegressionTests.test_nonempty_text_is_required_for_every_identity) ... ok
+test_only_positive_nonboolean_integer_amounts_are_accepted (test_regressions.VaultRegressionTests.test_only_positive_nonboolean_integer_amounts_are_accepted) ... ok
+test_receipt_lookup_is_tenant_scoped (test_regressions.VaultRegressionTests.test_receipt_lookup_is_tenant_scoped) ... ok
+test_replay_is_durable_even_when_source_is_now_empty (test_regressions.VaultRegressionTests.test_replay_is_durable_even_when_source_is_now_empty) ... ok
+test_self_transfer_and_insufficient_funds_do_not_write (test_regressions.VaultRegressionTests.test_self_transfer_and_insufficient_funds_do_not_write) ... ok
+test_tenants_can_independently_create_the_same_key (test_regressions.VaultRegressionTests.test_tenants_can_independently_create_the_same_key) ... ok
+test_text_identifiers_are_literal_and_not_normalized (test_regressions.VaultRegressionTests.test_text_identifiers_are_literal_and_not_normalized) ... ok
+test_transfer_changes_only_authorized_rows (test_regressions.VaultRegressionTests.test_transfer_changes_only_authorized_rows) ... ok
+test_unique_constraint_failure_preserves_existing_history (test_regressions.VaultRegressionTests.test_unique_constraint_failure_preserves_existing_history) ... ok
+test_unknown_tenant_cannot_read_or_transfer_existing_accounts (test_regressions.VaultRegressionTests.test_unknown_tenant_cannot_read_or_transfer_existing_accounts) ... ok
+test_unrepresentable_credit_rolls_back_without_float_conversion (test_regressions.VaultRegressionTests.test_unrepresentable_credit_rolls_back_without_float_conversion) ... ERROR
+test_before_credit_and_audit_restore_roll_back (test_trigger_effects.TriggerEffectTests.test_before_credit_and_audit_restore_roll_back) ... ERROR
+test_before_debit_and_audit_restore_roll_back (test_trigger_effects.TriggerEffectTests.test_before_debit_and_audit_restore_roll_back) ... ERROR
+test_before_updates_with_correct_final_balances_match_native (test_trigger_effects.TriggerEffectTests.test_before_updates_with_correct_final_balances_match_native) ... FAIL
+test_cancel_credit_rolls_back_all_rows_and_preserves_trigger (test_trigger_effects.TriggerEffectTests.test_cancel_credit_rolls_back_all_rows_and_preserves_trigger) ... ERROR
+test_changes_total_changes_and_last_insert_rowid_match_native (test_trigger_effects.TriggerEffectTests.test_changes_total_changes_and_last_insert_rowid_match_native) ... FAIL
+test_cli_before_debit_and_audit_restore_reject_without_changes (test_trigger_effects.TriggerEffectTests.test_cli_before_debit_and_audit_restore_reject_without_changes) ... ok
+test_cli_effect_failure_recovery_and_replay (test_trigger_effects.TriggerEffectTests.test_cli_effect_failure_recovery_and_replay) ... ok
+test_duplicate_audit_and_removed_history_are_rejected (test_trigger_effects.TriggerEffectTests.test_duplicate_audit_and_removed_history_are_rejected) ... 
+  test_duplicate_audit_and_removed_history_are_rejected (test_trigger_effects.TriggerEffectTests.test_duplicate_audit_and_removed_history_are_rejected) (body='INSERT INTO audit VALUES (NEW.tenant,NEW.key,NEW.source,NEW.target,NEW.amount);') ... ERROR
+  test_duplicate_audit_and_removed_history_are_rejected (test_trigger_effects.TriggerEffectTests.test_duplicate_audit_and_removed_history_are_rejected) (body="DELETE FROM audit WHERE tenant='blue';") ... ERROR
+  test_duplicate_audit_and_removed_history_are_rejected (test_trigger_effects.TriggerEffectTests.test_duplicate_audit_and_removed_history_are_rejected) (body="DELETE FROM transfers WHERE tenant='blue';") ... ERROR
+  test_duplicate_audit_and_removed_history_are_rejected (test_trigger_effects.TriggerEffectTests.test_duplicate_audit_and_removed_history_are_rejected) (body="DELETE FROM accounts WHERE tenant='blue';") ... ERROR
+test_final_balance_check_retains_unrelated_null_identity_observation (test_trigger_effects.TriggerEffectTests.test_final_balance_check_retains_unrelated_null_identity_observation) ... ERROR
+test_ignore_across_rows_and_recursive_noops_match_native (test_trigger_effects.TriggerEffectTests.test_ignore_across_rows_and_recursive_noops_match_native) ... FAIL
+test_ignored_conflict_is_a_valid_transfer (test_trigger_effects.TriggerEffectTests.test_ignored_conflict_is_a_valid_transfer) ... ERROR
+test_native_keyword_unicode_and_compound_statement_semantics (test_trigger_effects.TriggerEffectTests.test_native_keyword_unicode_and_compound_statement_semantics) ... FAIL
+test_noops_row_moves_and_restored_duplicate_history_are_allowed (test_trigger_effects.TriggerEffectTests.test_noops_row_moves_and_restored_duplicate_history_are_allowed) ... ERROR
+test_original_enabled_recursion_is_preserved (test_trigger_effects.TriggerEffectTests.test_original_enabled_recursion_is_preserved) ... ERROR
+test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) ... 
+  test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='pragma_recursive_triggers', rejects=False) ... FAIL
+  test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='pragma_recursive_triggers()', rejects=True) ... ERROR
+  test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='pragma_recursive_triggers()', rejects=False) ... ERROR
+  test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='main."pragma_recursive_triggers"()', rejects=True) ... ERROR
+  test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='main."pragma_recursive_triggers"()', rejects=False) ... ERROR
+  test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='[pragma_recursive_triggers]', rejects=True) ... ERROR
+  test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='[pragma_recursive_triggers]', rejects=False) ... ERROR
+test_pragma_view_normalization_preserves_ctes_literals_and_view_triggers (test_trigger_effects.TriggerEffectTests.test_pragma_view_normalization_preserves_ctes_literals_and_view_triggers) ... FAIL
+test_recursive_pragma_real_table_shadowing_matches_native (test_trigger_effects.TriggerEffectTests.test_recursive_pragma_real_table_shadowing_matches_native) ... FAIL
+test_recursive_pragma_through_views_matches_native_and_restores_sql (test_trigger_effects.TriggerEffectTests.test_recursive_pragma_through_views_matches_native_and_restores_sql) ... 
+  test_recursive_pragma_through_views_matches_native_and_restores_sql (test_trigger_effects.TriggerEffectTests.test_recursive_pragma_through_views_matches_native_and_restores_sql) (table='pragma_recursive_triggers()', rejects=False) ... FAIL
+test_replace_victim_is_observed_even_when_insert_is_undone (test_trigger_effects.TriggerEffectTests.test_replace_victim_is_observed_even_when_insert_is_undone) ... FAIL
+test_replace_victims_for_rowid_and_expression_unique_indexes (test_trigger_effects.TriggerEffectTests.test_replace_victims_for_rowid_and_expression_unique_indexes) ... 
+  test_replace_victims_for_rowid_and_expression_unique_indexes (test_trigger_effects.TriggerEffectTests.test_replace_victims_for_rowid_and_expression_unique_indexes) (index='') ... FAIL
+  test_replace_victims_for_rowid_and_expression_unique_indexes (test_trigger_effects.TriggerEffectTests.test_replace_victims_for_rowid_and_expression_unique_indexes) (index='CREATE UNIQUE INDEX expression_identity ON accounts(lower(name));') ... ERROR
+  test_replace_victims_for_rowid_and_expression_unique_indexes (test_trigger_effects.TriggerEffectTests.test_replace_victims_for_rowid_and_expression_unique_indexes) (index='CREATE UNIQUE INDEX partial_balance ON accounts(balance) WHERE balance>50;') ... ERROR
+test_storage_types_encodings_and_unreadable_foreign_text_are_preserved (test_trigger_effects.TriggerEffectTests.test_storage_types_encodings_and_unreadable_foreign_text_are_preserved) ... ok
+test_type_only_history_changes_are_rejected (test_trigger_effects.TriggerEffectTests.test_type_only_history_changes_are_rejected) ... 
+  test_type_only_history_changes_are_rejected (test_trigger_effects.TriggerEffectTests.test_type_only_history_changes_are_rejected) (change='key=CAST(key AS BLOB)') ... FAIL
+  test_type_only_history_changes_are_rejected (test_trigger_effects.TriggerEffectTests.test_type_only_history_changes_are_rejected) (change='amount=CAST(amount AS REAL)') ... ERROR
+test_update_replace_victim_cannot_hide_behind_restored_update (test_trigger_effects.TriggerEffectTests.test_update_replace_victim_cannot_hide_behind_restored_update) ... FAIL
+test_vt_and_boundary_bom_explicit_deletes_keep_native_guards (test_trigger_effects.TriggerEffectTests.test_vt_and_boundary_bom_explicit_deletes_keep_native_guards) ... 
+  test_vt_and_boundary_bom_explicit_deletes_keep_native_guards (test_trigger_effects.TriggerEffectTests.test_vt_and_boundary_bom_explicit_deletes_keep_native_guards) (separator="'\\x0b'", timing='') ... ERROR
+  test_vt_and_boundary_bom_explicit_deletes_keep_native_guards (test_trigger_effects.TriggerEffectTests.test_vt_and_boundary_bom_explicit_deletes_keep_native_guards) (separator="'\\x0b'", timing='BEFORE') ... ERROR
+  test_vt_and_boundary_bom_explicit_deletes_keep_native_guards (test_trigger_effects.TriggerEffectTests.test_vt_and_boundary_bom_explicit_deletes_keep_native_guards) (separator="'\\x0b'", timing='AFTER') ... ERROR
+  test_vt_and_boundary_bom_explicit_deletes_keep_native_guards (test_trigger_effects.TriggerEffectTests.test_vt_and_boundary_bom_explicit_deletes_keep_native_guards) (separator="'\\ufeff'", timing='') ... ERROR
+  test_vt_and_boundary_bom_explicit_deletes_keep_native_guards (test_trigger_effects.TriggerEffectTests.test_vt_and_boundary_bom_explicit_deletes_keep_native_guards) (separator="'\\ufeff'", timing='BEFORE') ... ERROR
+  test_vt_and_boundary_bom_explicit_deletes_keep_native_guards (test_trigger_effects.TriggerEffectTests.test_vt_and_boundary_bom_explicit_deletes_keep_native_guards) (separator="'\\ufeff'", timing='AFTER') ... ERROR
+
+======================================================================
+ERROR: test_ignored_audit_insert_is_not_a_successful_transfer (test_regressions.VaultRegressionTests.test_ignored_audit_insert_is_not_a_successful_transfer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_regressions.py", line 290, in test_ignored_audit_insert_is_not_a_successful_transfer
+    vault.transfer(self.path, 'red', 'a', 'b', 10, 'failed')
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/vault.py", line 318, in transfer
+    raise ValueError(_ERROR)
+ValueError: invalid request
+
+======================================================================
+ERROR: test_ignored_credit_rolls_back_debit (test_regressions.VaultRegressionTests.test_ignored_credit_rolls_back_debit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_regressions.py", line 300, in test_ignored_credit_rolls_back_debit
+    vault.transfer(self.path, 'red', 'a', 'b', 10, 'failed')
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/vault.py", line 318, in transfer
+    raise ValueError(_ERROR)
+ValueError: invalid request
+
+======================================================================
+ERROR: test_unrepresentable_credit_rolls_back_without_float_conversion (test_regressions.VaultRegressionTests.test_unrepresentable_credit_rolls_back_without_float_conversion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_regressions.py", line 357, in test_unrepresentable_credit_rolls_back_without_float_conversion
+    vault.transfer(self.path, 'red', 'a', 'b', 1, 'overflow')
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/vault.py", line 299, in transfer
+    raise ValueError(_ERROR)
+ValueError: invalid request
+
+======================================================================
+ERROR: test_before_credit_and_audit_restore_roll_back (test_trigger_effects.TriggerEffectTests.test_before_credit_and_audit_restore_roll_back)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 100, in test_before_credit_and_audit_restore_roll_back
+    self.assert_rejected()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 46, in assert_rejected
+    self.transfer()
+    ~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 41, in transfer
+    return vault.transfer(self.path, 'red', 'a', 'b', 10, 'new')
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/vault.py", line 318, in transfer
+    raise ValueError(_ERROR)
+ValueError: invalid request
+
+======================================================================
+ERROR: test_before_debit_and_audit_restore_roll_back (test_trigger_effects.TriggerEffectTests.test_before_debit_and_audit_restore_roll_back)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 94, in test_before_debit_and_audit_restore_roll_back
+    self.assert_rejected()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 46, in assert_rejected
+    self.transfer()
+    ~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 41, in transfer
+    return vault.transfer(self.path, 'red', 'a', 'b', 10, 'new')
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/vault.py", line 318, in transfer
+    raise ValueError(_ERROR)
+ValueError: invalid request
+
+======================================================================
+ERROR: test_cancel_credit_rolls_back_all_rows_and_preserves_trigger (test_trigger_effects.TriggerEffectTests.test_cancel_credit_rolls_back_all_rows_and_preserves_trigger)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 77, in test_cancel_credit_rolls_back_all_rows_and_preserves_trigger
+    self.assert_rejected()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 46, in assert_rejected
+    self.transfer()
+    ~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 41, in transfer
+    return vault.transfer(self.path, 'red', 'a', 'b', 10, 'new')
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/vault.py", line 318, in transfer
+    raise ValueError(_ERROR)
+ValueError: invalid request
+
+======================================================================
+ERROR: test_duplicate_audit_and_removed_history_are_rejected (test_trigger_effects.TriggerEffectTests.test_duplicate_audit_and_removed_history_are_rejected) (body='INSERT INTO audit VALUES (NEW.tenant,NEW.key,NEW.source,NEW.target,NEW.amount);')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 169, in test_duplicate_audit_and_removed_history_are_rejected
+    self.assert_rejected()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 46, in assert_rejected
+    self.transfer()
+    ~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 41, in transfer
+    return vault.transfer(self.path, 'red', 'a', 'b', 10, 'new')
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/vault.py", line 318, in transfer
+    raise ValueError(_ERROR)
+ValueError: invalid request
+
+======================================================================
+ERROR: test_duplicate_audit_and_removed_history_are_rejected (test_trigger_effects.TriggerEffectTests.test_duplicate_audit_and_removed_history_are_rejected) (body="DELETE FROM audit WHERE tenant='blue';")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 168, in test_duplicate_audit_and_removed_history_are_rejected
+    self.install('CREATE TRIGGER extra AFTER INSERT ON audit BEGIN ' + body + ' END;')
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 33, in install
+    con.executescript(sql)
+    ~~~~~~~~~~~~~~~~~^^^^^
+sqlite3.OperationalError: trigger extra already exists
+
+======================================================================
+ERROR: test_duplicate_audit_and_removed_history_are_rejected (test_trigger_effects.TriggerEffectTests.test_duplicate_audit_and_removed_history_are_rejected) (body="DELETE FROM transfers WHERE tenant='blue';")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 168, in test_duplicate_audit_and_removed_history_are_rejected
+    self.install('CREATE TRIGGER extra AFTER INSERT ON audit BEGIN ' + body + ' END;')
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 33, in install
+    con.executescript(sql)
+    ~~~~~~~~~~~~~~~~~^^^^^
+sqlite3.OperationalError: trigger extra already exists
+
+======================================================================
+ERROR: test_duplicate_audit_and_removed_history_are_rejected (test_trigger_effects.TriggerEffectTests.test_duplicate_audit_and_removed_history_are_rejected) (body="DELETE FROM accounts WHERE tenant='blue';")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 168, in test_duplicate_audit_and_removed_history_are_rejected
+    self.install('CREATE TRIGGER extra AFTER INSERT ON audit BEGIN ' + body + ' END;')
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 33, in install
+    con.executescript(sql)
+    ~~~~~~~~~~~~~~~~~^^^^^
+sqlite3.OperationalError: trigger extra already exists
+
+======================================================================
+ERROR: test_final_balance_check_retains_unrelated_null_identity_observation (test_trigger_effects.TriggerEffectTests.test_final_balance_check_retains_unrelated_null_identity_observation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 118, in test_final_balance_check_retains_unrelated_null_identity_observation
+    self.assert_rejected()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 46, in assert_rejected
+    self.transfer()
+    ~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 41, in transfer
+    return vault.transfer(self.path, 'red', 'a', 'b', 10, 'new')
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/vault.py", line 318, in transfer
+    raise ValueError(_ERROR)
+ValueError: invalid request
+
+======================================================================
+ERROR: test_ignored_conflict_is_a_valid_transfer (test_trigger_effects.TriggerEffectTests.test_ignored_conflict_is_a_valid_transfer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 151, in test_ignored_conflict_is_a_valid_transfer
+    self.assertEqual(self.transfer()['amount'], 10)
+                     ~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 41, in transfer
+    return vault.transfer(self.path, 'red', 'a', 'b', 10, 'new')
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/vault.py", line 318, in transfer
+    raise ValueError(_ERROR)
+ValueError: invalid request
+
+======================================================================
+ERROR: test_noops_row_moves_and_restored_duplicate_history_are_allowed (test_trigger_effects.TriggerEffectTests.test_noops_row_moves_and_restored_duplicate_history_are_allowed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 212, in test_noops_row_moves_and_restored_duplicate_history_are_allowed
+    self.assert_matches_native()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 63, in assert_matches_native
+    self.transfer()
+    ~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 41, in transfer
+    return vault.transfer(self.path, 'red', 'a', 'b', 10, 'new')
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/vault.py", line 318, in transfer
+    raise ValueError(_ERROR)
+ValueError: invalid request
+
+======================================================================
+ERROR: test_original_enabled_recursion_is_preserved (test_trigger_effects.TriggerEffectTests.test_original_enabled_recursion_is_preserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 399, in test_original_enabled_recursion_is_preserved
+    self.assert_matches_native(('effects',))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 63, in assert_matches_native
+    self.transfer()
+    ~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 41, in transfer
+    return vault.transfer(self.path, 'red', 'a', 'b', 10, 'new')
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/vault.py", line 318, in transfer
+    raise ValueError(_ERROR)
+ValueError: invalid request
+
+======================================================================
+ERROR: test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='pragma_recursive_triggers()', rejects=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 292, in test_original_recursive_pragma_aborting_guard_and_harmless_control
+    self.install(f'''CREATE TRIGGER pragma_guard BEFORE INSERT ON audit
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        WHEN (SELECT recursive_triggers FROM {table})={0 if rejects else 1}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        BEGIN SELECT RAISE(ABORT,'original pragma guard'); END;''')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 33, in install
+    con.executescript(sql)
+    ~~~~~~~~~~~~~~~~~^^^^^
+sqlite3.OperationalError: trigger pragma_guard already exists
+
+======================================================================
+ERROR: test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='pragma_recursive_triggers()', rejects=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 292, in test_original_recursive_pragma_aborting_guard_and_harmless_control
+    self.install(f'''CREATE TRIGGER pragma_guard BEFORE INSERT ON audit
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        WHEN (SELECT recursive_triggers FROM {table})={0 if rejects else 1}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        BEGIN SELECT RAISE(ABORT,'original pragma guard'); END;''')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 33, in install
+    con.executescript(sql)
+    ~~~~~~~~~~~~~~~~~^^^^^
+sqlite3.OperationalError: trigger pragma_guard already exists
+
+======================================================================
+ERROR: test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='main."pragma_recursive_triggers"()', rejects=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 292, in test_original_recursive_pragma_aborting_guard_and_harmless_control
+    self.install(f'''CREATE TRIGGER pragma_guard BEFORE INSERT ON audit
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        WHEN (SELECT recursive_triggers FROM {table})={0 if rejects else 1}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        BEGIN SELECT RAISE(ABORT,'original pragma guard'); END;''')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 33, in install
+    con.executescript(sql)
+    ~~~~~~~~~~~~~~~~~^^^^^
+sqlite3.OperationalError: trigger pragma_guard already exists
+
+======================================================================
+ERROR: test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='main."pragma_recursive_triggers"()', rejects=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 292, in test_original_recursive_pragma_aborting_guard_and_harmless_control
+    self.install(f'''CREATE TRIGGER pragma_guard BEFORE INSERT ON audit
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        WHEN (SELECT recursive_triggers FROM {table})={0 if rejects else 1}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        BEGIN SELECT RAISE(ABORT,'original pragma guard'); END;''')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 33, in install
+    con.executescript(sql)
+    ~~~~~~~~~~~~~~~~~^^^^^
+sqlite3.OperationalError: trigger pragma_guard already exists
+
+======================================================================
+ERROR: test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='[pragma_recursive_triggers]', rejects=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 292, in test_original_recursive_pragma_aborting_guard_and_harmless_control
+    self.install(f'''CREATE TRIGGER pragma_guard BEFORE INSERT ON audit
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        WHEN (SELECT recursive_triggers FROM {table})={0 if rejects else 1}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        BEGIN SELECT RAISE(ABORT,'original pragma guard'); END;''')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 33, in install
+    con.executescript(sql)
+    ~~~~~~~~~~~~~~~~~^^^^^
+sqlite3.OperationalError: trigger pragma_guard already exists
+
+======================================================================
+ERROR: test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='[pragma_recursive_triggers]', rejects=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 292, in test_original_recursive_pragma_aborting_guard_and_harmless_control
+    self.install(f'''CREATE TRIGGER pragma_guard BEFORE INSERT ON audit
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        WHEN (SELECT recursive_triggers FROM {table})={0 if rejects else 1}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        BEGIN SELECT RAISE(ABORT,'original pragma guard'); END;''')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 33, in install
+    con.executescript(sql)
+    ~~~~~~~~~~~~~~~~~^^^^^
+sqlite3.OperationalError: trigger pragma_guard already exists
+
+======================================================================
+ERROR: test_replace_victims_for_rowid_and_expression_unique_indexes (test_trigger_effects.TriggerEffectTests.test_replace_victims_for_rowid_and_expression_unique_indexes) (index='CREATE UNIQUE INDEX expression_identity ON accounts(lower(name));')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 182, in test_replace_victims_for_rowid_and_expression_unique_indexes
+    self.install(index + '''CREATE TRIGGER extra AFTER INSERT ON audit BEGIN
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        ''' + insert + '''
+        ^^^^^^^^^^^^^^^^^^
+        DELETE FROM accounts WHERE tenant='red' AND name NOT IN ('a','b');
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    END;''')
+    ^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 33, in install
+    con.executescript(sql)
+    ~~~~~~~~~~~~~~~~~^^^^^
+sqlite3.OperationalError: trigger extra already exists
+
+======================================================================
+ERROR: test_replace_victims_for_rowid_and_expression_unique_indexes (test_trigger_effects.TriggerEffectTests.test_replace_victims_for_rowid_and_expression_unique_indexes) (index='CREATE UNIQUE INDEX partial_balance ON accounts(balance) WHERE balance>50;')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 182, in test_replace_victims_for_rowid_and_expression_unique_indexes
+    self.install(index + '''CREATE TRIGGER extra AFTER INSERT ON audit BEGIN
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        ''' + insert + '''
+        ^^^^^^^^^^^^^^^^^^
+        DELETE FROM accounts WHERE tenant='red' AND name NOT IN ('a','b');
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    END;''')
+    ^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 33, in install
+    con.executescript(sql)
+    ~~~~~~~~~~~~~~~~~^^^^^
+sqlite3.OperationalError: trigger extra already exists
+
+======================================================================
+ERROR: test_type_only_history_changes_are_rejected (test_trigger_effects.TriggerEffectTests.test_type_only_history_changes_are_rejected) (change='amount=CAST(amount AS REAL)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 411, in test_type_only_history_changes_are_rejected
+    self.install('CREATE TRIGGER type_change AFTER INSERT ON audit BEGIN '
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 f"UPDATE audit SET {change} WHERE tenant='blue'; END;")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 33, in install
+    con.executescript(sql)
+    ~~~~~~~~~~~~~~~~~^^^^^
+sqlite3.OperationalError: trigger type_change already exists
+
+======================================================================
+ERROR: test_vt_and_boundary_bom_explicit_deletes_keep_native_guards (test_trigger_effects.TriggerEffectTests.test_vt_and_boundary_bom_explicit_deletes_keep_native_guards) (separator="'\\x0b'", timing='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 241, in test_vt_and_boundary_bom_explicit_deletes_keep_native_guards
+    self.assert_matches_native(('effects',))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 63, in assert_matches_native
+    self.transfer()
+    ~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 41, in transfer
+    return vault.transfer(self.path, 'red', 'a', 'b', 10, 'new')
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/vault.py", line 318, in transfer
+    raise ValueError(_ERROR)
+ValueError: invalid request
+
+======================================================================
+ERROR: test_vt_and_boundary_bom_explicit_deletes_keep_native_guards (test_trigger_effects.TriggerEffectTests.test_vt_and_boundary_bom_explicit_deletes_keep_native_guards) (separator="'\\x0b'", timing='BEFORE')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 230, in test_vt_and_boundary_bom_explicit_deletes_keep_native_guards
+    self.install(f'''
+    ~~~~~~~~~~~~^^^^^
+        CREATE TABLE effects(kind);
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        END;
+        ^^^^
+    ''')
+    ^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 33, in install
+    con.executescript(sql)
+    ~~~~~~~~~~~~~~~~~^^^^^
+sqlite3.OperationalError: table effects already exists
+
+======================================================================
+ERROR: test_vt_and_boundary_bom_explicit_deletes_keep_native_guards (test_trigger_effects.TriggerEffectTests.test_vt_and_boundary_bom_explicit_deletes_keep_native_guards) (separator="'\\x0b'", timing='AFTER')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 230, in test_vt_and_boundary_bom_explicit_deletes_keep_native_guards
+    self.install(f'''
+    ~~~~~~~~~~~~^^^^^
+        CREATE TABLE effects(kind);
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        END;
+        ^^^^
+    ''')
+    ^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 33, in install
+    con.executescript(sql)
+    ~~~~~~~~~~~~~~~~~^^^^^
+sqlite3.OperationalError: table effects already exists
+
+======================================================================
+ERROR: test_vt_and_boundary_bom_explicit_deletes_keep_native_guards (test_trigger_effects.TriggerEffectTests.test_vt_and_boundary_bom_explicit_deletes_keep_native_guards) (separator="'\\ufeff'", timing='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 230, in test_vt_and_boundary_bom_explicit_deletes_keep_native_guards
+    self.install(f'''
+    ~~~~~~~~~~~~^^^^^
+        CREATE TABLE effects(kind);
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        END;
+        ^^^^
+    ''')
+    ^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 33, in install
+    con.executescript(sql)
+    ~~~~~~~~~~~~~~~~~^^^^^
+sqlite3.OperationalError: table effects already exists
+
+======================================================================
+ERROR: test_vt_and_boundary_bom_explicit_deletes_keep_native_guards (test_trigger_effects.TriggerEffectTests.test_vt_and_boundary_bom_explicit_deletes_keep_native_guards) (separator="'\\ufeff'", timing='BEFORE')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 230, in test_vt_and_boundary_bom_explicit_deletes_keep_native_guards
+    self.install(f'''
+    ~~~~~~~~~~~~^^^^^
+        CREATE TABLE effects(kind);
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        END;
+        ^^^^
+    ''')
+    ^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 33, in install
+    con.executescript(sql)
+    ~~~~~~~~~~~~~~~~~^^^^^
+sqlite3.OperationalError: table effects already exists
+
+======================================================================
+ERROR: test_vt_and_boundary_bom_explicit_deletes_keep_native_guards (test_trigger_effects.TriggerEffectTests.test_vt_and_boundary_bom_explicit_deletes_keep_native_guards) (separator="'\\ufeff'", timing='AFTER')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 230, in test_vt_and_boundary_bom_explicit_deletes_keep_native_guards
+    self.install(f'''
+    ~~~~~~~~~~~~^^^^^
+        CREATE TABLE effects(kind);
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        END;
+        ^^^^
+    ''')
+    ^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 33, in install
+    con.executescript(sql)
+    ~~~~~~~~~~~~~~~~~^^^^^
+sqlite3.OperationalError: table effects already exists
+
+======================================================================
+FAIL: test_cli_malformed_requests_have_one_generic_error_and_no_changes (test_regressions.VaultRegressionTests.test_cli_malformed_requests_have_one_generic_error_and_no_changes) (payload='{"op": "balance", "tenant": "blue", "tenant": "red", "account": "a"}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_regressions.py", line 510, in test_cli_malformed_requests_have_one_generic_error_and_no_changes
+    self.assert_cli_error(self.command(str(self.path), payload))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_regressions.py", line 449, in assert_cli_error
+    self.assertEqual(result.returncode, 2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2
+
+======================================================================
+FAIL: test_before_updates_with_correct_final_balances_match_native (test_trigger_effects.TriggerEffectTests.test_before_updates_with_correct_final_balances_match_native)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 105, in test_before_updates_with_correct_final_balances_match_native
+    self.assert_matches_native()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 64, in assert_matches_native
+    self.assertEqual(self.snapshot()[3], schema)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [('ta[1250 chars]END"), ('table', '_vault_rowids_97469321e76d44[409 chars]one)] != [('ta[1250 chars]END")]
+
+First list contains 2 additional elements.
+First extra element 7:
+('table', '_vault_rowids_97469321e76d448c932a710c9b8c6a4b', '_vault_rowids_97469321e76d448c932a710c9b8c6a4b', 7, 'CREATE TABLE "_vault_rowids_97469321e76d448c932a710c9b8c6a4b" (ledger TEXT /* vault private rowid mapping v1 */, tenant TEXT, physical INTEGER, logical INTEGER, PRIMARY KEY(ledger,tenant,physical))')
+
+Diff is 2047 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_changes_total_changes_and_last_insert_rowid_match_native (test_trigger_effects.TriggerEffectTests.test_changes_total_changes_and_last_insert_rowid_match_native)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 285, in test_changes_total_changes_and_last_insert_rowid_match_native
+    self.assert_matches_native(('counters',))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 64, in assert_matches_native
+    self.assertEqual(self.snapshot()[3], schema)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [('ta[1437 chars]END"), ('table', '_vault_rowids_679baee70d1548[409 chars]one)] != [('ta[1437 chars]END")]
+
+First list contains 2 additional elements.
+First extra element 8:
+('table', '_vault_rowids_679baee70d154871b2559dd221cf30ff', '_vault_rowids_679baee70d154871b2559dd221cf30ff', 8, 'CREATE TABLE "_vault_rowids_679baee70d154871b2559dd221cf30ff" (ledger TEXT /* vault private rowid mapping v1 */, tenant TEXT, physical INTEGER, logical INTEGER, PRIMARY KEY(ledger,tenant,physical))')
+
+Diff is 2267 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_ignore_across_rows_and_recursive_noops_match_native (test_trigger_effects.TriggerEffectTests.test_ignore_across_rows_and_recursive_noops_match_native)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 269, in test_ignore_across_rows_and_recursive_noops_match_native
+    self.assert_matches_native(('work', 'effects'))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 64, in assert_matches_native
+    self.assertEqual(self.snapshot()[3], schema)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [('ta[1553 chars]END"), ('table', '_vault_rowids_16bf856a4ffd4c[410 chars]one)] != [('ta[1553 chars]END")]
+
+First list contains 2 additional elements.
+First extra element 10:
+('table', '_vault_rowids_16bf856a4ffd4c0185cb8d6b26a93e25', '_vault_rowids_16bf856a4ffd4c0185cb8d6b26a93e25', 9, 'CREATE TABLE "_vault_rowids_16bf856a4ffd4c0185cb8d6b26a93e25" (ledger TEXT /* vault private rowid mapping v1 */, tenant TEXT, physical INTEGER, logical INTEGER, PRIMARY KEY(ledger,tenant,physical))')
+
+Diff is 2390 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_native_keyword_unicode_and_compound_statement_semantics (test_trigger_effects.TriggerEffectTests.test_native_keyword_unicode_and_compound_statement_semantics)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 224, in test_native_keyword_unicode_and_compound_statement_semantics
+    self.assert_matches_native(('end',))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 64, in assert_matches_native
+    self.assertEqual(self.snapshot()[3], schema)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [('ta[1102 chars]END'), ('table', '_vault_rowids_df40225dbf5046[409 chars]one)] != [('ta[1102 chars]END')]
+
+First list contains 2 additional elements.
+First extra element 7:
+('table', '_vault_rowids_df40225dbf50468992dd9c1d0e1f6544', '_vault_rowids_df40225dbf50468992dd9c1d0e1f6544', 8, 'CREATE TABLE "_vault_rowids_df40225dbf50468992dd9c1d0e1f6544" (ledger TEXT /* vault private rowid mapping v1 */, tenant TEXT, physical INTEGER, logical INTEGER, PRIMARY KEY(ledger,tenant,physical))')
+
+Diff is 1870 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_original_recursive_pragma_aborting_guard_and_harmless_control (test_trigger_effects.TriggerEffectTests.test_original_recursive_pragma_aborting_guard_and_harmless_control) (table='pragma_recursive_triggers', rejects=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 301, in test_original_recursive_pragma_aborting_guard_and_harmless_control
+    self.assert_matches_native()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 64, in assert_matches_native
+    self.assertEqual(self.snapshot()[3], schema)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [('ta[849 chars]END"), ('table', '_vault_rowids_e390b24db0464f[409 chars]one)] != [('ta[849 chars]END")]
+
+First list contains 2 additional elements.
+First extra element 6:
+('table', '_vault_rowids_e390b24db0464fe0b689fe22e75b747e', '_vault_rowids_e390b24db0464fe0b689fe22e75b747e', 7, 'CREATE TABLE "_vault_rowids_e390b24db0464fe0b689fe22e75b747e" (ledger TEXT /* vault private rowid mapping v1 */, tenant TEXT, physical INTEGER, logical INTEGER, PRIMARY KEY(ledger,tenant,physical))')
+
+Diff is 1549 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_pragma_view_normalization_preserves_ctes_literals_and_view_triggers (test_trigger_effects.TriggerEffectTests.test_pragma_view_normalization_preserves_ctes_literals_and_view_triggers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 363, in test_pragma_view_normalization_preserves_ctes_literals_and_view_triggers
+    self.assert_matches_native(('effects',))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 64, in assert_matches_native
+    self.assertEqual(self.snapshot()[3], schema)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [('ta[1789 chars]END'), ('table', '_vault_rowids_5cd3cd11ab3b46[409 chars]one)] != [('ta[1789 chars]END')]
+
+First list contains 2 additional elements.
+First extra element 11:
+('table', '_vault_rowids_5cd3cd11ab3b46daa3fed2c439e9e583', '_vault_rowids_5cd3cd11ab3b46daa3fed2c439e9e583', 8, 'CREATE TABLE "_vault_rowids_5cd3cd11ab3b46daa3fed2c439e9e583" (ledger TEXT /* vault private rowid mapping v1 */, tenant TEXT, physical INTEGER, logical INTEGER, PRIMARY KEY(ledger,tenant,physical))')
+
+Diff is 2674 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_recursive_pragma_real_table_shadowing_matches_native (test_trigger_effects.TriggerEffectTests.test_recursive_pragma_real_table_shadowing_matches_native)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 377, in test_recursive_pragma_real_table_shadowing_matches_native
+    self.assert_matches_native(('pragma_recursive_triggers',))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 64, in assert_matches_native
+    self.assertEqual(self.snapshot()[3], schema)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [('ta[1076 chars]END"), ('table', '_vault_rowids_4b0fe117ae3a47[409 chars]one)] != [('ta[1076 chars]END")]
+
+First list contains 2 additional elements.
+First extra element 8:
+('table', '_vault_rowids_4b0fe117ae3a47f8b53b5befaf6d4f86', '_vault_rowids_4b0fe117ae3a47f8b53b5befaf6d4f86', 8, 'CREATE TABLE "_vault_rowids_4b0fe117ae3a47f8b53b5befaf6d4f86" (ledger TEXT /* vault private rowid mapping v1 */, tenant TEXT, physical INTEGER, logical INTEGER, PRIMARY KEY(ledger,tenant,physical))')
+
+Diff is 1996 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_recursive_pragma_through_views_matches_native_and_restores_sql (test_trigger_effects.TriggerEffectTests.test_recursive_pragma_through_views_matches_native_and_restores_sql) (table='pragma_recursive_triggers()', rejects=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 330, in test_recursive_pragma_through_views_matches_native_and_restores_sql
+    self.assert_matches_native()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 64, in assert_matches_native
+    self.assertEqual(self.snapshot()[3], schema)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [('ta[1092 chars]END'), ('table', '_vault_rowids_d4dbb390880240[409 chars]one)] != [('ta[1092 chars]END')]
+
+First list contains 2 additional elements.
+First extra element 8:
+('table', '_vault_rowids_d4dbb390880240829ebcd5cb13c8fff0', '_vault_rowids_d4dbb390880240829ebcd5cb13c8fff0', 7, 'CREATE TABLE "_vault_rowids_d4dbb390880240829ebcd5cb13c8fff0" (ledger TEXT /* vault private rowid mapping v1 */, tenant TEXT, physical INTEGER, logical INTEGER, PRIMARY KEY(ledger,tenant,physical))')
+
+Diff is 1835 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_replace_victim_is_observed_even_when_insert_is_undone (test_trigger_effects.TriggerEffectTests.test_replace_victim_is_observed_even_when_insert_is_undone)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 141, in test_replace_victim_is_observed_even_when_insert_is_undone
+    self.assert_rejected()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 45, in assert_rejected
+    with self.assertRaises(sqlite3.IntegrityError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IntegrityError not raised
+
+======================================================================
+FAIL: test_replace_victims_for_rowid_and_expression_unique_indexes (test_trigger_effects.TriggerEffectTests.test_replace_victims_for_rowid_and_expression_unique_indexes) (index='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 186, in test_replace_victims_for_rowid_and_expression_unique_indexes
+    self.assert_rejected()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 45, in assert_rejected
+    with self.assertRaises(sqlite3.IntegrityError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IntegrityError not raised
+
+======================================================================
+FAIL: test_type_only_history_changes_are_rejected (test_trigger_effects.TriggerEffectTests.test_type_only_history_changes_are_rejected) (change='key=CAST(key AS BLOB)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 413, in test_type_only_history_changes_are_rejected
+    self.assert_rejected()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 45, in assert_rejected
+    with self.assertRaises(sqlite3.IntegrityError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IntegrityError not raised
+
+======================================================================
+FAIL: test_update_replace_victim_cannot_hide_behind_restored_update (test_trigger_effects.TriggerEffectTests.test_update_replace_victim_cannot_hide_behind_restored_update)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 200, in test_update_replace_victim_cannot_hide_behind_restored_update
+    self.assert_rejected()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6k6lculo/test_trigger_effects.py", line 45, in assert_rejected
+    with self.assertRaises(sqlite3.IntegrityError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IntegrityError not raised
+
+----------------------------------------------------------------------
+Ran 56 tests in 2.105s
+
+FAILED (failures=13, errors=29)

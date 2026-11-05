@@ -1,0 +1,5464 @@
+{
+  "phase": "review",
+  "review": {
+    "status": "REWORK",
+    "findings": [
+      {
+        "id": "F1",
+        "severity": "HIGH",
+        "location": "vault.py:36-39 and vault.py:80-89",
+        "requirement": "Preserve existing rows and tenant boundaries; commit the debit, credit, receipt and exactly one audit row together; exact replay must make no changes.",
+        "evidence": "The rowcount checks ignore trigger side effects. Reproduction: initialize accounts ('one','a',100) and ('one','b',0), then install: CREATE TRIGGER erase_receipt AFTER INSERT ON audit WHEN NEW.key='probe' BEGIN DELETE FROM transfers WHERE tenant=NEW.tenant AND key=NEW.key; END; Call vault.transfer(path,'one','a','b',10,'probe') twice. Both calls return successful receipts, but balances become 80 and 20, the receipt is absent, and two matching audit rows persist. Separate probes confirmed that triggers can also cancel the credit, overwrite another tenant's balance, duplicate audit rows, and replace historical records through primary-key, additional UNIQUE-index or rowid conflicts. These are manifestations of the same missing transaction-effect validation.",
+        "suggested_fix": "Before committing, verify that actual logical changes, including trigger effects and implicit REPLACE deletions, match exactly the authorized balance changes and receipt/audit insertions. Roll back unexpected or missing effects while preserving existing rows, tenant read isolation, and trigger semantics."
+      }
+    ],
+    "checks": [
+      "Read CONTRACT.md, AGENTS.md, lean-run and its write-integrity guidance; compared current application files against .baseline and inspected all added tests. Supplied test_public.py matches its baseline.",
+      "Ran python3 -B -m unittest discover -v with temporary storage inside the workspace: all 15 tests passed.",
+      "Independent Python -B probes on SQLite 3.50.4 reproduced the integrity failures through vault.transfer and verified persisted state using reopened connections.",
+      "A benign no-op trigger control succeeded and preserved unrelated data; trigger definitions remained unchanged.",
+      "Independent probes passed for malformed foreign account/receipt isolation, tenant-scoped replay, generic missing-account errors, and malformed Unicode CLI error handling.",
+      "No application, test, instruction or baseline files were modified; temporary probe databases were cleaned up."
+    ],
+    "coverage_limits": [
+      "Trigger and constraint probes were targeted, not exhaustive across every SQLite schema or trigger combination.",
+      "Actual disk exhaustion, process termination and power-loss recovery were not exercised.",
+      "Any repaired candidate requires renewed verification and independent review."
+    ]
+  },
+  "grade": "post-implementation-grade.json",
+  "cross": [
+    {
+      "direction": "historical_tests_on_candidate",
+      "baseline_round": 1,
+      "exit_code": 1,
+      "seconds": 2.723,
+      "log": "review-baseline-1-historical_tests_on_candidate.log"
+    },
+    {
+      "direction": "candidate_tests_on_historical",
+      "baseline_round": 1,
+      "exit_code": 1,
+      "seconds": 1.367,
+      "log": "review-baseline-1-candidate_tests_on_historical.log"
+    },
+    {
+      "direction": "historical_tests_on_candidate",
+      "baseline_round": 2,
+      "exit_code": 1,
+      "seconds": 1.627,
+      "log": "review-baseline-2-historical_tests_on_candidate.log"
+    },
+    {
+      "direction": "candidate_tests_on_historical",
+      "baseline_round": 2,
+      "exit_code": 1,
+      "seconds": 1.422,
+      "log": "review-baseline-2-candidate_tests_on_historical.log"
+    },
+    {
+      "direction": "historical_tests_on_candidate",
+      "baseline_round": 3,
+      "exit_code": 1,
+      "seconds": 1.358,
+      "log": "review-baseline-3-historical_tests_on_candidate.log"
+    },
+    {
+      "direction": "candidate_tests_on_historical",
+      "baseline_round": 3,
+      "exit_code": 1,
+      "seconds": 1.265,
+      "log": "review-baseline-3-candidate_tests_on_historical.log"
+    }
+  ],
+  "supplemental_issue_count": 0,
+  "blockers": [
+    "independent_review",
+    "known_quality_probes",
+    "historical_regressions",
+    "coordinator_contract_finding"
+  ],
+  "review_integrity": {
+    "changed_or_removed": [],
+    "added_logs": [],
+    "unexpected_additions": []
+  },
+  "critical_probes": {
+    "supplemental_probe.py": {
+      "exit_code": 0,
+      "report": {
+        "category": "unchecked SQLite write effects",
+        "checks": [
+          {
+            "probe": "debit",
+            "status": "PASS",
+            "error": "IntegrityError: transfer write failed",
+            "returned": null,
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ]
+              ],
+              "transfers": [],
+              "audit": [],
+              "triggers": [
+                [
+                  "suppress_write",
+                  "CREATE TRIGGER suppress_write BEFORE UPDATE OF balance ON accounts WHEN OLD.name='a' BEGIN SELECT RAISE(IGNORE); END"
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ]
+              ],
+              "transfers": [],
+              "audit": [],
+              "triggers": [
+                [
+                  "suppress_write",
+                  "CREATE TRIGGER suppress_write BEFORE UPDATE OF balance ON accounts WHEN OLD.name='a' BEGIN SELECT RAISE(IGNORE); END"
+                ]
+              ]
+            }
+          },
+          {
+            "probe": "credit",
+            "status": "PASS",
+            "error": "IntegrityError: transfer write failed",
+            "returned": null,
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ]
+              ],
+              "transfers": [],
+              "audit": [],
+              "triggers": [
+                [
+                  "suppress_write",
+                  "CREATE TRIGGER suppress_write BEFORE UPDATE OF balance ON accounts WHEN OLD.name='b' BEGIN SELECT RAISE(IGNORE); END"
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ]
+              ],
+              "transfers": [],
+              "audit": [],
+              "triggers": [
+                [
+                  "suppress_write",
+                  "CREATE TRIGGER suppress_write BEFORE UPDATE OF balance ON accounts WHEN OLD.name='b' BEGIN SELECT RAISE(IGNORE); END"
+                ]
+              ]
+            }
+          },
+          {
+            "probe": "receipt",
+            "status": "PASS",
+            "error": "IntegrityError: transfer write failed",
+            "returned": null,
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ]
+              ],
+              "transfers": [],
+              "audit": [],
+              "triggers": [
+                [
+                  "suppress_write",
+                  "CREATE TRIGGER suppress_write BEFORE INSERT ON transfers BEGIN SELECT RAISE(IGNORE); END"
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ]
+              ],
+              "transfers": [],
+              "audit": [],
+              "triggers": [
+                [
+                  "suppress_write",
+                  "CREATE TRIGGER suppress_write BEFORE INSERT ON transfers BEGIN SELECT RAISE(IGNORE); END"
+                ]
+              ]
+            }
+          },
+          {
+            "probe": "audit",
+            "status": "PASS",
+            "error": "IntegrityError: transfer write failed",
+            "returned": null,
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ]
+              ],
+              "transfers": [],
+              "audit": [],
+              "triggers": [
+                [
+                  "suppress_write",
+                  "CREATE TRIGGER suppress_write BEFORE INSERT ON audit BEGIN SELECT RAISE(IGNORE); END"
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ]
+              ],
+              "transfers": [],
+              "audit": [],
+              "triggers": [
+                [
+                  "suppress_write",
+                  "CREATE TRIGGER suppress_write BEFORE INSERT ON audit BEGIN SELECT RAISE(IGNORE); END"
+                ]
+              ]
+            }
+          }
+        ],
+        "issue_count": 0
+      },
+      "log": "review-supplemental_probe.log",
+      "passed": true
+    },
+    "after_trigger_probe.py": {
+      "exit_code": 0,
+      "report": {
+        "workspace": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-speed-pig_dqx3/cohort/round-2/critical/workspace",
+        "source_sha256": "35c735069f34c8bf308848f84a71a1a8a0937799ffe6153ed436a1e91d7f2814",
+        "root_cause": "Missing final-effect validation after successful SQL statements",
+        "issue_count": 1,
+        "failed_cases": 4,
+        "cases": [
+          {
+            "case": "credit_undone",
+            "pass": false,
+            "exception": null,
+            "receipt": {
+              "tenant": "a",
+              "key": "key",
+              "source": "source",
+              "target": "target",
+              "amount": 10
+            },
+            "before": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ]
+              ],
+              "transfers": [],
+              "audit": []
+            },
+            "after": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  90
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ]
+              ],
+              "transfers": [
+                [
+                  "a",
+                  "key",
+                  "source",
+                  "target",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "a",
+                  "key",
+                  "source",
+                  "target",
+                  10
+                ]
+              ]
+            },
+            "trigger_preserved": true
+          },
+          {
+            "case": "receipt_removed",
+            "pass": false,
+            "exception": null,
+            "receipt": {
+              "tenant": "a",
+              "key": "key",
+              "source": "source",
+              "target": "target",
+              "amount": 10
+            },
+            "before": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ]
+              ],
+              "transfers": [],
+              "audit": []
+            },
+            "after": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  90
+                ],
+                [
+                  "a",
+                  "target",
+                  10
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ]
+              ],
+              "transfers": [],
+              "audit": [
+                [
+                  "a",
+                  "key",
+                  "source",
+                  "target",
+                  10
+                ]
+              ]
+            },
+            "trigger_preserved": true
+          },
+          {
+            "case": "audit_removed",
+            "pass": false,
+            "exception": null,
+            "receipt": {
+              "tenant": "a",
+              "key": "key",
+              "source": "source",
+              "target": "target",
+              "amount": 10
+            },
+            "before": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ]
+              ],
+              "transfers": [],
+              "audit": []
+            },
+            "after": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  90
+                ],
+                [
+                  "a",
+                  "target",
+                  10
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ]
+              ],
+              "transfers": [
+                [
+                  "a",
+                  "key",
+                  "source",
+                  "target",
+                  10
+                ]
+              ],
+              "audit": []
+            },
+            "trigger_preserved": true
+          },
+          {
+            "case": "audit_duplicated",
+            "pass": false,
+            "exception": null,
+            "receipt": {
+              "tenant": "a",
+              "key": "key",
+              "source": "source",
+              "target": "target",
+              "amount": 10
+            },
+            "before": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ]
+              ],
+              "transfers": [],
+              "audit": []
+            },
+            "after": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  90
+                ],
+                [
+                  "a",
+                  "target",
+                  10
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ]
+              ],
+              "transfers": [
+                [
+                  "a",
+                  "key",
+                  "source",
+                  "target",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "a",
+                  "key",
+                  "source",
+                  "target",
+                  10
+                ],
+                [
+                  "a",
+                  "key",
+                  "source",
+                  "target",
+                  10
+                ]
+              ]
+            },
+            "trigger_preserved": true
+          }
+        ]
+      },
+      "log": "review-after_trigger_probe.log",
+      "passed": false
+    },
+    "audit_followup_probe.py": {
+      "exit_code": 0,
+      "report": {
+        "workspace": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-speed-pig_dqx3/cohort/round-2/critical/workspace",
+        "source_sha256": "35c735069f34c8bf308848f84a71a1a8a0937799ffe6153ed436a1e91d7f2814",
+        "finding_groups": {
+          "audit_history_preservation": true,
+          "valid_rowid_relocation": false
+        },
+        "issue_count": 1,
+        "failed_cases": 2,
+        "cases": [
+          {
+            "case": "history_rewritten",
+            "pass": false,
+            "valid_transfer_expected": false,
+            "exception": null,
+            "receipt": {
+              "tenant": "a",
+              "key": "new",
+              "source": "source",
+              "target": "target",
+              "amount": 10
+            },
+            "before": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ],
+                [
+                  "b",
+                  "target",
+                  0
+                ]
+              ],
+              "transfers": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ],
+              "audit": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  90
+                ],
+                [
+                  "a",
+                  "target",
+                  10
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ],
+                [
+                  "b",
+                  "target",
+                  0
+                ]
+              ],
+              "transfers": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ],
+                [
+                  "a",
+                  "new",
+                  "source",
+                  "target",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  999
+                ],
+                [
+                  "a",
+                  "new",
+                  "source",
+                  "target",
+                  10
+                ]
+              ]
+            },
+            "trigger_preserved": true
+          },
+          {
+            "case": "history_deleted_duplicate_added",
+            "pass": false,
+            "valid_transfer_expected": false,
+            "exception": null,
+            "receipt": {
+              "tenant": "a",
+              "key": "new",
+              "source": "source",
+              "target": "target",
+              "amount": 10
+            },
+            "before": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ],
+                [
+                  "b",
+                  "target",
+                  0
+                ]
+              ],
+              "transfers": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ],
+              "audit": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  90
+                ],
+                [
+                  "a",
+                  "target",
+                  10
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ],
+                [
+                  "b",
+                  "target",
+                  0
+                ]
+              ],
+              "transfers": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ],
+                [
+                  "a",
+                  "new",
+                  "source",
+                  "target",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "a",
+                  "new",
+                  "source",
+                  "target",
+                  10
+                ],
+                [
+                  "b",
+                  "new",
+                  "source",
+                  "target",
+                  10
+                ]
+              ]
+            },
+            "trigger_preserved": true
+          },
+          {
+            "case": "valid_rowid_relocation",
+            "pass": true,
+            "valid_transfer_expected": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "a",
+              "key": "new",
+              "source": "source",
+              "target": "target",
+              "amount": 10
+            },
+            "before": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ],
+                [
+                  "b",
+                  "target",
+                  0
+                ]
+              ],
+              "transfers": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ],
+              "audit": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  90
+                ],
+                [
+                  "a",
+                  "target",
+                  10
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ],
+                [
+                  "b",
+                  "target",
+                  0
+                ]
+              ],
+              "transfers": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ],
+                [
+                  "a",
+                  "new",
+                  "source",
+                  "target",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ],
+                [
+                  "a",
+                  "new",
+                  "source",
+                  "target",
+                  10
+                ]
+              ]
+            },
+            "trigger_preserved": true
+          }
+        ]
+      },
+      "log": "review-audit_followup_probe.log",
+      "passed": false
+    },
+    "preservation_probe.py": {
+      "exit_code": 0,
+      "report": {
+        "workspace": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-speed-pig_dqx3/cohort/round-2/critical/workspace",
+        "source_sha256": "35c735069f34c8bf308848f84a71a1a8a0937799ffe6153ed436a1e91d7f2814",
+        "issue_count": 1,
+        "failed_cases": 2,
+        "cases": [
+          {
+            "case": "old_receipt_deleted",
+            "pass": false,
+            "exception": null,
+            "receipt": {
+              "tenant": "a",
+              "key": "new",
+              "source": "source",
+              "target": "target",
+              "amount": 10
+            },
+            "before": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  75
+                ],
+                [
+                  "b",
+                  "target",
+                  2
+                ]
+              ],
+              "transfers": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ],
+              "audit": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  90
+                ],
+                [
+                  "a",
+                  "target",
+                  10
+                ],
+                [
+                  "b",
+                  "source",
+                  75
+                ],
+                [
+                  "b",
+                  "target",
+                  2
+                ]
+              ],
+              "transfers": [
+                [
+                  "a",
+                  "new",
+                  "source",
+                  "target",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ],
+                [
+                  "a",
+                  "new",
+                  "source",
+                  "target",
+                  10
+                ]
+              ]
+            },
+            "trigger_preserved": true,
+            "old_replay_changed_data": true,
+            "after_old_replay": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  90
+                ],
+                [
+                  "a",
+                  "target",
+                  10
+                ],
+                [
+                  "b",
+                  "source",
+                  73
+                ],
+                [
+                  "b",
+                  "target",
+                  4
+                ]
+              ],
+              "transfers": [
+                [
+                  "a",
+                  "new",
+                  "source",
+                  "target",
+                  10
+                ],
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ],
+              "audit": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ],
+                [
+                  "a",
+                  "new",
+                  "source",
+                  "target",
+                  10
+                ],
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ]
+            }
+          },
+          {
+            "case": "unrelated_balance_changed",
+            "pass": false,
+            "exception": null,
+            "receipt": {
+              "tenant": "a",
+              "key": "new",
+              "source": "source",
+              "target": "target",
+              "amount": 10
+            },
+            "before": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  75
+                ],
+                [
+                  "b",
+                  "target",
+                  2
+                ]
+              ],
+              "transfers": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ],
+              "audit": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  90
+                ],
+                [
+                  "a",
+                  "target",
+                  10
+                ],
+                [
+                  "b",
+                  "source",
+                  0
+                ],
+                [
+                  "b",
+                  "target",
+                  2
+                ]
+              ],
+              "transfers": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ],
+                [
+                  "a",
+                  "new",
+                  "source",
+                  "target",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ],
+                [
+                  "a",
+                  "new",
+                  "source",
+                  "target",
+                  10
+                ]
+              ]
+            },
+            "trigger_preserved": true
+          }
+        ]
+      },
+      "log": "review-preservation_probe.log",
+      "passed": false
+    },
+    "noop_probe.py": {
+      "exit_code": 0,
+      "report": {
+        "workspace": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-speed-pig_dqx3/cohort/round-2/critical/workspace",
+        "source_sha256": "35c735069f34c8bf308848f84a71a1a8a0937799ffe6153ed436a1e91d7f2814",
+        "issue_count": 0,
+        "failed_cases": 0,
+        "case": "conflict_ignored_noop_insert",
+        "pass": true,
+        "exception": null,
+        "receipt": {
+          "tenant": "a",
+          "key": "new",
+          "source": "source",
+          "target": "target",
+          "amount": 10
+        },
+        "state": {
+          "accounts": [
+            [
+              "a",
+              "source",
+              90
+            ],
+            [
+              "a",
+              "target",
+              10
+            ]
+          ],
+          "transfers": [
+            [
+              "a",
+              "new",
+              "source",
+              "target",
+              10
+            ]
+          ],
+          "audit": [
+            [
+              "a",
+              "new",
+              "source",
+              "target",
+              10
+            ]
+          ]
+        },
+        "trigger_preserved": true
+      },
+      "log": "review-noop_probe.log",
+      "passed": true
+    },
+    "read_isolation_probe.py": {
+      "exit_code": 0,
+      "report": {
+        "workspace": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-speed-pig_dqx3/cohort/round-2/critical/workspace",
+        "source_sha256": "35c735069f34c8bf308848f84a71a1a8a0937799ffe6153ed436a1e91d7f2814",
+        "issue_count": 0,
+        "failed_cases": 0,
+        "case": "foreign_malformed_text_isolated",
+        "pass": true,
+        "exception": null,
+        "receipt": {
+          "tenant": "alpha",
+          "key": "k",
+          "source": "a",
+          "target": "b",
+          "amount": 10
+        },
+        "other_tenant_unchanged": true
+      },
+      "log": "review-read_isolation_probe.log",
+      "passed": true
+    },
+    "ignored_update_probe.py": {
+      "exit_code": 0,
+      "report": {
+        "workspace": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-speed-pig_dqx3/cohort/round-2/critical/workspace",
+        "source_sha256": "35c735069f34c8bf308848f84a71a1a8a0937799ffe6153ed436a1e91d7f2814",
+        "issue_count": 0,
+        "failed_cases": 0,
+        "case": "conflict_ignored_rowid_update",
+        "pass": true,
+        "exception": null,
+        "receipt": {
+          "tenant": "a",
+          "key": "new",
+          "source": "source",
+          "target": "target",
+          "amount": 10
+        },
+        "state": {
+          "accounts": [
+            [
+              "a",
+              "source",
+              90
+            ],
+            [
+              "a",
+              "target",
+              10
+            ]
+          ],
+          "transfers": [
+            [
+              "a",
+              "new",
+              "source",
+              "target",
+              10
+            ]
+          ],
+          "audit": [
+            [
+              "a",
+              "new",
+              "source",
+              "target",
+              10
+            ]
+          ]
+        },
+        "trigger_preserved": true
+      },
+      "log": "review-ignored_update_probe.log",
+      "passed": true
+    },
+    "frame_followup_probe.py": {
+      "exit_code": 0,
+      "report": {
+        "workspace": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-speed-pig_dqx3/cohort/round-2/critical/workspace",
+        "source_sha256": "35c735069f34c8bf308848f84a71a1a8a0937799ffe6153ed436a1e91d7f2814",
+        "finding_groups": {
+          "identical_replacement": false,
+          "replacement_rowid_swap": false,
+          "unique_victim_preservation": true
+        },
+        "issue_count": 1,
+        "failed_cases": 2,
+        "cases": [
+          {
+            "case": "identical_account_replacement",
+            "valid_success_expected": true,
+            "pass": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_and_triggers_preserved": true
+          },
+          {
+            "case": "identical_receipt_replacement",
+            "valid_success_expected": true,
+            "pass": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_and_triggers_preserved": true
+          },
+          {
+            "case": "identical_audit_replacement",
+            "valid_success_expected": true,
+            "pass": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_and_triggers_preserved": true
+          },
+          {
+            "case": "replacement_rowid_swap",
+            "valid_success_expected": true,
+            "pass": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_and_triggers_preserved": true
+          },
+          {
+            "case": "unique_account_victim",
+            "valid_success_expected": false,
+            "pass": false,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_and_triggers_preserved": true
+          },
+          {
+            "case": "unique_receipt_victim",
+            "valid_success_expected": false,
+            "pass": false,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_and_triggers_preserved": true,
+            "historical_replay_changed_data": true,
+            "after_historical_replay": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  449
+                ],
+                [
+                  "two",
+                  "spare",
+                  796
+                ]
+              ],
+              "transfers": [
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "log": "review-frame_followup_probe.log",
+      "passed": false
+    },
+    "trigger_compatibility_probe.py": {
+      "exit_code": 0,
+      "report": {
+        "workspace": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-speed-pig_dqx3/cohort/round-2/critical/workspace",
+        "source_sha256": "35c735069f34c8bf308848f84a71a1a8a0937799ffe6153ed436a1e91d7f2814",
+        "finding_groups": {
+          "benign_keyword_trigger": false,
+          "benign_unicode_trigger": false,
+          "quoted_unicode_trigger": false,
+          "values_with_when": false,
+          "with_with_when": false,
+          "unique_audit_replace": true,
+          "unique_audit_ignore": false
+        },
+        "issue_count": 1,
+        "failed_cases": 4,
+        "cases": [
+          {
+            "case": "benign_keyword_trigger",
+            "journal": "DELETE",
+            "actual_journal": "delete",
+            "interface": "API",
+            "valid_success_expected": true,
+            "passed": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": null,
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "benign_keyword_trigger",
+            "journal": "DELETE",
+            "actual_journal": "delete",
+            "interface": "CLI",
+            "valid_success_expected": true,
+            "passed": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": {
+              "exit_code": 0,
+              "stdout": "{\"tenant\": \"one\", \"key\": \"k\", \"source\": \"a\", \"target\": \"b\", \"amount\": 10}\n",
+              "stderr": ""
+            },
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "benign_keyword_trigger",
+            "journal": "WAL",
+            "actual_journal": "wal",
+            "interface": "API",
+            "valid_success_expected": true,
+            "passed": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": null,
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "benign_keyword_trigger",
+            "journal": "WAL",
+            "actual_journal": "wal",
+            "interface": "CLI",
+            "valid_success_expected": true,
+            "passed": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": {
+              "exit_code": 0,
+              "stdout": "{\"tenant\": \"one\", \"key\": \"k\", \"source\": \"a\", \"target\": \"b\", \"amount\": 10}\n",
+              "stderr": ""
+            },
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "benign_unicode_trigger",
+            "journal": "DELETE",
+            "actual_journal": "delete",
+            "interface": "API",
+            "valid_success_expected": true,
+            "passed": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": null,
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "benign_unicode_trigger",
+            "journal": "DELETE",
+            "actual_journal": "delete",
+            "interface": "CLI",
+            "valid_success_expected": true,
+            "passed": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": {
+              "exit_code": 0,
+              "stdout": "{\"tenant\": \"one\", \"key\": \"k\", \"source\": \"a\", \"target\": \"b\", \"amount\": 10}\n",
+              "stderr": ""
+            },
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "benign_unicode_trigger",
+            "journal": "WAL",
+            "actual_journal": "wal",
+            "interface": "API",
+            "valid_success_expected": true,
+            "passed": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": null,
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "benign_unicode_trigger",
+            "journal": "WAL",
+            "actual_journal": "wal",
+            "interface": "CLI",
+            "valid_success_expected": true,
+            "passed": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": {
+              "exit_code": 0,
+              "stdout": "{\"tenant\": \"one\", \"key\": \"k\", \"source\": \"a\", \"target\": \"b\", \"amount\": 10}\n",
+              "stderr": ""
+            },
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "quoted_unicode_trigger",
+            "journal": "DELETE",
+            "actual_journal": "delete",
+            "interface": "API",
+            "valid_success_expected": true,
+            "passed": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": null,
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "quoted_unicode_trigger",
+            "journal": "DELETE",
+            "actual_journal": "delete",
+            "interface": "CLI",
+            "valid_success_expected": true,
+            "passed": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": {
+              "exit_code": 0,
+              "stdout": "{\"tenant\": \"one\", \"key\": \"k\", \"source\": \"a\", \"target\": \"b\", \"amount\": 10}\n",
+              "stderr": ""
+            },
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "quoted_unicode_trigger",
+            "journal": "WAL",
+            "actual_journal": "wal",
+            "interface": "API",
+            "valid_success_expected": true,
+            "passed": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": null,
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "quoted_unicode_trigger",
+            "journal": "WAL",
+            "actual_journal": "wal",
+            "interface": "CLI",
+            "valid_success_expected": true,
+            "passed": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": {
+              "exit_code": 0,
+              "stdout": "{\"tenant\": \"one\", \"key\": \"k\", \"source\": \"a\", \"target\": \"b\", \"amount\": 10}\n",
+              "stderr": ""
+            },
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "values_with_when",
+            "journal": "DELETE",
+            "actual_journal": "delete",
+            "interface": "API",
+            "valid_success_expected": true,
+            "passed": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": null,
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "values_with_when",
+            "journal": "DELETE",
+            "actual_journal": "delete",
+            "interface": "CLI",
+            "valid_success_expected": true,
+            "passed": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": {
+              "exit_code": 0,
+              "stdout": "{\"tenant\": \"one\", \"key\": \"k\", \"source\": \"a\", \"target\": \"b\", \"amount\": 10}\n",
+              "stderr": ""
+            },
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "values_with_when",
+            "journal": "WAL",
+            "actual_journal": "wal",
+            "interface": "API",
+            "valid_success_expected": true,
+            "passed": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": null,
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "values_with_when",
+            "journal": "WAL",
+            "actual_journal": "wal",
+            "interface": "CLI",
+            "valid_success_expected": true,
+            "passed": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": {
+              "exit_code": 0,
+              "stdout": "{\"tenant\": \"one\", \"key\": \"k\", \"source\": \"a\", \"target\": \"b\", \"amount\": 10}\n",
+              "stderr": ""
+            },
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "with_with_when",
+            "journal": "DELETE",
+            "actual_journal": "delete",
+            "interface": "API",
+            "valid_success_expected": true,
+            "passed": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": null,
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "with_with_when",
+            "journal": "DELETE",
+            "actual_journal": "delete",
+            "interface": "CLI",
+            "valid_success_expected": true,
+            "passed": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": {
+              "exit_code": 0,
+              "stdout": "{\"tenant\": \"one\", \"key\": \"k\", \"source\": \"a\", \"target\": \"b\", \"amount\": 10}\n",
+              "stderr": ""
+            },
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "with_with_when",
+            "journal": "WAL",
+            "actual_journal": "wal",
+            "interface": "API",
+            "valid_success_expected": true,
+            "passed": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": null,
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "with_with_when",
+            "journal": "WAL",
+            "actual_journal": "wal",
+            "interface": "CLI",
+            "valid_success_expected": true,
+            "passed": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": {
+              "exit_code": 0,
+              "stdout": "{\"tenant\": \"one\", \"key\": \"k\", \"source\": \"a\", \"target\": \"b\", \"amount\": 10}\n",
+              "stderr": ""
+            },
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "unique_audit_replace",
+            "journal": "DELETE",
+            "actual_journal": "delete",
+            "interface": "API",
+            "valid_success_expected": false,
+            "passed": false,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": null,
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "unique_audit_replace",
+            "journal": "DELETE",
+            "actual_journal": "delete",
+            "interface": "CLI",
+            "valid_success_expected": false,
+            "passed": false,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": {
+              "exit_code": 0,
+              "stdout": "{\"tenant\": \"one\", \"key\": \"k\", \"source\": \"a\", \"target\": \"b\", \"amount\": 10}\n",
+              "stderr": ""
+            },
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "unique_audit_replace",
+            "journal": "WAL",
+            "actual_journal": "wal",
+            "interface": "API",
+            "valid_success_expected": false,
+            "passed": false,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": null,
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "unique_audit_replace",
+            "journal": "WAL",
+            "actual_journal": "wal",
+            "interface": "CLI",
+            "valid_success_expected": false,
+            "passed": false,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": {
+              "exit_code": 0,
+              "stdout": "{\"tenant\": \"one\", \"key\": \"k\", \"source\": \"a\", \"target\": \"b\", \"amount\": 10}\n",
+              "stderr": ""
+            },
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "unique_audit_ignore",
+            "journal": "DELETE",
+            "actual_journal": "delete",
+            "interface": "API",
+            "valid_success_expected": true,
+            "passed": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": null,
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "unique_audit_ignore",
+            "journal": "DELETE",
+            "actual_journal": "delete",
+            "interface": "CLI",
+            "valid_success_expected": true,
+            "passed": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": {
+              "exit_code": 0,
+              "stdout": "{\"tenant\": \"one\", \"key\": \"k\", \"source\": \"a\", \"target\": \"b\", \"amount\": 10}\n",
+              "stderr": ""
+            },
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "unique_audit_ignore",
+            "journal": "WAL",
+            "actual_journal": "wal",
+            "interface": "API",
+            "valid_success_expected": true,
+            "passed": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": null,
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          },
+          {
+            "case": "unique_audit_ignore",
+            "journal": "WAL",
+            "actual_journal": "wal",
+            "interface": "CLI",
+            "valid_success_expected": true,
+            "passed": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "one",
+              "key": "k",
+              "source": "a",
+              "target": "b",
+              "amount": 10
+            },
+            "cli": {
+              "exit_code": 0,
+              "stdout": "{\"tenant\": \"one\", \"key\": \"k\", \"source\": \"a\", \"target\": \"b\", \"amount\": 10}\n",
+              "stderr": ""
+            },
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  90
+                ],
+                [
+                  "one",
+                  "b",
+                  10
+                ],
+                [
+                  "two",
+                  "private",
+                  456
+                ],
+                [
+                  "two",
+                  "spare",
+                  789
+                ]
+              ],
+              "transfers": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "two",
+                  "old",
+                  "private",
+                  "spare",
+                  7
+                ],
+                [
+                  "one",
+                  "k",
+                  "a",
+                  "b",
+                  10
+                ]
+              ]
+            },
+            "schema_preserved": true,
+            "replay_error": null
+          }
+        ]
+      },
+      "log": "review-trigger_compatibility_probe.log",
+      "passed": false
+    }
+  },
+  "candidate_sha256": {
+    ".agents/skills/lean-run/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    ".agents/skills/lean-run/SKILL.md": "6794ffee20a245412ad714b43d96de6372ac66c2a86d0c9572d1727705d21138",
+    ".agents/skills/lean-run/references/delegation.md": "63899dde986ec7014a5cffd39216685640a2e98013dae26e037eaf985fecadb1",
+    ".agents/skills/lean-run/references/exploration.md": "baa9a38160095244c31c5e4a8aab5bdd15dfc0cc83df01a7086607a459faf403",
+    ".agents/skills/lean-run/references/handoff.md": "2d6744d15c27d002c85b9b4cbccf2b0845cb7b5c8b3589aa8b9b06a885357e94",
+    ".agents/skills/lean-run/references/write-integrity.md": "ac1ff4d2f36d698382cab77d811ca885c07fa8358dc0de23ec3a06bfcaceeace",
+    ".agents/skills/lean-run/scripts/check.py": "7946993e44c3ebb3d0235c94af4426e2fbef749c31f4b18eac0de001ba3050b4",
+    "AGENTS.md": "0ef83ddcf2d1065527f05cd03d5a1b275feecc77e45bdb5916217f204c1cb486",
+    "CONTRACT.md": "6e6d6ee1f769db8160e528e218d46a0018a90655e775742a073d61df2aebee2b",
+    "app.py": "678a8abcc9888d6328fa35d15eef6cb3dbf733be98a34e8c346d9edfc19d7149",
+    "test_public.py": "5f239e0ce234d0b84f0d12e7cd23eb6dc23e63b88ffa07e50d20d2c061d66b95",
+    "test_regression.py": "0daf0e9de8fa66e94a6a9355f41feef4523c64d59da66391eb41b68ea21bc15f",
+    "vault.py": "35c735069f34c8bf308848f84a71a1a8a0937799ffe6153ed436a1e91d7f2814"
+  },
+  "coordinator_findings": [
+    {
+      "id": "COORD-AMBIGUOUS-CLI-JSON",
+      "severity": "MEDIUM",
+      "location": "app.py JSON boundary",
+      "requirement": "Preserve malformed/ambiguous request rejection.",
+      "evidence": "Duplicate account fields silently select the last value and exit 0 in the public CLI. Latest baseline 2/3 regression failures; reproduced in assessment-1-boundary-repro.json.",
+      "suggested_fix": "Reject duplicate object keys; preserve valid one-key requests and generic errors."
+    },
+    {
+      "id": "COORD-DURABLE-CACHED-REPLAY",
+      "severity": "MEDIUM",
+      "location": "vault.py transfer read order",
+      "requirement": "Preserve exact replay of the stored tenant-scoped receipt with no effects. New transfers still require existing endpoints.",
+      "evidence": "A valid transfer committed, the DB was reopened and a former endpoint was removed by fixture setup. The historical same-key/payload now raises account unavailable before checking the scoped receipt. Baseline round-1 preservation suite expects cached replay without querying former endpoints. Reproduction retained in assessment-1-boundary-repro.json.",
+      "suggested_fix": "After structural validation, resolve a scoped saved receipt or conflict before checking balances for a new transfer."
+    }
+  ]
+}

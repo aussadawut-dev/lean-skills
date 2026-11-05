@@ -1,0 +1,150 @@
+{
+  "advisory": {
+    "probes": [],
+    "historical_suites_failing": []
+  },
+  "policy_superseded": {
+    "historical": [],
+    "probes": {}
+  },
+  "phase": "review-2",
+  "review": {
+    "status": "PASS",
+    "findings": [],
+    "checks": [
+      "Read lean-run and CONTRACT.md; compared ledger.py against .baseline and .pre-repair; inspected added tests and repair changes.",
+      "python3 -B -m unittest discover -v: all 32 tests passed on CPython 3.14.3.",
+      "Independently reproduced R1 failures in .pre-repair. Current code rejects negative scalar balances/amounts and changed replay amounts, prevents overridden arithmetic from creating funds, and bypasses hostile key hashing.",
+      "Independently reproduced R2: UserString field names previously raised TypeError; current code raises ValueError with unchanged state, including after a valid batch operation.",
+      "Focused probes passed for enum compatibility, overridden scalar conversions, normalized account/field collisions, and plain receipt values.",
+      "Independent integrated flow passed: transfers, exhausted-source replay, batch rollback, retry, receipt isolation, dictionary identity and conservation of the initial 50 units.",
+      "Protected file hashes remained unchanged; supplied test_public.py matches both snapshots. Temporary probe files were removed."
+    ],
+    "coverage_limits": [
+      "Review focused on the repair delta and original-contract regressions using local CPython 3.14.3; persistence, concurrency and external services are outside the contract."
+    ]
+  },
+  "grade": "post-repair-1-grade.json",
+  "cross": [
+    {
+      "direction": "historical_tests_on_candidate",
+      "baseline_round": 1,
+      "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-05-lean-run-contract-gates",
+      "exit_code": 0,
+      "seconds": 0.074,
+      "log": "review-2-baseline-1-historical_tests_on_candidate.log"
+    },
+    {
+      "direction": "candidate_tests_on_historical",
+      "baseline_round": 1,
+      "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-05-lean-run-contract-gates",
+      "exit_code": 1,
+      "seconds": 0.053,
+      "log": "review-2-baseline-1-candidate_tests_on_historical.log"
+    },
+    {
+      "direction": "historical_tests_on_candidate",
+      "baseline_round": 1,
+      "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-in-source-budget",
+      "exit_code": 0,
+      "seconds": 0.043,
+      "log": "review-2-history-1-baseline-1-historical_tests_on_candidate.log"
+    },
+    {
+      "direction": "candidate_tests_on_historical",
+      "baseline_round": 1,
+      "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-in-source-budget",
+      "exit_code": 1,
+      "seconds": 0.05,
+      "log": "review-2-history-1-baseline-1-candidate_tests_on_historical.log"
+    },
+    {
+      "direction": "historical_tests_on_candidate",
+      "baseline_round": 1,
+      "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high-pilot",
+      "exit_code": 0,
+      "seconds": 0.041,
+      "log": "review-2-history-2-baseline-1-historical_tests_on_candidate.log"
+    },
+    {
+      "direction": "candidate_tests_on_historical",
+      "baseline_round": 1,
+      "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high-pilot",
+      "exit_code": 1,
+      "seconds": 0.051,
+      "log": "review-2-history-2-baseline-1-candidate_tests_on_historical.log"
+    },
+    {
+      "direction": "historical_tests_on_candidate",
+      "baseline_round": 1,
+      "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high",
+      "exit_code": 0,
+      "seconds": 0.039,
+      "log": "review-2-history-3-baseline-1-historical_tests_on_candidate.log"
+    },
+    {
+      "direction": "candidate_tests_on_historical",
+      "baseline_round": 1,
+      "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high",
+      "exit_code": 1,
+      "seconds": 0.073,
+      "log": "review-2-history-3-baseline-1-candidate_tests_on_historical.log"
+    },
+    {
+      "direction": "historical_tests_on_candidate",
+      "baseline_round": 2,
+      "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high",
+      "exit_code": 0,
+      "seconds": 0.043,
+      "log": "review-2-history-3-baseline-2-historical_tests_on_candidate.log"
+    },
+    {
+      "direction": "candidate_tests_on_historical",
+      "baseline_round": 2,
+      "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high",
+      "exit_code": 1,
+      "seconds": 0.049,
+      "log": "review-2-history-3-baseline-2-candidate_tests_on_historical.log"
+    },
+    {
+      "direction": "historical_tests_on_candidate",
+      "baseline_round": 3,
+      "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high",
+      "exit_code": 0,
+      "seconds": 0.041,
+      "log": "review-2-history-3-baseline-3-historical_tests_on_candidate.log"
+    },
+    {
+      "direction": "candidate_tests_on_historical",
+      "baseline_round": 3,
+      "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high",
+      "exit_code": 1,
+      "seconds": 0.048,
+      "log": "review-2-history-3-baseline-3-candidate_tests_on_historical.log"
+    }
+  ],
+  "supplemental_issue_count": null,
+  "blockers": [],
+  "review_integrity": {
+    "changed_or_removed": [],
+    "added_logs": [],
+    "unexpected_additions": []
+  },
+  "critical_probes": {},
+  "candidate_sha256": {
+    ".agents/skills/lean-run/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    ".agents/skills/lean-run/SKILL.md": "b271f464cd2c5158546d6cf77e2d546cb4b6c6fb8aa929371ab2d83847ca994f",
+    ".agents/skills/lean-run/references/delegation.md": "63899dde986ec7014a5cffd39216685640a2e98013dae26e037eaf985fecadb1",
+    ".agents/skills/lean-run/references/delivery.md": "84a7a68e8e0417b6fa5be85040dd10a872217b5a54ef7f6e77b7be2fc2c2129f",
+    ".agents/skills/lean-run/references/exploration.md": "baa9a38160095244c31c5e4a8aab5bdd15dfc0cc83df01a7086607a459faf403",
+    ".agents/skills/lean-run/references/handoff.md": "2d6744d15c27d002c85b9b4cbccf2b0845cb7b5c8b3589aa8b9b06a885357e94",
+    ".agents/skills/lean-run/references/write-integrity.md": "b179d4d57ca24cd58233f86f0b990ec850b68fc6ba4aaced121a3e4bc9f862e1",
+    ".agents/skills/lean-run/scripts/budget.py": "edfa3ea55624439a1edee7b27393b3455c2e4ea71092694839806612a6bf5ad2",
+    ".agents/skills/lean-run/scripts/check.py": "7946993e44c3ebb3d0235c94af4426e2fbef749c31f4b18eac0de001ba3050b4",
+    "AGENTS.md": "0ef83ddcf2d1065527f05cd03d5a1b275feecc77e45bdb5916217f204c1cb486",
+    "CONTRACT.md": "c9ed2ad9c1ae6cd4b794330ed7d250994e721d0af2c7282d9a004d1a6705299c",
+    "ledger.py": "375a6ab2c77aa9b56c55123f9233633496ed5842aa36f0f4ad4acc6c78d1a4d1",
+    "test_ledger.py": "cd1212837435b296819b542a80da370ffe168f5285e8b64b0f93d481c6908249",
+    "test_public.py": "1594f7eaaa2d90b6c9fc34c0cee982174d8415e3b1dec9e25f57b3d3924d88a0"
+  }
+}

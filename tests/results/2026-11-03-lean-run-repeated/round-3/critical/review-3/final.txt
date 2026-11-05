@@ -1,0 +1,24 @@
+{
+  "status": "REWORK",
+  "findings": [
+    {
+      "id": "REVIEW-2",
+      "severity": "P2",
+      "location": "vault.py:71-76 (_guard_effects)",
+      "requirement": "Valid transfers must continue to succeed with harmless no-op trigger effects.",
+      "evidence": "Initialize alpha accounts a=100 and b=0 as rowids 1 and 2. Create: CREATE TRIGGER harmless AFTER INSERT ON audit BEGIN UPDATE OR IGNORE accounts SET rowid=1 WHERE rowid=2; END. Call transfer(path,'alpha','a','b',10,'k'). The conflicting rowid update should be ignored. .pre-repair succeeds with balances 90/10 and exactly one receipt/audit row. Current code raises IntegrityError('unexpected stored transfer effects'); the CLI exits 2. The new BEFORE guard rejects the attempted collision before SQLite can ignore it. Verified through API and CLI, including complete row and schema comparisons. Equivalent cases on transfers and audit share this root cause.",
+      "suggested_fix": "Detect effective destructive row replacement while preserving SQLite's ignored-update behavior. Retain rejection of destructive OR REPLACE operations and acceptance of harmless rowid relocation."
+    }
+  ],
+  "checks": [
+    "Read lean-run, AGENTS.md and CONTRACT.md; compared current application source with .baseline and .pre-repair; inspected added tests.",
+    "python3 -B -m unittest discover -v: all 30 tests passed. TMPDIR was confined to the workspace.",
+    "Independently reproduced the prior foreign-text isolation failure in .pre-repair; current API transfer and API/CLI replay succeeded while preserving foreign bytes, schema and receipt/audit multiplicity.",
+    "Independently verified the reported ignored-rowid regression through API and CLI against .pre-repair.",
+    "Control probes confirmed destructive rowid replacement rolls back and collision-free relocation succeeds.",
+    "No application, tests, instructions or baseline files modified; temporary probe databases were cleaned up."
+  ],
+  "coverage_limits": [
+    "Focused assessment of the bounded repair delta and original-contract regressions, using Python 3.14.3 and SQLite 3.50.4; other runtime versions and crash fault injection were not tested."
+  ]
+}

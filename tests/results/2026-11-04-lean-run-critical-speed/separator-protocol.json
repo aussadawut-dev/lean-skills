@@ -1,0 +1,5 @@
+{
+  "status": "posthoc",
+  "source": "round-1/critical/review-3/final.txt",
+  "scope": "Native SQLite-accepted vertical-tab and U+FEFF separators plus ASCII control; API/CLI in DELETE/WAL, applied uniformly to old/new final candidates. No repair after the trial cap."
+}

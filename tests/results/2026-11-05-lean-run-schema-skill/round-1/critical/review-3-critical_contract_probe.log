@@ -1,0 +1,1396 @@
+{
+ "workspace": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-schema-skill-kfeIef/cohort/round-1/critical/workspace",
+ "sqlite_version": "3.50.4",
+ "source_sha256": "d48d8543b767ac5e70ba28f462c81ee560e1d99ef171860712b5afd5ec3d77ef",
+ "scenarios": 41,
+ "failed_cases": 0,
+ "failed_clauses": [],
+ "failures": [],
+ "advisory_observations": [],
+ "cases": {
+  "replace_upsert": {
+   "api_777": [
+    "rejected",
+    "audit rule",
+    "rejected",
+    "audit rule",
+    []
+   ],
+   "cli_777": [
+    "rejected",
+    null,
+    "rejected",
+    "audit rule",
+    []
+   ],
+   "api_778": [
+    "rejected",
+    "audit rule",
+    "rejected",
+    "audit rule",
+    []
+   ],
+   "cli_778": [
+    "rejected",
+    null,
+    "rejected",
+    "audit rule",
+    []
+   ],
+   "api_absent": [
+    "rejected",
+    "audit rule",
+    "rejected",
+    "audit rule",
+    []
+   ],
+   "cli_absent": [
+    "rejected",
+    null,
+    "rejected",
+    "audit rule",
+    []
+   ]
+  },
+  "insert_or_replace_upsert": {
+   "api_777": [
+    "rejected",
+    "audit rule",
+    "rejected",
+    "audit rule",
+    []
+   ],
+   "cli_777": [
+    "rejected",
+    null,
+    "rejected",
+    "audit rule",
+    []
+   ],
+   "api_778": [
+    "rejected",
+    "audit rule",
+    "rejected",
+    "audit rule",
+    []
+   ],
+   "cli_778": [
+    "rejected",
+    null,
+    "rejected",
+    "audit rule",
+    []
+   ],
+   "api_absent": [
+    "rejected",
+    "audit rule",
+    "rejected",
+    "audit rule",
+    []
+   ],
+   "cli_absent": [
+    "rejected",
+    null,
+    "rejected",
+    "audit rule",
+    []
+   ]
+  },
+  "qualified_update_trigger": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  },
+  "unqualified_update_trigger": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  },
+  "renamed_tenant_column": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  },
+  "renamed_table_case": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  },
+  "foreign_count_read": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  },
+  "counters_after_foreign_noop": {
+   "api_777": [
+    "rejected",
+    "c=0,t=3,l=2",
+    "rejected",
+    "c=0,t=3,l=2",
+    []
+   ],
+   "cli_777": [
+    "rejected",
+    null,
+    "rejected",
+    "c=0,t=3,l=2",
+    []
+   ],
+   "api_778": [
+    "rejected",
+    "c=0,t=3,l=2",
+    "rejected",
+    "c=0,t=3,l=2",
+    []
+   ],
+   "cli_778": [
+    "rejected",
+    null,
+    "rejected",
+    "c=0,t=3,l=2",
+    []
+   ],
+   "api_absent": [
+    "rejected",
+    "c=0,t=3,l=2",
+    "rejected",
+    "c=0,t=3,l=2",
+    []
+   ],
+   "cli_absent": [
+    "rejected",
+    null,
+    "rejected",
+    "c=0,t=3,l=2",
+    []
+   ]
+  },
+  "counters_first_update": {
+   "api_777": [
+    "rejected",
+    "c=0,t=0,l=0",
+    "rejected",
+    "c=0,t=0,l=0",
+    []
+   ],
+   "cli_777": [
+    "rejected",
+    null,
+    "rejected",
+    "c=0,t=0,l=0",
+    []
+   ],
+   "api_778": [
+    "rejected",
+    "c=0,t=0,l=0",
+    "rejected",
+    "c=0,t=0,l=0",
+    []
+   ],
+   "cli_778": [
+    "rejected",
+    null,
+    "rejected",
+    "c=0,t=0,l=0",
+    []
+   ],
+   "api_absent": [
+    "rejected",
+    "c=0,t=0,l=0",
+    "rejected",
+    "c=0,t=0,l=0",
+    []
+   ],
+   "cli_absent": [
+    "rejected",
+    null,
+    "rejected",
+    "c=0,t=0,l=0",
+    []
+   ]
+  },
+  "f1_net_change": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  },
+  "f1_nested_restore": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  },
+  "foreign_balance_write": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  },
+  "foreign_receipt_write": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  },
+  "foreign_history_delete": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  },
+  "foreign_rowid_move": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  },
+  "foreign_insert_or_ignore": {
+   "api_777": [
+    "rejected",
+    "ValueError: invalid transfer effects",
+    "rejected",
+    "policy",
+    []
+   ],
+   "cli_777": [
+    "rejected",
+    null,
+    "rejected",
+    "policy",
+    []
+   ],
+   "api_778": [
+    "rejected",
+    "ValueError: invalid transfer effects",
+    "rejected",
+    "policy",
+    []
+   ],
+   "cli_778": [
+    "rejected",
+    null,
+    "rejected",
+    "policy",
+    []
+   ],
+   "api_absent": [
+    "rejected",
+    "ValueError: invalid transfer effects",
+    "rejected",
+    "policy",
+    []
+   ],
+   "cli_absent": [
+    "rejected",
+    null,
+    "rejected",
+    "policy",
+    []
+   ]
+  },
+  "foreign_delete_reinsert": {
+   "api_777": [
+    "rejected",
+    "ValueError: invalid transfer effects",
+    "rejected",
+    "policy",
+    []
+   ],
+   "cli_777": [
+    "rejected",
+    null,
+    "rejected",
+    "policy",
+    []
+   ],
+   "api_778": [
+    "rejected",
+    "ValueError: invalid transfer effects",
+    "rejected",
+    "policy",
+    []
+   ],
+   "cli_778": [
+    "rejected",
+    null,
+    "rejected",
+    "policy",
+    []
+   ],
+   "api_absent": [
+    "rejected",
+    "ValueError: invalid transfer effects",
+    "rejected",
+    "policy",
+    []
+   ],
+   "cli_absent": [
+    "rejected",
+    null,
+    "rejected",
+    "policy",
+    []
+   ]
+  },
+  "transient_foreign_audit": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  },
+  "transient_foreign_observed": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  },
+  "cross_tenant_unique_replace": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  },
+  "own_row_into_hidden_slot": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  },
+  "own_extra_row": {
+   "api_777": [
+    "rejected",
+    "ValueError: invalid transfer effects",
+    "rejected",
+    "policy",
+    []
+   ],
+   "cli_777": [
+    "rejected",
+    null,
+    "rejected",
+    "policy",
+    []
+   ],
+   "api_778": [
+    "rejected",
+    "ValueError: invalid transfer effects",
+    "rejected",
+    "policy",
+    []
+   ],
+   "cli_778": [
+    "rejected",
+    null,
+    "rejected",
+    "policy",
+    []
+   ],
+   "api_absent": [
+    "rejected",
+    "ValueError: invalid transfer effects",
+    "rejected",
+    "policy",
+    []
+   ],
+   "cli_absent": [
+    "rejected",
+    null,
+    "rejected",
+    "policy",
+    []
+   ]
+  },
+  "ignored_audit_insert": {
+   "api_777": [
+    "rejected",
+    "ValueError: invalid transfer effects",
+    "rejected",
+    "policy",
+    []
+   ],
+   "cli_777": [
+    "rejected",
+    null,
+    "rejected",
+    "policy",
+    []
+   ]
+  },
+  "ignored_credit": {
+   "api_777": [
+    "rejected",
+    "ValueError: invalid transfer effects",
+    "rejected",
+    "policy",
+    []
+   ],
+   "cli_777": [
+    "rejected",
+    null,
+    "rejected",
+    "policy",
+    []
+   ]
+  },
+  "audit_abort": {
+   "api_777": [
+    "rejected",
+    "audit veto",
+    "rejected",
+    "audit veto",
+    []
+   ],
+   "cli_777": [
+    "rejected",
+    null,
+    "rejected",
+    "audit veto",
+    []
+   ]
+  },
+  "erased_audit": {
+   "api_777": [
+    "rejected",
+    "ValueError: invalid transfer effects",
+    "rejected",
+    "policy",
+    []
+   ],
+   "cli_777": [
+    "rejected",
+    null,
+    "rejected",
+    "policy",
+    []
+   ]
+  },
+  "duplicate_audit": {
+   "api_777": [
+    "rejected",
+    "ValueError: invalid transfer effects",
+    "rejected",
+    "policy",
+    []
+   ],
+   "cli_777": [
+    "rejected",
+    null,
+    "rejected",
+    "policy",
+    []
+   ]
+  },
+  "reversed_credit": {
+   "api_777": [
+    "rejected",
+    "ValueError: invalid transfer effects",
+    "rejected",
+    "policy",
+    []
+   ],
+   "cli_777": [
+    "rejected",
+    null,
+    "rejected",
+    "policy",
+    []
+   ]
+  },
+  "trigger_performs_update": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  },
+  "restored_noop": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  },
+  "trigger_order": {
+   "api_777": [
+    "rejected",
+    "audit veto",
+    "rejected",
+    "audit veto",
+    []
+   ],
+   "cli_777": [
+    "rejected",
+    null,
+    "rejected",
+    "audit veto",
+    []
+   ]
+  },
+  "trigger_order_reverse": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  },
+  "natural_join_harmless": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  },
+  "natural_join_abort": {
+   "api_777": [
+    "rejected",
+    "local guard",
+    "rejected",
+    "local guard",
+    []
+   ],
+   "cli_777": [
+    "rejected",
+    null,
+    "rejected",
+    "local guard",
+    []
+   ]
+  },
+  "side_table_rowid_shape": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  },
+  "side_table_counters": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  },
+  "multirow_ignore": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  },
+  "instead_of_view": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  },
+  "utf16_side_table": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  },
+  "recursive_triggers_on": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  },
+  "no_triggers": {
+   "api_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_777": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_778": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "api_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ],
+   "cli_absent": [
+    "success",
+    "receipt",
+    "success",
+    null,
+    []
+   ]
+  }
+ }
+}

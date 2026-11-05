@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "findings": [],
+  "checks": [
+    "Reviewed CONTRACT.md, lean-run, the baseline-to-current app.py diff, and added regression tests. Supplied test_public.py matches baseline.",
+    "python3 -B -m unittest discover -v: all 10 tests passed.",
+    "Independent public-interface probes preserved exact 5,220-digit signed integers under a 640-digit conversion limit and strict Decimal context.",
+    "Real CLI probes from a temporary directory produced exact large totals and correctly rejected six additional option, arity, and invisible-character cases with exit 2, useful stderr, no stdout, and no traceback.",
+    "No application, test, instruction, or baseline files were modified."
+  ],
+  "coverage_limits": [
+    "Executed on CPython 3.14.3 only.",
+    "Resource-exhaustion boundaries were not exercised."
+  ]
+}

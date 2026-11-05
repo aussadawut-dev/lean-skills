@@ -1,0 +1,8 @@
+Implemented tenant isolation, atomic transfers, persistent deduplication, validation, and generic CLI errors in `vault.py` and `app.py`; added `test_regressions.py`.
+
+- Reproduced defects before repair.
+- `python3 -B -m unittest discover -v`: **28 tests passed**.
+- Verified concurrent connections, rollback after failed or silently skipped writes, database reopening, and real CLI transfer/replay/conflict/recovery journeys.
+- Protected files remain unchanged. Logs are retained in `.check-reproduction.log` and `.check-final.log`.
+
+No known implementation gaps remain. **Final acceptance is BLOCKED pending the coordinator’s mandatory fresh independent review**, which has not occurred.

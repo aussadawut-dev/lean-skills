@@ -1,0 +1,45 @@
+test_valid_transfer (test_public.PublicTests.test_valid_transfer) ... ok
+test_audit_failure_rolls_back_every_effect (test_regression.VaultRegressionTests.test_audit_failure_rolls_back_every_effect) ... ok
+test_balance_is_scoped_and_missing_is_generic (test_regression.VaultRegressionTests.test_balance_is_scoped_and_missing_is_generic) ... ok
+test_benign_self_update_trigger_keeps_existing_recursion_behavior (test_regression.VaultRegressionTests.test_benign_self_update_trigger_keeps_existing_recursion_behavior) ... ok
+test_cli_errors_are_generic_json (test_regression.VaultRegressionTests.test_cli_errors_are_generic_json) ... ok
+test_cli_rejects_malformed_calls_and_unexposed_operations (test_regression.VaultRegressionTests.test_cli_rejects_malformed_calls_and_unexposed_operations) ... ok
+test_competing_payloads_conflict_after_one_commit (test_regression.VaultRegressionTests.test_competing_payloads_conflict_after_one_commit) ... ok
+test_concurrent_sources_do_not_lose_credits (test_regression.VaultRegressionTests.test_concurrent_sources_do_not_lose_credits) ... ok
+test_credit_overflow_rolls_back (test_regression.VaultRegressionTests.test_credit_overflow_rolls_back) ... ERROR
+test_distinct_keys_cannot_overspend (test_regression.VaultRegressionTests.test_distinct_keys_cannot_overspend) ... ok
+test_duplicate_requests_execute_once_on_separate_connections (test_regression.VaultRegressionTests.test_duplicate_requests_execute_once_on_separate_connections) ... ok
+test_ignored_writes_noops_and_rowid_moves_remain_valid (test_regression.VaultRegressionTests.test_ignored_writes_noops_and_rowid_moves_remain_valid) ... ok
+test_init_preserves_schema_rows_and_triggers (test_regression.VaultRegressionTests.test_init_preserves_schema_rows_and_triggers) ... ok
+test_integer_boundaries_and_literal_identifiers (test_regression.VaultRegressionTests.test_integer_boundaries_and_literal_identifiers) ... ok
+test_integrated_cli_transfer_replay_failure_and_recovery (test_regression.VaultRegressionTests.test_integrated_cli_transfer_replay_failure_and_recovery) ... ok
+test_invalid_inputs_are_rejected_without_writes (test_regression.VaultRegressionTests.test_invalid_inputs_are_rejected_without_writes) ... ok
+test_malformed_other_tenant_data_does_not_affect_requests (test_regression.VaultRegressionTests.test_malformed_other_tenant_data_does_not_affect_requests) ... ok
+test_missing_or_inaccessible_transfer_ends_are_generic (test_regression.VaultRegressionTests.test_missing_or_inaccessible_transfer_ends_are_generic) ... ok
+test_replace_cannot_silently_destroy_collision_victims (test_regression.VaultRegressionTests.test_replace_cannot_silently_destroy_collision_victims) ... ok
+test_replay_checks_every_payload_field_and_needs_no_funds (test_regression.VaultRegressionTests.test_replay_checks_every_payload_field_and_needs_no_funds) ... ok
+test_silent_missing_or_wrong_effects_roll_back (test_regression.VaultRegressionTests.test_silent_missing_or_wrong_effects_roll_back) ... ok
+test_storage_failures_at_each_stage_roll_back (test_regression.VaultRegressionTests.test_storage_failures_at_each_stage_roll_back) ... ok
+test_transfer_is_scoped_and_replay_is_payload_bound (test_regression.VaultRegressionTests.test_transfer_is_scoped_and_replay_is_payload_bound) ... ok
+test_trigger_header_keywords_preserve_conditions_and_failures (test_regression.VaultRegressionTests.test_trigger_header_keywords_preserve_conditions_and_failures) ... ok
+test_unquoted_begin_trigger_succeeds_through_api_and_cli (test_regression.VaultRegressionTests.test_unquoted_begin_trigger_succeeds_through_api_and_cli) ... ok
+test_unrelated_accounts_and_history_cannot_change (test_regression.VaultRegressionTests.test_unrelated_accounts_and_history_cannot_change) ... ok
+
+======================================================================
+ERROR: test_credit_overflow_rolls_back (test_regression.VaultRegressionTests.test_credit_overflow_rolls_back)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-srcxzn6o/test_regression.py", line 227, in test_credit_overflow_rolls_back
+    vault.transfer(self.path, 'one', 'a', 'b', 1, 'overflow')
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-srcxzn6o/vault.py", line 311, in transfer
+    con.execute('UPDATE accounts SET balance=? WHERE tenant=? AND name=?',
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                (credit + amount, tenant, target))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+----------------------------------------------------------------------
+Ran 26 tests in 1.560s
+
+FAILED (errors=1)

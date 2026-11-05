@@ -1,0 +1,385 @@
+test_conditional_ignore_preserves_recursive_guards_and_change_counters (test_final_repair.FinalRepairTests.test_conditional_ignore_preserves_recursive_guards_and_change_counters) ... ok
+test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) ... 
+  test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='api', encoding='UTF-8') ... ERROR
+  test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='cli', encoding='UTF-8') ... FAIL
+  test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='api', encoding='UTF-16le') ... ERROR
+  test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='cli', encoding='UTF-16le') ... FAIL
+  test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='api', encoding='UTF-16be') ... ERROR
+  test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='cli', encoding='UTF-16be') ... FAIL
+test_delete_event_separators_and_identifiers_preserve_delete_semantics (test_final_repair.FinalRepairTests.test_delete_event_separators_and_identifiers_preserve_delete_semantics) ... ok
+test_multirow_ignore_and_null_controls_preserve_abort_and_rollback (test_final_repair.FinalRepairTests.test_multirow_ignore_and_null_controls_preserve_abort_and_rollback) ... ok
+test_values_and_with_select_keep_native_trigger_behavior (test_final_repair.FinalRepairTests.test_values_and_with_select_keep_native_trigger_behavior) ... ok
+test_valid_transfer (test_public.PublicTests.test_valid_transfer) ... ok
+test_actor_scoped_history_replays_without_current_endpoints (test_regressions.VaultRegressionTests.test_actor_scoped_history_replays_without_current_endpoints) ... ERROR
+test_audit_fail_and_rollback_actions_are_atomic_and_retryable (test_regressions.VaultRegressionTests.test_audit_fail_and_rollback_actions_are_atomic_and_retryable) ... ok
+test_balance_is_scoped_to_tenant (test_regressions.VaultRegressionTests.test_balance_is_scoped_to_tenant) ... ok
+test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) ... ok
+test_both_transfer_endpoints_must_exist_in_the_tenant (test_regressions.VaultRegressionTests.test_both_transfer_endpoints_must_exist_in_the_tenant) ... ok
+test_cli_integrated_transfer_replay_conflict_and_balance (test_regressions.VaultRegressionTests.test_cli_integrated_transfer_replay_conflict_and_balance) ... ok
+test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) ... ok
+test_cli_storage_failure_is_generic_and_atomic_then_recovers (test_regressions.VaultRegressionTests.test_cli_storage_failure_is_generic_and_atomic_then_recovers) ... ok
+test_complete_balance_can_be_transferred (test_regressions.VaultRegressionTests.test_complete_balance_can_be_transferred) ... ok
+test_existing_unique_constraint_failure_does_not_lose_money_or_history (test_regressions.VaultRegressionTests.test_existing_unique_constraint_failure_does_not_lose_money_or_history) ... ok
+test_foreign_cached_receipt_and_malformed_rows_are_not_read (test_regressions.VaultRegressionTests.test_foreign_cached_receipt_and_malformed_rows_are_not_read) ... ok
+test_ignored_required_write_rolls_back_everything (test_regressions.VaultRegressionTests.test_ignored_required_write_rolls_back_everything) ... 
+  test_ignored_required_write_rolls_back_everything (test_regressions.VaultRegressionTests.test_ignored_required_write_rolls_back_everything) (trigger="BEFORE UPDATE ON accounts WHEN OLD.tenant='one' AND OLD.name='alice'") ... ERROR
+  test_ignored_required_write_rolls_back_everything (test_regressions.VaultRegressionTests.test_ignored_required_write_rolls_back_everything) (trigger="BEFORE UPDATE ON accounts WHEN OLD.tenant='one' AND OLD.name='bob'") ... ERROR
+  test_ignored_required_write_rolls_back_everything (test_regressions.VaultRegressionTests.test_ignored_required_write_rolls_back_everything) (trigger='BEFORE INSERT ON transfers') ... ERROR
+  test_ignored_required_write_rolls_back_everything (test_regressions.VaultRegressionTests.test_ignored_required_write_rolls_back_everything) (trigger='BEFORE INSERT ON audit') ... ERROR
+test_init_preserves_existing_schema_rows_and_triggers (test_regressions.VaultRegressionTests.test_init_preserves_existing_schema_rows_and_triggers) ... ok
+test_key_can_be_reused_independently_by_another_tenant (test_regressions.VaultRegressionTests.test_key_can_be_reused_independently_by_another_tenant) ... ok
+test_large_integer_balances_remain_exact_and_overflow_is_atomic (test_regressions.VaultRegressionTests.test_large_integer_balances_remain_exact_and_overflow_is_atomic) ... ok
+test_missing_and_inaccessible_accounts_have_same_generic_error (test_regressions.VaultRegressionTests.test_missing_and_inaccessible_accounts_have_same_generic_error) ... ok
+test_receipt_return_values_do_not_share_mutable_state (test_regressions.VaultRegressionTests.test_receipt_return_values_do_not_share_mutable_state) ... ok
+test_replay_conflicts_and_invalid_replays_have_no_writes (test_regressions.VaultRegressionTests.test_replay_conflicts_and_invalid_replays_have_no_writes) ... ok
+test_replay_is_durable_and_does_not_recheck_funds_or_write (test_regressions.VaultRegressionTests.test_replay_is_durable_and_does_not_recheck_funds_or_write) ... ok
+test_simultaneous_distinct_keys_cannot_overspend (test_regressions.VaultRegressionTests.test_simultaneous_distinct_keys_cannot_overspend) ... ok
+test_simultaneous_duplicate_keys_execute_once (test_regressions.VaultRegressionTests.test_simultaneous_duplicate_keys_execute_once) ... ok
+test_simultaneous_opposing_transfers_preserve_all_credits (test_regressions.VaultRegressionTests.test_simultaneous_opposing_transfers_preserve_all_credits) ... ok
+test_simultaneous_tenants_can_share_a_key (test_regressions.VaultRegressionTests.test_simultaneous_tenants_can_share_a_key) ... ok
+test_sql_parameters_accept_unicode_and_literal_sql_characters (test_regressions.VaultRegressionTests.test_sql_parameters_accept_unicode_and_literal_sql_characters) ... ok
+test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything (test_regressions.VaultRegressionTests.test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything) ... ok
+test_transfer_changes_only_the_two_tenant_accounts (test_regressions.VaultRegressionTests.test_transfer_changes_only_the_two_tenant_accounts) ... ok
+test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) ... ok
+test_duplicate_decoded_json_keys_are_rejected_without_effects (test_repair.RepairTests.test_duplicate_decoded_json_keys_are_rejected_without_effects) ... 
+  test_duplicate_decoded_json_keys_are_rejected_without_effects (test_repair.RepairTests.test_duplicate_decoded_json_keys_are_rejected_without_effects) (payload='{"op":"balance","tenant":"two","tenant":"one","account":"a"}') ... FAIL
+  test_duplicate_decoded_json_keys_are_rejected_without_effects (test_repair.RepairTests.test_duplicate_decoded_json_keys_are_rejected_without_effects) (payload='{"op":"transfer","tenant":"one","source":"a","target":"b","key":"k","amount":1,"amount":10}') ... FAIL
+  test_duplicate_decoded_json_keys_are_rejected_without_effects (test_repair.RepairTests.test_duplicate_decoded_json_keys_are_rejected_without_effects) (payload='{"op":"transfer","tenant":"one","source":"a","target":"b","key":"k","amount":1,"\\u0061mount":10}') ... FAIL
+  test_duplicate_decoded_json_keys_are_rejected_without_effects (test_repair.RepairTests.test_duplicate_decoded_json_keys_are_rejected_without_effects) (payload='{"op":"balance","\\u006fp":"balance","tenant":"one","account":"a"}') ... FAIL
+test_durable_replay_survives_removed_endpoints_and_rejects_new_requests (test_repair.RepairTests.test_durable_replay_survives_removed_endpoints_and_rejects_new_requests) ... ERROR
+test_erased_required_audit_is_rejected_and_retryable (test_repair.RepairTests.test_erased_required_audit_is_rejected_and_retryable) ... ERROR
+test_foreign_balance_change_is_rejected (test_repair.RepairTests.test_foreign_balance_change_is_rejected) ... FAIL
+test_implicit_replace_delete_keeps_native_delete_trigger_behavior (test_repair.RepairTests.test_implicit_replace_delete_keeps_native_delete_trigger_behavior) ... ERROR
+test_noops_ignored_conflicts_and_row_moves_preserve_raw_foreign_data (test_repair.RepairTests.test_noops_ignored_conflicts_and_row_moves_preserve_raw_foreign_data) ... ERROR
+test_recursive_noop_and_after_ignore_keep_native_behavior (test_repair.RepairTests.test_recursive_noop_and_after_ignore_keep_native_behavior) ... ERROR
+test_replace_cannot_remove_history_via_extra_unique_indexes (test_repair.RepairTests.test_replace_cannot_remove_history_via_extra_unique_indexes) ... ERROR
+test_storage_class_only_change_is_rejected (test_repair.RepairTests.test_storage_class_only_change_is_rejected) ... FAIL
+
+======================================================================
+ERROR: test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='api', encoding='UTF-8')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_final_repair.py", line 107, in assert_native_behavior
+    self.assertEqual(vault.transfer(path, **request), request)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/vault.py", line 223, in transfer
+    scoped.execute('INSERT INTO audit VALUES (?,?,?,?,?)', values)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: changed counter
+
+======================================================================
+ERROR: test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='api', encoding='UTF-16le')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_final_repair.py", line 107, in assert_native_behavior
+    self.assertEqual(vault.transfer(path, **request), request)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/vault.py", line 223, in transfer
+    scoped.execute('INSERT INTO audit VALUES (?,?,?,?,?)', values)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: changed counter
+
+======================================================================
+ERROR: test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='api', encoding='UTF-16be')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_final_repair.py", line 107, in assert_native_behavior
+    self.assertEqual(vault.transfer(path, **request), request)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/vault.py", line 223, in transfer
+    scoped.execute('INSERT INTO audit VALUES (?,?,?,?,?)', values)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: changed counter
+
+======================================================================
+ERROR: test_actor_scoped_history_replays_without_current_endpoints (test_regressions.VaultRegressionTests.test_actor_scoped_history_replays_without_current_endpoints)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_regressions.py", line 197, in test_actor_scoped_history_replays_without_current_endpoints
+    self.assertEqual(self.pay(key='legacy', source='hidden'),
+                     ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_regressions.py", line 49, in pay
+    return vault.transfer(self.path, **request)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/vault.py", line 188, in transfer
+    funds = _balance(con, tenant, source)
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/vault.py", line 44, in _balance
+    raise ValueError("invalid account")
+ValueError: invalid account
+
+======================================================================
+ERROR: test_ignored_required_write_rolls_back_everything (test_regressions.VaultRegressionTests.test_ignored_required_write_rolls_back_everything) (trigger="BEFORE UPDATE ON accounts WHEN OLD.tenant='one' AND OLD.name='alice'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_regressions.py", line 299, in test_ignored_required_write_rolls_back_everything
+    self.pay()
+    ~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_regressions.py", line 49, in pay
+    return vault.transfer(self.path, **request)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/vault.py", line 227, in transfer
+    _verify(_core_rows(scoped), expected)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/vault.py", line 156, in _verify
+    raise ValueError("invalid transfer effects")
+ValueError: invalid transfer effects
+
+======================================================================
+ERROR: test_ignored_required_write_rolls_back_everything (test_regressions.VaultRegressionTests.test_ignored_required_write_rolls_back_everything) (trigger="BEFORE UPDATE ON accounts WHEN OLD.tenant='one' AND OLD.name='bob'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_regressions.py", line 299, in test_ignored_required_write_rolls_back_everything
+    self.pay()
+    ~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_regressions.py", line 49, in pay
+    return vault.transfer(self.path, **request)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/vault.py", line 227, in transfer
+    _verify(_core_rows(scoped), expected)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/vault.py", line 156, in _verify
+    raise ValueError("invalid transfer effects")
+ValueError: invalid transfer effects
+
+======================================================================
+ERROR: test_ignored_required_write_rolls_back_everything (test_regressions.VaultRegressionTests.test_ignored_required_write_rolls_back_everything) (trigger='BEFORE INSERT ON transfers')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_regressions.py", line 299, in test_ignored_required_write_rolls_back_everything
+    self.pay()
+    ~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_regressions.py", line 49, in pay
+    return vault.transfer(self.path, **request)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/vault.py", line 227, in transfer
+    _verify(_core_rows(scoped), expected)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/vault.py", line 156, in _verify
+    raise ValueError("invalid transfer effects")
+ValueError: invalid transfer effects
+
+======================================================================
+ERROR: test_ignored_required_write_rolls_back_everything (test_regressions.VaultRegressionTests.test_ignored_required_write_rolls_back_everything) (trigger='BEFORE INSERT ON audit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_regressions.py", line 299, in test_ignored_required_write_rolls_back_everything
+    self.pay()
+    ~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_regressions.py", line 49, in pay
+    return vault.transfer(self.path, **request)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/vault.py", line 227, in transfer
+    _verify(_core_rows(scoped), expected)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/vault.py", line 156, in _verify
+    raise ValueError("invalid transfer effects")
+ValueError: invalid transfer effects
+
+======================================================================
+ERROR: test_durable_replay_survives_removed_endpoints_and_rejects_new_requests (test_repair.RepairTests.test_durable_replay_survives_removed_endpoints_and_rejects_new_requests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_repair.py", line 184, in test_durable_replay_survives_removed_endpoints_and_rejects_new_requests
+    self.assertEqual(self.pay(), original)
+                     ~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_repair.py", line 40, in pay
+    return vault.transfer(self.path, **request)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/vault.py", line 188, in transfer
+    funds = _balance(con, tenant, source)
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/vault.py", line 44, in _balance
+    raise ValueError("invalid account")
+ValueError: invalid account
+
+======================================================================
+ERROR: test_erased_required_audit_is_rejected_and_retryable (test_repair.RepairTests.test_erased_required_audit_is_rejected_and_retryable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_repair.py", line 70, in test_erased_required_audit_is_rejected_and_retryable
+    self.assert_rollback()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_repair.py", line 58, in assert_rollback
+    self.pay()
+    ~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_repair.py", line 40, in pay
+    return vault.transfer(self.path, **request)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/vault.py", line 227, in transfer
+    _verify(_core_rows(scoped), expected)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/vault.py", line 156, in _verify
+    raise ValueError("invalid transfer effects")
+ValueError: invalid transfer effects
+
+======================================================================
+ERROR: test_implicit_replace_delete_keeps_native_delete_trigger_behavior (test_repair.RepairTests.test_implicit_replace_delete_keeps_native_delete_trigger_behavior)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_repair.py", line 133, in test_implicit_replace_delete_keeps_native_delete_trigger_behavior
+    self.assertEqual(self.pay()['amount'], 10)
+                     ~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_repair.py", line 40, in pay
+    return vault.transfer(self.path, **request)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/vault.py", line 227, in transfer
+    _verify(_core_rows(scoped), expected)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/vault.py", line 156, in _verify
+    raise ValueError("invalid transfer effects")
+ValueError: invalid transfer effects
+
+======================================================================
+ERROR: test_noops_ignored_conflicts_and_row_moves_preserve_raw_foreign_data (test_repair.RepairTests.test_noops_ignored_conflicts_and_row_moves_preserve_raw_foreign_data)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_repair.py", line 112, in test_noops_ignored_conflicts_and_row_moves_preserve_raw_foreign_data
+    self.pay()
+    ~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_repair.py", line 40, in pay
+    return vault.transfer(self.path, **request)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/vault.py", line 227, in transfer
+    _verify(_core_rows(scoped), expected)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/vault.py", line 156, in _verify
+    raise ValueError("invalid transfer effects")
+ValueError: invalid transfer effects
+
+======================================================================
+ERROR: test_recursive_noop_and_after_ignore_keep_native_behavior (test_repair.RepairTests.test_recursive_noop_and_after_ignore_keep_native_behavior)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_repair.py", line 159, in test_recursive_noop_and_after_ignore_keep_native_behavior
+    self.assertEqual(self.pay()['amount'], 10)
+                     ~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_repair.py", line 40, in pay
+    return vault.transfer(self.path, **request)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/vault.py", line 223, in transfer
+    scoped.execute('INSERT INTO audit VALUES (?,?,?,?,?)', values)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: changed counter
+
+======================================================================
+ERROR: test_replace_cannot_remove_history_via_extra_unique_indexes (test_repair.RepairTests.test_replace_cannot_remove_history_via_extra_unique_indexes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_repair.py", line 98, in test_replace_cannot_remove_history_via_extra_unique_indexes
+    self.assert_rollback()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_repair.py", line 58, in assert_rollback
+    self.pay()
+    ~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_repair.py", line 40, in pay
+    return vault.transfer(self.path, **request)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/vault.py", line 227, in transfer
+    _verify(_core_rows(scoped), expected)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/vault.py", line 156, in _verify
+    raise ValueError("invalid transfer effects")
+ValueError: invalid transfer effects
+
+======================================================================
+FAIL: test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='cli', encoding='UTF-8')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_final_repair.py", line 115, in assert_native_behavior
+    self.assert_cli_success(result, request)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_final_repair.py", line 75, in assert_cli_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='cli', encoding='UTF-16le')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_final_repair.py", line 115, in assert_native_behavior
+    self.assert_cli_success(result, request)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_final_repair.py", line 75, in assert_cli_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) (interface='cli', encoding='UTF-16be')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_final_repair.py", line 115, in assert_native_behavior
+    self.assert_cli_success(result, request)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_final_repair.py", line 75, in assert_cli_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_duplicate_decoded_json_keys_are_rejected_without_effects (test_repair.RepairTests.test_duplicate_decoded_json_keys_are_rejected_without_effects) (payload='{"op":"balance","tenant":"two","tenant":"one","account":"a"}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_repair.py", line 175, in test_duplicate_decoded_json_keys_are_rejected_without_effects
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : 
+
+======================================================================
+FAIL: test_duplicate_decoded_json_keys_are_rejected_without_effects (test_repair.RepairTests.test_duplicate_decoded_json_keys_are_rejected_without_effects) (payload='{"op":"transfer","tenant":"one","source":"a","target":"b","key":"k","amount":1,"amount":10}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_repair.py", line 175, in test_duplicate_decoded_json_keys_are_rejected_without_effects
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : 
+
+======================================================================
+FAIL: test_duplicate_decoded_json_keys_are_rejected_without_effects (test_repair.RepairTests.test_duplicate_decoded_json_keys_are_rejected_without_effects) (payload='{"op":"transfer","tenant":"one","source":"a","target":"b","key":"k","amount":1,"\\u0061mount":10}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_repair.py", line 175, in test_duplicate_decoded_json_keys_are_rejected_without_effects
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : 
+
+======================================================================
+FAIL: test_duplicate_decoded_json_keys_are_rejected_without_effects (test_repair.RepairTests.test_duplicate_decoded_json_keys_are_rejected_without_effects) (payload='{"op":"balance","\\u006fp":"balance","tenant":"one","account":"a"}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_repair.py", line 175, in test_duplicate_decoded_json_keys_are_rejected_without_effects
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : 
+
+======================================================================
+FAIL: test_foreign_balance_change_is_rejected (test_repair.RepairTests.test_foreign_balance_change_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_repair.py", line 80, in test_foreign_balance_change_is_rejected
+    self.assert_rollback()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_repair.py", line 57, in assert_rollback
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+======================================================================
+FAIL: test_storage_class_only_change_is_rejected (test_repair.RepairTests.test_storage_class_only_change_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_repair.py", line 85, in test_storage_class_only_change_is_rejected
+    self.assert_rollback()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-19nnysln/test_repair.py", line 57, in assert_rollback
+    with self.assertRaises(sqlite3.Error):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Error not raised
+
+----------------------------------------------------------------------
+Ran 42 tests in 4.101s
+
+FAILED (failures=9, errors=14)

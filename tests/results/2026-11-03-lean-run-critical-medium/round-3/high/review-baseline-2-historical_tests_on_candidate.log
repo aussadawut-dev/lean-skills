@@ -1,0 +1,28 @@
+test_batch_receipts_are_independent_of_inputs_history_and_each_other (test_ledger.LedgerTests.test_batch_receipts_are_independent_of_inputs_history_and_each_other) ... ok
+test_batch_requires_a_list (test_ledger.LedgerTests.test_batch_requires_a_list) ... ok
+test_conflicting_key_within_batch_is_atomic (test_ledger.LedgerTests.test_conflicting_key_within_batch_is_atomic) ... ok
+test_constructor_accepts_nonnegative_integer_balances (test_ledger.LedgerTests.test_constructor_accepts_nonnegative_integer_balances) ... ok
+test_constructor_copies_input (test_ledger.LedgerTests.test_constructor_copies_input) ... ok
+test_constructor_rejects_invalid_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_balances) ... ok
+test_constructor_requires_a_dictionary_with_string_accounts (test_ledger.LedgerTests.test_constructor_requires_a_dictionary_with_string_accounts) ... ok
+test_empty_batch_preserves_state (test_ledger.LedgerTests.test_empty_batch_preserves_state) ... ok
+test_failed_batch_restores_earlier_balances_and_history (test_ledger.LedgerTests.test_failed_batch_restores_earlier_balances_and_history) ... ok
+test_insufficient_funds_are_atomic_and_do_not_reserve_key (test_ledger.LedgerTests.test_insufficient_funds_are_atomic_and_do_not_reserve_key) ... ok
+test_integrated_funding_saving_refund_failure_retry_and_replay (test_ledger.LedgerTests.test_integrated_funding_saving_refund_failure_retry_and_replay) ... ok
+test_invalid_amounts_leave_state_unchanged (test_ledger.LedgerTests.test_invalid_amounts_leave_state_unchanged) ... ok
+test_invalid_batch_operations_roll_back_prior_success (test_ledger.LedgerTests.test_invalid_batch_operations_roll_back_prior_success) ... ok
+test_invalid_keys_leave_state_unchanged (test_ledger.LedgerTests.test_invalid_keys_leave_state_unchanged) ... ok
+test_new_and_replayed_receipts_cannot_change_history (test_ledger.LedgerTests.test_new_and_replayed_receipts_cannot_change_history) ... ok
+test_replay_rejects_each_changed_payload_field (test_ledger.LedgerTests.test_replay_rejects_each_changed_payload_field) ... ok
+test_replay_still_validates_amount_type (test_ledger.LedgerTests.test_replay_still_validates_amount_type) ... ok
+test_replay_succeeds_after_source_is_empty (test_ledger.LedgerTests.test_replay_succeeds_after_source_is_empty) ... ok
+test_successful_batch_preserves_order_and_replay_semantics (test_ledger.LedgerTests.test_successful_batch_preserves_order_and_replay_semantics) ... ok
+test_transfer_preserves_large_integers (test_ledger.LedgerTests.test_transfer_preserves_large_integers) ... ok
+test_transfer_receipt_and_exact_available_balance (test_ledger.LedgerTests.test_transfer_receipt_and_exact_available_balance) ... ok
+test_unavailable_invalid_and_identical_accounts_are_atomic (test_ledger.LedgerTests.test_unavailable_invalid_and_identical_accounts_are_atomic) ... ok
+test_transfer (test_public.PublicTests.test_transfer) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.001s
+
+OK

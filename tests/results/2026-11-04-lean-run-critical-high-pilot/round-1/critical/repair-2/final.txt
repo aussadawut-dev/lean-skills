@@ -1,0 +1,5 @@
+Repaired R2-F1 and R2-F2: pragma name resolution and immediate cleanup of trigger frames abandoned by `RAISE(IGNORE)`.
+
+Added native SQLite/API/CLI regressions covering rollback, harmless controls, counters, and exact schema restoration. Required check `python3 -B -m unittest discover -v`: **37 tests passed**.
+
+REWORK remains **2**. Final acceptance remains blocked pending the coordinator’s renewed independent review.

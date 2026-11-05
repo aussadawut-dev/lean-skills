@@ -1,0 +1,25 @@
+{
+  "status": "REWORK",
+  "findings": [
+    {
+      "id": "R3",
+      "severity": "HIGH",
+      "location": "vault.py:95-101 (_isolate), vault.py:222-223 (receipt/audit import)",
+      "requirement": "No trigger-visible counter or transfer outcome may depend on another tenant's rows.",
+      "evidence": "Create two databases with accounts ('one','a',100), ('one','b',0). Add audit(rowid,tenant,key,source,target,amount)=(40,'two','private','x','y',999) only to the second. Install: CREATE TRIGGER guard AFTER INSERT ON audit WHEN NEW.key='next' BEGIN SELECT CASE WHEN last_insert_rowid()>2 THEN RAISE(ABORT,'counter limit') END; END; Call transfer(path,'one','a','b',10,'k'), then the same request with key='next'. Both first calls succeed. The second call succeeds without foreign history, leaving balances 80/20, but raises IntegrityError with foreign history, leaving 90/10. CLI independently reproduces exit 0 versus exit 2. Logging instead of rejecting records counters 1,2 versus 1,42; foreign rowid 80 produces 1,82. Pre-repair succeeds in all variants with counters 1,2, matching native tenant-only SQLite. Preserving globally allocated rowids now carries protected insertion history into subsequent trigger execution. This reproducer has no new-row collision or auxiliary rowid reference.",
+      "suggested_fix": "Preserve the repaired sparse-history references while preventing protected allocation history from affecting subsequent trigger counters and outcomes. Add the two-transfer API/CLI regression. If this conflicts with the permitted new-row allocation behavior, obtain an explicit coordinator resolution before acceptance."
+    }
+  ],
+  "checks": [
+    "Read lean-run, CONTRACT.md, source deltas against .baseline/ and .pre-repair/, and added tests.",
+    "Ran python3 -B -m unittest discover -v: 25 tests, 3 failures—one counter regression and two explicitly excluded collision subtests.",
+    "Independently verified the admitted R2 repair with 24 API/CLI cases covering transfers and audit, native SQLite controls, sparse references, protected-row preservation, replay, rollback, schema preservation and integrity_check.",
+    "Confirmed pre-repair sparse references remain at 100; current and native SQLite correctly update them to 90.",
+    "Independently reproduced R3 through API and CLI, with pre-repair and native controls.",
+    "Used Python 3.14.3 and SQLite 3.50.4, disposable workspace databases and Python -B; modified no source, tests or instructions."
+  ],
+  "coverage_limits": [
+    "The coordinator-excluded new-audit-row collision remains reproducible but is not counted as a finding.",
+    "Assessment focused on the bounded repair and affected original-contract behavior; unrelated exploration was not repeated."
+  ]
+}

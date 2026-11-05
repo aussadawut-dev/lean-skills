@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "findings": [],
+  "checks": [
+    "Read lean-run, AGENTS.md and CONTRACT.md; inspected current source and all added tests.",
+    "Compared ledger.py with .baseline/ledger.py; confirmed test_public.py matches its baseline.",
+    "Ran python3 -B -m unittest discover -v: all 24 tests passed.",
+    "Independent temporary probes verified batch rollback, reuse of rolled-back keys, depleted-account replay, receipt isolation and public dictionary identity.",
+    "Independent integrated flows verified fund conservation, untouched accounts, Unicode names, nonempty NUL keys and large integer amounts.",
+    "No application, test, instruction or baseline files were modified; temporary probes were removed."
+  ],
+  "coverage_limits": [
+    "Assessment covers the synchronous in-memory public API. Persistence, concurrency and external services are explicitly outside the contract."
+  ]
+}

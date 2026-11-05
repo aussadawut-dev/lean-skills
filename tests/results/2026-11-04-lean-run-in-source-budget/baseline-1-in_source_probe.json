@@ -1,0 +1,558 @@
+{
+  "workspace": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high-pilot/round-1/critical/workspace",
+  "sqlite_version": "3.50.4",
+  "source_sha256": "b01a72948335b7e12c2d31fe4ad17560145b4d127b16e8b1ee943d1824ad1de3",
+  "failed_cases": 6,
+  "failed_case_names": [
+    "in_plain_abort",
+    "in_plain_harmless",
+    "in_main_abort",
+    "in_main_harmless",
+    "not_indexed_abort",
+    "not_indexed_harmless"
+  ],
+  "cases": [
+    {
+      "case": "in_plain_abort",
+      "finding": "R3-F1",
+      "native_pass": true,
+      "native": {
+        "status": "storage_error",
+        "error": "native guard",
+        "recursive_triggers": 0
+      },
+      "expected": "storage_error",
+      "failures": [
+        "api:accounts",
+        "api:transfers",
+        "api:audit",
+        "api:status",
+        "cli:accounts",
+        "cli:transfers",
+        "cli:audit",
+        "cli:status"
+      ],
+      "api": {
+        "status": "success",
+        "receipt": {
+          "tenant": "red",
+          "key": "new",
+          "source": "a",
+          "target": "b",
+          "amount": 10
+        },
+        "replay": {
+          "status": "success",
+          "receipt": {
+            "tenant": "red",
+            "key": "new",
+            "source": "a",
+            "target": "b",
+            "amount": 10
+          }
+        },
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            90
+          ],
+          [
+            "red",
+            "b",
+            30
+          ]
+        ],
+        "reopened_transfers": [
+          [
+            "red",
+            "new",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "reopened_audit": [
+          [
+            "red",
+            "new",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "schema_preserved": true
+      },
+      "cli": {
+        "status": "success",
+        "receipt": {
+          "tenant": "red",
+          "key": "new",
+          "source": "a",
+          "target": "b",
+          "amount": 10
+        },
+        "replay": {
+          "status": "success",
+          "receipt": {
+            "tenant": "red",
+            "key": "new",
+            "source": "a",
+            "target": "b",
+            "amount": 10
+          }
+        },
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            90
+          ],
+          [
+            "red",
+            "b",
+            30
+          ]
+        ],
+        "reopened_transfers": [
+          [
+            "red",
+            "new",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "reopened_audit": [
+          [
+            "red",
+            "new",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "schema_preserved": true
+      }
+    },
+    {
+      "case": "in_plain_harmless",
+      "finding": "R3-F1",
+      "native_pass": true,
+      "native": {
+        "status": "success",
+        "recursive_triggers": 0
+      },
+      "expected": "success",
+      "failures": [
+        "api:accounts",
+        "api:transfers",
+        "api:audit",
+        "api:status",
+        "api:receipt",
+        "cli:accounts",
+        "cli:transfers",
+        "cli:audit",
+        "cli:status",
+        "cli:receipt"
+      ],
+      "api": {
+        "status": "storage_error",
+        "type": "IntegrityError",
+        "error": "native guard",
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            100
+          ],
+          [
+            "red",
+            "b",
+            20
+          ]
+        ],
+        "reopened_transfers": [],
+        "reopened_audit": [],
+        "schema_preserved": true
+      },
+      "cli": {
+        "status": "storage_error",
+        "returncode": 2,
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            100
+          ],
+          [
+            "red",
+            "b",
+            20
+          ]
+        ],
+        "reopened_transfers": [],
+        "reopened_audit": [],
+        "schema_preserved": true
+      }
+    },
+    {
+      "case": "in_main_abort",
+      "finding": "R3-F1",
+      "native_pass": true,
+      "native": {
+        "status": "storage_error",
+        "error": "native guard",
+        "recursive_triggers": 0
+      },
+      "expected": "storage_error",
+      "failures": [
+        "api:accounts",
+        "api:transfers",
+        "api:audit",
+        "api:status",
+        "cli:accounts",
+        "cli:transfers",
+        "cli:audit",
+        "cli:status"
+      ],
+      "api": {
+        "status": "success",
+        "receipt": {
+          "tenant": "red",
+          "key": "new",
+          "source": "a",
+          "target": "b",
+          "amount": 10
+        },
+        "replay": {
+          "status": "success",
+          "receipt": {
+            "tenant": "red",
+            "key": "new",
+            "source": "a",
+            "target": "b",
+            "amount": 10
+          }
+        },
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            90
+          ],
+          [
+            "red",
+            "b",
+            30
+          ]
+        ],
+        "reopened_transfers": [
+          [
+            "red",
+            "new",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "reopened_audit": [
+          [
+            "red",
+            "new",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "schema_preserved": true
+      },
+      "cli": {
+        "status": "success",
+        "receipt": {
+          "tenant": "red",
+          "key": "new",
+          "source": "a",
+          "target": "b",
+          "amount": 10
+        },
+        "replay": {
+          "status": "success",
+          "receipt": {
+            "tenant": "red",
+            "key": "new",
+            "source": "a",
+            "target": "b",
+            "amount": 10
+          }
+        },
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            90
+          ],
+          [
+            "red",
+            "b",
+            30
+          ]
+        ],
+        "reopened_transfers": [
+          [
+            "red",
+            "new",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "reopened_audit": [
+          [
+            "red",
+            "new",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "schema_preserved": true
+      }
+    },
+    {
+      "case": "in_main_harmless",
+      "finding": "R3-F1",
+      "native_pass": true,
+      "native": {
+        "status": "success",
+        "recursive_triggers": 0
+      },
+      "expected": "success",
+      "failures": [
+        "api:accounts",
+        "api:transfers",
+        "api:audit",
+        "api:status",
+        "api:receipt",
+        "cli:accounts",
+        "cli:transfers",
+        "cli:audit",
+        "cli:status",
+        "cli:receipt"
+      ],
+      "api": {
+        "status": "storage_error",
+        "type": "IntegrityError",
+        "error": "native guard",
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            100
+          ],
+          [
+            "red",
+            "b",
+            20
+          ]
+        ],
+        "reopened_transfers": [],
+        "reopened_audit": [],
+        "schema_preserved": true
+      },
+      "cli": {
+        "status": "storage_error",
+        "returncode": 2,
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            100
+          ],
+          [
+            "red",
+            "b",
+            20
+          ]
+        ],
+        "reopened_transfers": [],
+        "reopened_audit": [],
+        "schema_preserved": true
+      }
+    },
+    {
+      "case": "not_indexed_abort",
+      "finding": "R3-F1",
+      "native_pass": true,
+      "native": {
+        "status": "storage_error",
+        "error": "native guard",
+        "recursive_triggers": 0
+      },
+      "expected": "storage_error",
+      "failures": [
+        "api:native_guard_did_not_execute"
+      ],
+      "api": {
+        "status": "storage_error",
+        "type": "OperationalError",
+        "error": "no such column: pragma_recursive_triggers.recursive_triggers",
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            100
+          ],
+          [
+            "red",
+            "b",
+            20
+          ]
+        ],
+        "reopened_transfers": [],
+        "reopened_audit": [],
+        "schema_preserved": true
+      },
+      "cli": {
+        "status": "storage_error",
+        "returncode": 2,
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            100
+          ],
+          [
+            "red",
+            "b",
+            20
+          ]
+        ],
+        "reopened_transfers": [],
+        "reopened_audit": [],
+        "schema_preserved": true
+      }
+    },
+    {
+      "case": "not_indexed_harmless",
+      "finding": "R3-F1",
+      "native_pass": true,
+      "native": {
+        "status": "success",
+        "recursive_triggers": 0
+      },
+      "expected": "success",
+      "failures": [
+        "api:accounts",
+        "api:transfers",
+        "api:audit",
+        "api:status",
+        "api:receipt",
+        "cli:accounts",
+        "cli:transfers",
+        "cli:audit",
+        "cli:status",
+        "cli:receipt"
+      ],
+      "api": {
+        "status": "storage_error",
+        "type": "OperationalError",
+        "error": "no such column: pragma_recursive_triggers.recursive_triggers",
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            100
+          ],
+          [
+            "red",
+            "b",
+            20
+          ]
+        ],
+        "reopened_transfers": [],
+        "reopened_audit": [],
+        "schema_preserved": true
+      },
+      "cli": {
+        "status": "storage_error",
+        "returncode": 2,
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            100
+          ],
+          [
+            "red",
+            "b",
+            20
+          ]
+        ],
+        "reopened_transfers": [],
+        "reopened_audit": [],
+        "schema_preserved": true
+      }
+    }
+  ]
+}

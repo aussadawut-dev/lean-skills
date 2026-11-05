@@ -1,0 +1,1155 @@
+{
+  "phase": "review-3",
+  "review": {
+    "status": "PASS",
+    "findings": [],
+    "checks": [
+      "Reviewed CONTRACT.md, original .baseline files, bounded .pre-repair delta, current source and added tests.",
+      "python3 -B -m unittest discover -v: all 28 tests passed.",
+      "Independently reproduced the prior VALUES/WITH IndexError; current implementations succeeded and matched original baseline behavior.",
+      "Verified conditional triggers, comments, recursive CTEs, RAISE(IGNORE), audit-failure rollback, schema preservation and reopened API/CLI replay.",
+      "Verified generic CLI failure output without disclosure.",
+      "Independent valid/invalid pairs confirmed ignored conflicts and rowid relocation succeed while destructive historical replacement rolls back, preserving historical receipts and duplicate audit rows.",
+      "Confirmed test_public.py matches both saved versions. Assessment made no source or test changes."
+    ],
+    "coverage_limits": [
+      "Executed locally with Python 3.14.3 and SQLite 3.50.4.",
+      "Review focused on the bounded repair and original-contract regressions; SQLite grammar coverage was targeted, not exhaustive."
+    ]
+  },
+  "grade": "post-repair-2-grade.json",
+  "cross": [
+    {
+      "direction": "historical_tests_on_candidate",
+      "baseline_round": 1,
+      "exit_code": 1,
+      "seconds": 2.119,
+      "log": "review-3-baseline-1-historical_tests_on_candidate.log"
+    },
+    {
+      "direction": "candidate_tests_on_historical",
+      "baseline_round": 1,
+      "exit_code": 1,
+      "seconds": 1.525,
+      "log": "review-3-baseline-1-candidate_tests_on_historical.log"
+    },
+    {
+      "direction": "historical_tests_on_candidate",
+      "baseline_round": 2,
+      "exit_code": 1,
+      "seconds": 2.738,
+      "log": "review-3-baseline-2-historical_tests_on_candidate.log"
+    },
+    {
+      "direction": "candidate_tests_on_historical",
+      "baseline_round": 2,
+      "exit_code": 1,
+      "seconds": 1.338,
+      "log": "review-3-baseline-2-candidate_tests_on_historical.log"
+    },
+    {
+      "direction": "historical_tests_on_candidate",
+      "baseline_round": 3,
+      "exit_code": 0,
+      "seconds": 1.89,
+      "log": "review-3-baseline-3-historical_tests_on_candidate.log"
+    },
+    {
+      "direction": "candidate_tests_on_historical",
+      "baseline_round": 3,
+      "exit_code": 1,
+      "seconds": 1.361,
+      "log": "review-3-baseline-3-candidate_tests_on_historical.log"
+    }
+  ],
+  "supplemental_issue_count": 0,
+  "blockers": [
+    "historical_regressions"
+  ],
+  "review_integrity": {
+    "changed_or_removed": [],
+    "added_logs": [],
+    "unexpected_additions": []
+  },
+  "critical_probes": {
+    "supplemental_probe.py": {
+      "exit_code": 0,
+      "report": {
+        "category": "unchecked SQLite write effects",
+        "checks": [
+          {
+            "probe": "debit",
+            "status": "PASS",
+            "error": "IntegrityError: transfer integrity failure",
+            "returned": null,
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ]
+              ],
+              "transfers": [],
+              "audit": [],
+              "triggers": [
+                [
+                  "suppress_write",
+                  "CREATE TRIGGER suppress_write BEFORE UPDATE OF balance ON accounts WHEN OLD.name='a' BEGIN SELECT RAISE(IGNORE); END"
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ]
+              ],
+              "transfers": [],
+              "audit": [],
+              "triggers": [
+                [
+                  "suppress_write",
+                  "CREATE TRIGGER suppress_write BEFORE UPDATE OF balance ON accounts WHEN OLD.name='a' BEGIN SELECT RAISE(IGNORE); END"
+                ]
+              ]
+            }
+          },
+          {
+            "probe": "credit",
+            "status": "PASS",
+            "error": "IntegrityError: transfer integrity failure",
+            "returned": null,
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ]
+              ],
+              "transfers": [],
+              "audit": [],
+              "triggers": [
+                [
+                  "suppress_write",
+                  "CREATE TRIGGER suppress_write BEFORE UPDATE OF balance ON accounts WHEN OLD.name='b' BEGIN SELECT RAISE(IGNORE); END"
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ]
+              ],
+              "transfers": [],
+              "audit": [],
+              "triggers": [
+                [
+                  "suppress_write",
+                  "CREATE TRIGGER suppress_write BEFORE UPDATE OF balance ON accounts WHEN OLD.name='b' BEGIN SELECT RAISE(IGNORE); END"
+                ]
+              ]
+            }
+          },
+          {
+            "probe": "receipt",
+            "status": "PASS",
+            "error": "IntegrityError: transfer integrity failure",
+            "returned": null,
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ]
+              ],
+              "transfers": [],
+              "audit": [],
+              "triggers": [
+                [
+                  "suppress_write",
+                  "CREATE TRIGGER suppress_write BEFORE INSERT ON transfers BEGIN SELECT RAISE(IGNORE); END"
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ]
+              ],
+              "transfers": [],
+              "audit": [],
+              "triggers": [
+                [
+                  "suppress_write",
+                  "CREATE TRIGGER suppress_write BEFORE INSERT ON transfers BEGIN SELECT RAISE(IGNORE); END"
+                ]
+              ]
+            }
+          },
+          {
+            "probe": "audit",
+            "status": "PASS",
+            "error": "IntegrityError: transfer integrity failure",
+            "returned": null,
+            "before": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ]
+              ],
+              "transfers": [],
+              "audit": [],
+              "triggers": [
+                [
+                  "suppress_write",
+                  "CREATE TRIGGER suppress_write BEFORE INSERT ON audit BEGIN SELECT RAISE(IGNORE); END"
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "one",
+                  "a",
+                  100
+                ],
+                [
+                  "one",
+                  "b",
+                  0
+                ]
+              ],
+              "transfers": [],
+              "audit": [],
+              "triggers": [
+                [
+                  "suppress_write",
+                  "CREATE TRIGGER suppress_write BEFORE INSERT ON audit BEGIN SELECT RAISE(IGNORE); END"
+                ]
+              ]
+            }
+          }
+        ],
+        "issue_count": 0
+      },
+      "log": "review-3-supplemental_probe.log",
+      "passed": true
+    },
+    "after_trigger_probe.py": {
+      "exit_code": 0,
+      "report": {
+        "workspace": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-critical-medium-20261103-j_yjguke/cohort/round-3/critical/workspace",
+        "source_sha256": "ee73eb9e8c2439e6926b4b9150b1966d2e439da438192ff0d92d14d0577f5f9a",
+        "root_cause": "Missing final-effect validation after successful SQL statements",
+        "issue_count": 0,
+        "failed_cases": 0,
+        "cases": [
+          {
+            "case": "credit_undone",
+            "pass": true,
+            "exception": "IntegrityError",
+            "receipt": null,
+            "before": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ]
+              ],
+              "transfers": [],
+              "audit": []
+            },
+            "after": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ]
+              ],
+              "transfers": [],
+              "audit": []
+            },
+            "trigger_preserved": true
+          },
+          {
+            "case": "receipt_removed",
+            "pass": true,
+            "exception": "IntegrityError",
+            "receipt": null,
+            "before": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ]
+              ],
+              "transfers": [],
+              "audit": []
+            },
+            "after": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ]
+              ],
+              "transfers": [],
+              "audit": []
+            },
+            "trigger_preserved": true
+          },
+          {
+            "case": "audit_removed",
+            "pass": true,
+            "exception": "IntegrityError",
+            "receipt": null,
+            "before": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ]
+              ],
+              "transfers": [],
+              "audit": []
+            },
+            "after": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ]
+              ],
+              "transfers": [],
+              "audit": []
+            },
+            "trigger_preserved": true
+          },
+          {
+            "case": "audit_duplicated",
+            "pass": true,
+            "exception": "IntegrityError",
+            "receipt": null,
+            "before": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ]
+              ],
+              "transfers": [],
+              "audit": []
+            },
+            "after": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ]
+              ],
+              "transfers": [],
+              "audit": []
+            },
+            "trigger_preserved": true
+          }
+        ]
+      },
+      "log": "review-3-after_trigger_probe.log",
+      "passed": true
+    },
+    "audit_followup_probe.py": {
+      "exit_code": 0,
+      "report": {
+        "workspace": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-critical-medium-20261103-j_yjguke/cohort/round-3/critical/workspace",
+        "source_sha256": "ee73eb9e8c2439e6926b4b9150b1966d2e439da438192ff0d92d14d0577f5f9a",
+        "finding_groups": {
+          "audit_history_preservation": false,
+          "valid_rowid_relocation": false
+        },
+        "issue_count": 0,
+        "failed_cases": 0,
+        "cases": [
+          {
+            "case": "history_rewritten",
+            "pass": true,
+            "valid_transfer_expected": false,
+            "exception": "IntegrityError",
+            "receipt": null,
+            "before": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ],
+                [
+                  "b",
+                  "target",
+                  0
+                ]
+              ],
+              "transfers": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ],
+              "audit": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ],
+                [
+                  "b",
+                  "target",
+                  0
+                ]
+              ],
+              "transfers": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ],
+              "audit": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ]
+            },
+            "trigger_preserved": true
+          },
+          {
+            "case": "history_deleted_duplicate_added",
+            "pass": true,
+            "valid_transfer_expected": false,
+            "exception": "IntegrityError",
+            "receipt": null,
+            "before": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ],
+                [
+                  "b",
+                  "target",
+                  0
+                ]
+              ],
+              "transfers": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ],
+              "audit": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ],
+                [
+                  "b",
+                  "target",
+                  0
+                ]
+              ],
+              "transfers": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ],
+              "audit": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ]
+            },
+            "trigger_preserved": true
+          },
+          {
+            "case": "valid_rowid_relocation",
+            "pass": true,
+            "valid_transfer_expected": true,
+            "exception": null,
+            "receipt": {
+              "tenant": "a",
+              "key": "new",
+              "source": "source",
+              "target": "target",
+              "amount": 10
+            },
+            "before": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ],
+                [
+                  "b",
+                  "target",
+                  0
+                ]
+              ],
+              "transfers": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ],
+              "audit": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  90
+                ],
+                [
+                  "a",
+                  "target",
+                  10
+                ],
+                [
+                  "b",
+                  "source",
+                  77
+                ],
+                [
+                  "b",
+                  "target",
+                  0
+                ]
+              ],
+              "transfers": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ],
+                [
+                  "a",
+                  "new",
+                  "source",
+                  "target",
+                  10
+                ]
+              ],
+              "audit": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ],
+                [
+                  "a",
+                  "new",
+                  "source",
+                  "target",
+                  10
+                ]
+              ]
+            },
+            "trigger_preserved": true
+          }
+        ]
+      },
+      "log": "review-3-audit_followup_probe.log",
+      "passed": true
+    },
+    "preservation_probe.py": {
+      "exit_code": 0,
+      "report": {
+        "workspace": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-critical-medium-20261103-j_yjguke/cohort/round-3/critical/workspace",
+        "source_sha256": "ee73eb9e8c2439e6926b4b9150b1966d2e439da438192ff0d92d14d0577f5f9a",
+        "issue_count": 0,
+        "failed_cases": 0,
+        "cases": [
+          {
+            "case": "old_receipt_deleted",
+            "pass": true,
+            "exception": "IntegrityError",
+            "receipt": null,
+            "before": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  75
+                ],
+                [
+                  "b",
+                  "target",
+                  2
+                ]
+              ],
+              "transfers": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ],
+              "audit": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  75
+                ],
+                [
+                  "b",
+                  "target",
+                  2
+                ]
+              ],
+              "transfers": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ],
+              "audit": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ]
+            },
+            "trigger_preserved": true
+          },
+          {
+            "case": "unrelated_balance_changed",
+            "pass": true,
+            "exception": "IntegrityError",
+            "receipt": null,
+            "before": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  75
+                ],
+                [
+                  "b",
+                  "target",
+                  2
+                ]
+              ],
+              "transfers": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ],
+              "audit": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ]
+            },
+            "after": {
+              "accounts": [
+                [
+                  "a",
+                  "source",
+                  100
+                ],
+                [
+                  "a",
+                  "target",
+                  0
+                ],
+                [
+                  "b",
+                  "source",
+                  75
+                ],
+                [
+                  "b",
+                  "target",
+                  2
+                ]
+              ],
+              "transfers": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ],
+              "audit": [
+                [
+                  "b",
+                  "old",
+                  "source",
+                  "target",
+                  2
+                ]
+              ]
+            },
+            "trigger_preserved": true
+          }
+        ]
+      },
+      "log": "review-3-preservation_probe.log",
+      "passed": true
+    },
+    "noop_probe.py": {
+      "exit_code": 0,
+      "report": {
+        "workspace": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-critical-medium-20261103-j_yjguke/cohort/round-3/critical/workspace",
+        "source_sha256": "ee73eb9e8c2439e6926b4b9150b1966d2e439da438192ff0d92d14d0577f5f9a",
+        "issue_count": 0,
+        "failed_cases": 0,
+        "case": "conflict_ignored_noop_insert",
+        "pass": true,
+        "exception": null,
+        "receipt": {
+          "tenant": "a",
+          "key": "new",
+          "source": "source",
+          "target": "target",
+          "amount": 10
+        },
+        "state": {
+          "accounts": [
+            [
+              "a",
+              "source",
+              90
+            ],
+            [
+              "a",
+              "target",
+              10
+            ]
+          ],
+          "transfers": [
+            [
+              "a",
+              "new",
+              "source",
+              "target",
+              10
+            ]
+          ],
+          "audit": [
+            [
+              "a",
+              "new",
+              "source",
+              "target",
+              10
+            ]
+          ]
+        },
+        "trigger_preserved": true
+      },
+      "log": "review-3-noop_probe.log",
+      "passed": true
+    },
+    "read_isolation_probe.py": {
+      "exit_code": 0,
+      "report": {
+        "workspace": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-critical-medium-20261103-j_yjguke/cohort/round-3/critical/workspace",
+        "source_sha256": "ee73eb9e8c2439e6926b4b9150b1966d2e439da438192ff0d92d14d0577f5f9a",
+        "issue_count": 0,
+        "failed_cases": 0,
+        "case": "foreign_malformed_text_isolated",
+        "pass": true,
+        "exception": null,
+        "receipt": {
+          "tenant": "alpha",
+          "key": "k",
+          "source": "a",
+          "target": "b",
+          "amount": 10
+        },
+        "other_tenant_unchanged": true
+      },
+      "log": "review-3-read_isolation_probe.log",
+      "passed": true
+    },
+    "ignored_update_probe.py": {
+      "exit_code": 0,
+      "report": {
+        "workspace": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-critical-medium-20261103-j_yjguke/cohort/round-3/critical/workspace",
+        "source_sha256": "ee73eb9e8c2439e6926b4b9150b1966d2e439da438192ff0d92d14d0577f5f9a",
+        "issue_count": 0,
+        "failed_cases": 0,
+        "case": "conflict_ignored_rowid_update",
+        "pass": true,
+        "exception": null,
+        "receipt": {
+          "tenant": "a",
+          "key": "new",
+          "source": "source",
+          "target": "target",
+          "amount": 10
+        },
+        "state": {
+          "accounts": [
+            [
+              "a",
+              "source",
+              90
+            ],
+            [
+              "a",
+              "target",
+              10
+            ]
+          ],
+          "transfers": [
+            [
+              "a",
+              "new",
+              "source",
+              "target",
+              10
+            ]
+          ],
+          "audit": [
+            [
+              "a",
+              "new",
+              "source",
+              "target",
+              10
+            ]
+          ]
+        },
+        "trigger_preserved": true
+      },
+      "log": "review-3-ignored_update_probe.log",
+      "passed": true
+    }
+  },
+  "candidate_sha256": {
+    ".agents/skills/lean-run/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    ".agents/skills/lean-run/SKILL.md": "3eecd134b4b1f2a5b6e9a77afdaa4a497359c7b0cb4750ec0e911ce9baae80ce",
+    ".agents/skills/lean-run/references/delegation.md": "63899dde986ec7014a5cffd39216685640a2e98013dae26e037eaf985fecadb1",
+    ".agents/skills/lean-run/references/exploration.md": "baa9a38160095244c31c5e4a8aab5bdd15dfc0cc83df01a7086607a459faf403",
+    ".agents/skills/lean-run/references/handoff.md": "2d6744d15c27d002c85b9b4cbccf2b0845cb7b5c8b3589aa8b9b06a885357e94",
+    ".agents/skills/lean-run/references/write-integrity.md": "855c7eeb0fee13a2114177a736fe2ba2e1c3ec4bd971a796deecca105b298e4c",
+    ".agents/skills/lean-run/scripts/check.py": "7946993e44c3ebb3d0235c94af4426e2fbef749c31f4b18eac0de001ba3050b4",
+    ".original-qnzhn171/app.py": "366bb54fc6319521ddd02f44c206e679f529b6930b59674370d718987398acf4",
+    ".original-qnzhn171/vault.py": "5d0b97f8127dc5387d85cf315ebd5715173c0ccb67af359d7e440c5acb9dde68",
+    ".repair-before-sb4p2y6a/app.py": "7d7d3d69f1711d3f5ce642d70d820a2cdb1da36bc7c3694e8eadc10f342f675e",
+    ".repair-before-sb4p2y6a/test_regression.py": "928ddc6b8abbd0cdabfd8f1c09a04b20d5c5200429f280da8f43a2da4ef956af",
+    ".repair-before-sb4p2y6a/vault.py": "e52b5586f6326747ea78a7e7f13e8ea74c4bff06151dceaeb5ffce53ce40341e",
+    "AGENTS.md": "0ef83ddcf2d1065527f05cd03d5a1b275feecc77e45bdb5916217f204c1cb486",
+    "CONTRACT.md": "6e6d6ee1f769db8160e528e218d46a0018a90655e775742a073d61df2aebee2b",
+    "app.py": "7d7d3d69f1711d3f5ce642d70d820a2cdb1da36bc7c3694e8eadc10f342f675e",
+    "test_public.py": "5f239e0ce234d0b84f0d12e7cd23eb6dc23e63b88ffa07e50d20d2c061d66b95",
+    "test_regression.py": "db310368367e9713f0765b4ff9b575ae217a4d90fe89802329b440deb8fdbd45",
+    "vault.py": "ee73eb9e8c2439e6926b4b9150b1966d2e439da438192ff0d92d14d0577f5f9a"
+  }
+}

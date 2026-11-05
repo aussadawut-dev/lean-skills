@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "unit_tests": 40,
+  "install_smoke_cases": 34,
+  "deadline_transport": "Real child and child subprocess environment verified without a model call; active High CLI also reported WORK with 878 seconds remaining.",
+  "scope": "Repository and harness checks, separate from measured quality.",
+  "source_sha256": {
+    "tests/level_benchmark.py": "c14c51c1deb45d86586c65d2878b5a032bd014ab6642e11402ade40eb3b48da0",
+    "tests/repeated_benchmark.py": "d90a86ce4c7f5c39a0189ed02846840dba2f61634c58e4f770ee1181622d172c",
+    "tests/summarize_repeated_benchmark.py": "faf75977b94dd9a9f4bb5de262cdb7351d777c31ec27ab4a35edaa15e347ae2b",
+    "tests/render_repeated_comparison.py": "fce7cbf11197ce87756598a072b7cd89579c0cb8430dc93899eeb304fbc81aa9",
+    "tests/audit_repeated_benchmark.py": "1dbdee30aa7cbfbfc1d2222f984739e74fe42892fd7d0ddf7cc23fba9f01327c",
+    "tests/test_budget.py": "8bbdc66b812dadb2809a05f88ab08d5466af8b51853958a2ed22c5d2dbc73e33",
+    "tests/test_level_benchmark.py": "d855c7f2346679747fa45c0bfbda626fad5feba5ca2f43c068edda887f2478a9",
+    "tests/test_repeated_benchmark.py": "67234d3bb4eb201f1d12fc2431fae5579c3406b279133f926ec689390de63d94",
+    "tests/probes/in_source_probe.py": "4ad4b95d9c83166c96117947f45f9df6be8208f6cea371ab17a77769fcf99443"
+  }
+}

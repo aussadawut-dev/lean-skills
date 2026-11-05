@@ -1,0 +1,444 @@
+test_valid (test_public.PublicTests.test_valid) ... ok
+test_arbitrary_size_sum_output_and_cancellation (test_regression.CommandLineTests.test_arbitrary_size_sum_output_and_cancellation) ... 
+  test_arbitrary_size_sum_output_and_cancellation (test_regression.CommandLineTests.test_arbitrary_size_sum_output_and_cancellation) (case='positive carry') ... FAIL
+  test_arbitrary_size_sum_output_and_cancellation (test_regression.CommandLineTests.test_arbitrary_size_sum_output_and_cancellation) (case='negative carry') ... FAIL
+  test_arbitrary_size_sum_output_and_cancellation (test_regression.CommandLineTests.test_arbitrary_size_sum_output_and_cancellation) (case='cancellation') ... FAIL
+test_exactly_one_argument_is_required (test_regression.CommandLineTests.test_exactly_one_argument_is_required) ... 
+  test_exactly_one_argument_is_required (test_regression.CommandLineTests.test_exactly_one_argument_is_required) (arguments=[]) ... FAIL
+  test_exactly_one_argument_is_required (test_regression.CommandLineTests.test_exactly_one_argument_is_required) (arguments=['1', '2']) ... FAIL
+  test_exactly_one_argument_is_required (test_regression.CommandLineTests.test_exactly_one_argument_is_required) (arguments=['1,-2', '+3', '4']) ... FAIL
+test_invalid_lists_report_clean_errors (test_regression.CommandLineTests.test_invalid_lists_report_clean_errors) ... 
+  test_invalid_lists_report_clean_errors (test_regression.CommandLineTests.test_invalid_lists_report_clean_errors) (text='') ... FAIL
+  test_invalid_lists_report_clean_errors (test_regression.CommandLineTests.test_invalid_lists_report_clean_errors) (text='1,,2') ... FAIL
+  test_invalid_lists_report_clean_errors (test_regression.CommandLineTests.test_invalid_lists_report_clean_errors) (text='1,') ... FAIL
+  test_invalid_lists_report_clean_errors (test_regression.CommandLineTests.test_invalid_lists_report_clean_errors) (text='1_000,2') ... FAIL
+  test_invalid_lists_report_clean_errors (test_regression.CommandLineTests.test_invalid_lists_report_clean_errors) (text='１２,3') ... FAIL
+  test_invalid_lists_report_clean_errors (test_regression.CommandLineTests.test_invalid_lists_report_clean_errors) (text='1.5,2') ... FAIL
+  test_invalid_lists_report_clean_errors (test_regression.CommandLineTests.test_invalid_lists_report_clean_errors) (text='1e3,2') ... FAIL
+  test_invalid_lists_report_clean_errors (test_regression.CommandLineTests.test_invalid_lists_report_clean_errors) (text='word') ... FAIL
+  test_invalid_lists_report_clean_errors (test_regression.CommandLineTests.test_invalid_lists_report_clean_errors) (text='-') ... FAIL
+  test_invalid_lists_report_clean_errors (test_regression.CommandLineTests.test_invalid_lists_report_clean_errors) (text='--help') ... FAIL
+test_valid_lists_including_leading_negative (test_regression.CommandLineTests.test_valid_lists_including_leading_negative) ... ok
+test_empty_input_or_fields_are_rejected (test_regression.ParseNumbersTests.test_empty_input_or_fields_are_rejected) ... 
+  test_empty_input_or_fields_are_rejected (test_regression.ParseNumbersTests.test_empty_input_or_fields_are_rejected) (text='') ... FAIL
+  test_empty_input_or_fields_are_rejected (test_regression.ParseNumbersTests.test_empty_input_or_fields_are_rejected) (text=' \t\n') ... FAIL
+  test_empty_input_or_fields_are_rejected (test_regression.ParseNumbersTests.test_empty_input_or_fields_are_rejected) (text=',') ... FAIL
+  test_empty_input_or_fields_are_rejected (test_regression.ParseNumbersTests.test_empty_input_or_fields_are_rejected) (text=',1') ... FAIL
+  test_empty_input_or_fields_are_rejected (test_regression.ParseNumbersTests.test_empty_input_or_fields_are_rejected) (text='1,') ... FAIL
+  test_empty_input_or_fields_are_rejected (test_regression.ParseNumbersTests.test_empty_input_or_fields_are_rejected) (text='1,,2') ... FAIL
+  test_empty_input_or_fields_are_rejected (test_regression.ParseNumbersTests.test_empty_input_or_fields_are_rejected) (text='1, \t,2') ... FAIL
+test_integers_beyond_python_decimal_conversion_limit (test_regression.ParseNumbersTests.test_integers_beyond_python_decimal_conversion_limit) ... ERROR
+test_invalid_integer_syntax_is_rejected_in_every_field (test_regression.ParseNumbersTests.test_invalid_integer_syntax_is_rejected_in_every_field) ... 
+  test_invalid_integer_syntax_is_rejected_in_every_field (test_regression.ParseNumbersTests.test_invalid_integer_syntax_is_rejected_in_every_field) (text='1_000') ... FAIL
+  test_invalid_integer_syntax_is_rejected_in_every_field (test_regression.ParseNumbersTests.test_invalid_integer_syntax_is_rejected_in_every_field) (text='7,1_000,9') ... FAIL
+  test_invalid_integer_syntax_is_rejected_in_every_field (test_regression.ParseNumbersTests.test_invalid_integer_syntax_is_rejected_in_every_field) (text='7,9,1_000') ... FAIL
+test_signed_values_order_zeros_and_whitespace (test_regression.ParseNumbersTests.test_signed_values_order_zeros_and_whitespace) ... ok
+test_unicode_numerals_and_signs_are_rejected (test_regression.ParseNumbersTests.test_unicode_numerals_and_signs_are_rejected) ... 
+  test_unicode_numerals_and_signs_are_rejected (test_regression.ParseNumbersTests.test_unicode_numerals_and_signs_are_rejected) (token='١') ... FAIL
+  test_unicode_numerals_and_signs_are_rejected (test_regression.ParseNumbersTests.test_unicode_numerals_and_signs_are_rejected) (token='１２') ... FAIL
+  test_unicode_numerals_and_signs_are_rejected (test_regression.ParseNumbersTests.test_unicode_numerals_and_signs_are_rejected) (token='1٢') ... FAIL
+  test_unicode_numerals_and_signs_are_rejected (test_regression.ParseNumbersTests.test_unicode_numerals_and_signs_are_rejected) (token='𝟙') ... FAIL
+
+======================================================================
+ERROR: test_integers_beyond_python_decimal_conversion_limit (test_regression.ParseNumbersTests.test_integers_beyond_python_decimal_conversion_limit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 56, in test_integers_beyond_python_decimal_conversion_limit
+    self.assertEqual(parse_numbers(f"+{digits},-{digits}"),
+                     ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/app.py", line 3, in parse_numbers
+    return [int(part) for part in text.split(',') if part.strip()]
+            ~~~^^^^^^
+ValueError: Exceeds the limit (4300 digits) for integer string conversion: value has 5001 digits; use sys.set_int_max_str_digits() to increase the limit
+
+======================================================================
+FAIL: test_arbitrary_size_sum_output_and_cancellation (test_regression.CommandLineTests.test_arbitrary_size_sum_output_and_cancellation) (case='positive carry')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 109, in test_arbitrary_size_sum_output_and_cancellation
+    self.assert_success([text], expected)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 70, in assert_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/app.py", line 5, in <module>
+    print(sum(parse_numbers(sys.argv[1])))
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/app.py", line 3, in parse_numbers
+    return [int(part) for part in text.split(',') if part.strip()]
+            ~~~^^^^^^
+ValueError: Exceeds the limit (4300 digits) for integer string conversion: value has 5000 digits; use sys.set_int_max_str_digits() to increase the limit
+
+
+======================================================================
+FAIL: test_arbitrary_size_sum_output_and_cancellation (test_regression.CommandLineTests.test_arbitrary_size_sum_output_and_cancellation) (case='negative carry')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 109, in test_arbitrary_size_sum_output_and_cancellation
+    self.assert_success([text], expected)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 70, in assert_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/app.py", line 5, in <module>
+    print(sum(parse_numbers(sys.argv[1])))
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/app.py", line 3, in parse_numbers
+    return [int(part) for part in text.split(',') if part.strip()]
+            ~~~^^^^^^
+ValueError: Exceeds the limit (4300 digits) for integer string conversion: value has 5000 digits; use sys.set_int_max_str_digits() to increase the limit
+
+
+======================================================================
+FAIL: test_arbitrary_size_sum_output_and_cancellation (test_regression.CommandLineTests.test_arbitrary_size_sum_output_and_cancellation) (case='cancellation')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 109, in test_arbitrary_size_sum_output_and_cancellation
+    self.assert_success([text], expected)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 70, in assert_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/app.py", line 5, in <module>
+    print(sum(parse_numbers(sys.argv[1])))
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/app.py", line 3, in parse_numbers
+    return [int(part) for part in text.split(',') if part.strip()]
+            ~~~^^^^^^
+ValueError: Exceeds the limit (4300 digits) for integer string conversion: value has 5001 digits; use sys.set_int_max_str_digits() to increase the limit
+
+
+======================================================================
+FAIL: test_exactly_one_argument_is_required (test_regression.CommandLineTests.test_exactly_one_argument_is_required) (arguments=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 98, in test_exactly_one_argument_is_required
+    self.assert_error(arguments, "argument")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 76, in assert_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/app.py", line 5, in <module>
+    print(sum(parse_numbers(sys.argv[1])))
+                            ~~~~~~~~^^^
+IndexError: list index out of range
+
+
+======================================================================
+FAIL: test_exactly_one_argument_is_required (test_regression.CommandLineTests.test_exactly_one_argument_is_required) (arguments=['1', '2'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 98, in test_exactly_one_argument_is_required
+    self.assert_error(arguments, "argument")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 76, in assert_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : 
+
+======================================================================
+FAIL: test_exactly_one_argument_is_required (test_regression.CommandLineTests.test_exactly_one_argument_is_required) (arguments=['1,-2', '+3', '4'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 98, in test_exactly_one_argument_is_required
+    self.assert_error(arguments, "argument")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 76, in assert_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : 
+
+======================================================================
+FAIL: test_invalid_lists_report_clean_errors (test_regression.CommandLineTests.test_invalid_lists_report_clean_errors) (text='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 93, in test_invalid_lists_report_clean_errors
+    self.assert_error([text], "integer")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 76, in assert_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : 
+
+======================================================================
+FAIL: test_invalid_lists_report_clean_errors (test_regression.CommandLineTests.test_invalid_lists_report_clean_errors) (text='1,,2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 93, in test_invalid_lists_report_clean_errors
+    self.assert_error([text], "integer")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 76, in assert_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : 
+
+======================================================================
+FAIL: test_invalid_lists_report_clean_errors (test_regression.CommandLineTests.test_invalid_lists_report_clean_errors) (text='1,')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 93, in test_invalid_lists_report_clean_errors
+    self.assert_error([text], "integer")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 76, in assert_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : 
+
+======================================================================
+FAIL: test_invalid_lists_report_clean_errors (test_regression.CommandLineTests.test_invalid_lists_report_clean_errors) (text='1_000,2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 93, in test_invalid_lists_report_clean_errors
+    self.assert_error([text], "integer")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 76, in assert_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : 
+
+======================================================================
+FAIL: test_invalid_lists_report_clean_errors (test_regression.CommandLineTests.test_invalid_lists_report_clean_errors) (text='１２,3')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 93, in test_invalid_lists_report_clean_errors
+    self.assert_error([text], "integer")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 76, in assert_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : 
+
+======================================================================
+FAIL: test_invalid_lists_report_clean_errors (test_regression.CommandLineTests.test_invalid_lists_report_clean_errors) (text='1.5,2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 93, in test_invalid_lists_report_clean_errors
+    self.assert_error([text], "integer")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 76, in assert_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/app.py", line 5, in <module>
+    print(sum(parse_numbers(sys.argv[1])))
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/app.py", line 3, in parse_numbers
+    return [int(part) for part in text.split(',') if part.strip()]
+            ~~~^^^^^^
+ValueError: invalid literal for int() with base 10: '1.5'
+
+
+======================================================================
+FAIL: test_invalid_lists_report_clean_errors (test_regression.CommandLineTests.test_invalid_lists_report_clean_errors) (text='1e3,2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 93, in test_invalid_lists_report_clean_errors
+    self.assert_error([text], "integer")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 76, in assert_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/app.py", line 5, in <module>
+    print(sum(parse_numbers(sys.argv[1])))
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/app.py", line 3, in parse_numbers
+    return [int(part) for part in text.split(',') if part.strip()]
+            ~~~^^^^^^
+ValueError: invalid literal for int() with base 10: '1e3'
+
+
+======================================================================
+FAIL: test_invalid_lists_report_clean_errors (test_regression.CommandLineTests.test_invalid_lists_report_clean_errors) (text='word')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 93, in test_invalid_lists_report_clean_errors
+    self.assert_error([text], "integer")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 76, in assert_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/app.py", line 5, in <module>
+    print(sum(parse_numbers(sys.argv[1])))
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/app.py", line 3, in parse_numbers
+    return [int(part) for part in text.split(',') if part.strip()]
+            ~~~^^^^^^
+ValueError: invalid literal for int() with base 10: 'word'
+
+
+======================================================================
+FAIL: test_invalid_lists_report_clean_errors (test_regression.CommandLineTests.test_invalid_lists_report_clean_errors) (text='-')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 93, in test_invalid_lists_report_clean_errors
+    self.assert_error([text], "integer")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 76, in assert_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/app.py", line 5, in <module>
+    print(sum(parse_numbers(sys.argv[1])))
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/app.py", line 3, in parse_numbers
+    return [int(part) for part in text.split(',') if part.strip()]
+            ~~~^^^^^^
+ValueError: invalid literal for int() with base 10: '-'
+
+
+======================================================================
+FAIL: test_invalid_lists_report_clean_errors (test_regression.CommandLineTests.test_invalid_lists_report_clean_errors) (text='--help')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 93, in test_invalid_lists_report_clean_errors
+    self.assert_error([text], "integer")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 76, in assert_error
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/app.py", line 5, in <module>
+    print(sum(parse_numbers(sys.argv[1])))
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/app.py", line 3, in parse_numbers
+    return [int(part) for part in text.split(',') if part.strip()]
+            ~~~^^^^^^
+ValueError: invalid literal for int() with base 10: '--help'
+
+
+======================================================================
+FAIL: test_empty_input_or_fields_are_rejected (test_regression.ParseNumbersTests.test_empty_input_or_fields_are_rejected) (text='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 32, in test_empty_input_or_fields_are_rejected
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_empty_input_or_fields_are_rejected (test_regression.ParseNumbersTests.test_empty_input_or_fields_are_rejected) (text=' \t\n')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 32, in test_empty_input_or_fields_are_rejected
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_empty_input_or_fields_are_rejected (test_regression.ParseNumbersTests.test_empty_input_or_fields_are_rejected) (text=',')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 32, in test_empty_input_or_fields_are_rejected
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_empty_input_or_fields_are_rejected (test_regression.ParseNumbersTests.test_empty_input_or_fields_are_rejected) (text=',1')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 32, in test_empty_input_or_fields_are_rejected
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_empty_input_or_fields_are_rejected (test_regression.ParseNumbersTests.test_empty_input_or_fields_are_rejected) (text='1,')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 32, in test_empty_input_or_fields_are_rejected
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_empty_input_or_fields_are_rejected (test_regression.ParseNumbersTests.test_empty_input_or_fields_are_rejected) (text='1,,2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 32, in test_empty_input_or_fields_are_rejected
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_empty_input_or_fields_are_rejected (test_regression.ParseNumbersTests.test_empty_input_or_fields_are_rejected) (text='1, \t,2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 32, in test_empty_input_or_fields_are_rejected
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_integer_syntax_is_rejected_in_every_field (test_regression.ParseNumbersTests.test_invalid_integer_syntax_is_rejected_in_every_field) (text='1_000')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 44, in test_invalid_integer_syntax_is_rejected_in_every_field
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_integer_syntax_is_rejected_in_every_field (test_regression.ParseNumbersTests.test_invalid_integer_syntax_is_rejected_in_every_field) (text='7,1_000,9')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 44, in test_invalid_integer_syntax_is_rejected_in_every_field
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_integer_syntax_is_rejected_in_every_field (test_regression.ParseNumbersTests.test_invalid_integer_syntax_is_rejected_in_every_field) (text='7,9,1_000')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 44, in test_invalid_integer_syntax_is_rejected_in_every_field
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_unicode_numerals_and_signs_are_rejected (test_regression.ParseNumbersTests.test_unicode_numerals_and_signs_are_rejected) (token='١')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 50, in test_unicode_numerals_and_signs_are_rejected
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_unicode_numerals_and_signs_are_rejected (test_regression.ParseNumbersTests.test_unicode_numerals_and_signs_are_rejected) (token='１２')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 50, in test_unicode_numerals_and_signs_are_rejected
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_unicode_numerals_and_signs_are_rejected (test_regression.ParseNumbersTests.test_unicode_numerals_and_signs_are_rejected) (token='1٢')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 50, in test_unicode_numerals_and_signs_are_rejected
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_unicode_numerals_and_signs_are_rejected (test_regression.ParseNumbersTests.test_unicode_numerals_and_signs_are_rejected) (token='𝟙')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-3/medium/workspace/test_regression.py", line 50, in test_unicode_numerals_and_signs_are_rejected
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.442s
+
+FAILED (failures=30, errors=1)

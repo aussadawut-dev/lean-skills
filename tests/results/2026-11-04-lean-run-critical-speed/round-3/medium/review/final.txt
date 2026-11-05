@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "findings": [],
+  "checks": [
+    "Read lean-run, AGENTS.md and CONTRACT.md; compared baseline and current source and inspected added tests. Supplied test_public.py is unchanged.",
+    "python3 -B -m unittest discover -v: all 10 tests passed, including 5,000-digit parsing and CLI sums.",
+    "Independent public-interface probes rejected six additional control-character, Unicode and empty-field inputs with ValueError.",
+    "Parsing preserved 702-digit signed integers under a 640-digit conversion limit and restrictive Decimal context.",
+    "Real CLI probes from a temporary workspace directory passed four valid cases and eight invalid-input/arity cases, verifying exact output, exit status and clean stderr.",
+    "No application, test, instruction or baseline files were modified."
+  ],
+  "coverage_limits": [
+    "Executed on Python 3.14.3 only.",
+    "Arbitrary-size integer behavior was verified at representative sizes; operating-system resource limits were not stress-tested."
+  ]
+}

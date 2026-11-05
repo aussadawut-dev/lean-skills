@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "unit_tests": {
+    "passed": 30,
+    "log": "validation-logs/unit-archive-final.log"
+  },
+  "installation_smoke": {
+    "passed": 34,
+    "log": "validation-logs/lean-critical-speed-install.log",
+    "scope": "Same frozen skill package verified against current tree"
+  },
+  "skill_schema": {
+    "status": "PASS",
+    "log": "validation-logs/skill-schema-final.log"
+  },
+  "git_diff_check": "PASS",
+  "control_audit": "control-audit.json",
+  "warning_investigation": "warning-investigation.json",
+  "benchmark_quality": {
+    "status": "FAILED",
+    "passed_trials": 8,
+    "failed_trials": [
+      "round-1/critical"
+    ],
+    "incomplete_execution_trials": [
+      "round-1/critical",
+      "round-3/critical"
+    ],
+    "fully_completed_trials": 7,
+    "final_contract_issues": 0,
+    "final_independent_findings": 1,
+    "final_coordinator_findings": 0,
+    "final_original_supplemental_issues": 0,
+    "final_added_probe_failed_cases": 0,
+    "final_posthoc_probe_failed_cases": 8
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "status": "REWORK",
+  "evidence": [
+    "assessment-1-cached-replay.json",
+    "assessment-1-malformed_effect_probe.json",
+    "assessment-1-trigger_separator_probe.json",
+    "review/final.txt"
+  ]
+}

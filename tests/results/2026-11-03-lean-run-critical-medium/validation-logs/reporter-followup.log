@@ -1,0 +1,8 @@
+test_posthoc_failures_are_separate_and_cannot_be_reported_as_passing_quality (test_benchmark_summary.SummaryTests.test_posthoc_failures_are_separate_and_cannot_be_reported_as_passing_quality) ... ok
+test_repeated_self_comparison_keeps_failed_costs_and_has_zero_delta (test_benchmark_summary.SummaryTests.test_repeated_self_comparison_keeps_failed_costs_and_has_zero_delta) ... ok
+test_timeout_usage_stays_unknown_and_elapsed_cost_is_retained (test_benchmark_summary.SummaryTests.test_timeout_usage_stays_unknown_and_elapsed_cost_is_retained) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.050s
+
+OK

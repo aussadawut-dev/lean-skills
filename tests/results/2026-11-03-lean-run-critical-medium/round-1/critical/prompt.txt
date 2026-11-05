@@ -1,0 +1,20 @@
+Use lean-run at .agents/skills/lean-run/SKILL.md to continue the SAME critical task with a bounded repair. CONTRACT.md and scope are unchanged. Task-wide REWORK count is 2; do not reset it. Reproduce and repair the demonstrated findings below, add meaningful regression checks, run affected and required final checks, and exercise the public interface. Preserve existing behavior, data, triggers and unrelated work. No unrelated refactor, installs, network or extra agents. The coordinator supplies renewed independent review afterward; report it pending. This is the final fix-only pass. 
+
+[
+  {
+    "id": "F2",
+    "severity": "MEDIUM",
+    "location": "vault.py:117-123, 162-174",
+    "requirement": "Valid transfers must remain compatible with benign triggers and internal rowid movements that preserve contracted values and row multiplicity.",
+    "evidence": "Initialize accounts(rowid,tenant,name,balance) with (1,'one','a',100), (2,'one','b',0), (3,'two','private',456), (4,'two','spare',789). Add: CREATE TRIGGER existing AFTER INSERT ON audit BEGIN INSERT OR REPLACE INTO accounts(rowid,tenant,name,balance) VALUES (4,'two','private',456); INSERT OR REPLACE INTO accounts(rowid,tenant,name,balance) VALUES (3,'two','spare',789); END. Calling transfer(path,'one','a','b',10,'k') raises IntegrityError('invalid storage effect') at vault.py:174 and rolls back; the CLI exits 2. The baseline succeeds with balances 90/10, one receipt, one audit row, and unchanged other-tenant logical rows. The candidate also succeeds when the same rowid swap uses UPDATE statements through an unused rowid. The replacement tracker captures spare's initial_count after the first replacement has temporarily removed it, so restoring its original value incorrectly fails verification.",
+    "suggested_fix": "Account for replacement victims when establishing original multiplicities, keeping checks inside SQLite and preserving tenant read isolation. Add a successful replacement-based rowid-swap regression paired with a changed-value rejection."
+  },
+  {
+    "id": "COORD-ACCOUNT-READ-SCOPE",
+    "severity": "HIGH",
+    "location": "vault.py:_row_counts and _verify_changes",
+    "requirement": "Every account read MUST remain within the authenticated tenant; no aggregate exception is stated. Preserve existing data without materializing foreign records or account-derived aggregate values in application code.",
+    "evidence": "review-2-baseline-3-historical_tests_on_candidate.log traces SELECT count(*) FROM main.accounts without a tenant predicate. Independent contract_triage - gpt-6.1-sol|medium also found foreign account multiplicity results returned to Python in _verify_changes. The literal contract requires repair, although the regex itself is overly syntactic.",
+    "suggested_fix": "Keep application account reads, including aggregates, tenant-scoped. Enforce preservation through suitable transaction-local/storage controls without returning foreign account data or aggregates to application code. Retain all valid no-op/replacement behavior and destructive-change rollback."
+  }
+]

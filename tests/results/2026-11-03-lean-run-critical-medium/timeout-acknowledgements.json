@@ -1,0 +1,30 @@
+{
+  "round-1/critical/implementation": {
+    "timed_out": true,
+    "raw_exit_code": -15,
+    "elapsed_seconds": 900.016,
+    "usage_known": false,
+    "action": "Retain attempt; grade and independently review current artifacts. No implementation rerun."
+  },
+  "round-2/critical/repair-1": {
+    "timed_out": true,
+    "raw_exit_code": -15,
+    "elapsed_seconds": 900.199,
+    "usage_known": false,
+    "action": "Retain attempt; grade and independently review current artifacts. No implementation rerun."
+  },
+  "round-3/critical/implementation": {
+    "timed_out": true,
+    "raw_exit_code": -15,
+    "elapsed_seconds": 900.047,
+    "usage_known": false,
+    "action": "Retain attempt; grade and independently review current artifacts. No implementation rerun."
+  },
+  "round-3/critical/repair-1": {
+    "timed_out": true,
+    "raw_exit_code": -15,
+    "elapsed_seconds": 900.03,
+    "usage_known": false,
+    "action": "Retain attempt; grade and independently review current artifacts. No implementation rerun."
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "coordinator_gate_levels": [
+    "critical"
+  ],
+  "contract_changed_levels": [
+    "critical"
+  ],
+  "comparison_valid_levels": [],
+  "policy_record": "policy-record.md",
+  "policy_record_sha256": "7402486ef8756b8ff11885e24114bbff884826e1bb655f8becf3540ccd2deee3",
+  "superseded_expectations": "superseded-expectations.json",
+  "regression_archives": [
+    "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-in-source-budget",
+    "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high-pilot",
+    "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high"
+  ],
+  "status": "PREPARED",
+  "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-in-source-budget",
+  "requested_model": "gpt-6-astra",
+  "requested_effort": "max",
+  "timeout_seconds": 900,
+  "procedure_depth": "standard",
+  "repetitions_per_level": 1,
+  "baseline_repetitions_per_level": 1,
+  "known_quality_probes": [
+    "supplemental_probe.py",
+    "after_trigger_probe.py",
+    "audit_followup_probe.py",
+    "preservation_probe.py",
+    "noop_probe.py",
+    "read_isolation_probe.py",
+    "ignored_update_probe.py",
+    "frame_followup_probe.py",
+    "trigger_compatibility_probe.py",
+    "dollar_identifier_probe.py",
+    "trigger_counter_probe.py",
+    "unicode_space_probe.py",
+    "trigger_separator_probe.py",
+    "malformed_effect_probe.py",
+    "storage_encoding_probe.py",
+    "trigger_ignore_scope_probe.py",
+    "recursive_setting_probe.py",
+    "critical_final_findings_probe.py",
+    "name_resolution_probe.py",
+    "in_source_probe.py",
+    "rls_policy_probe.py",
+    "foreign_guard_probe.py",
+    "review2_guard_probe.py",
+    "final_guard_probe.py"
+  ],
+  "orders": [
+    [
+      "critical"
+    ]
+  ],
+  "skill_sha256": {
+    "LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    "SKILL.md": "ff80266bc29f3bbc64f1790eff14c7863ae9d764b77151e60207bd8dc7c6366b",
+    "references/delegation.md": "63899dde986ec7014a5cffd39216685640a2e98013dae26e037eaf985fecadb1",
+    "references/delivery.md": "84a7a68e8e0417b6fa5be85040dd10a872217b5a54ef7f6e77b7be2fc2c2129f",
+    "references/exploration.md": "baa9a38160095244c31c5e4a8aab5bdd15dfc0cc83df01a7086607a459faf403",
+    "references/handoff.md": "2d6744d15c27d002c85b9b4cbccf2b0845cb7b5c8b3589aa8b9b06a885357e94",
+    "references/write-integrity.md": "b179d4d57ca24cd58233f86f0b990ec850b68fc6ba4aaced121a3e4bc9f862e1",
+    "scripts/budget.py": "edfa3ea55624439a1edee7b27393b3455c2e4ea71092694839806612a6bf5ad2",
+    "scripts/check.py": "7946993e44c3ebb3d0235c94af4426e2fbef749c31f4b18eac0de001ba3050b4"
+  },
+  "budget_policy": "Same 900-second cap made visible through deadline environment; no automatic extension or early quality pass",
+  "harness_sha256": "edfa1da89147ada280b31ebf667150fb8c1e88230750b6cbf7bd4ba67433e2ee",
+  "primary_metrics": [
+    "medium mean measured workflow seconds",
+    "medium mean uncached input",
+    "medium mean uncached input plus output"
+  ],
+  "additional_metrics": [
+    "uncached input",
+    "total input plus output",
+    "cached input",
+    "all-level sum of means"
+  ],
+  "quality_gate": "unchanged frozen categories, protected files, independent review, historical regressions and critical supplemental writes",
+  "cache_policy": "No synthetic warmup; cache state not controlled",
+  "review_integrity_policy": "All pre-review files immutable; newly created .log evidence allowed and recorded",
+  "measurement_excludes": [
+    "coordinator chat",
+    "skill review",
+    "preparation",
+    "grading",
+    "cross-regressions",
+    "reporting"
+  ]
+}

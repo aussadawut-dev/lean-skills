@@ -1,0 +1,66 @@
+[
+  {
+    "direction": "historical_tests_on_candidate",
+    "baseline_round": 1,
+    "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high-pilot",
+    "exit_code": 1,
+    "seconds": 7.404,
+    "log": "review-baseline-1-historical_tests_on_candidate.log"
+  },
+  {
+    "direction": "candidate_tests_on_historical",
+    "baseline_round": 1,
+    "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high-pilot",
+    "exit_code": 0,
+    "seconds": 2.921,
+    "log": "review-baseline-1-candidate_tests_on_historical.log"
+  },
+  {
+    "direction": "historical_tests_on_candidate",
+    "baseline_round": 1,
+    "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high",
+    "exit_code": 1,
+    "seconds": 5.223,
+    "log": "review-history-1-baseline-1-historical_tests_on_candidate.log"
+  },
+  {
+    "direction": "candidate_tests_on_historical",
+    "baseline_round": 1,
+    "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high",
+    "exit_code": 1,
+    "seconds": 2.56,
+    "log": "review-history-1-baseline-1-candidate_tests_on_historical.log"
+  },
+  {
+    "direction": "historical_tests_on_candidate",
+    "baseline_round": 2,
+    "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high",
+    "exit_code": 1,
+    "seconds": 4.561,
+    "log": "review-history-1-baseline-2-historical_tests_on_candidate.log"
+  },
+  {
+    "direction": "candidate_tests_on_historical",
+    "baseline_round": 2,
+    "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high",
+    "exit_code": 0,
+    "seconds": 2.525,
+    "log": "review-history-1-baseline-2-candidate_tests_on_historical.log"
+  },
+  {
+    "direction": "historical_tests_on_candidate",
+    "baseline_round": 3,
+    "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high",
+    "exit_code": 1,
+    "seconds": 2.133,
+    "log": "review-history-1-baseline-3-historical_tests_on_candidate.log"
+  },
+  {
+    "direction": "candidate_tests_on_historical",
+    "baseline_round": 3,
+    "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high",
+    "exit_code": 1,
+    "seconds": 3.302,
+    "log": "review-history-1-baseline-3-candidate_tests_on_historical.log"
+  }
+]

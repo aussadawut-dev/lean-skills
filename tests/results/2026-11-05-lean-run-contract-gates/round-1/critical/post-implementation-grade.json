@@ -1,0 +1,62 @@
+{
+  "level": "critical",
+  "cases": [
+    {
+      "id": "test_C1_read_isolation",
+      "status": "PASS"
+    },
+    {
+      "id": "test_C2_transfer_isolation",
+      "status": "PASS"
+    },
+    {
+      "id": "test_C3_tenant_scoped_receipts",
+      "status": "PASS"
+    },
+    {
+      "id": "test_C4_invalid_request_preserves_state",
+      "status": "PASS"
+    },
+    {
+      "id": "test_C5_storage_failure_rolls_back",
+      "status": "PASS"
+    },
+    {
+      "id": "test_C6_concurrent_duplicate",
+      "status": "PASS"
+    },
+    {
+      "id": "test_C7_concurrent_no_overspend",
+      "status": "PASS"
+    },
+    {
+      "id": "test_C8_durable_exact_replay",
+      "status": "PASS"
+    },
+    {
+      "id": "test_C9_cli_errors_are_generic",
+      "status": "PASS"
+    }
+  ],
+  "checks": 9,
+  "issues": 0,
+  "elapsed_seconds": 0.295,
+  "workspace_sha256": {
+    ".agents/skills/lean-run/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    ".agents/skills/lean-run/SKILL.md": "ff80266bc29f3bbc64f1790eff14c7863ae9d764b77151e60207bd8dc7c6366b",
+    ".agents/skills/lean-run/references/delegation.md": "63899dde986ec7014a5cffd39216685640a2e98013dae26e037eaf985fecadb1",
+    ".agents/skills/lean-run/references/delivery.md": "84a7a68e8e0417b6fa5be85040dd10a872217b5a54ef7f6e77b7be2fc2c2129f",
+    ".agents/skills/lean-run/references/exploration.md": "baa9a38160095244c31c5e4a8aab5bdd15dfc0cc83df01a7086607a459faf403",
+    ".agents/skills/lean-run/references/handoff.md": "2d6744d15c27d002c85b9b4cbccf2b0845cb7b5c8b3589aa8b9b06a885357e94",
+    ".agents/skills/lean-run/references/write-integrity.md": "b179d4d57ca24cd58233f86f0b990ec850b68fc6ba4aaced121a3e4bc9f862e1",
+    ".agents/skills/lean-run/scripts/budget.py": "edfa3ea55624439a1edee7b27393b3455c2e4ea71092694839806612a6bf5ad2",
+    ".agents/skills/lean-run/scripts/check.py": "7946993e44c3ebb3d0235c94af4426e2fbef749c31f4b18eac0de001ba3050b4",
+    "AGENTS.md": "0ef83ddcf2d1065527f05cd03d5a1b275feecc77e45bdb5916217f204c1cb486",
+    "CONTRACT.md": "d56718bf6d252fc3c8bc12be5600f640d9ad29105bbd844635a55242f2e9f537",
+    "app.py": "6f2e1a8310f98d63def5512b5b20558138cee0fa6e4a5817cb46965c074ea8ae",
+    "test_public.py": "5f239e0ce234d0b84f0d12e7cd23eb6dc23e63b88ffa07e50d20d2c061d66b95",
+    "test_regressions.py": "cda07deb9621c13c076ca2f37bbbc9e1455fdaa6a67fc13579218fa8a24adf88",
+    "vault.py": "82b47011fc87a0cae59bf8b169b86a2fe988ac8e2f8bb7cbe3d2ed64d1006493"
+  },
+  "protected_files_changed": []
+}

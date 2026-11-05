@@ -1,0 +1,34 @@
+{
+  "status": "REWORK",
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "HIGH",
+      "location": "_vault_effects.py:245-257,267-270",
+      "requirement": "Successful transfers must commit the exact debit, credit, receipt and one audit row.",
+      "evidence": "Initialize accounts ('red','a',100), ('red','b',20). Install: CREATE TRIGGER early_debit BEFORE UPDATE ON accounts WHEN OLD.tenant='red' AND OLD.name='a' AND OLD.balance=100 AND NEW.balance=90 BEGIN UPDATE accounts SET balance=90 WHERE tenant=OLD.tenant AND name=OLD.name; END; CREATE TRIGGER restore_debit AFTER INSERT ON audit BEGIN UPDATE accounts SET balance=100 WHERE tenant=NEW.tenant AND name=NEW.source; END; Calling vault.transfer(path,'red','a','b',10,'new') succeeds, but reopened balances are 100 and 30, with one receipt and audit row. The CLI also exits 0. Replay preserves this incorrect state. AFTER-trigger OLD values can precede intervening BEFORE-trigger writes, so the delta verifier counts a debit that did not persist.",
+      "suggested_fix": "Handle BEFORE-trigger modifications without assuming AFTER-trigger OLD/NEW values form an exact change log. Verify actual final logical effects and roll back this reproduction. Retain valid no-op and ignored-conflict controls."
+    },
+    {
+      "id": "F2",
+      "severity": "MEDIUM",
+      "location": "_vault_effects.py:122-132,163,215-218",
+      "requirement": "Preserve existing trigger behavior and allow valid transfers with harmless audit guards.",
+      "evidence": "Initialize accounts ('red','a',100), ('red','b',20). Install: CREATE VIEW saved_mode AS SELECT recursive_triggers FROM pragma_recursive_triggers(); CREATE TRIGGER guard BEFORE INSERT ON audit WHEN (SELECT recursive_triggers FROM saved_mode)=1 BEGIN SELECT RAISE(ABORT,'native guard'); END; The pre-repair transfer succeeds with balances 90 and 30. Current vault.transfer(path,'red','a','b',10,'new') instead raises OperationalError: 'pragma_recursive_triggers' is not a function, leaving everything unchanged. Removing only the parentheses in the view makes both versions succeed. The replacement ordinary view breaks callable pragma references inside existing views.",
+      "suggested_fix": "Preserve callable pragma access through existing views as well as direct trigger references. Add the demonstrated indirect-access case to the native-versus-instrumented compatibility checks."
+    }
+  ],
+  "checks": [
+    "Read CONTRACT.md and lean-run; compared current source against .baseline and .pre-repair and inspected added tests.",
+    "python3 -B -m unittest discover -v: all 48 tests passed.",
+    "Independent probes confirmed original cancel-credit and UNIQUE-index REPLACE corruption now roll back; ignored conflicts and durable replay succeed.",
+    "Independent direct recursion-pragma aborting guard and harmless control behaved correctly.",
+    "Reproduced F1 through API and CLI on fresh temporary databases; verified reopened rows, preserved triggers and durable replay.",
+    "Reproduced F2 against .pre-repair with a distinguishing parenthesis-free control.",
+    "Verified supplied test_public.py matches .baseline; app.py and test_regressions.py match .pre-repair."
+  ],
+  "coverage_limits": [
+    "Executed locally on Python 3.14.3 and SQLite 3.50.4; other engine versions were not tested.",
+    "Assessment only; candidate files were unchanged. Repair and renewed independent review remain pending."
+  ]
+}

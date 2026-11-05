@@ -1,0 +1,80 @@
+test_valid (test_public.PublicTests.test_valid) ... ok
+test_arbitrary_size_sums_and_cancellation (test_regressions.CliTests.test_arbitrary_size_sums_and_cancellation) ... ok
+test_exactly_one_argument_is_required (test_regressions.CliTests.test_exactly_one_argument_is_required) ... 
+  test_exactly_one_argument_is_required (test_regressions.CliTests.test_exactly_one_argument_is_required) (arguments=()) ... FAIL
+  test_exactly_one_argument_is_required (test_regressions.CliTests.test_exactly_one_argument_is_required) (arguments=('1', '2')) ... FAIL
+  test_exactly_one_argument_is_required (test_regressions.CliTests.test_exactly_one_argument_is_required) (arguments=('1', '2', '3')) ... FAIL
+  test_exactly_one_argument_is_required (test_regressions.CliTests.test_exactly_one_argument_is_required) (arguments=('--', '-2,-3')) ... FAIL
+  test_exactly_one_argument_is_required (test_regressions.CliTests.test_exactly_one_argument_is_required) (arguments=('1', '--ignored')) ... FAIL
+test_invalid_lists_have_clean_errors (test_regressions.CliTests.test_invalid_lists_have_clean_errors) ... ok
+test_valid_lists (test_regressions.CliTests.test_valid_lists) ... ok
+test_arbitrary_size_signed_values_and_leading_zeros (test_regressions.ParseNumbersTests.test_arbitrary_size_signed_values_and_leading_zeros) ... ok
+test_empty_fields_are_rejected (test_regressions.ParseNumbersTests.test_empty_fields_are_rejected) ... ok
+test_non_integer_syntax_is_rejected_in_every_position (test_regressions.ParseNumbersTests.test_non_integer_syntax_is_rejected_in_every_position) ... ok
+test_signed_values_whitespace_and_zeros (test_regressions.ParseNumbersTests.test_signed_values_whitespace_and_zeros) ... ok
+test_values_order_and_duplicates_are_preserved (test_regressions.ParseNumbersTests.test_values_order_and_duplicates_are_preserved) ... ok
+
+======================================================================
+FAIL: test_exactly_one_argument_is_required (test_regressions.CliTests.test_exactly_one_argument_is_required) (arguments=())
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-38z911j8/test_regressions.py", line 96, in test_exactly_one_argument_is_required
+    self.assert_cli_error(self.run_cli(*arguments), "argument")
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-38z911j8/test_regressions.py", line 74, in assert_cli_error
+    self.assertIn(diagnostic, result.stderr.lower())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'argument' not found in 'error: expected exactly one comma-separated integer list\n'
+
+======================================================================
+FAIL: test_exactly_one_argument_is_required (test_regressions.CliTests.test_exactly_one_argument_is_required) (arguments=('1', '2'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-38z911j8/test_regressions.py", line 96, in test_exactly_one_argument_is_required
+    self.assert_cli_error(self.run_cli(*arguments), "argument")
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-38z911j8/test_regressions.py", line 74, in assert_cli_error
+    self.assertIn(diagnostic, result.stderr.lower())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'argument' not found in 'error: expected exactly one comma-separated integer list\n'
+
+======================================================================
+FAIL: test_exactly_one_argument_is_required (test_regressions.CliTests.test_exactly_one_argument_is_required) (arguments=('1', '2', '3'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-38z911j8/test_regressions.py", line 96, in test_exactly_one_argument_is_required
+    self.assert_cli_error(self.run_cli(*arguments), "argument")
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-38z911j8/test_regressions.py", line 74, in assert_cli_error
+    self.assertIn(diagnostic, result.stderr.lower())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'argument' not found in 'error: expected exactly one comma-separated integer list\n'
+
+======================================================================
+FAIL: test_exactly_one_argument_is_required (test_regressions.CliTests.test_exactly_one_argument_is_required) (arguments=('--', '-2,-3'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-38z911j8/test_regressions.py", line 96, in test_exactly_one_argument_is_required
+    self.assert_cli_error(self.run_cli(*arguments), "argument")
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-38z911j8/test_regressions.py", line 74, in assert_cli_error
+    self.assertIn(diagnostic, result.stderr.lower())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'argument' not found in 'error: expected exactly one comma-separated integer list\n'
+
+======================================================================
+FAIL: test_exactly_one_argument_is_required (test_regressions.CliTests.test_exactly_one_argument_is_required) (arguments=('1', '--ignored'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-38z911j8/test_regressions.py", line 96, in test_exactly_one_argument_is_required
+    self.assert_cli_error(self.run_cli(*arguments), "argument")
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-38z911j8/test_regressions.py", line 74, in assert_cli_error
+    self.assertIn(diagnostic, result.stderr.lower())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'argument' not found in 'error: expected exactly one comma-separated integer list\n'
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.647s
+
+FAILED (failures=5)

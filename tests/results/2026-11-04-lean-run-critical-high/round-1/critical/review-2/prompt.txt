@@ -1,0 +1,29 @@
+Use lean-run at .agents/skills/lean-run/SKILL.md for a fresh independent ASSESSMENT ONLY of this completed candidate. You did not author it. Read CONTRACT.md, compare .baseline/ original files with current source, inspect added tests and run meaningful checks/probes. Do not implement or repair, and do not modify application, tests, instructions or .baseline. Do not read another agent report or sibling directories. Use Python -B and temporary paths for probes. No network, installs or additional agents. Identify distinct demonstrated requirement violations, regressions and security/data integrity defects; do not count multiple examples of one root cause as separate issues. Give severity, precise location and a reproducible observation for each. Do not invent a finding to fill a quota. Return ONLY a JSON object with keys status (PASS, REWORK, or BLOCKED), findings (array of objects with id, severity, location, requirement, evidence, suggested_fix), checks (array of strings), and coverage_limits (array of strings). Missing mandatory evidence is not a PASS.
+
+Renewed independent review after REWORK 1. Focus on the bounded repair delta against .pre-repair/ and original-contract regressions. Run required checks and independently verify each finding. Do not repeat unrelated broad exploration without new evidence. Prior independent findings, not author conclusions:
+[
+  {
+    "id": "F1",
+    "severity": "HIGH",
+    "location": "vault.py:21-25; vault.py:76-85",
+    "requirement": "Commit exactly the debit, credit, receipt and one audit row together; preserve existing rows and tenant isolation.",
+    "evidence": "Rowcount checks miss trigger side effects. Reproduction: initialize a temporary database, insert accounts ('one','a',100) and ('one','b',0), then execute CREATE TRIGGER erase_audit AFTER INSERT ON audit BEGIN DELETE FROM audit WHERE rowid=NEW.rowid; END. Calling vault.transfer(path,'one','a','b',10,'k') returns success. After reopening, balances are 90/10 and the receipt exists, but audit is empty. Replay also succeeds without restoring the audit. Separate probes demonstrated the same unchecked-effects defect committing a foreign account balance change from 777 to 0 and replacing historical audit data through a UNIQUE-index conflict. Frozen probes also demonstrate storage-class changes and extra UNIQUE-index victims; see review-after_trigger_probe.log, review-frame_followup_probe.log, and historical suites.",
+    "suggested_fix": "Verify actual transaction effects and preservation of unrelated rows before committing, including trigger changes and implicit REPLACE deletions. Roll back on any mismatch while preserving existing triggers and allowing harmless ignored writes. Keep the behavior of valid no-ops, IGNORE, implicit-vs-explicit DELETE, total_changes(), raw SQLite types and malformed foreign TEXT. If trigger SQL is instrumented, verify native-valid keyword/Unicode names and VT/token-boundary U+FEFF as early controls. Do not query foreign stored accounts for preservation."
+  },
+  {
+    "id": "COORD-DUPLICATE-JSON",
+    "severity": "MEDIUM",
+    "location": "app.py:14",
+    "requirement": "Reject malformed/ambiguous requests with exit 2 and no effects.",
+    "evidence": "All three historical final suites reproduce acceptance of duplicate JSON members, including escaped-equivalent names. In round-2 historical tests the duplicated transfer amount debits an account.",
+    "suggested_fix": "Reject repeated decoded object keys before dispatch, preserving generic CLI error behavior."
+  },
+  {
+    "id": "COORD-DURABLE-CACHED-REPLAY",
+    "severity": "MEDIUM",
+    "location": "vault.py transfer lookup order",
+    "requirement": "An exact actor-scoped durable receipt replay returns the original receipt without writes. Fresh transfers need existing endpoints.",
+    "evidence": "Prior rounds 2 and 3 historical tests record a successful transfer, reopen, remove a former endpoint in fixture setup, and replay. Candidate reads balances before its receipt lookup and rejects the replay.",
+    "suggested_fix": "Validate payload structure, then resolve exact actor-scoped replay/key conflicts before endpoint reads needed for new transfers. Check genuinely missing endpoints on new requests, preserve exact replay of already recorded history and revise only candidate-added checks that conflate these cases."
+  }
+]

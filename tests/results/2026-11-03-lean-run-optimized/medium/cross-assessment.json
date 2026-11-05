@@ -1,0 +1,12 @@
+{
+  "raw_failure_preserved": true,
+  "direction": "old_tests_on_new_code",
+  "failed_test": "CommandLineTests.test_requires_exactly_one_argument",
+  "failed_subcases": 4,
+  "distinct_contract_issues": 0,
+  "classification": "test asserts unspecified error-message wording",
+  "baseline_assertion": "assertIn(\"argument\", result.stderr.lower())",
+  "candidate_stderr": "error: expected exactly one comma-separated integer list",
+  "contract": "Invalid input/arity exits 2 with a useful error on stderr, no stdout and no traceback.",
+  "assessment": "All exit/stdout/stderr/traceback checks passed; the candidate explains the expected single list. The contract does not require the literal word argument. No tests or application files were changed for this assessment."
+}

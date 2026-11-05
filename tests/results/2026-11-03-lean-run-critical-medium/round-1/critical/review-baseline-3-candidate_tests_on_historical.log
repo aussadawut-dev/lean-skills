@@ -1,0 +1,66 @@
+test_valid_transfer (test_public.PublicTests.test_valid_transfer) ... ok
+test_cli_argument_count_errors_are_generic (test_regression.CliJourneyTests.test_cli_argument_count_errors_are_generic) ... ok
+test_integrated_cli_journey_failure_recovery_and_durable_replay (test_regression.CliJourneyTests.test_integrated_cli_journey_failure_recovery_and_durable_replay) ... ok
+test_malformed_cli_inputs_share_one_generic_error_without_writes (test_regression.CliJourneyTests.test_malformed_cli_inputs_share_one_generic_error_without_writes) ... ok
+test_concurrent_sources_do_not_lose_shared_target_credits (test_regression.ConcurrencyTests.test_concurrent_sources_do_not_lose_shared_target_credits) ... ok
+test_conflicting_same_key_race_has_one_winner (test_regression.ConcurrencyTests.test_conflicting_same_key_race_has_one_winner) ... ok
+test_distinct_keys_never_overspend_in_both_journal_modes (test_regression.ConcurrencyTests.test_distinct_keys_never_overspend_in_both_journal_modes) ... ok
+test_simultaneous_duplicates_execute_once_in_both_journal_modes (test_regression.ConcurrencyTests.test_simultaneous_duplicates_execute_once_in_both_journal_modes) ... ok
+test_all_sqlite_audit_failure_modes_roll_back (test_regression.TransactionIntegrityTests.test_all_sqlite_audit_failure_modes_roll_back) ... ok
+test_benign_noops_ignored_conflicts_and_rowid_moves_succeed (test_regression.TransactionIntegrityTests.test_benign_noops_ignored_conflicts_and_rowid_moves_succeed) ... ERROR
+test_benign_self_update_trigger_keeps_sqlite_recursion_behavior (test_regression.TransactionIntegrityTests.test_benign_self_update_trigger_keeps_sqlite_recursion_behavior) ... ok
+test_existing_duplicate_audit_multiplicity_is_preserved (test_regression.TransactionIntegrityTests.test_existing_duplicate_audit_multiplicity_is_preserved) ... ok
+test_failure_at_each_write_rolls_back_every_effect (test_regression.TransactionIntegrityTests.test_failure_at_each_write_rolls_back_every_effect) ... ok
+test_insert_replace_cannot_steal_another_tenants_row (test_regression.TransactionIntegrityTests.test_insert_replace_cannot_steal_another_tenants_row) ... ok
+test_replacement_rowid_collisions_cannot_erase_existing_rows (test_regression.TransactionIntegrityTests.test_replacement_rowid_collisions_cannot_erase_existing_rows) ... ok
+test_silently_ignored_required_writes_are_rejected (test_regression.TransactionIntegrityTests.test_silently_ignored_required_writes_are_rejected) ... ok
+test_undone_debit_and_duplicate_audit_are_rejected (test_regression.TransactionIntegrityTests.test_undone_debit_and_duplicate_audit_are_rejected) ... ok
+test_unrelated_rows_and_history_cannot_be_changed_or_deleted (test_regression.TransactionIntegrityTests.test_unrelated_rows_and_history_cannot_be_changed_or_deleted) ... ok
+test_balance_validates_both_names (test_regression.ValidationAndIsolationTests.test_balance_validates_both_names) ... ok
+test_balances_and_transfer_are_tenant_scoped (test_regression.ValidationAndIsolationTests.test_balances_and_transfer_are_tenant_scoped) ... ok
+test_full_spend_and_durable_exact_replay (test_regression.ValidationAndIsolationTests.test_full_spend_and_durable_exact_replay) ... ok
+test_init_preserves_existing_schema_rows_and_triggers (test_regression.ValidationAndIsolationTests.test_init_preserves_existing_schema_rows_and_triggers) ... ok
+test_integer_storage_overflow_does_not_round_or_debit (test_regression.ValidationAndIsolationTests.test_integer_storage_overflow_does_not_round_or_debit) ... ERROR
+test_invalid_names_and_amounts_never_write (test_regression.ValidationAndIsolationTests.test_invalid_names_and_amounts_never_write) ... ok
+test_malformed_other_tenant_rows_do_not_affect_valid_work (test_regression.ValidationAndIsolationTests.test_malformed_other_tenant_rows_do_not_affect_valid_work) ... ok
+test_missing_and_inaccessible_accounts_have_identical_errors (test_regression.ValidationAndIsolationTests.test_missing_and_inaccessible_accounts_have_identical_errors) ... ok
+test_nonempty_names_are_literal_including_whitespace_and_sql (test_regression.ValidationAndIsolationTests.test_nonempty_names_are_literal_including_whitespace_and_sql) ... ok
+test_replay_payload_conflicts_and_keys_are_tenant_scoped (test_regression.ValidationAndIsolationTests.test_replay_payload_conflicts_and_keys_are_tenant_scoped) ... ok
+
+======================================================================
+ERROR: test_benign_noops_ignored_conflicts_and_rowid_moves_succeed (test_regression.TransactionIntegrityTests.test_benign_noops_ignored_conflicts_and_rowid_moves_succeed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-izmvpanw/test_regression.py", line 387, in test_benign_noops_ignored_conflicts_and_rowid_moves_succeed
+    receipt = self.perform(path)
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-izmvpanw/test_regression.py", line 57, in perform
+    return vault.transfer(path or self.path, **request)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-izmvpanw/vault.py", line 156, in transfer
+    _write_one(con, "INSERT INTO audit (tenant, key, source, target, amount) "
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               "VALUES (?, ?, ?, ?, ?)", values)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-izmvpanw/vault.py", line 40, in _write_one
+    if con.execute(statement, parameters).rowcount != 1:
+       ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: unexpected stored transfer effects
+
+======================================================================
+ERROR: test_integer_storage_overflow_does_not_round_or_debit (test_regression.ValidationAndIsolationTests.test_integer_storage_overflow_does_not_round_or_debit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-izmvpanw/test_regression.py", line 220, in test_integer_storage_overflow_does_not_round_or_debit
+    self.perform(amount=1)
+    ~~~~~~~~~~~~^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-izmvpanw/test_regression.py", line 57, in perform
+    return vault.transfer(path or self.path, **request)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-izmvpanw/vault.py", line 144, in transfer
+    raise ValueError("balance out of range")
+ValueError: balance out of range
+
+----------------------------------------------------------------------
+Ran 28 tests in 1.533s
+
+FAILED (errors=2)

@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "findings": [],
+  "checks": [
+    "Read CONTRACT.md and lean-run; inspected current source, added tests, and diffs against .baseline/ and .pre-repair/.",
+    "python3 -B -m unittest discover -v: all 29 tests passed.",
+    "Independently reproduced F1 and F2 in .pre-repair/; current public transfers succeed with correct balances, one receipt/audit row, unchanged replay, and preserved trigger definitions.",
+    "Duplicate JSON fields reproduce the prior CLI failure in .pre-repair/. Current CLI rejects ordinary and escaped duplicate fields with exit 2, empty stdout, generic JSON stderr, and no writes. Valid requests succeed.",
+    "Destructive REPLACE through a UNIQUE index raises IntegrityError and rolls back all tables and schema; harmless replacement succeeds.",
+    "Nested RAISE(IGNORE) and explicit DELETE failure probes passed. An initial probe assertion incorrectly required rowid order; corrected logical multiset comparisons passed."
+  ],
+  "coverage_limits": [
+    "Verified locally with Python 3.14.3 and SQLite 3.50.4; recursive_triggers defaults to 0.",
+    "Review focused on the repair delta and original-contract regressions. No application, test, instruction, or baseline files were modified."
+  ]
+}

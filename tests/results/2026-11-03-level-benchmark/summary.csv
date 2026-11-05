@@ -1,0 +1,4 @@
+level,measured_agent_seconds,workflow_span_seconds,first_pass_agent_seconds,total_tokens,input_tokens,cached_input_tokens,output_tokens,uncached_input_plus_output,baseline_issue_categories,final_issue_categories,first_review_issues,final_review_issues,repair_rounds,status
+medium,365.935,397.304,365.935,287370,275746,229504,11624,57866,3,0,0,0,0,DONE
+high,493.621,508.084,493.621,323414,305851,267136,17563,56278,5,0,0,0,0,DONE
+critical,1139.841,1276.549,799.062,1142053,1104169,993024,37884,149029,8,0,1,0,1,DONE

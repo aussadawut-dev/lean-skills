@@ -1,0 +1,12 @@
+{
+  "findings": [
+    {
+      "id": "COORD-HIGH-CONSTRUCTOR-KEY-TYPE",
+      "severity": "MEDIUM",
+      "location": "ledger.py:2-10 Ledger.__init__",
+      "requirement": "Ledger(balances: dict[str,int]) rejects invalid values with ValueError.",
+      "evidence": "Candidate accepted Ledger({1: 10, \"a\": 0}) and Ledger({None: 10, \"a\": 0}), then allowed transfers from the non-string accounts. All three previous rounds' suites reproduce the invalid constructor acceptance. A valid opaque Unicode string identifier must remain usable.",
+      "suggested_fix": "Validate that constructor keys are strings before storing input. Keep the repair bounded, preserve valid string keys and ordinary transfer/batch/replay behavior, and add a meaningful regression."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+Implemented strict parsing, exact CLI arity, clean errors, and arbitrary-size integer support in [app.py](./app.py). Added [regression tests](./test_regression.py).
+
+- `python3 -B -m unittest discover -v`: **18 tests passed**.
+- Reproduced original defects and verified their fixes.
+- Exercised real CLI success, rejection, recovery, negative lists, and 5,000-digit arithmetic.
+- Full diff reviewed; no known implementation gaps remain.
+
+Overall acceptance is **blocked pending the coordinator’s independent review**, which has not yet occurred.

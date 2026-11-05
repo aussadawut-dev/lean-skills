@@ -1,0 +1,15 @@
+{
+  "task_wide_rework_count": 1,
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "HIGH",
+      "root_cause": "unchecked SQLite write effects",
+      "first_review": "REWORK",
+      "coordinator_reproduced": true,
+      "disposition": "repaired and independently verified"
+    }
+  ],
+  "repair_rounds": 1,
+  "final_review": "PASS"
+}

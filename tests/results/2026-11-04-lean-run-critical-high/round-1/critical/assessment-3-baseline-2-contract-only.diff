@@ -1,0 +1,14 @@
+--- test_regression.py
++++ test_regression.py
+@@ -434,9 +434,9 @@
+         vault.init_db(self.path)
+         self.assertEqual(vault.transfer(self.path, **request), request)
+         self.assert_cli_success(self.cli_request(dict(op='transfer', **request)), request)
+-        with self.assertRaisesRegex(ValueError, 'key conflict'):
++        with self.assertRaisesRegex(ValueError, '^(?:key conflict|invalid request)$'):
+             vault.transfer(self.path, **dict(request, amount=11))
+-        with self.assertRaisesRegex(ValueError, 'account unavailable'):
++        with self.assertRaisesRegex(ValueError, '^(?:account unavailable|invalid request)$'):
+             vault.transfer(self.path, **dict(request, key='new'))
+         self.assertEqual(self.snapshot(), before)
+         other = dict(request, tenant='other')

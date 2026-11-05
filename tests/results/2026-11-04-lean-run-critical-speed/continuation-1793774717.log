@@ -1,0 +1,9 @@
+{"round": 3, "level": "high", "phase": "repair-1", "state": "RUNNING", "unix": 1793774718.069563}
+{"level": "high", "phase": "repair-1", "started_unix": 1793774718.0708559, "elapsed_seconds": 189.509, "exit_code": 0, "timed_out": false, "usage": {"cache_write_input_tokens": 0, "input_tokens": 185304, "reasoning_output_tokens": 3094, "cached_input_tokens": 168832, "output_tokens": 5246}, "requested_model": "gpt-6-astra", "requested_effort": "max", "model_identity_evidence": "requested CLI controls; backend identity not independently attested", "completed_turns": 1, "command_count": 12, "total_tokens": 190550, "uncached_input_tokens": 16472}
+{"level": "high", "label": "post-repair-1", "issues": 0, "checks": 6, "protected_files_changed": []}
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-speed-pig_dqx3/cohort/round-3/high/reviewspace
+{"round": 3, "level": "high", "phase": "review-2", "state": "RUNNING", "unix": 1793774907.6833222}
+{"level": "high", "phase": "review-2", "started_unix": 1793774907.684563, "elapsed_seconds": 102.759, "exit_code": 0, "timed_out": false, "usage": {"cache_write_input_tokens": 0, "input_tokens": 73737, "reasoning_output_tokens": 1035, "cached_input_tokens": 56064, "output_tokens": 3195}, "requested_model": "gpt-6-astra", "requested_effort": "max", "model_identity_evidence": "requested CLI controls; backend identity not independently attested", "completed_turns": 1, "command_count": 6, "total_tokens": 76932, "uncached_input_tokens": 17673}
+{"round": 3, "level": "high", "phase": "assessment", "state": "DONE", "unix": 1793775010.7730188}
+{"round": 3, "level": "all", "phase": "cohort", "state": "COMPLETE_WITH_FAILURES", "unix": 1793775010.774204}
+{"round": 3, "level": "all", "phase": "cohort", "state": "COMPLETE_WITH_INCOMPLETE_USAGE", "unix": 1793775010.7886589}

@@ -1,0 +1,12 @@
+{
+  ".agents/skills/lean-run/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+  ".agents/skills/lean-run/SKILL.md": "76d7fca67e6ea841d1e3e3366c398b682de1a63dbc50391fe1cc99a3165045f9",
+  ".agents/skills/lean-run/references/handoff.md": "2d6744d15c27d002c85b9b4cbccf2b0845cb7b5c8b3589aa8b9b06a885357e94",
+  ".baseline/ledger.py": "baced408671ff90da2555fc58a1ef264c801a6c52da46dfec86f278d85f1a63a",
+  ".baseline/test_public.py": "1594f7eaaa2d90b6c9fc34c0cee982174d8415e3b1dec9e25f57b3d3924d88a0",
+  "AGENTS.md": "0ef83ddcf2d1065527f05cd03d5a1b275feecc77e45bdb5916217f204c1cb486",
+  "CONTRACT.md": "c9ed2ad9c1ae6cd4b794330ed7d250994e721d0af2c7282d9a004d1a6705299c",
+  "ledger.py": "d16842a40cfebf5fac9f7fdca0e613dbfdf17b3933aebc4e6a25761ef648660c",
+  "test_ledger.py": "0fd9326203963c300d999c3515c5e15f245bddcdafef0d76380ef3d205f6bdeb",
+  "test_public.py": "1594f7eaaa2d90b6c9fc34c0cee982174d8415e3b1dec9e25f57b3d3924d88a0"
+}

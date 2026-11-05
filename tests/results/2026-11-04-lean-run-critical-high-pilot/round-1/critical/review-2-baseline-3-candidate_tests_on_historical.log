@@ -1,0 +1,267 @@
+test_before_endpoint_changes_followed_by_audit_restoration (test_integrity.WriteIntegrityRegressions.test_before_endpoint_changes_followed_by_audit_restoration) ... ok
+test_counters_and_last_insert_state_match_native_execution (test_integrity.WriteIntegrityRegressions.test_counters_and_last_insert_state_match_native_execution) ... ok
+test_final_effects_history_multiplicity_and_storage_classes (test_integrity.WriteIntegrityRegressions.test_final_effects_history_multiplicity_and_storage_classes) ... ok
+test_ignored_conflicts_row_moves_and_identical_replacements (test_integrity.WriteIntegrityRegressions.test_ignored_conflicts_row_moves_and_identical_replacements) ... ok
+test_keyword_unicode_names_conditional_bodies_and_separators (test_integrity.WriteIntegrityRegressions.test_keyword_unicode_names_conditional_bodies_and_separators) ... ok
+test_malformed_foreign_text_and_database_encodings (test_integrity.WriteIntegrityRegressions.test_malformed_foreign_text_and_database_encodings) ... ok
+test_native_recursion_guards_direct_and_through_views (test_integrity.WriteIntegrityRegressions.test_native_recursion_guards_direct_and_through_views) ... 
+  test_native_recursion_guards_direct_and_through_views (test_integrity.WriteIntegrityRegressions.test_native_recursion_guards_direct_and_through_views) (source="'pragma_recursive_triggers'()", expected=0, view=False) ... ERROR
+  test_native_recursion_guards_direct_and_through_views (test_integrity.WriteIntegrityRegressions.test_native_recursion_guards_direct_and_through_views) (source="'pragma_recursive_triggers'()", expected=0, view=True) ... ERROR
+  test_native_recursion_guards_direct_and_through_views (test_integrity.WriteIntegrityRegressions.test_native_recursion_guards_direct_and_through_views) (source="'pragma_recursive_triggers'()", expected=1, view=False) ... ERROR
+  test_native_recursion_guards_direct_and_through_views (test_integrity.WriteIntegrityRegressions.test_native_recursion_guards_direct_and_through_views) (source="'pragma_recursive_triggers'()", expected=1, view=True) ... ERROR
+  test_native_recursion_guards_direct_and_through_views (test_integrity.WriteIntegrityRegressions.test_native_recursion_guards_direct_and_through_views) (source="'main'.'pragma_recursive_triggers'() AS mode", expected=0, view=False) ... ERROR
+  test_native_recursion_guards_direct_and_through_views (test_integrity.WriteIntegrityRegressions.test_native_recursion_guards_direct_and_through_views) (source="'main'.'pragma_recursive_triggers'() AS mode", expected=0, view=True) ... ERROR
+  test_native_recursion_guards_direct_and_through_views (test_integrity.WriteIntegrityRegressions.test_native_recursion_guards_direct_and_through_views) (source="'main'.'pragma_recursive_triggers'() AS mode", expected=1, view=False) ... ERROR
+  test_native_recursion_guards_direct_and_through_views (test_integrity.WriteIntegrityRegressions.test_native_recursion_guards_direct_and_through_views) (source="'main'.'pragma_recursive_triggers'() AS mode", expected=1, view=True) ... ERROR
+test_nested_raise_ignore_resumes_parent_statement_scope (test_integrity.WriteIntegrityRegressions.test_nested_raise_ignore_resumes_parent_statement_scope) ... ok
+test_pragma_literals_aliases_and_table_name_resolution (test_integrity.WriteIntegrityRegressions.test_pragma_literals_aliases_and_table_name_resolution) ... ERROR
+test_replace_victims_from_unique_expression_and_partial_indexes (test_integrity.WriteIntegrityRegressions.test_replace_victims_from_unique_expression_and_partial_indexes) ... ok
+test_stale_old_images_reconcile_latest_slot_and_control (test_integrity.WriteIntegrityRegressions.test_stale_old_images_reconcile_latest_slot_and_control) ... FAIL
+test_user_delete_triggers_do_not_start_firing_for_replace (test_integrity.WriteIntegrityRegressions.test_user_delete_triggers_do_not_start_firing_for_replace) ... ok
+test_valid_transfer (test_public.PublicTests.test_valid_transfer) ... ok
+test_balance_and_transfer_are_tenant_scoped (test_regressions.VaultRegressions.test_balance_and_transfer_are_tenant_scoped) ... ok
+test_balance_overflow_is_a_storage_failure_without_partial_debit (test_regressions.VaultRegressions.test_balance_overflow_is_a_storage_failure_without_partial_debit) ... ok
+test_cli_integrated_journey_replay_conflict_isolation_and_recovery (test_regressions.VaultRegressions.test_cli_integrated_journey_replay_conflict_isolation_and_recovery) ... ok
+test_cli_invalid_shapes_and_types_are_generic_and_do_not_write (test_regressions.VaultRegressions.test_cli_invalid_shapes_and_types_are_generic_and_do_not_write) ... ok
+test_cli_rejects_duplicate_decoded_object_keys_without_writes (test_regressions.VaultRegressions.test_cli_rejects_duplicate_decoded_object_keys_without_writes) ... ok
+test_concurrent_distinct_keys_cannot_overspend (test_regressions.VaultRegressions.test_concurrent_distinct_keys_cannot_overspend) ... ok
+test_concurrent_same_key_different_payload_conflicts (test_regressions.VaultRegressions.test_concurrent_same_key_different_payload_conflicts) ... ok
+test_concurrent_same_key_executes_once (test_regressions.VaultRegressions.test_concurrent_same_key_executes_once) ... ok
+test_concurrent_sources_do_not_lose_shared_target_credits (test_regressions.VaultRegressions.test_concurrent_sources_do_not_lose_shared_target_credits) ... ok
+test_conflicts_reject_every_payload_change_without_writes (test_regressions.VaultRegressions.test_conflicts_reject_every_payload_change_without_writes) ... ok
+test_failure_at_each_write_rolls_back_and_preserves_history (test_regressions.VaultRegressions.test_failure_at_each_write_rolls_back_and_preserves_history) ... ok
+test_foreign_malformed_storage_is_not_used (test_regressions.VaultRegressions.test_foreign_malformed_storage_is_not_used) ... ok
+test_ignored_required_write_rolls_back (test_regressions.VaultRegressions.test_ignored_required_write_rolls_back) ... ok
+test_init_preserves_existing_schema_history_and_trigger (test_regressions.VaultRegressions.test_init_preserves_existing_schema_history_and_trigger) ... ok
+test_invalid_requests_leave_database_unchanged (test_regressions.VaultRegressions.test_invalid_requests_leave_database_unchanged) ... ok
+test_missing_and_inaccessible_accounts_share_one_error (test_regressions.VaultRegressions.test_missing_and_inaccessible_accounts_share_one_error) ... ok
+test_names_are_literal_nonempty_strings (test_regressions.VaultRegressions.test_names_are_literal_nonempty_strings) ... ok
+test_replay_survives_reopening_and_returns_detached_receipts (test_regressions.VaultRegressions.test_replay_survives_reopening_and_returns_detached_receipts) ... ok
+test_same_key_is_independent_for_each_tenant (test_regressions.VaultRegressions.test_same_key_is_independent_for_each_tenant) ... ok
+test_validation_precedes_database_creation (test_regressions.VaultRegressions.test_validation_precedes_database_creation) ... ok
+
+======================================================================
+ERROR: test_native_recursion_guards_direct_and_through_views (test_integrity.WriteIntegrityRegressions.test_native_recursion_guards_direct_and_through_views) (source="'pragma_recursive_triggers'()", expected=0, view=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 218, in test_native_recursion_guards_direct_and_through_views
+    self.assert_rollback(setup)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 81, in assert_rollback
+    self.send(path)
+    ~~~~~~~~~^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 54, in send
+    return vault.transfer(path, 'red', 'a', 'b', 10, 'new')
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/vault.py", line 83, in transfer
+    _write_one(con, 'INSERT INTO audit (tenant, key, source, target, amount) '
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               'VALUES (?, ?, ?, ?, ?)', values)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/vault.py", line 45, in _write_one
+    if con.execute(statement, parameters).rowcount != 1:
+       ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: 'pragma_recursive_triggers' is not a function
+
+======================================================================
+ERROR: test_native_recursion_guards_direct_and_through_views (test_integrity.WriteIntegrityRegressions.test_native_recursion_guards_direct_and_through_views) (source="'pragma_recursive_triggers'()", expected=0, view=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 218, in test_native_recursion_guards_direct_and_through_views
+    self.assert_rollback(setup)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 81, in assert_rollback
+    self.send(path)
+    ~~~~~~~~~^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 54, in send
+    return vault.transfer(path, 'red', 'a', 'b', 10, 'new')
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/vault.py", line 83, in transfer
+    _write_one(con, 'INSERT INTO audit (tenant, key, source, target, amount) '
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               'VALUES (?, ?, ?, ?, ?)', values)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/vault.py", line 45, in _write_one
+    if con.execute(statement, parameters).rowcount != 1:
+       ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: 'pragma_recursive_triggers' is not a function
+
+======================================================================
+ERROR: test_native_recursion_guards_direct_and_through_views (test_integrity.WriteIntegrityRegressions.test_native_recursion_guards_direct_and_through_views) (source="'pragma_recursive_triggers'()", expected=1, view=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 220, in test_native_recursion_guards_direct_and_through_views
+    self.assert_native_control(setup)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 70, in assert_native_control
+    receipt = self.send(observed)
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 54, in send
+    return vault.transfer(path, 'red', 'a', 'b', 10, 'new')
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/vault.py", line 83, in transfer
+    _write_one(con, 'INSERT INTO audit (tenant, key, source, target, amount) '
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               'VALUES (?, ?, ?, ?, ?)', values)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/vault.py", line 45, in _write_one
+    if con.execute(statement, parameters).rowcount != 1:
+       ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: 'pragma_recursive_triggers' is not a function
+
+======================================================================
+ERROR: test_native_recursion_guards_direct_and_through_views (test_integrity.WriteIntegrityRegressions.test_native_recursion_guards_direct_and_through_views) (source="'pragma_recursive_triggers'()", expected=1, view=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 220, in test_native_recursion_guards_direct_and_through_views
+    self.assert_native_control(setup)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 70, in assert_native_control
+    receipt = self.send(observed)
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 54, in send
+    return vault.transfer(path, 'red', 'a', 'b', 10, 'new')
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/vault.py", line 83, in transfer
+    _write_one(con, 'INSERT INTO audit (tenant, key, source, target, amount) '
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               'VALUES (?, ?, ?, ?, ?)', values)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/vault.py", line 45, in _write_one
+    if con.execute(statement, parameters).rowcount != 1:
+       ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: 'pragma_recursive_triggers' is not a function
+
+======================================================================
+ERROR: test_native_recursion_guards_direct_and_through_views (test_integrity.WriteIntegrityRegressions.test_native_recursion_guards_direct_and_through_views) (source="'main'.'pragma_recursive_triggers'() AS mode", expected=0, view=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 218, in test_native_recursion_guards_direct_and_through_views
+    self.assert_rollback(setup)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 81, in assert_rollback
+    self.send(path)
+    ~~~~~~~~~^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 54, in send
+    return vault.transfer(path, 'red', 'a', 'b', 10, 'new')
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/vault.py", line 83, in transfer
+    _write_one(con, 'INSERT INTO audit (tenant, key, source, target, amount) '
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               'VALUES (?, ?, ?, ?, ?)', values)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/vault.py", line 45, in _write_one
+    if con.execute(statement, parameters).rowcount != 1:
+       ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: 'pragma_recursive_triggers' is not a function
+
+======================================================================
+ERROR: test_native_recursion_guards_direct_and_through_views (test_integrity.WriteIntegrityRegressions.test_native_recursion_guards_direct_and_through_views) (source="'main'.'pragma_recursive_triggers'() AS mode", expected=0, view=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 218, in test_native_recursion_guards_direct_and_through_views
+    self.assert_rollback(setup)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 81, in assert_rollback
+    self.send(path)
+    ~~~~~~~~~^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 54, in send
+    return vault.transfer(path, 'red', 'a', 'b', 10, 'new')
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/vault.py", line 83, in transfer
+    _write_one(con, 'INSERT INTO audit (tenant, key, source, target, amount) '
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               'VALUES (?, ?, ?, ?, ?)', values)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/vault.py", line 45, in _write_one
+    if con.execute(statement, parameters).rowcount != 1:
+       ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: 'pragma_recursive_triggers' is not a function
+
+======================================================================
+ERROR: test_native_recursion_guards_direct_and_through_views (test_integrity.WriteIntegrityRegressions.test_native_recursion_guards_direct_and_through_views) (source="'main'.'pragma_recursive_triggers'() AS mode", expected=1, view=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 220, in test_native_recursion_guards_direct_and_through_views
+    self.assert_native_control(setup)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 70, in assert_native_control
+    receipt = self.send(observed)
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 54, in send
+    return vault.transfer(path, 'red', 'a', 'b', 10, 'new')
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/vault.py", line 83, in transfer
+    _write_one(con, 'INSERT INTO audit (tenant, key, source, target, amount) '
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               'VALUES (?, ?, ?, ?, ?)', values)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/vault.py", line 45, in _write_one
+    if con.execute(statement, parameters).rowcount != 1:
+       ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: 'pragma_recursive_triggers' is not a function
+
+======================================================================
+ERROR: test_native_recursion_guards_direct_and_through_views (test_integrity.WriteIntegrityRegressions.test_native_recursion_guards_direct_and_through_views) (source="'main'.'pragma_recursive_triggers'() AS mode", expected=1, view=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 220, in test_native_recursion_guards_direct_and_through_views
+    self.assert_native_control(setup)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 70, in assert_native_control
+    receipt = self.send(observed)
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 54, in send
+    return vault.transfer(path, 'red', 'a', 'b', 10, 'new')
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/vault.py", line 83, in transfer
+    _write_one(con, 'INSERT INTO audit (tenant, key, source, target, amount) '
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               'VALUES (?, ?, ?, ?, ?)', values)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/vault.py", line 45, in _write_one
+    if con.execute(statement, parameters).rowcount != 1:
+       ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: 'pragma_recursive_triggers' is not a function
+
+======================================================================
+ERROR: test_pragma_literals_aliases_and_table_name_resolution (test_integrity.WriteIntegrityRegressions.test_pragma_literals_aliases_and_table_name_resolution)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 223, in test_pragma_literals_aliases_and_table_name_resolution
+    self.assert_native_control('''
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+        CREATE VIEW saved_mode AS SELECT recursive_triggers, 'pragma_recursive_triggers' AS literal
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        BEGIN SELECT RAISE(ABORT,'changed literal or mode'); END;
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ''')
+    ^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 70, in assert_native_control
+    receipt = self.send(observed)
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 54, in send
+    return vault.transfer(path, 'red', 'a', 'b', 10, 'new')
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/vault.py", line 83, in transfer
+    _write_one(con, 'INSERT INTO audit (tenant, key, source, target, amount) '
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               'VALUES (?, ?, ?, ?, ?)', values)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/vault.py", line 45, in _write_one
+    if con.execute(statement, parameters).rowcount != 1:
+       ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: 'pragma_recursive_triggers' is not a function
+
+======================================================================
+FAIL: test_stale_old_images_reconcile_latest_slot_and_control (test_integrity.WriteIntegrityRegressions.test_stale_old_images_reconcile_latest_slot_and_control)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 122, in test_stale_old_images_reconcile_latest_slot_and_control
+    self.assert_rollback(setup % "UPDATE accounts SET balance=78 WHERE tenant='blue' AND name='private';")
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-bscfpjp0/test_integrity.py", line 80, in assert_rollback
+    with self.assertRaises(sqlite3.IntegrityError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IntegrityError not raised
+
+----------------------------------------------------------------------
+Ran 33 tests in 2.350s
+
+FAILED (failures=1, errors=9)

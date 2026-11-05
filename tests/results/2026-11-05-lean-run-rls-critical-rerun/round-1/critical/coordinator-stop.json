@@ -1,0 +1,7 @@
+{
+  "status": "STOPPED_AFTER_FIRST_ASSESSMENT",
+  "decided_by": "user plan, 2026-11-05: restructure gates before further paid repair",
+  "reason": "Frozen gates mix contract-external expectations (historical candidate assertions, exception type and rowid checks not stated by the contract). Further repair would be spent on them.",
+  "result": "No repair requested. Not DONE and not FAILED under the frozen protocol; retained unchanged as evidence.",
+  "recorded_unix": 1793817735.8889332
+}

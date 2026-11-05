@@ -1,0 +1,24 @@
+{
+  "status": "REWORK",
+  "findings": [
+    {
+      "id": "C2",
+      "severity": "MEDIUM",
+      "location": "vault.py:215-221 (_merge_ledger)",
+      "requirement": "Under the user-approved C2 interpretation, transfers must not add persistent schema objects.",
+      "evidence": "Independently reproduced through API and CLI. After init_db, insert accounts ('one','a',100),('one','b',0),('two','a',777),('two','b',0); insert audit ('one','history','a','b',1); and insert ('two','old','a','b',1) into both transfers and audit. Calling transfer(path,'one','a','b',10,'k') succeeds but leaves a persistent _vault_rowids_<uuid> table and its autoindex. Reopening reveals mapping rows ('transfers','one',2,1) and ('audit','one',3,2). CLI also exits 0 and leaves these objects. This mandatory finding remains unchanged from .pre-repair.",
+      "suggested_fix": "Replace persistent mapping bookkeeping with a mechanism that preserves required rowid behavior without adding durable schema objects. Make the existing schema-preservation regression test pass."
+    }
+  ],
+  "checks": [
+    "Read CONTRACT.md and lean-run guidance; compared application source against .baseline and .pre-repair; inspected added tests.",
+    "Python 3.14.3 / SQLite 3.50.4: python3 -B -m unittest discover -v ran 30 tests. Four subtests failed in test_transfer_preserves_all_schema_objects_api_and_cli; the other 29 tests passed. All failures demonstrate C2.",
+    "Independently verified F3 with native SQLite, .pre-repair, current API and actual CLI. Current API/CLI match native behavior: balances 90/10, seen=[('old',)], unchanged schema and integrity_check='ok'. The supplied .pre-repair snapshot raises the rename error.",
+    "Independent C2 probes confirmed persistent schema additions after reopening, with protected tenant rows unchanged and integrity_check='ok'.",
+    "Assessment made no source, test or instruction edits. Temporary probe databases were removed."
+  ],
+  "coverage_limits": [
+    "The referenced mandatory critical_contract_probe.py was not supplied in this workspace and was not executed. Evaluator scripts and sibling directories were not inspected.",
+    "Independent probing focused on the bounded repair and prior findings; this was not an exhaustive exploration of SQLite behavior."
+  ]
+}

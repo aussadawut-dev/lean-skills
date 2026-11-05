@@ -1,0 +1,24 @@
+{
+  "status": "TIMEOUT",
+  "final_assessment": 3,
+  "repair_rounds": 2,
+  "final_grade": "post-repair-2-grade.json",
+  "final_review": "review-3",
+  "initial_review_issues": 0,
+  "final_review_issues": 0,
+  "first_pass_blockers": [
+    "historical_regressions",
+    "coordinator_contract_finding"
+  ],
+  "adjudication": "assessment-3-adjudication.json",
+  "remaining_blockers": [],
+  "quality_status": "PASS",
+  "measurement_status": "INCOMPLETE_USAGE",
+  "incomplete_phases": [
+    "repair-1",
+    "implementation"
+  ],
+  "raw_remaining_blockers": [
+    "historical_regressions"
+  ]
+}

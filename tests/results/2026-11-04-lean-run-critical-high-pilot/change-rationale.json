@@ -1,0 +1,13 @@
+{
+  "changes": [
+    "Skip persistent-storage guide for single-owner in-memory data; avoid full new baseline suite when a small representative repro establishes causes.",
+    "Inspect changed sections and reuse passing unchanged evidence, reserve bounded repair time for verification.",
+    "Replace unsound cumulative OLD/NEW advice with verified chronological initial/latest storage images, preserving logical multiplicity and scoped reads.",
+    "Preserve single-quoted table names, name resolution and original setting/trigger-visible semantics in native-versus-instrumented validation."
+  ],
+  "causal_limits": [
+    "Prior event logs show redundant bootstrap reads and failed VCS commands in standalone repair fixtures. Their individual model latency was not measured, so exact causal time savings cannot be attributed.",
+    "Total prior High implementation means and Critical phase deadlines are directly measured. New pilot tests behavior and elapsed under unchanged CLI controls."
+  ],
+  "expected_quality": "Same original grader, all 17 known probes, latest final findings reproduction including benign/native controls, cross-regressions from all 3 baselines, independent review, protected hashes."
+}

@@ -1,0 +1,5 @@
+Local repairs implemented for transaction-effect validation, tenant-scoped trigger/view reads, and duplicate JSON keys.
+
+`python3 -B -m unittest discover -v` passed all **38 tests**, including rollback, replacements, restored-row controls, schema preservation, replay, concurrency, and real CLI calls.
+
+Task-wide REWORK count remains **1**. Renewed independent review is **pending with the coordinator**; final acceptance remains blocked on that review.

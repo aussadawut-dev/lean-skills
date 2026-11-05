@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "baseline_files_verified": 1382,
+  "trials_verified": 2,
+  "phase_count": 8,
+  "sequential_phases_verified": true,
+  "raw_usage_unknown_phases": [
+    {
+      "round": 1,
+      "level": "critical",
+      "phase": "repair-1",
+      "measured_seconds": 900.021
+    }
+  ],
+  "controls": "Frozen tasks, prompts, graders, skill, probes, protected files and final source/review integrity. Raw events and launch records checked against elapsed and usage metrics, means and CSVs.",
+  "limit": "A control audit PASS does not imply benchmark quality PASS or complete telemetry."
+}

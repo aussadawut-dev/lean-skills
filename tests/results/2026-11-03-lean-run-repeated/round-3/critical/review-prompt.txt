@@ -1,0 +1,13 @@
+Use lean-run at .agents/skills/lean-run/SKILL.md for a fresh independent ASSESSMENT ONLY of this completed candidate. You did not author it. Read CONTRACT.md, compare .baseline/ original files with current source, inspect added tests and run meaningful checks/probes. Do not implement or repair, and do not modify application, tests, instructions or .baseline. Do not read another agent report or sibling directories. Use Python -B and temporary paths for probes. No network, installs or additional agents. Identify distinct demonstrated requirement violations, regressions and security/data integrity defects; do not count multiple examples of one root cause as separate issues. Give severity, precise location and a reproducible observation for each. Do not invent a finding to fill a quota. Return ONLY a JSON object with keys status (PASS, REWORK, or BLOCKED), findings (array of objects with id, severity, location, requirement, evidence, suggested_fix), checks (array of strings), and coverage_limits (array of strings). Missing mandatory evidence is not a PASS.
+
+Renewed independent review after REWORK 2. Focus on the bounded repair delta against .pre-repair/ and original-contract regressions. Run required checks and independently verify each finding. Do not repeat unrelated broad exploration without new evidence. Prior independent findings, not author conclusions:
+[
+  {
+    "id": "REVIEW-1",
+    "severity": "P1",
+    "location": "vault.py:45-56 (_contents), called at lines 97 and 116",
+    "requirement": "Every account read must remain within the authenticated tenant; receipt reads must also preserve tenant isolation.",
+    "evidence": "A traced public transfer with ordinary two-tenant data executes SELECT tenant, name, balance FROM accounts and SELECT tenant, key, source, target, amount FROM transfers twice without tenant predicates. An uninstrumented reproduction confirms a consequence: initialize alpha accounts a=100 and b=0, then execute INSERT INTO accounts VALUES ('beta',CAST(X'626574612d707269766174652d736563726574ff' AS TEXT),999). Calling transfer(path,'alpha','a','b',10,'k') succeeds with .pre-repair but now raises OperationalError containing the other tenant's text: \"Could not decode to UTF-8 column 'name' with text 'beta-private-secret\ufffd'\". The CLI rejects the otherwise valid transfer with exit 2. Rows remain unchanged.",
+    "suggested_fix": "Keep application account and receipt reads tenant-scoped. Enforce preservation through transaction-local checks of actual row changes without materializing other tenants' records. Retain rollback protection while allowing no-op and rowid-only trigger effects."
+  }
+]

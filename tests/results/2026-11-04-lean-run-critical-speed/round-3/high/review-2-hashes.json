@@ -1,0 +1,19 @@
+{
+  ".agents/skills/lean-run/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+  ".agents/skills/lean-run/SKILL.md": "6794ffee20a245412ad714b43d96de6372ac66c2a86d0c9572d1727705d21138",
+  ".agents/skills/lean-run/references/delegation.md": "63899dde986ec7014a5cffd39216685640a2e98013dae26e037eaf985fecadb1",
+  ".agents/skills/lean-run/references/exploration.md": "baa9a38160095244c31c5e4a8aab5bdd15dfc0cc83df01a7086607a459faf403",
+  ".agents/skills/lean-run/references/handoff.md": "2d6744d15c27d002c85b9b4cbccf2b0845cb7b5c8b3589aa8b9b06a885357e94",
+  ".agents/skills/lean-run/references/write-integrity.md": "ac1ff4d2f36d698382cab77d811ca885c07fa8358dc0de23ec3a06bfcaceeace",
+  ".agents/skills/lean-run/scripts/check.py": "7946993e44c3ebb3d0235c94af4426e2fbef749c31f4b18eac0de001ba3050b4",
+  ".baseline/ledger.py": "baced408671ff90da2555fc58a1ef264c801a6c52da46dfec86f278d85f1a63a",
+  ".baseline/test_public.py": "1594f7eaaa2d90b6c9fc34c0cee982174d8415e3b1dec9e25f57b3d3924d88a0",
+  ".pre-repair/ledger.py": "942a2cfaf8720dfe7bb3cca8a26140112fccdb247594184cb872ee54860a78ba",
+  ".pre-repair/test_ledger.py": "03db89570faf43927caa0312561e6acb335a6c0134f9a26c61e998453dcc0734",
+  ".pre-repair/test_public.py": "1594f7eaaa2d90b6c9fc34c0cee982174d8415e3b1dec9e25f57b3d3924d88a0",
+  "AGENTS.md": "0ef83ddcf2d1065527f05cd03d5a1b275feecc77e45bdb5916217f204c1cb486",
+  "CONTRACT.md": "c9ed2ad9c1ae6cd4b794330ed7d250994e721d0af2c7282d9a004d1a6705299c",
+  "ledger.py": "ca78c73ad147c04fca594ffe1ee1be53a1524fc698a025fab0cd07897bdfc2dd",
+  "test_ledger.py": "8c31d55fab5952eaa681e60893f869adf899df542e2e712485d887e7232b7db6",
+  "test_public.py": "1594f7eaaa2d90b6c9fc34c0cee982174d8415e3b1dec9e25f57b3d3924d88a0"
+}

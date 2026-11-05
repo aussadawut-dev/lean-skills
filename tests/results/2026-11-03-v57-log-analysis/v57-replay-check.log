@@ -1,0 +1,31 @@
+test_cached_receipt_still_requires_existing_source_in_tenant (test_regressions.VaultRegressionTests.test_cached_receipt_still_requires_existing_source_in_tenant) ... FAIL
+test_cached_receipt_still_requires_existing_target_in_tenant (test_regressions.VaultRegressionTests.test_cached_receipt_still_requires_existing_target_in_tenant) ... FAIL
+
+======================================================================
+FAIL: test_cached_receipt_still_requires_existing_source_in_tenant (test_regressions.VaultRegressionTests.test_cached_receipt_still_requires_existing_source_in_tenant)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-replay-cross-check-uaneqot3/test_regressions.py", line 284, in test_cached_receipt_still_requires_existing_source_in_tenant
+    self.assert_cached_receipt_requires_account("source")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-replay-cross-check-uaneqot3/test_regressions.py", line 276, in assert_cached_receipt_requires_account
+    with self.assertRaises(ValueError) as transfer_error:
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_cached_receipt_still_requires_existing_target_in_tenant (test_regressions.VaultRegressionTests.test_cached_receipt_still_requires_existing_target_in_tenant)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-replay-cross-check-uaneqot3/test_regressions.py", line 287, in test_cached_receipt_still_requires_existing_target_in_tenant
+    self.assert_cached_receipt_requires_account("target")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-replay-cross-check-uaneqot3/test_regressions.py", line 276, in assert_cached_receipt_requires_account
+    with self.assertRaises(ValueError) as transfer_error:
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.008s
+
+FAILED (failures=2)

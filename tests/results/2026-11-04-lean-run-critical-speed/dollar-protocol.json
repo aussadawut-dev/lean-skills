@@ -1,0 +1,5 @@
+{
+  "status": "posthoc",
+  "case_source": "round-1/critical/review/final.txt",
+  "scope": "Run the unquoted dollar and quoted control through API/CLI in DELETE/WAL for every prior and new final workspace. Additional diagnostics from an independently reproduced contract failure; predeclared probes remain unchanged."
+}

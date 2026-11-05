@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "raw_usage_phases": 22,
+  "report_link_targets_checked": 23,
+  "archive_manifest_files_checked": 855,
+  "posthoc_result_hashes_verified": 3,
+  "v57_application_change_log_lines": [
+    58
+  ],
+  "additional_benchmark_model_calls": 0
+}

@@ -1,0 +1,121 @@
+{
+  "totals": {
+    "v57": {
+      "seconds": 2329.971,
+      "input_tokens": 3624365,
+      "cached_input_tokens": 3362560,
+      "output_tokens": 89272,
+      "reasoning_output_tokens": 35876,
+      "total_tokens": 3713637,
+      "uncached_input_plus_output": 351077,
+      "command_records": 211,
+      "native_cli_command_records": 111,
+      "native_cli_invocations_lower_bound": 115,
+      "native_cli_help_records": 17,
+      "instruction_read_records_heuristic": 35,
+      "instruction_read_output_characters": 492225,
+      "all_command_output_characters": 673131,
+      "tracker_file_change_events": 17,
+      "measured_phases": 6,
+      "first_pass_command_records": 211,
+      "first_pass_seconds": 2329.971,
+      "first_pass_tokens": 3713637
+    },
+    "lean_original": {
+      "seconds": 1999.397,
+      "input_tokens": 1685766,
+      "cached_input_tokens": 1489664,
+      "output_tokens": 67071,
+      "reasoning_output_tokens": 29343,
+      "total_tokens": 1752837,
+      "uncached_input_plus_output": 263173,
+      "command_records": 95,
+      "native_cli_command_records": 0,
+      "native_cli_invocations_lower_bound": 0,
+      "native_cli_help_records": 0,
+      "instruction_read_records_heuristic": 21,
+      "instruction_read_output_characters": 154728,
+      "all_command_output_characters": 707247,
+      "tracker_file_change_events": 0,
+      "measured_phases": 8,
+      "first_pass_command_records": 74,
+      "first_pass_seconds": 1658.618,
+      "first_pass_tokens": 1264829
+    },
+    "lean_optimized": {
+      "seconds": 1939.069,
+      "input_tokens": 1524736,
+      "cached_input_tokens": 1282816,
+      "output_tokens": 66609,
+      "reasoning_output_tokens": 31491,
+      "total_tokens": 1591345,
+      "uncached_input_plus_output": 308529,
+      "command_records": 93,
+      "native_cli_command_records": 0,
+      "native_cli_invocations_lower_bound": 0,
+      "native_cli_help_records": 0,
+      "instruction_read_records_heuristic": 21,
+      "instruction_read_output_characters": 88778,
+      "all_command_output_characters": 561593,
+      "tracker_file_change_events": 0,
+      "measured_phases": 8,
+      "first_pass_command_records": 69,
+      "first_pass_seconds": 1564.71,
+      "first_pass_tokens": 1142989
+    }
+  },
+  "v57_vs_original": {
+    "delta": {
+      "seconds": 330.574,
+      "input_tokens": 1938599,
+      "cached_input_tokens": 1872896,
+      "output_tokens": 22201,
+      "reasoning_output_tokens": 6533,
+      "total_tokens": 1960800,
+      "uncached_input_plus_output": 87904,
+      "command_records": 116,
+      "native_cli_command_records": 111,
+      "native_cli_invocations_lower_bound": 115,
+      "native_cli_help_records": 17,
+      "instruction_read_records_heuristic": 14,
+      "instruction_read_output_characters": 337497,
+      "all_command_output_characters": -34116,
+      "tracker_file_change_events": 17
+    },
+    "input_share_of_total_token_increase_percent": 98.868,
+    "cached_input_share_of_total_token_increase_percent": 95.517,
+    "uncached_input_plus_output_increase_percent": 33.402
+  },
+  "native_cli_invocations_lower_bound": {
+    "v57": {
+      "contract": 6,
+      "effort": 2,
+      "evidence": 17,
+      "gate": 9,
+      "mode": 17,
+      "models": 6,
+      "progress": 32,
+      "test": 6,
+      "tracker": 20
+    },
+    "lean_original": {},
+    "lean_optimized": {}
+  },
+  "native_help_invocations": {
+    "v57": {
+      "evidence": 3,
+      "gate": 4,
+      "test": 2,
+      "tracker": 11
+    },
+    "lean_original": {},
+    "lean_optimized": {}
+  },
+  "limitations": [
+    "Usage is phase-level, not per-command; no causal token amount is assigned to a command category.",
+    "CLI regex excludes heredoc bodies and can miss dynamic subprocess calls; counts are lower bounds.",
+    "Instruction-read counts are heuristic and can include mixed requirement/source reads; character counts are not tokens.",
+    "One trial per version/level; policy/context and stated quality floors differ; caches/server load not controlled.",
+    "Excluded invalid-setup pilot is not included in corrected workflow comparisons."
+  ]
+}

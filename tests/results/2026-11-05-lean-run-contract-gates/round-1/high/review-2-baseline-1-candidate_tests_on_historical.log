@@ -1,0 +1,64 @@
+test_batch_conflicts_with_existing_or_staged_keys_are_atomic (test_ledger.LedgerTests.test_batch_conflicts_with_existing_or_staged_keys_are_atomic) ... ok
+test_batch_rejects_non_lists_without_state_change (test_ledger.LedgerTests.test_batch_rejects_non_lists_without_state_change) ... ok
+test_batch_replays_and_receipts_remain_independent (test_ledger.LedgerTests.test_batch_replays_and_receipts_remain_independent) ... ok
+test_batch_uses_earlier_credits_and_returns_receipts_in_order (test_ledger.LedgerTests.test_batch_uses_earlier_credits_and_returns_receipts_in_order) ... ok
+test_changed_replays_and_invalid_equal_values_are_rejected (test_ledger.LedgerTests.test_changed_replays_and_invalid_equal_values_are_rejected) ... ok
+test_constructor_copies_input_in_both_directions (test_ledger.LedgerTests.test_constructor_copies_input_in_both_directions) ... ok
+test_constructor_rejects_invalid_containers (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers) ... ok
+test_constructor_rejects_invalid_elements_without_changing_input (test_ledger.LedgerTests.test_constructor_rejects_invalid_elements_without_changing_input) ... ok
+test_counter_input_empty_fresh_and_replayed_batches (test_ledger.LedgerTests.test_counter_input_empty_fresh_and_replayed_batches) ... 
+  test_counter_input_empty_fresh_and_replayed_batches (test_ledger.LedgerTests.test_counter_input_empty_fresh_and_replayed_batches) (case='empty') ... FAIL
+  test_counter_input_empty_fresh_and_replayed_batches (test_ledger.LedgerTests.test_counter_input_empty_fresh_and_replayed_batches) (case='fresh') ... FAIL
+  test_counter_input_empty_fresh_and_replayed_batches (test_ledger.LedgerTests.test_counter_input_empty_fresh_and_replayed_batches) (case='replay') ... FAIL
+test_empty_batch_preserves_state_and_dictionary_identity (test_ledger.LedgerTests.test_empty_batch_preserves_state_and_dictionary_identity) ... ok
+test_empty_ledger_zero_balances_and_large_integers_are_valid (test_ledger.LedgerTests.test_empty_ledger_zero_balances_and_large_integers_are_valid) ... ok
+test_failed_transfer_does_not_reserve_its_key (test_ledger.LedgerTests.test_failed_transfer_does_not_reserve_its_key) ... ok
+test_integrated_multi_transfer_failure_retry_and_replay_journey (test_ledger.LedgerTests.test_integrated_multi_transfer_failure_retry_and_replay_journey) ... ok
+test_invalid_batch_transfers_roll_back_prior_operations (test_ledger.LedgerTests.test_invalid_batch_transfers_roll_back_prior_operations) ... ok
+test_invalid_transfers_leave_all_state_unchanged (test_ledger.LedgerTests.test_invalid_transfers_leave_all_state_unchanged) ... ok
+test_malformed_batch_operations_roll_back_prior_operations (test_ledger.LedgerTests.test_malformed_batch_operations_roll_back_prior_operations) ... ok
+test_replay_succeeds_even_when_original_funds_have_been_spent (test_ledger.LedgerTests.test_replay_succeeds_even_when_original_funds_have_been_spent) ... ok
+test_returned_transfer_receipts_cannot_mutate_history (test_ledger.LedgerTests.test_returned_transfer_receipts_cannot_mutate_history) ... ok
+test_transfer_receipt_and_public_dictionary_identity (test_ledger.LedgerTests.test_transfer_receipt_and_public_dictionary_identity) ... ok
+test_transfer (test_public.PublicTests.test_transfer) ... ok
+
+======================================================================
+FAIL: test_counter_input_empty_fresh_and_replayed_batches (test_ledger.LedgerTests.test_counter_input_empty_fresh_and_replayed_batches) (case='empty')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-dg8hf131/test_ledger.py", line 236, in test_counter_input_empty_fresh_and_replayed_batches
+    self.assert_state(expected_balances, expected_history)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-dg8hf131/test_ledger.py", line 31, in assert_state
+    self.assertEqual(self.ledger.balances, balances)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Counter({'a': 20, 'b': 0}) != {'a': 10, 'b': 0}
+
+======================================================================
+FAIL: test_counter_input_empty_fresh_and_replayed_batches (test_ledger.LedgerTests.test_counter_input_empty_fresh_and_replayed_batches) (case='fresh')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-dg8hf131/test_ledger.py", line 236, in test_counter_input_empty_fresh_and_replayed_batches
+    self.assert_state(expected_balances, expected_history)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-dg8hf131/test_ledger.py", line 31, in assert_state
+    self.assertEqual(self.ledger.balances, balances)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Counter({'a': 17, 'b': 3}) != {'a': 7, 'b': 3}
+
+======================================================================
+FAIL: test_counter_input_empty_fresh_and_replayed_batches (test_ledger.LedgerTests.test_counter_input_empty_fresh_and_replayed_batches) (case='replay')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-dg8hf131/test_ledger.py", line 236, in test_counter_input_empty_fresh_and_replayed_batches
+    self.assert_state(expected_balances, expected_history)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-dg8hf131/test_ledger.py", line 31, in assert_state
+    self.assertEqual(self.ledger.balances, balances)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Counter({'a': 14, 'b': 6}) != {'a': 7, 'b': 3}
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.002s
+
+FAILED (failures=3)

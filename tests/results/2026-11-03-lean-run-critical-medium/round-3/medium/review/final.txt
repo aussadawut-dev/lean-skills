@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "findings": [],
+  "checks": [
+    "Read CONTRACT.md and lean-run; reviewed the complete baseline-to-candidate diff and added tests. Original test_public.py is unchanged.",
+    "python3 -B -m unittest discover -v: all 10 tests passed.",
+    "Independent public-interface probes passed: 30 valid parser/CLI cases, 7 invalid parser/CLI cases, and 3 CLI arity cases.",
+    "Probed signed values, whitespace, chunk boundaries, carry/borrow, zero padding, and integers through 5,003 digits with Python's decimal conversion limit set to 640.",
+    "Verified failure exit codes, stderr diagnostics, empty stdout, and absence of tracebacks.",
+    "All 14 workspace file hashes remained unchanged; temporary probe directory removed."
+  ],
+  "coverage_limits": [
+    "Executed on local Python 3.14.3; other runtimes were not tested.",
+    "Large-integer execution coverage reached 5,003 digits; resource-exhaustion limits were not tested."
+  ]
+}

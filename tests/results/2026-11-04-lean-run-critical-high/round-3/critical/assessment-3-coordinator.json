@@ -1,0 +1,9 @@
+{
+  "status": "FAILED",
+  "reason": "Two original-contract violations remain after both permitted repairs.",
+  "evidence": [
+    "review-3/final.txt",
+    "review-3-known-probes.json",
+    "assessment-3-account_scope_trace.json"
+  ]
+}

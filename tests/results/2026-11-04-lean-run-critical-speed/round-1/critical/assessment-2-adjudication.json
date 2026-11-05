@@ -1,0 +1,15 @@
+{
+  "noncontract_blockers": [
+    "historical_regressions"
+  ],
+  "reason": "Only two unsupported expectations remain: SQLite overflow exception class and exact list of fetched tuples. Extra tuples are PRAGMA settings, stored trigger definitions, and a request-local effect-check sentinel; every account lookup is tenant-scoped. The original contract requires atomic rejection and generic CLI errors, which the boundary probe verifies. All real prior findings, grader, review, predeclared and dollar probes pass.",
+  "evidence": {
+    "scope": "assessment-2-account_scope_trace.json",
+    "overflow": "assessment-2-error_boundary_probe.json",
+    "source": "workspace/_integrity.py",
+    "raw_logs": [
+      "review-2-baseline-1-historical_tests_on_candidate.log",
+      "review-2-baseline-2-historical_tests_on_candidate.log"
+    ]
+  }
+}

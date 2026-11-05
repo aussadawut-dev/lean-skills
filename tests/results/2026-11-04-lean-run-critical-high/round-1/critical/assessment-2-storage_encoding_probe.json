@@ -1,0 +1,48 @@
+{
+  "source_sha256": "f9487738ef83c7653e10502daaeb2b574b87c7014667be2a44479d369117bd64",
+  "cases": [
+    {
+      "encoding": "UTF-8",
+      "actual": "UTF-8",
+      "interface": "API",
+      "error": null,
+      "passed": true
+    },
+    {
+      "encoding": "UTF-8",
+      "actual": "UTF-8",
+      "interface": "CLI",
+      "error": null,
+      "passed": true
+    },
+    {
+      "encoding": "UTF-16le",
+      "actual": "UTF-16le",
+      "interface": "API",
+      "error": "IntegrityError: unexpected storage effects",
+      "passed": false
+    },
+    {
+      "encoding": "UTF-16le",
+      "actual": "UTF-16le",
+      "interface": "CLI",
+      "error": "CLI exit 2: {\"error\": \"invalid request\"}",
+      "passed": false
+    },
+    {
+      "encoding": "UTF-16be",
+      "actual": "UTF-16be",
+      "interface": "API",
+      "error": "IntegrityError: unexpected storage effects",
+      "passed": false
+    },
+    {
+      "encoding": "UTF-16be",
+      "actual": "UTF-16be",
+      "interface": "CLI",
+      "error": "CLI exit 2: {\"error\": \"invalid request\"}",
+      "passed": false
+    }
+  ],
+  "failed_cases": 4
+}

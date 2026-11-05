@@ -1,0 +1,6 @@
+{
+  "discovery": "Critical round 2 renewed independent review reproduced an audit guard changing behavior when instrumentation enabled recursive_triggers.",
+  "scope": "API and CLI with both guard conditions. Verify original abort/rollback, valid control, logical effects and trigger definitions.",
+  "gate": "Check all three previous and new final workspaces and before every remaining Critical terminal decision.",
+  "script": "recursive_setting_probe.py"
+}

@@ -1,0 +1,558 @@
+test_amount_arithmetic_overrides_cannot_create_funds (test_ledger.LedgerTests.test_amount_arithmetic_overrides_cannot_create_funds) ... FAIL
+test_batch_invalid_values_roll_back_new_operations (test_ledger.LedgerTests.test_batch_invalid_values_roll_back_new_operations) ... ok
+test_batch_normalizes_container_subclasses (test_ledger.LedgerTests.test_batch_normalizes_container_subclasses) ... ok
+test_batch_normalizes_scalar_values_and_field_names (test_ledger.LedgerTests.test_batch_normalizes_scalar_values_and_field_names) ... FAIL
+test_batch_rejects_colliding_normalized_field_names (test_ledger.LedgerTests.test_batch_rejects_colliding_normalized_field_names) ... ok
+test_batch_rejects_invalid_container (test_ledger.LedgerTests.test_batch_rejects_invalid_container) ... ok
+test_batch_rejects_malformed_operations_atomically (test_ledger.LedgerTests.test_batch_rejects_malformed_operations_atomically) ... ok
+test_batch_rejects_non_string_field_names_that_compare_equal (test_ledger.LedgerTests.test_batch_rejects_non_string_field_names_that_compare_equal) ... 
+  test_batch_rejects_non_string_field_names_that_compare_equal (test_ledger.LedgerTests.test_batch_rejects_non_string_field_names_that_compare_equal) (field='source', prefix_length=0) ... FAIL
+  test_batch_rejects_non_string_field_names_that_compare_equal (test_ledger.LedgerTests.test_batch_rejects_non_string_field_names_that_compare_equal) (field='source', prefix_length=1) ... FAIL
+  test_batch_rejects_non_string_field_names_that_compare_equal (test_ledger.LedgerTests.test_batch_rejects_non_string_field_names_that_compare_equal) (field='target', prefix_length=0) ... FAIL
+  test_batch_rejects_non_string_field_names_that_compare_equal (test_ledger.LedgerTests.test_batch_rejects_non_string_field_names_that_compare_equal) (field='target', prefix_length=1) ... FAIL
+  test_batch_rejects_non_string_field_names_that_compare_equal (test_ledger.LedgerTests.test_batch_rejects_non_string_field_names_that_compare_equal) (field='amount', prefix_length=0) ... FAIL
+  test_batch_rejects_non_string_field_names_that_compare_equal (test_ledger.LedgerTests.test_batch_rejects_non_string_field_names_that_compare_equal) (field='amount', prefix_length=1) ... FAIL
+  test_batch_rejects_non_string_field_names_that_compare_equal (test_ledger.LedgerTests.test_batch_rejects_non_string_field_names_that_compare_equal) (field='key', prefix_length=0) ... FAIL
+  test_batch_rejects_non_string_field_names_that_compare_equal (test_ledger.LedgerTests.test_batch_rejects_non_string_field_names_that_compare_equal) (field='key', prefix_length=1) ... FAIL
+test_batch_rolls_back_key_conflicts (test_ledger.LedgerTests.test_batch_rolls_back_key_conflicts) ... ok
+test_changed_replay_preserves_state (test_ledger.LedgerTests.test_changed_replay_preserves_state) ... ok
+test_changed_replay_rejects_integer_equality_overrides (test_ledger.LedgerTests.test_changed_replay_rejects_integer_equality_overrides) ... 
+  test_changed_replay_rejects_integer_equality_overrides (test_ledger.LedgerTests.test_changed_replay_rejects_integer_equality_overrides) (index=0) ... FAIL
+  test_changed_replay_rejects_integer_equality_overrides (test_ledger.LedgerTests.test_changed_replay_rejects_integer_equality_overrides) (index=1) ... FAIL
+  test_changed_replay_rejects_integer_equality_overrides (test_ledger.LedgerTests.test_changed_replay_rejects_integer_equality_overrides) (index=2) ... FAIL
+test_changed_replay_rejects_integer_equality_overrides (test_ledger.LedgerTests.test_changed_replay_rejects_integer_equality_overrides) ... FAIL
+test_constructor_accepts_empty_and_boundary_balances (test_ledger.LedgerTests.test_constructor_accepts_empty_and_boundary_balances) ... ok
+test_constructor_normalizes_dictionary_subclasses (test_ledger.LedgerTests.test_constructor_normalizes_dictionary_subclasses) ... 
+  test_constructor_normalizes_dictionary_subclasses (test_ledger.LedgerTests.test_constructor_normalizes_dictionary_subclasses) (invalid={'a': -1}) ... FAIL
+  test_constructor_normalizes_dictionary_subclasses (test_ledger.LedgerTests.test_constructor_normalizes_dictionary_subclasses) (invalid={'a': True}) ... FAIL
+  test_constructor_normalizes_dictionary_subclasses (test_ledger.LedgerTests.test_constructor_normalizes_dictionary_subclasses) (invalid={1: 10}) ... FAIL
+test_constructor_normalizes_scalar_subclasses (test_ledger.LedgerTests.test_constructor_normalizes_scalar_subclasses) ... FAIL
+test_constructor_owns_balances (test_ledger.LedgerTests.test_constructor_owns_balances) ... ok
+test_constructor_rejects_boolean_balance (test_ledger.LedgerTests.test_constructor_rejects_boolean_balance) ... ok
+test_constructor_rejects_colliding_normalized_account_names (test_ledger.LedgerTests.test_constructor_rejects_colliding_normalized_account_names) ... FAIL
+test_constructor_rejects_invalid_values (test_ledger.LedgerTests.test_constructor_rejects_invalid_values) ... ok
+test_empty_batch_preserves_state (test_ledger.LedgerTests.test_empty_batch_preserves_state) ... ok
+test_failed_batch_preserves_earlier_state (test_ledger.LedgerTests.test_failed_batch_preserves_earlier_state) ... ok
+test_insufficient_funds_preserves_state (test_ledger.LedgerTests.test_insufficient_funds_preserves_state) ... ok
+test_integrated_transfers_replay_rollback_and_retry (test_ledger.LedgerTests.test_integrated_transfers_replay_rollback_and_retry) ... ok
+test_invalid_transfer_values_preserve_state (test_ledger.LedgerTests.test_invalid_transfer_values_preserve_state) ... ok
+test_key_hash_override_cannot_interrupt_commit (test_ledger.LedgerTests.test_key_hash_override_cannot_interrupt_commit) ... 
+  test_key_hash_override_cannot_interrupt_commit (test_ledger.LedgerTests.test_key_hash_override_cannot_interrupt_commit) (batch=False) ... ERROR
+  test_key_hash_override_cannot_interrupt_commit (test_ledger.LedgerTests.test_key_hash_override_cannot_interrupt_commit) (batch=True) ... ERROR
+test_key_hash_override_cannot_interrupt_commit (test_ledger.LedgerTests.test_key_hash_override_cannot_interrupt_commit) ... FAIL
+test_new_key_applies_same_payload_again (test_ledger.LedgerTests.test_new_key_applies_same_payload_again) ... ok
+test_receipt_is_detached_from_history (test_ledger.LedgerTests.test_receipt_is_detached_from_history) ... ok
+test_rejected_transfer_does_not_reserve_key (test_ledger.LedgerTests.test_rejected_transfer_does_not_reserve_key) ... ok
+test_replay_succeeds_without_available_funds (test_ledger.LedgerTests.test_replay_succeeds_without_available_funds) ... ok
+test_scalar_validation_failures_preserve_transfer_and_batch_state (test_ledger.LedgerTests.test_scalar_validation_failures_preserve_transfer_and_batch_state) ... 
+  test_scalar_validation_failures_preserve_transfer_and_batch_state (test_ledger.LedgerTests.test_scalar_validation_failures_preserve_transfer_and_batch_state) (field='source', value='missing') ... FAIL
+  test_scalar_validation_failures_preserve_transfer_and_batch_state (test_ledger.LedgerTests.test_scalar_validation_failures_preserve_transfer_and_batch_state) (field='target', value='a') ... FAIL
+  test_scalar_validation_failures_preserve_transfer_and_batch_state (test_ledger.LedgerTests.test_scalar_validation_failures_preserve_transfer_and_batch_state) (field='amount', value=-1) ... FAIL
+  test_scalar_validation_failures_preserve_transfer_and_batch_state (test_ledger.LedgerTests.test_scalar_validation_failures_preserve_transfer_and_batch_state) (field='amount', value=-1) ... FAIL
+  test_scalar_validation_failures_preserve_transfer_and_batch_state (test_ledger.LedgerTests.test_scalar_validation_failures_preserve_transfer_and_batch_state) (field='amount', value=0) ... FAIL
+  test_scalar_validation_failures_preserve_transfer_and_batch_state (test_ledger.LedgerTests.test_scalar_validation_failures_preserve_transfer_and_batch_state) (field='amount', value=101) ... FAIL
+  test_scalar_validation_failures_preserve_transfer_and_batch_state (test_ledger.LedgerTests.test_scalar_validation_failures_preserve_transfer_and_batch_state) (field='key', value='') ... FAIL
+test_transfer_normalizes_scalar_subclasses_and_replays (test_ledger.LedgerTests.test_transfer_normalizes_scalar_subclasses_and_replays) ... FAIL
+test_transfer_rejects_boolean_amount (test_ledger.LedgerTests.test_transfer_rejects_boolean_amount) ... ok
+test_transfer (test_public.PublicTests.test_transfer) ... ok
+
+======================================================================
+ERROR: test_key_hash_override_cannot_interrupt_commit (test_ledger.LedgerTests.test_key_hash_override_cannot_interrupt_commit) (batch=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 275, in test_key_hash_override_cannot_interrupt_commit
+    receipt = self.ledger.transfer(**operation)
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/ledger.py", line 15, in transfer
+    return self._transfer(self.balances, self.history,
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                          source, target, amount, key)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/ledger.py", line 41, in _transfer
+    history[key] = receipt.copy()
+    ~~~~~~~^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 82, in __hash__
+    raise ValueError('late key hash failure')
+ValueError: late key hash failure
+
+======================================================================
+ERROR: test_key_hash_override_cannot_interrupt_commit (test_ledger.LedgerTests.test_key_hash_override_cannot_interrupt_commit) (batch=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 273, in test_key_hash_override_cannot_interrupt_commit
+    receipt, = self.ledger.batch([operation])
+               ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/ledger.py", line 57, in batch
+    receipts.append(self._transfer(
+                    ~~~~~~~~~~~~~~^
+        balances, history, operation['source'], operation['target'],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        operation['amount'], operation['key']))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/ledger.py", line 41, in _transfer
+    history[key] = receipt.copy()
+    ~~~~~~~^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 82, in __hash__
+    raise ValueError('late key hash failure')
+ValueError: late key hash failure
+
+======================================================================
+FAIL: test_amount_arithmetic_overrides_cannot_create_funds (test_ledger.LedgerTests.test_amount_arithmetic_overrides_cannot_create_funds)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 232, in test_amount_arithmetic_overrides_cannot_create_funds
+    self.assertEqual(self.ledger.balances, {'a': 99, 'b': 1, 'c': 20})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'a': 100, 'b': 100, 'c': 20} != {'a': 99, 'b': 1, 'c': 20}
+- {'a': 100, 'b': 100, 'c': 20}
+?       ^^^        --
+
++ {'a': 99, 'b': 1, 'c': 20}
+?       ^^
+
+
+======================================================================
+FAIL: test_batch_normalizes_scalar_values_and_field_names (test_ledger.LedgerTests.test_batch_normalizes_scalar_values_and_field_names)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 423, in test_batch_normalizes_scalar_values_and_field_names
+    receipts = self.ledger.batch([operation, operation])
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/ledger.py", line 55, in batch
+    if not isinstance(operation, dict) or operation.keys() != fields:
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 46, in _unexpected
+    raise AssertionError('string subclass hooks must not be used')
+AssertionError: string subclass hooks must not be used
+
+======================================================================
+FAIL: test_batch_rejects_non_string_field_names_that_compare_equal (test_ledger.LedgerTests.test_batch_rejects_non_string_field_names_that_compare_equal) (field='source', prefix_length=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 441, in test_batch_rejects_non_string_field_names_that_compare_equal
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda: self.ledger.batch(prefix + [malformed]))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 121, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_batch_rejects_non_string_field_names_that_compare_equal (test_ledger.LedgerTests.test_batch_rejects_non_string_field_names_that_compare_equal) (field='source', prefix_length=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 441, in test_batch_rejects_non_string_field_names_that_compare_equal
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda: self.ledger.batch(prefix + [malformed]))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 121, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_batch_rejects_non_string_field_names_that_compare_equal (test_ledger.LedgerTests.test_batch_rejects_non_string_field_names_that_compare_equal) (field='target', prefix_length=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 441, in test_batch_rejects_non_string_field_names_that_compare_equal
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda: self.ledger.batch(prefix + [malformed]))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 121, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_batch_rejects_non_string_field_names_that_compare_equal (test_ledger.LedgerTests.test_batch_rejects_non_string_field_names_that_compare_equal) (field='target', prefix_length=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 441, in test_batch_rejects_non_string_field_names_that_compare_equal
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda: self.ledger.batch(prefix + [malformed]))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 121, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_batch_rejects_non_string_field_names_that_compare_equal (test_ledger.LedgerTests.test_batch_rejects_non_string_field_names_that_compare_equal) (field='amount', prefix_length=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 441, in test_batch_rejects_non_string_field_names_that_compare_equal
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda: self.ledger.batch(prefix + [malformed]))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 121, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_batch_rejects_non_string_field_names_that_compare_equal (test_ledger.LedgerTests.test_batch_rejects_non_string_field_names_that_compare_equal) (field='amount', prefix_length=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 441, in test_batch_rejects_non_string_field_names_that_compare_equal
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda: self.ledger.batch(prefix + [malformed]))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 121, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_batch_rejects_non_string_field_names_that_compare_equal (test_ledger.LedgerTests.test_batch_rejects_non_string_field_names_that_compare_equal) (field='key', prefix_length=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 441, in test_batch_rejects_non_string_field_names_that_compare_equal
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda: self.ledger.batch(prefix + [malformed]))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 121, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_batch_rejects_non_string_field_names_that_compare_equal (test_ledger.LedgerTests.test_batch_rejects_non_string_field_names_that_compare_equal) (field='key', prefix_length=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 441, in test_batch_rejects_non_string_field_names_that_compare_equal
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda: self.ledger.batch(prefix + [malformed]))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 121, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_changed_replay_rejects_integer_equality_overrides (test_ledger.LedgerTests.test_changed_replay_rejects_integer_equality_overrides) (index=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 242, in test_changed_replay_rejects_integer_equality_overrides
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda: self.ledger.transfer('a', 'b', changed, key))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 121, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_changed_replay_rejects_integer_equality_overrides (test_ledger.LedgerTests.test_changed_replay_rejects_integer_equality_overrides) (index=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 242, in test_changed_replay_rejects_integer_equality_overrides
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda: self.ledger.transfer('a', 'b', changed, key))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 121, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_changed_replay_rejects_integer_equality_overrides (test_ledger.LedgerTests.test_changed_replay_rejects_integer_equality_overrides) (index=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 241, in test_changed_replay_rejects_integer_equality_overrides
+    self.ledger.transfer('a', 'b', original, key)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/ledger.py", line 15, in transfer
+    return self._transfer(self.balances, self.history,
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                          source, target, amount, key)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/ledger.py", line 26, in _transfer
+    if not isinstance(amount, int) or isinstance(amount, bool) or amount <= 0:
+                                                                  ^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 37, in _unexpected
+    raise AssertionError('integer subclass hooks must not be used')
+AssertionError: integer subclass hooks must not be used
+
+======================================================================
+FAIL: test_changed_replay_rejects_integer_equality_overrides (test_ledger.LedgerTests.test_changed_replay_rejects_integer_equality_overrides)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 248, in test_changed_replay_rejects_integer_equality_overrides
+    self.assert_plain_scalars(self.ledger)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 137, in assert_plain_scalars
+    self.assertIs(type(value), int if field == 'amount' else str)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: <class 'test_ledger.EqualInt'> is not <class 'int'>
+
+======================================================================
+FAIL: test_constructor_normalizes_dictionary_subclasses (test_ledger.LedgerTests.test_constructor_normalizes_dictionary_subclasses) (invalid={'a': -1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 187, in test_constructor_normalizes_dictionary_subclasses
+    with self.subTest(invalid=invalid), self.assertRaises(ValueError):
+                                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_constructor_normalizes_dictionary_subclasses (test_ledger.LedgerTests.test_constructor_normalizes_dictionary_subclasses) (invalid={'a': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 187, in test_constructor_normalizes_dictionary_subclasses
+    with self.subTest(invalid=invalid), self.assertRaises(ValueError):
+                                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_constructor_normalizes_dictionary_subclasses (test_ledger.LedgerTests.test_constructor_normalizes_dictionary_subclasses) (invalid={1: 10})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 187, in test_constructor_normalizes_dictionary_subclasses
+    with self.subTest(invalid=invalid), self.assertRaises(ValueError):
+                                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_constructor_normalizes_scalar_subclasses (test_ledger.LedgerTests.test_constructor_normalizes_scalar_subclasses)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 194, in test_constructor_normalizes_scalar_subclasses
+    ledger = Ledger(supplied)
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/ledger.py", line 9, in __init__
+    or balance < 0):
+       ^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 37, in _unexpected
+    raise AssertionError('integer subclass hooks must not be used')
+AssertionError: integer subclass hooks must not be used
+
+======================================================================
+FAIL: test_constructor_rejects_colliding_normalized_account_names (test_ledger.LedgerTests.test_constructor_rejects_colliding_normalized_account_names)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 208, in test_constructor_rejects_colliding_normalized_account_names
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_key_hash_override_cannot_interrupt_commit (test_ledger.LedgerTests.test_key_hash_override_cannot_interrupt_commit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 282, in test_key_hash_override_cannot_interrupt_commit
+    self.assertEqual(self.ledger.balances, {'a': 98, 'b': 2, 'c': 20})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'a': 99, 'b': 1, 'c': 20} != {'a': 98, 'b': 2, 'c': 20}
+- {'a': 99, 'b': 1, 'c': 20}
+?        ^       ^
+
++ {'a': 98, 'b': 2, 'c': 20}
+?        ^       ^
+
+
+======================================================================
+FAIL: test_scalar_validation_failures_preserve_transfer_and_batch_state (test_ledger.LedgerTests.test_scalar_validation_failures_preserve_transfer_and_batch_state) (field='source', value='missing')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 262, in test_scalar_validation_failures_preserve_transfer_and_batch_state
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda: self.ledger.transfer(**operation))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 122, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 263, in <lambda>
+    lambda: self.ledger.transfer(**operation))
+            ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/ledger.py", line 15, in transfer
+    return self._transfer(self.balances, self.history,
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                          source, target, amount, key)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/ledger.py", line 22, in _transfer
+    if source == target:
+       ^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 46, in _unexpected
+    raise AssertionError('string subclass hooks must not be used')
+AssertionError: string subclass hooks must not be used
+
+======================================================================
+FAIL: test_scalar_validation_failures_preserve_transfer_and_batch_state (test_ledger.LedgerTests.test_scalar_validation_failures_preserve_transfer_and_batch_state) (field='target', value='a')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 262, in test_scalar_validation_failures_preserve_transfer_and_batch_state
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda: self.ledger.transfer(**operation))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 122, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 263, in <lambda>
+    lambda: self.ledger.transfer(**operation))
+            ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/ledger.py", line 15, in transfer
+    return self._transfer(self.balances, self.history,
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                          source, target, amount, key)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/ledger.py", line 22, in _transfer
+    if source == target:
+       ^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 46, in _unexpected
+    raise AssertionError('string subclass hooks must not be used')
+AssertionError: string subclass hooks must not be used
+
+======================================================================
+FAIL: test_scalar_validation_failures_preserve_transfer_and_batch_state (test_ledger.LedgerTests.test_scalar_validation_failures_preserve_transfer_and_batch_state) (field='amount', value=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 262, in test_scalar_validation_failures_preserve_transfer_and_batch_state
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda: self.ledger.transfer(**operation))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 121, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_scalar_validation_failures_preserve_transfer_and_batch_state (test_ledger.LedgerTests.test_scalar_validation_failures_preserve_transfer_and_batch_state) (field='amount', value=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 262, in test_scalar_validation_failures_preserve_transfer_and_batch_state
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda: self.ledger.transfer(**operation))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 122, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 263, in <lambda>
+    lambda: self.ledger.transfer(**operation))
+            ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/ledger.py", line 15, in transfer
+    return self._transfer(self.balances, self.history,
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                          source, target, amount, key)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/ledger.py", line 26, in _transfer
+    if not isinstance(amount, int) or isinstance(amount, bool) or amount <= 0:
+                                                                  ^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 37, in _unexpected
+    raise AssertionError('integer subclass hooks must not be used')
+AssertionError: integer subclass hooks must not be used
+
+======================================================================
+FAIL: test_scalar_validation_failures_preserve_transfer_and_batch_state (test_ledger.LedgerTests.test_scalar_validation_failures_preserve_transfer_and_batch_state) (field='amount', value=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 262, in test_scalar_validation_failures_preserve_transfer_and_batch_state
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda: self.ledger.transfer(**operation))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 122, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 263, in <lambda>
+    lambda: self.ledger.transfer(**operation))
+            ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/ledger.py", line 15, in transfer
+    return self._transfer(self.balances, self.history,
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                          source, target, amount, key)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/ledger.py", line 26, in _transfer
+    if not isinstance(amount, int) or isinstance(amount, bool) or amount <= 0:
+                                                                  ^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 37, in _unexpected
+    raise AssertionError('integer subclass hooks must not be used')
+AssertionError: integer subclass hooks must not be used
+
+======================================================================
+FAIL: test_scalar_validation_failures_preserve_transfer_and_batch_state (test_ledger.LedgerTests.test_scalar_validation_failures_preserve_transfer_and_batch_state) (field='amount', value=101)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 262, in test_scalar_validation_failures_preserve_transfer_and_batch_state
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda: self.ledger.transfer(**operation))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 122, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 263, in <lambda>
+    lambda: self.ledger.transfer(**operation))
+            ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/ledger.py", line 15, in transfer
+    return self._transfer(self.balances, self.history,
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                          source, target, amount, key)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/ledger.py", line 26, in _transfer
+    if not isinstance(amount, int) or isinstance(amount, bool) or amount <= 0:
+                                                                  ^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 37, in _unexpected
+    raise AssertionError('integer subclass hooks must not be used')
+AssertionError: integer subclass hooks must not be used
+
+======================================================================
+FAIL: test_scalar_validation_failures_preserve_transfer_and_batch_state (test_ledger.LedgerTests.test_scalar_validation_failures_preserve_transfer_and_batch_state) (field='key', value='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 262, in test_scalar_validation_failures_preserve_transfer_and_batch_state
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda: self.ledger.transfer(**operation))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 122, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 263, in <lambda>
+    lambda: self.ledger.transfer(**operation))
+            ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/ledger.py", line 15, in transfer
+    return self._transfer(self.balances, self.history,
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                          source, target, amount, key)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/ledger.py", line 28, in _transfer
+    if not isinstance(key, str) or not key:
+                                       ^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 46, in _unexpected
+    raise AssertionError('string subclass hooks must not be used')
+AssertionError: string subclass hooks must not be used
+
+======================================================================
+FAIL: test_transfer_normalizes_scalar_subclasses_and_replays (test_ledger.LedgerTests.test_transfer_normalizes_scalar_subclasses_and_replays)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 216, in test_transfer_normalizes_scalar_subclasses_and_replays
+    receipt = self.ledger.transfer(**operation)
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/ledger.py", line 15, in transfer
+    return self._transfer(self.balances, self.history,
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                          source, target, amount, key)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/ledger.py", line 22, in _transfer
+    if source == target:
+       ^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-hyp042m7/test_ledger.py", line 46, in _unexpected
+    raise AssertionError('string subclass hooks must not be used')
+AssertionError: string subclass hooks must not be used
+
+----------------------------------------------------------------------
+Ran 32 tests in 0.008s
+
+FAILED (failures=28, errors=2)

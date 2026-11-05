@@ -1,0 +1,11 @@
+{
+  "status": "REWORK",
+  "reviewed": [
+    "independent findings",
+    "all 20 mandatory probes",
+    "all four historical forward suites"
+  ],
+  "waived_blockers": [],
+  "new_request": "repair-1-request.json",
+  "findings": 3
+}

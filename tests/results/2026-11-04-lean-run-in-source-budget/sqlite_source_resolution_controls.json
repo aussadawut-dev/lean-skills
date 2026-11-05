@@ -1,0 +1,12 @@
+{
+  "sqlite_version": "3.50.4",
+  "status": "PASS",
+  "controls": [
+    "EXPLAIN compiles top-level writes through stored trigger and view without writes",
+    "runtime PRAGMA authorizer distinguishes actual built-in read from CTE and table",
+    "equivalent native sources include IN plain/main and NOT INDEXED qualified",
+    "disappearing PRAGMA event does not prove an edited span referenced the builtin",
+    "view and same-name real table shadows have observable differences",
+    "binding has no preupdate hook compiled"
+  ]
+}

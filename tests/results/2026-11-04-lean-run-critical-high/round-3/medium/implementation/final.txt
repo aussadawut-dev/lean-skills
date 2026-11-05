@@ -1,0 +1,7 @@
+Implemented strict parsing and CLI handling, including arbitrary-size integers.
+
+- Reproduced baseline defects: 30 failures and 1 error.
+- Added regression tests; `python3 -B -m unittest discover -v` passes all **10 tests**.
+- Real CLI checks cover leading negatives, arity, clean stderr errors, and 5,001-digit results.
+
+No known implementation gaps remain. Coordinator’s fresh independent review is **pending**.

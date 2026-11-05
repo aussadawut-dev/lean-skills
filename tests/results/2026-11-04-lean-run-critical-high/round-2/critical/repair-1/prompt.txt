@@ -1,0 +1,20 @@
+Use lean-run at .agents/skills/lean-run/SKILL.md to continue the SAME critical task with a bounded repair. CONTRACT.md and scope are unchanged. Task-wide REWORK count is 1; do not reset it. Reproduce and repair the demonstrated findings below, add meaningful regression checks, run affected and required final checks, and exercise the public interface. Preserve existing behavior, data, triggers and unrelated work. No unrelated refactor, installs, network or extra agents. The coordinator supplies renewed independent review afterward; report it pending. 
+
+[
+  {
+    "id": "F1",
+    "severity": "HIGH",
+    "location": "vault.py:65-86, transfer() writes and commits without checking their actual effects",
+    "requirement": "A transfer must atomically debit and credit the authorized accounts, persist its receipt and exactly one audit row, and preserve unrelated existing rows.",
+    "evidence": "Initialize a temporary database with accounts ('red','a',100) and ('red','b',0). Execute: CREATE TRIGGER skip_audit BEFORE INSERT ON audit WHEN NEW.key='skip' BEGIN SELECT RAISE(IGNORE); END. Calling vault.transfer(path,'red','a','b',10,'skip') returns success. After reopening, balances are 90 and 10 and the receipt exists, but audit is empty. Exact replay also succeeds without an audit row. The equivalent CLI request exits 0 with a receipt and empty stderr. A control using key 'control' creates all required effects. The same unchecked-effect defect permits unrelated writes: an AFTER INSERT ON audit trigger executing INSERT OR REPLACE INTO accounts VALUES ('blue','private',0) changed an existing blue/private balance from 777 to 0 during a successful red transfer. The frozen probes also show hidden victims from extra UNIQUE indexes. Their paired IGNORE and no-op controls are valid and must continue to pass.",
+    "suggested_fix": "Verify the actual transaction effects before committing: exactly the authorized balance changes, one matching receipt and one audit row, with unrelated rows preserved. Use storage-local observation that accounts for skipped writes and trigger/REPLACE effects without fetching other tenants' data. Roll back and raise on discrepancies while retaining existing triggers. Keep this one bounded mechanism. Before expanding tests, exercise skipped audit plus destructive REPLACE versus an ignored conflict through the app. With trigger instrumentation, preserve unchanged schema, explicit versus implicit DELETE, RAISE(IGNORE) across rows, trigger-visible counters, storage classes and the database TEXT encoding. Check native-valid keyword/Unicode names, VT before DELETE, token-boundary BOM, and VALUES/WITH SELECT bodies in one batch. Avoid foreign stored-account reads."
+  },
+  {
+    "id": "COORD-DURABLE-CACHED-REPLAY",
+    "severity": "MEDIUM",
+    "location": "vault.py transfer lookup order",
+    "requirement": "Exact durable replay of an actor-scoped receipt returns the original receipt without writes.",
+    "evidence": "Prior rounds 2 and 3 historical tests reopen, remove an old endpoint in fixture setup, and replay an actual successful receipt. This candidate raises account unavailable before checking the receipt.",
+    "suggested_fix": "Validate structure, then resolve actor-scoped replay or key conflict before endpoint reads for a new transfer. New requests still require two existing tenant endpoints."
+  }
+]

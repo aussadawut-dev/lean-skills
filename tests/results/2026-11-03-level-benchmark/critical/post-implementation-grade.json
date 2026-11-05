@@ -1,0 +1,56 @@
+{
+  "level": "critical",
+  "cases": [
+    {
+      "id": "test_C1_read_isolation",
+      "status": "PASS"
+    },
+    {
+      "id": "test_C2_transfer_isolation",
+      "status": "PASS"
+    },
+    {
+      "id": "test_C3_tenant_scoped_receipts",
+      "status": "PASS"
+    },
+    {
+      "id": "test_C4_invalid_request_preserves_state",
+      "status": "PASS"
+    },
+    {
+      "id": "test_C5_storage_failure_rolls_back",
+      "status": "PASS"
+    },
+    {
+      "id": "test_C6_concurrent_duplicate",
+      "status": "PASS"
+    },
+    {
+      "id": "test_C7_concurrent_no_overspend",
+      "status": "PASS"
+    },
+    {
+      "id": "test_C8_durable_exact_replay",
+      "status": "PASS"
+    },
+    {
+      "id": "test_C9_cli_errors_are_generic",
+      "status": "PASS"
+    }
+  ],
+  "checks": 9,
+  "issues": 0,
+  "elapsed_seconds": 0.24,
+  "workspace_sha256": {
+    ".agents/skills/lean-run/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    ".agents/skills/lean-run/SKILL.md": "76d7fca67e6ea841d1e3e3366c398b682de1a63dbc50391fe1cc99a3165045f9",
+    ".agents/skills/lean-run/references/handoff.md": "2d6744d15c27d002c85b9b4cbccf2b0845cb7b5c8b3589aa8b9b06a885357e94",
+    "AGENTS.md": "0ef83ddcf2d1065527f05cd03d5a1b275feecc77e45bdb5916217f204c1cb486",
+    "CONTRACT.md": "6e6d6ee1f769db8160e528e218d46a0018a90655e775742a073d61df2aebee2b",
+    "app.py": "67259d2ae9b2f66c2c6b136950ef99a0a62f95a44369cabab5c3677b5ffdbcd4",
+    "test_public.py": "5f239e0ce234d0b84f0d12e7cd23eb6dc23e63b88ffa07e50d20d2c061d66b95",
+    "test_regressions.py": "6c3726913ae54e489f7d331753046a3071efadbeff83bafbd4c76caff4ec4aa7",
+    "vault.py": "1fe73c9df6b92745e01771d110d200716a885c6ce888f09c4723f715e41108ff"
+  },
+  "protected_files_changed": []
+}

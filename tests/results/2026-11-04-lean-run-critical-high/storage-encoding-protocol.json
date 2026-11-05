@@ -1,0 +1,7 @@
+{
+  "discovery": "Round 1 Critical repair 1 compares observed SQLite TEXT bytes to hardcoded Python UTF-8 expectations.",
+  "scope": "A valid transfer with Unicode identifiers and a benign audit trigger, in each of UTF-8, UTF-16le and UTF-16be, via API and CLI. Verify original DB encoding, balances, receipt/audit counts and trigger SQL.",
+  "gate": "Run after every remaining Critical review and against all three final previous workspaces. Retain failures and require no demonstrated regression.",
+  "native_fixture_control": "Initialize the SQLite header on the same connection that sets the PRAGMA; assert actual encoding before transfer.",
+  "script": "storage_encoding_probe.py"
+}

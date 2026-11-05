@@ -1,0 +1,21 @@
+{
+  "source_revision": "dce10b15b5c70cec58f34166044c289857607a04",
+  "skill_sha256": {
+    "LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    "SKILL.md": "6794ffee20a245412ad714b43d96de6372ac66c2a86d0c9572d1727705d21138",
+    "references/delegation.md": "63899dde986ec7014a5cffd39216685640a2e98013dae26e037eaf985fecadb1",
+    "references/exploration.md": "baa9a38160095244c31c5e4a8aab5bdd15dfc0cc83df01a7086607a459faf403",
+    "references/handoff.md": "2d6744d15c27d002c85b9b4cbccf2b0845cb7b5c8b3589aa8b9b06a885357e94",
+    "references/write-integrity.md": "ac1ff4d2f36d698382cab77d811ca885c07fa8358dc0de23ec3a06bfcaceeace",
+    "scripts/check.py": "7946993e44c3ebb3d0235c94af4426e2fbef749c31f4b18eac0de001ba3050b4"
+  },
+  "generator_sha256": "323adb22550b36a559c05b9c05609739d07996bba763109ec59908c0a17adb62",
+  "grader_sha256": "d91bec5dee2cfed894e49eb89508479c99095619675df6e2f2efc0e5eb870558",
+  "levels": {
+    "medium": "Strict integer-list CLI",
+    "high": "Atomic, idempotent batch ledger",
+    "critical": "Tenant isolation and transactional SQLite transfers"
+  },
+  "issue_unit": "one failed predefined contract category; not individual assertions",
+  "repetitions_per_level": 1
+}

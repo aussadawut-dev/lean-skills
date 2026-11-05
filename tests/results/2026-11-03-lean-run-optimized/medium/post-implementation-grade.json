@@ -1,0 +1,37 @@
+{
+  "level": "medium",
+  "cases": [
+    {
+      "id": "test_M1_valid_inputs",
+      "status": "PASS"
+    },
+    {
+      "id": "test_M2_empty_fields",
+      "status": "PASS"
+    },
+    {
+      "id": "test_M3_ascii_integer_grammar",
+      "status": "PASS"
+    },
+    {
+      "id": "test_M4_cli_error_contract",
+      "status": "PASS"
+    }
+  ],
+  "checks": 4,
+  "issues": 0,
+  "elapsed_seconds": 0.205,
+  "workspace_sha256": {
+    ".agents/skills/lean-run/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    ".agents/skills/lean-run/SKILL.md": "6c187a48701f23df6451855113bdaf873d4d14ee8b66630588c5046ae93c8dce",
+    ".agents/skills/lean-run/references/delegation.md": "63899dde986ec7014a5cffd39216685640a2e98013dae26e037eaf985fecadb1",
+    ".agents/skills/lean-run/references/exploration.md": "baa9a38160095244c31c5e4a8aab5bdd15dfc0cc83df01a7086607a459faf403",
+    ".agents/skills/lean-run/references/handoff.md": "2d6744d15c27d002c85b9b4cbccf2b0845cb7b5c8b3589aa8b9b06a885357e94",
+    "AGENTS.md": "0ef83ddcf2d1065527f05cd03d5a1b275feecc77e45bdb5916217f204c1cb486",
+    "CONTRACT.md": "70c0534f21c9f9705b307c81d93b7b7725567f8709bcb1744c76ce48d94c4bd3",
+    "app.py": "38a8b011350d5e8fb303c235933d848019567a99dd249f16be006b82c4867ec8",
+    "test_public.py": "2cbe00c08d2c2ad6ee61176c69e4b2ad17eac17ddb0468cda92e1452886ae103",
+    "test_regressions.py": "019c62eef0ab91b9028b13c361ea49ec9ed209fb8bd4cf471b01dbbcc8b1eddc"
+  },
+  "protected_files_changed": []
+}

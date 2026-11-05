@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "requested_model": "gpt-6.1-sol",
+  "requested_effort": "medium",
+  "context": "fresh",
+  "backend_identity": "not independently attested",
+  "scope": "Static comparison to git HEAD and scenario reasoning; excluded from workload metrics",
+  "scenarios": [
+    "Ambiguous user-facing feature: exploration reference and usability acceptance preserved",
+    "Clear fix: skips discovery loop and plan approval; regression/integration review retained",
+    "High-risk external delivery without independent reviewer: BLOCKED; authorized preparation continues"
+  ],
+  "preserved": [
+    "model and effort precedence, capability verification, context overrides and provider naming",
+    "two flaky retries; task-wide two REWORK results then one final fix-only pass",
+    "handoff reference unchanged"
+  ],
+  "findings": [],
+  "limits": [
+    "No live execution or benchmark assessment in this review"
+  ]
+}

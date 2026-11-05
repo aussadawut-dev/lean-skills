@@ -1,0 +1,13 @@
+Use lean-run at .agents/skills/lean-run/SKILL.md for a fresh independent ASSESSMENT ONLY of this completed candidate. You did not author it. Read CONTRACT.md, compare .baseline/ original files with current source, inspect added tests and run meaningful checks/probes. Do not implement or repair, and do not modify application, tests, instructions or .baseline. Do not read another agent report or sibling directories. Use Python -B and temporary paths for probes. No network, installs or additional agents. Identify distinct demonstrated requirement violations, regressions and security/data integrity defects; do not count multiple examples of one root cause as separate issues. Give severity, precise location and a reproducible observation for each. Do not invent a finding to fill a quota. Return ONLY a JSON object with keys status (PASS, REWORK, or BLOCKED), findings (array of objects with id, severity, location, requirement, evidence, suggested_fix), checks (array of strings), and coverage_limits (array of strings). Missing mandatory evidence is not a PASS.
+
+Renewed independent review after REWORK 1. Focus on the bounded repair delta against .pre-repair/ and original-contract regressions. Run required checks and independently verify each finding. Do not repeat unrelated broad exploration without new evidence. Prior independent findings, not author conclusions:
+[
+  {
+    "id": "F1",
+    "severity": "HIGH",
+    "location": "ledger.py:53; constructor at ledger.py:11",
+    "requirement": "Preserve valid dictionary inputs and existing batch behavior. Successful-key replays must not mutate balances again.",
+    "evidence": "Run with python3 -B: `from collections import Counter; from ledger import Ledger; x = Ledger(Counter({'a': 10, 'b': 0})); x.batch([]); print(dict(x.balances))`. Observed {'a': 20, 'b': 0}; expected {'a': 10, 'b': 0}. Counter is a valid dict subclass, and balances.copy() preserves it. Batch commit calls Counter.update(), which adds values instead of replacing them. A fresh one-unit transfer batch produces {'a': 19, 'b': 1}; replay produces {'a': 38, 'b': 2}. Baseline probes retain {'a': 10, 'b': 0} for the empty batch and {'a': 9, 'b': 1} after both transfer and replay. These are manifestations of one root cause.",
+    "suggested_fix": "Normalize constructor input into an owned built-in dict, while retaining public dictionary identity thereafter. Add Counter regression coverage for empty batches, transfers and replay."
+  }
+]

@@ -1,0 +1,789 @@
+test_conditional_ignore_preserves_recursive_guards_and_change_counters (test_final_repair.FinalRepairTests.test_conditional_ignore_preserves_recursive_guards_and_change_counters) ... 
+  test_conditional_ignore_preserves_recursive_guards_and_change_counters (test_final_repair.FinalRepairTests.test_conditional_ignore_preserves_recursive_guards_and_change_counters) (interface='api', timing='BEFORE', ignore=True) ... ERROR
+  test_conditional_ignore_preserves_recursive_guards_and_change_counters (test_final_repair.FinalRepairTests.test_conditional_ignore_preserves_recursive_guards_and_change_counters) (interface='cli', timing='BEFORE', ignore=True) ... FAIL
+  test_conditional_ignore_preserves_recursive_guards_and_change_counters (test_final_repair.FinalRepairTests.test_conditional_ignore_preserves_recursive_guards_and_change_counters) (interface='api', timing='AFTER', ignore=True) ... ERROR
+  test_conditional_ignore_preserves_recursive_guards_and_change_counters (test_final_repair.FinalRepairTests.test_conditional_ignore_preserves_recursive_guards_and_change_counters) (interface='cli', timing='AFTER', ignore=True) ... FAIL
+test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) ... ok
+test_delete_event_separators_and_identifiers_preserve_delete_semantics (test_final_repair.FinalRepairTests.test_delete_event_separators_and_identifiers_preserve_delete_semantics) ... ok
+test_multirow_ignore_and_null_controls_preserve_abort_and_rollback (test_final_repair.FinalRepairTests.test_multirow_ignore_and_null_controls_preserve_abort_and_rollback) ... 
+  test_multirow_ignore_and_null_controls_preserve_abort_and_rollback (test_final_repair.FinalRepairTests.test_multirow_ignore_and_null_controls_preserve_abort_and_rollback) (interface='api', timing='BEFORE', expression='RAISE(IGNORE)') ... FAIL
+  test_multirow_ignore_and_null_controls_preserve_abort_and_rollback (test_final_repair.FinalRepairTests.test_multirow_ignore_and_null_controls_preserve_abort_and_rollback) (interface='cli', timing='BEFORE', expression='RAISE(IGNORE)') ... FAIL
+  test_multirow_ignore_and_null_controls_preserve_abort_and_rollback (test_final_repair.FinalRepairTests.test_multirow_ignore_and_null_controls_preserve_abort_and_rollback) (interface='api', timing='AFTER', expression='RAISE(IGNORE)') ... FAIL
+  test_multirow_ignore_and_null_controls_preserve_abort_and_rollback (test_final_repair.FinalRepairTests.test_multirow_ignore_and_null_controls_preserve_abort_and_rollback) (interface='cli', timing='AFTER', expression='RAISE(IGNORE)') ... FAIL
+test_values_and_with_select_keep_native_trigger_behavior (test_final_repair.FinalRepairTests.test_values_and_with_select_keep_native_trigger_behavior) ... ok
+test_valid_transfer (test_public.PublicTests.test_valid_transfer) ... ok
+test_actor_scoped_history_replays_without_current_endpoints (test_regressions.VaultRegressionTests.test_actor_scoped_history_replays_without_current_endpoints) ... ok
+test_audit_fail_and_rollback_actions_are_atomic_and_retryable (test_regressions.VaultRegressionTests.test_audit_fail_and_rollback_actions_are_atomic_and_retryable) ... ok
+test_balance_is_scoped_to_tenant (test_regressions.VaultRegressionTests.test_balance_is_scoped_to_tenant) ... ok
+test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) ... ok
+test_both_transfer_endpoints_must_exist_in_the_tenant (test_regressions.VaultRegressionTests.test_both_transfer_endpoints_must_exist_in_the_tenant) ... ok
+test_cli_integrated_transfer_replay_conflict_and_balance (test_regressions.VaultRegressionTests.test_cli_integrated_transfer_replay_conflict_and_balance) ... ok
+test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) ... ok
+test_cli_storage_failure_is_generic_and_atomic_then_recovers (test_regressions.VaultRegressionTests.test_cli_storage_failure_is_generic_and_atomic_then_recovers) ... ok
+test_complete_balance_can_be_transferred (test_regressions.VaultRegressionTests.test_complete_balance_can_be_transferred) ... ok
+test_existing_unique_constraint_failure_does_not_lose_money_or_history (test_regressions.VaultRegressionTests.test_existing_unique_constraint_failure_does_not_lose_money_or_history) ... ok
+test_foreign_cached_receipt_and_malformed_rows_are_not_read (test_regressions.VaultRegressionTests.test_foreign_cached_receipt_and_malformed_rows_are_not_read) ... ok
+test_ignored_required_write_rolls_back_everything (test_regressions.VaultRegressionTests.test_ignored_required_write_rolls_back_everything) ... ok
+test_init_preserves_existing_schema_rows_and_triggers (test_regressions.VaultRegressionTests.test_init_preserves_existing_schema_rows_and_triggers) ... ok
+test_key_can_be_reused_independently_by_another_tenant (test_regressions.VaultRegressionTests.test_key_can_be_reused_independently_by_another_tenant) ... ok
+test_large_integer_balances_remain_exact_and_overflow_is_atomic (test_regressions.VaultRegressionTests.test_large_integer_balances_remain_exact_and_overflow_is_atomic) ... ok
+test_missing_and_inaccessible_accounts_have_same_generic_error (test_regressions.VaultRegressionTests.test_missing_and_inaccessible_accounts_have_same_generic_error) ... ok
+test_receipt_return_values_do_not_share_mutable_state (test_regressions.VaultRegressionTests.test_receipt_return_values_do_not_share_mutable_state) ... ok
+test_replay_conflicts_and_invalid_replays_have_no_writes (test_regressions.VaultRegressionTests.test_replay_conflicts_and_invalid_replays_have_no_writes) ... ok
+test_replay_is_durable_and_does_not_recheck_funds_or_write (test_regressions.VaultRegressionTests.test_replay_is_durable_and_does_not_recheck_funds_or_write) ... ok
+test_simultaneous_distinct_keys_cannot_overspend (test_regressions.VaultRegressionTests.test_simultaneous_distinct_keys_cannot_overspend) ... ok
+test_simultaneous_duplicate_keys_execute_once (test_regressions.VaultRegressionTests.test_simultaneous_duplicate_keys_execute_once) ... ok
+test_simultaneous_opposing_transfers_preserve_all_credits (test_regressions.VaultRegressionTests.test_simultaneous_opposing_transfers_preserve_all_credits) ... ok
+test_simultaneous_tenants_can_share_a_key (test_regressions.VaultRegressionTests.test_simultaneous_tenants_can_share_a_key) ... ok
+test_sql_parameters_accept_unicode_and_literal_sql_characters (test_regressions.VaultRegressionTests.test_sql_parameters_accept_unicode_and_literal_sql_characters) ... ok
+test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything (test_regressions.VaultRegressionTests.test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything) ... ok
+test_transfer_changes_only_the_two_tenant_accounts (test_regressions.VaultRegressionTests.test_transfer_changes_only_the_two_tenant_accounts) ... ok
+test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) ... ok
+test_duplicate_decoded_json_keys_are_rejected_without_effects (test_repair.RepairTests.test_duplicate_decoded_json_keys_are_rejected_without_effects) ... ok
+test_durable_replay_survives_removed_endpoints_and_rejects_new_requests (test_repair.RepairTests.test_durable_replay_survives_removed_endpoints_and_rejects_new_requests) ... ok
+test_erased_required_audit_is_rejected_and_retryable (test_repair.RepairTests.test_erased_required_audit_is_rejected_and_retryable) ... ok
+test_foreign_balance_change_is_rejected (test_repair.RepairTests.test_foreign_balance_change_is_rejected) ... ok
+test_implicit_replace_delete_keeps_native_delete_trigger_behavior (test_repair.RepairTests.test_implicit_replace_delete_keeps_native_delete_trigger_behavior) ... /private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x105ac31f0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x105ac3790>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4186d0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4188b0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4189a0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4187c0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a418a90>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a418b80>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a418d60>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a418c70>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a418e50>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a418f40>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a419120>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a419030>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a419210>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a419300>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4193f0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4194e0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4195d0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4196c0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4197b0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4198a0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a419990>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a419a80>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a419b70>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a419c60>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a419d50>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a419e40>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a419f30>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41a110>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41a200>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41a3e0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41a4d0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41a5c0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41a6b0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41a2f0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41a7a0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41a890>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41a980>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41a020>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41aa70>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41ab60>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41ac50>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41ad40>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41ae30>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41af20>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41b010>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41b100>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41b1f0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41b2e0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41b3d0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41b4c0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41b5b0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41b6a0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41b790>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41b880>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41b970>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41ba60>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41bb50>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41bc40>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41bd30>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41be20>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a41bf10>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a450040>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a450220>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a450130>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a450310>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a450400>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4505e0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x105ac3010>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4504f0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4506d0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4508b0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4507c0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4509a0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a450a90>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a450c70>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a450b80>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a450d60>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a450e50>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a451030>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a450f40>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a451120>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a451210>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4513f0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a451300>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x105ac3100>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4514e0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4515d0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4516c0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4517b0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4518a0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a451990>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a451a80>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a451b70>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a451c60>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a451e40>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a451d50>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a451f30>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a452020>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a452110>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a452200>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4522f0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4524d0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4525c0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4526b0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4527a0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4523e0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a452890>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a452980>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a452a70>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a452b60>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a452c50>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a452d40>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a452e30>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4536a0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a453880>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a453e20>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4765c0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4766b0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a475990>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4767a0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a476c50>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a476020>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a474400>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a476980>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4757b0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a476a70>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a475c60>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a475f30>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4747c0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a476890>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a476200>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a475b70>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a475a80>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a476110>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4758a0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a476e30>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4762f0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a476d40>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4773d0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4764d0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a477010>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a475e40>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4763e0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a476b60>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a476f20>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4771f0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4775b0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4774c0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4772e0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a475d50>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a477100>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4776a0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a477790>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a477880>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a477970>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a477a60>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a477b50>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a477c40>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a477d30>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a477e20>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a477f10>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a490040>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a490130>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a490220>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a490310>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a490400>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4904f0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4905e0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4906d0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4907c0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4908b0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4909a0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a490a90>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a490b80>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a490c70>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a490d60>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a490e50>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a490f40>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a491030>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a491120>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a491210>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a491300>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4913f0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4915d0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4916c0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4914e0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4917b0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4918a0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a491990>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a491a80>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a491b70>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a491c60>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a491d50>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a491e40>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a491f30>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a492020>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a492110>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a492200>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4922f0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4923e0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4924d0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4925c0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4926b0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a4927a0>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a492890>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a492980>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a492a70>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a492b60>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a492c50>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a492d40>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a492e30>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a492f20>
+  con.create_function(self.prefix + '_' + suffix, arity, function)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_noops_ignored_conflicts_and_row_moves_preserve_raw_foreign_data (test_repair.RepairTests.test_noops_ignored_conflicts_and_row_moves_preserve_raw_foreign_data) ... ok
+test_recursive_noop_and_after_ignore_keep_native_behavior (test_repair.RepairTests.test_recursive_noop_and_after_ignore_keep_native_behavior) ... ok
+test_replace_cannot_remove_history_via_extra_unique_indexes (test_repair.RepairTests.test_replace_cannot_remove_history_via_extra_unique_indexes) ... ok
+test_storage_class_only_change_is_rejected (test_repair.RepairTests.test_storage_class_only_change_is_rejected) ... ok
+
+======================================================================
+ERROR: test_conditional_ignore_preserves_recursive_guards_and_change_counters (test_final_repair.FinalRepairTests.test_conditional_ignore_preserves_recursive_guards_and_change_counters) (interface='api', timing='BEFORE', ignore=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/test_final_repair.py", line 107, in assert_native_behavior
+    self.assertEqual(vault.transfer(path, **request), request)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/vault.py", line 86, in transfer
+    integrity.statement('INSERT INTO audit (tenant,key,source,target,amount) VALUES (?,?,?,?,?)', values)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py", line 306, in statement
+    self.con.execute(sql, values)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+sqlite3.IntegrityError: changed counter
+
+======================================================================
+ERROR: test_conditional_ignore_preserves_recursive_guards_and_change_counters (test_final_repair.FinalRepairTests.test_conditional_ignore_preserves_recursive_guards_and_change_counters) (interface='api', timing='AFTER', ignore=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/test_final_repair.py", line 107, in assert_native_behavior
+    self.assertEqual(vault.transfer(path, **request), request)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/vault.py", line 86, in transfer
+    integrity.statement('INSERT INTO audit (tenant,key,source,target,amount) VALUES (?,?,?,?,?)', values)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/integrity.py", line 306, in statement
+    self.con.execute(sql, values)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+sqlite3.IntegrityError: changed counter
+
+======================================================================
+FAIL: test_conditional_ignore_preserves_recursive_guards_and_change_counters (test_final_repair.FinalRepairTests.test_conditional_ignore_preserves_recursive_guards_and_change_counters) (interface='cli', timing='BEFORE', ignore=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/test_final_repair.py", line 115, in assert_native_behavior
+    self.assert_cli_success(result, request)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/test_final_repair.py", line 75, in assert_cli_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_conditional_ignore_preserves_recursive_guards_and_change_counters (test_final_repair.FinalRepairTests.test_conditional_ignore_preserves_recursive_guards_and_change_counters) (interface='cli', timing='AFTER', ignore=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/test_final_repair.py", line 115, in assert_native_behavior
+    self.assert_cli_success(result, request)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/test_final_repair.py", line 75, in assert_cli_success
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : {"error": "invalid request"}
+
+
+======================================================================
+FAIL: test_multirow_ignore_and_null_controls_preserve_abort_and_rollback (test_final_repair.FinalRepairTests.test_multirow_ignore_and_null_controls_preserve_abort_and_rollback) (interface='api', timing='BEFORE', expression='RAISE(IGNORE)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/test_final_repair.py", line 104, in assert_native_behavior
+    with self.assertRaisesRegex(sqlite3.IntegrityError, failure):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IntegrityError not raised
+
+======================================================================
+FAIL: test_multirow_ignore_and_null_controls_preserve_abort_and_rollback (test_final_repair.FinalRepairTests.test_multirow_ignore_and_null_controls_preserve_abort_and_rollback) (interface='cli', timing='BEFORE', expression='RAISE(IGNORE)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/test_final_repair.py", line 111, in assert_native_behavior
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : 
+
+======================================================================
+FAIL: test_multirow_ignore_and_null_controls_preserve_abort_and_rollback (test_final_repair.FinalRepairTests.test_multirow_ignore_and_null_controls_preserve_abort_and_rollback) (interface='api', timing='AFTER', expression='RAISE(IGNORE)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/test_final_repair.py", line 104, in assert_native_behavior
+    with self.assertRaisesRegex(sqlite3.IntegrityError, failure):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IntegrityError not raised
+
+======================================================================
+FAIL: test_multirow_ignore_and_null_controls_preserve_abort_and_rollback (test_final_repair.FinalRepairTests.test_multirow_ignore_and_null_controls_preserve_abort_and_rollback) (interface='cli', timing='AFTER', expression='RAISE(IGNORE)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-2w984jvs/test_final_repair.py", line 111, in assert_native_behavior
+    self.assertEqual(result.returncode, 2, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : 
+
+----------------------------------------------------------------------
+Ran 42 tests in 4.622s
+
+FAILED (failures=6, errors=2)

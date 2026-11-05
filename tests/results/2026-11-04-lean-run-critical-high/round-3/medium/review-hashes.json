@@ -1,0 +1,17 @@
+{
+  ".agents/skills/lean-run/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+  ".agents/skills/lean-run/SKILL.md": "2e31a58825685a232655ef571966bda7cc5c751fe19ccd32e441da8b0b404f19",
+  ".agents/skills/lean-run/references/delegation.md": "63899dde986ec7014a5cffd39216685640a2e98013dae26e037eaf985fecadb1",
+  ".agents/skills/lean-run/references/exploration.md": "baa9a38160095244c31c5e4a8aab5bdd15dfc0cc83df01a7086607a459faf403",
+  ".agents/skills/lean-run/references/handoff.md": "2d6744d15c27d002c85b9b4cbccf2b0845cb7b5c8b3589aa8b9b06a885357e94",
+  ".agents/skills/lean-run/references/write-integrity.md": "0d82d2a4c96cd5a23c9c5c5314b50325986beaed03b18e963b20417063a9a821",
+  ".agents/skills/lean-run/scripts/check.py": "7946993e44c3ebb3d0235c94af4426e2fbef749c31f4b18eac0de001ba3050b4",
+  ".baseline/app.py": "8d11b23c223cb40cb7e7ec649b1e0b31c7ddb49e2d495eaaa1e56013586b68aa",
+  ".baseline/test_public.py": "2cbe00c08d2c2ad6ee61176c69e4b2ad17eac17ddb0468cda92e1452886ae103",
+  ".regression-before.log": "b88d40f378cd527067da7ce18b41d091225c068436a998844de42c274fb2273c",
+  "AGENTS.md": "0ef83ddcf2d1065527f05cd03d5a1b275feecc77e45bdb5916217f204c1cb486",
+  "CONTRACT.md": "70c0534f21c9f9705b307c81d93b7b7725567f8709bcb1744c76ce48d94c4bd3",
+  "app.py": "855cb6be077ddfc3e4f723df5842bce17c9dce0bb03df0532c0cd98e243a41f2",
+  "test_public.py": "2cbe00c08d2c2ad6ee61176c69e4b2ad17eac17ddb0468cda92e1452886ae103",
+  "test_regression.py": "9e3b008b4bd547818a1ce982a8f1e2659fe2cd938f124045db9811a231b4f4a3"
+}

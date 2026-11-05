@@ -1,0 +1,9 @@
+{
+  "status": "FAILED",
+  "remaining": "SQLITE-TRIGGER-WHITESPACE",
+  "reason": "Final fix-only repair already used. Retain all recorded costs and continue the cohort.",
+  "evidence": [
+    "assessment-3-trigger_separator_probe.json",
+    "review-3/final.txt"
+  ]
+}

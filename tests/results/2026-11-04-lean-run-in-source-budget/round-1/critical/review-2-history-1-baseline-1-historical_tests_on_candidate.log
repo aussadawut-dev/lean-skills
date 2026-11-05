@@ -1,0 +1,698 @@
+test_conditional_ignore_preserves_recursive_guards_and_change_counters (test_final_repair.FinalRepairTests.test_conditional_ignore_preserves_recursive_guards_and_change_counters) ... ok
+test_database_encoding_preserves_unicode_and_raw_foreign_rows (test_final_repair.FinalRepairTests.test_database_encoding_preserves_unicode_and_raw_foreign_rows) ... ok
+test_delete_event_separators_and_identifiers_preserve_delete_semantics (test_final_repair.FinalRepairTests.test_delete_event_separators_and_identifiers_preserve_delete_semantics) ... ok
+test_multirow_ignore_and_null_controls_preserve_abort_and_rollback (test_final_repair.FinalRepairTests.test_multirow_ignore_and_null_controls_preserve_abort_and_rollback) ... ok
+test_values_and_with_select_keep_native_trigger_behavior (test_final_repair.FinalRepairTests.test_values_and_with_select_keep_native_trigger_behavior) ... ok
+test_valid_transfer (test_public.PublicTests.test_valid_transfer) ... ok
+test_actor_scoped_history_replays_without_current_endpoints (test_regressions.VaultRegressionTests.test_actor_scoped_history_replays_without_current_endpoints) ... ok
+test_audit_fail_and_rollback_actions_are_atomic_and_retryable (test_regressions.VaultRegressionTests.test_audit_fail_and_rollback_actions_are_atomic_and_retryable) ... ok
+test_balance_is_scoped_to_tenant (test_regressions.VaultRegressionTests.test_balance_is_scoped_to_tenant) ... ok
+test_balance_rejects_invalid_identifiers (test_regressions.VaultRegressionTests.test_balance_rejects_invalid_identifiers) ... ok
+test_both_transfer_endpoints_must_exist_in_the_tenant (test_regressions.VaultRegressionTests.test_both_transfer_endpoints_must_exist_in_the_tenant) ... ok
+test_cli_integrated_transfer_replay_conflict_and_balance (test_regressions.VaultRegressionTests.test_cli_integrated_transfer_replay_conflict_and_balance) ... ok
+test_cli_rejects_invalid_json_shape_operation_and_fields (test_regressions.VaultRegressionTests.test_cli_rejects_invalid_json_shape_operation_and_fields) ... ok
+test_cli_storage_failure_is_generic_and_atomic_then_recovers (test_regressions.VaultRegressionTests.test_cli_storage_failure_is_generic_and_atomic_then_recovers) ... ok
+test_complete_balance_can_be_transferred (test_regressions.VaultRegressionTests.test_complete_balance_can_be_transferred) ... ok
+test_existing_unique_constraint_failure_does_not_lose_money_or_history (test_regressions.VaultRegressionTests.test_existing_unique_constraint_failure_does_not_lose_money_or_history) ... ok
+test_foreign_cached_receipt_and_malformed_rows_are_not_read (test_regressions.VaultRegressionTests.test_foreign_cached_receipt_and_malformed_rows_are_not_read) ... ok
+test_ignored_required_write_rolls_back_everything (test_regressions.VaultRegressionTests.test_ignored_required_write_rolls_back_everything) ... ok
+test_init_preserves_existing_schema_rows_and_triggers (test_regressions.VaultRegressionTests.test_init_preserves_existing_schema_rows_and_triggers) ... ok
+test_key_can_be_reused_independently_by_another_tenant (test_regressions.VaultRegressionTests.test_key_can_be_reused_independently_by_another_tenant) ... ok
+test_large_integer_balances_remain_exact_and_overflow_is_atomic (test_regressions.VaultRegressionTests.test_large_integer_balances_remain_exact_and_overflow_is_atomic) ... ok
+test_missing_and_inaccessible_accounts_have_same_generic_error (test_regressions.VaultRegressionTests.test_missing_and_inaccessible_accounts_have_same_generic_error) ... ok
+test_receipt_return_values_do_not_share_mutable_state (test_regressions.VaultRegressionTests.test_receipt_return_values_do_not_share_mutable_state) ... ok
+test_replay_conflicts_and_invalid_replays_have_no_writes (test_regressions.VaultRegressionTests.test_replay_conflicts_and_invalid_replays_have_no_writes) ... ok
+test_replay_is_durable_and_does_not_recheck_funds_or_write (test_regressions.VaultRegressionTests.test_replay_is_durable_and_does_not_recheck_funds_or_write) ... ok
+test_simultaneous_distinct_keys_cannot_overspend (test_regressions.VaultRegressionTests.test_simultaneous_distinct_keys_cannot_overspend) ... ok
+test_simultaneous_duplicate_keys_execute_once (test_regressions.VaultRegressionTests.test_simultaneous_duplicate_keys_execute_once) ... ok
+test_simultaneous_opposing_transfers_preserve_all_credits (test_regressions.VaultRegressionTests.test_simultaneous_opposing_transfers_preserve_all_credits) ... ok
+test_simultaneous_tenants_can_share_a_key (test_regressions.VaultRegressionTests.test_simultaneous_tenants_can_share_a_key) ... ok
+test_sql_parameters_accept_unicode_and_literal_sql_characters (test_regressions.VaultRegressionTests.test_sql_parameters_accept_unicode_and_literal_sql_characters) ... ok
+test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything (test_regressions.VaultRegressionTests.test_storage_failure_at_credit_receipt_or_audit_rolls_back_everything) ... ok
+test_transfer_changes_only_the_two_tenant_accounts (test_regressions.VaultRegressionTests.test_transfer_changes_only_the_two_tenant_accounts) ... ok
+test_transfer_rejects_malformed_requests_without_writes (test_regressions.VaultRegressionTests.test_transfer_rejects_malformed_requests_without_writes) ... ok
+test_duplicate_decoded_json_keys_are_rejected_without_effects (test_repair.RepairTests.test_duplicate_decoded_json_keys_are_rejected_without_effects) ... ok
+test_durable_replay_survives_removed_endpoints_and_rejects_new_requests (test_repair.RepairTests.test_durable_replay_survives_removed_endpoints_and_rejects_new_requests) ... ok
+test_erased_required_audit_is_rejected_and_retryable (test_repair.RepairTests.test_erased_required_audit_is_rejected_and_retryable) ... ok
+test_foreign_balance_change_is_rejected (test_repair.RepairTests.test_foreign_balance_change_is_rejected) ... ok
+test_implicit_replace_delete_keeps_native_delete_trigger_behavior (test_repair.RepairTests.test_implicit_replace_delete_keeps_native_delete_trigger_behavior) ... /private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x105c43100>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x105c436a0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a5785e0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a5786d0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a5788b0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a5787c0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a5789a0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a578a90>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a578c70>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a578b80>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a578d60>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a578e50>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a579030>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a578f40>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a579120>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a579210>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a579300>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a5793f0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a5794e0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a5795d0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a5796c0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a5797b0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a5798a0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a579990>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a579a80>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a579b70>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a579c60>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a579d50>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a579e40>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57a020>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57a110>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57a2f0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57a3e0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57a4d0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57a5c0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57a200>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57a6b0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57a7a0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57a890>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a579f30>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57a980>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57aa70>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57ab60>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57ac50>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57ad40>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57ae30>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57af20>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57b010>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57b100>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57b1f0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57b2e0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57b3d0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57b4c0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57b5b0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57b6a0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57b790>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57b880>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57b970>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57ba60>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57bb50>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57bc40>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57bd30>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57be20>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a57bf10>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a608130>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a608040>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a608220>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a608310>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6084f0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x105c42f20>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a608400>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6085e0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6088b0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6086d0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6087c0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6089a0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a608c70>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a608a90>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a608b80>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a608d60>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a608f40>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a608e50>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a609030>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a609120>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a609300>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a609210>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x105c43010>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6093f0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6094e0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6095d0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6096c0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6097b0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6098a0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a609990>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a609a80>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a609b70>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a609d50>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a609c60>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a609e40>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a609f30>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a60a020>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a60a110>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a60a200>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a60a3e0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a60a4d0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a60a5c0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a60a6b0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a60a2f0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a60a7a0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a60a890>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a60a980>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a60aa70>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a60ab60>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a60ac50>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a60ad40>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a60b970>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a60bd30>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a620040>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6223e0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6224d0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a621d50>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a621990>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a622c50>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a622200>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6225c0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a622890>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a621a80>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a621f30>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6226b0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a620130>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6217b0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a620310>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a622020>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a622a70>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a621e40>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6218a0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6216c0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6206d0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a622110>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a622b60>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a621c60>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a622f20>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a623010>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6231f0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6222f0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a622980>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6227a0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6233d0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a622d40>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a621b70>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a623100>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6232e0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a622e30>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6234c0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6235b0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6236a0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a623790>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a623880>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a623970>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a623a60>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a623b50>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a623c40>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a623d30>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a623e20>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a623f10>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a634040>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a634130>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a634220>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a634310>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a634400>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6344f0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6345e0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6346d0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6347c0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6348b0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6349a0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a634a90>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a634b80>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a634c70>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a634d60>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a634e50>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a634f40>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a635030>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a635120>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a635210>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6353f0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6354e0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a635300>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6355d0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6356c0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6357b0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6358a0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a635990>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a635a80>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a635b70>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a635c60>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a635d50>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a635e40>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a635f30>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a636020>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a636110>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a636200>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6362f0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6363e0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6364d0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6365c0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6366b0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a6367a0>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a636890>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a636980>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a636a70>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a636b60>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a636c50>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a636d40>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a636e30>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a636f20>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-u_mxr8lm/vault_guard.py:273: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a637010>
+  self.con.execute('EXPLAIN ' + candidate).fetchall()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_noops_ignored_conflicts_and_row_moves_preserve_raw_foreign_data (test_repair.RepairTests.test_noops_ignored_conflicts_and_row_moves_preserve_raw_foreign_data) ... ok
+test_recursive_noop_and_after_ignore_keep_native_behavior (test_repair.RepairTests.test_recursive_noop_and_after_ignore_keep_native_behavior) ... ok
+test_replace_cannot_remove_history_via_extra_unique_indexes (test_repair.RepairTests.test_replace_cannot_remove_history_via_extra_unique_indexes) ... ok
+test_storage_class_only_change_is_rejected (test_repair.RepairTests.test_storage_class_only_change_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 42 tests in 4.887s
+
+OK

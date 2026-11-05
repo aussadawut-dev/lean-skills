@@ -1,0 +1,30 @@
+Use lean-run at .agents/skills/lean-run/SKILL.md for a fresh independent ASSESSMENT ONLY of this completed candidate. You did not author it. Read CONTRACT.md, compare .baseline/ original files with current source, inspect added tests and run meaningful checks/probes. Do not implement or repair, and do not modify application, tests, instructions or .baseline. Do not read another agent report or sibling directories. Use Python -B and temporary paths for probes. No network, installs or additional agents. Identify distinct demonstrated requirement violations, regressions and security/data integrity defects; do not count multiple examples of one root cause as separate issues. Give severity, precise location and a reproducible observation for each. Do not invent a finding to fill a quota. Return ONLY a JSON object with keys status (PASS, REWORK, or BLOCKED), findings (array of objects with id, severity, location, requirement, evidence, suggested_fix), checks (array of strings), and coverage_limits (array of strings). Missing mandatory evidence is not a PASS.
+
+Renewed independent review after REWORK 1. Focus on the bounded repair delta against .pre-repair/ and original-contract regressions. Run required checks and independently verify each finding. Do not repeat unrelated broad exploration without new evidence. Prior independent findings, not author conclusions:
+[
+  {
+    "id": "R2",
+    "severity": "HIGH",
+    "location": "vault.py:102-114 (_isolate rowid normalization)",
+    "requirement": "Existing triggers must retain native behavior over tenant-local rows, and their auxiliary writes must commit correctly.",
+    "evidence": "In a tenant-only database, insert accounts a and b with explicit rowids 10 and 20 and balances 100 and 0. Create account_refs(account_row INTEGER PRIMARY KEY,last_balance), containing (10,100),(20,0), and an AFTER UPDATE ON accounts trigger executing UPDATE account_refs SET last_balance=NEW.balance WHERE account_row=NEW.rowid. transfer(path,'one','a','b',10,'k') succeeds and commits balances 90/10, but references remain 100/0. Identical native SQLite statements update references to 90/10. The candidate exposes temporary rowids 1/2 to triggers while retaining persistent rowids 10/20.",
+    "suggested_fix": "Preserve tenant-local row references through isolated execution and commit. Replace unconditional renumbering with a mechanism that also satisfies noninterference, and test sparse existing rowids against native SQLite."
+  },
+  {
+    "id": "R3",
+    "severity": "MEDIUM",
+    "location": "vault.py:125-143 and vault.py:152-165 (_auxiliary_rows/_apply_auxiliary)",
+    "requirement": "Trigger writes to other tables must retain native SQLite behavior and commit with the transfer.",
+    "evidence": "Create documents(id INTEGER PRIMARY KEY,body TEXT), insert (1,'ledger entry'), and create search USING fts5(body,content='documents',content_rowid='id'). Install an AFTER INSERT ON audit trigger executing INSERT INTO search(rowid,body) VALUES(1,'ledger entry'). The candidate commits the transfer, but SELECT rowid FROM search WHERE search MATCH 'ledger' returns no rows; native SQLite returns [(1,)]. Shadow tables are omitted and the virtual table's ordinary SELECT results are unchanged, so the index write is silently discarded. Related probes also lost an FTS5 automerge configuration write and incorrectly attempted DELETE against a read-only fts5vocab table.",
+    "suggested_fix": "Preserve complete auxiliary SQLite effects, including virtual-table backing state. Avoid treating ordinary SELECT snapshots as complete writable state, and add native controls for external-content FTS5 and read-only virtual tables."
+  },
+  {
+    "id": "C1",
+    "severity": "HIGH",
+    "source": "mandatory probe critical_contract_probe.py",
+    "location": "table-name handling in the isolation layer",
+    "requirement": "Other tenants' rows stay byte-identical; writes aimed at them affect nothing.",
+    "evidence": "Mandatory contract probe scenario renamed_table_case: setup `ALTER TABLE accounts RENAME TO staging; ALTER TABLE staging RENAME TO ACCOUNTS;` plus a trigger that writes to another tenant's account. With the other tenant's balance 777 or 778 the candidate commits the transfer and the other tenant's row changes (failures renamed_table_case:{api,cli}_{777,778}:foreign_rows_changed); with the row absent it passes. The native tenant-only oracle leaves the other tenant's row unchanged. SQLite table names are case-insensitive.",
+    "suggested_fix": "Resolve protected tables case-insensitively from the schema, as SQLite does, and add API and CLI tests with renamed table case and present foreign rows."
+  }
+]

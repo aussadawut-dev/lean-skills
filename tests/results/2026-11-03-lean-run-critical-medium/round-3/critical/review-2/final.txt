@@ -1,0 +1,25 @@
+{
+  "status": "REWORK",
+  "findings": [
+    {
+      "id": "TRIGGER-GRAMMAR-REGRESSION",
+      "severity": "MEDIUM",
+      "location": "vault.py:70-73, _instrument_trigger",
+      "requirement": "Valid transfers must succeed while preserving existing benign trigger behavior.",
+      "evidence": "Initialize accounts ('one','a',100) and ('one','b',0), then execute CREATE TRIGGER benign AFTER INSERT ON audit WHEN 1 BEGIN VALUES(1); END. Calling transfer(path,'one','a','b',10,'k') raises IndexError at vault.py:70. The parser never recognizes BEGIN because VALUES is excluded from its statement-prefix list. A WITH-prefixed SELECT reproduces the same defect. The CLI exits 2 for this valid request. Data and schema remain unchanged; the .pre-repair implementation succeeds on the same database, producing balances 90 and 10.",
+      "suggested_fix": "Support SQLite's legal trigger-body forms when locating BEGIN, including VALUES and WITH, or avoid rewriting trigger SQL. Add distinguishing regressions for these forms with WHEN clauses."
+    }
+  ],
+  "checks": [
+    "Read CONTRACT.md and lean-run/write-integrity instructions; compared baseline source, repair delta and added tests.",
+    "TMPDIR=\"$PWD\" python3 -B -m unittest discover -v: all 25 tests passed.",
+    "Independent SQL tracing verified authenticated tenant predicates on account and cached-receipt reads; the prior unscoped preservation queries are removed.",
+    "Independent probes confirmed destructive additional-UNIQUE replacement rolls back, while ignored conflicts and identical replacement succeed; schema and historical replay remain intact.",
+    "Independently reproduced the trigger regression through API and CLI and verified success with .pre-repair on the same database.",
+    "Source, tests and instructions remained unchanged. Reviewed vault.py SHA-256: f38bc3d95c18084c2c5f9f3c48364a001797a71cb685021662f7bc038419ff84."
+  ],
+  "coverage_limits": [
+    "Local Python 3.14.3 and SQLite 3.50.4 only.",
+    "Focused repair-delta assessment; trigger grammar and interaction coverage is not exhaustive."
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "status": "PROTOCOL_INVALID",
+  "decided_by": "user, 2026-11-05, after the coordinator showed the defect",
+  "stopped_after": "assessment-2 (review-2 REWORK); repair-2 was never requested or run",
+  "defect": "The new Critical contract sentence \"any effect beyond the debit, credit, receipt and audit row rejects the transfer\" did not limit the rule to accounts, transfers and audit rows. Read literally it rejects trigger writes to any other table. The candidate followed that reading; frozen historical suites expect such side-table writes to keep native behavior. Most unsuperseded historical failures in assessment-2 create side tables (observations, log, effects, counters, captured_shape, scratch).",
+  "not_attributed_to_protocol": [
+    "F3 rowcount rejection and F4 table-name case are independent candidate defects",
+    "message-text and overflow historical assertions remain contract-external questions"
+  ],
+  "interpretation": "Not a skill FAILED and not a PASS. Measured phases, raw outputs, assessments and requests are retained unchanged. Excluded from Critical quality and cost comparisons; reported separately.",
+  "measured_phases": {
+    "implementation": {
+      "elapsed_seconds": 812.789,
+      "uncached_input_tokens": 19445,
+      "total_tokens": 534750,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    "review": {
+      "elapsed_seconds": 692.453,
+      "uncached_input_tokens": 40112,
+      "total_tokens": 311845,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    "repair-1": {
+      "elapsed_seconds": 613.439,
+      "uncached_input_tokens": 85292,
+      "total_tokens": 818569,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    "review-2": {
+      "elapsed_seconds": 306.196,
+      "uncached_input_tokens": 33679,
+      "total_tokens": 377719,
+      "timed_out": false,
+      "exit_code": 0
+    }
+  },
+  "replacement": "A new Critical-only cohort with corrected contract wording.",
+  "recorded_unix": 1793816108.018181
+}

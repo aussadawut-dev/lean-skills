@@ -1,0 +1,1295 @@
+{
+  "levels": [
+    {
+      "level": "medium",
+      "baseline_n": 3,
+      "candidate_n": 3,
+      "baseline": {
+        "measured_seconds": 395.1406666666667,
+        "total_tokens": 287066.6666666667,
+        "input_tokens": 274375.3333333333,
+        "cached_input_tokens": 239957.33333333334,
+        "uncached_input_tokens": 34418,
+        "output_tokens": 12691.333333333334,
+        "uncached_input_plus_output": 47109.333333333336
+      },
+      "statistics": {
+        "measured_seconds": {
+          "n": 3,
+          "requested_n": 3,
+          "unknown_count": 0,
+          "mean": 353.02633333333335,
+          "median": 366.89200000000005,
+          "sample_sd": 30.34635998490319,
+          "min": 318.224,
+          "max": 373.96299999999997,
+          "known_sum": 1059.079
+        },
+        "total_tokens": {
+          "n": 3,
+          "requested_n": 3,
+          "unknown_count": 0,
+          "mean": 227337.66666666666,
+          "median": 217075,
+          "sample_sd": 35962.55211095749,
+          "min": 197622,
+          "max": 267316,
+          "known_sum": 682013
+        },
+        "input_tokens": {
+          "n": 3,
+          "requested_n": 3,
+          "unknown_count": 0,
+          "mean": 216264.33333333334,
+          "median": 206964,
+          "sample_sd": 35227.61530863725,
+          "min": 186620,
+          "max": 255209,
+          "known_sum": 648793
+        },
+        "cached_input_tokens": {
+          "n": 3,
+          "requested_n": 3,
+          "unknown_count": 0,
+          "mean": 189952,
+          "median": 176768,
+          "sample_sd": 28910.153787207706,
+          "min": 169984,
+          "max": 223104,
+          "known_sum": 569856
+        },
+        "uncached_input_tokens": {
+          "n": 3,
+          "requested_n": 3,
+          "unknown_count": 0,
+          "mean": 26312.333333333332,
+          "median": 30196,
+          "sample_sd": 8434.135422989919,
+          "min": 16636,
+          "max": 32105,
+          "known_sum": 78937
+        },
+        "output_tokens": {
+          "n": 3,
+          "requested_n": 3,
+          "unknown_count": 0,
+          "mean": 11073.333333333334,
+          "median": 11002,
+          "sample_sd": 999.9101626312903,
+          "min": 10111,
+          "max": 12107,
+          "known_sum": 33220
+        },
+        "uncached_input_plus_output": {
+          "n": 3,
+          "requested_n": 3,
+          "unknown_count": 0,
+          "mean": 37385.666666666664,
+          "median": 40307,
+          "sample_sd": 8664.583679169666,
+          "min": 27638,
+          "max": 44212,
+          "known_sum": 112157
+        }
+      },
+      "baseline_implementation_seconds": {
+        "n": 3,
+        "requested_n": 3,
+        "unknown_count": 0,
+        "mean": 282.15433333333334,
+        "median": 277.414,
+        "sample_sd": 33.06930377757194,
+        "min": 251.711,
+        "max": 317.338,
+        "known_sum": 846.463
+      },
+      "implementation_seconds": {
+        "n": 3,
+        "requested_n": 3,
+        "unknown_count": 0,
+        "mean": 233.94366666666667,
+        "median": 232.943,
+        "sample_sd": 2.095582098924623,
+        "min": 232.536,
+        "max": 236.352,
+        "known_sum": 701.831
+      },
+      "implementation_time_change_percent": -17.086629894041437,
+      "mean_change_percent": {
+        "measured_seconds": -10.658061011184195,
+        "total_tokens": -20.806665118439394,
+        "input_tokens": -21.179382014418202,
+        "cached_input_tokens": -20.83926031294453,
+        "uncached_input_tokens": -23.55066147558449,
+        "output_tokens": -12.748857488049591,
+        "uncached_input_plus_output": -20.64063738254275
+      },
+      "first_review_issues": [
+        0,
+        0,
+        0
+      ],
+      "posthoc_review_issues": [
+        0,
+        0,
+        0
+      ],
+      "renewed_review_issues": [
+        0,
+        0,
+        0
+      ],
+      "final_review_issues": [
+        0,
+        0,
+        0
+      ],
+      "repair_rounds": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "level": "high",
+      "baseline_n": 3,
+      "candidate_n": 3,
+      "baseline": {
+        "measured_seconds": 464.06733333333335,
+        "total_tokens": 348011.3333333333,
+        "input_tokens": 331446.6666666667,
+        "cached_input_tokens": 275882.6666666667,
+        "uncached_input_tokens": 55564,
+        "output_tokens": 16564.666666666668,
+        "uncached_input_plus_output": 72128.66666666667
+      },
+      "statistics": {
+        "measured_seconds": {
+          "n": 3,
+          "requested_n": 3,
+          "unknown_count": 0,
+          "mean": 415.83633333333336,
+          "median": 422.93600000000004,
+          "sample_sd": 54.095057355855865,
+          "min": 358.542,
+          "max": 466.031,
+          "known_sum": 1247.509
+        },
+        "total_tokens": {
+          "n": 3,
+          "requested_n": 3,
+          "unknown_count": 0,
+          "mean": 285336.6666666667,
+          "median": 260965,
+          "sample_sd": 58022.54612073942,
+          "min": 243475,
+          "max": 351570,
+          "known_sum": 856010
+        },
+        "input_tokens": {
+          "n": 3,
+          "requested_n": 3,
+          "unknown_count": 0,
+          "mean": 270648.3333333333,
+          "median": 245391,
+          "sample_sd": 57537.85874824795,
+          "min": 230059,
+          "max": 336495,
+          "known_sum": 811945
+        },
+        "cached_input_tokens": {
+          "n": 3,
+          "requested_n": 3,
+          "unknown_count": 0,
+          "mean": 224298.66666666666,
+          "median": 188160,
+          "sample_sd": 64711.60654267002,
+          "min": 185728,
+          "max": 299008,
+          "known_sum": 672896
+        },
+        "uncached_input_tokens": {
+          "n": 3,
+          "requested_n": 3,
+          "unknown_count": 0,
+          "mean": 46349.666666666664,
+          "median": 44331,
+          "sample_sd": 10025.599499946791,
+          "min": 37487,
+          "max": 57231,
+          "known_sum": 139049
+        },
+        "output_tokens": {
+          "n": 3,
+          "requested_n": 3,
+          "unknown_count": 0,
+          "mean": 14688.333333333334,
+          "median": 15075,
+          "sample_sd": 1129.7673801864405,
+          "min": 13416,
+          "max": 15574,
+          "known_sum": 44065
+        },
+        "uncached_input_plus_output": {
+          "n": 3,
+          "requested_n": 3,
+          "unknown_count": 0,
+          "mean": 61038,
+          "median": 57747,
+          "sample_sd": 10515.121159549233,
+          "min": 52562,
+          "max": 72805,
+          "known_sum": 183114
+        }
+      },
+      "baseline_implementation_seconds": {
+        "n": 3,
+        "requested_n": 3,
+        "unknown_count": 0,
+        "mean": 334.75966666666665,
+        "median": 361.706,
+        "sample_sd": 56.16685562084932,
+        "min": 270.197,
+        "max": 372.376,
+        "known_sum": 1004.279
+      },
+      "implementation_seconds": {
+        "n": 3,
+        "requested_n": 3,
+        "unknown_count": 0,
+        "mean": 289.46566666666666,
+        "median": 298.862,
+        "sample_sd": 41.76099699879463,
+        "min": 243.807,
+        "max": 325.728,
+        "known_sum": 868.397
+      },
+      "implementation_time_change_percent": -13.530303829911805,
+      "mean_change_percent": {
+        "measured_seconds": -10.393103874294107,
+        "total_tokens": -18.009375173605445,
+        "input_tokens": -18.343323209365014,
+        "cached_input_tokens": -18.697803897309008,
+        "uncached_input_tokens": -16.58327934154009,
+        "output_tokens": -11.327323218094742,
+        "uncached_input_plus_output": -15.376225818675893
+      },
+      "first_review_issues": [
+        0,
+        0,
+        0
+      ],
+      "posthoc_review_issues": [
+        0,
+        0,
+        0
+      ],
+      "renewed_review_issues": [
+        0,
+        0,
+        0
+      ],
+      "final_review_issues": [
+        0,
+        0,
+        0
+      ],
+      "repair_rounds": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "level": "critical",
+      "baseline_n": 3,
+      "candidate_n": 3,
+      "baseline": {
+        "measured_seconds": 1853.8626666666667,
+        "total_tokens": 1746658,
+        "input_tokens": 1678513.6666666667,
+        "cached_input_tokens": 1480576,
+        "uncached_input_tokens": 197937.66666666666,
+        "output_tokens": 68144.33333333333,
+        "uncached_input_plus_output": 266082
+      },
+      "statistics": {
+        "measured_seconds": {
+          "n": 3,
+          "requested_n": 3,
+          "unknown_count": 0,
+          "mean": 2883.969,
+          "median": 2951.232,
+          "sample_sd": 180.33855463821365,
+          "min": 2679.666,
+          "max": 3021.009,
+          "known_sum": 8651.907
+        },
+        "total_tokens": {
+          "n": 0,
+          "requested_n": 3,
+          "unknown_count": 3,
+          "mean": null,
+          "median": null,
+          "sample_sd": null,
+          "min": null,
+          "max": null,
+          "known_sum": 0
+        },
+        "input_tokens": {
+          "n": 0,
+          "requested_n": 3,
+          "unknown_count": 3,
+          "mean": null,
+          "median": null,
+          "sample_sd": null,
+          "min": null,
+          "max": null,
+          "known_sum": 0
+        },
+        "cached_input_tokens": {
+          "n": 0,
+          "requested_n": 3,
+          "unknown_count": 3,
+          "mean": null,
+          "median": null,
+          "sample_sd": null,
+          "min": null,
+          "max": null,
+          "known_sum": 0
+        },
+        "uncached_input_tokens": {
+          "n": 0,
+          "requested_n": 3,
+          "unknown_count": 3,
+          "mean": null,
+          "median": null,
+          "sample_sd": null,
+          "min": null,
+          "max": null,
+          "known_sum": 0
+        },
+        "output_tokens": {
+          "n": 0,
+          "requested_n": 3,
+          "unknown_count": 3,
+          "mean": null,
+          "median": null,
+          "sample_sd": null,
+          "min": null,
+          "max": null,
+          "known_sum": 0
+        },
+        "uncached_input_plus_output": {
+          "n": 0,
+          "requested_n": 3,
+          "unknown_count": 3,
+          "mean": null,
+          "median": null,
+          "sample_sd": null,
+          "min": null,
+          "max": null,
+          "known_sum": 0
+        }
+      },
+      "baseline_implementation_seconds": {
+        "n": 3,
+        "requested_n": 3,
+        "unknown_count": 0,
+        "mean": 408.413,
+        "median": 378.51,
+        "sample_sd": 74.57718209345268,
+        "min": 353.428,
+        "max": 493.301,
+        "known_sum": 1225.239
+      },
+      "implementation_seconds": {
+        "n": 3,
+        "requested_n": 3,
+        "unknown_count": 0,
+        "mean": 866.6853333333333,
+        "median": 900.016,
+        "sample_sd": 57.7572569841516,
+        "min": 799.993,
+        "max": 900.047,
+        "known_sum": 2600.056
+      },
+      "implementation_time_change_percent": 112.20806716077436,
+      "mean_change_percent": {
+        "measured_seconds": 55.56540685861664,
+        "total_tokens": null,
+        "input_tokens": null,
+        "cached_input_tokens": null,
+        "uncached_input_tokens": null,
+        "output_tokens": null,
+        "uncached_input_plus_output": null
+      },
+      "first_review_issues": [
+        1,
+        1,
+        0
+      ],
+      "posthoc_review_issues": [
+        0,
+        0,
+        0
+      ],
+      "renewed_review_issues": [
+        2,
+        2,
+        1
+      ],
+      "final_review_issues": [
+        1,
+        1,
+        0
+      ],
+      "repair_rounds": [
+        2,
+        2,
+        2
+      ]
+    }
+  ],
+  "totals": {
+    "actual_nine_trial_consumption": {
+      "measured_seconds": 10958.495,
+      "total_tokens": null,
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "uncached_input_tokens": null,
+      "output_tokens": null,
+      "uncached_input_plus_output": null
+    },
+    "known_consumption_lower_bound": {
+      "measured_seconds": 10958.495,
+      "total_tokens": 5787923,
+      "input_tokens": 5560576,
+      "cached_input_tokens": 4904064,
+      "uncached_input_tokens": 656512,
+      "output_tokens": 227347,
+      "uncached_input_plus_output": 883859
+    },
+    "baseline_actual_consumption": {
+      "measured_seconds": 8139.2119999999995,
+      "total_tokens": 7145208,
+      "input_tokens": 6853007,
+      "cached_input_tokens": 5989248,
+      "uncached_input_tokens": 863759,
+      "output_tokens": 292201,
+      "uncached_input_plus_output": 1155960
+    },
+    "baseline_one_of_each_level": {
+      "measured_seconds": 2713.0706666666665,
+      "total_tokens": 2381736.0,
+      "input_tokens": 2284335.666666667,
+      "cached_input_tokens": 1996416.0,
+      "uncached_input_tokens": 287919.6666666666,
+      "output_tokens": 97400.33333333333,
+      "uncached_input_plus_output": 385320.0
+    },
+    "candidate_sum_of_level_means": {
+      "measured_seconds": 3652.831666666667,
+      "total_tokens": null,
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "uncached_input_tokens": null,
+      "output_tokens": null,
+      "uncached_input_plus_output": null
+    },
+    "normalized_change_percent": {
+      "measured_seconds": 34.63827947963514,
+      "total_tokens": null,
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "uncached_input_tokens": null,
+      "output_tokens": null,
+      "uncached_input_plus_output": null
+    }
+  },
+  "trials": [
+    {
+      "round": 1,
+      "level": "medium",
+      "status": "DONE",
+      "measured_seconds": 318.224,
+      "total_tokens": 217075,
+      "input_tokens": 206964,
+      "cached_input_tokens": 176768,
+      "uncached_input_tokens": 30196,
+      "output_tokens": 10111,
+      "uncached_input_plus_output": 40307,
+      "quality_passed": true,
+      "execution_complete": true,
+      "known_consumption": {
+        "measured_seconds": 318.224,
+        "total_tokens": 217075,
+        "input_tokens": 206964,
+        "cached_input_tokens": 176768,
+        "uncached_input_tokens": 30196,
+        "output_tokens": 10111,
+        "uncached_input_plus_output": 40307
+      },
+      "incomplete_phases": [],
+      "phase_count": 2,
+      "repair_rounds": 0,
+      "first_review_issues": 0,
+      "final_review_issues": 0,
+      "posthoc_review_issues": 0,
+      "review_issue_history": [
+        0
+      ],
+      "renewed_review_issues": 0,
+      "coordinator_issue_history": [
+        0
+      ],
+      "final_coordinator_findings": 0,
+      "final_contract_categories": 4,
+      "final_contract_issues": 0,
+      "changed_protected_files": 0,
+      "final_added_probe_failed_cases": 0,
+      "posthoc_probes": {},
+      "final_posthoc_probe_failed_cases": 0,
+      "final_original_supplemental_issues": 0,
+      "workflow_span_seconds": 318.5812427997589,
+      "first_pass_seconds": 318.224,
+      "implementation_seconds": 232.536,
+      "implementation_uncached_input_tokens": 11565,
+      "first_pass_uncached_input_plus_output": 40307,
+      "candidate_tests_on_historical_exit": 0,
+      "candidate_tests_on_historical_exits": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "round": 1,
+      "level": "high",
+      "status": "DONE",
+      "measured_seconds": 466.031,
+      "total_tokens": 260965,
+      "input_tokens": 245391,
+      "cached_input_tokens": 188160,
+      "uncached_input_tokens": 57231,
+      "output_tokens": 15574,
+      "uncached_input_plus_output": 72805,
+      "quality_passed": true,
+      "execution_complete": true,
+      "known_consumption": {
+        "measured_seconds": 466.031,
+        "total_tokens": 260965,
+        "input_tokens": 245391,
+        "cached_input_tokens": 188160,
+        "uncached_input_tokens": 57231,
+        "output_tokens": 15574,
+        "uncached_input_plus_output": 72805
+      },
+      "incomplete_phases": [],
+      "phase_count": 2,
+      "repair_rounds": 0,
+      "first_review_issues": 0,
+      "final_review_issues": 0,
+      "posthoc_review_issues": 0,
+      "review_issue_history": [
+        0
+      ],
+      "renewed_review_issues": 0,
+      "coordinator_issue_history": [
+        0
+      ],
+      "final_coordinator_findings": 0,
+      "final_contract_categories": 6,
+      "final_contract_issues": 0,
+      "changed_protected_files": 0,
+      "final_added_probe_failed_cases": 0,
+      "posthoc_probes": {},
+      "final_posthoc_probe_failed_cases": 0,
+      "final_original_supplemental_issues": 0,
+      "workflow_span_seconds": 466.161808013916,
+      "first_pass_seconds": 466.031,
+      "implementation_seconds": 325.728,
+      "implementation_uncached_input_tokens": 36427,
+      "first_pass_uncached_input_plus_output": 72805,
+      "candidate_tests_on_historical_exit": 0,
+      "candidate_tests_on_historical_exits": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "round": 1,
+      "level": "critical",
+      "status": "FAILED",
+      "measured_seconds": 2679.666,
+      "total_tokens": null,
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "uncached_input_tokens": null,
+      "output_tokens": null,
+      "uncached_input_plus_output": null,
+      "quality_passed": false,
+      "execution_complete": false,
+      "known_consumption": {
+        "measured_seconds": 2679.666,
+        "total_tokens": 1512321,
+        "input_tokens": 1462127,
+        "cached_input_tokens": 1286656,
+        "uncached_input_tokens": 175471,
+        "output_tokens": 50194,
+        "uncached_input_plus_output": 225665
+      },
+      "incomplete_phases": [
+        "implementation"
+      ],
+      "phase_count": 6,
+      "repair_rounds": 2,
+      "first_review_issues": 1,
+      "final_review_issues": 1,
+      "posthoc_review_issues": 0,
+      "review_issue_history": [
+        1,
+        1,
+        1
+      ],
+      "renewed_review_issues": 2,
+      "coordinator_issue_history": [
+        0,
+        1,
+        0
+      ],
+      "final_coordinator_findings": 0,
+      "final_contract_categories": 9,
+      "final_contract_issues": 0,
+      "changed_protected_files": 0,
+      "final_added_probe_failed_cases": 0,
+      "posthoc_probes": {
+        "frame-followup": {
+          "failed_cases": 2,
+          "executed_cases": 6,
+          "finding_groups": {
+            "identical_replacement": false,
+            "replacement_rowid_swap": false,
+            "unique_victim_preservation": true
+          }
+        },
+        "trigger-compatibility": {
+          "failed_cases": 0,
+          "executed_cases": 28,
+          "finding_groups": {
+            "benign_keyword_trigger": false,
+            "benign_unicode_trigger": false,
+            "quoted_unicode_trigger": false,
+            "values_with_when": false,
+            "with_with_when": false,
+            "unique_audit_replace": false,
+            "unique_audit_ignore": false
+          }
+        }
+      },
+      "final_posthoc_probe_failed_cases": 2,
+      "final_original_supplemental_issues": 0,
+      "workflow_span_seconds": 3945.870012998581,
+      "first_pass_seconds": 1193.341,
+      "implementation_seconds": 900.016,
+      "implementation_uncached_input_tokens": null,
+      "first_pass_uncached_input_plus_output": null,
+      "candidate_tests_on_historical_exit": 1,
+      "candidate_tests_on_historical_exits": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "round": 2,
+      "level": "medium",
+      "status": "DONE",
+      "measured_seconds": 373.96299999999997,
+      "total_tokens": 197622,
+      "input_tokens": 186620,
+      "cached_input_tokens": 169984,
+      "uncached_input_tokens": 16636,
+      "output_tokens": 11002,
+      "uncached_input_plus_output": 27638,
+      "quality_passed": true,
+      "execution_complete": true,
+      "known_consumption": {
+        "measured_seconds": 373.96299999999997,
+        "total_tokens": 197622,
+        "input_tokens": 186620,
+        "cached_input_tokens": 169984,
+        "uncached_input_tokens": 16636,
+        "output_tokens": 11002,
+        "uncached_input_plus_output": 27638
+      },
+      "incomplete_phases": [],
+      "phase_count": 2,
+      "repair_rounds": 0,
+      "first_review_issues": 0,
+      "final_review_issues": 0,
+      "posthoc_review_issues": 0,
+      "review_issue_history": [
+        0
+      ],
+      "renewed_review_issues": 0,
+      "coordinator_issue_history": [
+        0
+      ],
+      "final_coordinator_findings": 0,
+      "final_contract_categories": 4,
+      "final_contract_issues": 0,
+      "changed_protected_files": 0,
+      "final_added_probe_failed_cases": 0,
+      "posthoc_probes": {},
+      "final_posthoc_probe_failed_cases": 0,
+      "final_original_supplemental_issues": 0,
+      "workflow_span_seconds": 374.30332827568054,
+      "first_pass_seconds": 373.96299999999997,
+      "implementation_seconds": 236.352,
+      "implementation_uncached_input_tokens": 8711,
+      "first_pass_uncached_input_plus_output": 27638,
+      "candidate_tests_on_historical_exit": 0,
+      "candidate_tests_on_historical_exits": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "round": 2,
+      "level": "high",
+      "status": "DONE",
+      "measured_seconds": 422.93600000000004,
+      "total_tokens": 351570,
+      "input_tokens": 336495,
+      "cached_input_tokens": 299008,
+      "uncached_input_tokens": 37487,
+      "output_tokens": 15075,
+      "uncached_input_plus_output": 52562,
+      "quality_passed": true,
+      "execution_complete": true,
+      "known_consumption": {
+        "measured_seconds": 422.93600000000004,
+        "total_tokens": 351570,
+        "input_tokens": 336495,
+        "cached_input_tokens": 299008,
+        "uncached_input_tokens": 37487,
+        "output_tokens": 15075,
+        "uncached_input_plus_output": 52562
+      },
+      "incomplete_phases": [],
+      "phase_count": 2,
+      "repair_rounds": 0,
+      "first_review_issues": 0,
+      "final_review_issues": 0,
+      "posthoc_review_issues": 0,
+      "review_issue_history": [
+        0
+      ],
+      "renewed_review_issues": 0,
+      "coordinator_issue_history": [
+        0
+      ],
+      "final_coordinator_findings": 0,
+      "final_contract_categories": 6,
+      "final_contract_issues": 0,
+      "changed_protected_files": 0,
+      "final_added_probe_failed_cases": 0,
+      "posthoc_probes": {},
+      "final_posthoc_probe_failed_cases": 0,
+      "final_original_supplemental_issues": 0,
+      "workflow_span_seconds": 423.0641748905182,
+      "first_pass_seconds": 422.93600000000004,
+      "implementation_seconds": 298.862,
+      "implementation_uncached_input_tokens": 23689,
+      "first_pass_uncached_input_plus_output": 52562,
+      "candidate_tests_on_historical_exit": 0,
+      "candidate_tests_on_historical_exits": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "round": 2,
+      "level": "critical",
+      "status": "FAILED",
+      "measured_seconds": 3021.009,
+      "total_tokens": null,
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "uncached_input_tokens": null,
+      "output_tokens": null,
+      "uncached_input_plus_output": null,
+      "quality_passed": false,
+      "execution_complete": false,
+      "known_consumption": {
+        "measured_seconds": 3021.009,
+        "total_tokens": 1630082,
+        "input_tokens": 1563302,
+        "cached_input_tokens": 1413632,
+        "uncached_input_tokens": 149670,
+        "output_tokens": 66780,
+        "uncached_input_plus_output": 216450
+      },
+      "incomplete_phases": [
+        "repair-1"
+      ],
+      "phase_count": 6,
+      "repair_rounds": 2,
+      "first_review_issues": 1,
+      "final_review_issues": 1,
+      "posthoc_review_issues": 0,
+      "review_issue_history": [
+        1,
+        1,
+        1
+      ],
+      "renewed_review_issues": 2,
+      "coordinator_issue_history": [
+        1,
+        0,
+        0
+      ],
+      "final_coordinator_findings": 0,
+      "final_contract_categories": 9,
+      "final_contract_issues": 0,
+      "changed_protected_files": 0,
+      "final_added_probe_failed_cases": 0,
+      "posthoc_probes": {
+        "frame-followup": {
+          "failed_cases": 0,
+          "executed_cases": 6,
+          "finding_groups": {
+            "identical_replacement": false,
+            "replacement_rowid_swap": false,
+            "unique_victim_preservation": false
+          }
+        },
+        "trigger-compatibility": {
+          "failed_cases": 4,
+          "executed_cases": 28,
+          "finding_groups": {
+            "benign_keyword_trigger": false,
+            "benign_unicode_trigger": true,
+            "quoted_unicode_trigger": false,
+            "values_with_when": false,
+            "with_with_when": false,
+            "unique_audit_replace": false,
+            "unique_audit_ignore": false
+          }
+        }
+      },
+      "final_posthoc_probe_failed_cases": 4,
+      "final_original_supplemental_issues": 0,
+      "workflow_span_seconds": 3812.7603759765625,
+      "first_pass_seconds": 1142.693,
+      "implementation_seconds": 799.993,
+      "implementation_uncached_input_tokens": 33552,
+      "first_pass_uncached_input_plus_output": 95419,
+      "candidate_tests_on_historical_exit": 1,
+      "candidate_tests_on_historical_exits": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "round": 3,
+      "level": "medium",
+      "status": "DONE",
+      "measured_seconds": 366.89200000000005,
+      "total_tokens": 267316,
+      "input_tokens": 255209,
+      "cached_input_tokens": 223104,
+      "uncached_input_tokens": 32105,
+      "output_tokens": 12107,
+      "uncached_input_plus_output": 44212,
+      "quality_passed": true,
+      "execution_complete": true,
+      "known_consumption": {
+        "measured_seconds": 366.89200000000005,
+        "total_tokens": 267316,
+        "input_tokens": 255209,
+        "cached_input_tokens": 223104,
+        "uncached_input_tokens": 32105,
+        "output_tokens": 12107,
+        "uncached_input_plus_output": 44212
+      },
+      "incomplete_phases": [],
+      "phase_count": 2,
+      "repair_rounds": 0,
+      "first_review_issues": 0,
+      "final_review_issues": 0,
+      "posthoc_review_issues": 0,
+      "review_issue_history": [
+        0
+      ],
+      "renewed_review_issues": 0,
+      "coordinator_issue_history": [
+        0
+      ],
+      "final_coordinator_findings": 0,
+      "final_contract_categories": 4,
+      "final_contract_issues": 0,
+      "changed_protected_files": 0,
+      "final_added_probe_failed_cases": 0,
+      "posthoc_probes": {},
+      "final_posthoc_probe_failed_cases": 0,
+      "final_original_supplemental_issues": 0,
+      "workflow_span_seconds": 367.1631519794464,
+      "first_pass_seconds": 366.89200000000005,
+      "implementation_seconds": 232.943,
+      "implementation_uncached_input_tokens": 18766,
+      "first_pass_uncached_input_plus_output": 44212,
+      "candidate_tests_on_historical_exit": 0,
+      "candidate_tests_on_historical_exits": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "round": 3,
+      "level": "high",
+      "status": "DONE",
+      "measured_seconds": 358.542,
+      "total_tokens": 243475,
+      "input_tokens": 230059,
+      "cached_input_tokens": 185728,
+      "uncached_input_tokens": 44331,
+      "output_tokens": 13416,
+      "uncached_input_plus_output": 57747,
+      "quality_passed": true,
+      "execution_complete": true,
+      "known_consumption": {
+        "measured_seconds": 358.542,
+        "total_tokens": 243475,
+        "input_tokens": 230059,
+        "cached_input_tokens": 185728,
+        "uncached_input_tokens": 44331,
+        "output_tokens": 13416,
+        "uncached_input_plus_output": 57747
+      },
+      "incomplete_phases": [],
+      "phase_count": 2,
+      "repair_rounds": 0,
+      "first_review_issues": 0,
+      "final_review_issues": 0,
+      "posthoc_review_issues": 0,
+      "review_issue_history": [
+        0
+      ],
+      "renewed_review_issues": 0,
+      "coordinator_issue_history": [
+        0
+      ],
+      "final_coordinator_findings": 0,
+      "final_contract_categories": 6,
+      "final_contract_issues": 0,
+      "changed_protected_files": 0,
+      "final_added_probe_failed_cases": 0,
+      "posthoc_probes": {},
+      "final_posthoc_probe_failed_cases": 0,
+      "final_original_supplemental_issues": 0,
+      "workflow_span_seconds": 358.66384863853455,
+      "first_pass_seconds": 358.542,
+      "implementation_seconds": 243.807,
+      "implementation_uncached_input_tokens": 20785,
+      "first_pass_uncached_input_plus_output": 57747,
+      "candidate_tests_on_historical_exit": 0,
+      "candidate_tests_on_historical_exits": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "round": 3,
+      "level": "critical",
+      "status": "TIMEOUT",
+      "measured_seconds": 2951.232,
+      "total_tokens": null,
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "uncached_input_tokens": null,
+      "output_tokens": null,
+      "uncached_input_plus_output": null,
+      "quality_passed": true,
+      "execution_complete": false,
+      "known_consumption": {
+        "measured_seconds": 2951.232,
+        "total_tokens": 1107497,
+        "input_tokens": 1074409,
+        "cached_input_tokens": 961024,
+        "uncached_input_tokens": 113385,
+        "output_tokens": 33088,
+        "uncached_input_plus_output": 146473
+      },
+      "incomplete_phases": [
+        "implementation",
+        "repair-1"
+      ],
+      "phase_count": 6,
+      "repair_rounds": 2,
+      "first_review_issues": 0,
+      "final_review_issues": 0,
+      "posthoc_review_issues": 0,
+      "review_issue_history": [
+        0,
+        1,
+        0
+      ],
+      "renewed_review_issues": 1,
+      "coordinator_issue_history": [
+        1,
+        0,
+        0
+      ],
+      "final_coordinator_findings": 0,
+      "final_contract_categories": 9,
+      "final_contract_issues": 0,
+      "changed_protected_files": 0,
+      "final_added_probe_failed_cases": 0,
+      "posthoc_probes": {
+        "frame-followup": {
+          "failed_cases": 0,
+          "executed_cases": 6,
+          "finding_groups": {
+            "identical_replacement": false,
+            "replacement_rowid_swap": false,
+            "unique_victim_preservation": false
+          }
+        },
+        "trigger-compatibility": {
+          "failed_cases": 0,
+          "executed_cases": 28,
+          "finding_groups": {
+            "benign_keyword_trigger": false,
+            "benign_unicode_trigger": false,
+            "quoted_unicode_trigger": false,
+            "values_with_when": false,
+            "with_with_when": false,
+            "unique_audit_replace": false,
+            "unique_audit_ignore": false
+          }
+        }
+      },
+      "final_posthoc_probe_failed_cases": 0,
+      "final_original_supplemental_issues": 0,
+      "workflow_span_seconds": 3087.4606609344482,
+      "first_pass_seconds": 1245.144,
+      "implementation_seconds": 900.047,
+      "implementation_uncached_input_tokens": null,
+      "first_pass_uncached_input_plus_output": null,
+      "candidate_tests_on_historical_exit": 1,
+      "candidate_tests_on_historical_exits": [
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "telemetry": {
+    "status": "INCOMPLETE",
+    "phase_count": 30,
+    "known_usage_phases": 26,
+    "unknown_usage_phases": [
+      {
+        "round": 1,
+        "level": "critical",
+        "phase": "implementation",
+        "measured_seconds": 900.016
+      },
+      {
+        "round": 2,
+        "level": "critical",
+        "phase": "repair-1",
+        "measured_seconds": 900.199
+      },
+      {
+        "round": 3,
+        "level": "critical",
+        "phase": "repair-1",
+        "measured_seconds": 900.03
+      },
+      {
+        "round": 3,
+        "level": "critical",
+        "phase": "implementation",
+        "measured_seconds": 900.047
+      }
+    ]
+  },
+  "optimization_target": {
+    "level": "medium",
+    "checks": {
+      "measured_seconds": true,
+      "uncached_input_tokens": true,
+      "uncached_input_plus_output": true,
+      "all_trial_quality_passed": false,
+      "all_measurements_complete": false,
+      "medium_implementation_time_reduced": true
+    },
+    "met_in_observed_sample": false,
+    "interpretation": "Descriptive new n=3 versus historical n=3; no causal or statistical guarantee."
+  },
+  "quality": {
+    "status": "FAILED",
+    "passed_trials": 7,
+    "failed_trials": [
+      "round-1/critical",
+      "round-2/critical"
+    ],
+    "incomplete_execution_trials": [
+      "round-1/critical",
+      "round-2/critical",
+      "round-3/critical"
+    ],
+    "fully_completed_trials": 6,
+    "final_contract_issues": 0,
+    "final_independent_findings": 2,
+    "final_coordinator_findings": 0,
+    "final_original_supplemental_issues": 0,
+    "final_added_probe_failed_cases": 0,
+    "final_posthoc_probe_failed_cases": 6
+  },
+  "quality_followup": null,
+  "posthoc_followup": {
+    "protocol": "followup-protocol.json",
+    "probes": {
+      "frame-followup": {
+        "executed_cases_per_trial": 6,
+        "baseline_failed_cases": [
+          2,
+          3,
+          4
+        ],
+        "candidate_failed_cases": [
+          2,
+          0,
+          0
+        ],
+        "baseline_finding_groups": [
+          {
+            "identical_replacement": false,
+            "replacement_rowid_swap": false,
+            "unique_victim_preservation": true
+          },
+          {
+            "identical_replacement": true,
+            "replacement_rowid_swap": true,
+            "unique_victim_preservation": false
+          },
+          {
+            "identical_replacement": true,
+            "replacement_rowid_swap": true,
+            "unique_victim_preservation": false
+          }
+        ],
+        "candidate_finding_groups": [
+          {
+            "identical_replacement": false,
+            "replacement_rowid_swap": false,
+            "unique_victim_preservation": true
+          },
+          {
+            "identical_replacement": false,
+            "replacement_rowid_swap": false,
+            "unique_victim_preservation": false
+          },
+          {
+            "identical_replacement": false,
+            "replacement_rowid_swap": false,
+            "unique_victim_preservation": false
+          }
+        ]
+      },
+      "trigger-compatibility": {
+        "executed_cases_per_trial": 28,
+        "baseline_failed_cases": [
+          0,
+          0,
+          0
+        ],
+        "candidate_failed_cases": [
+          0,
+          4,
+          0
+        ],
+        "baseline_finding_groups": [
+          {
+            "benign_keyword_trigger": false,
+            "benign_unicode_trigger": false,
+            "quoted_unicode_trigger": false,
+            "values_with_when": false,
+            "with_with_when": false,
+            "unique_audit_replace": false,
+            "unique_audit_ignore": false
+          },
+          {
+            "benign_keyword_trigger": false,
+            "benign_unicode_trigger": false,
+            "quoted_unicode_trigger": false,
+            "values_with_when": false,
+            "with_with_when": false,
+            "unique_audit_replace": false,
+            "unique_audit_ignore": false
+          },
+          {
+            "benign_keyword_trigger": false,
+            "benign_unicode_trigger": false,
+            "quoted_unicode_trigger": false,
+            "values_with_when": false,
+            "with_with_when": false,
+            "unique_audit_replace": false,
+            "unique_audit_ignore": false
+          }
+        ],
+        "candidate_finding_groups": [
+          {
+            "benign_keyword_trigger": false,
+            "benign_unicode_trigger": false,
+            "quoted_unicode_trigger": false,
+            "values_with_when": false,
+            "with_with_when": false,
+            "unique_audit_replace": false,
+            "unique_audit_ignore": false
+          },
+          {
+            "benign_keyword_trigger": false,
+            "benign_unicode_trigger": true,
+            "quoted_unicode_trigger": false,
+            "values_with_when": false,
+            "with_with_when": false,
+            "unique_audit_replace": false,
+            "unique_audit_ignore": false
+          },
+          {
+            "benign_keyword_trigger": false,
+            "benign_unicode_trigger": false,
+            "quoted_unicode_trigger": false,
+            "values_with_when": false,
+            "with_with_when": false,
+            "unique_audit_replace": false,
+            "unique_audit_ignore": false
+          }
+        ]
+      }
+    }
+  },
+  "baseline_quality": {
+    "status": "FAILED",
+    "passed_trials": 7,
+    "failed_trials": [
+      "round-1/critical",
+      "round-3/critical"
+    ],
+    "final_contract_issues": 0,
+    "final_independent_findings": 2,
+    "final_original_supplemental_issues": 0,
+    "final_added_probe_failed_cases": 3
+  }
+}

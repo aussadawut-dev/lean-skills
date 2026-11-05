@@ -1,0 +1,328 @@
+{
+  "workspace": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-schema-skill-kfeIef/cohort/round-1/critical/workspace",
+  "source_sha256": "d48d8543b767ac5e70ba28f462c81ee560e1d99ef171860712b5afd5ec3d77ef",
+  "finding_groups": {
+    "audit_history_preservation": true,
+    "valid_rowid_relocation": false
+  },
+  "issue_count": 1,
+  "failed_cases": 1,
+  "cases": [
+    {
+      "case": "history_rewritten",
+      "pass": false,
+      "valid_transfer_expected": false,
+      "exception": null,
+      "receipt": {
+        "tenant": "a",
+        "key": "new",
+        "source": "source",
+        "target": "target",
+        "amount": 10
+      },
+      "before": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            100
+          ],
+          [
+            "a",
+            "target",
+            0
+          ],
+          [
+            "b",
+            "source",
+            77
+          ],
+          [
+            "b",
+            "target",
+            0
+          ]
+        ],
+        "transfers": [
+          [
+            "b",
+            "old",
+            "source",
+            "target",
+            2
+          ]
+        ],
+        "audit": [
+          [
+            "b",
+            "old",
+            "source",
+            "target",
+            2
+          ]
+        ]
+      },
+      "after": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            90
+          ],
+          [
+            "a",
+            "target",
+            10
+          ],
+          [
+            "b",
+            "source",
+            77
+          ],
+          [
+            "b",
+            "target",
+            0
+          ]
+        ],
+        "transfers": [
+          [
+            "b",
+            "old",
+            "source",
+            "target",
+            2
+          ],
+          [
+            "a",
+            "new",
+            "source",
+            "target",
+            10
+          ]
+        ],
+        "audit": [
+          [
+            "b",
+            "old",
+            "source",
+            "target",
+            2
+          ],
+          [
+            "a",
+            "new",
+            "source",
+            "target",
+            10
+          ]
+        ]
+      },
+      "trigger_preserved": true
+    },
+    {
+      "case": "history_deleted_duplicate_added",
+      "pass": true,
+      "valid_transfer_expected": false,
+      "exception": "ValueError",
+      "receipt": null,
+      "before": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            100
+          ],
+          [
+            "a",
+            "target",
+            0
+          ],
+          [
+            "b",
+            "source",
+            77
+          ],
+          [
+            "b",
+            "target",
+            0
+          ]
+        ],
+        "transfers": [
+          [
+            "b",
+            "old",
+            "source",
+            "target",
+            2
+          ]
+        ],
+        "audit": [
+          [
+            "b",
+            "old",
+            "source",
+            "target",
+            2
+          ]
+        ]
+      },
+      "after": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            100
+          ],
+          [
+            "a",
+            "target",
+            0
+          ],
+          [
+            "b",
+            "source",
+            77
+          ],
+          [
+            "b",
+            "target",
+            0
+          ]
+        ],
+        "transfers": [
+          [
+            "b",
+            "old",
+            "source",
+            "target",
+            2
+          ]
+        ],
+        "audit": [
+          [
+            "b",
+            "old",
+            "source",
+            "target",
+            2
+          ]
+        ]
+      },
+      "trigger_preserved": true
+    },
+    {
+      "case": "valid_rowid_relocation",
+      "pass": true,
+      "valid_transfer_expected": true,
+      "exception": null,
+      "receipt": {
+        "tenant": "a",
+        "key": "new",
+        "source": "source",
+        "target": "target",
+        "amount": 10
+      },
+      "before": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            100
+          ],
+          [
+            "a",
+            "target",
+            0
+          ],
+          [
+            "b",
+            "source",
+            77
+          ],
+          [
+            "b",
+            "target",
+            0
+          ]
+        ],
+        "transfers": [
+          [
+            "b",
+            "old",
+            "source",
+            "target",
+            2
+          ]
+        ],
+        "audit": [
+          [
+            "b",
+            "old",
+            "source",
+            "target",
+            2
+          ]
+        ]
+      },
+      "after": {
+        "accounts": [
+          [
+            "a",
+            "source",
+            90
+          ],
+          [
+            "a",
+            "target",
+            10
+          ],
+          [
+            "b",
+            "source",
+            77
+          ],
+          [
+            "b",
+            "target",
+            0
+          ]
+        ],
+        "transfers": [
+          [
+            "b",
+            "old",
+            "source",
+            "target",
+            2
+          ],
+          [
+            "a",
+            "new",
+            "source",
+            "target",
+            10
+          ]
+        ],
+        "audit": [
+          [
+            "b",
+            "old",
+            "source",
+            "target",
+            2
+          ],
+          [
+            "a",
+            "new",
+            "source",
+            "target",
+            10
+          ]
+        ]
+      },
+      "trigger_preserved": true
+    }
+  ]
+}

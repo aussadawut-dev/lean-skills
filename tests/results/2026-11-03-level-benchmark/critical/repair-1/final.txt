@@ -1,0 +1,7 @@
+F1 is repaired in [vault.py](/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-level-benchmark-gbhk7t9w/cases/critical/workspace/vault.py:71). Every debit, credit, receipt and audit write must affect exactly one row; otherwise a storage error rolls back the transaction. Triggers remain intact.
+
+- Reproduced all four suppression failures before repair.
+- Four new regressions now pass through real API and CLI calls, checking retries, rollback, replay and trigger preservation.
+- `TMPDIR="$PWD" python3 -B -m unittest discover -v`: **33 tests passed**, including concurrency and exactly-once behavior.
+
+Final acceptance remains **BLOCKED pending the coordinator’s renewed independent review**. [lean-run](/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-level-benchmark-gbhk7t9w/cases/critical/workspace/.agents/skills/lean-run/SKILL.md) requires: “HIGH requires a fresh independent reviewer.” Task-wide REWORK count remains **1**.

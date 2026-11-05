@@ -1,0 +1,133 @@
+test_valid_transfer (test_public.PublicTests.test_valid_transfer) ... ok
+test_audit_failure_rolls_back_every_effect (test_regression.TransferRegressionTests.test_audit_failure_rolls_back_every_effect) ... ok
+test_balance_is_scoped_to_tenant (test_regression.TransferRegressionTests.test_balance_is_scoped_to_tenant) ... ok
+test_cli_hides_storage_errors (test_regression.TransferRegressionTests.test_cli_hides_storage_errors) ... ok
+test_cli_integrated_journey_across_processes (test_regression.TransferRegressionTests.test_cli_integrated_journey_across_processes) ... ok
+test_cli_missing_account_has_generic_json_error (test_regression.TransferRegressionTests.test_cli_missing_account_has_generic_json_error) ... ok
+test_cli_rejects_malformed_payloads_and_arguments_without_writes (test_regression.TransferRegressionTests.test_cli_rejects_malformed_payloads_and_arguments_without_writes) ... ok
+test_failures_at_each_write_boundary_roll_back_and_allow_valid_control (test_regression.TransferRegressionTests.test_failures_at_each_write_boundary_roll_back_and_allow_valid_control) ... ok
+test_foreign_malformed_data_does_not_affect_reads_or_writes (test_regression.TransferRegressionTests.test_foreign_malformed_data_does_not_affect_reads_or_writes) ... ok
+test_ignored_required_writes_roll_back (test_regression.TransferRegressionTests.test_ignored_required_writes_roll_back) ... ok
+test_init_preserves_existing_schema_rows_and_triggers (test_regression.TransferRegressionTests.test_init_preserves_existing_schema_rows_and_triggers) ... ok
+test_invalid_amounts_same_account_and_overdraft_do_not_write (test_regression.TransferRegressionTests.test_invalid_amounts_same_account_and_overdraft_do_not_write) ... ok
+test_key_conflicts_reject_each_changed_payload_without_writes (test_regression.TransferRegressionTests.test_key_conflicts_reject_each_changed_payload_without_writes) ... 
+  test_key_conflicts_reject_each_changed_payload_without_writes (test_regression.TransferRegressionTests.test_key_conflicts_reject_each_changed_payload_without_writes) (change={'source': 'third'}) ... FAIL
+  test_key_conflicts_reject_each_changed_payload_without_writes (test_regression.TransferRegressionTests.test_key_conflicts_reject_each_changed_payload_without_writes) (change={'target': 'third'}) ... FAIL
+  test_key_conflicts_reject_each_changed_payload_without_writes (test_regression.TransferRegressionTests.test_key_conflicts_reject_each_changed_payload_without_writes) (change={'amount': 11}) ... FAIL
+test_malformed_names_are_rejected_without_writes (test_regression.TransferRegressionTests.test_malformed_names_are_rejected_without_writes) ... ok
+test_missing_and_foreign_accounts_have_identical_errors (test_regression.TransferRegressionTests.test_missing_and_foreign_accounts_have_identical_errors) ... FAIL
+test_receipts_are_scoped_to_tenant (test_regression.TransferRegressionTests.test_receipts_are_scoped_to_tenant) ... ok
+test_replay_survives_reopening_and_owns_its_receipt (test_regression.TransferRegressionTests.test_replay_survives_reopening_and_owns_its_receipt) ... ok
+test_simultaneous_conflicting_key_has_one_winner (test_regression.TransferRegressionTests.test_simultaneous_conflicting_key_has_one_winner) ... FAIL
+test_simultaneous_credits_from_distinct_accounts_are_not_lost (test_regression.TransferRegressionTests.test_simultaneous_credits_from_distinct_accounts_are_not_lost) ... ok
+test_simultaneous_distinct_keys_never_overspend (test_regression.TransferRegressionTests.test_simultaneous_distinct_keys_never_overspend) ... FAIL
+test_simultaneous_duplicates_execute_once_in_both_journal_modes (test_regression.TransferRegressionTests.test_simultaneous_duplicates_execute_once_in_both_journal_modes) ... ok
+test_simultaneous_tenants_can_use_the_same_key (test_regression.TransferRegressionTests.test_simultaneous_tenants_can_use_the_same_key) ... ok
+test_storage_integer_limit_does_not_lose_credits (test_regression.TransferRegressionTests.test_storage_integer_limit_does_not_lose_credits) ... ok
+test_valid_identifiers_are_bound_literally (test_regression.TransferRegressionTests.test_valid_identifiers_are_bound_literally) ... ok
+
+======================================================================
+FAIL: test_key_conflicts_reject_each_changed_payload_without_writes (test_regression.TransferRegressionTests.test_key_conflicts_reject_each_changed_payload_without_writes) (change={'source': 'third'})
+----------------------------------------------------------------------
+ValueError: invalid request
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6toowf8l/test_regression.py", line 216, in test_key_conflicts_reject_each_changed_payload_without_writes
+    with self.assertRaisesRegex(ValueError, "^key conflict$"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "^key conflict$" does not match "invalid request"
+
+======================================================================
+FAIL: test_key_conflicts_reject_each_changed_payload_without_writes (test_regression.TransferRegressionTests.test_key_conflicts_reject_each_changed_payload_without_writes) (change={'target': 'third'})
+----------------------------------------------------------------------
+ValueError: invalid request
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6toowf8l/test_regression.py", line 216, in test_key_conflicts_reject_each_changed_payload_without_writes
+    with self.assertRaisesRegex(ValueError, "^key conflict$"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "^key conflict$" does not match "invalid request"
+
+======================================================================
+FAIL: test_key_conflicts_reject_each_changed_payload_without_writes (test_regression.TransferRegressionTests.test_key_conflicts_reject_each_changed_payload_without_writes) (change={'amount': 11})
+----------------------------------------------------------------------
+ValueError: invalid request
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6toowf8l/test_regression.py", line 216, in test_key_conflicts_reject_each_changed_payload_without_writes
+    with self.assertRaisesRegex(ValueError, "^key conflict$"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "^key conflict$" does not match "invalid request"
+
+======================================================================
+FAIL: test_missing_and_foreign_accounts_have_identical_errors (test_regression.TransferRegressionTests.test_missing_and_foreign_accounts_have_identical_errors)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6toowf8l/test_regression.py", line 150, in test_missing_and_foreign_accounts_have_identical_errors
+    self.assertEqual(set(errors), {"account unavailable"})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'invalid request'
+Items in the second set but not the first:
+'account unavailable'
+
+======================================================================
+FAIL: test_simultaneous_conflicting_key_has_one_winner (test_regression.TransferRegressionTests.test_simultaneous_conflicting_key_has_one_winner)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6toowf8l/test_regression.py", line 364, in test_simultaneous_conflicting_key_has_one_winner
+    self.assertEqual(errors, ["key conflict"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['invalid request'] != ['key conflict']
+
+First differing element 0:
+'invalid request'
+'key conflict'
+
+- ['invalid request']
++ ['key conflict']
+
+======================================================================
+FAIL: test_simultaneous_distinct_keys_never_overspend (test_regression.TransferRegressionTests.test_simultaneous_distinct_keys_never_overspend)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-cross-regression-6toowf8l/test_regression.py", line 342, in test_simultaneous_distinct_keys_never_overspend
+    self.assertEqual(errors, ["insufficient funds"] * 10)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['invalid request', 'invalid request', 'inval[140 chars]est'] != ['insufficient funds', 'insufficient funds', [170 chars]nds']
+
+First differing element 0:
+'invalid request'
+'insufficient funds'
+
+- ['invalid request',
+-  'invalid request',
+-  'invalid request',
+-  'invalid request',
+-  'invalid request',
+-  'invalid request',
+-  'invalid request',
+-  'invalid request',
+-  'invalid request',
+-  'invalid request']
++ ['insufficient funds',
++  'insufficient funds',
++  'insufficient funds',
++  'insufficient funds',
++  'insufficient funds',
++  'insufficient funds',
++  'insufficient funds',
++  'insufficient funds',
++  'insufficient funds',
++  'insufficient funds']
+
+----------------------------------------------------------------------
+Ran 24 tests in 2.478s
+
+FAILED (failures=6)

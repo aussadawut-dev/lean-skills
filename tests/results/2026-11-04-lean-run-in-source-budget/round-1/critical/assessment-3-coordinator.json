@@ -1,0 +1,12 @@
+{
+  "status": "FAILED",
+  "reviewed": [
+    "Final independent review: 2 unresolved findings",
+    "All 20 predeclared mandatory probes PASS; IN source 0/6 failed",
+    "All four forward historical suites executed: 2 have failed assertions",
+    "Post-start matched final guard replay: 3 failed checks/groups, overlapping the two independent findings"
+  ],
+  "waived_blockers": [],
+  "reason": "Final bounded repair and renewed review completed. Unresolved mandatory findings remain; do not mark the trial DONE or start an additional trial.",
+  "historical_assertion_note": "State/effect triage recorded separately; no historical gate waived."
+}

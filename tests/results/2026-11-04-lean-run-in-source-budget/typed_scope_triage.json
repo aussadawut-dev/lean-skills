@@ -1,0 +1,2456 @@
+{
+  "workspace": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-in-source-budget-51g2mqwy/cohort/round-1/critical/reviewspace",
+  "sqlite_version": "3.50.4",
+  "application_sha256": {
+    "app.py": "d9f3f7ba8566a92862674be30e70adbf0e3879433ade38eae43b0b283e015a69",
+    "vault.py": "7769ba98c4095231b7b5988757dff87cdc29e279ee9e8cd3009467f99bc2e29f",
+    "vault_guard.py": "e59c6d97d007badd17d556b2eeda92100a552d0bdfb19151156c567e000444e5"
+  },
+  "cases": {
+    "pilot_account_name": {
+      "trigger": "CREATE TRIGGER effect AFTER INSERT ON audit BEGIN UPDATE accounts SET name=CAST(name AS BLOB) WHERE tenant='blue' AND name='private'; END;",
+      "scoped_write": "UPDATE accounts SET name=CAST(name AS BLOB) WHERE \"accounts\".tenant=tenant_context() AND ( tenant='blue' AND name='private')",
+      "native": {
+        "result": {
+          "status": "success",
+          "receipt": {
+            "tenant": "red",
+            "key": "new",
+            "source": "a",
+            "target": "b",
+            "amount": 10
+          }
+        },
+        "matches_typed_expected": true,
+        "schema_preserved": true,
+        "before": {
+          "accounts": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "6F74686572",
+              "integer",
+              "3838"
+            ],
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726976617465",
+              "integer",
+              "3737"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "61",
+              "integer",
+              "313030"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "62",
+              "integer",
+              "3230"
+            ]
+          ],
+          "transfers": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726576696F7573",
+              "text",
+              "70726976617465",
+              "text",
+              "6F74686572",
+              "integer",
+              "31"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "70726576696F7573",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "31"
+            ]
+          ],
+          "audit": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726576696F7573",
+              "text",
+              "70726976617465",
+              "text",
+              "6F74686572",
+              "integer",
+              "31"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "70726576696F7573",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "31"
+            ]
+          ],
+          "schema": [
+            [
+              "index",
+              "sqlite_autoindex_accounts_1",
+              "accounts",
+              null
+            ],
+            [
+              "index",
+              "sqlite_autoindex_transfers_1",
+              "transfers",
+              null
+            ],
+            [
+              "table",
+              "accounts",
+              "accounts",
+              "CREATE TABLE accounts (\n          tenant TEXT, name TEXT, balance INTEGER,\n          PRIMARY KEY(tenant,name))"
+            ],
+            [
+              "table",
+              "audit",
+              "audit",
+              "CREATE TABLE audit (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER)"
+            ],
+            [
+              "table",
+              "observations",
+              "observations",
+              "CREATE TABLE observations(c,t,l)"
+            ],
+            [
+              "table",
+              "transfers",
+              "transfers",
+              "CREATE TABLE transfers (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER,\n          PRIMARY KEY(tenant,key))"
+            ],
+            [
+              "trigger",
+              "effect",
+              "audit",
+              "CREATE TRIGGER effect AFTER INSERT ON audit BEGIN UPDATE accounts SET name=CAST(name AS BLOB) WHERE tenant='blue' AND name='private'; END"
+            ]
+          ],
+          "observations": []
+        },
+        "after": {
+          "accounts": [
+            [
+              "text",
+              "626C7565",
+              "blob",
+              "70726976617465",
+              "integer",
+              "3737"
+            ],
+            [
+              "text",
+              "626C7565",
+              "text",
+              "6F74686572",
+              "integer",
+              "3838"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "61",
+              "integer",
+              "3930"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "62",
+              "integer",
+              "3330"
+            ]
+          ],
+          "transfers": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726576696F7573",
+              "text",
+              "70726976617465",
+              "text",
+              "6F74686572",
+              "integer",
+              "31"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "6E6577",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "3130"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "70726576696F7573",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "31"
+            ]
+          ],
+          "audit": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726576696F7573",
+              "text",
+              "70726976617465",
+              "text",
+              "6F74686572",
+              "integer",
+              "31"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "6E6577",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "3130"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "70726576696F7573",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "31"
+            ]
+          ],
+          "schema": [
+            [
+              "index",
+              "sqlite_autoindex_accounts_1",
+              "accounts",
+              null
+            ],
+            [
+              "index",
+              "sqlite_autoindex_transfers_1",
+              "transfers",
+              null
+            ],
+            [
+              "table",
+              "accounts",
+              "accounts",
+              "CREATE TABLE accounts (\n          tenant TEXT, name TEXT, balance INTEGER,\n          PRIMARY KEY(tenant,name))"
+            ],
+            [
+              "table",
+              "audit",
+              "audit",
+              "CREATE TABLE audit (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER)"
+            ],
+            [
+              "table",
+              "observations",
+              "observations",
+              "CREATE TABLE observations(c,t,l)"
+            ],
+            [
+              "table",
+              "transfers",
+              "transfers",
+              "CREATE TABLE transfers (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER,\n          PRIMARY KEY(tenant,key))"
+            ],
+            [
+              "trigger",
+              "effect",
+              "audit",
+              "CREATE TRIGGER effect AFTER INSERT ON audit BEGIN UPDATE accounts SET name=CAST(name AS BLOB) WHERE tenant='blue' AND name='private'; END"
+            ]
+          ],
+          "observations": []
+        }
+      },
+      "api": {
+        "result": {
+          "status": "success",
+          "receipt": {
+            "tenant": "red",
+            "key": "new",
+            "source": "a",
+            "target": "b",
+            "amount": 10
+          }
+        },
+        "matches_typed_expected": true,
+        "schema_preserved": true,
+        "before": {
+          "accounts": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "6F74686572",
+              "integer",
+              "3838"
+            ],
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726976617465",
+              "integer",
+              "3737"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "61",
+              "integer",
+              "313030"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "62",
+              "integer",
+              "3230"
+            ]
+          ],
+          "transfers": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726576696F7573",
+              "text",
+              "70726976617465",
+              "text",
+              "6F74686572",
+              "integer",
+              "31"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "70726576696F7573",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "31"
+            ]
+          ],
+          "audit": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726576696F7573",
+              "text",
+              "70726976617465",
+              "text",
+              "6F74686572",
+              "integer",
+              "31"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "70726576696F7573",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "31"
+            ]
+          ],
+          "schema": [
+            [
+              "index",
+              "sqlite_autoindex_accounts_1",
+              "accounts",
+              null
+            ],
+            [
+              "index",
+              "sqlite_autoindex_transfers_1",
+              "transfers",
+              null
+            ],
+            [
+              "table",
+              "accounts",
+              "accounts",
+              "CREATE TABLE accounts (\n          tenant TEXT, name TEXT, balance INTEGER,\n          PRIMARY KEY(tenant,name))"
+            ],
+            [
+              "table",
+              "audit",
+              "audit",
+              "CREATE TABLE audit (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER)"
+            ],
+            [
+              "table",
+              "observations",
+              "observations",
+              "CREATE TABLE observations(c,t,l)"
+            ],
+            [
+              "table",
+              "transfers",
+              "transfers",
+              "CREATE TABLE transfers (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER,\n          PRIMARY KEY(tenant,key))"
+            ],
+            [
+              "trigger",
+              "effect",
+              "audit",
+              "CREATE TRIGGER effect AFTER INSERT ON audit BEGIN UPDATE accounts SET name=CAST(name AS BLOB) WHERE tenant='blue' AND name='private'; END"
+            ]
+          ],
+          "observations": []
+        },
+        "after": {
+          "accounts": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "6F74686572",
+              "integer",
+              "3838"
+            ],
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726976617465",
+              "integer",
+              "3737"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "61",
+              "integer",
+              "3930"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "62",
+              "integer",
+              "3330"
+            ]
+          ],
+          "transfers": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726576696F7573",
+              "text",
+              "70726976617465",
+              "text",
+              "6F74686572",
+              "integer",
+              "31"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "6E6577",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "3130"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "70726576696F7573",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "31"
+            ]
+          ],
+          "audit": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726576696F7573",
+              "text",
+              "70726976617465",
+              "text",
+              "6F74686572",
+              "integer",
+              "31"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "6E6577",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "3130"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "70726576696F7573",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "31"
+            ]
+          ],
+          "schema": [
+            [
+              "index",
+              "sqlite_autoindex_accounts_1",
+              "accounts",
+              null
+            ],
+            [
+              "index",
+              "sqlite_autoindex_transfers_1",
+              "transfers",
+              null
+            ],
+            [
+              "table",
+              "accounts",
+              "accounts",
+              "CREATE TABLE accounts (\n          tenant TEXT, name TEXT, balance INTEGER,\n          PRIMARY KEY(tenant,name))"
+            ],
+            [
+              "table",
+              "audit",
+              "audit",
+              "CREATE TABLE audit (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER)"
+            ],
+            [
+              "table",
+              "observations",
+              "observations",
+              "CREATE TABLE observations(c,t,l)"
+            ],
+            [
+              "table",
+              "transfers",
+              "transfers",
+              "CREATE TABLE transfers (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER,\n          PRIMARY KEY(tenant,key))"
+            ],
+            [
+              "trigger",
+              "effect",
+              "audit",
+              "CREATE TRIGGER effect AFTER INSERT ON audit BEGIN UPDATE accounts SET name=CAST(name AS BLOB) WHERE tenant='blue' AND name='private'; END"
+            ]
+          ],
+          "observations": []
+        },
+        "replay_unchanged": true
+      },
+      "cli": {
+        "result": {
+          "status": "success",
+          "receipt": {
+            "tenant": "red",
+            "key": "new",
+            "source": "a",
+            "target": "b",
+            "amount": 10
+          }
+        },
+        "matches_typed_expected": true,
+        "schema_preserved": true,
+        "before": {
+          "accounts": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "6F74686572",
+              "integer",
+              "3838"
+            ],
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726976617465",
+              "integer",
+              "3737"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "61",
+              "integer",
+              "313030"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "62",
+              "integer",
+              "3230"
+            ]
+          ],
+          "transfers": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726576696F7573",
+              "text",
+              "70726976617465",
+              "text",
+              "6F74686572",
+              "integer",
+              "31"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "70726576696F7573",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "31"
+            ]
+          ],
+          "audit": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726576696F7573",
+              "text",
+              "70726976617465",
+              "text",
+              "6F74686572",
+              "integer",
+              "31"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "70726576696F7573",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "31"
+            ]
+          ],
+          "schema": [
+            [
+              "index",
+              "sqlite_autoindex_accounts_1",
+              "accounts",
+              null
+            ],
+            [
+              "index",
+              "sqlite_autoindex_transfers_1",
+              "transfers",
+              null
+            ],
+            [
+              "table",
+              "accounts",
+              "accounts",
+              "CREATE TABLE accounts (\n          tenant TEXT, name TEXT, balance INTEGER,\n          PRIMARY KEY(tenant,name))"
+            ],
+            [
+              "table",
+              "audit",
+              "audit",
+              "CREATE TABLE audit (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER)"
+            ],
+            [
+              "table",
+              "observations",
+              "observations",
+              "CREATE TABLE observations(c,t,l)"
+            ],
+            [
+              "table",
+              "transfers",
+              "transfers",
+              "CREATE TABLE transfers (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER,\n          PRIMARY KEY(tenant,key))"
+            ],
+            [
+              "trigger",
+              "effect",
+              "audit",
+              "CREATE TRIGGER effect AFTER INSERT ON audit BEGIN UPDATE accounts SET name=CAST(name AS BLOB) WHERE tenant='blue' AND name='private'; END"
+            ]
+          ],
+          "observations": []
+        },
+        "after": {
+          "accounts": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "6F74686572",
+              "integer",
+              "3838"
+            ],
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726976617465",
+              "integer",
+              "3737"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "61",
+              "integer",
+              "3930"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "62",
+              "integer",
+              "3330"
+            ]
+          ],
+          "transfers": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726576696F7573",
+              "text",
+              "70726976617465",
+              "text",
+              "6F74686572",
+              "integer",
+              "31"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "6E6577",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "3130"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "70726576696F7573",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "31"
+            ]
+          ],
+          "audit": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726576696F7573",
+              "text",
+              "70726976617465",
+              "text",
+              "6F74686572",
+              "integer",
+              "31"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "6E6577",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "3130"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "70726576696F7573",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "31"
+            ]
+          ],
+          "schema": [
+            [
+              "index",
+              "sqlite_autoindex_accounts_1",
+              "accounts",
+              null
+            ],
+            [
+              "index",
+              "sqlite_autoindex_transfers_1",
+              "transfers",
+              null
+            ],
+            [
+              "table",
+              "accounts",
+              "accounts",
+              "CREATE TABLE accounts (\n          tenant TEXT, name TEXT, balance INTEGER,\n          PRIMARY KEY(tenant,name))"
+            ],
+            [
+              "table",
+              "audit",
+              "audit",
+              "CREATE TABLE audit (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER)"
+            ],
+            [
+              "table",
+              "observations",
+              "observations",
+              "CREATE TABLE observations(c,t,l)"
+            ],
+            [
+              "table",
+              "transfers",
+              "transfers",
+              "CREATE TABLE transfers (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER,\n          PRIMARY KEY(tenant,key))"
+            ],
+            [
+              "trigger",
+              "effect",
+              "audit",
+              "CREATE TRIGGER effect AFTER INSERT ON audit BEGIN UPDATE accounts SET name=CAST(name AS BLOB) WHERE tenant='blue' AND name='private'; END"
+            ]
+          ],
+          "observations": []
+        },
+        "replay_unchanged": true
+      }
+    },
+    "pilot_receipt_target": {
+      "trigger": "CREATE TRIGGER effect AFTER INSERT ON audit BEGIN UPDATE transfers SET target=CAST(target AS BLOB) WHERE tenant='blue'; END;",
+      "scoped_write": "UPDATE transfers SET target=CAST(target AS BLOB) WHERE \"transfers\".tenant=tenant_context() AND ( tenant='blue')",
+      "native": {
+        "result": {
+          "status": "success",
+          "receipt": {
+            "tenant": "red",
+            "key": "new",
+            "source": "a",
+            "target": "b",
+            "amount": 10
+          }
+        },
+        "matches_typed_expected": true,
+        "schema_preserved": true,
+        "before": {
+          "accounts": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "6F74686572",
+              "integer",
+              "3838"
+            ],
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726976617465",
+              "integer",
+              "3737"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "61",
+              "integer",
+              "313030"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "62",
+              "integer",
+              "3230"
+            ]
+          ],
+          "transfers": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726576696F7573",
+              "text",
+              "70726976617465",
+              "text",
+              "6F74686572",
+              "integer",
+              "31"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "70726576696F7573",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "31"
+            ]
+          ],
+          "audit": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726576696F7573",
+              "text",
+              "70726976617465",
+              "text",
+              "6F74686572",
+              "integer",
+              "31"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "70726576696F7573",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "31"
+            ]
+          ],
+          "schema": [
+            [
+              "index",
+              "sqlite_autoindex_accounts_1",
+              "accounts",
+              null
+            ],
+            [
+              "index",
+              "sqlite_autoindex_transfers_1",
+              "transfers",
+              null
+            ],
+            [
+              "table",
+              "accounts",
+              "accounts",
+              "CREATE TABLE accounts (\n          tenant TEXT, name TEXT, balance INTEGER,\n          PRIMARY KEY(tenant,name))"
+            ],
+            [
+              "table",
+              "audit",
+              "audit",
+              "CREATE TABLE audit (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER)"
+            ],
+            [
+              "table",
+              "observations",
+              "observations",
+              "CREATE TABLE observations(c,t,l)"
+            ],
+            [
+              "table",
+              "transfers",
+              "transfers",
+              "CREATE TABLE transfers (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER,\n          PRIMARY KEY(tenant,key))"
+            ],
+            [
+              "trigger",
+              "effect",
+              "audit",
+              "CREATE TRIGGER effect AFTER INSERT ON audit BEGIN UPDATE transfers SET target=CAST(target AS BLOB) WHERE tenant='blue'; END"
+            ]
+          ],
+          "observations": []
+        },
+        "after": {
+          "accounts": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "6F74686572",
+              "integer",
+              "3838"
+            ],
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726976617465",
+              "integer",
+              "3737"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "61",
+              "integer",
+              "3930"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "62",
+              "integer",
+              "3330"
+            ]
+          ],
+          "transfers": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726576696F7573",
+              "text",
+              "70726976617465",
+              "blob",
+              "6F74686572",
+              "integer",
+              "31"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "6E6577",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "3130"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "70726576696F7573",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "31"
+            ]
+          ],
+          "audit": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726576696F7573",
+              "text",
+              "70726976617465",
+              "text",
+              "6F74686572",
+              "integer",
+              "31"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "6E6577",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "3130"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "70726576696F7573",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "31"
+            ]
+          ],
+          "schema": [
+            [
+              "index",
+              "sqlite_autoindex_accounts_1",
+              "accounts",
+              null
+            ],
+            [
+              "index",
+              "sqlite_autoindex_transfers_1",
+              "transfers",
+              null
+            ],
+            [
+              "table",
+              "accounts",
+              "accounts",
+              "CREATE TABLE accounts (\n          tenant TEXT, name TEXT, balance INTEGER,\n          PRIMARY KEY(tenant,name))"
+            ],
+            [
+              "table",
+              "audit",
+              "audit",
+              "CREATE TABLE audit (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER)"
+            ],
+            [
+              "table",
+              "observations",
+              "observations",
+              "CREATE TABLE observations(c,t,l)"
+            ],
+            [
+              "table",
+              "transfers",
+              "transfers",
+              "CREATE TABLE transfers (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER,\n          PRIMARY KEY(tenant,key))"
+            ],
+            [
+              "trigger",
+              "effect",
+              "audit",
+              "CREATE TRIGGER effect AFTER INSERT ON audit BEGIN UPDATE transfers SET target=CAST(target AS BLOB) WHERE tenant='blue'; END"
+            ]
+          ],
+          "observations": []
+        }
+      },
+      "api": {
+        "result": {
+          "status": "success",
+          "receipt": {
+            "tenant": "red",
+            "key": "new",
+            "source": "a",
+            "target": "b",
+            "amount": 10
+          }
+        },
+        "matches_typed_expected": true,
+        "schema_preserved": true,
+        "before": {
+          "accounts": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "6F74686572",
+              "integer",
+              "3838"
+            ],
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726976617465",
+              "integer",
+              "3737"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "61",
+              "integer",
+              "313030"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "62",
+              "integer",
+              "3230"
+            ]
+          ],
+          "transfers": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726576696F7573",
+              "text",
+              "70726976617465",
+              "text",
+              "6F74686572",
+              "integer",
+              "31"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "70726576696F7573",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "31"
+            ]
+          ],
+          "audit": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726576696F7573",
+              "text",
+              "70726976617465",
+              "text",
+              "6F74686572",
+              "integer",
+              "31"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "70726576696F7573",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "31"
+            ]
+          ],
+          "schema": [
+            [
+              "index",
+              "sqlite_autoindex_accounts_1",
+              "accounts",
+              null
+            ],
+            [
+              "index",
+              "sqlite_autoindex_transfers_1",
+              "transfers",
+              null
+            ],
+            [
+              "table",
+              "accounts",
+              "accounts",
+              "CREATE TABLE accounts (\n          tenant TEXT, name TEXT, balance INTEGER,\n          PRIMARY KEY(tenant,name))"
+            ],
+            [
+              "table",
+              "audit",
+              "audit",
+              "CREATE TABLE audit (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER)"
+            ],
+            [
+              "table",
+              "observations",
+              "observations",
+              "CREATE TABLE observations(c,t,l)"
+            ],
+            [
+              "table",
+              "transfers",
+              "transfers",
+              "CREATE TABLE transfers (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER,\n          PRIMARY KEY(tenant,key))"
+            ],
+            [
+              "trigger",
+              "effect",
+              "audit",
+              "CREATE TRIGGER effect AFTER INSERT ON audit BEGIN UPDATE transfers SET target=CAST(target AS BLOB) WHERE tenant='blue'; END"
+            ]
+          ],
+          "observations": []
+        },
+        "after": {
+          "accounts": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "6F74686572",
+              "integer",
+              "3838"
+            ],
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726976617465",
+              "integer",
+              "3737"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "61",
+              "integer",
+              "3930"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "62",
+              "integer",
+              "3330"
+            ]
+          ],
+          "transfers": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726576696F7573",
+              "text",
+              "70726976617465",
+              "text",
+              "6F74686572",
+              "integer",
+              "31"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "6E6577",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "3130"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "70726576696F7573",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "31"
+            ]
+          ],
+          "audit": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726576696F7573",
+              "text",
+              "70726976617465",
+              "text",
+              "6F74686572",
+              "integer",
+              "31"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "6E6577",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "3130"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "70726576696F7573",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "31"
+            ]
+          ],
+          "schema": [
+            [
+              "index",
+              "sqlite_autoindex_accounts_1",
+              "accounts",
+              null
+            ],
+            [
+              "index",
+              "sqlite_autoindex_transfers_1",
+              "transfers",
+              null
+            ],
+            [
+              "table",
+              "accounts",
+              "accounts",
+              "CREATE TABLE accounts (\n          tenant TEXT, name TEXT, balance INTEGER,\n          PRIMARY KEY(tenant,name))"
+            ],
+            [
+              "table",
+              "audit",
+              "audit",
+              "CREATE TABLE audit (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER)"
+            ],
+            [
+              "table",
+              "observations",
+              "observations",
+              "CREATE TABLE observations(c,t,l)"
+            ],
+            [
+              "table",
+              "transfers",
+              "transfers",
+              "CREATE TABLE transfers (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER,\n          PRIMARY KEY(tenant,key))"
+            ],
+            [
+              "trigger",
+              "effect",
+              "audit",
+              "CREATE TRIGGER effect AFTER INSERT ON audit BEGIN UPDATE transfers SET target=CAST(target AS BLOB) WHERE tenant='blue'; END"
+            ]
+          ],
+          "observations": []
+        },
+        "replay_unchanged": true
+      },
+      "cli": {
+        "result": {
+          "status": "success",
+          "receipt": {
+            "tenant": "red",
+            "key": "new",
+            "source": "a",
+            "target": "b",
+            "amount": 10
+          }
+        },
+        "matches_typed_expected": true,
+        "schema_preserved": true,
+        "before": {
+          "accounts": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "6F74686572",
+              "integer",
+              "3838"
+            ],
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726976617465",
+              "integer",
+              "3737"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "61",
+              "integer",
+              "313030"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "62",
+              "integer",
+              "3230"
+            ]
+          ],
+          "transfers": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726576696F7573",
+              "text",
+              "70726976617465",
+              "text",
+              "6F74686572",
+              "integer",
+              "31"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "70726576696F7573",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "31"
+            ]
+          ],
+          "audit": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726576696F7573",
+              "text",
+              "70726976617465",
+              "text",
+              "6F74686572",
+              "integer",
+              "31"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "70726576696F7573",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "31"
+            ]
+          ],
+          "schema": [
+            [
+              "index",
+              "sqlite_autoindex_accounts_1",
+              "accounts",
+              null
+            ],
+            [
+              "index",
+              "sqlite_autoindex_transfers_1",
+              "transfers",
+              null
+            ],
+            [
+              "table",
+              "accounts",
+              "accounts",
+              "CREATE TABLE accounts (\n          tenant TEXT, name TEXT, balance INTEGER,\n          PRIMARY KEY(tenant,name))"
+            ],
+            [
+              "table",
+              "audit",
+              "audit",
+              "CREATE TABLE audit (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER)"
+            ],
+            [
+              "table",
+              "observations",
+              "observations",
+              "CREATE TABLE observations(c,t,l)"
+            ],
+            [
+              "table",
+              "transfers",
+              "transfers",
+              "CREATE TABLE transfers (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER,\n          PRIMARY KEY(tenant,key))"
+            ],
+            [
+              "trigger",
+              "effect",
+              "audit",
+              "CREATE TRIGGER effect AFTER INSERT ON audit BEGIN UPDATE transfers SET target=CAST(target AS BLOB) WHERE tenant='blue'; END"
+            ]
+          ],
+          "observations": []
+        },
+        "after": {
+          "accounts": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "6F74686572",
+              "integer",
+              "3838"
+            ],
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726976617465",
+              "integer",
+              "3737"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "61",
+              "integer",
+              "3930"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "62",
+              "integer",
+              "3330"
+            ]
+          ],
+          "transfers": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726576696F7573",
+              "text",
+              "70726976617465",
+              "text",
+              "6F74686572",
+              "integer",
+              "31"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "6E6577",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "3130"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "70726576696F7573",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "31"
+            ]
+          ],
+          "audit": [
+            [
+              "text",
+              "626C7565",
+              "text",
+              "70726576696F7573",
+              "text",
+              "70726976617465",
+              "text",
+              "6F74686572",
+              "integer",
+              "31"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "6E6577",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "3130"
+            ],
+            [
+              "text",
+              "726564",
+              "text",
+              "70726576696F7573",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "31"
+            ]
+          ],
+          "schema": [
+            [
+              "index",
+              "sqlite_autoindex_accounts_1",
+              "accounts",
+              null
+            ],
+            [
+              "index",
+              "sqlite_autoindex_transfers_1",
+              "transfers",
+              null
+            ],
+            [
+              "table",
+              "accounts",
+              "accounts",
+              "CREATE TABLE accounts (\n          tenant TEXT, name TEXT, balance INTEGER,\n          PRIMARY KEY(tenant,name))"
+            ],
+            [
+              "table",
+              "audit",
+              "audit",
+              "CREATE TABLE audit (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER)"
+            ],
+            [
+              "table",
+              "observations",
+              "observations",
+              "CREATE TABLE observations(c,t,l)"
+            ],
+            [
+              "table",
+              "transfers",
+              "transfers",
+              "CREATE TABLE transfers (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER,\n          PRIMARY KEY(tenant,key))"
+            ],
+            [
+              "trigger",
+              "effect",
+              "audit",
+              "CREATE TRIGGER effect AFTER INSERT ON audit BEGIN UPDATE transfers SET target=CAST(target AS BLOB) WHERE tenant='blue'; END"
+            ]
+          ],
+          "observations": []
+        },
+        "replay_unchanged": true
+      }
+    },
+    "history_account_name": {
+      "trigger": "CREATE TRIGGER corrupt AFTER INSERT ON audit BEGIN UPDATE accounts SET name=CAST(name AS BLOB) WHERE tenant='two'; END;",
+      "scoped_write": "UPDATE accounts SET name=CAST(name AS BLOB) WHERE \"accounts\".tenant=tenant_context() AND ( tenant='two')",
+      "native": {
+        "result": {
+          "status": "success",
+          "receipt": {
+            "tenant": "one",
+            "key": "k",
+            "source": "a",
+            "target": "b",
+            "amount": 10
+          }
+        },
+        "matches_typed_expected": true,
+        "schema_preserved": true,
+        "before": {
+          "accounts": [
+            [
+              "text",
+              "6F6E65",
+              "text",
+              "61",
+              "integer",
+              "313030"
+            ],
+            [
+              "text",
+              "6F6E65",
+              "text",
+              "62",
+              "integer",
+              "30"
+            ],
+            [
+              "text",
+              "74776F",
+              "text",
+              "666F726569676E",
+              "integer",
+              "373737"
+            ]
+          ],
+          "transfers": [],
+          "audit": [
+            [
+              "text",
+              "74776F",
+              "text",
+              "686973746F7279",
+              "text",
+              "6F6C64",
+              "text",
+              "746172676574",
+              "integer",
+              "37"
+            ]
+          ],
+          "schema": [
+            [
+              "index",
+              "sqlite_autoindex_accounts_1",
+              "accounts",
+              null
+            ],
+            [
+              "index",
+              "sqlite_autoindex_transfers_1",
+              "transfers",
+              null
+            ],
+            [
+              "table",
+              "accounts",
+              "accounts",
+              "CREATE TABLE accounts (\n          tenant TEXT, name TEXT, balance INTEGER,\n          PRIMARY KEY(tenant,name))"
+            ],
+            [
+              "table",
+              "audit",
+              "audit",
+              "CREATE TABLE audit (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER)"
+            ],
+            [
+              "table",
+              "transfers",
+              "transfers",
+              "CREATE TABLE transfers (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER,\n          PRIMARY KEY(tenant,key))"
+            ],
+            [
+              "trigger",
+              "corrupt",
+              "audit",
+              "CREATE TRIGGER corrupt AFTER INSERT ON audit BEGIN UPDATE accounts SET name=CAST(name AS BLOB) WHERE tenant='two'; END"
+            ]
+          ]
+        },
+        "after": {
+          "accounts": [
+            [
+              "text",
+              "6F6E65",
+              "text",
+              "61",
+              "integer",
+              "3930"
+            ],
+            [
+              "text",
+              "6F6E65",
+              "text",
+              "62",
+              "integer",
+              "3130"
+            ],
+            [
+              "text",
+              "74776F",
+              "blob",
+              "666F726569676E",
+              "integer",
+              "373737"
+            ]
+          ],
+          "transfers": [
+            [
+              "text",
+              "6F6E65",
+              "text",
+              "6B",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "3130"
+            ]
+          ],
+          "audit": [
+            [
+              "text",
+              "6F6E65",
+              "text",
+              "6B",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "3130"
+            ],
+            [
+              "text",
+              "74776F",
+              "text",
+              "686973746F7279",
+              "text",
+              "6F6C64",
+              "text",
+              "746172676574",
+              "integer",
+              "37"
+            ]
+          ],
+          "schema": [
+            [
+              "index",
+              "sqlite_autoindex_accounts_1",
+              "accounts",
+              null
+            ],
+            [
+              "index",
+              "sqlite_autoindex_transfers_1",
+              "transfers",
+              null
+            ],
+            [
+              "table",
+              "accounts",
+              "accounts",
+              "CREATE TABLE accounts (\n          tenant TEXT, name TEXT, balance INTEGER,\n          PRIMARY KEY(tenant,name))"
+            ],
+            [
+              "table",
+              "audit",
+              "audit",
+              "CREATE TABLE audit (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER)"
+            ],
+            [
+              "table",
+              "transfers",
+              "transfers",
+              "CREATE TABLE transfers (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER,\n          PRIMARY KEY(tenant,key))"
+            ],
+            [
+              "trigger",
+              "corrupt",
+              "audit",
+              "CREATE TRIGGER corrupt AFTER INSERT ON audit BEGIN UPDATE accounts SET name=CAST(name AS BLOB) WHERE tenant='two'; END"
+            ]
+          ]
+        }
+      },
+      "api": {
+        "result": {
+          "status": "success",
+          "receipt": {
+            "tenant": "one",
+            "key": "k",
+            "source": "a",
+            "target": "b",
+            "amount": 10
+          }
+        },
+        "matches_typed_expected": true,
+        "schema_preserved": true,
+        "before": {
+          "accounts": [
+            [
+              "text",
+              "6F6E65",
+              "text",
+              "61",
+              "integer",
+              "313030"
+            ],
+            [
+              "text",
+              "6F6E65",
+              "text",
+              "62",
+              "integer",
+              "30"
+            ],
+            [
+              "text",
+              "74776F",
+              "text",
+              "666F726569676E",
+              "integer",
+              "373737"
+            ]
+          ],
+          "transfers": [],
+          "audit": [
+            [
+              "text",
+              "74776F",
+              "text",
+              "686973746F7279",
+              "text",
+              "6F6C64",
+              "text",
+              "746172676574",
+              "integer",
+              "37"
+            ]
+          ],
+          "schema": [
+            [
+              "index",
+              "sqlite_autoindex_accounts_1",
+              "accounts",
+              null
+            ],
+            [
+              "index",
+              "sqlite_autoindex_transfers_1",
+              "transfers",
+              null
+            ],
+            [
+              "table",
+              "accounts",
+              "accounts",
+              "CREATE TABLE accounts (\n          tenant TEXT, name TEXT, balance INTEGER,\n          PRIMARY KEY(tenant,name))"
+            ],
+            [
+              "table",
+              "audit",
+              "audit",
+              "CREATE TABLE audit (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER)"
+            ],
+            [
+              "table",
+              "transfers",
+              "transfers",
+              "CREATE TABLE transfers (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER,\n          PRIMARY KEY(tenant,key))"
+            ],
+            [
+              "trigger",
+              "corrupt",
+              "audit",
+              "CREATE TRIGGER corrupt AFTER INSERT ON audit BEGIN UPDATE accounts SET name=CAST(name AS BLOB) WHERE tenant='two'; END"
+            ]
+          ]
+        },
+        "after": {
+          "accounts": [
+            [
+              "text",
+              "6F6E65",
+              "text",
+              "61",
+              "integer",
+              "3930"
+            ],
+            [
+              "text",
+              "6F6E65",
+              "text",
+              "62",
+              "integer",
+              "3130"
+            ],
+            [
+              "text",
+              "74776F",
+              "text",
+              "666F726569676E",
+              "integer",
+              "373737"
+            ]
+          ],
+          "transfers": [
+            [
+              "text",
+              "6F6E65",
+              "text",
+              "6B",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "3130"
+            ]
+          ],
+          "audit": [
+            [
+              "text",
+              "6F6E65",
+              "text",
+              "6B",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "3130"
+            ],
+            [
+              "text",
+              "74776F",
+              "text",
+              "686973746F7279",
+              "text",
+              "6F6C64",
+              "text",
+              "746172676574",
+              "integer",
+              "37"
+            ]
+          ],
+          "schema": [
+            [
+              "index",
+              "sqlite_autoindex_accounts_1",
+              "accounts",
+              null
+            ],
+            [
+              "index",
+              "sqlite_autoindex_transfers_1",
+              "transfers",
+              null
+            ],
+            [
+              "table",
+              "accounts",
+              "accounts",
+              "CREATE TABLE accounts (\n          tenant TEXT, name TEXT, balance INTEGER,\n          PRIMARY KEY(tenant,name))"
+            ],
+            [
+              "table",
+              "audit",
+              "audit",
+              "CREATE TABLE audit (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER)"
+            ],
+            [
+              "table",
+              "transfers",
+              "transfers",
+              "CREATE TABLE transfers (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER,\n          PRIMARY KEY(tenant,key))"
+            ],
+            [
+              "trigger",
+              "corrupt",
+              "audit",
+              "CREATE TRIGGER corrupt AFTER INSERT ON audit BEGIN UPDATE accounts SET name=CAST(name AS BLOB) WHERE tenant='two'; END"
+            ]
+          ]
+        },
+        "replay_unchanged": true
+      },
+      "cli": {
+        "result": {
+          "status": "success",
+          "receipt": {
+            "tenant": "one",
+            "key": "k",
+            "source": "a",
+            "target": "b",
+            "amount": 10
+          }
+        },
+        "matches_typed_expected": true,
+        "schema_preserved": true,
+        "before": {
+          "accounts": [
+            [
+              "text",
+              "6F6E65",
+              "text",
+              "61",
+              "integer",
+              "313030"
+            ],
+            [
+              "text",
+              "6F6E65",
+              "text",
+              "62",
+              "integer",
+              "30"
+            ],
+            [
+              "text",
+              "74776F",
+              "text",
+              "666F726569676E",
+              "integer",
+              "373737"
+            ]
+          ],
+          "transfers": [],
+          "audit": [
+            [
+              "text",
+              "74776F",
+              "text",
+              "686973746F7279",
+              "text",
+              "6F6C64",
+              "text",
+              "746172676574",
+              "integer",
+              "37"
+            ]
+          ],
+          "schema": [
+            [
+              "index",
+              "sqlite_autoindex_accounts_1",
+              "accounts",
+              null
+            ],
+            [
+              "index",
+              "sqlite_autoindex_transfers_1",
+              "transfers",
+              null
+            ],
+            [
+              "table",
+              "accounts",
+              "accounts",
+              "CREATE TABLE accounts (\n          tenant TEXT, name TEXT, balance INTEGER,\n          PRIMARY KEY(tenant,name))"
+            ],
+            [
+              "table",
+              "audit",
+              "audit",
+              "CREATE TABLE audit (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER)"
+            ],
+            [
+              "table",
+              "transfers",
+              "transfers",
+              "CREATE TABLE transfers (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER,\n          PRIMARY KEY(tenant,key))"
+            ],
+            [
+              "trigger",
+              "corrupt",
+              "audit",
+              "CREATE TRIGGER corrupt AFTER INSERT ON audit BEGIN UPDATE accounts SET name=CAST(name AS BLOB) WHERE tenant='two'; END"
+            ]
+          ]
+        },
+        "after": {
+          "accounts": [
+            [
+              "text",
+              "6F6E65",
+              "text",
+              "61",
+              "integer",
+              "3930"
+            ],
+            [
+              "text",
+              "6F6E65",
+              "text",
+              "62",
+              "integer",
+              "3130"
+            ],
+            [
+              "text",
+              "74776F",
+              "text",
+              "666F726569676E",
+              "integer",
+              "373737"
+            ]
+          ],
+          "transfers": [
+            [
+              "text",
+              "6F6E65",
+              "text",
+              "6B",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "3130"
+            ]
+          ],
+          "audit": [
+            [
+              "text",
+              "6F6E65",
+              "text",
+              "6B",
+              "text",
+              "61",
+              "text",
+              "62",
+              "integer",
+              "3130"
+            ],
+            [
+              "text",
+              "74776F",
+              "text",
+              "686973746F7279",
+              "text",
+              "6F6C64",
+              "text",
+              "746172676574",
+              "integer",
+              "37"
+            ]
+          ],
+          "schema": [
+            [
+              "index",
+              "sqlite_autoindex_accounts_1",
+              "accounts",
+              null
+            ],
+            [
+              "index",
+              "sqlite_autoindex_transfers_1",
+              "transfers",
+              null
+            ],
+            [
+              "table",
+              "accounts",
+              "accounts",
+              "CREATE TABLE accounts (\n          tenant TEXT, name TEXT, balance INTEGER,\n          PRIMARY KEY(tenant,name))"
+            ],
+            [
+              "table",
+              "audit",
+              "audit",
+              "CREATE TABLE audit (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER)"
+            ],
+            [
+              "table",
+              "transfers",
+              "transfers",
+              "CREATE TABLE transfers (\n          tenant TEXT, key TEXT, source TEXT, target TEXT, amount INTEGER,\n          PRIMARY KEY(tenant,key))"
+            ],
+            [
+              "trigger",
+              "corrupt",
+              "audit",
+              "CREATE TRIGGER corrupt AFTER INSERT ON audit BEGIN UPDATE accounts SET name=CAST(name AS BLOB) WHERE tenant='two'; END"
+            ]
+          ]
+        },
+        "replay_unchanged": true
+      }
+    }
+  }
+}

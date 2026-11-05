@@ -1,0 +1,17 @@
+{
+  "workspace": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-schema-skill-kfeIef/cohort/round-1/critical/workspace",
+  "source_sha256": "f8772831616f9458aa75e628c0014e04b875e1ca711bc4059504ae62a8ae7be3",
+  "issue_count": 0,
+  "failed_cases": 0,
+  "case": "foreign_malformed_text_isolated",
+  "pass": true,
+  "exception": null,
+  "receipt": {
+    "tenant": "alpha",
+    "key": "k",
+    "source": "a",
+    "target": "b",
+    "amount": 10
+  },
+  "other_tenant_unchanged": true
+}

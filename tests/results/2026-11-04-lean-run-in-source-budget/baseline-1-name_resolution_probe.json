@@ -1,0 +1,378 @@
+{
+  "source_sha256": "b01a72948335b7e12c2d31fe4ad17560145b4d127b16e8b1ee943d1824ad1de3",
+  "cases": [
+    {
+      "case": "cte-valid",
+      "finding": "name-resolution",
+      "native_pass": true,
+      "native": {
+        "status": "success",
+        "recursive_triggers": 0
+      },
+      "expected": "success",
+      "failures": [],
+      "api": {
+        "status": "success",
+        "receipt": {
+          "tenant": "red",
+          "key": "new",
+          "source": "a",
+          "target": "b",
+          "amount": 10
+        },
+        "replay": {
+          "status": "success",
+          "receipt": {
+            "tenant": "red",
+            "key": "new",
+            "source": "a",
+            "target": "b",
+            "amount": 10
+          }
+        },
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            90
+          ],
+          [
+            "red",
+            "b",
+            30
+          ]
+        ],
+        "reopened_transfers": [
+          [
+            "red",
+            "new",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "reopened_audit": [
+          [
+            "red",
+            "new",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "schema_preserved": true
+      },
+      "cli": {
+        "status": "success",
+        "receipt": {
+          "tenant": "red",
+          "key": "new",
+          "source": "a",
+          "target": "b",
+          "amount": 10
+        },
+        "replay": {
+          "status": "success",
+          "receipt": {
+            "tenant": "red",
+            "key": "new",
+            "source": "a",
+            "target": "b",
+            "amount": 10
+          }
+        },
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            90
+          ],
+          [
+            "red",
+            "b",
+            30
+          ]
+        ],
+        "reopened_transfers": [
+          [
+            "red",
+            "new",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "reopened_audit": [
+          [
+            "red",
+            "new",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "schema_preserved": true
+      }
+    },
+    {
+      "case": "cte-abort",
+      "finding": "name-resolution",
+      "native_pass": true,
+      "native": {
+        "status": "storage_error",
+        "error": "native guard",
+        "recursive_triggers": 0
+      },
+      "expected": "storage_error",
+      "failures": [],
+      "api": {
+        "status": "storage_error",
+        "type": "IntegrityError",
+        "error": "native guard",
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            100
+          ],
+          [
+            "red",
+            "b",
+            20
+          ]
+        ],
+        "reopened_transfers": [],
+        "reopened_audit": [],
+        "schema_preserved": true
+      },
+      "cli": {
+        "status": "storage_error",
+        "returncode": 2,
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            100
+          ],
+          [
+            "red",
+            "b",
+            20
+          ]
+        ],
+        "reopened_transfers": [],
+        "reopened_audit": [],
+        "schema_preserved": true
+      }
+    },
+    {
+      "case": "qualified-valid",
+      "finding": "name-resolution",
+      "native_pass": true,
+      "native": {
+        "status": "success",
+        "recursive_triggers": 0
+      },
+      "expected": "success",
+      "failures": [],
+      "api": {
+        "status": "success",
+        "receipt": {
+          "tenant": "red",
+          "key": "new",
+          "source": "a",
+          "target": "b",
+          "amount": 10
+        },
+        "replay": {
+          "status": "success",
+          "receipt": {
+            "tenant": "red",
+            "key": "new",
+            "source": "a",
+            "target": "b",
+            "amount": 10
+          }
+        },
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            90
+          ],
+          [
+            "red",
+            "b",
+            30
+          ]
+        ],
+        "reopened_transfers": [
+          [
+            "red",
+            "new",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "reopened_audit": [
+          [
+            "red",
+            "new",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "schema_preserved": true
+      },
+      "cli": {
+        "status": "success",
+        "receipt": {
+          "tenant": "red",
+          "key": "new",
+          "source": "a",
+          "target": "b",
+          "amount": 10
+        },
+        "replay": {
+          "status": "success",
+          "receipt": {
+            "tenant": "red",
+            "key": "new",
+            "source": "a",
+            "target": "b",
+            "amount": 10
+          }
+        },
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            90
+          ],
+          [
+            "red",
+            "b",
+            30
+          ]
+        ],
+        "reopened_transfers": [
+          [
+            "red",
+            "new",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "reopened_audit": [
+          [
+            "red",
+            "new",
+            "a",
+            "b",
+            10
+          ]
+        ],
+        "schema_preserved": true
+      }
+    },
+    {
+      "case": "qualified-abort",
+      "finding": "name-resolution",
+      "native_pass": true,
+      "native": {
+        "status": "storage_error",
+        "error": "native guard",
+        "recursive_triggers": 0
+      },
+      "expected": "storage_error",
+      "failures": [],
+      "api": {
+        "status": "storage_error",
+        "type": "IntegrityError",
+        "error": "native guard",
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            100
+          ],
+          [
+            "red",
+            "b",
+            20
+          ]
+        ],
+        "reopened_transfers": [],
+        "reopened_audit": [],
+        "schema_preserved": true
+      },
+      "cli": {
+        "status": "storage_error",
+        "returncode": 2,
+        "reopened_accounts": [
+          [
+            "blue",
+            "private",
+            77
+          ],
+          [
+            "red",
+            "a",
+            100
+          ],
+          [
+            "red",
+            "b",
+            20
+          ]
+        ],
+        "reopened_transfers": [],
+        "reopened_audit": [],
+        "schema_preserved": true
+      }
+    }
+  ],
+  "failed_cases": 0,
+  "failed_case_names": [],
+  "finding_groups": {
+    "name_resolution": false
+  }
+}

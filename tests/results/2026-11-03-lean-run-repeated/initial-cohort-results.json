@@ -1,0 +1,103 @@
+{
+  "round-1/medium": {
+    "status": "DONE",
+    "final_assessment": 1,
+    "repair_rounds": 0,
+    "final_grade": "post-implementation-grade.json",
+    "final_review": "review",
+    "initial_review_issues": 0,
+    "final_review_issues": 0,
+    "first_pass_blockers": [],
+    "adjudication": null
+  },
+  "round-1/high": {
+    "status": "DONE",
+    "final_assessment": 1,
+    "repair_rounds": 0,
+    "final_grade": "post-implementation-grade.json",
+    "final_review": "review",
+    "initial_review_issues": 0,
+    "final_review_issues": 0,
+    "first_pass_blockers": [],
+    "adjudication": null
+  },
+  "round-1/critical": {
+    "status": "DONE",
+    "final_assessment": 1,
+    "repair_rounds": 0,
+    "final_grade": "post-implementation-grade.json",
+    "final_review": "review",
+    "initial_review_issues": 0,
+    "final_review_issues": 0,
+    "first_pass_blockers": [],
+    "adjudication": null
+  },
+  "round-2/medium": {
+    "status": "DONE",
+    "final_assessment": 1,
+    "repair_rounds": 0,
+    "final_grade": "post-implementation-grade.json",
+    "final_review": "review",
+    "initial_review_issues": 0,
+    "final_review_issues": 0,
+    "first_pass_blockers": [],
+    "adjudication": null
+  },
+  "round-2/high": {
+    "status": "DONE",
+    "final_assessment": 1,
+    "repair_rounds": 0,
+    "final_grade": "post-implementation-grade.json",
+    "final_review": "review",
+    "initial_review_issues": 0,
+    "final_review_issues": 0,
+    "first_pass_blockers": [],
+    "adjudication": null
+  },
+  "round-2/critical": {
+    "status": "DONE",
+    "final_assessment": 1,
+    "repair_rounds": 0,
+    "final_grade": "post-implementation-grade.json",
+    "final_review": "review",
+    "initial_review_issues": 0,
+    "final_review_issues": 0,
+    "first_pass_blockers": [],
+    "adjudication": null
+  },
+  "round-3/medium": {
+    "status": "DONE",
+    "final_assessment": 1,
+    "repair_rounds": 0,
+    "final_grade": "post-implementation-grade.json",
+    "final_review": "review",
+    "initial_review_issues": 0,
+    "final_review_issues": 0,
+    "first_pass_blockers": [],
+    "adjudication": null
+  },
+  "round-3/high": {
+    "status": "DONE",
+    "final_assessment": 1,
+    "repair_rounds": 0,
+    "final_grade": "post-implementation-grade.json",
+    "final_review": "review",
+    "initial_review_issues": 0,
+    "final_review_issues": 0,
+    "first_pass_blockers": [],
+    "adjudication": null
+  },
+  "round-3/critical": {
+    "status": "DONE",
+    "final_assessment": 1,
+    "repair_rounds": 0,
+    "final_grade": "post-implementation-grade.json",
+    "final_review": "review",
+    "initial_review_issues": 0,
+    "final_review_issues": 0,
+    "first_pass_blockers": [
+      "historical_regressions"
+    ],
+    "adjudication": "assessment-1-adjudication.json"
+  }
+}

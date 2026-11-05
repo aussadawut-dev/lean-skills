@@ -1,0 +1,136 @@
+{
+  "repository_checks": {
+    "unit": {
+      "status": "PASS",
+      "tests": 27,
+      "log": "validation-logs/unit-archive.log"
+    },
+    "skill_schema": {
+      "status": "PASS",
+      "log": "preflight-schema.log",
+      "evidence_reused": "Exact frozen skill package unchanged since preflight"
+    },
+    "installation": {
+      "status": "PASS",
+      "scenarios": 34,
+      "log": "preflight-install.log",
+      "evidence_reused": "All skill package contents unchanged since preflight; lean-run matches frozen manifest"
+    },
+    "git_diff_check": {
+      "status": "PASS",
+      "log": "validation-logs/git-diff-check.log"
+    },
+    "source_whitespace": {
+      "status": "PASS",
+      "files": [
+        "skills/lean-run/SKILL.md",
+        "skills/lean-run/references/write-integrity.md",
+        "tests/repeated_benchmark.py",
+        "tests/summarize_repeated_benchmark.py",
+        "tests/render_repeated_comparison.py",
+        "tests/test_repeated_benchmark.py",
+        "tests/test_benchmark_summary.py",
+        "tests/behavioral.md"
+      ]
+    }
+  },
+  "control_audit": {
+    "status": "PASS",
+    "baseline_files_verified": 1375,
+    "trials_verified": 9,
+    "phase_count": 30,
+    "sequential_phases_verified": true,
+    "raw_usage_unknown_phases": [
+      "round-1/critical/implementation",
+      "round-2/critical/repair-1",
+      "round-3/critical/repair-1",
+      "round-3/critical/implementation"
+    ],
+    "controls": "Original tasks/prompts/graders, all frozen skill copies, final source/review integrity, known probes and n=3 means/CSV independently verified.",
+    "limit": "A control audit PASS does not imply benchmark quality PASS or complete telemetry."
+  },
+  "quality": {
+    "status": "FAILED",
+    "passed_trials": 7,
+    "failed_trials": [
+      "round-1/critical",
+      "round-2/critical"
+    ],
+    "incomplete_execution_trials": [
+      "round-1/critical",
+      "round-2/critical",
+      "round-3/critical"
+    ],
+    "fully_completed_trials": 6,
+    "final_contract_issues": 0,
+    "final_independent_findings": 2,
+    "final_coordinator_findings": 0,
+    "final_original_supplemental_issues": 0,
+    "final_added_probe_failed_cases": 0,
+    "final_posthoc_probe_failed_cases": 6
+  },
+  "telemetry": {
+    "status": "INCOMPLETE",
+    "phase_count": 30,
+    "known_usage_phases": 26,
+    "unknown_usage_phases": [
+      {
+        "round": 1,
+        "level": "critical",
+        "phase": "implementation",
+        "measured_seconds": 900.016
+      },
+      {
+        "round": 2,
+        "level": "critical",
+        "phase": "repair-1",
+        "measured_seconds": 900.199
+      },
+      {
+        "round": 3,
+        "level": "critical",
+        "phase": "repair-1",
+        "measured_seconds": 900.03
+      },
+      {
+        "round": 3,
+        "level": "critical",
+        "phase": "implementation",
+        "measured_seconds": 900.047
+      }
+    ]
+  },
+  "optimization_target": {
+    "level": "medium",
+    "checks": {
+      "measured_seconds": true,
+      "uncached_input_tokens": true,
+      "uncached_input_plus_output": true,
+      "all_trial_quality_passed": false,
+      "all_measurements_complete": false,
+      "medium_implementation_time_reduced": true
+    },
+    "met_in_observed_sample": false,
+    "interpretation": "Descriptive new n=3 versus historical n=3; no causal or statistical guarantee."
+  },
+  "known_consumption_independent_check": {
+    "total_tokens": 5787923,
+    "uncached_input_tokens": 656512,
+    "uncached_input_plus_output": 883859
+  },
+  "source_sha256": {
+    "skills/lean-run/SKILL.md": "3eecd134b4b1f2a5b6e9a77afdaa4a497359c7b0cb4750ec0e911ce9baae80ce",
+    "skills/lean-run/references/write-integrity.md": "855c7eeb0fee13a2114177a736fe2ba2e1c3ec4bd971a796deecca105b298e4c",
+    "tests/repeated_benchmark.py": "160f2f55f19aeb21ade94649d77666cd20f57756334d1ee3e99af8895990955f",
+    "tests/summarize_repeated_benchmark.py": "1a71ba44079262c4bbb20e239a731127ce90a465959c336501e2cacc559c7691",
+    "tests/render_repeated_comparison.py": "417660be47c599db0ba9edfd2738cca2692acf887e9220d58b74e589d5a13c15",
+    "tests/test_repeated_benchmark.py": "3563ac9fa5d4c580d93bd532705ade71cac0ed55ddc086fc33cb9fc39477082b",
+    "tests/test_benchmark_summary.py": "abcf2cf95a7f6599405bc30a1ef86df159541d1744e53757d510b64915d8adc5",
+    "tests/behavioral.md": "309ea450ec52f07fc59d958460f8bb7bf0500d8cf5abc79086a8b51ac05bc99b"
+  },
+  "archive": "All attempts and unfavorable outcomes retained. Repository/control PASS does not mean benchmark quality PASS.",
+  "links": {
+    "status": "PASS",
+    "report_local_links_checked": 22
+  }
+}

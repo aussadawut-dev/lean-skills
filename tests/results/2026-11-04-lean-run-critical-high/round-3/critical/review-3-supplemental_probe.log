@@ -1,0 +1,206 @@
+{
+  "category": "unchecked SQLite write effects",
+  "checks": [
+    {
+      "probe": "debit",
+      "status": "PASS",
+      "error": "IntegrityError: transfer write failed",
+      "returned": null,
+      "before": {
+        "accounts": [
+          [
+            "one",
+            "a",
+            100
+          ],
+          [
+            "one",
+            "b",
+            0
+          ]
+        ],
+        "transfers": [],
+        "audit": [],
+        "triggers": [
+          [
+            "suppress_write",
+            "CREATE TRIGGER suppress_write BEFORE UPDATE OF balance ON accounts WHEN OLD.name='a' BEGIN SELECT RAISE(IGNORE); END"
+          ]
+        ]
+      },
+      "after": {
+        "accounts": [
+          [
+            "one",
+            "a",
+            100
+          ],
+          [
+            "one",
+            "b",
+            0
+          ]
+        ],
+        "transfers": [],
+        "audit": [],
+        "triggers": [
+          [
+            "suppress_write",
+            "CREATE TRIGGER suppress_write BEFORE UPDATE OF balance ON accounts WHEN OLD.name='a' BEGIN SELECT RAISE(IGNORE); END"
+          ]
+        ]
+      }
+    },
+    {
+      "probe": "credit",
+      "status": "PASS",
+      "error": "IntegrityError: transfer write failed",
+      "returned": null,
+      "before": {
+        "accounts": [
+          [
+            "one",
+            "a",
+            100
+          ],
+          [
+            "one",
+            "b",
+            0
+          ]
+        ],
+        "transfers": [],
+        "audit": [],
+        "triggers": [
+          [
+            "suppress_write",
+            "CREATE TRIGGER suppress_write BEFORE UPDATE OF balance ON accounts WHEN OLD.name='b' BEGIN SELECT RAISE(IGNORE); END"
+          ]
+        ]
+      },
+      "after": {
+        "accounts": [
+          [
+            "one",
+            "a",
+            100
+          ],
+          [
+            "one",
+            "b",
+            0
+          ]
+        ],
+        "transfers": [],
+        "audit": [],
+        "triggers": [
+          [
+            "suppress_write",
+            "CREATE TRIGGER suppress_write BEFORE UPDATE OF balance ON accounts WHEN OLD.name='b' BEGIN SELECT RAISE(IGNORE); END"
+          ]
+        ]
+      }
+    },
+    {
+      "probe": "receipt",
+      "status": "PASS",
+      "error": "IntegrityError: transfer write failed",
+      "returned": null,
+      "before": {
+        "accounts": [
+          [
+            "one",
+            "a",
+            100
+          ],
+          [
+            "one",
+            "b",
+            0
+          ]
+        ],
+        "transfers": [],
+        "audit": [],
+        "triggers": [
+          [
+            "suppress_write",
+            "CREATE TRIGGER suppress_write BEFORE INSERT ON transfers BEGIN SELECT RAISE(IGNORE); END"
+          ]
+        ]
+      },
+      "after": {
+        "accounts": [
+          [
+            "one",
+            "a",
+            100
+          ],
+          [
+            "one",
+            "b",
+            0
+          ]
+        ],
+        "transfers": [],
+        "audit": [],
+        "triggers": [
+          [
+            "suppress_write",
+            "CREATE TRIGGER suppress_write BEFORE INSERT ON transfers BEGIN SELECT RAISE(IGNORE); END"
+          ]
+        ]
+      }
+    },
+    {
+      "probe": "audit",
+      "status": "PASS",
+      "error": "IntegrityError: transfer write failed",
+      "returned": null,
+      "before": {
+        "accounts": [
+          [
+            "one",
+            "a",
+            100
+          ],
+          [
+            "one",
+            "b",
+            0
+          ]
+        ],
+        "transfers": [],
+        "audit": [],
+        "triggers": [
+          [
+            "suppress_write",
+            "CREATE TRIGGER suppress_write BEFORE INSERT ON audit BEGIN SELECT RAISE(IGNORE); END"
+          ]
+        ]
+      },
+      "after": {
+        "accounts": [
+          [
+            "one",
+            "a",
+            100
+          ],
+          [
+            "one",
+            "b",
+            0
+          ]
+        ],
+        "transfers": [],
+        "audit": [],
+        "triggers": [
+          [
+            "suppress_write",
+            "CREATE TRIGGER suppress_write BEFORE INSERT ON audit BEGIN SELECT RAISE(IGNORE); END"
+          ]
+        ]
+      }
+    }
+  ],
+  "issue_count": 0
+}

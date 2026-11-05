@@ -1,0 +1,26 @@
+{
+  "status": "REWORK",
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "HIGH",
+      "location": "vault.py:10-12, vault.py:75-89",
+      "requirement": "Debit, credit, receipt and exactly one audit row must commit together while preserving existing rows and tenant isolation. The lean-run write-integrity procedure requires verification of actual effects before commit.",
+      "evidence": "On a fresh temporary database, seed accounts ('alpha','source',100) and ('alpha','target',0). Install: CREATE TRIGGER erase_audit AFTER INSERT ON audit BEGIN DELETE FROM audit WHERE tenant=NEW.tenant AND key=NEW.key; END. Calling vault.transfer(path,'alpha','source','target',10,'new') returns success. Reopening shows balances 90/10 and a transfer receipt, but no audit row; exact replay still returns success. Additional probes demonstrated reversed credit, deleted foreign history and changed foreign balances. All share one cause: rowcount reports the outer statement's affected row without establishing the transaction's final effects.",
+      "suggested_fix": "Verify the transaction's actual logical effects: the exact debit, credit, receipt and single audit row, plus preservation of unrelated rows. Roll back on violations. Preserve existing triggers and detect their effects without loading foreign account data into application code."
+    }
+  ],
+  "checks": [
+    "Read CONTRACT.md, AGENTS.md, lean-run and its write-integrity procedure; compared current application files with .baseline and inspected added tests.",
+    "Confirmed supplied test_public.py matches its baseline.",
+    "TMPDIR=\"$PWD\" python3 -B -m unittest discover -v: all 20 tests passed on Python 3.14.3 / SQLite 3.50.4.",
+    "Independent public-interface probes used temporary workspace databases. A harmless audit guard succeeded; destructive trigger variants committed incorrect state.",
+    "A UNIQUE-index INSERT OR IGNORE control preserved history; INSERT OR REPLACE deleted an existing foreign audit row while transfer returned success.",
+    "A trigger that changed then restored an unrelated balance preserved it; adding another change persisted the incorrect balance without rejection.",
+    "A commit blocked by a separate reader failed after approximately 31 seconds, rolled back all four effects, and allowed a successful retry after releasing the lock."
+  ],
+  "coverage_limits": [
+    "No application, test, instruction or baseline files were modified; no repairs were attempted.",
+    "Assessment was local to the synthetic SQLite fixture. Trigger configurations and concurrency schedules were not exhaustively enumerated."
+  ]
+}

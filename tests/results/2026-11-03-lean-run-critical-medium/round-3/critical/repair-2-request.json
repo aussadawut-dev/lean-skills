@@ -1,0 +1,16 @@
+{
+  "findings": [
+    {
+      "id": "TRIGGER-GRAMMAR-REGRESSION",
+      "severity": "MEDIUM",
+      "location": "vault.py:70-73, _instrument_trigger",
+      "requirement": "Valid transfers must succeed while preserving existing benign trigger behavior.",
+      "evidence": "Initialize accounts ('one','a',100) and ('one','b',0), then execute CREATE TRIGGER benign AFTER INSERT ON audit WHEN 1 BEGIN VALUES(1); END. Calling transfer(path,'one','a','b',10,'k') raises IndexError at vault.py:70. The parser never recognizes BEGIN because VALUES is excluded from its statement-prefix list. A WITH-prefixed SELECT reproduces the same defect. The CLI exits 2 for this valid request. Data and schema remain unchanged; the .pre-repair implementation succeeds on the same database, producing balances 90 and 10.",
+      "suggested_fix": "Support SQLite's legal trigger-body forms when locating BEGIN, including VALUES and WITH, or avoid rewriting trigger SQL. Add distinguishing regressions for these forms with WHEN clauses."
+    }
+  ],
+  "source": [
+    "review-2/final.txt"
+  ],
+  "notes": "Same task; second REWORK, one final fix-only pass and fresh verification/review. Preserve the scoped read fix and all current valid/invalid preservation controls, including benign keyword/Unicode trigger names, no-op/IGNORE/replacement cases and historical replay. Keep all existing checks."
+}

@@ -1,0 +1,7 @@
+Implemented tenant isolation, atomic transfers, durable replay, and generic CLI errors in `vault.py` and `app.py`. Added `test_regression.py`.
+
+- Reproduced cross-tenant reads, receipt leakage, and partial commits.
+- `python3 -B -m unittest discover -v`: **16 tests passed**.
+- Coverage includes concurrency, rollback, trigger/view behavior, counters across reopening, schema preservation, WAL, and the CLI journey.
+
+**Final acceptance remains BLOCKED pending coordinator review.** [lean-run](/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-schema-skill-kfeIef/cohort/round-1/critical/workspace/.agents/skills/lean-run/SKILL.md) requires “HIGH needs a fresh independent reviewer.” That review has not occurred.
