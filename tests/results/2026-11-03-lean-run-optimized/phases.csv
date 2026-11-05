@@ -1,9 +1,0 @@
-level,phase,elapsed_seconds,total_tokens,input_tokens,cached_input_tokens,output_tokens,command_count,tool_output_characters
-medium,implementation,213.351,182446,175239,140416,7207,10,52817
-medium,review,165.803,132124,127002,117504,5122,12,21882
-high,implementation,288.956,177402,166764,132096,10638,9,123897
-high,review,153.618,113215,107687,86528,5528,10,33602
-critical,implementation,503.206,366840,349751,306048,17089,11,66707
-critical,review,239.776,170962,163129,131584,7833,17,53581
-critical,repair-1,204.339,241569,234421,203392,7148,12,97061
-critical,review-2,170.02,206787,200743,165248,6044,12,112046

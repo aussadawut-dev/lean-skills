@@ -1,9 +1,0 @@
-{
-  "status": "REWORK",
-  "evidence": [
-    "assessment-1-boundary-repro.json",
-    "assessment-1-account_scope_trace.json",
-    "review-known-probes.json"
-  ],
-  "account_scope": "Traced application lookups scoped; no extra scope finding."
-}

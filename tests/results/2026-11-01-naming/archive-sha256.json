@@ -1,0 +1,12 @@
+{
+  "README.md": "0263fc549e461c1a292e478eb2d54bad21616c9a89ca79af6d26a34474f7af50",
+  "agy-display.json": "08b5f639a193d44ebdad7c3e0dff2dc8fed1e271280fc2f531ad648720a7bb41",
+  "agy-skills.json": "5e8ebd8519c90f768b6caec869b60d135894bc863ba86bad746b8778c1972df6",
+  "agy.json": "5f4048f4f3cd07eb5152ab7af608bc6256673b5e693cfcaf8bd32a822241464c",
+  "claude-display.json": "056ab07236ba9e396f9d999fb7f04ee71980c98c3588bc0da43e5082741f163d",
+  "claude-skills.json": "1b3a242c10a66af40755bb69da1c91361a57229bf59b7164243a3b3257accfef",
+  "claude.json": "c201e47a527413dfbd3b5009f7a4041283edff8bc92c934d8f87be1473251d19",
+  "lean-agents-snapshot.txt": "ae28001786bba5c60f1785bb9823ee73f653aaa613e9dbb06a79cd53d6ed3894",
+  "lean-run-snapshot.txt": "8f4e5e6d6c51aacf38c6ace839ac4439613eea27ef23a1e067982ed87fef266c",
+  "verification.json": "f940f0724741f9b6b8fcd78a28cfdfe94b4997609e674a66a2ef396d8f9c41c2"
+}

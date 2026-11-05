@@ -1,0 +1,15 @@
+{
+  "README.md": "c573c8b2347fc4d727cf878f5176ffb37bf755f15f9cbe4aa3c1e46032cd1b8d",
+  "analysis.json": "b0c6a0c3fa0ae922640c2725a212b01a4fae6c00f752569e3abb91547181b43a",
+  "analyze_logs.py": "20fc4f99d3f9aa7e9dc324122ba002936b5e7c3fa22a869d8a121c444894b154",
+  "archive-integrity.json": "c7c8eb62fff435c76ba24745cd8361e686d2de380bce751673b9653d0b1b4ea0",
+  "command-inventory.json": "551994e82fa882261db8c120d9e80f10dced383bd94d691bfd7b793aaabce366",
+  "current-skill-identity.json": "0294dc041572b9c9a92ca39ce5d707d7a71712687ca02868efb73347d8ed1cca",
+  "lean_optimized_final-replay-check.log": "c2f0f3ab4101501db405662fe799fff54691962a8a5db52fd0af039f963cb49a",
+  "lean_original_final-replay-check.log": "0d4b1969a1d50b4a3d24befd53f09709e83ddb4ab50cd027965000033088f2a7",
+  "phase-analysis.csv": "c07d4692ce18e4e8877e0bb8fa36f84d457476b9c37d03ecd1c0ce37708c29a3",
+  "posthoc-cross-regression.json": "17d4bd8bb263098a3bb2541654c9b992f1de78384addb2c222ad205a45ef89c8",
+  "source-identities.json": "5783c8521bc301cbd28afe6fdc9ce4579656258756f36156142ac2b290f379ae",
+  "v57-replay-check.log": "124ae08ce8e8c6171469a4a52ca139d8f585797918cb976a17f5525df50f1675",
+  "validation.json": "f7cd7f88bac1f262c271dccd399b4ac448d834bb486e22d137f7609938973bf0"
+}

@@ -1,8 +1,0 @@
-R2-F1 is repaired with a tokenizer-only change in `vault.py` and regression checks in `test_regression.py`.
-
-- Reproduced the original API failure and CLI exit 2.
-- Verified U+00A0 names, VT/BOM separators, dollar names, `total_changes()`, replay, rollback, and trigger preservation.
-- Six affected checks passed.
-- `python3 -B -m unittest discover -v`: **25 tests passed**, including public API/CLI journeys.
-
-Final acceptance is **BLOCKED pending renewed coordinator review**. Task-wide REWORK remains **2**.

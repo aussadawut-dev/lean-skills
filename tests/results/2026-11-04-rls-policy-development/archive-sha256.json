@@ -1,0 +1,15 @@
+{
+  "README.md": "e8ff5ff8a9ba8d3dd7f646d4dffa7272aaa11efa043b9c6eee8c524033e7728b",
+  "evidence/abr3_probe.py": "332985199f5a75bf3ded32c74af969a6d8270dcb6b3f5b1073cc09c7b784fb2f",
+  "evidence/cross.py": "a9bf86d31a18933e98e8c014ea8b86f58a37d39cae56c303cdec74d89a83d0ff",
+  "evidence/f1_pair_probe.py": "c5160b34b56ec5c0b0485ebf08bf8de6e0982c9ad2569ea71bb663d5e011cca8",
+  "evidence/results.json": "8663f37b3a98c1c895483207d4e6df58ab1fd561a3ce4c0ab69c34a3e534100e",
+  "evidence/rls_policy_probe-lexical-patch.json": "7e6c2b571683513102cbdfcaa419dc3e46f901d4bb738ce8097be3473cad5fa2",
+  "evidence/rls_policy_probe-prototype.json": "73f41e0ab3cd1925337ed4a09ad859e9ed00cd34e7111748963bbecbda030b78",
+  "evidence/run_probes.py": "04546ca0830ea56548ecb4a30314040493b47b5ae9b5abe2a9bacce27a6063f4",
+  "evidence/variant_probe.py": "e18ecd6d544fb56c50bcfb9004b5b61bf98db455b8f95c3a591d6ce22f6d1d59",
+  "lexical-patch/test_handoff_regressions.py": "6838436227bfe1d967b8eaf35804499fda7e9a555aa2f7040d5d01e7b35e99e5",
+  "lexical-patch/vault_guard.diff": "39aff3377f36e571268acced2ec7574d855183dd086e19a79da59d19f8d0baa9",
+  "prototype/vault_guard.py": "5e54eccb3d2dda86ec896f9c91430d5bf8dccb12e2112b090f0b1aa6d5a4b695",
+  "superseded-expectations.json": "63ea1a6e3f001e81cc9185e1e15cf4839f457bfd008a0720a12df626b814e293"
+}

@@ -62,8 +62,21 @@ with zero failures and zero advisory observations.
 This probe and `rls_policy_probe.py` pass an expression to `RAISE()`. SQLite
 3.45.1, which Ubuntu 24.04 and GitHub-hosted runners ship, rejects that, so
 `prepare` refuses the cohort with the probe's error instead of recording a failed
-reference, and the four unit tests that run these probes are skipped there with
-the SQLite version in the reason.
+reference, and the unit tests that run these probes are skipped there with the
+SQLite version in the reason.
+
+## Unit-test fixtures
+
+The measured cohorts keep only their reports and hash manifests in the tree
+([tests/results/README.md](../results/README.md)). The unit tests build a
+synthetic lineage of eight look-alike archives with
+[`tests/synthetic_cohorts.py`](../synthetic_cohorts.py): frozen fixtures, prompts
+and graders come from `level_benchmark.py`, summaries from the real summarizer,
+and the Critical candidates are the reference solution plus the small candidate
+and its deliberately defective variants in [`fixtures/`](fixtures/). Each
+variant's probe outcomes are recorded in `OUTCOMES` and checked against the real
+probes in [`tests/probes/`](../probes/), so a trial's archived status always
+follows from what its candidate actually does.
 
 | Workspace | Contract probe failures | Advisory |
 | --- | ---: | ---: |

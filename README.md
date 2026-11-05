@@ -215,6 +215,11 @@ diagnosis, UX scope and handoff, plus packaging checks for the 16-skill candidat
 They do not establish live deployment, UI accessibility execution or full runtime
 coverage on the other hosts.
 
+The raw files of every evaluation and benchmark cohort are archived outside the
+repository; `tests/results/` keeps each cohort's report, summary, manifest,
+comparison and hash manifest. [tests/results/README.md](tests/results/README.md)
+says how to restore and verify an archive.
+
 ## For contributors
 
 Clone this repository and install from its root to try local changes:

@@ -1,7 +1,0 @@
-{
-  "reason": "Known log truncation metadata defect and duplicate successful-log reads; revise before final nine-trial validation",
-  "stopped_after_metrics": "round-1/critical/implementation/metrics.json",
-  "measured_phase_preserved": true,
-  "phase_usage_known": true,
-  "unix": 1793675042.809674
-}

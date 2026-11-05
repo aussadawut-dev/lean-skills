@@ -1,8 +1,0 @@
-Implemented fixes in [vault.py](/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-level-benchmark-gbhk7t9w/cases/critical/workspace/vault.py) and [app.py](/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-level-benchmark-gbhk7t9w/cases/critical/workspace/app.py): tenant isolation, validation, atomic transfers, safe replay/conflicts, and generic CLI errors.
-
-- Reproduced defects before repair and added 28 regression tests.
-- `python3 -B -m unittest discover -v`: **29 tests passed**.
-- Verified real SQLite concurrency, rollback, schema/row/trigger preservation, and separate-process CLI journeys with database reopening.
-- Reviewed final changes locally; no known implementation gaps remain.
-
-**Final acceptance is BLOCKED pending the coordinator’s required fresh independent review.** That review has not occurred.

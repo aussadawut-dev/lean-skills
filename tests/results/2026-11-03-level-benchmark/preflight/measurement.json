@@ -1,6 +1,0 @@
-{
-  "elapsed_seconds": 6.214,
-  "exit_code": 0,
-  "included_in_level_totals": false,
-  "note": "Transport/token-accounting probe only. An earlier launcher exited without runtime events; its usage is unavailable."
-}

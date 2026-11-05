@@ -1,9 +1,0 @@
-{
-  "status": "FAILED",
-  "original_two_finding_cases": 0,
-  "all_predeclared_probes_pass": true,
-  "name_resolution_followup_failed_cases": 0,
-  "remaining_independent_findings": 1,
-  "repair_rounds_exhausted": 2,
-  "no_waivers": true
-}

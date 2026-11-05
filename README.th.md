@@ -205,6 +205,10 @@ skills เป็นคำแนะนำให้ agent ทำงาน ไม�
 diagnosis, UX scope และ handoff พร้อมตรวจแพ็กเกจชุด 16 skills
 ผลนี้ไม่ยืนยันการ deploy จริง การใช้งาน accessibility ใน UI หรือ runtime ครบชุดบน host อื่น
 
+ไฟล์ดิบของทุก cohort ถูกเก็บไว้นอก repository ใน `tests/results/` เหลือเฉพาะรายงาน
+summary manifest comparison และ hash manifest ของแต่ละ cohort
+ดูวิธีกู้คืนและตรวจสอบ archive ได้ที่ [tests/results/README.md](tests/results/README.md)
+
 ## สำหรับผู้ร่วมพัฒนา
 
 clone repository นี้ แล้วรันจากโฟลเดอร์หลักเพื่อลอง skills ที่แก้ในเครื่อง:

@@ -1,7 +1,0 @@
-Implemented tenant isolation, atomic transfers, concurrency-safe replay, validation, and generic CLI errors in `vault.py` and `app.py`. Added `test_regressions.py`.
-
-- Reproduced the original isolation, replay, partial-commit, concurrency, and CLI defects.
-- `python3 -B -m unittest discover -v`: **23 tests passed**.
-- Verified real SQLite concurrency, rollback after rejected or skipped writes, persistence, and CLI transfer/replay/failure/recovery.
-
-No known implementation gaps remain. **Final acceptance is BLOCKED pending the coordinator’s required fresh independent review**, which has not occurred.

@@ -1,7 +1,0 @@
-Implemented the bounded repair for F1, F2 and C1–C3: native trigger order, rowids and storage preservation; case-insensitive tenant filtering; database exceptions; and final-effect validation.
-
-`python3 -B -m unittest discover -v`: **26 tests passed**, covering native SQLite comparisons, API/CLI behavior, rollback, replay and concurrency.
-
-Task-wide REWORK: **2**, carrying forward the prior count of 1.
-
-**Final acceptance is blocked pending the coordinator’s renewed independent review.** That review has not occurred.

@@ -1,0 +1,52 @@
+{
+  "policy": "synthetic Critical row-level security record; see README.md",
+  "level": "critical",
+  "meaning": "Each listed entry is an exact failing unittest header (test, class path and subtest parameters, without FAIL/ERROR) whose expectation depends on other tenants' rows under the old policy. A suite whose failures are all listed is reported as policy-superseded, separately and never as passed. Any unlisted failure, import error or unparsed failure still blocks.",
+  "historical_tests": {
+    "synthetic-in-source-budget/round-1": [
+      "test_counter_sees_all_tenants (test_foreign_counter.ForeignCounterTests.test_counter_sees_all_tenants)"
+    ],
+    "synthetic-critical-high-pilot/round-1": [
+      "test_counter_sees_all_tenants (test_foreign_counter.ForeignCounterTests.test_counter_sees_all_tenants)"
+    ],
+    "synthetic-critical-high/round-1": [
+      "test_counter_sees_all_tenants (test_foreign_counter.ForeignCounterTests.test_counter_sees_all_tenants)"
+    ],
+    "synthetic-critical-high/round-2": [
+      "test_counter_sees_all_tenants (test_foreign_counter.ForeignCounterTests.test_counter_sees_all_tenants)"
+    ],
+    "synthetic-critical-high/round-3": [
+      "test_counter_sees_all_tenants (test_foreign_counter.ForeignCounterTests.test_counter_sees_all_tenants)"
+    ]
+  },
+  "probe_cases": {
+    "audit_followup_probe.py": [
+      "case=history_rewritten"
+    ],
+    "preservation_probe.py": [
+      "case=old_receipt_deleted",
+      "case=unrelated_balance_changed"
+    ],
+    "frame_followup_probe.py": [
+      "case=identical_account_replacement",
+      "case=identical_audit_replacement",
+      "case=identical_receipt_replacement",
+      "case=replacement_rowid_swap",
+      "case=unique_account_victim",
+      "case=unique_receipt_victim"
+    ],
+    "trigger_compatibility_probe.py": [
+      "case=unique_audit_replace/journal=DELETE/interface=API",
+      "case=unique_audit_replace/journal=DELETE/interface=CLI",
+      "case=unique_audit_replace/journal=WAL/interface=API",
+      "case=unique_audit_replace/journal=WAL/interface=CLI"
+    ],
+    "trigger_ignore_scope_probe.py": [
+      "interface=API/should_fail=True",
+      "interface=CLI/should_fail=True"
+    ],
+    "critical_final_findings_probe.py": [
+      "f1_foreign_corruption"
+    ]
+  }
+}

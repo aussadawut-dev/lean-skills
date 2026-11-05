@@ -1,6 +1,0 @@
-{
-  "stage": "round-1 Critical assessment 1",
-  "cause": "Copied probes import vault.py by file spec without local sibling path; valid application _integrity.py import failed only in that evaluator.",
-  "change": "Set PYTHONPATH to the candidate workspace for exact probe subprocesses only. Scripts, outputs already collected, original grades, model phases, prompts, deadline and runner bytes are retained. First raw assessment/logs copied to assessment-1-before-import-fix before reevaluation.",
-  "cohort_cli_launches_added": 0
-}

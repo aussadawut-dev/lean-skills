@@ -1,9 +1,0 @@
-{
-  "status": "FAILED",
-  "reason": "Mandatory valid-trigger behavior still fails after both allowed repairs.",
-  "evidence": [
-    "review-3/final.txt",
-    "assessment-3-recursive_setting_probe.json",
-    "review-3-known-probes.json"
-  ]
-}

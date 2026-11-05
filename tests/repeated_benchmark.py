@@ -102,6 +102,11 @@ def prepare(destination, baseline=None, levels=('medium','high','critical'), rep
     orders=[tuple(levels[n % len(levels):])+tuple(levels[:n % len(levels)]) for n in range(repetitions)]
     if destination.exists() or destination==ROOT or ROOT in destination.parents:
         raise ValueError('Use a new directory outside the repository')
+    if not all((baseline/name).is_file() for name in ('manifest.json','summary.json')) \
+            or not all((baseline_trial(baseline,level)/'initial').is_dir() for level in levels):
+        # The committed tree keeps only each cohort's reports and hash manifest.
+        raise FileNotFoundError(f'{baseline} is not a restored benchmark archive; '
+                                'see tests/results/README.md for python3 tests/benchmark_archives.py restore')
     destination.mkdir(parents=True)
     b=harness(ROOT/'tests/level_benchmark.py')
     controls={}

@@ -1,5 +1,0 @@
-Implemented all three repairs: transaction-effect validation catches trigger/REPLACE damage, duplicate JSON keys are rejected, and saved receipts replay before endpoint checks.
-
-Added regression coverage. Required `python3 -B -m unittest discover -v` passed all **24 tests**, including real API/CLI journeys, concurrency, rollback, and trigger compatibility.
-
-Task-wide REWORK is **2**, including this repair. Final acceptance is **BLOCKED pending the coordinator’s renewed independent review**.

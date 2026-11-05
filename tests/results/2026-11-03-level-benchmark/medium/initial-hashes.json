@@ -1,9 +1,0 @@
-{
-  ".agents/skills/lean-run/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
-  ".agents/skills/lean-run/SKILL.md": "76d7fca67e6ea841d1e3e3366c398b682de1a63dbc50391fe1cc99a3165045f9",
-  ".agents/skills/lean-run/references/handoff.md": "2d6744d15c27d002c85b9b4cbccf2b0845cb7b5c8b3589aa8b9b06a885357e94",
-  "AGENTS.md": "0ef83ddcf2d1065527f05cd03d5a1b275feecc77e45bdb5916217f204c1cb486",
-  "CONTRACT.md": "70c0534f21c9f9705b307c81d93b7b7725567f8709bcb1744c76ce48d94c4bd3",
-  "app.py": "8d11b23c223cb40cb7e7ec649b1e0b31c7ddb49e2d495eaaa1e56013586b68aa",
-  "test_public.py": "2cbe00c08d2c2ad6ee61176c69e4b2ad17eac17ddb0468cda92e1452886ae103"
-}

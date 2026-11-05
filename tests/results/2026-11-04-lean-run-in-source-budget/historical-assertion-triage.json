@@ -1,9 +1,0 @@
-{
-  "status": "RECORDED_FAILURES_NOT_WAIVED",
-  "scope": "Three failed final historical assertions in two forward suites, inspected independently.",
-  "probe": "typed_scope_triage.py",
-  "probe_sha256": "56e7e7e29b412953e21566260c84cd7cb415ec8cda8f48d155413a7fee48f8c2",
-  "report": "typed_scope_triage.json",
-  "finding": "Native trigger statements convert foreign TEXT to BLOB without raising SQLite errors. Candidate scopes updates to zero rows, leaves typed foreign state unchanged, commits required transfer and replays without changes. The historical tests require rejection and therefore still fail.",
-  "impact": "No actual corruption observed in these exact cases. Do not infer general trigger equivalence; independent F2 and R3 remain mandatory blockers. No acceptance or tests waived."
-}

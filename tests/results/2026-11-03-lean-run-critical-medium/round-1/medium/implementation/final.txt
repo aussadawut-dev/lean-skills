@@ -1,7 +1,0 @@
-Implemented strict parsing and CLI handling in `app.py`; added `test_regression.py`.
-
-- Reproduced and fixed dropped fields, invalid numeric syntax, CLI errors, and large-integer failures.
-- `python3 -B -m unittest discover -v`: **11 tests passed**, including real CLI runs and 5,001-digit values.
-- Full diff self-review found no remaining implementation gaps. Protected files are unchanged.
-
-Fresh independent review has **not occurred** and remains pending with the coordinator. Final acceptance awaits that review.

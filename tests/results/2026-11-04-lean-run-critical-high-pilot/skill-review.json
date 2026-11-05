@@ -1,6 +1,0 @@
-{
-  "status": "PASS",
-  "reviewer": "critical_mechanism - gpt-6.1-sol|high",
-  "scope": "Final skill and regression probe, independently reproduced old failures; 8 native journal cases on SQLite 3.50.4. Candidate behavior measured separately.",
-  "limits": "Native mechanism evidence is fixture/runtime-specific, not portable proof."
-}

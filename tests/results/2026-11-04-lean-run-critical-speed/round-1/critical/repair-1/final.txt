@@ -1,9 +1,0 @@
-Reproduced and repaired all three findings:
-
-- `$` trigger identifiers now work.
-- REPLACE preserves DELETE-trigger behavior while retaining destructive-effect detection.
-- Duplicate JSON fields produce exit 2, generic stderr JSON, and no stdout.
-
-Added six regression tests exercising real API/CLI behavior. `python3 -B -m unittest discover -v`: **29 tests passed**. Complete diff checked.
-
-Task-wide REWORK remains **1**. Renewed independent review is **pending with the coordinator**; final acceptance remains blocked on that review.

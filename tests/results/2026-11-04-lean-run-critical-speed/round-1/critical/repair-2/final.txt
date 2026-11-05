@@ -1,7 +1,0 @@
-Both findings repaired locally: observation no longer adds SQL row writes, and tokenization uses SQLite whitespace rules.
-
-- API/CLI controls pass in DELETE and WAL modes.
-- Regressions cover storage types, malformed text, hidden deletions, ignored replacements, rollback, and replay.
-- Required `python3 -B -m unittest discover -v`: **33 tests passed**.
-
-Overall acceptance remains **blocked pending the coordinator’s renewed independent review**. Task-wide REWORK remains **2**.

@@ -1,6 +1,0 @@
-{
-  "discovery": "Round 1 Critical renewed independent review found an ignored row suppressed the same trigger on a later row.",
-  "scope": "API and CLI. Ignore row x; row y either aborts the transfer or permits a no-op control. Require atomically rejected/successful transfer and preserved schema.",
-  "gate": "Run after each remaining Critical review and compare all previous and new final workspaces.",
-  "script": "trigger_ignore_scope_probe.py"
-}
