@@ -1,0 +1,530 @@
+{
+  "levels": [
+    {
+      "level": "high",
+      "comparison_valid": true,
+      "baseline_n": 1,
+      "candidate_n": 1,
+      "baseline": {
+        "measured_seconds": 481.60900000000004,
+        "total_tokens": 278805,
+        "input_tokens": 264287,
+        "cached_input_tokens": 229760,
+        "uncached_input_tokens": 34527,
+        "output_tokens": 14518,
+        "uncached_input_plus_output": 49045
+      },
+      "statistics": {
+        "measured_seconds": {
+          "n": 1,
+          "requested_n": 1,
+          "unknown_count": 0,
+          "mean": 1111.763,
+          "median": 1111.763,
+          "sample_sd": null,
+          "min": 1111.763,
+          "max": 1111.763,
+          "known_sum": 1111.763
+        },
+        "total_tokens": {
+          "n": 1,
+          "requested_n": 1,
+          "unknown_count": 0,
+          "mean": 666554,
+          "median": 666554,
+          "sample_sd": null,
+          "min": 666554,
+          "max": 666554,
+          "known_sum": 666554
+        },
+        "input_tokens": {
+          "n": 1,
+          "requested_n": 1,
+          "unknown_count": 0,
+          "mean": 636726,
+          "median": 636726,
+          "sample_sd": null,
+          "min": 636726,
+          "max": 636726,
+          "known_sum": 636726
+        },
+        "cached_input_tokens": {
+          "n": 1,
+          "requested_n": 1,
+          "unknown_count": 0,
+          "mean": 557440,
+          "median": 557440,
+          "sample_sd": null,
+          "min": 557440,
+          "max": 557440,
+          "known_sum": 557440
+        },
+        "uncached_input_tokens": {
+          "n": 1,
+          "requested_n": 1,
+          "unknown_count": 0,
+          "mean": 79286,
+          "median": 79286,
+          "sample_sd": null,
+          "min": 79286,
+          "max": 79286,
+          "known_sum": 79286
+        },
+        "output_tokens": {
+          "n": 1,
+          "requested_n": 1,
+          "unknown_count": 0,
+          "mean": 29828,
+          "median": 29828,
+          "sample_sd": null,
+          "min": 29828,
+          "max": 29828,
+          "known_sum": 29828
+        },
+        "uncached_input_plus_output": {
+          "n": 1,
+          "requested_n": 1,
+          "unknown_count": 0,
+          "mean": 109114,
+          "median": 109114,
+          "sample_sd": null,
+          "min": 109114,
+          "max": 109114,
+          "known_sum": 109114
+        }
+      },
+      "baseline_phase_means": {
+        "implementation": 310.435,
+        "repair-1": 0,
+        "repair-2": 0,
+        "reviews": 171.174
+      },
+      "candidate_phase_means": {
+        "implementation": 257.316,
+        "repair-1": 465.771,
+        "repair-2": 0,
+        "reviews": 388.67600000000004
+      },
+      "baseline_implementation_seconds": {
+        "n": 1,
+        "requested_n": 1,
+        "unknown_count": 0,
+        "mean": 310.435,
+        "median": 310.435,
+        "sample_sd": null,
+        "min": 310.435,
+        "max": 310.435,
+        "known_sum": 310.435
+      },
+      "implementation_seconds": {
+        "n": 1,
+        "requested_n": 1,
+        "unknown_count": 0,
+        "mean": 257.316,
+        "median": 257.316,
+        "sample_sd": null,
+        "min": 257.316,
+        "max": 257.316,
+        "known_sum": 257.316
+      },
+      "implementation_time_change_percent": -17.11115048238763,
+      "mean_change_percent": {
+        "measured_seconds": 130.8434850677624,
+        "total_tokens": 139.07533939491762,
+        "input_tokens": 140.92217929750612,
+        "cached_input_tokens": 142.61838440111418,
+        "uncached_input_tokens": 129.63477857908305,
+        "output_tokens": 105.4552968728475,
+        "uncached_input_plus_output": 122.47731674992353
+      },
+      "first_review_issues": [
+        1
+      ],
+      "posthoc_review_issues": [
+        0
+      ],
+      "renewed_review_issues": [
+        0
+      ],
+      "final_review_issues": [
+        0
+      ],
+      "repair_rounds": [
+        1
+      ]
+    },
+    {
+      "level": "critical",
+      "comparison_valid": false,
+      "baseline_n": 1,
+      "candidate_n": 1,
+      "baseline": {
+        "measured_seconds": 3799.767,
+        "total_tokens": 2850461,
+        "input_tokens": 2754833,
+        "cached_input_tokens": 2525824,
+        "uncached_input_tokens": 229009,
+        "output_tokens": 95628,
+        "uncached_input_plus_output": 324637
+      },
+      "statistics": {
+        "measured_seconds": {
+          "n": 1,
+          "requested_n": 1,
+          "unknown_count": 0,
+          "mean": 3079.429,
+          "median": 3079.429,
+          "sample_sd": null,
+          "min": 3079.429,
+          "max": 3079.429,
+          "known_sum": 3079.429
+        },
+        "total_tokens": {
+          "n": 1,
+          "requested_n": 1,
+          "unknown_count": 0,
+          "mean": 2958085,
+          "median": 2958085,
+          "sample_sd": null,
+          "min": 2958085,
+          "max": 2958085,
+          "known_sum": 2958085
+        },
+        "input_tokens": {
+          "n": 1,
+          "requested_n": 1,
+          "unknown_count": 0,
+          "mean": 2852735,
+          "median": 2852735,
+          "sample_sd": null,
+          "min": 2852735,
+          "max": 2852735,
+          "known_sum": 2852735
+        },
+        "cached_input_tokens": {
+          "n": 1,
+          "requested_n": 1,
+          "unknown_count": 0,
+          "mean": 2667136,
+          "median": 2667136,
+          "sample_sd": null,
+          "min": 2667136,
+          "max": 2667136,
+          "known_sum": 2667136
+        },
+        "uncached_input_tokens": {
+          "n": 1,
+          "requested_n": 1,
+          "unknown_count": 0,
+          "mean": 185599,
+          "median": 185599,
+          "sample_sd": null,
+          "min": 185599,
+          "max": 185599,
+          "known_sum": 185599
+        },
+        "output_tokens": {
+          "n": 1,
+          "requested_n": 1,
+          "unknown_count": 0,
+          "mean": 105350,
+          "median": 105350,
+          "sample_sd": null,
+          "min": 105350,
+          "max": 105350,
+          "known_sum": 105350
+        },
+        "uncached_input_plus_output": {
+          "n": 1,
+          "requested_n": 1,
+          "unknown_count": 0,
+          "mean": 290949,
+          "median": 290949,
+          "sample_sd": null,
+          "min": 290949,
+          "max": 290949,
+          "known_sum": 290949
+        }
+      },
+      "baseline_phase_means": {
+        "implementation": 503.569,
+        "repair-1": 884.568,
+        "repair-2": 814.021,
+        "reviews": 1597.609
+      },
+      "candidate_phase_means": {
+        "implementation": 739.717,
+        "repair-1": 703.098,
+        "repair-2": 501.946,
+        "reviews": 1134.6680000000001
+      },
+      "baseline_implementation_seconds": {
+        "n": 1,
+        "requested_n": 1,
+        "unknown_count": 0,
+        "mean": 503.569,
+        "median": 503.569,
+        "sample_sd": null,
+        "min": 503.569,
+        "max": 503.569,
+        "known_sum": 503.569
+      },
+      "implementation_seconds": {
+        "n": 1,
+        "requested_n": 1,
+        "unknown_count": 0,
+        "mean": 739.717,
+        "median": 739.717,
+        "sample_sd": null,
+        "min": 739.717,
+        "max": 739.717,
+        "known_sum": 739.717
+      },
+      "implementation_time_change_percent": 46.89486445750235,
+      "mean_change_percent": {
+        "measured_seconds": -18.95742554740856,
+        "total_tokens": 3.7756699705766783,
+        "input_tokens": 3.5538270377913905,
+        "cached_input_tokens": 5.594689099478023,
+        "uncached_input_tokens": -18.95558689833151,
+        "output_tokens": 10.166478437277782,
+        "uncached_input_plus_output": -10.377128916297284
+      },
+      "first_review_issues": [
+        2
+      ],
+      "posthoc_review_issues": [
+        0
+      ],
+      "renewed_review_issues": [
+        2
+      ],
+      "final_review_issues": [
+        1
+      ],
+      "repair_rounds": [
+        2
+      ]
+    }
+  ],
+  "totals": {
+    "actual_trial_consumption": {
+      "measured_seconds": 4191.192,
+      "total_tokens": 3624639,
+      "input_tokens": 3489461,
+      "cached_input_tokens": 3224576,
+      "uncached_input_tokens": 264885,
+      "output_tokens": 135178,
+      "uncached_input_plus_output": 400063
+    },
+    "known_consumption_lower_bound": {
+      "measured_seconds": 4191.192,
+      "total_tokens": 3624639,
+      "input_tokens": 3489461,
+      "cached_input_tokens": 3224576,
+      "uncached_input_tokens": 264885,
+      "output_tokens": 135178,
+      "uncached_input_plus_output": 400063
+    },
+    "baseline_actual_consumption": null,
+    "baseline_one_of_each_level": {
+      "measured_seconds": 4281.376,
+      "total_tokens": 3129266,
+      "input_tokens": 3019120,
+      "cached_input_tokens": 2755584,
+      "uncached_input_tokens": 263536,
+      "output_tokens": 110146,
+      "uncached_input_plus_output": 373682
+    },
+    "candidate_sum_of_level_means": {
+      "measured_seconds": 4191.192,
+      "total_tokens": 3624639,
+      "input_tokens": 3489461,
+      "cached_input_tokens": 3224576,
+      "uncached_input_tokens": 264885,
+      "output_tokens": 135178,
+      "uncached_input_plus_output": 400063
+    },
+    "normalized_change_percent": {
+      "measured_seconds": -2.10642559775176,
+      "total_tokens": 15.830325705772541,
+      "input_tokens": 15.578744799809208,
+      "cached_input_tokens": 17.01969528056484,
+      "uncached_input_tokens": 0.5118845243154535,
+      "output_tokens": 22.72619977121275,
+      "uncached_input_plus_output": 7.059745987229782
+    }
+  },
+  "trials": [
+    {
+      "round": 1,
+      "level": "high",
+      "status": "DONE",
+      "measured_seconds": 1111.763,
+      "total_tokens": 666554,
+      "input_tokens": 636726,
+      "cached_input_tokens": 557440,
+      "uncached_input_tokens": 79286,
+      "output_tokens": 29828,
+      "uncached_input_plus_output": 109114,
+      "quality_passed": true,
+      "execution_complete": true,
+      "known_consumption": {
+        "measured_seconds": 1111.763,
+        "total_tokens": 666554,
+        "input_tokens": 636726,
+        "cached_input_tokens": 557440,
+        "uncached_input_tokens": 79286,
+        "output_tokens": 29828,
+        "uncached_input_plus_output": 109114
+      },
+      "incomplete_phases": [],
+      "phase_count": 4,
+      "repair_rounds": 1,
+      "first_review_issues": 1,
+      "final_review_issues": 0,
+      "posthoc_review_issues": 0,
+      "review_issue_history": [
+        1,
+        0
+      ],
+      "renewed_review_issues": 0,
+      "coordinator_issue_history": [
+        0,
+        0
+      ],
+      "final_coordinator_findings": 0,
+      "final_contract_categories": 6,
+      "final_contract_issues": 0,
+      "changed_protected_files": 0,
+      "final_added_probe_failed_cases": 0,
+      "final_advisory_probe_failed_cases": 0,
+      "posthoc_probes": {},
+      "final_posthoc_probe_failed_cases": 0,
+      "final_original_supplemental_issues": 0,
+      "workflow_span_seconds": 1141.7867081165314,
+      "first_pass_seconds": 558.8009999999999,
+      "implementation_seconds": 257.316,
+      "implementation_uncached_input_tokens": 11474,
+      "first_pass_uncached_input_plus_output": 47048,
+      "candidate_tests_on_historical_exit": 1,
+      "candidate_tests_on_historical_exits": [
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "round": 1,
+      "level": "critical",
+      "status": "FAILED",
+      "measured_seconds": 3079.429,
+      "total_tokens": 2958085,
+      "input_tokens": 2852735,
+      "cached_input_tokens": 2667136,
+      "uncached_input_tokens": 185599,
+      "output_tokens": 105350,
+      "uncached_input_plus_output": 290949,
+      "quality_passed": false,
+      "execution_complete": true,
+      "known_consumption": {
+        "measured_seconds": 3079.429,
+        "total_tokens": 2958085,
+        "input_tokens": 2852735,
+        "cached_input_tokens": 2667136,
+        "uncached_input_tokens": 185599,
+        "output_tokens": 105350,
+        "uncached_input_plus_output": 290949
+      },
+      "incomplete_phases": [],
+      "phase_count": 6,
+      "repair_rounds": 2,
+      "first_review_issues": 2,
+      "final_review_issues": 1,
+      "posthoc_review_issues": 0,
+      "review_issue_history": [
+        2,
+        1,
+        1
+      ],
+      "renewed_review_issues": 2,
+      "coordinator_issue_history": [
+        0,
+        0,
+        0
+      ],
+      "final_coordinator_findings": 0,
+      "final_contract_categories": 9,
+      "final_contract_issues": 0,
+      "changed_protected_files": 0,
+      "final_added_probe_failed_cases": 180,
+      "final_advisory_probe_failed_cases": 141,
+      "posthoc_probes": {},
+      "final_posthoc_probe_failed_cases": 0,
+      "final_original_supplemental_issues": 0,
+      "workflow_span_seconds": 3337.048556804657,
+      "first_pass_seconds": 1366.3690000000001,
+      "implementation_seconds": 739.717,
+      "implementation_uncached_input_tokens": 20988,
+      "first_pass_uncached_input_plus_output": 99967,
+      "candidate_tests_on_historical_exit": 1,
+      "candidate_tests_on_historical_exits": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "telemetry": {
+    "status": "COMPLETE",
+    "phase_count": 10,
+    "known_usage_phases": 10,
+    "unknown_usage_phases": []
+  },
+  "optimization_target": {
+    "level": "high",
+    "checks": {
+      "uncached_input_tokens": false,
+      "all_trial_quality_passed": false,
+      "all_measurements_complete": true
+    },
+    "met_in_observed_sample": false,
+    "interpretation": "Descriptive new n=1 versus historical n=1; no causal or statistical guarantee."
+  },
+  "quality": {
+    "status": "FAILED",
+    "passed_trials": 1,
+    "failed_trials": [
+      "round-1/critical"
+    ],
+    "incomplete_execution_trials": [],
+    "fully_completed_trials": 1,
+    "final_contract_issues": 0,
+    "final_independent_findings": 1,
+    "final_coordinator_findings": 0,
+    "final_original_supplemental_issues": 0,
+    "final_added_probe_failed_cases": 180,
+    "final_posthoc_probe_failed_cases": 0
+  },
+  "quality_followup": null,
+  "posthoc_followup": null,
+  "baseline_quality": {
+    "status": "FAILED",
+    "passed_trials": 1,
+    "failed_trials": [
+      "round-1/critical"
+    ],
+    "incomplete_execution_trials": [],
+    "fully_completed_trials": 1,
+    "final_contract_issues": 0,
+    "final_independent_findings": 2,
+    "final_coordinator_findings": 0,
+    "final_original_supplemental_issues": 0,
+    "final_added_probe_failed_cases": 0,
+    "final_posthoc_probe_failed_cases": 3
+  }
+}

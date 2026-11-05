@@ -1,0 +1,671 @@
+{
+  "levels": [
+    {
+      "level": "medium",
+      "baseline_n": 1,
+      "candidate_n": 3,
+      "baseline": {
+        "measured_seconds": 379.154,
+        "total_tokens": 314570,
+        "input_tokens": 302241,
+        "cached_input_tokens": 257920,
+        "uncached_input_tokens": 44321,
+        "output_tokens": 12329,
+        "uncached_input_plus_output": 56650
+      },
+      "statistics": {
+        "measured_seconds": {
+          "n": 3,
+          "mean": 395.1406666666667,
+          "median": 388.294,
+          "sample_sd": 47.32194241927665,
+          "min": 351.615,
+          "max": 445.51300000000003
+        },
+        "total_tokens": {
+          "n": 3,
+          "mean": 287066.6666666667,
+          "median": 270899,
+          "sample_sd": 36102.223426450255,
+          "min": 261874,
+          "max": 328427
+        },
+        "input_tokens": {
+          "n": 3,
+          "mean": 274375.3333333333,
+          "median": 259321,
+          "sample_sd": 36059.84933874979,
+          "min": 248282,
+          "max": 315523
+        },
+        "cached_input_tokens": {
+          "n": 3,
+          "mean": 239957.33333333334,
+          "median": 223616,
+          "sample_sd": 47043.14910094065,
+          "min": 203264,
+          "max": 292992
+        },
+        "uncached_input_tokens": {
+          "n": 3,
+          "mean": 34418,
+          "median": 35705,
+          "sample_sd": 11298.609162193372,
+          "min": 22531,
+          "max": 45018
+        },
+        "output_tokens": {
+          "n": 3,
+          "mean": 12691.333333333334,
+          "median": 12904,
+          "sample_sd": 1023.7037331832552,
+          "min": 11578,
+          "max": 13592
+        },
+        "uncached_input_plus_output": {
+          "n": 3,
+          "mean": 47109.333333333336,
+          "median": 47283,
+          "sample_sd": 11588.476014270958,
+          "min": 35435,
+          "max": 58610
+        }
+      },
+      "mean_change_percent": {
+        "measured_seconds": 4.216404591977585,
+        "total_tokens": -8.743152027635603,
+        "input_tokens": -9.21968451224906,
+        "cached_input_tokens": -6.964433416046312,
+        "uncached_input_tokens": -22.343809932086366,
+        "output_tokens": 2.9388704139292177,
+        "uncached_input_plus_output": -16.841423948220058
+      },
+      "first_review_issues": [
+        0,
+        0,
+        0
+      ],
+      "posthoc_review_issues": [
+        0,
+        0,
+        0
+      ],
+      "renewed_review_issues": [
+        0,
+        0,
+        0
+      ],
+      "final_review_issues": [
+        0,
+        0,
+        0
+      ],
+      "repair_rounds": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "level": "high",
+      "baseline_n": 1,
+      "candidate_n": 3,
+      "baseline": {
+        "measured_seconds": 442.574,
+        "total_tokens": 290617,
+        "input_tokens": 274451,
+        "cached_input_tokens": 218624,
+        "uncached_input_tokens": 55827,
+        "output_tokens": 16166,
+        "uncached_input_plus_output": 71993
+      },
+      "statistics": {
+        "measured_seconds": {
+          "n": 3,
+          "mean": 464.06733333333335,
+          "median": 499.75800000000004,
+          "sample_sd": 76.74639258188836,
+          "min": 375.975,
+          "max": 516.4689999999999
+        },
+        "total_tokens": {
+          "n": 3,
+          "mean": 348011.3333333333,
+          "median": 351993,
+          "sample_sd": 51309.49906531278,
+          "min": 294827,
+          "max": 397214
+        },
+        "input_tokens": {
+          "n": 3,
+          "mean": 331446.6666666667,
+          "median": 333905,
+          "sample_sd": 52158.96751598265,
+          "min": 278102,
+          "max": 382333
+        },
+        "cached_input_tokens": {
+          "n": 3,
+          "mean": 275882.6666666667,
+          "median": 279936,
+          "sample_sd": 51000.94639644772,
+          "min": 222976,
+          "max": 324736
+        },
+        "uncached_input_tokens": {
+          "n": 3,
+          "mean": 55564,
+          "median": 55126,
+          "sample_sd": 1853.2347395837367,
+          "min": 53969,
+          "max": 57597
+        },
+        "output_tokens": {
+          "n": 3,
+          "mean": 16564.666666666668,
+          "median": 16725,
+          "sample_sd": 1609.5006471987929,
+          "min": 14881,
+          "max": 18088
+        },
+        "uncached_input_plus_output": {
+          "n": 3,
+          "mean": 72128.66666666667,
+          "median": 72057,
+          "sample_sd": 319.5846262468414,
+          "min": 71851,
+          "max": 72478
+        }
+      },
+      "mean_change_percent": {
+        "measured_seconds": 4.856438320672551,
+        "total_tokens": 19.749131445625444,
+        "input_tokens": 20.76715576429551,
+        "cached_input_tokens": 26.190476190476208,
+        "uncached_input_tokens": -0.4710982141257869,
+        "output_tokens": 2.466081075508275,
+        "uncached_input_plus_output": 0.18844424689437034
+      },
+      "first_review_issues": [
+        0,
+        0,
+        0
+      ],
+      "posthoc_review_issues": [
+        0,
+        0,
+        0
+      ],
+      "renewed_review_issues": [
+        0,
+        0,
+        0
+      ],
+      "final_review_issues": [
+        0,
+        0,
+        0
+      ],
+      "repair_rounds": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "level": "critical",
+      "baseline_n": 1,
+      "candidate_n": 3,
+      "baseline": {
+        "measured_seconds": 1117.341,
+        "total_tokens": 986158,
+        "input_tokens": 948044,
+        "cached_input_tokens": 806272,
+        "uncached_input_tokens": 141772,
+        "output_tokens": 38114,
+        "uncached_input_plus_output": 179886
+      },
+      "statistics": {
+        "measured_seconds": {
+          "n": 3,
+          "mean": 1853.8626666666667,
+          "median": 1718.211,
+          "sample_sd": 256.93716850298887,
+          "min": 1693.181,
+          "max": 2150.196
+        },
+        "total_tokens": {
+          "n": 3,
+          "mean": 1746658,
+          "median": 1748999,
+          "sample_sd": 127775.58472180826,
+          "min": 1617728,
+          "max": 1873247
+        },
+        "input_tokens": {
+          "n": 3,
+          "mean": 1678513.6666666667,
+          "median": 1684931,
+          "sample_sd": 123242.37223590486,
+          "min": 1552188,
+          "max": 1798422
+        },
+        "cached_input_tokens": {
+          "n": 3,
+          "mean": 1480576,
+          "median": 1495424,
+          "sample_sd": 129408.44312485952,
+          "min": 1344384,
+          "max": 1601920
+        },
+        "uncached_input_tokens": {
+          "n": 3,
+          "mean": 197937.66666666666,
+          "median": 196502,
+          "sample_sd": 9232.600193517173,
+          "min": 189507,
+          "max": 207804
+        },
+        "output_tokens": {
+          "n": 3,
+          "mean": 68144.33333333333,
+          "median": 65540,
+          "sample_sd": 5832.253109505222,
+          "min": 64068,
+          "max": 74825
+        },
+        "uncached_input_plus_output": {
+          "n": 3,
+          "mean": 266082,
+          "median": 271327,
+          "sample_sd": 10878.228670146624,
+          "min": 253575,
+          "max": 273344
+        }
+      },
+      "mean_change_percent": {
+        "measured_seconds": 65.91735796562257,
+        "total_tokens": 77.11745987965418,
+        "input_tokens": 77.05018613763357,
+        "cached_input_tokens": 83.63232259088744,
+        "uncached_input_tokens": 39.6168966133416,
+        "output_tokens": 78.79082052089346,
+        "uncached_input_plus_output": 47.91701410893565
+      },
+      "first_review_issues": [
+        0,
+        0,
+        0
+      ],
+      "posthoc_review_issues": [
+        1,
+        3,
+        3
+      ],
+      "renewed_review_issues": [
+        3,
+        1,
+        2
+      ],
+      "final_review_issues": [
+        1,
+        0,
+        1
+      ],
+      "repair_rounds": [
+        2,
+        2,
+        2
+      ]
+    }
+  ],
+  "totals": {
+    "actual_nine_trial_consumption": {
+      "measured_seconds": 8139.2119999999995,
+      "total_tokens": 7145208,
+      "input_tokens": 6853007,
+      "cached_input_tokens": 5989248,
+      "uncached_input_tokens": 863759,
+      "output_tokens": 292201,
+      "uncached_input_plus_output": 1155960
+    },
+    "baseline_one_of_each_level": {
+      "measured_seconds": 1939.069,
+      "total_tokens": 1591345,
+      "input_tokens": 1524736,
+      "cached_input_tokens": 1282816,
+      "uncached_input_tokens": 241920,
+      "output_tokens": 66609,
+      "uncached_input_plus_output": 308529
+    },
+    "candidate_sum_of_level_means": {
+      "measured_seconds": 2713.0706666666665,
+      "total_tokens": 2381736.0,
+      "input_tokens": 2284335.666666667,
+      "cached_input_tokens": 1996416.0,
+      "uncached_input_tokens": 287919.6666666666,
+      "output_tokens": 97400.33333333333,
+      "uncached_input_plus_output": 385320.0
+    },
+    "normalized_change_percent": {
+      "measured_seconds": 39.91614876348735,
+      "total_tokens": 49.6681109376031,
+      "input_tokens": 49.81843851438328,
+      "cached_input_tokens": 55.627619237677116,
+      "uncached_input_tokens": 19.014412477954124,
+      "output_tokens": 46.22698634318685,
+      "uncached_input_plus_output": 24.8893945139679
+    }
+  },
+  "trials": [
+    {
+      "round": 1,
+      "level": "medium",
+      "status": "DONE",
+      "measured_seconds": 445.51300000000003,
+      "total_tokens": 270899,
+      "input_tokens": 259321,
+      "cached_input_tokens": 223616,
+      "uncached_input_tokens": 35705,
+      "output_tokens": 11578,
+      "uncached_input_plus_output": 47283,
+      "phase_count": 2,
+      "repair_rounds": 0,
+      "first_review_issues": 0,
+      "final_review_issues": 0,
+      "posthoc_review_issues": 0,
+      "review_issue_history": [
+        0
+      ],
+      "renewed_review_issues": 0,
+      "final_contract_categories": 4,
+      "final_contract_issues": 0,
+      "changed_protected_files": 0,
+      "final_added_probe_failed_cases": 0,
+      "final_original_supplemental_issues": 0,
+      "workflow_span_seconds": 445.8421359062195,
+      "first_pass_seconds": 445.51300000000003,
+      "first_pass_uncached_input_plus_output": 47283,
+      "candidate_tests_on_historical_exit": 0
+    },
+    {
+      "round": 1,
+      "level": "high",
+      "status": "DONE",
+      "measured_seconds": 516.4689999999999,
+      "total_tokens": 294827,
+      "input_tokens": 278102,
+      "cached_input_tokens": 222976,
+      "uncached_input_tokens": 55126,
+      "output_tokens": 16725,
+      "uncached_input_plus_output": 71851,
+      "phase_count": 2,
+      "repair_rounds": 0,
+      "first_review_issues": 0,
+      "final_review_issues": 0,
+      "posthoc_review_issues": 0,
+      "review_issue_history": [
+        0
+      ],
+      "renewed_review_issues": 0,
+      "final_contract_categories": 6,
+      "final_contract_issues": 0,
+      "changed_protected_files": 0,
+      "final_added_probe_failed_cases": 0,
+      "final_original_supplemental_issues": 0,
+      "workflow_span_seconds": 516.5683119297028,
+      "first_pass_seconds": 516.4689999999999,
+      "first_pass_uncached_input_plus_output": 71851,
+      "candidate_tests_on_historical_exit": 0
+    },
+    {
+      "round": 1,
+      "level": "critical",
+      "status": "FAILED",
+      "measured_seconds": 1693.181,
+      "total_tokens": 1617728,
+      "input_tokens": 1552188,
+      "cached_input_tokens": 1344384,
+      "uncached_input_tokens": 207804,
+      "output_tokens": 65540,
+      "uncached_input_plus_output": 273344,
+      "phase_count": 6,
+      "repair_rounds": 2,
+      "first_review_issues": 0,
+      "final_review_issues": 1,
+      "posthoc_review_issues": 1,
+      "review_issue_history": [
+        0,
+        2,
+        1
+      ],
+      "renewed_review_issues": 3,
+      "final_contract_categories": 9,
+      "final_contract_issues": 0,
+      "changed_protected_files": 0,
+      "final_added_probe_failed_cases": 2,
+      "final_original_supplemental_issues": 0,
+      "workflow_span_seconds": 4771.961702823639,
+      "first_pass_seconds": 721.813,
+      "first_pass_uncached_input_plus_output": 97259,
+      "candidate_tests_on_historical_exit": 1
+    },
+    {
+      "round": 2,
+      "level": "medium",
+      "status": "DONE",
+      "measured_seconds": 388.294,
+      "total_tokens": 328427,
+      "input_tokens": 315523,
+      "cached_input_tokens": 292992,
+      "uncached_input_tokens": 22531,
+      "output_tokens": 12904,
+      "uncached_input_plus_output": 35435,
+      "phase_count": 2,
+      "repair_rounds": 0,
+      "first_review_issues": 0,
+      "final_review_issues": 0,
+      "posthoc_review_issues": 0,
+      "review_issue_history": [
+        0
+      ],
+      "renewed_review_issues": 0,
+      "final_contract_categories": 4,
+      "final_contract_issues": 0,
+      "changed_protected_files": 0,
+      "final_added_probe_failed_cases": 0,
+      "final_original_supplemental_issues": 0,
+      "workflow_span_seconds": 388.5275630950928,
+      "first_pass_seconds": 388.294,
+      "first_pass_uncached_input_plus_output": 35435,
+      "candidate_tests_on_historical_exit": 1
+    },
+    {
+      "round": 2,
+      "level": "high",
+      "status": "DONE",
+      "measured_seconds": 499.75800000000004,
+      "total_tokens": 351993,
+      "input_tokens": 333905,
+      "cached_input_tokens": 279936,
+      "uncached_input_tokens": 53969,
+      "output_tokens": 18088,
+      "uncached_input_plus_output": 72057,
+      "phase_count": 2,
+      "repair_rounds": 0,
+      "first_review_issues": 0,
+      "final_review_issues": 0,
+      "posthoc_review_issues": 0,
+      "review_issue_history": [
+        0
+      ],
+      "renewed_review_issues": 0,
+      "final_contract_categories": 6,
+      "final_contract_issues": 0,
+      "changed_protected_files": 0,
+      "final_added_probe_failed_cases": 0,
+      "final_original_supplemental_issues": 0,
+      "workflow_span_seconds": 499.8768172264099,
+      "first_pass_seconds": 499.75800000000004,
+      "first_pass_uncached_input_plus_output": 72057,
+      "candidate_tests_on_historical_exit": 0
+    },
+    {
+      "round": 2,
+      "level": "critical",
+      "status": "DONE",
+      "measured_seconds": 1718.211,
+      "total_tokens": 1748999,
+      "input_tokens": 1684931,
+      "cached_input_tokens": 1495424,
+      "uncached_input_tokens": 189507,
+      "output_tokens": 64068,
+      "uncached_input_plus_output": 253575,
+      "phase_count": 6,
+      "repair_rounds": 2,
+      "first_review_issues": 0,
+      "final_review_issues": 0,
+      "posthoc_review_issues": 3,
+      "review_issue_history": [
+        0,
+        1,
+        0
+      ],
+      "renewed_review_issues": 1,
+      "final_contract_categories": 9,
+      "final_contract_issues": 0,
+      "changed_protected_files": 0,
+      "final_added_probe_failed_cases": 0,
+      "final_original_supplemental_issues": 0,
+      "workflow_span_seconds": 4838.278714895248,
+      "first_pass_seconds": 730.065,
+      "first_pass_uncached_input_plus_output": 99647,
+      "candidate_tests_on_historical_exit": 1
+    },
+    {
+      "round": 3,
+      "level": "medium",
+      "status": "DONE",
+      "measured_seconds": 351.615,
+      "total_tokens": 261874,
+      "input_tokens": 248282,
+      "cached_input_tokens": 203264,
+      "uncached_input_tokens": 45018,
+      "output_tokens": 13592,
+      "uncached_input_plus_output": 58610,
+      "phase_count": 2,
+      "repair_rounds": 0,
+      "first_review_issues": 0,
+      "final_review_issues": 0,
+      "posthoc_review_issues": 0,
+      "review_issue_history": [
+        0
+      ],
+      "renewed_review_issues": 0,
+      "final_contract_categories": 4,
+      "final_contract_issues": 0,
+      "changed_protected_files": 0,
+      "final_added_probe_failed_cases": 0,
+      "final_original_supplemental_issues": 0,
+      "workflow_span_seconds": 351.83394479751587,
+      "first_pass_seconds": 351.615,
+      "first_pass_uncached_input_plus_output": 58610,
+      "candidate_tests_on_historical_exit": 1
+    },
+    {
+      "round": 3,
+      "level": "high",
+      "status": "DONE",
+      "measured_seconds": 375.975,
+      "total_tokens": 397214,
+      "input_tokens": 382333,
+      "cached_input_tokens": 324736,
+      "uncached_input_tokens": 57597,
+      "output_tokens": 14881,
+      "uncached_input_plus_output": 72478,
+      "phase_count": 2,
+      "repair_rounds": 0,
+      "first_review_issues": 0,
+      "final_review_issues": 0,
+      "posthoc_review_issues": 0,
+      "review_issue_history": [
+        0
+      ],
+      "renewed_review_issues": 0,
+      "final_contract_categories": 6,
+      "final_contract_issues": 0,
+      "changed_protected_files": 0,
+      "final_added_probe_failed_cases": 0,
+      "final_original_supplemental_issues": 0,
+      "workflow_span_seconds": 376.0773751735687,
+      "first_pass_seconds": 375.975,
+      "first_pass_uncached_input_plus_output": 72478,
+      "candidate_tests_on_historical_exit": 0
+    },
+    {
+      "round": 3,
+      "level": "critical",
+      "status": "FAILED",
+      "measured_seconds": 2150.196,
+      "total_tokens": 1873247,
+      "input_tokens": 1798422,
+      "cached_input_tokens": 1601920,
+      "uncached_input_tokens": 196502,
+      "output_tokens": 74825,
+      "uncached_input_plus_output": 271327,
+      "phase_count": 6,
+      "repair_rounds": 2,
+      "first_review_issues": 0,
+      "final_review_issues": 1,
+      "posthoc_review_issues": 3,
+      "review_issue_history": [
+        0,
+        1,
+        1
+      ],
+      "renewed_review_issues": 2,
+      "final_contract_categories": 9,
+      "final_contract_issues": 0,
+      "changed_protected_files": 0,
+      "final_added_probe_failed_cases": 1,
+      "final_original_supplemental_issues": 0,
+      "workflow_span_seconds": 5422.138610124588,
+      "first_pass_seconds": 536.035,
+      "first_pass_uncached_input_plus_output": 76988,
+      "candidate_tests_on_historical_exit": 1
+    }
+  ],
+  "optimization_target": {
+    "level": "medium",
+    "checks": {
+      "measured_seconds": false,
+      "uncached_input_tokens": true,
+      "uncached_input_plus_output": true,
+      "all_trial_quality_passed": false
+    },
+    "met_in_observed_sample": false,
+    "interpretation": "Descriptive n=3 versus historical n=1; no causal or statistical guarantee."
+  },
+  "quality": {
+    "status": "FAILED",
+    "passed_trials": 7,
+    "failed_trials": [
+      "round-1/critical",
+      "round-3/critical"
+    ],
+    "final_contract_issues": 0,
+    "final_independent_findings": 2,
+    "final_original_supplemental_issues": 0,
+    "final_added_probe_failed_cases": 3
+  },
+  "quality_followup": {
+    "plan": "quality-followup-plan.json",
+    "historical_failing_added_cases": 8,
+    "historical_total_added_cases": 12,
+    "candidate_posthoc_finding_occurrences": 7,
+    "candidate_renewed_review_finding_occurrences": 6,
+    "final_candidate_remaining_independent_findings": 2,
+    "final_added_probe_failed_cases": 3,
+    "comparison_limit": "Historical cost excludes newly demonstrated trigger failures and any repair. Failed candidate costs also do not represent time-to-completion."
+  }
+}

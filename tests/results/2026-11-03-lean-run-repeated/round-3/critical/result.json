@@ -1,0 +1,25 @@
+{
+  "status": "FAILED",
+  "final_assessment": 3,
+  "repair_rounds": 2,
+  "final_grade": "post-repair-2-grade.json",
+  "final_review": "review-3",
+  "initial_review_issues": 0,
+  "final_review_issues": 1,
+  "first_pass_blockers": [
+    "historical_regressions",
+    "posthoc_effect_validation"
+  ],
+  "adjudication": "assessment-3-adjudication.json",
+  "reason": "Mandatory ignored-rowid-update regression remains after final fix-only pass; repair limit reached.",
+  "remaining_findings": [
+    {
+      "id": "REVIEW-2",
+      "severity": "P2",
+      "location": "vault.py:71-76 (_guard_effects)",
+      "requirement": "Valid transfers must continue to succeed with harmless no-op trigger effects.",
+      "evidence": "Initialize alpha accounts a=100 and b=0 as rowids 1 and 2. Create: CREATE TRIGGER harmless AFTER INSERT ON audit BEGIN UPDATE OR IGNORE accounts SET rowid=1 WHERE rowid=2; END. Call transfer(path,'alpha','a','b',10,'k'). The conflicting rowid update should be ignored. .pre-repair succeeds with balances 90/10 and exactly one receipt/audit row. Current code raises IntegrityError('unexpected stored transfer effects'); the CLI exits 2. The new BEFORE guard rejects the attempted collision before SQLite can ignore it. Verified through API and CLI, including complete row and schema comparisons. Equivalent cases on transfers and audit share this root cause.",
+      "suggested_fix": "Detect effective destructive row replacement while preserving SQLite's ignored-update behavior. Retain rejection of destructive OR REPLACE operations and acceptance of harmless rowid relocation."
+    }
+  ]
+}

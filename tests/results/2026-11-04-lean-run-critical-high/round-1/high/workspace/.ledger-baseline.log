@@ -1,0 +1,1248 @@
+test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) ... 
+  test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure={'source': 'b', 'target': 'c', 'amount': 31, 'key': 'overdraft'}) ... FAIL
+  test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure={'source': 'a', 'target': 'missing', 'amount': 1, 'key': 'missing-account'}) ... ERROR
+  test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure={'source': 'a', 'target': 'a', 'amount': 1, 'key': 'same-account'}) ... FAIL
+  test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure={'source': 'a', 'target': 'b', 'amount': True, 'key': 'bool'}) ... FAIL
+  test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure={'source': 'a', 'target': 'b', 'amount': 10, 'key': ''}) ... FAIL
+  test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure={'source': 'a', 'target': 'b', 'amount': 9, 'key': 'seed'}) ... FAIL
+  test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure={'source': 'a', 'target': 'b', 'amount': 21, 'key': 'new'}) ... FAIL
+  test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure={'source': 'a', 'target': 'b', 'amount': 1}) ... ERROR
+  test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure={'source': 'a', 'target': 'b', 'amount': 10, 'key': 'extra', 'unexpected': True}) ... ERROR
+  test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure={1: 'a', 'target': 'b', 'amount': 1, 'key': 'bad-field'}) ... ERROR
+  test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure=None) ... ERROR
+  test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure=[]) ... ERROR
+  test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure=('a', 'b', 1, 'tuple')) ... ERROR
+test_batch_orders_receipts_and_replays_existing_and_new_keys (test_ledger.LedgerTests.test_batch_orders_receipts_and_replays_existing_and_new_keys) ... ok
+test_batch_receipts_are_independent_of_history_inputs_and_each_other (test_ledger.LedgerTests.test_batch_receipts_are_independent_of_history_inputs_and_each_other) ... FAIL
+test_batch_rejects_non_list_containers_without_state_changes (test_ledger.LedgerTests.test_batch_rejects_non_list_containers_without_state_changes) ... 
+  test_batch_rejects_non_list_containers_without_state_changes (test_ledger.LedgerTests.test_batch_rejects_non_list_containers_without_state_changes) (container_type='NoneType') ... ERROR
+  test_batch_rejects_non_list_containers_without_state_changes (test_ledger.LedgerTests.test_batch_rejects_non_list_containers_without_state_changes) (container_type='dict') ... FAIL
+  test_batch_rejects_non_list_containers_without_state_changes (test_ledger.LedgerTests.test_batch_rejects_non_list_containers_without_state_changes) (container_type='tuple') ... FAIL
+  test_batch_rejects_non_list_containers_without_state_changes (test_ledger.LedgerTests.test_batch_rejects_non_list_containers_without_state_changes) (container_type='tuple') ... FAIL
+  test_batch_rejects_non_list_containers_without_state_changes (test_ledger.LedgerTests.test_batch_rejects_non_list_containers_without_state_changes) (container_type='list_iterator') ... FAIL
+  test_batch_rejects_non_list_containers_without_state_changes (test_ledger.LedgerTests.test_batch_rejects_non_list_containers_without_state_changes) (container_type='str') ... FAIL
+  test_batch_rejects_non_list_containers_without_state_changes (test_ledger.LedgerTests.test_batch_rejects_non_list_containers_without_state_changes) (container_type='int') ... ERROR
+  test_batch_rejects_non_list_containers_without_state_changes (test_ledger.LedgerTests.test_batch_rejects_non_list_containers_without_state_changes) (container_type='bool') ... ERROR
+test_constructor_copies_input (test_ledger.LedgerTests.test_constructor_copies_input) ... FAIL
+test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) ... 
+  test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances=None) ... FAIL
+  test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances=[]) ... FAIL
+  test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances=[('a', 1)]) ... FAIL
+  test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances='a') ... FAIL
+  test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances={1: 1}) ... FAIL
+  test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances={False: 0}) ... FAIL
+  test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances={None: 1}) ... FAIL
+  test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances={('a',): 1}) ... FAIL
+  test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances={'a': -1}) ... FAIL
+  test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances={'a': True}) ... FAIL
+  test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances={'a': False}) ... FAIL
+  test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances={'a': 1.0}) ... FAIL
+  test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances={'a': '1'}) ... FAIL
+  test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances={'a': None}) ... FAIL
+  test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances={'a': []}) ... FAIL
+test_empty_batch_preserves_existing_state_and_dictionary_identity (test_ledger.LedgerTests.test_empty_batch_preserves_existing_state_and_dictionary_identity) ... ok
+test_integrated_payments_rollback_retry_and_replay (test_ledger.LedgerTests.test_integrated_payments_rollback_retry_and_replay) ... FAIL
+test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) ... 
+  test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'source': 'missing'}) ... ERROR
+  test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'target': 'missing'}) ... ERROR
+  test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'source': None}) ... ERROR
+  test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'source': []}) ... ERROR
+  test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'source': 1}) ... ERROR
+  test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'target': None}) ... ERROR
+  test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'target': {}}) ... ERROR
+  test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'target': True}) ... ERROR
+  test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'target': 'a'}) ... FAIL
+  test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'amount': 0}) ... FAIL
+  test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'amount': -1}) ... FAIL
+  test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'amount': True}) ... FAIL
+  test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'amount': False}) ... FAIL
+  test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'amount': 1.0}) ... FAIL
+  test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'amount': '1'}) ... ERROR
+  test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'amount': None}) ... ERROR
+  test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'amount': []}) ... ERROR
+  test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'amount': 46}) ... FAIL
+  test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'key': ''}) ... FAIL
+  test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'key': 1}) ... FAIL
+  test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'key': True}) ... FAIL
+  test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'key': None}) ... FAIL
+  test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'key': []}) ... ERROR
+  test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'key': {}}) ... ERROR
+test_replay_needs_no_remaining_funds_and_returns_a_fresh_receipt (test_ledger.LedgerTests.test_replay_needs_no_remaining_funds_and_returns_a_fresh_receipt) ... FAIL
+test_replay_rejects_changed_payload_and_bool_integer_alias (test_ledger.LedgerTests.test_replay_rejects_changed_payload_and_bool_integer_alias) ... 
+  test_replay_rejects_changed_payload_and_bool_integer_alias (test_ledger.LedgerTests.test_replay_rejects_changed_payload_and_bool_integer_alias) (change={'source': 'b'}) ... FAIL
+  test_replay_rejects_changed_payload_and_bool_integer_alias (test_ledger.LedgerTests.test_replay_rejects_changed_payload_and_bool_integer_alias) (change={'target': 'c'}) ... FAIL
+  test_replay_rejects_changed_payload_and_bool_integer_alias (test_ledger.LedgerTests.test_replay_rejects_changed_payload_and_bool_integer_alias) (change={'amount': 2}) ... FAIL
+  test_replay_rejects_changed_payload_and_bool_integer_alias (test_ledger.LedgerTests.test_replay_rejects_changed_payload_and_bool_integer_alias) (change={'amount': True}) ... FAIL
+test_transfer_and_replay_receipts_do_not_expose_history (test_ledger.LedgerTests.test_transfer_and_replay_receipts_do_not_expose_history) ... FAIL
+test_transfer_returns_receipt_and_preserves_public_dictionaries (test_ledger.LedgerTests.test_transfer_returns_receipt_and_preserves_public_dictionaries) ... ok
+test_valid_empty_accounts_zero_balances_and_large_integers (test_ledger.LedgerTests.test_valid_empty_accounts_zero_balances_and_large_integers) ... ok
+test_transfer (test_public.PublicTests.test_transfer) ... ok
+
+======================================================================
+ERROR: test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure={'source': 'a', 'target': 'missing', 'amount': 1, 'key': 'missing-account'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 182, in test_batch_failure_discards_prior_effects_and_allows_retry
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.batch(requests)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 17, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 183, in <lambda>
+    ledger, lambda: ledger.batch(requests)
+                    ~~~~~~~~~~~~^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/ledger.py", line 16, in batch
+    return [self.transfer(**op) for op in operations]
+            ~~~~~~~~~~~~~^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/ledger.py", line 11, in transfer
+    self.balances[target] += amount
+    ~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'missing'
+
+======================================================================
+ERROR: test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure={'source': 'a', 'target': 'b', 'amount': 1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 182, in test_batch_failure_discards_prior_effects_and_allows_retry
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.batch(requests)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 17, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 183, in <lambda>
+    ledger, lambda: ledger.batch(requests)
+                    ~~~~~~~~~~~~^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/ledger.py", line 16, in batch
+    return [self.transfer(**op) for op in operations]
+            ~~~~~~~~~~~~~^^^^^^
+TypeError: Ledger.transfer() missing 1 required positional argument: 'key'
+
+======================================================================
+ERROR: test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure={'source': 'a', 'target': 'b', 'amount': 10, 'key': 'extra', 'unexpected': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 182, in test_batch_failure_discards_prior_effects_and_allows_retry
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.batch(requests)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 17, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 183, in <lambda>
+    ledger, lambda: ledger.batch(requests)
+                    ~~~~~~~~~~~~^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/ledger.py", line 16, in batch
+    return [self.transfer(**op) for op in operations]
+            ~~~~~~~~~~~~~^^^^^^
+TypeError: Ledger.transfer() got an unexpected keyword argument 'unexpected'
+
+======================================================================
+ERROR: test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure={1: 'a', 'target': 'b', 'amount': 1, 'key': 'bad-field'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 182, in test_batch_failure_discards_prior_effects_and_allows_retry
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.batch(requests)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 17, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 183, in <lambda>
+    ledger, lambda: ledger.batch(requests)
+                    ~~~~~~~~~~~~^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/ledger.py", line 16, in batch
+    return [self.transfer(**op) for op in operations]
+            ~~~~~~~~~~~~~^^^^^^
+TypeError: keywords must be strings
+
+======================================================================
+ERROR: test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 182, in test_batch_failure_discards_prior_effects_and_allows_retry
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.batch(requests)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 17, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 183, in <lambda>
+    ledger, lambda: ledger.batch(requests)
+                    ~~~~~~~~~~~~^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/ledger.py", line 16, in batch
+    return [self.transfer(**op) for op in operations]
+            ~~~~~~~~~~~~~^^^^^^
+TypeError: ledger.Ledger.transfer() argument after ** must be a mapping, not NoneType
+
+======================================================================
+ERROR: test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 182, in test_batch_failure_discards_prior_effects_and_allows_retry
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.batch(requests)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 17, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 183, in <lambda>
+    ledger, lambda: ledger.batch(requests)
+                    ~~~~~~~~~~~~^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/ledger.py", line 16, in batch
+    return [self.transfer(**op) for op in operations]
+            ~~~~~~~~~~~~~^^^^^^
+TypeError: ledger.Ledger.transfer() argument after ** must be a mapping, not list
+
+======================================================================
+ERROR: test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure=('a', 'b', 1, 'tuple'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 182, in test_batch_failure_discards_prior_effects_and_allows_retry
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.batch(requests)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 17, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 183, in <lambda>
+    ledger, lambda: ledger.batch(requests)
+                    ~~~~~~~~~~~~^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/ledger.py", line 16, in batch
+    return [self.transfer(**op) for op in operations]
+            ~~~~~~~~~~~~~^^^^^^
+TypeError: ledger.Ledger.transfer() argument after ** must be a mapping, not tuple
+
+======================================================================
+ERROR: test_batch_rejects_non_list_containers_without_state_changes (test_ledger.LedgerTests.test_batch_rejects_non_list_containers_without_state_changes) (container_type='NoneType')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 196, in test_batch_rejects_non_list_containers_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.batch(requests)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 17, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 197, in <lambda>
+    ledger, lambda: ledger.batch(requests)
+                    ~~~~~~~~~~~~^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/ledger.py", line 16, in batch
+    return [self.transfer(**op) for op in operations]
+                                          ^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+
+======================================================================
+ERROR: test_batch_rejects_non_list_containers_without_state_changes (test_ledger.LedgerTests.test_batch_rejects_non_list_containers_without_state_changes) (container_type='int')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 196, in test_batch_rejects_non_list_containers_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.batch(requests)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 17, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 197, in <lambda>
+    ledger, lambda: ledger.batch(requests)
+                    ~~~~~~~~~~~~^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/ledger.py", line 16, in batch
+    return [self.transfer(**op) for op in operations]
+                                          ^^^^^^^^^^
+TypeError: 'int' object is not iterable
+
+======================================================================
+ERROR: test_batch_rejects_non_list_containers_without_state_changes (test_ledger.LedgerTests.test_batch_rejects_non_list_containers_without_state_changes) (container_type='bool')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 196, in test_batch_rejects_non_list_containers_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.batch(requests)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 17, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 197, in <lambda>
+    ledger, lambda: ledger.batch(requests)
+                    ~~~~~~~~~~~~^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/ledger.py", line 16, in batch
+    return [self.transfer(**op) for op in operations]
+                                          ^^^^^^^^^^
+TypeError: 'bool' object is not iterable
+
+======================================================================
+ERROR: test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'source': 'missing'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 85, in test_invalid_transfers_are_value_errors_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 17, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 86, in <lambda>
+    ledger, lambda: ledger.transfer(**request)
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/ledger.py", line 8, in transfer
+    self.balances[source] -= amount
+    ~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'missing'
+
+======================================================================
+ERROR: test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'target': 'missing'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 85, in test_invalid_transfers_are_value_errors_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 17, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 86, in <lambda>
+    ledger, lambda: ledger.transfer(**request)
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/ledger.py", line 11, in transfer
+    self.balances[target] += amount
+    ~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'missing'
+
+======================================================================
+ERROR: test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'source': None})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 85, in test_invalid_transfers_are_value_errors_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 17, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 86, in <lambda>
+    ledger, lambda: ledger.transfer(**request)
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/ledger.py", line 8, in transfer
+    self.balances[source] -= amount
+    ~~~~~~~~~~~~~^^^^^^^^
+KeyError: None
+
+======================================================================
+ERROR: test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'source': []})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 85, in test_invalid_transfers_are_value_errors_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 17, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 86, in <lambda>
+    ledger, lambda: ledger.transfer(**request)
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/ledger.py", line 8, in transfer
+    self.balances[source] -= amount
+    ~~~~~~~~~~~~~^^^^^^^^
+TypeError: cannot use 'list' as a dict key (unhashable type: 'list')
+
+======================================================================
+ERROR: test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'source': 1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 85, in test_invalid_transfers_are_value_errors_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 17, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 86, in <lambda>
+    ledger, lambda: ledger.transfer(**request)
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/ledger.py", line 8, in transfer
+    self.balances[source] -= amount
+    ~~~~~~~~~~~~~^^^^^^^^
+KeyError: 1
+
+======================================================================
+ERROR: test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'target': None})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 85, in test_invalid_transfers_are_value_errors_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 17, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 86, in <lambda>
+    ledger, lambda: ledger.transfer(**request)
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/ledger.py", line 11, in transfer
+    self.balances[target] += amount
+    ~~~~~~~~~~~~~^^^^^^^^
+KeyError: None
+
+======================================================================
+ERROR: test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'target': {}})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 85, in test_invalid_transfers_are_value_errors_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 17, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 86, in <lambda>
+    ledger, lambda: ledger.transfer(**request)
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/ledger.py", line 11, in transfer
+    self.balances[target] += amount
+    ~~~~~~~~~~~~~^^^^^^^^
+TypeError: cannot use 'dict' as a dict key (unhashable type: 'dict')
+
+======================================================================
+ERROR: test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'target': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 85, in test_invalid_transfers_are_value_errors_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 17, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 86, in <lambda>
+    ledger, lambda: ledger.transfer(**request)
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/ledger.py", line 11, in transfer
+    self.balances[target] += amount
+    ~~~~~~~~~~~~~^^^^^^^^
+KeyError: True
+
+======================================================================
+ERROR: test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'amount': '1'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 85, in test_invalid_transfers_are_value_errors_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 17, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 86, in <lambda>
+    ledger, lambda: ledger.transfer(**request)
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/ledger.py", line 8, in transfer
+    self.balances[source] -= amount
+TypeError: unsupported operand type(s) for -=: 'int' and 'str'
+
+======================================================================
+ERROR: test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'amount': None})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 85, in test_invalid_transfers_are_value_errors_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 17, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 86, in <lambda>
+    ledger, lambda: ledger.transfer(**request)
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/ledger.py", line 8, in transfer
+    self.balances[source] -= amount
+TypeError: unsupported operand type(s) for -=: 'int' and 'NoneType'
+
+======================================================================
+ERROR: test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'amount': []})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 85, in test_invalid_transfers_are_value_errors_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 17, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 86, in <lambda>
+    ledger, lambda: ledger.transfer(**request)
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/ledger.py", line 8, in transfer
+    self.balances[source] -= amount
+TypeError: unsupported operand type(s) for -=: 'int' and 'list'
+
+======================================================================
+ERROR: test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'key': []})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 85, in test_invalid_transfers_are_value_errors_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 17, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 86, in <lambda>
+    ledger, lambda: ledger.transfer(**request)
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/ledger.py", line 6, in transfer
+    if key in self.history:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: cannot use 'list' as a dict key (unhashable type: 'list')
+
+======================================================================
+ERROR: test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'key': {}})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 85, in test_invalid_transfers_are_value_errors_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 17, in assert_rejected_without_change
+    action()
+    ~~~~~~^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 86, in <lambda>
+    ledger, lambda: ledger.transfer(**request)
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/ledger.py", line 6, in transfer
+    if key in self.history:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: cannot use 'dict' as a dict key (unhashable type: 'dict')
+
+======================================================================
+FAIL: test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure={'source': 'b', 'target': 'c', 'amount': 31, 'key': 'overdraft'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 182, in test_batch_failure_discards_prior_effects_and_allows_retry
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.batch(requests)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 20, in assert_rejected_without_change
+    self.assertEqual((ledger.balances, ledger.history), before)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: ({'a': 30, 'b': -1, 'c': 10}, {'seed': {'source'[114 chars]w'}}) != ({'a': 50, 'b': 10, 'c': 10}, {'seed': {'source'[47 chars]d'}})
+
+First differing element 0:
+{'a': 30, 'b': -1, 'c': 10}
+{'a': 50, 'b': 10, 'c': 10}
+
+- ({'a': 30, 'b': -1, 'c': 10},
+?        ^        -
+
++ ({'a': 50, 'b': 10, 'c': 10},
+?        ^         +
+
+-  {'new': {'amount': 20, 'key': 'new', 'source': 'a', 'target': 'b'},
+-   'seed': {'amount': 10, 'key': 'seed', 'source': 'a', 'target': 'b'}})
+?  ^
+
++  {'seed': {'amount': 10, 'key': 'seed', 'source': 'a', 'target': 'b'}})
+?  ^
+
+
+======================================================================
+FAIL: test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure={'source': 'a', 'target': 'a', 'amount': 1, 'key': 'same-account'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 182, in test_batch_failure_discards_prior_effects_and_allows_retry
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.batch(requests)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 16, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure={'source': 'a', 'target': 'b', 'amount': True, 'key': 'bool'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 182, in test_batch_failure_discards_prior_effects_and_allows_retry
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.batch(requests)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 16, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure={'source': 'a', 'target': 'b', 'amount': 10, 'key': ''})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 182, in test_batch_failure_discards_prior_effects_and_allows_retry
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.batch(requests)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 16, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure={'source': 'a', 'target': 'b', 'amount': 9, 'key': 'seed'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 182, in test_batch_failure_discards_prior_effects_and_allows_retry
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.batch(requests)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 16, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_batch_failure_discards_prior_effects_and_allows_retry (test_ledger.LedgerTests.test_batch_failure_discards_prior_effects_and_allows_retry) (failure={'source': 'a', 'target': 'b', 'amount': 21, 'key': 'new'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 182, in test_batch_failure_discards_prior_effects_and_allows_retry
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.batch(requests)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 16, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_batch_receipts_are_independent_of_history_inputs_and_each_other (test_ledger.LedgerTests.test_batch_receipts_are_independent_of_history_inputs_and_each_other)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 152, in test_batch_receipts_are_independent_of_history_inputs_and_each_other
+    self.assertIsNot(receipts[0], receipts[1])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly identical: {'source': 'a', 'target': 'b', 'amount': 10, 'key': 'one'}
+
+======================================================================
+FAIL: test_batch_rejects_non_list_containers_without_state_changes (test_ledger.LedgerTests.test_batch_rejects_non_list_containers_without_state_changes) (container_type='dict')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 196, in test_batch_rejects_non_list_containers_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.batch(requests)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 16, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_batch_rejects_non_list_containers_without_state_changes (test_ledger.LedgerTests.test_batch_rejects_non_list_containers_without_state_changes) (container_type='tuple')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 196, in test_batch_rejects_non_list_containers_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.batch(requests)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 16, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_batch_rejects_non_list_containers_without_state_changes (test_ledger.LedgerTests.test_batch_rejects_non_list_containers_without_state_changes) (container_type='tuple')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 196, in test_batch_rejects_non_list_containers_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.batch(requests)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 16, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_batch_rejects_non_list_containers_without_state_changes (test_ledger.LedgerTests.test_batch_rejects_non_list_containers_without_state_changes) (container_type='list_iterator')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 196, in test_batch_rejects_non_list_containers_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.batch(requests)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 16, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_batch_rejects_non_list_containers_without_state_changes (test_ledger.LedgerTests.test_batch_rejects_non_list_containers_without_state_changes) (container_type='str')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 196, in test_batch_rejects_non_list_containers_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.batch(requests)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 16, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_constructor_copies_input (test_ledger.LedgerTests.test_constructor_copies_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 25, in test_constructor_copies_input
+    self.assertIsNot(ledger.balances, opening)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly identical: {'a': 30, 'b': 0}
+
+======================================================================
+FAIL: test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 42, in test_constructor_rejects_invalid_containers_keys_and_balances
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 42, in test_constructor_rejects_invalid_containers_keys_and_balances
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances=[('a', 1)])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 42, in test_constructor_rejects_invalid_containers_keys_and_balances
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances='a')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 42, in test_constructor_rejects_invalid_containers_keys_and_balances
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances={1: 1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 42, in test_constructor_rejects_invalid_containers_keys_and_balances
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances={False: 0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 42, in test_constructor_rejects_invalid_containers_keys_and_balances
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances={None: 1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 42, in test_constructor_rejects_invalid_containers_keys_and_balances
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances={('a',): 1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 42, in test_constructor_rejects_invalid_containers_keys_and_balances
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances={'a': -1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 42, in test_constructor_rejects_invalid_containers_keys_and_balances
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances={'a': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 42, in test_constructor_rejects_invalid_containers_keys_and_balances
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances={'a': False})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 42, in test_constructor_rejects_invalid_containers_keys_and_balances
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances={'a': 1.0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 42, in test_constructor_rejects_invalid_containers_keys_and_balances
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances={'a': '1'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 42, in test_constructor_rejects_invalid_containers_keys_and_balances
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances={'a': None})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 42, in test_constructor_rejects_invalid_containers_keys_and_balances
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_constructor_rejects_invalid_containers_keys_and_balances (test_ledger.LedgerTests.test_constructor_rejects_invalid_containers_keys_and_balances) (balances={'a': []})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 42, in test_constructor_rejects_invalid_containers_keys_and_balances
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_integrated_payments_rollback_retry_and_replay (test_ledger.LedgerTests.test_integrated_payments_rollback_retry_and_replay)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 223, in test_integrated_payments_rollback_retry_and_replay
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger,
+        ^^^^^^^
+        lambda: ledger.batch([refund, operation("bob", "shop", 26, "finish")]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 20, in assert_rejected_without_change
+    self.assertEqual((ledger.balances, ledger.history), before)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: ({'alice': 75, 'bob': -1, 'shop': 40}, {'purchase': {[308 chars]d'}}) != ({'alice': 70, 'bob': 25, 'shop': 45}, {'purchase': {[229 chars]s'}})
+
+First differing element 0:
+{'alice': 75, 'bob': -1, 'shop': 40}
+{'alice': 70, 'bob': 25, 'shop': 45}
+
+- ({'alice': 75, 'bob': -1, 'shop': 40},
+?             ^         ^^           ^
+
++ ({'alice': 70, 'bob': 25, 'shop': 45},
+?             ^         ^^           ^
+
+   {'groceries': {'amount': 20,
+                  'key': 'groceries',
+                  'source': 'alice',
+                  'target': 'shop'},
+    'purchase': {'amount': 25,
+                 'key': 'purchase',
+                 'source': 'alice',
+                 'target': 'shop'},
+-   'refund': {'amount': 5, 'key': 'refund', 'source': 'shop', 'target': 'alice'},
+    'repay': {'amount': 15, 'key': 'repay', 'source': 'bob', 'target': 'alice'}})
+
+======================================================================
+FAIL: test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'target': 'a'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 85, in test_invalid_transfers_are_value_errors_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 16, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'amount': 0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 85, in test_invalid_transfers_are_value_errors_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 16, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'amount': -1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 85, in test_invalid_transfers_are_value_errors_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 16, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'amount': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 85, in test_invalid_transfers_are_value_errors_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 16, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'amount': False})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 85, in test_invalid_transfers_are_value_errors_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 16, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'amount': 1.0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 85, in test_invalid_transfers_are_value_errors_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 16, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'amount': 46})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 85, in test_invalid_transfers_are_value_errors_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 20, in assert_rejected_without_change
+    self.assertEqual((ledger.balances, ledger.history), before)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: ({'a': -1, 'b': 10, 'c': 5}, {'seed': {'source':[45 chars]d'}}) != ({'a': 45, 'b': 10, 'c': 5}, {'seed': {'source':[45 chars]d'}})
+
+First differing element 0:
+{'a': -1, 'b': 10, 'c': 5}
+{'a': 45, 'b': 10, 'c': 5}
+
+- ({'a': -1, 'b': 10, 'c': 5},
+?        ^^
+
++ ({'a': 45, 'b': 10, 'c': 5},
+?        ^^
+
+   {'seed': {'amount': 5, 'key': 'seed', 'source': 'a', 'target': 'c'}})
+
+======================================================================
+FAIL: test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'key': ''})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 85, in test_invalid_transfers_are_value_errors_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 16, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'key': 1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 85, in test_invalid_transfers_are_value_errors_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 16, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'key': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 85, in test_invalid_transfers_are_value_errors_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 16, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_transfers_are_value_errors_without_state_changes (test_ledger.LedgerTests.test_invalid_transfers_are_value_errors_without_state_changes) (change={'key': None})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 85, in test_invalid_transfers_are_value_errors_without_state_changes
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 16, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_replay_needs_no_remaining_funds_and_returns_a_fresh_receipt (test_ledger.LedgerTests.test_replay_needs_no_remaining_funds_and_returns_a_fresh_receipt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 96, in test_replay_needs_no_remaining_funds_and_returns_a_fresh_receipt
+    self.assertIsNot(replay, original)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly identical: {'source': 'a', 'target': 'b', 'amount': 10, 'key': 'one'}
+
+======================================================================
+FAIL: test_replay_rejects_changed_payload_and_bool_integer_alias (test_ledger.LedgerTests.test_replay_rejects_changed_payload_and_bool_integer_alias) (change={'source': 'b'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 107, in test_replay_rejects_changed_payload_and_bool_integer_alias
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**changed)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 16, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_replay_rejects_changed_payload_and_bool_integer_alias (test_ledger.LedgerTests.test_replay_rejects_changed_payload_and_bool_integer_alias) (change={'target': 'c'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 107, in test_replay_rejects_changed_payload_and_bool_integer_alias
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**changed)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 16, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_replay_rejects_changed_payload_and_bool_integer_alias (test_ledger.LedgerTests.test_replay_rejects_changed_payload_and_bool_integer_alias) (change={'amount': 2})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 107, in test_replay_rejects_changed_payload_and_bool_integer_alias
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**changed)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 16, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_replay_rejects_changed_payload_and_bool_integer_alias (test_ledger.LedgerTests.test_replay_rejects_changed_payload_and_bool_integer_alias) (change={'amount': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 107, in test_replay_rejects_changed_payload_and_bool_integer_alias
+    self.assert_rejected_without_change(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        ledger, lambda: ledger.transfer(**changed)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 16, in assert_rejected_without_change
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_transfer_and_replay_receipts_do_not_expose_history (test_ledger.LedgerTests.test_transfer_and_replay_receipts_do_not_expose_history)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-critical-high.HLbSNfzaiG/cohort/round-1/high/workspace/test_ledger.py", line 116, in test_transfer_and_replay_receipts_do_not_expose_history
+    self.assertEqual(ledger.history, {"one": request})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'one': {}} != {'one': {'source': 'a', 'target': 'b', 'amount': 10, 'key': 'one'}}
+- {'one': {}}
++ {'one': {'amount': 10, 'key': 'one', 'source': 'a', 'target': 'b'}}
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.012s
+
+FAILED (failures=46, errors=23)

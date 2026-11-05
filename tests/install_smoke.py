@@ -4,6 +4,7 @@ Requires Node/npm and registry access (or a cached skills@1.7.4).
 Never uses the real agent home/configuration. No LLM calls are made.
 """
 from pathlib import Path
+import argparse
 import os
 import subprocess
 import tempfile
@@ -13,7 +14,13 @@ from test_skills import NAMES, ROOT
 CLI = 'skills@1.7.4'
 
 
-def main():
+def files(base):
+    """Distributed files under a skill directory; editor and bytecode caches are not content."""
+    return {p.relative_to(base) for p in base.rglob('*')
+            if p.is_file() and p.name != '.DS_Store' and '__pycache__' not in p.parts}
+
+
+def main(local_cli=None):
     with tempfile.TemporaryDirectory(prefix='lean-skills-smoke-') as tmp:
         scratch = Path(tmp)
         cases = [('all', sorted(NAMES))] + [(n, [n]) for n in sorted(NAMES)]
@@ -36,9 +43,11 @@ def main():
                        CODEX_HOME=str(home / '.codex'),
                        CLAUDE_CONFIG_DIR=str(home / '.claude'),
                        npm_config_cache=str(scratch / 'npm-cache'),
-                       DISABLE_TELEMETRY='1', DO_NOT_TRACK='1', CI='1')
+                       DISABLE_TELEMETRY='1', DO_NOT_TRACK='1', CI='1',
+                       NODE_DISABLE_COMPILE_CACHE='1')
             source = ROOT if label == 'all' else ROOT / 'skills' / label
-            command = ['npx', '--yes', CLI, 'add', str(source),
+            runner = ['node', str(local_cli)] if local_cli else ['npx', '--yes', CLI]
+            command = [*runner, 'add', str(source),
                        '--agent', 'codex', 'claude-code', 'antigravity',
                        '--skill', '*' if label == 'all' else label, '--yes']
             if scope == 'global':
@@ -56,7 +65,11 @@ def main():
             for agent in ('Codex', 'Claude Code', 'Antigravity'):
                 assert agent in result.stdout, (label, agent, result.stdout)
             for name in names:
-                for filename in ('SKILL.md', 'LICENSE'):
+                source_files = files(ROOT / 'skills' / name)
+                for base in (canonical, destination / '.claude' / 'skills'):
+                    actual_files = files(base / name)
+                    assert actual_files == source_files, (label, base, name, actual_files)
+                for filename in source_files:
                     expected = (ROOT / 'skills' / name / filename).read_bytes()
                     for base in (canonical, destination / '.claude' / 'skills'):
                         assert (base / name / filename).read_bytes() == expected, (label, base, name)
@@ -73,4 +86,10 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--cli', type=Path,
+                        help='Use an existing Skills CLI entrypoint offline instead of npx')
+    args = parser.parse_args()
+    if args.cli and not args.cli.is_file():
+        parser.error('--cli must point to an existing CLI entrypoint')
+    main(args.cli.resolve() if args.cli else None)

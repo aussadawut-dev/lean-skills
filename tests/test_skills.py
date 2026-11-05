@@ -10,12 +10,14 @@ NAMES = {
     'lean-init', 'lean-task', 'lean-scope', 'lean-research', 'lean-grill',
     'lean-agents', 'lean-review', 'lean-gate', 'lean-effort', 'lean-update',
     'lean-model-update', 'lean-target', 'lean-run', 'lean-instructions',
+    'lean-security', 'lean-release',
 }
 
 
 class SkillTests(unittest.TestCase):
     def test_complete_collection(self):
-        self.assertEqual({p.name for p in (ROOT / 'skills').iterdir()}, NAMES)
+        self.assertEqual({p.name for p in (ROOT / 'skills').iterdir()
+                          if p.is_dir() and (p / 'SKILL.md').is_file()}, NAMES)
 
     def test_companion_routes_resolve(self):
         text = (ROOT / 'skills/lean-run/SKILL.md').read_text()
@@ -23,14 +25,16 @@ class SkillTests(unittest.TestCase):
         self.assertEqual(routes, NAMES - {'lean-run'})
 
     def test_readme_skill_catalogs_and_local_links(self):
-        for filename in ('README.md', 'README.th.md'):
+        for filename in ('README.md', 'README.th.md', 'docs/guide.th.md', 'tests/behavioral.md',
+                         'tests/benchmark/README.md', 'tests/results/README.md'):
             with self.subTest(readme=filename):
                 text = (ROOT / filename).read_text()
                 catalog = set(re.findall(r'\]\(skills/(lean-[a-z-]+)/SKILL\.md\)', text))
-                self.assertEqual(catalog, NAMES)
+                if filename in ('README.md', 'README.th.md'):
+                    self.assertEqual(catalog, NAMES)
                 for link in re.findall(r'\]\(([^)]+)\)', text):
                     if '://' not in link and not link.startswith('#'):
-                        self.assertTrue((ROOT / link.split('#')[0]).is_file(), link)
+                        self.assertTrue((ROOT / filename).parent.joinpath(link.split('#')[0]).exists(), link)
 
     def test_each_skill_can_be_distributed_alone(self):
         for name in sorted(NAMES):
@@ -53,12 +57,13 @@ class SkillTests(unittest.TestCase):
                 self.assertNotRegex(text, r'\.lean/|\.lean\b|python3 .*bin/lean')
                 # Named optional companions are allowed; packaged resources must
                 # still resolve with this skill installed completely alone.
-                for link in re.findall(r'\]\(([^)]+)\)', parts[2]):
-                    if '://' in link or link.startswith('#'):
-                        continue
-                    target = (dest / link.split('#')[0]).resolve()
-                    self.assertIn(dest.resolve(), target.parents)
-                    self.assertTrue(target.is_file(), link)
+                for document in dest.rglob('*.md'):
+                    for link in re.findall(r'\]\(([^)]+)\)', document.read_text()):
+                        if '://' in link or link.startswith('#'):
+                            continue
+                        target = (document.parent / link.split('#')[0]).resolve()
+                        self.assertIn(dest.resolve(), target.parents)
+                        self.assertTrue(target.is_file(), f'{document}: {link}')
 
 
 if __name__ == '__main__':

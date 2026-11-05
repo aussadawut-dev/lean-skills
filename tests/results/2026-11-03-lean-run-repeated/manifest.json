@@ -1,0 +1,67 @@
+{
+  "status": "PREPARED",
+  "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-03-lean-run-optimized",
+  "requested_model": "gpt-6-astra",
+  "requested_effort": "max",
+  "timeout_seconds": 900,
+  "procedure_depth": "standard",
+  "repetitions_per_level": 3,
+  "baseline_repetitions_per_level": 1,
+  "orders": [
+    [
+      "medium",
+      "high",
+      "critical"
+    ],
+    [
+      "high",
+      "critical",
+      "medium"
+    ],
+    [
+      "critical",
+      "medium",
+      "high"
+    ]
+  ],
+  "skill_sha256": {
+    "LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    "SKILL.md": "082b2024d93ad50582c0305484fd5a8bcb57c0157f5b4b6ae847c66c02553757",
+    "references/delegation.md": "63899dde986ec7014a5cffd39216685640a2e98013dae26e037eaf985fecadb1",
+    "references/exploration.md": "baa9a38160095244c31c5e4a8aab5bdd15dfc0cc83df01a7086607a459faf403",
+    "references/handoff.md": "2d6744d15c27d002c85b9b4cbccf2b0845cb7b5c8b3589aa8b9b06a885357e94",
+    "scripts/check.py": "7946993e44c3ebb3d0235c94af4426e2fbef749c31f4b18eac0de001ba3050b4"
+  },
+  "harness_sha256": "323adb22550b36a559c05b9c05609739d07996bba763109ec59908c0a17adb62",
+  "primary_metrics": [
+    "medium mean measured workflow seconds",
+    "medium mean uncached input",
+    "medium mean uncached input plus output"
+  ],
+  "additional_metrics": [
+    "uncached input",
+    "total input plus output",
+    "cached input",
+    "all-level sum of means"
+  ],
+  "quality_gate": "unchanged frozen categories, protected files, independent review, historical regressions and critical supplemental writes",
+  "cache_policy": "No synthetic warmup; cache state not controlled",
+  "review_integrity_policy": "All pre-review files immutable; newly created .log evidence allowed and recorded",
+  "measurement_excludes": [
+    "coordinator chat",
+    "skill review",
+    "preparation",
+    "grading",
+    "cross-regressions",
+    "reporting"
+  ],
+  "candidate": "final-validation-after-log-metadata-repair",
+  "development_cohort": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-cohort-20261103-c1ze4zc_/cohort",
+  "environment": {
+    "cli": "codex-cli 0.166.0",
+    "python": "3.14.3",
+    "sqlite": "3.50.4",
+    "macos": "27.0.1",
+    "machine": "arm64"
+  }
+}

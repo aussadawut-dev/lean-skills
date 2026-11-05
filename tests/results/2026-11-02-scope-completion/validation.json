@@ -1,0 +1,35 @@
+{
+  "unit_tests": {
+    "command": "python3 -m unittest discover -s tests -v",
+    "exit_code": 0,
+    "tests": 9,
+    "output": "test_collection_and_standalone_fixture_discovery (test_behavioral_fixtures.CoreFixturesTest.test_collection_and_standalone_fixture_discovery) ... ok\ntest_update_scenarios_are_isolated_and_distinguishable (test_behavioral_fixtures.UpdateFixturesTest.test_update_scenarios_are_isolated_and_distinguishable) ... ok\ntest_release_uncertainty_and_recovery_preserve_records (test_coverage_fixtures.CoverageFixturesTest.test_release_uncertainty_and_recovery_preserve_records) ... ok\ntest_security_and_diagnosis_are_demonstrable_without_edits (test_coverage_fixtures.CoverageFixturesTest.test_security_and_diagnosis_are_demonstrable_without_edits) ... ok\ntest_standalone_inventories_and_no_clobber (test_coverage_fixtures.CoverageFixturesTest.test_standalone_inventories_and_no_clobber) ... ok\ntest_companion_routes_resolve (test_skills.SkillTests.test_companion_routes_resolve) ... ok\ntest_complete_collection (test_skills.SkillTests.test_complete_collection) ... ok\ntest_each_skill_can_be_distributed_alone (test_skills.SkillTests.test_each_skill_can_be_distributed_alone) ... ok\ntest_readme_skill_catalogs_and_local_links (test_skills.SkillTests.test_readme_skill_catalogs_and_local_links) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 1.019s\n\nOK\n"
+  },
+  "frontmatter": {
+    "validator": "/Users/x10/.codex/skills/.system/skill-creator/scripts/quick_validate.py",
+    "valid_packages": 16,
+    "exit_code": 0
+  },
+  "installation": {
+    "command": "python3 tests/install_smoke.py --cli /Users/x10/.npm/_npx/ac0ed6aa23b37c1e/node_modules/skills/bin/cli.mjs",
+    "cli_version": "1.7.4",
+    "exit_code": 0,
+    "scenarios": 34,
+    "scope": "16 skills individually plus collection, in temporary global and project scopes; full resources and scope isolation checked.",
+    "output_note": "Observed tool output reported PASS for all 34 cases; full installer output is not archived."
+  },
+  "baseline": "Before edits, 4 of 5 existing tests passed; collection discovery failed because it counted .DS_Store as a skill. The file was preserved and discovery was corrected.",
+  "independent_review": {
+    "task_name": "/root/final_review",
+    "source_result": "PASS",
+    "source_scope": "All 16 entrypoints, three references, EN/TH docs, test code and generators; eight targeted offline tests and 16 schema validations.",
+    "resolved_finding": "Removed one trailing blank line in docs/guide.th.md; no actionable functional or authorization finding.",
+    "evidence_addendum_result": "PASS",
+    "evidence_addendum_scope": "35 candidate file hashes, five archived requests/reports/final states and initial generator content; release history/data; EN/TH links and limits; environment/version claims.",
+    "limits": "No complete raw tool or installer transcripts; no live deploy, browser/accessibility execution or Claude Code/Antigravity runtime validation."
+  },
+  "diff_check": {
+    "command": "git diff --check",
+    "exit_code": 0
+  }
+}

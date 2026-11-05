@@ -1,0 +1,71 @@
+{
+  "phase": "review-3",
+  "review": {
+    "status": "REWORK",
+    "findings": [
+      {
+        "id": "REVIEW-2",
+        "severity": "P2",
+        "location": "vault.py:71-76 (_guard_effects)",
+        "requirement": "Valid transfers must continue to succeed with harmless no-op trigger effects.",
+        "evidence": "Initialize alpha accounts a=100 and b=0 as rowids 1 and 2. Create: CREATE TRIGGER harmless AFTER INSERT ON audit BEGIN UPDATE OR IGNORE accounts SET rowid=1 WHERE rowid=2; END. Call transfer(path,'alpha','a','b',10,'k'). The conflicting rowid update should be ignored. .pre-repair succeeds with balances 90/10 and exactly one receipt/audit row. Current code raises IntegrityError('unexpected stored transfer effects'); the CLI exits 2. The new BEFORE guard rejects the attempted collision before SQLite can ignore it. Verified through API and CLI, including complete row and schema comparisons. Equivalent cases on transfers and audit share this root cause.",
+        "suggested_fix": "Detect effective destructive row replacement while preserving SQLite's ignored-update behavior. Retain rejection of destructive OR REPLACE operations and acceptance of harmless rowid relocation."
+      }
+    ],
+    "checks": [
+      "Read lean-run, AGENTS.md and CONTRACT.md; compared current application source with .baseline and .pre-repair; inspected added tests.",
+      "python3 -B -m unittest discover -v: all 30 tests passed. TMPDIR was confined to the workspace.",
+      "Independently reproduced the prior foreign-text isolation failure in .pre-repair; current API transfer and API/CLI replay succeeded while preserving foreign bytes, schema and receipt/audit multiplicity.",
+      "Independently verified the reported ignored-rowid regression through API and CLI against .pre-repair.",
+      "Control probes confirmed destructive rowid replacement rolls back and collision-free relocation succeeds.",
+      "No application, tests, instructions or baseline files modified; temporary probe databases were cleaned up."
+    ],
+    "coverage_limits": [
+      "Focused assessment of the bounded repair delta and original-contract regressions, using Python 3.14.3 and SQLite 3.50.4; other runtime versions and crash fault injection were not tested."
+    ]
+  },
+  "grade": "post-repair-2-grade.json",
+  "cross": [
+    {
+      "direction": "historical_tests_on_candidate",
+      "exit_code": 1,
+      "seconds": 1.636,
+      "log": "review-3-historical_tests_on_candidate.log"
+    },
+    {
+      "direction": "candidate_tests_on_historical",
+      "exit_code": 1,
+      "seconds": 1.423,
+      "log": "review-3-candidate_tests_on_historical.log"
+    }
+  ],
+  "supplemental_issue_count": 0,
+  "blockers": [
+    "independent_review",
+    "historical_regressions"
+  ],
+  "review_integrity": {
+    "changed_or_removed": [],
+    "added_logs": [],
+    "unexpected_additions": []
+  },
+  "candidate_sha256": {
+    ".agents/skills/lean-run/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    ".agents/skills/lean-run/SKILL.md": "082b2024d93ad50582c0305484fd5a8bcb57c0157f5b4b6ae847c66c02553757",
+    ".agents/skills/lean-run/references/delegation.md": "63899dde986ec7014a5cffd39216685640a2e98013dae26e037eaf985fecadb1",
+    ".agents/skills/lean-run/references/exploration.md": "baa9a38160095244c31c5e4a8aab5bdd15dfc0cc83df01a7086607a459faf403",
+    ".agents/skills/lean-run/references/handoff.md": "2d6744d15c27d002c85b9b4cbccf2b0845cb7b5c8b3589aa8b9b06a885357e94",
+    ".agents/skills/lean-run/scripts/check.py": "7946993e44c3ebb3d0235c94af4426e2fbef749c31f4b18eac0de001ba3050b4",
+    "AGENTS.md": "0ef83ddcf2d1065527f05cd03d5a1b275feecc77e45bdb5916217f204c1cb486",
+    "CONTRACT.md": "6e6d6ee1f769db8160e528e218d46a0018a90655e775742a073d61df2aebee2b",
+    "app.py": "3e412cafd2bb0bf54b4dd035633e0c3a17c238fa4d2cdac7bd61354dab948562",
+    "baseline-atomicity.log": "24b65b8fe266ea6e57c6b70095339d2434d71e532f6992053755ce7b42fd4edb",
+    "baseline-reproduction.log": "0643256b1ad1772e84cad27e620339a98447a2223306c8be92e8b157d21d88e0",
+    "test_public.py": "5f239e0ce234d0b84f0d12e7cd23eb6dc23e63b88ffa07e50d20d2c061d66b95",
+    "test_read_isolation.py": "c8e87b44bc308cb7351cb66b4906b5c7ef351ae37f16369412c0452b312ac7d3",
+    "test_regressions.py": "72f51754439287b845bae8b52c71df4c12ac71321b69aa942e2291acd171e0b3",
+    "test_trigger_effects.py": "43a3542c14e27c612d7f05d1001f6a742bd47acab3d8b9616703c33150c4e9e0",
+    "trigger-reproduction.log": "59d8371e44afa2f6916642ba720d39b7b4e63360bb16d590642be1f331b57d4f",
+    "vault.py": "7e81367b3537b251825eb72ee94f7e389dc524dd1bb2d15489080ce853f4953c"
+  }
+}
