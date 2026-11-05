@@ -25,15 +25,16 @@ class SkillTests(unittest.TestCase):
         self.assertEqual(routes, NAMES - {'lean-run'})
 
     def test_readme_skill_catalogs_and_local_links(self):
-        for filename in ('README.md', 'README.th.md', 'docs/guide.th.md'):
+        for filename in ('README.md', 'README.th.md', 'docs/guide.th.md', 'tests/behavioral.md',
+                         'tests/benchmark/README.md', 'tests/results/README.md'):
             with self.subTest(readme=filename):
                 text = (ROOT / filename).read_text()
                 catalog = set(re.findall(r'\]\(skills/(lean-[a-z-]+)/SKILL\.md\)', text))
-                if filename != 'docs/guide.th.md':
+                if filename in ('README.md', 'README.th.md'):
                     self.assertEqual(catalog, NAMES)
                 for link in re.findall(r'\]\(([^)]+)\)', text):
                     if '://' not in link and not link.startswith('#'):
-                        self.assertTrue((ROOT / filename).parent.joinpath(link.split('#')[0]).is_file(), link)
+                        self.assertTrue((ROOT / filename).parent.joinpath(link.split('#')[0]).exists(), link)
 
     def test_each_skill_can_be_distributed_alone(self):
         for name in sorted(NAMES):

@@ -276,7 +276,7 @@ observability. Exercise only the branches and resources authorized for a trial.
 
 ## Three-level time, token and defect benchmark
 
-Retained execution: [2026-11-03 measured results](results/2026-11-03-level-benchmark/README.md), including the critical first-review finding and measured repair.
+Retained execution: [2026-11-03 measured results](https://github.com/aussadawut-dev/lean-skills/blob/benchmark-archives/tests/results/2026-11-03-level-benchmark/README.md), including the critical first-review finding and measured repair.
 
 `level_benchmark.py` prepares three standalone `lean-run` repair tasks:
 
@@ -356,7 +356,7 @@ directories, plus previously discovered supplemental checks, without exposing
 those results to the first reviewer. A shorter instruction file alone is not
 evidence of faster execution or unchanged quality.
 
-The [optimized comparison](results/2026-11-03-lean-run-optimized/README.md)
+The [optimized comparison](https://github.com/aussadawut-dev/lean-skills/blob/benchmark-archives/tests/results/2026-11-03-lean-run-optimized/README.md)
 retains the same three tasks and eight measured phases, including critical's
 repair. It reports improvements and regressions separately, including the
 increase in uncached input plus output despite lower total tokens.
@@ -421,7 +421,7 @@ mean with n=3 versus a historical baseline with n=1 does not establish a causal
 or statistically reliable improvement. Preserve raw usage events, helper logs,
 prompt and source hashes, graders and all quality outcomes.
 
-The [three-repeat comparison](results/2026-11-03-lean-run-repeated/README.md)
+The [three-repeat comparison](https://github.com/aussadawut-dev/lean-skills/blob/benchmark-archives/tests/results/2026-11-03-lean-run-repeated/README.md)
 retains the stopped development variant separately, all nine validation trials,
 and the later AFTER-trigger findings and measured repairs.
 
@@ -466,25 +466,25 @@ disclose when it was introduced. Report their failed cases separately from the
 predeclared probes and independent finding counts; overlapping signals are not
 a globally unique issue total. A known actual failure cannot be labeled PASS.
 
-The [Critical-integrity and Medium-time comparison](results/2026-11-03-lean-run-critical-medium/README.md)
+The [Critical-integrity and Medium-time comparison](https://github.com/aussadawut-dev/lean-skills/blob/benchmark-archives/tests/results/2026-11-03-lean-run-critical-medium/README.md)
 retains all nine new attempts against the latest three-per-level baseline,
 including bounded repairs, independent/coordinator findings, timeouts with
 unknown usage, uniformly applied posthoc diagnostics and final quality outcomes.
 
-The [Critical-speed and integrity comparison](results/2026-11-04-lean-run-critical-speed/README.md)
+The [Critical-speed and integrity comparison](https://github.com/aussadawut-dev/lean-skills/blob/benchmark-archives/tests/results/2026-11-04-lean-run-critical-speed/README.md)
 records all nine follow-up trials, the two prior Critical probes promoted to
 mandatory checks, and the recovery of Critical round 3's original repair process.
 
-The [Critical completion and High time comparison](results/2026-11-04-lean-run-critical-high/README.md)
+The [Critical completion and High time comparison](https://github.com/aussadawut-dev/lean-skills/blob/benchmark-archives/tests/results/2026-11-04-lean-run-critical-high/README.md)
 records the nine trials with the SQL separator probes enforced at every Critical
 assessment, the four timeouts, and the remaining trigger behavior findings.
 
-The [High and Critical single-round pilot](results/2026-11-04-lean-run-critical-high-pilot/README.md)
+The [High and Critical single-round pilot](https://github.com/aussadawut-dev/lean-skills/blob/benchmark-archives/tests/results/2026-11-04-lean-run-critical-high-pilot/README.md)
 records the requested one trial per selected level against the preceding three-round
 means. It retains the repair timeout and incomplete usage, the passing original
 finding reproductions, and the remaining independent SQL-rewriting finding.
 
-The [SQL-source and phase-budget pilot](results/2026-11-04-lean-run-in-source-budget/README.md)
+The [SQL-source and phase-budget pilot](https://github.com/aussadawut-dev/lean-skills/blob/benchmark-archives/tests/results/2026-11-04-lean-run-in-source-budget/README.md)
 compares one new High and Critical trial with the latest single-round pilot.
 High uncached input fell 25.2%; all eight new measured phases completed without
 timeout. Critical passed the IN/NOT INDEXED reproductions but remains FAILED:
@@ -506,11 +506,11 @@ The [contract gate policy](benchmark/README.md) replaces the accumulated Critica
 gates for later cohorts: the grader, review and an oracle-judged contract probe
 block; inherited probes and historical suites are advisory; and `prepare` refuses
 a cohort unless a reference solution passes every mandatory gate. Its first cohort,
-[2026-11-05-lean-run-contract-gates](results/2026-11-05-lean-run-contract-gates/README.md),
+[2026-11-05-lean-run-contract-gates](https://github.com/aussadawut-dev/lean-skills/blob/benchmark-archives/tests/results/2026-11-05-lean-run-contract-gates/README.md),
 finished High DONE and Critical FAILED on one disclosed schema-persistence
 interpretation; the protocol-invalid and stopped Critical attempts before it are
-retained in [rls-baseline](results/2026-11-05-lean-run-rls-baseline/README.md) and
-[rls-critical-rerun](results/2026-11-05-lean-run-rls-critical-rerun/README.md).
+retained in [rls-baseline](https://github.com/aussadawut-dev/lean-skills/blob/benchmark-archives/tests/results/2026-11-05-lean-run-rls-baseline/README.md) and
+[rls-critical-rerun](https://github.com/aussadawut-dev/lean-skills/blob/benchmark-archives/tests/results/2026-11-05-lean-run-rls-critical-rerun/README.md).
 After that cohort the Critical contract states schema immutability (balance reads
 and transfers persistently add, alter or remove no schema object; temporary objects
 are allowed), recorded in the
@@ -525,3 +525,14 @@ comparison was overridden); it now covers every caller-supplied value. The
 Critical contract left statistics tables and new-row rowids undecided; the
 [scope amendment](results/2026-11-04-rls-policy-development/README.md#scope-amendment-2026-11-05)
 states both. A principle has to name the class of defect, not the last instance.
+
+Two further lean-run changes follow the cost evidence of those cohorts, where a
+single repair cycle made a High trial 2.3 to 2.8 times more expensive and most
+phase context was whole-file reads and unbounded script output. The signature
+mapping now requires, before review, one parameterized case per applicable row
+of [boundary cases](../skills/lean-run/references/boundary-cases.md), so the
+class of defect becomes evidence rather than a reminder; and reading goes through
+`scripts/view.py` (numbered, bounded regions) while tests, scripts and any
+command with more than a few lines of output go through `scripts/check.py` by
+default. Both change the skill for every level; the measures to watch are
+`first_review_issues` and `tool_output_characters` per phase.
