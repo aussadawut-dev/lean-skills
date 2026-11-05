@@ -4,6 +4,8 @@ import json
 import os
 from pathlib import Path
 
+from repeated_benchmark import archive_path
+
 
 def read(path):
     return json.loads(path.read_text())
@@ -147,7 +149,7 @@ def render_pilot(root, summary, manifest, prior, baseline):
                      'The targeted replays below apply the same new cases to both workspaces.'])
     if 'regression_archives' in manifest:
         sources = ', '.join(
-            f"[{Path(path).name}]({os.path.relpath(Path(path) / 'README.md', root)})"
+            f"[{archive_path(path).name}]({os.path.relpath(archive_path(path) / 'README.md', root)})"
             for path in manifest['regression_archives'])
         text.extend(['', 'Every assessment runs historical tests against the candidate and candidate tests against '
                      f'each retained historical workspace for the same level. Sources are {sources}. '
@@ -394,7 +396,7 @@ def render_pilot(root, summary, manifest, prior, baseline):
 
 def render(root):
     root=root.resolve();summary=read(root/'summary.json');manifest=read(root/'manifest.json')
-    quality=summary['quality'];target=summary['optimization_target'];baseline=Path(manifest['baseline_archive'])
+    quality=summary['quality'];target=summary['optimization_target'];baseline=archive_path(manifest['baseline_archive'])
     prior=read(baseline/'summary.json');old={row['level']:row for row in prior['levels']}
     if {row['level']: row['candidate_n'] for row in summary['levels']} != dict.fromkeys(
             ('medium', 'high', 'critical'), 3):

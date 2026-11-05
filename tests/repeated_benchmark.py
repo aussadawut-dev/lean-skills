@@ -8,6 +8,7 @@ import os
 import re
 from pathlib import Path
 import shutil
+import sqlite3
 import statistics
 import subprocess
 import sys
@@ -26,6 +27,20 @@ EFFECT_PROBE_NAMES = ('dollar_identifier_probe.py', 'trigger_counter_probe.py',
                       'malformed_effect_probe.py')
 SETTING_PROBE_NAMES = ('storage_encoding_probe.py', 'trigger_ignore_scope_probe.py',
                       'recursive_setting_probe.py')
+
+
+def archive_path(value):
+    """Archive recorded in a manifest. A committed archive resolves by name on any machine."""
+    path=Path(value)
+    if not path.is_absolute():path=ROOT/path
+    if not path.is_dir() and (ROOT/'tests/results'/path.name).is_dir():path=ROOT/'tests/results'/path.name
+    return path
+
+
+def portable(path):
+    """Manifest form of an archive path: repository-relative when inside the repository."""
+    path=Path(path).resolve()
+    return str(path.relative_to(ROOT)) if ROOT in path.parents else str(path)
 
 
 def read(path):
@@ -143,7 +158,7 @@ def prepare(destination, baseline=None, levels=('medium','high','critical'), rep
             target=destination/'reference'/level
             shutil.copytree(reference,target,ignore=shutil.ignore_patterns('__pycache__'))
             initial=destination/'round-1'/level/'initial'
-            result={'reference':gate_results(destination,level,target,mandatory),
+            result={'reference':gate_results(destination,level,target,mandatory,strict=True),
                     'initial':gate_results(destination,level,initial,mandatory)}
             result['reference_passes_all']=all(result['reference'].values())
             result['initial_fails_some']=not all(result['initial'].values())
@@ -157,7 +172,7 @@ def prepare(destination, baseline=None, levels=('medium','high','critical'), rep
     write(destination/'controls.json',controls)
     prior=read(baseline/'manifest.json')
     # Historical suites accumulate: the new baseline plus every archive it already replayed.
-    archives=list(dict.fromkeys([str(baseline),*prior.get('regression_archives',[])]))
+    archives=list(dict.fromkeys([portable(baseline),*(portable(archive_path(p)) for p in prior.get('regression_archives',[]))]))
     inherited_settings={key:prior[key] for key in ('coordinator_gate_levels','optimization_level','optimization_metrics') if key in prior}
     if inherited_settings.get('optimization_level') not in (None,*levels):
         # The baseline's target level is not in this cohort; keep the summarizer default.
@@ -176,7 +191,7 @@ def prepare(destination, baseline=None, levels=('medium','high','critical'), rep
             write(destination/'superseded-expectations.json',value)
             policy['superseded_expectations']='superseded-expectations.json'
     write(destination/'manifest.json',{**inherited_settings,**policy,**gates,'regression_archives':archives,
-        'status':'PREPARED','baseline_archive':str(baseline),
+        'status':'PREPARED','baseline_archive':portable(baseline),
         'requested_model':'gpt-6-astra','requested_effort':'max','timeout_seconds':900,
         'procedure_depth':'standard','repetitions_per_level':repetitions,'baseline_repetitions_per_level':baseline_count(baseline),
         'known_quality_probes':probes,
@@ -198,8 +213,13 @@ def probe_passed(code,report):
             and report.get('failed_cases',0)==0)
 
 
-def gate_results(root,level,workspace,mandatory):
-    """Grader and mandatory probes on one workspace, without writing into it."""
+def gate_results(root,level,workspace,mandatory,strict=False):
+    """Grader and mandatory probes on one workspace, without writing into it.
+
+    Strict mode refuses a probe that produces no report: that is a broken probe
+    or environment (for example an SQLite that rejects the probe's SQL), not a
+    candidate failure, and must not be recorded as one.
+    """
     results={}
     with tempfile.TemporaryDirectory(prefix='lean-gate-check-') as temporary:
         copy=Path(temporary)/'workspace'
@@ -213,6 +233,9 @@ def gate_results(root,level,workspace,mandatory):
                                  timeout=600,env={**os.environ,'PYTHONPATH':str(copy)})
                 try:report=json.loads(p.stdout)
                 except ValueError:report=None
+                if strict and report is None:
+                    reason=(p.stderr.strip().splitlines() or ['no output'])[-1]
+                    raise RuntimeError(f'{name} produced no report for {workspace.name} (SQLite {sqlite3.sqlite_version}): {reason}')
                 results[name]=probe_passed(p.returncode,report)
     return results
 
@@ -255,9 +278,9 @@ def run_phase(root,b,number,level,phase):
 
 def cross_regressions(root,trial,level,label):
     manifest=read(root/'manifest.json')
-    archives=[Path(path) for path in manifest.get('regression_archives',[manifest['baseline_archive']])]
+    archives=[(path,archive_path(path)) for path in manifest.get('regression_archives',[manifest['baseline_archive']])]
     results=[]
-    for archive_index,archive in enumerate(archives):
+    for archive_index,(reference,archive) in enumerate(archives):
       for number in range(1,baseline_count(archive)+1):
         baseline=baseline_trial(archive,level,number)/'workspace'
         for name,application,tests in [('historical_tests_on_candidate',trial/'workspace',baseline),('candidate_tests_on_historical',baseline,trial/'workspace')]:
@@ -269,7 +292,7 @@ def cross_regressions(root,trial,level,label):
                 start=time.monotonic();p=subprocess.run([sys.executable,'-B','-m','unittest','discover','-v'],cwd=target,capture_output=True,text=True,timeout=120)
                 prefix='' if archive_index==0 else f'history-{archive_index}-'
                 log=f'{label}-{prefix}baseline-{number}-{name}.log';(trial/log).write_text(p.stdout+p.stderr)
-                row={'direction':name,'baseline_round':number,'baseline_archive':str(archive),
+                row={'direction':name,'baseline_round':number,'baseline_archive':reference,
                      'exit_code':p.returncode,'seconds':round(time.monotonic()-start,3),'log':log}
                 allowed=superseded_tests(root,level,archive,number) if name=='historical_tests_on_candidate' else None
                 if p.returncode and allowed is not None:
@@ -401,7 +424,7 @@ def run(root):
                             if (trial/'reviewspace').exists():(trial/'reviewspace').rename(trial/f'reviewspace-before-{phase}')
                             b.prepare_review(base,level)
                             if index==1:
-                                assert (trial/'review-prompt.txt').read_bytes()==(baseline_trial(Path(manifest['baseline_archive']),level,number)/'review/prompt.txt').read_bytes()
+                                assert (trial/'review-prompt.txt').read_bytes()==(baseline_trial(archive_path(manifest['baseline_archive']),level,number)/'review/prompt.txt').read_bytes()
                             else:
                                 prior=trial/f'workspace-before-repair-{index-1}';pre=trial/'reviewspace/.pre-repair';pre.mkdir()
                                 for source in prior.glob('*.py'):shutil.copyfile(source,pre/source.name)

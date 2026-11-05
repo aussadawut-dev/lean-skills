@@ -6,6 +6,8 @@ import json
 from pathlib import Path
 import statistics
 
+from repeated_benchmark import archive_path
+
 METRICS=('measured_seconds','total_tokens','input_tokens','cached_input_tokens',
          'uncached_input_tokens','output_tokens','uncached_input_plus_output')
 
@@ -90,7 +92,7 @@ def phase_means(trials):
 
 
 def summarize(root):
-    root=root.resolve();manifest=read(root/'manifest.json');baseline=Path(manifest['baseline_archive'])
+    root=root.resolve();manifest=read(root/'manifest.json');baseline=archive_path(manifest['baseline_archive'])
     old={v['level']:v for v in read(baseline/'summary.json')['levels']}
     trials=[];phases=[];controls=read(root/'controls.json')
     orders=manifest['orders']

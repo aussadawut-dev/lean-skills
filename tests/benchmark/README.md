@@ -59,6 +59,12 @@ with zero failures and zero advisory observations.
 
 ## Evidence (SQLite 3.50.4, Python 3.14)
 
+This probe and `rls_policy_probe.py` pass an expression to `RAISE()`. SQLite
+3.45.1, which Ubuntu 24.04 and GitHub-hosted runners ship, rejects that, so
+`prepare` refuses the cohort with the probe's error instead of recording a failed
+reference, and the four unit tests that run these probes are skipped there with
+the SQLite version in the reason.
+
 | Workspace | Contract probe failures | Advisory |
 | --- | ---: | ---: |
 | reference solution | 0 | 0 |

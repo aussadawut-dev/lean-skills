@@ -2,6 +2,7 @@
 import contextlib
 import io
 from pathlib import Path
+import sqlite3
 import tempfile
 from types import SimpleNamespace
 import unittest
@@ -13,6 +14,17 @@ POLICY=cohort.ROOT/'tests/results/2026-11-04-rls-policy-development'
 # The Critical contract now states row-level security, so every prepared
 # Critical trial must declare that change against older baselines.
 RLS=dict(contract_changes=('critical',),policy_record=POLICY/'README.md')
+
+
+def raise_accepts_expressions():
+    """The contract and RLS policy probes pass an expression to RAISE(); SQLite 3.45 (Ubuntu 24.04) rejects that."""
+    with contextlib.closing(sqlite3.connect(':memory:')) as con:
+        con.execute('CREATE TABLE t(x)')
+        try:con.execute("CREATE TRIGGER r BEFORE INSERT ON t BEGIN SELECT RAISE(ABORT,'a'||'b'); END");return True
+        except sqlite3.OperationalError:return False
+
+
+needs_critical_probes=unittest.skipUnless(raise_accepts_expressions(),f'SQLite {sqlite3.sqlite_version} cannot run the critical probes')
 
 
 def frozen(controls):
@@ -116,6 +128,7 @@ class RepeatedBenchmarkTests(unittest.TestCase):
                 cohort.prepare(Path(temp)/'unchanged',archive,levels=('high',),repetitions=1,
                                contract_changes=('high',),policy_record=POLICY/'README.md')
 
+    @needs_critical_probes
     def test_new_baseline_separates_policy_superseded_failures_from_blocking_ones(self):
         import shutil
         archive=cohort.ROOT/'tests/results/2026-11-04-lean-run-in-source-budget'
@@ -127,7 +140,8 @@ class RepeatedBenchmarkTests(unittest.TestCase):
             manifest=cohort.read(base/'manifest.json')
             self.assertEqual(manifest['contract_changed_levels'],['critical'])
             self.assertEqual(manifest['comparison_valid_levels'],['high'])
-            self.assertEqual(manifest['regression_archives'],[str(archive),*cohort.read(archive/'manifest.json')['regression_archives']])
+            self.assertEqual(manifest['regression_archives'],[cohort.portable(archive),
+                *(cohort.portable(cohort.archive_path(p)) for p in cohort.read(archive/'manifest.json')['regression_archives'])])
             self.assertEqual((manifest['coordinator_gate_levels'],manifest['optimization_level']),(['critical'],'high'))
             self.assertEqual(len(manifest['known_quality_probes']),24)
             self.assertEqual((base/'policy-record.md').read_bytes(),(POLICY/'README.md').read_bytes())
@@ -175,6 +189,24 @@ class RepeatedBenchmarkTests(unittest.TestCase):
             self.assertNotIn('optimization_level',manifest)
             self.assertEqual(manifest['coordinator_gate_levels'],['critical'])
 
+    def test_archives_resolve_on_any_machine(self):
+        archive=cohort.ROOT/'tests/results/2026-11-04-lean-run-critical-high'
+        self.assertEqual(cohort.archive_path('/elsewhere/lean-skills/tests/results/'+archive.name),archive)
+        self.assertEqual(cohort.archive_path('tests/results/'+archive.name),archive)
+        self.assertEqual(cohort.portable(archive),'tests/results/'+archive.name)
+        self.assertEqual(cohort.archive_path(cohort.portable(archive)),archive)
+        self.assertEqual(cohort.portable('/elsewhere/archive'),'/elsewhere/archive')
+
+    def test_probe_without_report_is_an_error_not_a_failed_reference(self):
+        archive=cohort.ROOT/'tests/results/2026-11-04-lean-run-in-source-budget'
+        reference=cohort.ROOT/'tests/benchmark/reference/critical'
+        with tempfile.TemporaryDirectory() as temp, contextlib.redirect_stdout(io.StringIO()):
+            broken=Path(temp)/'broken_probe.py';broken.write_text("raise SystemExit('probe cannot run here')\n")
+            with self.assertRaisesRegex(RuntimeError,'broken_probe.py produced no report for critical .*probe cannot run here'):
+                cohort.prepare(Path(temp)/'cohort',archive,levels=('critical',),repetitions=1,
+                               mandatory_probes=(broken,),references={'critical':reference},**RLS)
+
+    @needs_critical_probes
     def test_contract_gates_require_a_satisfying_reference(self):
         archive=cohort.ROOT/'tests/results/2026-11-04-lean-run-in-source-budget'
         contract=cohort.ROOT/'tests/probes/critical_contract_probe.py'
@@ -196,6 +228,7 @@ class RepeatedBenchmarkTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 cohort.prepare(Path(temp)/'missing',archive,levels=('critical',),repetitions=1,mandatory_probes=(contract,),**RLS)
 
+    @needs_critical_probes
     def test_inherited_identical_probe_can_stay_mandatory(self):
         # A contract-policy baseline already carries its mandatory probe; reusing it must not collide.
         archive=cohort.ROOT/'tests/results/2026-11-05-lean-run-contract-gates'
@@ -214,6 +247,7 @@ class RepeatedBenchmarkTests(unittest.TestCase):
                 cohort.prepare(Path(temp)/'changed-cohort',archive,levels=('critical',),repetitions=1,
                                mandatory_probes=(changed,),references={'critical':reference},**RLS)
 
+    @needs_critical_probes
     def test_contract_policy_blocks_only_on_mandatory_gates(self):
         import shutil
         archive=cohort.ROOT/'tests/results/2026-11-04-lean-run-in-source-budget'

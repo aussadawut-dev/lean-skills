@@ -14,6 +14,12 @@ from test_skills import NAMES, ROOT
 CLI = 'skills@1.7.4'
 
 
+def files(base):
+    """Distributed files under a skill directory; editor and bytecode caches are not content."""
+    return {p.relative_to(base) for p in base.rglob('*')
+            if p.is_file() and p.name != '.DS_Store' and '__pycache__' not in p.parts}
+
+
 def main(local_cli=None):
     with tempfile.TemporaryDirectory(prefix='lean-skills-smoke-') as tmp:
         scratch = Path(tmp)
@@ -59,13 +65,9 @@ def main(local_cli=None):
             for agent in ('Codex', 'Claude Code', 'Antigravity'):
                 assert agent in result.stdout, (label, agent, result.stdout)
             for name in names:
-                source_files = {p.relative_to(ROOT / 'skills' / name)
-                                for p in (ROOT / 'skills' / name).rglob('*')
-                                if p.is_file() and p.name != '.DS_Store'}
+                source_files = files(ROOT / 'skills' / name)
                 for base in (canonical, destination / '.claude' / 'skills'):
-                    actual_files = {p.relative_to(base / name)
-                                    for p in (base / name).rglob('*')
-                                    if p.is_file() and p.name != '.DS_Store'}
+                    actual_files = files(base / name)
                     assert actual_files == source_files, (label, base, name, actual_files)
                 for filename in source_files:
                     expected = (ROOT / 'skills' / name / filename).read_bytes()

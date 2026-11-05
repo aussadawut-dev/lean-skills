@@ -7,6 +7,8 @@ import math
 from pathlib import Path
 import statistics
 
+from repeated_benchmark import archive_path
+
 
 METRICS = ('measured_seconds', 'total_tokens', 'input_tokens', 'cached_input_tokens',
            'uncached_input_tokens', 'output_tokens', 'uncached_input_plus_output')
@@ -185,7 +187,7 @@ def verify_csv_number(value, expected):
 def audit(root):
     root = root.resolve()
     manifest = read(root / 'manifest.json')
-    baseline = Path(manifest['baseline_archive'])
+    baseline = archive_path(manifest['baseline_archive'])
     prior = read(baseline / 'manifest.json')
     summary = read(root / 'summary.json')
     controls = ('requested_model', 'requested_effort', 'timeout_seconds', 'procedure_depth')
@@ -199,7 +201,7 @@ def audit(root):
     if archive_hashes:
         assert set(archive_hashes) == set(archive_references)
     for reference in archive_references:
-        archive = Path(reference)
+        archive = archive_path(reference)
         if archive_hashes:
             assert sha(archive / 'archive-sha256.json') == archive_hashes[reference], archive
         hashes = prior_hashes if archive == baseline else verify_archive(archive)
