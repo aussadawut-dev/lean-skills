@@ -1,0 +1,11 @@
+{
+  "status": "DONE",
+  "final_assessment": 1,
+  "repair_rounds": 0,
+  "final_grade": "post-implementation-grade.json",
+  "final_review": "review",
+  "initial_review_issues": 0,
+  "final_review_issues": 0,
+  "first_pass_blockers": [],
+  "adjudication": null
+}

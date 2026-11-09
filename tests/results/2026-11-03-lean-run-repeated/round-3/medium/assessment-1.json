@@ -1,0 +1,53 @@
+{
+  "phase": "review",
+  "review": {
+    "status": "PASS",
+    "findings": [],
+    "checks": [
+      "Read lean-run and CONTRACT.md; reviewed baseline differences, current source and added tests against all requirements.",
+      "python3 -B -m unittest discover -v: all 11 tests passed, covering accepted syntax, rejected inputs, field preservation, CLI arity/errors and large integers.",
+      "Independent parser probe preserved exact 6000-digit signed integers with restrictive Decimal settings and integer digit limit 640.",
+      "Independent CLI probes verified exact large-number summation and invalid-field handling: exit 2, useful stderr, empty stdout and no traceback.",
+      "Verified reviewed files remained unchanged, supplied public tests matched baseline and temporary probe paths were removed."
+    ],
+    "coverage_limits": [
+      "Execution covered local Python 3.14.3; other interpreter versions and platforms were not tested.",
+      "Large-integer probes reached 6000 digits; resource-exhaustion behavior was not assessed."
+    ]
+  },
+  "grade": "post-implementation-grade.json",
+  "cross": [
+    {
+      "direction": "historical_tests_on_candidate",
+      "exit_code": 0,
+      "seconds": 0.558,
+      "log": "review-historical_tests_on_candidate.log"
+    },
+    {
+      "direction": "candidate_tests_on_historical",
+      "exit_code": 1,
+      "seconds": 1.084,
+      "log": "review-candidate_tests_on_historical.log"
+    }
+  ],
+  "supplemental_issue_count": null,
+  "blockers": [],
+  "review_integrity": {
+    "changed_or_removed": [],
+    "added_logs": [],
+    "unexpected_additions": []
+  },
+  "candidate_sha256": {
+    ".agents/skills/lean-run/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    ".agents/skills/lean-run/SKILL.md": "082b2024d93ad50582c0305484fd5a8bcb57c0157f5b4b6ae847c66c02553757",
+    ".agents/skills/lean-run/references/delegation.md": "63899dde986ec7014a5cffd39216685640a2e98013dae26e037eaf985fecadb1",
+    ".agents/skills/lean-run/references/exploration.md": "baa9a38160095244c31c5e4a8aab5bdd15dfc0cc83df01a7086607a459faf403",
+    ".agents/skills/lean-run/references/handoff.md": "2d6744d15c27d002c85b9b4cbccf2b0845cb7b5c8b3589aa8b9b06a885357e94",
+    ".agents/skills/lean-run/scripts/check.py": "7946993e44c3ebb3d0235c94af4426e2fbef749c31f4b18eac0de001ba3050b4",
+    "AGENTS.md": "0ef83ddcf2d1065527f05cd03d5a1b275feecc77e45bdb5916217f204c1cb486",
+    "CONTRACT.md": "70c0534f21c9f9705b307c81d93b7b7725567f8709bcb1744c76ce48d94c4bd3",
+    "app.py": "81ed7d9c41f77be8144514af476e66232e7a88770066fb68a24683330738d361",
+    "test_app.py": "4bb7347d278a53252e34271492a0eb0d5f6297a62da238ab8837b5f86ea043b0",
+    "test_public.py": "2cbe00c08d2c2ad6ee61176c69e4b2ad17eac17ddb0468cda92e1452886ae103"
+  }
+}

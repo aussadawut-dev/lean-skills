@@ -1,0 +1,16 @@
+[
+  {
+    "original_path": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/baseline-reproduction.log",
+    "reported_bytes": 14057,
+    "archived": "captured-logs/001.log",
+    "sha256": "0643256b1ad1772e84cad27e620339a98447a2223306c8be92e8b157d21d88e0",
+    "bytes": 14057
+  },
+  {
+    "original_path": "/private/var/folders/1j/hzh7y3gn7yl8648zpkw4rvbw0000gn/T/lean-run-final-cohort-20261103-a62c8aek/cohort/round-3/critical/workspace/baseline-atomicity.log",
+    "reported_bytes": 9138,
+    "archived": "captured-logs/002.log",
+    "sha256": "24b65b8fe266ea6e57c6b70095339d2434d71e532f6992053755ce7b42fd4edb",
+    "bytes": 9138
+  }
+]

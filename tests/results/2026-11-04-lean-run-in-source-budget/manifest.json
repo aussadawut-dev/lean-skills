@@ -1,0 +1,130 @@
+{
+  "status": "PREPARED",
+  "baseline_archive": "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high-pilot",
+  "requested_model": "gpt-6-astra",
+  "requested_effort": "max",
+  "timeout_seconds": 900,
+  "procedure_depth": "standard",
+  "repetitions_per_level": 1,
+  "baseline_repetitions_per_level": 1,
+  "known_quality_probes": [
+    "supplemental_probe.py",
+    "after_trigger_probe.py",
+    "audit_followup_probe.py",
+    "preservation_probe.py",
+    "noop_probe.py",
+    "read_isolation_probe.py",
+    "ignored_update_probe.py",
+    "frame_followup_probe.py",
+    "trigger_compatibility_probe.py",
+    "dollar_identifier_probe.py",
+    "trigger_counter_probe.py",
+    "unicode_space_probe.py",
+    "trigger_separator_probe.py",
+    "malformed_effect_probe.py",
+    "storage_encoding_probe.py",
+    "trigger_ignore_scope_probe.py",
+    "recursive_setting_probe.py",
+    "critical_final_findings_probe.py",
+    "name_resolution_probe.py",
+    "in_source_probe.py"
+  ],
+  "orders": [
+    [
+      "high",
+      "critical"
+    ]
+  ],
+  "skill_sha256": {
+    "LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    "SKILL.md": "cf276cdb9f06a5b7b03144daa394af1e72893588675f766d027e51ec68526312",
+    "references/delegation.md": "63899dde986ec7014a5cffd39216685640a2e98013dae26e037eaf985fecadb1",
+    "references/delivery.md": "84a7a68e8e0417b6fa5be85040dd10a872217b5a54ef7f6e77b7be2fc2c2129f",
+    "references/exploration.md": "baa9a38160095244c31c5e4a8aab5bdd15dfc0cc83df01a7086607a459faf403",
+    "references/handoff.md": "2d6744d15c27d002c85b9b4cbccf2b0845cb7b5c8b3589aa8b9b06a885357e94",
+    "references/write-integrity.md": "4fa727cf04b56f35d44c1ee540936c8e8180a1125af181430c7378f2b7f78e03",
+    "scripts/budget.py": "edfa3ea55624439a1edee7b27393b3455c2e4ea71092694839806612a6bf5ad2",
+    "scripts/check.py": "7946993e44c3ebb3d0235c94af4426e2fbef749c31f4b18eac0de001ba3050b4"
+  },
+  "budget_policy": "Same 900-second cap made visible through deadline environment; no automatic extension or early quality pass",
+  "harness_sha256": "c14c51c1deb45d86586c65d2878b5a032bd014ab6642e11402ade40eb3b48da0",
+  "primary_metrics": [
+    "High uncached input",
+    "High/Critical workflow seconds",
+    "all mandatory quality gates",
+    "no phase timeout"
+  ],
+  "additional_metrics": [
+    "uncached input",
+    "total input plus output",
+    "cached input",
+    "all-level sum of means"
+  ],
+  "quality_gate": "unchanged frozen categories, protected files, independent review, historical regressions and critical supplemental writes",
+  "cache_policy": "No synthetic warmup; cache state not controlled",
+  "review_integrity_policy": "All pre-review files immutable; newly created .log evidence allowed and recorded",
+  "measurement_excludes": [
+    "coordinator chat",
+    "skill review",
+    "preparation",
+    "grading",
+    "cross-regressions",
+    "reporting"
+  ],
+  "candidate": "sql-source-context-explicit-budget-compact-review",
+  "optimization_level": "high",
+  "optimization_metrics": [
+    "uncached_input_tokens"
+  ],
+  "additional_speed_targets": [],
+  "coordinator_gate_levels": [
+    "critical"
+  ],
+  "targeted_probes": [
+    "in_source_probe.py"
+  ],
+  "regression_archives": [
+    "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high-pilot",
+    "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high"
+  ],
+  "regression_archive_sha256": {
+    "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high-pilot": "6a73f9b69470dddd10e267b05efb914d4abc0cb6f47044d721b92641f910e2a9",
+    "/Users/x10/Workspace/Me/Github/lean-skills/tests/results/2026-11-04-lean-run-critical-high": "defd26b37ed872f0d9e17fe440dda561e86e1bd61d31caa186711356863be664"
+  },
+  "environment": {
+    "cli": "codex-cli 0.166.0",
+    "python": "3.14.3",
+    "sqlite": "3.50.4",
+    "system": "macOS-27.0.1-arm64-arm-64bit-Mach-O"
+  },
+  "measurement_notes": [
+    "Requested one High and one Critical vs immediately preceding pilot (n=1 each). No Medium or additional measured cohorts.",
+    "Original initial task source, contract, public tests, initial implementation/review prompts and graders unchanged. Same gpt-6-astra/max and 900-second cap.",
+    "Deadline visibility is a new disclosed intervention through caller environment and bundled budget helper, not a cap extension.",
+    "All 18 prior mandatory probes retained; previous name-resolution followup and IN/NOT INDEXED reproduction promoted before first model phase.",
+    "Historical regression suites include the latest pilot and its previous three-round archive, preserving the prior gate coverage.",
+    "Cache state/load uncontrolled, descriptive n=1 comparison; unknown usage stays unknown."
+  ],
+  "probe_sha256": {
+    "supplemental_probe.py": "074a3e144683565f0bf0a2257131db94d752fdd44a7fe0cd4379d220bef17408",
+    "after_trigger_probe.py": "af8558a2359ff93ab9b961a278a985fea0bcfa69fffd643c6521ffbeeda5f0b8",
+    "audit_followup_probe.py": "bea9d53b29f8f86328f9396572586a16eff0c09b36070c69e4d56e7027580870",
+    "preservation_probe.py": "35dd07cc76a77f24785a20ec1b3e5ef496874cb2bad726781ab59ef4da8d15f5",
+    "noop_probe.py": "3c53f1d7b5e9058a934ddd431703ff390f77bac73e19f5f79d641253139c2b39",
+    "read_isolation_probe.py": "ebca321f4e012db576a3a11a6e1487a01406b387792dd674201749540cc3d0d5",
+    "ignored_update_probe.py": "bec2886fed90f77607aa8c941f5511ddf967080054a287ebfbfcda233ee5776c",
+    "frame_followup_probe.py": "78f441d2e4c809066b08001cbe7c093bab6016cc583c49f9434c95db4d80b5a7",
+    "trigger_compatibility_probe.py": "ef32fbd29306629ca5d0b197f5cda3e7fe346f5d235f618fb3c63c5d736dfbe7",
+    "dollar_identifier_probe.py": "f07aa8ad312b6b31eded8caf2d94c42e943c643be7e97785e1ea08585dfc4f57",
+    "trigger_counter_probe.py": "92c6fe2a8105d6a0f9a1bb05708f27a58299e8d40227d107961884a5076efec7",
+    "unicode_space_probe.py": "f97701ebfc222e0f115e86bf0e13a3becac795b8511a6875ba480ddc7c989ee0",
+    "trigger_separator_probe.py": "6f17d84c50054149d974157f9f7d2b75731681cfb55c7aa3e3649303bf15a1e4",
+    "malformed_effect_probe.py": "df4615686f889a98511c42eff1d55a680c43d5260b33d90ff29c7c6ef1199d6e",
+    "storage_encoding_probe.py": "b6a9a3a97919a1cc199859901329c3443481414378ae187de0bbfd3fb6f3a66a",
+    "trigger_ignore_scope_probe.py": "d30e41330d35067a2eb098186aac2b9d83ed78f88de1a4298247882627734c36",
+    "recursive_setting_probe.py": "2803ab244dd8fba41a38edcee71f51789c34fa0d963bb4185160d7bec5316257",
+    "critical_final_findings_probe.py": "bee34762d4f41a205dbb73d93a5934c71384a4c634797d7932cd59be524ef8ec",
+    "name_resolution_probe.py": "2da1d091ec9690d1362399687dd7741540dface7ed2266b53ccbc840210edfa6",
+    "in_source_probe.py": "4ad4b95d9c83166c96117947f45f9df6be8208f6cea371ab17a77769fcf99443"
+  }
+}

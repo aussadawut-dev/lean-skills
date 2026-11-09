@@ -1,0 +1,68 @@
+{
+  "phase": "review-2",
+  "review": {
+    "status": "REWORK",
+    "findings": [
+      {
+        "id": "REPAIR-NOOP-TRIGGER",
+        "severity": "P2",
+        "location": "vault.py:90,109-110 (_guard_preserved_rows)",
+        "requirement": "Valid transfers must succeed while preserving existing rows and triggers.",
+        "evidence": "Initialize accounts ('t','a',100), ('t','b',0). Install: CREATE TRIGGER harmless_ensure AFTER INSERT ON audit BEGIN INSERT OR IGNORE INTO accounts(tenant,name,balance) VALUES (NEW.tenant,NEW.target,0); END; Then call transfer(path,'t','a','b',10,'k'). The existing target makes this trigger's insertion a no-op. Both .baseline and .pre-repair succeed with balances 90/10, one receipt and one audit row. Current code raises IntegrityError('incomplete transfer') because its unconditional BEFORE INSERT guard runs before conflict handling. The CLI likewise rejects this valid transfer with exit 2. Rollback and trigger preservation were verified.",
+        "suggested_fix": "Enforce preservation without rejecting conflict-ignored statements that change no rows. Retain protection against actual unauthorized changes and add API/CLI coverage for this valid trigger."
+      }
+    ],
+    "checks": [
+      "Read the local lean-run skill, AGENTS.md and CONTRACT.md; inspected source, added tests and diffs against .baseline and .pre-repair.",
+      "python3 -B -m unittest discover -v: all 31 tests passed.",
+      "Independent comparative probes confirmed repaired rejection and full rollback for audit history rewrites, duplicate multiplicity changes, historical receipt deletion, receipt replacement collisions and unrelated tenant balance changes.",
+      "Verified preserved schema/triggers, historical replay after reopening, and generic CLI failures without persisted changes.",
+      "Verified audit rowid relocation now succeeds with exact contracted effects and unchanged API/CLI replay.",
+      "Independently reproduced the new no-op trigger regression against current, .pre-repair and .baseline through public interfaces.",
+      "All probes used temporary databases and Python -B; no application, test, instruction or baseline files were modified."
+    ],
+    "coverage_limits": [
+      "Focused renewed assessment of the repair delta; unchanged behavior covered by the required suite.",
+      "Executed locally with Python 3.14.3 and SQLite 3.50.4; alternate runtimes and exhaustive trigger combinations were not tested."
+    ]
+  },
+  "grade": "post-repair-1-grade.json",
+  "cross": [
+    {
+      "direction": "historical_tests_on_candidate",
+      "exit_code": 0,
+      "seconds": 1.701,
+      "log": "review-2-historical_tests_on_candidate.log"
+    },
+    {
+      "direction": "candidate_tests_on_historical",
+      "exit_code": 1,
+      "seconds": 1.16,
+      "log": "review-2-candidate_tests_on_historical.log"
+    }
+  ],
+  "supplemental_issue_count": 0,
+  "blockers": [
+    "independent_review"
+  ],
+  "review_integrity": {
+    "changed_or_removed": [],
+    "added_logs": [],
+    "unexpected_additions": []
+  },
+  "candidate_sha256": {
+    ".agents/skills/lean-run/LICENSE": "0c9f58e13615633c392ceaeee4567a5ba3352287b153c21751fe853a5effde2e",
+    ".agents/skills/lean-run/SKILL.md": "082b2024d93ad50582c0305484fd5a8bcb57c0157f5b4b6ae847c66c02553757",
+    ".agents/skills/lean-run/references/delegation.md": "63899dde986ec7014a5cffd39216685640a2e98013dae26e037eaf985fecadb1",
+    ".agents/skills/lean-run/references/exploration.md": "baa9a38160095244c31c5e4a8aab5bdd15dfc0cc83df01a7086607a459faf403",
+    ".agents/skills/lean-run/references/handoff.md": "2d6744d15c27d002c85b9b4cbccf2b0845cb7b5c8b3589aa8b9b06a885357e94",
+    ".agents/skills/lean-run/scripts/check.py": "7946993e44c3ebb3d0235c94af4426e2fbef749c31f4b18eac0de001ba3050b4",
+    "AGENTS.md": "0ef83ddcf2d1065527f05cd03d5a1b275feecc77e45bdb5916217f204c1cb486",
+    "CONTRACT.md": "6e6d6ee1f769db8160e528e218d46a0018a90655e775742a073d61df2aebee2b",
+    "app.py": "7c213436c9235b64fe8df1ebb9f43662888c52b03cc8923c1b0eef30901023c6",
+    "test_preservation.py": "dee93388a56b05ea25d3f242514bfc51f3c63956852c6566f05bad71ad81099b",
+    "test_public.py": "5f239e0ce234d0b84f0d12e7cd23eb6dc23e63b88ffa07e50d20d2c061d66b95",
+    "test_regressions.py": "090c417a7ffa96c69c7ccb73cb0b1ac45d30f7e69818ba0052ef5f4f9824d711",
+    "vault.py": "ab25cf886cf7f551aa65a37d144974b3288b288bcda4a665c59969ede5543919"
+  }
+}

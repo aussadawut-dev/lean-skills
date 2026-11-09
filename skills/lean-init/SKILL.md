@@ -10,6 +10,8 @@ Standalone skill: use the current request or explicit arguments. Read applicable
 
 Use requested procedure depth, or standard by default. High adds relevant boundary cases and stronger evidence; ultra adds cross-part consistency and contradictory evidence where relevant. Depth does not change model reasoning settings. Keep decisions in conversation unless a suitable project record exists or the user requests persistence.
 
+Input is the requested repository and discovery goal, or the current project. Finish discovery with DONE when its root, relevant entry points, instructions and commands are evidenced; include observed failures, unknowns and the next useful action. A discovered application defect is a finding, not permission to repair it or a failure of discovery. Use BLOCKED when a required path, access or fact cannot be established; identify the exact missing prerequisite and completed discovery. Never label an unexecuted command verified.
+
 1. Reuse the established project map and verified commands when their inputs remain unchanged; do not repeat discovery or baseline checks without a task-relevant reason. Inspect project instructions, manifests, test configuration, CI and the relevant documentation. Identify the actual project root, languages, entry points and existing work records; leave unknown facts explicitly unknown.
 2. Identify safe build, lint, type-check and test commands from repository evidence. Inspect unfamiliar scripts before running them. Run the relevant fast checks and record results; do not invent passing checks for missing tooling.
 3. Reuse the user's workflow preferences. Otherwise start with direct work and conversation records. Ask only about choices that affect this task; do not require a mode-selection questionnaire.

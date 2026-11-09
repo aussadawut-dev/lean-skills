@@ -10,6 +10,8 @@ Standalone skill: use the current request or explicit arguments. Read applicable
 
 Use requested procedure depth, or standard by default. High adds relevant boundary cases and stronger evidence; ultra adds cross-part consistency and contradictory evidence where relevant. Depth does not change model reasoning settings. Keep decisions in conversation unless a suitable project record exists or the user requests persistence.
 
+Input is an existing requirement, scope or plan and its intended outcome. Conclude with the decisions/assumptions, concrete scenarios and evidence supporting readiness, unresolved material points and their next owner/action. No questions is a valid outcome when the plan is already actionable. A missing required plan or decision is BLOCKED; do not invent approval, implement a solution or repeat settled questions to fill a checklist.
+
 1. Accept the existing scope and decision record; reopen settled choices only when new requirements or contradictory evidence affect them. Read the plan and its closest project evidence. Reuse settled choices rather than asking again. A clear plan can finish READY without questions.
 2. Probe only relevant boundaries: goal and acceptance, actors, data ownership/lifecycle, permissions, integration contracts, failure recovery and operations. Use concrete scenarios to expose omissions or contradictions.
 3. Classify each open point as NEED DECISION or SAFE ASSUMPTION. Safe assumptions are reversible, low risk and consistent with known choices. Do not assume authorization, tenant isolation, destructive behavior, retention or breaking contract semantics.

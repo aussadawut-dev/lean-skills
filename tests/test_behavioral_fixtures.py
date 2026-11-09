@@ -6,7 +6,25 @@ import sys
 import tempfile
 import unittest
 
+from test_skills import NAMES
+
 ROOT = Path(__file__).resolve().parents[1]
+
+
+class CoreFixturesTest(unittest.TestCase):
+    def test_collection_and_standalone_fixture_discovery(self):
+        with tempfile.TemporaryDirectory(prefix='lean-core-fixtures-') as tmp:
+            out = Path(tmp) / 'evaluation'
+            subprocess.run([sys.executable, str(ROOT / 'tests/behavioral/prepare.py'),
+                            str(out)], check=True, capture_output=True, text=True)
+            cases = sorted(out.glob('case-*'))
+            self.assertEqual(len(cases), 10)
+            for case in cases:
+                expected = {'lean-run'} if case.name == 'case-06' else NAMES
+                self.assertEqual({p.name for p in (case / 'skills').iterdir()}, expected)
+                self.assertEqual((case / 'skills/lean-run/references/handoff.md').read_bytes(),
+                                 (ROOT / 'skills/lean-run/references/handoff.md').read_bytes())
+                self.assertTrue((case / 'manifest.json').is_file())
 
 
 class UpdateFixturesTest(unittest.TestCase):

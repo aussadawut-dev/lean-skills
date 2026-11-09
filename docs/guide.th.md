@@ -1,6 +1,6 @@
 # คู่มือ Lean Skills
 
-Lean Skills เป็นชุดคำสั่งสำหรับ coding agent ไม่ใช่ workflow engine หรือเครื่องรับประกันผล แต่ละ skill ใช้เดี่ยวได้ และ agent ต้องมีเครื่องมือ สิทธิ์ และบริบทที่งานนั้นต้องใช้ คู่มือนี้อ้างอิงชุด 14 skills ใน repository นี้
+Lean Skills เป็นชุดคำสั่งสำหรับ coding agent ไม่ใช่ workflow engine หรือเครื่องรับประกันผล แต่ละ skill ใช้เดี่ยวได้ และ agent ต้องมีเครื่องมือ สิทธิ์ และบริบทที่งานนั้นต้องใช้ คู่มือนี้อ้างอิงชุด 16 skills ใน repository นี้
 
 ## เริ่มต้น
 
@@ -39,6 +39,8 @@ flowchart TD
 | ตัดสินใจ | ตรวจข้อกำหนดและหาหลักฐานที่จำเป็น | `lean-grill`, `lean-research` |
 | ลงมือ | แก้และทดสอบ แบ่งงานเมื่อได้รับอนุญาตและมีประโยชน์ | `lean-task`, `lean-agents` |
 | ตรวจและส่งมอบ | ตรวจ user journey, diff, acceptance และปลายทาง | `lean-review`, `lean-gate` |
+| ขอบเขตความปลอดภัย | ประเมินกรณีใช้ผิดสิทธิ์และยืนยันการแก้ตามงาน | `lean-security` |
+| ปล่อยระบบและกู้คืน | ตรวจ artifact, migration, สุขภาพระบบ และ recovery | `lean-release` |
 | ตามคำขอเฉพาะ | จัดการคำสั่ง repo ระดับ root หรือความละเอียดขั้นตอน | `lean-instructions`, `lean-effort` |
 | ดูแลชุดเครื่องมือ | อัปเดต skills หรือประเมิน model config | `lean-update`, `lean-model-update` |
 
@@ -81,10 +83,12 @@ $lean-run วิเคราะห์ทางเลือกจัดเก็�
 | `lean-scope` | กำหนดขอบเขตและ acceptance | `$lean-scope กำหนดขอบเขตระบบสินค้าโปรด` |
 | `lean-grill` | ตรวจช่องว่างของ requirement และการตัดสินใจ | `$lean-grill ตรวจสิทธิ์และอายุข้อมูลในแผนนี้` |
 | `lean-research` | เปรียบเทียบแนวทางจากหลักฐาน | `$lean-research เปรียบเทียบ SQLite กับ JSON สำหรับงานนี้` |
-| `lean-task` | ทำ implementation task พร้อมตรวจผล | `$lean-task แก้ Save และทดสอบการบันทึก` |
+| `lean-task` | วินิจฉัยบั๊ก หรือทำ implementation พร้อมตรวจผล | `$lean-task แก้ Save และทดสอบการบันทึก` |
 | `lean-agents` | แบ่งงานอิสระให้ agent ที่มีอยู่ | `$lean-agents แบ่งตรวจ retry กับการเก็บสถานะ` |
 | `lean-review` | ตรวจ diff และ regression | `$lean-review ตรวจ diff ระบบสินค้าโปรด` |
 | `lean-gate` | ตรวจหลักฐานว่าพร้อมปิดงานหรือไม่ | `$lean-gate ตรวจ acceptance และความพร้อมส่ง PR` |
+| `lean-security` | ตรวจ security เฉพาะขอบเขตหรือยืนยันการแก้ | `$lean-security ตรวจสิทธิ์อ่านข้อมูลข้ามบัญชี ยังไม่แก้ไฟล์` |
+| `lean-release` | วางแผนหรือทำ release/recovery ตามคำขอ | `$lean-release วางแผนปล่อย staging พร้อมเกณฑ์ rollback ยังไม่ deploy` |
 | `lean-effort` | กำหนดความละเอียดของขั้นตอน | `$lean-effort high` |
 | `lean-target` | เลือกหรือเตรียม repo เป้าหมาย | `$lean-target ใช้ /path/to/project สำหรับงานนี้` |
 | `lean-update` | อัปเดตชุด skills ใน scope เดิม | `$lean-update อัปเดต Lean skills ทั้งชุดในโปรเจกต์นี้` |
@@ -103,3 +107,29 @@ $lean-run วิเคราะห์ทางเลือกจัดเก็�
 - บำรุงรักษาสกิล: `lean-update` แยกจากการพัฒนาแอป
 
 ลำดับเหล่านี้เป็นตัวอย่าง ไม่ใช่ข้อบังคับ หากต้องการทดลองพฤติกรรมของ agent ให้ใช้ [protocol การทดสอบ](../tests/behavioral.md) และแยกผลที่รันจริงจากกรณีที่ยังไม่รัน
+
+## จบงานตามขอบเขตและส่งต่อได้
+
+ทุก skill ต้องสรุปผลที่ตรงคำขอ พร้อมหลักฐาน ข้อจำกัด และสิ่งที่ต้องทำต่อ
+งานสำรวจหรือวินิจฉัยอย่างเดียวจบได้โดยไม่แก้แอป งานวางแผนใช้ `READY`
+หรือ `READY_WITH_ASSUMPTIONS` เมื่อเหลือเพียงสมมติฐานที่ย้อนกลับได้
+งานรีวิวใช้ `PASS`/`REWORK` ส่วน `DONE` ใช้เมื่อ endpoint ที่ขอครบจริง
+สิ่งจำเป็นที่ขาดเป็น `BLOCKED`; ความล้มเหลวที่ลงมือแล้วยังแก้ไม่ได้เป็น `FAILED`
+ระบุด้วยว่าสถานะเป็นของการประเมิน การส่งต่องาน หรือ implementation/release
+
+- **Debug:** `lean-task` ใช้เอกสารวินิจฉัยเมื่อสาเหตุยังไม่ชัด เก็บ expected/actual,
+  ทำซ้ำ ลดกรณี ไล่จุดเริ่มเสีย และใช้ probe แยกสมมติฐาน งาน diagnosis-only ไม่แก้แอป
+- **UX:** `lean-scope` กำหนด acceptance จากเป้าหมายผู้ใช้ รวม keyboard/focus,
+  feedback และ states ที่เกี่ยวข้อง แล้วใช้ข้อตกลงเดียวกันใน task/review
+  แยกสิ่งที่อ่าน source ออกจากสิ่งที่ลองใน browser หรือ assistive technology จริง
+- **Security:** `lean-security` ไล่ข้อมูล จุดรับ input และการข้ามขอบเขตสิทธิ์
+  ตรวจทั้งกรณีที่อนุญาตและปฏิเสธในสภาพแวดล้อมที่ได้รับอนุญาต พร้อมข้อพบที่ตรวจสอบได้
+- **Release:** `lean-release` แยกแผนกับการลงมือ ตรวจเวอร์ชันและ target จริง
+  เตรียม recovery ตามผลต่อข้อมูล และตรวจหลัง deploy หาก release ล้มเหลวแต่กู้คืนได้
+  ต้องรายงาน release ว่า FAILED และ recovery ว่า DONE แยกกัน
+- **Handoff:** ขอ `lean-run` เตรียมส่งต่องานได้ โดยระบุ repo/revision/ไฟล์ค้าง,
+  decisions, evidence, งานที่ยังไม่ทราบผล และ repair count เมื่อเริ่มใหม่ต้องเทียบ
+  สภาพจริงก่อนใช้ผลตรวจเก่าหรือทำ mutation ซ้ำ ไม่สร้าง checkpoint ถาวรโดยไม่ได้ขอ
+
+ตัวอย่าง: `$lean-run เตรียม handoff ของงานนี้ในแชท ยังไม่แก้ไฟล์ต่อ`
+ผล handoff อาจเป็น DONE ขณะที่งานแอปยัง BLOCKED โดยต้องอธิบายทั้งสองขอบเขต

@@ -1,0 +1,101 @@
+{
+ "workspaces": {
+  "ws": "archived final Critical candidate (unchanged copy)",
+  "ws3": "archived candidate + 4-point lexical patch for A/B/R3",
+  "ws2": "isolation-by-construction prototype (row hiding, RLS)"
+ },
+ "sqlite_version": "3.50.4",
+ "results": {
+  "ws": {
+   "abr3_probe_exit": 1,
+   "rls_policy_probe_exit": 1,
+   "f1_foreign_value_observable": [
+    "f1_foreign_corruption",
+    "f1_nested_restore",
+    "f1_plain_restore_control"
+   ],
+   "archived_probes_failed": [
+    "final_guard"
+   ]
+  },
+  "ws3": {
+   "abr3_probe_exit": 0,
+   "rls_policy_probe_exit": 1,
+   "f1_foreign_value_observable": [
+    "f1_foreign_corruption",
+    "f1_nested_restore",
+    "f1_plain_restore_control"
+   ],
+   "archived_probes_failed": []
+  },
+  "ws2": {
+   "abr3_probe_exit": 0,
+   "rls_policy_probe_exit": 0,
+   "f1_foreign_value_observable": [],
+   "archived_probes_failed": [
+    "audit_followup",
+    "preservation",
+    "frame_followup",
+    "trigger_compatibility",
+    "trigger_ignore_scope",
+    "critical_final_findings"
+   ]
+  }
+ },
+ "prototype_historical_failures_all_rls_policy_class": {
+  "2026-11-04-lean-run-critical-high-pilot/round-1": {
+   "tests_ran": 37,
+   "failing_subtests": 27,
+   "failing_functions": [
+    "test_integrity.test_counters_and_last_insert_state_match_native_execution",
+    "test_integrity.test_final_effects_history_multiplicity_and_storage_classes",
+    "test_integrity.test_ignored_conflicts_row_moves_and_identical_replacements",
+    "test_integrity.test_multirow_ignore_does_not_suppress_later_guard",
+    "test_integrity.test_replace_victims_from_unique_expression_and_partial_indexes",
+    "test_integrity.test_stale_old_images_reconcile_latest_slot_and_control",
+    "test_integrity.test_user_delete_triggers_do_not_start_firing_for_replace"
+   ]
+  },
+  "2026-11-04-lean-run-critical-high/round-1": {
+   "tests_ran": 42,
+   "failing_subtests": 11,
+   "failing_functions": [
+    "test_final_repair.test_database_encoding_preserves_unicode_and_raw_foreign_rows",
+    "test_repair.test_foreign_balance_change_is_rejected",
+    "test_repair.test_implicit_replace_delete_keeps_native_delete_trigger_behavior",
+    "test_repair.test_noops_ignored_conflicts_and_row_moves_preserve_raw_foreign_data",
+    "test_repair.test_recursive_noop_and_after_ignore_keep_native_behavior",
+    "test_repair.test_storage_class_only_change_is_rejected"
+   ]
+  },
+  "2026-11-04-lean-run-critical-high/round-2": {
+   "tests_ran": 45,
+   "failing_subtests": 11,
+   "failing_functions": [
+    "test_effects.test_extra_audit_wrong_receipt_and_erased_history_roll_back",
+    "test_effects.test_pragma_reads_retain_replace_effect_detection",
+    "test_effects.test_replace_is_rejected_but_ignored_conflict_and_noop_are_valid",
+    "test_effects.test_rowid_moves_and_delete_reinsert_preserve_logical_rows",
+    "test_effects.test_storage_classes_legacy_text_and_database_encoding",
+    "test_effects.test_unique_index_replace_victims_are_observed_in_each_table"
+   ]
+  },
+  "2026-11-04-lean-run-critical-high/round-3": {
+   "tests_ran": 56,
+   "failing_subtests": 20,
+   "failing_functions": [
+    "test_trigger_effects.test_changes_total_changes_and_last_insert_rowid_match_native",
+    "test_trigger_effects.test_duplicate_audit_and_removed_history_are_rejected",
+    "test_trigger_effects.test_ignored_conflict_is_a_valid_transfer",
+    "test_trigger_effects.test_noops_row_moves_and_restored_duplicate_history_are_allowed",
+    "test_trigger_effects.test_original_enabled_recursion_is_preserved",
+    "test_trigger_effects.test_replace_victim_is_observed_even_when_insert_is_undone",
+    "test_trigger_effects.test_replace_victims_for_rowid_and_expression_unique_indexes",
+    "test_trigger_effects.test_type_only_history_changes_are_rejected",
+    "test_trigger_effects.test_update_replace_victim_cannot_hide_behind_restored_update",
+    "test_trigger_effects.test_vt_and_boundary_bom_explicit_deletes_keep_native_guards"
+   ]
+  }
+ },
+ "archived_probe_rule": "exit 0 and no reported failed cases (same rule as repeated_benchmark.assess)"
+}
