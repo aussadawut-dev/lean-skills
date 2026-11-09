@@ -91,6 +91,31 @@ them; each question includes enough context and allows free-text corrections.
 Preselected recommendations still require submission. Otherwise the agent uses
 numbered chat questions with copyable replies; chat prefilling depends on the host.
 
+### Auto or manual invocation
+
+By default, the agent can select `lean-run` when it fits the request. To make it
+the default for **every end-to-end implementation task**, keep implicit
+invocation enabled and add this rule to the project's `AGENTS.md` for Codex or
+`CLAUDE.md` for Claude Code.
+
+```text
+Invoke lean-run at the start of every new end-to-end implementation task.
+Treat follow-up requirements as updates to the active run.
+```
+
+For **manual** mode, remove the auto rule and configure the installed skill for
+your host.
+
+| Host | Manual setting | Start a run |
+| --- | --- | --- |
+| Codex | Set `policy.allow_implicit_invocation: false` in the installed skill's `agents/openai.yaml` | `$lean-run …` |
+| Claude Code | Merge `"skillOverrides": {"lean-run": "user-invocable-only"}` into the project's `.claude/settings.local.json` | `/lean-run …` |
+
+To return to Auto, set the Codex value to `true` or remove the Claude Code
+override for `lean-run`, then add the project rule above. On a host without an
+invocation setting, express your Auto or Manual choice in the project instructions.
+Start a fresh session to check the selected mode. [Claude Code skill overrides](https://code.claude.com/docs/en/skills#override-skill-visibility-from-settings)
+
 ### One request through delivery
 
 Use `lean-run` as the entry point when you want the agent to own the whole task:
@@ -106,6 +131,10 @@ implementation, integrated verification, review and delivery without asking you
 to invoke each next skill. New consequential facts may still need your answer.
 Without a requested destination, delivery means verified changes in the current
 workspace; PRs and deployments require matching authorization and access.
+
+You can add or correct requirements while a run is active. The next `Recap:`
+shows the updated contract, including earlier work that is still open and work
+already verified. The agent continues from that contract and checks it at delivery.
 
 `lean-run` selects installed companions only when useful and can perform the core
 procedure alone. `lean-task` remains the standalone implementation procedure;

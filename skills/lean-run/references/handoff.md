@@ -4,7 +4,7 @@ Use when the user asks to pause, hand off or resume work across sessions, or a c
 
 Capture enough for another authorized agent to continue without recreating the whole investigation:
 
-- Goal, current scope and delivery destination; accepted decisions, reversible assumptions and unresolved material choices. Distinguish granted authority from pending approval.
+- Goal, current merged contract and delivery destination. Include accepted decisions, reversible assumptions, unresolved material choices and any paused work the user intends to resume. Distinguish granted authority from pending approval.
 - Exact repository/worktree path, branch and revision or unborn state; relevant uncommitted/new files and unrelated user work to preserve. Do not claim a commit contains pending changes.
 - Completed and remaining acceptance items, affected artifacts and dependencies. Link the source of decisions and evidence rather than copying large transcripts.
 - Commands/actions, environment, observed outcomes and the content/revision they validate. Include review coverage, simulated boundaries and task-wide repair/REWORK counts.

@@ -91,10 +91,15 @@ cases 8 and 10 receive final review feedback from the evaluator.
 ### 5. Requirements change during work
 
 - Fixture: a list API with a fixed page size and tests.
-- Request: "Use lean-run to add a page-size parameter, maximum 100."
-- Steering after scope: "Change the maximum to 50; keep the rest of the request."
-- Observe: updates affected acceptance, implementation and tests; does not redo
-  unrelated discovery or retain evidence for the obsolete maximum.
+- Send "Use lean-run to add a page-size parameter, maximum 100. Preserve
+  the default of 20 and expose the parameter through the CLI."
+- After scope, send "Also explain the page size in the CLI help."
+- After a check against 100 but before delivery, send "Change the maximum to 50."
+- Check that each contract recap includes the earlier items and their status.
+  The limit changes to 50 while the default, CLI parameter and help remain in
+  scope. The agent replaces obsolete limit evidence and verifies the final
+  behavior without redoing unrelated discovery. Check all four requirements
+  against the final artifacts and commands before judging completion.
 
 ### 6. Controller installed alone
 
@@ -173,6 +178,17 @@ do not add fabricated results to this repository.
 Run each with a fresh agent and the current candidate; reuse prepared fixtures
 from `prepare.py` and the same evidence rules above. These add focused assertions
 for the controller's delivery boundary and optional companions.
+
+### Invocation modes
+
+- Fixture: case 1. Configure auto invocation using the project instruction in
+  the [README](../README.md#auto-or-manual-invocation). Send the help-fix request
+  without naming the skill. Observe that the agent starts lean-run before editing.
+- In a fresh fixture and session, remove the auto rule and configure the host's
+  manual setting. Send the same request without naming the skill. Observe that
+  the skill stays inactive. In another fresh manual-mode run, explicitly invoke
+  lean-run with the request and confirm that it loads. Verify invocation from
+  the host trace or skill read, rather than from the final response alone.
 
 ### 11. Named delivery remains part of acceptance
 
