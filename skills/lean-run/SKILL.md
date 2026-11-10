@@ -6,50 +6,86 @@ license: MIT
 
 # lean-run
 
-Carry the request to its authorized destination. Preserve unrelated work and reuse verified context. This skill works alone; companions are optional and no workflow directory is required.
+Carry the request to its authorized destination.
 
-## Settle scope, then act
+## Ground rules
 
-Batch applicable instructions, contract and relevant source/tests. Record outcome, acceptance, constraints, verification and destination briefly. Use standard procedure depth unless requested; depth does not select model settings. Resolve consequential business rules, permissions, data lifecycle and external contracts; decide reversible details from conventions. Ask only indispensable decisions and continue independent work. Silence is not consent. For broad ambiguity read [exploration](references/exploration.md); skip discovery loops for clear requests.
+- **Preserve work.** Preserve unrelated work and reuse verified context.
+- **Standalone.** This skill works alone; companions are optional and no workflow directory is required.
+- **Depth.** Use standard procedure depth unless requested; depth does not select model settings.
+- **Authority.** Implementation authority includes matching preparation and verification. Work grants no extra publishing, spending or provider permissions.
+- **Records.** Create workflow files only when requested.
+- **No shortcuts.** Never weaken acceptance, disable checks or omit mandatory work for speed.
 
-Keep one current contract for the active task. When a user message adds, corrects or cancels work, merge it with the existing contract and post a compact `Recap:` of all current requirements and their status before the next affected action. Preserve unrelated items and update only the evidence and work affected by the change. Read [contract updates](references/contract-updates.md) on the first material change.
+## Input and result
 
-Implementation authority includes matching preparation and verification. Requested PRs/deployments remain acceptance and need matching authority/tools; finish preparation before necessary final approval. Work grants no extra publishing, spending or provider permissions. Create workflow files only when requested. For an actual pause, handoff or resume of interrupted work read [continuation](references/handoff.md); a fresh reviewer or fully briefed repair alone does not require it.
+- **Destination.** Requested PRs/deployments remain acceptance and need matching authority/tools; finish preparation before necessary final approval.
+- **DONE.** DONE requires all mandatory acceptance, verification, review and the authorized destination.
+- **BLOCKED or FAILED.** Otherwise report BLOCKED/FAILED, completed work, remaining acceptance and the exact next action.
+- **Not a finish.** A plan, worker report, checkpoint or stage PASS does not finish the task.
 
-## Use the smallest complete procedure
+## Steps
 
-Reuse or classify risk LOW/MEDIUM/HIGH and quality STANDARD/HIGH/VERY_HIGH. Security, destructive data and breaking external contracts are HIGH risk. For persistent, concurrent or access-scoped application writes, read [write integrity](references/write-integrity.md) and prove the mechanism before expanding implementation. For single-owner in-memory state, use local staging/rollback and skip storage guidance.
+1. **Settle scope.** Batch applicable instructions, contract and relevant source/tests. Record outcome, acceptance, constraints, verification and destination briefly. Resolve consequential business rules, permissions, data lifecycle and external contracts; decide reversible details from conventions. Ask only indispensable decisions and continue independent work. Silence is not consent. For broad ambiguity read [exploration](references/exploration.md); skip discovery loops for clear requests.
 
-Map public signatures to evidence, including element/key types, copy ownership, failure atomicity and replay where specified. Convert every caller-supplied value, scalars, keys and field names as well as containers, into an owned value of the plain built-in type before validating, comparing, computing with, storing or merging it. Before review, acceptance evidence holds one parameterized case per applicable row of [boundary cases](references/boundary-cases.md); a row set aside needs a stated reason. Reproduce representative root causes in one small batch, implement, then cover remaining acceptance. A full new suite need not run against the broken baseline; use test-first development when requested.
+2. **Keep one contract.** Keep one current contract for the active task. When a user message adds, corrects or cancels work, merge it with the existing contract and post a compact `Recap:` of all current requirements and their status before the next affected action. Preserve unrelated items and update only the evidence and work affected by the change. Read [contract updates](references/contract-updates.md) on the first material change.
 
-For HIGH-risk parsing or publication, verify that the target runtime supports the required behavior. For untrusted structured input, read [parser integrity](references/parser-integrity.md) before choosing the mechanism; prove record authority and representation selection before expanding the implementation. Use a valid control and a nearby reject or rollback case for the riskiest boundary. Before review, record the executed cases and outcomes for each supported representation, including empty values and corrupted selection metadata; a planned case or passing happy path supplies no evidence. After repair, verify the same rule through other representations or failure paths the changed code handles.
+3. **Handle pauses.** For an actual pause, handoff or resume of interrupted work read [continuation](references/handoff.md); a fresh reviewer or fully briefed repair alone does not require it.
 
-Read source and logs through `python3 /resolved/skill/path/scripts/view.py PATH --lines A-B`, which numbers and bounds the output; request the regions a decision needs, each once, not whole files. Use one complete diff plus new-file inspection; do not print full unchanged source and the same diff. Check for a local VCS root once; standalone fixtures need one temporary comparison copy. Expand only for an uncovered requirement, demonstrated failure or concrete hypothesis.
+4. **Classify risk.** Reuse or classify risk LOW/MEDIUM/HIGH and quality STANDARD/HIGH/VERY_HIGH. Security, destructive data and breaking external contracts are HIGH risk.
+   - **Writes.** For persistent, concurrent or access-scoped application writes, read [write integrity](references/write-integrity.md) and prove the mechanism before expanding implementation. For single-owner in-memory state, use local staging/rollback and skip storage guidance.
 
-Run affected and required checks on final content and exercise the public journey with important failures. Reuse unchanged passing evidence; inspection, cleanup of comparison copies or writing a completion summary alone does not justify another suite. A check proves only its mapped acceptance; mocks/builds do not prove untested live integration. Record actions, environment, expected/observed results and simulated boundaries. Disclose unavailable access and remaining acceptance.
+5. **Map signatures to evidence.** Map public signatures to evidence, including element/key types, copy ownership, failure atomicity and replay where specified.
+   - **Own inputs.** Convert every caller-supplied value, scalars, keys and field names as well as containers, into an owned value of the plain built-in type before validating, comparing, computing with, storing or merging it.
+   - **Boundary cases.** Before review, acceptance evidence holds one parameterized case per applicable row of [boundary cases](references/boundary-cases.md); a row set aside needs a stated reason.
+   - **Order.** Reproduce representative root causes in one small batch, implement, then cover remaining acceptance. A full new suite need not run against the broken baseline; use test-first development when requested.
 
-For assessment-only work, inspect the contract, complete source delta and added tests, then run required checks once and independently probe uncovered risks. For a small source shown fully in a diff, that diff supplies the source read. Inspect test helpers and case tables together; avoid reproducing their complete data matrices in another suite. Do not implement or repair during assessment. A renewed review starts from the prior findings and the delta since that review, verifies each resolution, reruns the required checks and reads beyond the delta only for a new concrete risk. Reproduce old failures only to establish a finding or when requested.
+6. **Prove parsing and publication.** For HIGH-risk parsing or publication, verify that the target runtime supports the required behavior.
+   - **Untrusted input.** For untrusted structured input, read [parser integrity](references/parser-integrity.md) before choosing the mechanism; prove record authority and representation selection before expanding the implementation.
+   - **Controls.** Use a valid control and a nearby reject or rollback case for the riskiest boundary.
+   - **Recorded cases.** Before review, record the executed cases and outcomes for each supported representation, including empty values and corrupted selection metadata; a planned case or passing happy path supplies no evidence.
+   - **After repair.** After repair, verify the same rule through other representations or failure paths the changed code handles.
 
-## Budget bounded work
+7. **Read in bounded regions.** Read source and logs through `python3 /resolved/skill/path/scripts/view.py PATH --lines A-B`, which numbers and bounds the output; request the regions a decision needs, each once, not whole files. Use one complete diff plus new-file inspection; do not print full unchanged source and the same diff. Check for a local VCS root once; standalone fixtures need one temporary comparison copy. Expand only for an uncovered requirement, demonstrated failure or concrete hypothesis.
 
-In the first working batch execute `python3 /resolved/skill/path/scripts/budget.py`. It reads optional caller-supplied `LEAN_RUN_DEADLINE_UNIX`; UNBOUNDED needs no repeat. When bounded, recheck after the first runnable edit/check and before another investigation. VERIFY means use reserved time for outstanding mandatory checks, focused necessary corrections and a concise result, without speculative work. DEADLINE means report incomplete acceptance immediately. Never convert unfinished checks/findings into PASS to meet a clock. The helper reports time; it neither extends a cap nor terminates work. `LEAN_RUN_PHASE_SECONDS` sets a proportional reserve; explicit `--reserve` overrides it.
+8. **Verify final content.** Run affected and required checks on final content and exercise the public journey with important failures. Reuse unchanged passing evidence; inspection, cleanup of comparison copies or writing a completion summary alone does not justify another suite. A check proves only its mapped acceptance; mocks/builds do not prove untested live integration. Record actions, environment, expected/observed results and simulated boundaries. Disclose unavailable access and remaining acceptance.
 
-## Review and repair
+9. **Review.** LOW permits acceptance self-check; MEDIUM needs focused correctness/regression review; HIGH needs a fresh independent reviewer. Quality HIGH requires at least MEDIUM review; VERY_HIGH requires HIGH. A reviewer inspects current source and runs independent checks; author conclusions cannot supply independence. Unavailable required independence is BLOCKED.
 
-LOW permits acceptance self-check; MEDIUM needs focused correctness/regression review; HIGH needs a fresh independent reviewer. Quality HIGH requires at least MEDIUM review; VERY_HIGH requires HIGH. A reviewer inspects current source and runs independent checks; author conclusions cannot supply independence. Unavailable required independence is BLOCKED.
+10. **Repair.** Start repair from the finding, relevant source and distinguishing reproducer; reuse unchanged contract/runtime evidence. Prove the smallest changed mechanism before expanding tests or replacing a subsystem. Derive boundary/failure classes from acceptance; exhaustive/random sweeps need a concrete gap. Rerun affected/required checks and renew review of changed content; verify integrated worker results. Stop when mandatory coverage and findings are resolved.
+    - **Failed mechanism.** A finding that is a new equivalent form of an already-repaired boundary shows the mechanism failed: replace the mechanism rather than adding the case.
+    - **Conflicting findings.** Findings that demand mutually exclusive outcomes need a paired reproducer and a user decision, not a patch toward both.
 
-Start repair from the finding, relevant source and distinguishing reproducer; reuse unchanged contract/runtime evidence. Prove the smallest changed mechanism before expanding tests or replacing a subsystem. Derive boundary/failure classes from acceptance; exhaustive/random sweeps need a concrete gap. Rerun affected/required checks and renew review of changed content; verify integrated worker results. Stop when mandatory coverage and findings are resolved. A finding that is a new equivalent form of an already-repaired boundary shows the mechanism failed: replace the mechanism rather than adding the case. Findings that demand mutually exclusive outcomes need a paired reproducer and a user decision, not a patch toward both.
+11. **Count REWORK.** Count REWORK across the whole task, companions, workers and resumes. After the second REWORK, allow one final fix-only pass plus verification/review; unresolved mandatory findings mean FAILED. Never reset counts in nested workflows. Each repair needs new evidence/hypothesis; abandon approaches yielding none. Suspected flakiness permits at most two disclosed unchanged retries. Separate unrelated failures; seek direction only for expanded scope.
 
-Count REWORK across the whole task, companions, workers and resumes. After the second REWORK, allow one final fix-only pass plus verification/review; unresolved mandatory findings mean FAILED. Never reset counts in nested workflows. Each repair needs new evidence/hypothesis; abandon approaches yielding none. Suspected flakiness permits at most two disclosed unchanged retries. Never weaken acceptance, disable checks or omit mandatory work for speed. Separate unrelated failures; seek direction only for expanded scope.
+12. **Deliver with evidence.** For UI, security or releases read [delivery checks](references/delivery.md). Performance work requires representative measured baseline and optimization authorization; a proposal alone does not authorize benchmarking. Reconcile any new user steering before delivery, then match every item in the current contract, including delivery, to current evidence and review coverage. Keep updates/final concise and continue authorized work without asking to continue.
 
-## Load procedures when relevant
+## Assessment-only work
 
-Load optional companions only for remaining work, passing settled scope and raw evidence. Repository/conventions: `lean-target`, `lean-init`, `lean-instructions`; decisions/research: `lean-scope`, `lean-grill`, `lean-research`; implementation/delegation: `lean-task`, `lean-agents`; review/evidence: `lean-review`, `lean-gate`; security/release: `lean-security`, `lean-release`; requested depth/updates: `lean-effort`, `lean-update`, `lean-model-update`. Missing companions are not blockers; required capabilities can be.
+- **Inspect.** For assessment-only work, inspect the contract, complete source delta and added tests, then run required checks once and independently probe uncovered risks. For a small source shown fully in a diff, that diff supplies the source read. Inspect test helpers and case tables together; avoid reproducing their complete data matrices in another suite.
+- **No repair.** Do not implement or repair during assessment.
+- **Renewed review.** A renewed review starts from the prior findings and the delta since that review, verifies each resolution, reruns the required checks and reads beyond the delta only for a new concrete risk. Reproduce old failures only to establish a finding or when requested.
 
-This workflow requests selective delegation when useful or required for independence, subject to host/user restrictions. Keep small work inline; default to one active worker, more only for explicit parallel work. Before dispatch read [delegation](references/delegation.md). One controller owns scope, integration, repair counts and delivery. Relay a known phase deadline to the worker rather than leaving it implicit.
+## Time budget
 
-Run tests, scripts and any command whose output is not known to fit in a few lines through `python3 /resolved/skill/path/scripts/check.py -- COMMAND ARG...` without reading its implementation. It preserves full logs, returns command status and emits a bounded excerpt. No default timeout; optional `--timeout SECONDS`; `--log NEW_PATH` refuses overwrite. Inspect failures/ambiguous completion until distinct causes are understood. Without Python use equivalent capture, without installing a runtime.
+- **Start.** In the first working batch execute `python3 /resolved/skill/path/scripts/budget.py`. It reads optional caller-supplied `LEAN_RUN_DEADLINE_UNIX`; UNBOUNDED needs no repeat.
+- **Recheck.** When bounded, recheck after the first runnable edit/check and before another investigation.
+- **VERIFY.** VERIFY means use reserved time for outstanding mandatory checks, focused necessary corrections and a concise result, without speculative work.
+- **DEADLINE.** DEADLINE means report incomplete acceptance immediately. Never convert unfinished checks/findings into PASS to meet a clock.
+- **Helper limits.** The helper reports time; it neither extends a cap nor terminates work. `LEAN_RUN_PHASE_SECONDS` sets a proportional reserve; explicit `--reserve` overrides it.
 
-## Deliver with evidence
+## Companions and delegation
 
-For UI, security or releases read [delivery checks](references/delivery.md). Performance work requires representative measured baseline and optimization authorization; a proposal alone does not authorize benchmarking. Reconcile any new user steering before delivery, then match every item in the current contract, including delivery, to current evidence and review coverage. DONE requires all mandatory acceptance, verification, review and the authorized destination. Otherwise report BLOCKED/FAILED, completed work, remaining acceptance and the exact next action. A plan, worker report, checkpoint or stage PASS does not finish the task. Keep updates/final concise and continue authorized work without asking to continue. These procedures are not enforced hooks or a guarantee of success.
+- **Companions.** Load optional companions only for remaining work, passing settled scope and raw evidence. Repository/conventions: `lean-target`, `lean-init`, `lean-instructions`; decisions/research: `lean-scope`, `lean-grill`, `lean-research`; implementation/delegation: `lean-task`, `lean-agents`; review/evidence: `lean-review`, `lean-gate`; security/release: `lean-security`, `lean-release`; requested depth/updates: `lean-effort`, `lean-update`, `lean-model-update`. Missing companions are not blockers; required capabilities can be.
+- **Delegation.** This workflow requests selective delegation when useful or required for independence, subject to host/user restrictions. Keep small work inline; default to one active worker, more only for explicit parallel work. Before dispatch read [delegation](references/delegation.md). One controller owns scope, integration, repair counts and delivery. Relay a known phase deadline to the worker rather than leaving it implicit.
+
+## Running commands
+
+- **Wrap commands.** Run tests, scripts and any command whose output is not known to fit in a few lines through `python3 /resolved/skill/path/scripts/check.py -- COMMAND ARG...` without reading its implementation. It preserves full logs, returns command status and emits a bounded excerpt.
+- **Options.** No default timeout; optional `--timeout SECONDS`; `--log NEW_PATH` refuses overwrite.
+- **Failures.** Inspect failures/ambiguous completion until distinct causes are understood.
+- **No Python.** Without Python use equivalent capture, without installing a runtime.
+
+## Limits
+
+These procedures are not enforced hooks or a guarantee of success.

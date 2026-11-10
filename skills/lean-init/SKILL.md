@@ -6,14 +6,24 @@ license: MIT
 
 # lean-init
 
-Standalone skill: use the current request or explicit arguments. Read applicable project instructions and only task-relevant context. No Lean installation, CLI, configuration or companion skill is required; do not install a workflow or create workflow files as prerequisites. Existing project rules apply.
+## Ground rules
 
-Use requested procedure depth, or standard by default. High adds relevant boundary cases and stronger evidence; ultra adds cross-part consistency and contradictory evidence where relevant. Depth does not change model reasoning settings. Keep decisions in conversation unless a suitable project record exists or the user requests persistence.
+- **Standalone.** Standalone skill: use the current request or explicit arguments. Read applicable project instructions and only task-relevant context.
+- **No prerequisites.** No Lean installation, CLI, configuration or companion skill is required; do not install a workflow or create workflow files as prerequisites. Existing project rules apply.
+- **Depth.** Use requested procedure depth, or standard by default. High adds relevant boundary cases and stronger evidence; ultra adds cross-part consistency and contradictory evidence where relevant. Depth does not change model reasoning settings.
+- **Records.** Keep decisions in conversation unless a suitable project record exists or the user requests persistence.
 
-Input is the requested repository and discovery goal, or the current project. Finish discovery with DONE when its root, relevant entry points, instructions and commands are evidenced; include observed failures, unknowns and the next useful action. A discovered application defect is a finding, not permission to repair it or a failure of discovery. Use BLOCKED when a required path, access or fact cannot be established; identify the exact missing prerequisite and completed discovery. Never label an unexecuted command verified.
+## Input and result
 
-1. Reuse the established project map and verified commands when their inputs remain unchanged; do not repeat discovery or baseline checks without a task-relevant reason. Inspect project instructions, manifests, test configuration, CI and the relevant documentation. Identify the actual project root, languages, entry points and existing work records; leave unknown facts explicitly unknown.
-2. Identify safe build, lint, type-check and test commands from repository evidence. Inspect unfamiliar scripts before running them. Run the relevant fast checks and record results; do not invent passing checks for missing tooling.
-3. Reuse the user's workflow preferences. Otherwise start with direct work and conversation records. Ask only about choices that affect this task; do not require a mode-selection questionnaire.
-4. Agree how acceptance, validation and review will be reported. Small changes need a short acceptance statement; consequential changes need a bounded plan, meaningful tests and review of the final diff. Use independent review when project rules or risk require it, and disclose unavailable review.
-5. When called within an implementation workflow, return discovery results to its controller so authorized implementation continues without another user command. Report the project map, verified commands, current failures, working agreement and next action. This is discovery, not application implementation. Write project documentation only when requested; preserve existing instructions and unrelated files.
+- **Input.** Input is the requested repository and discovery goal, or the current project.
+- **DONE.** Finish discovery with DONE when its root, relevant entry points, instructions and commands are evidenced; include observed failures, unknowns and the next useful action. A discovered application defect is a finding, not permission to repair it or a failure of discovery.
+- **BLOCKED.** Use BLOCKED when a required path, access or fact cannot be established; identify the exact missing prerequisite and completed discovery.
+- **Verification.** Never label an unexecuted command verified.
+
+## Steps
+
+1. **Map the project.** Reuse the established project map and verified commands when their inputs remain unchanged; do not repeat discovery or baseline checks without a task-relevant reason. Inspect project instructions, manifests, test configuration, CI and the relevant documentation. Identify the actual project root, languages, entry points and existing work records; leave unknown facts explicitly unknown.
+2. **Find commands.** Identify safe build, lint, type-check and test commands from repository evidence. Inspect unfamiliar scripts before running them. Run the relevant fast checks and record results; do not invent passing checks for missing tooling.
+3. **Reuse preferences.** Reuse the user's workflow preferences. Otherwise start with direct work and conversation records. Ask only about choices that affect this task; do not require a mode-selection questionnaire.
+4. **Agree on reporting.** Agree how acceptance, validation and review will be reported. Small changes need a short acceptance statement; consequential changes need a bounded plan, meaningful tests and review of the final diff. Use independent review when project rules or risk require it, and disclose unavailable review.
+5. **Report.** When called within an implementation workflow, return discovery results to its controller so authorized implementation continues without another user command. Report the project map, verified commands, current failures, working agreement and next action. This is discovery, not application implementation. Write project documentation only when requested; preserve existing instructions and unrelated files.
