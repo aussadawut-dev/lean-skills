@@ -8,7 +8,7 @@ import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-spec = importlib.util.spec_from_file_location('coverage_fixtures', ROOT / 'tests/behavioral/prepare_coverage.py')
+spec = importlib.util.spec_from_file_location('coverage_fixtures', ROOT / 'tests/fixtures/prepare_coverage.py')
 fixtures = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(fixtures)
 

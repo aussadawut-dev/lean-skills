@@ -15,7 +15,7 @@ class CoreFixturesTest(unittest.TestCase):
     def test_collection_and_standalone_fixture_discovery(self):
         with tempfile.TemporaryDirectory(prefix='lean-core-fixtures-') as tmp:
             out = Path(tmp) / 'evaluation'
-            subprocess.run([sys.executable, str(ROOT / 'tests/behavioral/prepare.py'),
+            subprocess.run([sys.executable, str(ROOT / 'tests/fixtures/prepare.py'),
                             str(out)], check=True, capture_output=True, text=True)
             cases = sorted(out.glob('case-*'))
             self.assertEqual(len(cases), 10)
@@ -31,7 +31,7 @@ class UpdateFixturesTest(unittest.TestCase):
     def test_update_scenarios_are_isolated_and_distinguishable(self):
         with tempfile.TemporaryDirectory(prefix='lean-update-fixtures-') as tmp:
             out = Path(tmp) / 'evaluation'
-            subprocess.run([sys.executable, str(ROOT / 'tests/behavioral/prepare_update.py'),
+            subprocess.run([sys.executable, str(ROOT / 'tests/fixtures/prepare_update.py'),
                             str(out)], check=True, capture_output=True, text=True)
             meta = json.loads((out / 'candidate.json').read_text())
             self.assertNotEqual(meta['old_fixture_revision'], meta['new_fixture_revision'])

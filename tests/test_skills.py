@@ -25,8 +25,8 @@ class SkillTests(unittest.TestCase):
         self.assertEqual(routes, NAMES - {'lean-run'})
 
     def test_readme_skill_catalogs_and_local_links(self):
-        for filename in ('README.md', 'README.th.md', 'docs/guide.th.md', 'tests/behavioral.md',
-                         'tests/benchmark/README.md', 'tests/results/README.md'):
+        for filename in ('README.md', 'README.th.md', 'docs/guide.th.md', 'docs/evaluation.md',
+                         'docs/results/README.md', '.github/release-template.md'):
             with self.subTest(readme=filename):
                 text = (ROOT / filename).read_text()
                 catalog = set(re.findall(r'\]\(skills/(lean-[a-z-]+)/SKILL\.md\)', text))
